@@ -29,7 +29,8 @@ export const tutorialSteps = [
     type: "permission",
     icon: "📸",
     title: "Camera Permission",
-    description: "Bigkas is ready to request access to your camera.",
+    description:
+      "Bigkas is ready to request access to your camera. This is optional, and you can continue without it.",
     button: "Allow Camera Access",
 
     cardTitle: "Why do we need it?",

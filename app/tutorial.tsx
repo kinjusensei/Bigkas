@@ -19,18 +19,17 @@ export default function TutorialScreen() {
   const totalSteps = tutorialSteps.length;
   const currentStep = tutorialSteps[step - 1];
   const handleNext = async () => {
-    // Step 2 - Request camera permission
-    if (step === 2) {
+    // Step 3 - Request camera permission. The camera is optional, so the
+    // tutorial carries on whatever the answer is.
+    if (step === 3) {
       const result = await requestPermission();
-      if (result.granted) {
-        setStep(step + 1);
-      } else {
+      if (!result.granted) {
         Alert.alert(
-          "Camera Permission Required",
-          "Bigkas uses facial expression recognition to evaluate your pronunciation. Please allow camera access to continue.",
+          "Continuing without the camera",
+          "That's okay. You can still use Bigkas without the camera, and you can allow it later in your phone's settings.",
         );
       }
-
+      setStep(step + 1);
       return;
     }
 
