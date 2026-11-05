@@ -1872,191 +1872,46 @@ export const warayPracticeLevels: PracticeLevel[] = [
   {
     id: 6,
     lessonId: "waray_6",
-    title: "Colors & Descriptions",
-    subtitle: "Describe the colors and look of things around you.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Red",
-        howToUse: "",
-        howToUseTranslation: "The apple is red.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Blue",
-        howToUse: "",
-        howToUseTranslation: "The sky is blue.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Beautiful",
-        howToUse: "",
-        howToUseTranslation: "The flower is beautiful.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Food and Drinks",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 7,
     lessonId: "waray_7",
-    title: "Days of the Week & Time",
-    subtitle: "Talk about the days of the week and the time.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Monday",
-        howToUse: "",
-        howToUseTranslation: "I have school on Monday.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Sunday",
-        howToUse: "",
-        howToUseTranslation: "We go to church every Sunday.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Time / Hour",
-        howToUse: "",
-        howToUseTranslation: "What time is it?",
-        expectedExpression: "neutral",
-        expectedTone: "high",
-      },
-    ],
+    title: "Colors and Shapes",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 8,
     lessonId: "waray_8",
-    title: "Navigation & Directions",
-    subtitle: "Tell someone which way to go.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Right",
-        howToUse: "",
-        howToUseTranslation: "Turn right at the corner.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Left",
-        howToUse: "",
-        howToUseTranslation: "The school is on the left.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Straight ahead",
-        howToUse: "",
-        howToUseTranslation: "Just go straight ahead.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Animals and Nature",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 9,
     lessonId: "waray_9",
-    title: "Shopping & Haggling",
-    subtitle: "Ask prices and bargain at the market.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "How much",
-        howToUse: "",
-        howToUseTranslation: "How much is this?",
-        expectedExpression: "neutral",
-        expectedTone: "high",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Cheap",
-        howToUse: "",
-        howToUseTranslation: "The vegetables here are cheap.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Discount / Bargain",
-        howToUse: "",
-        howToUseTranslation: "May I ask for a discount?",
-        expectedExpression: "neutral",
-        expectedTone: "high",
-      },
-    ],
+    title: "Asking and Answering Simple Questions",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 10,
     lessonId: "waray_10",
-    title: "Weather & Nature",
-    subtitle: "Talk about the weather and the world outside.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Rain",
-        howToUse: "",
-        howToUseTranslation: "The rain is heavy today.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Sun / Day",
-        howToUse: "",
-        howToUseTranslation: "The sun is hot.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Tree",
-        howToUse: "",
-        howToUseTranslation: "The tree is tall.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Introducing Other People",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {

@@ -44,6 +44,11 @@ import { warayLesson2 } from "./waray-lesson2";
 import { warayLesson3 } from "./waray-lesson3";
 import { warayLesson4 } from "./waray-lesson4";
 import { warayLesson5 } from "./waray-lesson5";
+import { warayLesson6 } from "./waray-lesson6";
+import { warayLesson7 } from "./waray-lesson7";
+import { warayLesson8 } from "./waray-lesson8";
+import { warayLesson9 } from "./waray-lesson9";
+import { warayLesson10 } from "./waray-lesson10";
 
 // Lessons with the step-by-step flow (components/lesson). Lessons not
 // listed here keep the phrase reading screen in app/lesson/[lessonId].tsx.
@@ -93,6 +98,11 @@ export const structuredLessonsById: Record<string, StructuredLesson> = {
   [warayLesson3.lessonId]: warayLesson3,
   [warayLesson4.lessonId]: warayLesson4,
   [warayLesson5.lessonId]: warayLesson5,
+  [warayLesson6.lessonId]: warayLesson6,
+  [warayLesson7.lessonId]: warayLesson7,
+  [warayLesson8.lessonId]: warayLesson8,
+  [warayLesson9.lessonId]: warayLesson9,
+  [warayLesson10.lessonId]: warayLesson10,
 };
 
 // Activities a learner must have done (besides passing the assessment) to

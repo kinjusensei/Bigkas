@@ -10,6 +10,7 @@ These are candidates from reading and from comparing similar words. They are sti
 |---|---|---|
 | Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
 | Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
+| Waray 6 | Vocabulary | "Tuba han lubi / Tubig han lubi" has one pronunciation, "TU-big han LU-bi", for the second form only. |
 | Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
 
 ## 2. Text the PDF itself marks as needing review
@@ -22,6 +23,8 @@ These notes are written for the authors, but they are in the lesson intros and w
 - **Tagalog 19** (`pronunciationTip`): These are simplified pronunciation guides. They should be supplemented with audio recordings reviewed by Filipino language speakers.
 - **Waray 3** (`intro`): Number systems and everyday number usage can vary among Waray-speaking communities. The larger-number forms above are candidate teaching forms and should be checked by a Western Samar language evaluator, especially before teaching compound numbers as fixed patterns.
 - **Waray 5** (`intro`): Note: Some family terms have alternative forms depending on the speaker, context, and locality. The words above are introductory vocabulary candidates for evaluator review.
+- **Waray 6** (`intro`): Note: Some drink names may be borrowed or expressed differently in everyday speech. Use the terms familiar to your local evaluator and intended learners.
+- **Waray 9** (`intro`): Note: Some question forms have more than one natural way of being expressed. For example, diin, hain, and ngain can appear in different location-related questions. Their exact usage should be checked with a Western Samar Waray language evaluator.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -644,6 +647,74 @@ Meaning of each heading:
 - "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
 
+### Waray 6: Food and Drinks (PDF pages 729–743)
+
+**Missing answer key**
+
+- Activity 1: Match the Food (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Identify the Correct Translation (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Phrase Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+### Waray 7: Colors and Shapes (PDF pages 744–757)
+
+**Missing answer key**
+
+- Activity 1: Match the Colors (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Identify the Shape (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Phrase Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+### Waray 8: Animals and Nature (PDF pages 758–773)
+
+**Missing answer key**
+
+- Activity 1: Match the Animals (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Identify the Nature Vocabulary (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Phrase Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+### Waray 9: Asking and Answering Simple Questions (PDF pages 774–788)
+
+**Missing answer key**
+
+- Activity 1: Match the Question Words (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Questions (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Phrases = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
+### Waray 10: Introducing Other People (PDF pages 789–804)
+
+**Missing answer key**
+
+- Activity 1: Match the Vocabulary (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Phrases = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -675,3 +746,8 @@ Meaning of each heading:
 | Waray 3: Numbers and Counting | Beginner | 41 | 21 | 27 | 0 | 34 | 10 | 0 | 60 |
 | Waray 4: Days, Months, and Time | Beginner | 44 | 12 | 12 | 0 | 20 | 10 | 0 | 60 |
 | Waray 5: Family Members and Relationships | Beginner | 33 | 12 | 15 | 0 | 22 | 10 | 0 | 60 |
+| Waray 6: Food and Drinks | Beginner | 51 | 12 | 15 | 0 | 22 | 10 | 0 | 60 |
+| Waray 7: Colors and Shapes | Beginner | 34 | 12 | 15 | 0 | 21 | 10 | 0 | 60 |
+| Waray 8: Animals and Nature | Beginner | 63 | 14 | 16 | 0 | 21 | 10 | 0 | 60 |
+| Waray 9: Asking and Answering Simple Questions | Beginner | 30 | 12 | 19 | 0 | 20 | 10 | 0 | 60 |
+| Waray 10: Introducing Other People | Beginner | 38 | 16 | 18 | 0 | 20 | 10 | 0 | 60 |
