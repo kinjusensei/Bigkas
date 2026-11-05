@@ -2,26 +2,37 @@
 
 From `Lesson Plan.pdf`. Nothing listed here was changed or guessed: the Tagalog and Waray text is in the app exactly as the PDF has it. Tell me what to change and I will change it.
 
+## Start here: the biggest gaps
+
+- **Most practice activities have no answer key.** Only Tagalog 11–15 have keys for their practice activities. Tagalog 16–29 and all Waray lessons have keys for the assessment only, so their matching, choice, fill-in and arrange activities are saved in `extraActivities` with no answers. Learners do not see them yet.
+- **Waray 30 has no answer key at all.** Its 40 assessment questions are saved but not scored, so learners see only the overview of this lesson and cannot earn its XP. It needs a key from you.
+- **Waray 14–17 assessments are open questions** with written answers, so they are saved but not scored. These lessons have no scored assessment and can be finished without one.
+- **Typed-answer, open-ended and role-play activities have no screens yet**, in any lesson. They are saved in `extraActivities` for a later task.
+- **Levels inferred:** Waray 18, 19 and 20 do not state a level in the PDF. "Intermediate" comes from their lesson numbers.
+
 ## 1. Likely typos, for you to check
 
 These are candidates from reading and from comparing similar words. They are still in the data as written.
 
 | Lesson | Where | What looks wrong |
 |---|---|---|
-| Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
-| Waray 14 | Vocabulary | "Kinahanglan" has "Ki-nang-ha-lan" (same in Waray 22, 23). Waray 13 writes "kee-nahng-LAHN". |
-| Waray 14 | Vocabulary | "Nagtatrabaho hira." has "Nag-tra-tra-ba-ho hi-ra". The word has "ta", not "tra", in the second syllable. |
-| Waray 21 | Vocabulary | "Kinahanglanon" has "ki-nang-ha-non" (same in Waray 22). Waray 13 writes "kee-nahng-LAHN-on". |
-| Waray 21 | Vocabulary | "Nahahadlok" has "na-hahad-lok" (same in Waray 28). The syllables look joined: "na-ha-had-lok". |
-| Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
+| Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". The word has syllables "pa-ri-ra-la". |
+| Tagalog 16 | Vocabulary | Pronunciations use a different style from most Tagalog lessons, for example "ngunit" is "ngoo-neet". Not wrong, but inconsistent. |
+| Tagalog 25 | Activity: Identify the Verb Aspect | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
+| Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak": "mga" is respelled with an added vowel. |
 | Waray 6 | Vocabulary | "Tuba han lubi / Tubig han lubi" has one pronunciation, "TU-big han LU-bi", for the second form only. |
+| Waray 10 | Vocabulary | "Maabilidad" has "mah-ah-ah-bee-lee-DAHD", with three "ah" syllables where the word has two a's. |
+| Waray 13 | Vocabulary | The word "igsaysay" has "ig-sah-SAI", while Waray 22 has "ig-say-say". |
+| Waray 14 | Vocabulary | Forms of "kinahanglan" are respelled with "nang-ha" here and in Waray 21, 22 and 23, while Waray 13 writes "kee-nahng-LAHN". |
+| Waray 14 | Vocabulary | "Nagtatrabaho hira." has "Nag-tra-tra-ba-ho hi-ra". The word has "ta", not "tra", in its second syllable. |
 | Waray 17 | Vocabulary | "Baroto han pagkaon / puwesto han pagkaon (descriptive)" has one pronunciation, "Pu-wes-to han pag-ka-on", for the second form only. |
-| Waray 13 | Vocabulary | "Mahimo mo ba igsaysay?" has "ig-sah-SAI", while Waray 22 has "ig-say-say". |
-| Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
+| Waray 18 | Vocabulary | "T-shirt / Baro" has "ti-shert / ba-ro". Possibly fine as a respelling of an English word. |
+| Waray 21 | Vocabulary | "Nahahadlok" has "na-hahad-lok". The syllables look joined: "na-ha-had-lok". |
+| Waray 21 | Spelling | Both "damu" (Waray 16, 21, 24, 25, 28, 30) and "damo" (at least Waray 21) appear. Please say which should be used, or whether both are fine. |
 
 ## 2. Text the PDF itself marks as needing review
 
-These notes are written for the authors, but they are in the lesson intros and will show to learners as written. Tell me if they should be hidden.
+These notes are written for the authors, but they are in the lesson text and learners will see them as written. Tell me if they should be hidden or changed.
 
 - **Tagalog 16** (`pronunciationTip`): The following are simplified pronunciation guides for learners. They are not a substitute for audio recorded and reviewed by a Filipino language speaker.
 - **Tagalog 17** (`pronunciationTip`): These are simplified pronunciation guides for practice. Audio recordings reviewed by Filipino speakers should be used in the final application.
@@ -33,6 +44,11 @@ These notes are written for the authors, but they are in the lesson intros and w
 - **Waray 9** (`intro`): Note: Some question forms have more than one natural way of being expressed. For example, diin, hain, and ngain can appear in different location-related questions. Their exact usage should be checked with a Western Samar Waray language evaluator.
 - **Waray 19** (`body`): The last example is included only as a tentative construction and should be replaced or corrected by a language evaluator before use.
 - **Waray 19** (`intro`): Note: The sentences above are learning examples. Some verb forms and expressions may vary across Western Samar communities and should be checked by a native speaker.
+- **Waray 26** (`intro`): In this lesson, learners will explore selected expressions and practice understanding them through context. The examples are learning candidates and should be checked by a Western Samar Waray language evaluator before being finalized in the application.
+- **Waray 26** (`body`): Consider these candidate expressions:
+- **Waray 27** (`intro`): Note: Some vocabulary items are borrowed or adapted from Filipino, Spanish, or English. Their spelling and preferred everyday forms should be checked by a Western Samar language evaluator.
+- **Waray 28** (`intro`): Note: The vocabulary includes borrowed and descriptive terms. Some expressions may have alternative forms in Western Samar communities and should be reviewed before implementation.
+- **Waray 29** (`intro`): Note: Some terms are borrowed or have alternative regional forms. The vocabulary should be reviewed by a Western Samar Waray evaluator, especially terms for transportation, neighbors, and actions.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -291,6 +307,11 @@ Meaning of each heading:
 **Answer key problem**
 
 - Activity 6: Arrange the Words, item 4: tiles "ang / Akin / aklat / ito" do not form the answer key's "Akin ang aklat na ito.". Item saved without a screen.
+
+**XP moved**
+
+- "Complete Speaking Practice" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete Guided Conversations + Complete Speaking Practice = 30 XP.
 
 ### Tagalog 15: Basic Sentence Structure (PDF pages 250–272)
 
@@ -867,10 +888,10 @@ Meaning of each heading:
 
 **XP moved**
 
-- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with speaking.
-- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with speaking.
-- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with speaking.
-- XP rows merged under speaking: Vocabulary Matching + Complete the Sentences + Practice Activities = 35 XP.
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities = 45 XP.
 
 **Lesson information**
 
@@ -957,7 +978,97 @@ Meaning of each heading:
 - "Describe Your Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Vocabulary Matching + Identify the Time Reference + Complete the Sentences + Describe Your Activities = 45 XP.
 
-## 5. Lessons and counts
+### Waray 26: Idiomatic Expressions and Common Sayings (PDF pages 1067–1080)
+
+**Missing answer key**
+
+- Activity A: Identify the Meaning (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Expression Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+### Waray 27: Workplace and School Conversations (PDF pages 1081–1100)
+
+**Missing answer key**
+
+- Activity A: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity B: Choose the Appropriate Expression (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Expressions = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
+### Waray 28: Storytelling and Narration (PDF pages 1101–1118)
+
+**Missing answer key**
+
+- Activity A: Arrange the Events (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity B: Identify the Correct Connector (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Sequence Recognition" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Guided Narration" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Sequence Recognition + Guided Narration + Practice Activities = 35 XP.
+
+### Waray 29: Situational Dialogues and Role-Playing (PDF pages 1119–1139)
+
+**Missing answer key**
+
+- Activity B: Choose the Appropriate Response (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Situation Recognition" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Situation Recognition + Guided Conversations + Role-Playing Activities = 35 XP.
+
+### Waray 30: Comprehensive Language Assessment (PDF pages 1140–1155)
+
+**Missing answer key**
+
+- No scored assessment: the questions have no answer key, so none were scored.
+
+**Not scored**
+
+- Assessment Part A – Vocabulary Assessment: 10 question(s) have no answer key; saved but not scored.
+- Assessment Part B – Useful Expressions Assessment: 10 question(s) have no answer key; saved but not scored.
+- Assessment Part C – Grammar and Sentence Construction: 10 question(s) have no answer key; saved but not scored.
+- Assessment Part D – Reading Comprehension: 5 question(s) have no answer key; saved but not scored.
+- Assessment Part E – Conversational Understanding: 5 question(s) have no answer key; saved but not scored.
+
+**XP moved**
+
+- XP rows merged under assessment: Vocabulary Assessment + Comprehensive Assessment = 25 XP.
+
+**Lesson information**
+
+- No vocabulary section found.
+- No guided conversation found.
+- No practice activities section.
+
+## 5. Left out on purpose
+
+- Facial-expression notes, certificate notes and score bands such as "14–15 correct: Excellent!" are in the PDF but not the app. Facial expressions never affect scores.
+- Completion criteria sentences ("To complete Lesson 21, learners must…") are left out, because the app has its own completion rules.
+- Short lines that only introduce a section ("Read the following conversations…", "Complete the following exercises…") are left out where no field shows them.
+- Pass marks are as in the PDF: 70%, and 80% for Tagalog 30.
+- Tagalog 16–19: the "Part C – Suggested Answers" notes, including that other correct answers should be accepted, apply to unscored questions.
+- Tagalog 15 Activities 6 and 8: the key says answers may vary, so these have no fixed answers.
+- Tagalog 30: the scoring note that alternative answers may be accepted for questions such as 22 and 31 is not in the app. Scoring accepts only the keyed answer.
+- Kapampangan and audio fields were not changed. No recordings exist yet, so listening questions are not scored.
+
+## 6. What this replaced
+
+- Tagalog 11–20 and Waray 1–20 replaced placeholder lessons with the same IDs, so saved progress on those IDs carries over. The old practice-game phrases on those lessons are gone from the board data but remain in git history. Lessons with this step-by-step flow did not use them.
+- `docs/tagalog-voice-recording-list.md` was written before this import and no longer matches Tagalog 11–30.
+
+## 7. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
 
@@ -966,7 +1077,7 @@ Meaning of each heading:
 | Tagalog 11: Common Daily Conversations | Intermediate | 67 | 31 | 23 | 32 | 3 | 10 | 0 | 70 |
 | Tagalog 12: Giving Directions and Locations | Intermediate | 72 | 27 | 25 | 32 | 5 | 10 | 0 | 70 |
 | Tagalog 13: Asking for Information | Intermediate | 49 | 25 | 27 | 29 | 13 | 10 | 0 | 70 |
-| Tagalog 14: Pronouns and Common Verbs | Intermediate | 60 | 20 | 20 | 39 | 6 | 10 | 0 | 70 |
+| Tagalog 14: Pronouns and Common Verbs | Intermediate | 60 | 20 | 20 | 34 | 11 | 10 | 0 | 70 |
 | Tagalog 15: Basic Sentence Structure | Intermediate | 49 | 20 | 18 | 13 | 27 | 10 | 0 | 70 |
 | Tagalog 16: Constructing More Complex Sentences | Intermediate | 24 | 0 | 17 | 0 | 30 | 5 | 10 | 70 |
 | Tagalog 17: Ordering Food | Intermediate | 68 | 0 | 22 | 0 | 35 | 5 | 10 | 70 |
@@ -974,7 +1085,7 @@ Meaning of each heading:
 | Tagalog 19: Talking About Daily Activities | Intermediate | 88 | 0 | 20 | 0 | 30 | 5 | 10 | 70 |
 | Tagalog 20: Describing People, Places, and Things | Intermediate | 76 | 24 | 23 | 0 | 34 | 15 | 0 | 70 |
 | Tagalog 21: Expressing Opinions and Feelings | Advanced | 59 | 20 | 18 | 0 | 34 | 15 | 0 | 80 |
-| Tagalog 22: Giving Explanations and Reasons | Advanced | 51 | 18 | 20 | 0 | 39 | 15 | 0 | 80 |
+| Tagalog 22: Giving Explanations and Reasons | Advanced | 52 | 18 | 20 | 0 | 39 | 15 | 0 | 80 |
 | Tagalog 23: Agreeing and Disagreeing | Advanced | 53 | 22 | 23 | 0 | 37 | 15 | 0 | 80 |
 | Tagalog 24: Advanced Sentence Construction | Advanced | 28 | 10 | 18 | 0 | 38 | 15 | 0 | 80 |
 | Tagalog 25: Verb Forms and Tenses | Advanced | 52 | 10 | 18 | 0 | 54 | 15 | 0 | 80 |
@@ -1001,10 +1112,15 @@ Meaning of each heading:
 | Waray 16: Constructing More Complex Sentences | Intermediate | 14 | 0 | 18 | 0 | 30 | 0 | 10 | 60 |
 | Waray 17: Ordering Food | Intermediate | 58 | 0 | 22 | 0 | 33 | 0 | 10 | 60 |
 | Waray 18: Shopping and Buying | Intermediate | 52 | 27 | 31 | 0 | 22 | 10 | 0 | 60 |
-| Waray 19: Talking About Daily Activities | Intermediate | 62 | 18 | 25 | 5 | 25 | 10 | 0 | 60 |
+| Waray 19: Talking About Daily Activities | Intermediate | 62 | 18 | 25 | 0 | 30 | 10 | 0 | 60 |
 | Waray 20: Describing People, Places, and Things | Intermediate | 69 | 18 | 24 | 0 | 24 | 10 | 0 | 60 |
 | Waray 21: Expressing Opinions and Feelings | Advanced | 53 | 32 | 21 | 0 | 30 | 10 | 0 | 60 |
 | Waray 22: Giving Explanations and Reasons | Advanced | 41 | 21 | 23 | 0 | 30 | 10 | 0 | 60 |
 | Waray 23: Agreeing and Disagreeing | Advanced | 38 | 17 | 22 | 0 | 29 | 10 | 0 | 60 |
 | Waray 24: Advanced Sentence Construction | Advanced | 42 | 20 | 23 | 0 | 30 | 10 | 0 | 60 |
 | Waray 25: Verb Forms and Tenses | Advanced | 47 | 21 | 20 | 0 | 30 | 10 | 0 | 60 |
+| Waray 26: Idiomatic Expressions and Common Sayings | Advanced | 15 | 0 | 14 | 0 | 25 | 10 | 0 | 60 |
+| Waray 27: Workplace and School Conversations | Advanced | 51 | 27 | 27 | 0 | 24 | 10 | 0 | 60 |
+| Waray 28: Storytelling and Narration | Advanced | 44 | 21 | 14 | 0 | 19 | 10 | 0 | 60 |
+| Waray 29: Situational Dialogues and Role-Playing | Advanced | 54 | 32 | 28 | 0 | 25 | 10 | 0 | 60 |
+| Waray 30: Comprehensive Language Assessment | Advanced | 0 | 0 | 0 | 0 | 0 | 0 | 41 | 60 |
