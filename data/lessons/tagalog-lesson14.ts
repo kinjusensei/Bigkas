@@ -1586,34 +1586,6 @@ export const tagalogLesson14: StructuredLesson = {
       },
     ],
   },
-  speaking: {
-    title: "Speaking Practice",
-    instructions: "Learners should record themselves answering the following questions in Filipino.",
-    note: "Encourage learners to use at least three different pronouns and five different verbs throughout their answers.",
-    phrases: [
-      {
-        id: "1",
-        text: "Ano ang ginagawa mo tuwing umaga?",
-        meaning: "What do you do every morning?",
-      },
-      {
-        id: "2",
-        text: "Ano ang ginagawa mo pagkatapos ng klase?",
-      },
-      {
-        id: "3",
-        text: "Sino ang kasama mo sa bahay?",
-      },
-      {
-        id: "4",
-        text: "Ano ang ginagawa ninyo ng iyong mga kaibigan?",
-      },
-      {
-        id: "5",
-        text: "Ano ang plano ninyo ngayong linggo?",
-      },
-    ],
-  },
   extraActivities: [
     {
       title: "Arrange the Words",
@@ -1645,6 +1617,19 @@ export const tagalogLesson14: StructuredLesson = {
         "Akin ang bag na ito.",
       ],
     },
+    {
+      title: "Speaking Practice",
+      kind: "other",
+      instructions: "Learners should record themselves answering the following questions in Filipino.",
+      items: [
+        "Ano ang ginagawa mo tuwing umaga?",
+        "Ano ang ginagawa mo pagkatapos ng klase?",
+        "Sino ang kasama mo sa bahay?",
+        "Ano ang ginagawa ninyo ng iyong mga kaibigan?",
+        "Ano ang plano ninyo ngayong linggo?",
+      ],
+      note: "Encourage learners to use at least three different pronouns and five different verbs throughout their answers.",
+    },
   ],
   rewards: {
     items: [
@@ -1655,17 +1640,12 @@ export const tagalogLesson14: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Complete Guided Conversations",
-        xp: 15,
+        label: "Complete Guided Conversations + Complete Speaking Practice",
+        xp: 30,
       },
       {
         section: "sentences",
         label: "Complete Pronoun and Verb Exercises",
-        xp: 15,
-      },
-      {
-        section: "speaking",
-        label: "Complete Speaking Practice",
         xp: 15,
       },
       {

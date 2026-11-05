@@ -1039,33 +1039,6 @@ export const warayLesson19: StructuredLesson = {
       },
     ],
   },
-  speaking: {
-    title: "Daily Routine Speaking Practice",
-    instructions: "Record yourself describing your daily routine in Waray.\nYour recording should:",
-    note: "Focus on clear pronunciation and complete sentences.",
-    phrases: [
-      {
-        id: "1",
-        text: "Introduce your typical day.",
-      },
-      {
-        id: "2",
-        text: "Describe what you do in the morning.",
-      },
-      {
-        id: "3",
-        text: "Explain your afternoon activities.",
-      },
-      {
-        id: "4",
-        text: "Describe what you do at night.",
-      },
-      {
-        id: "5",
-        text: "End with a statement about your daily routine.",
-      },
-    ],
-  },
   extraActivities: [
     {
       title: "Vocabulary Matching",
@@ -1128,18 +1101,26 @@ export const warayLesson19: StructuredLesson = {
       ],
       note: "Example Structure:",
     },
+    {
+      title: "Daily Routine Speaking Practice",
+      kind: "other",
+      instructions: "Record yourself describing your daily routine in Waray.\nYour recording should:",
+      items: [
+        "Introduce your typical day.",
+        "Describe what you do in the morning.",
+        "Explain your afternoon activities.",
+        "Describe what you do at night.",
+        "End with a statement about your daily routine.",
+      ],
+      note: "Focus on clear pronunciation and complete sentences.",
+    },
   ],
   rewards: {
     items: [
       {
-        section: "speaking",
-        label: "Vocabulary Matching + Complete the Sentences + Practice Activities",
-        xp: 35,
-      },
-      {
         section: "conversation",
-        label: "Guided Conversation",
-        xp: 10,
+        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
+        xp: 45,
       },
       {
         section: "assessment",

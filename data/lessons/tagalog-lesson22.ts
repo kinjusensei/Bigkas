@@ -173,6 +173,10 @@ export const tagalogLesson22: StructuredLesson = {
           meaning: "Such as / Like",
         },
         {
+          term: "Partikular na",
+          meaning: "Particularly",
+        },
+        {
           term: "Kabilang dito ang",
           meaning: "Included among these are",
         },
