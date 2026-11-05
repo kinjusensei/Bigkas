@@ -2271,7 +2271,7 @@ export const warayLesson20: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Describing People",
       body: [

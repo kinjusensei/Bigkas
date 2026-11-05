@@ -1933,7 +1933,7 @@ export const warayLesson21: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Expressing Personal Opinions",
       body: [

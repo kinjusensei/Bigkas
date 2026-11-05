@@ -1439,7 +1439,7 @@ export const warayLesson5: StructuredLesson = {
       situation: "Liza and Mark: Talking About Family.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Identifying Family Members",
       body: [

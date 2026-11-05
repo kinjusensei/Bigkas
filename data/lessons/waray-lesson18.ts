@@ -1732,7 +1732,7 @@ export const warayLesson18: StructuredLesson = {
       instructions: "The number expressions in these dialogues are examples. Learners should also recognize that prices and number forms may be expressed differently by individual speakers.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Asking About Prices",
       body: [

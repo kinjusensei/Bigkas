@@ -1422,7 +1422,7 @@ export const warayLesson15: StructuredLesson = {
       situation: "Carlo and Mark: Making a Simple Plan.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "Parts of a Sentence",
       body: [

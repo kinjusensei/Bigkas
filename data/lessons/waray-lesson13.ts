@@ -1815,7 +1815,7 @@ export const warayLesson13: StructuredLesson = {
       situation: "Carlo and Resident: Asking About an Event.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Asking for General Information",
       body: [

@@ -1661,7 +1661,7 @@ export const warayLesson17: StructuredLesson = {
       situation: "Carlo and Mark and Server: Asking for the Bill.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "Asking About Prices and Quantities",
       body: [

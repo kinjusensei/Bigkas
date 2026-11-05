@@ -1321,7 +1321,7 @@ export const warayLesson16: StructuredLesson = {
       situation: "Maria and Rosa: Describing a School Activity.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "Expressing Reasons and Explanations",
       body: [

@@ -1402,7 +1402,7 @@ export const warayLesson28: StructuredLesson = {
       situation: ": A Memorable School Experience.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Parts of a Narrative",
       body: [

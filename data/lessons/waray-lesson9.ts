@@ -1752,7 +1752,7 @@ export const warayLesson9: StructuredLesson = {
       situation: "Carlo and Mia: Asking About Daily Activities.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Asking About People",
       body: [

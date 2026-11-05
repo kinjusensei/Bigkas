@@ -1486,7 +1486,7 @@ export const warayLesson3: StructuredLesson = {
       situation: "Asking about prices. Understanding number expressions. Using numbers while shopping.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Counting from One to Ten",
       body: [

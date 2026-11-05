@@ -1611,7 +1611,7 @@ export const warayLesson29: StructuredLesson = {
       situation: "Organizer and Volunteer: Participating in a Community Activity.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Understanding the Situation Before Responding",
       body: [

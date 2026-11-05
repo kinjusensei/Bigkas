@@ -304,9 +304,6 @@ export interface StructuredLesson {
   // plan has no source for them. Learners don't see this; every value is listed
   // in docs/waray-inferred-keys.md.
   inferredFields?: string[];
-  // Language notes kept from the document. They have no screen in the Tagalog
-  // Lesson 1 flow, so `languageNotes` is empty and these stay unshown.
-  savedLanguageNotes?: LessonLanguageNote[];
   matchActivity?: LessonMatchActivity;
   choiceActivity?: LessonChoiceActivity;
   fillInBlanks?: LessonFillBlanks;

@@ -1599,7 +1599,7 @@ export const warayLesson27: StructuredLesson = {
       situation: "Carla and Daniel: Asking a Colleague for Help.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Formal and Informal Communication",
       body: [

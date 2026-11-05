@@ -1938,7 +1938,7 @@ export const warayLesson25: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Understanding Verb Root Words",
       body: [

@@ -1975,7 +1975,7 @@ export const warayLesson24: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Combining Two or More Ideas",
       body: [

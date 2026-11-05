@@ -1503,7 +1503,7 @@ export const warayLesson7: StructuredLesson = {
       situation: "Liza and Mark: Describing Objects.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Identifying Colors",
       body: [

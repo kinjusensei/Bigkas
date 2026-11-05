@@ -1703,7 +1703,7 @@ export const warayLesson11: StructuredLesson = {
       situation: "Liza and Mark: Talking About Daily Routines.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Starting an Everyday Conversation",
       body: [

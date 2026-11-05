@@ -1487,7 +1487,7 @@ export const warayLesson14: StructuredLesson = {
       situation: "Carlo and Mark: Making Plans with Friends.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "Constructing Sentences with Pronouns and Verbs",
       body: [

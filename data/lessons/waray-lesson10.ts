@@ -1538,7 +1538,7 @@ export const warayLesson10: StructuredLesson = {
       situation: "Liza and Mark: Talking About a Classmate.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Introducing Someone",
       body: [

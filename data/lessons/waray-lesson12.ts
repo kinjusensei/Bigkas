@@ -1793,7 +1793,7 @@ export const warayLesson12: StructuredLesson = {
       situation: "Carlo and Mia: Explaining Where a Place Is.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Asking Where a Place Is Located",
       body: [

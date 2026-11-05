@@ -1705,7 +1705,7 @@ export const warayLesson23: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Expressing Agreement",
       body: [

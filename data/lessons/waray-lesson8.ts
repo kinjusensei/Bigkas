@@ -1654,7 +1654,7 @@ export const warayLesson8: StructuredLesson = {
       situation: "Liza and Mark: Talking About Nature.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Identifying Animals",
       body: [

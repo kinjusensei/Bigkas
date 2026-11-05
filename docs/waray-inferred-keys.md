@@ -54,7 +54,7 @@ Screens 9 to 11 show the phrase, the respelling and the target tags from screen 
 
 - **Screen titles.** The Usage and Patterns screens have fixed titles in their components: "Common greetings and their usage" and "Introduce yourself". Every Waray lesson shows them, including lessons on other topics.
 - **XP.** The rows are the plan's own, totalling 60 XP. The plan has no speaking row in any lesson, so speaking earns no XP in Waray.
-- **Language notes** have no screen in this flow. They are kept unshown in `savedLanguageNotes`.
+- **Language notes** have their own screen after Usage, which Tagalog Lesson 1 does not have. They come straight from the plan, so this adds one screen to Waray 1–29.
 - **Waray 4–8 assessment.** The plan gives 3 options per question. The fourth is a wrong option taken from another question in the same assessment.
 - **Waray 14–17 assessment.** The plan has open questions with written answers. They became multiple choice: the plan's answer is the key, the wrong options come from the same lesson, and the 70% pass mark is inferred.
 - **Conversations.** Most lessons have 3 or 4, shown one at a time on the same screen, because the plan has that many.

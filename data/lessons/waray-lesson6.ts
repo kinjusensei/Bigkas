@@ -1611,7 +1611,7 @@ export const warayLesson6: StructuredLesson = {
       situation: "Customer and Vendor: At a Food Stall.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Naming Common Foods",
       body: [

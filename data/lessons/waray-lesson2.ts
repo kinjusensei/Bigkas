@@ -1901,7 +1901,7 @@ export const warayLesson2: StructuredLesson = {
       situation: "Asking for help. Expressing difficulty understanding something. Thanking someone for assistance.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Expressing Agreement and Disagreement",
       body: [

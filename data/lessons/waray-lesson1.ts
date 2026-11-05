@@ -1628,7 +1628,7 @@ export const warayLesson1: StructuredLesson = {
       situation: "Asking about someone's place of origin. Answering where you are from. Using liwat to express \"also\" or \"too.\"",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Greeting Someone",
       body: [

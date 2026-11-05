@@ -1170,7 +1170,7 @@ export const warayLesson26: StructuredLesson = {
       situation: "Ella and Fred: Giving Advice.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "Understanding Idiomatic Expressions",
       body: [

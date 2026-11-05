@@ -1685,7 +1685,7 @@ export const warayLesson22: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Explaining Why Something Happens",
       body: [

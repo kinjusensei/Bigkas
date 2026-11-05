@@ -1960,7 +1960,7 @@ export const warayLesson19: StructuredLesson = {
       ],
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Describing Daily Activities",
       body: [

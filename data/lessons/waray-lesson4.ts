@@ -1615,7 +1615,7 @@ export const warayLesson4: StructuredLesson = {
       situation: "Liza and Mark: Talking About Tomorrow.",
     },
   ],
-  savedLanguageNotes: [
+  languageNotes: [
     {
       title: "A. Talking About Days",
       body: [
