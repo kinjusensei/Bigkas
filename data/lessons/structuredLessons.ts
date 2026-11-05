@@ -29,6 +29,11 @@ import { tagalogLesson17 } from "./tagalog-lesson17";
 import { tagalogLesson18 } from "./tagalog-lesson18";
 import { tagalogLesson19 } from "./tagalog-lesson19";
 import { tagalogLesson20 } from "./tagalog-lesson20";
+import { tagalogLesson21 } from "./tagalog-lesson21";
+import { tagalogLesson22 } from "./tagalog-lesson22";
+import { tagalogLesson23 } from "./tagalog-lesson23";
+import { tagalogLesson24 } from "./tagalog-lesson24";
+import { tagalogLesson25 } from "./tagalog-lesson25";
 
 // Lessons with the step-by-step flow (components/lesson). Lessons not
 // listed here keep the phrase reading screen in app/lesson/[lessonId].tsx.
@@ -63,6 +68,11 @@ export const structuredLessonsById: Record<string, StructuredLesson> = {
   [tagalogLesson18.lessonId]: tagalogLesson18,
   [tagalogLesson19.lessonId]: tagalogLesson19,
   [tagalogLesson20.lessonId]: tagalogLesson20,
+  [tagalogLesson21.lessonId]: tagalogLesson21,
+  [tagalogLesson22.lessonId]: tagalogLesson22,
+  [tagalogLesson23.lessonId]: tagalogLesson23,
+  [tagalogLesson24.lessonId]: tagalogLesson24,
+  [tagalogLesson25.lessonId]: tagalogLesson25,
 };
 
 // Activities a learner must have done (besides passing the assessment) to

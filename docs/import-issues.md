@@ -9,6 +9,7 @@ These are candidates from reading and from comparing similar words. They are sti
 | Lesson | Where | What looks wrong |
 |---|---|---|
 | Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
+| Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
 
 ## 2. Text the PDF itself marks as needing review
 
@@ -397,6 +398,81 @@ Meaning of each heading:
 - "Finish Activities 4–6" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Complete the guided conversations + Finish Activities 1–3 + Finish Activities 4–6 = 40 XP.
 
+### Tagalog 21: Expressing Opinions and Feelings (PDF pages 388–406)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 5: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Complete the lesson proper" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 1–3" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 4–7" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the lesson proper + Finish Activities 1–3 + Finish Activities 4–7 = 50 XP.
+
+### Tagalog 22: Giving Explanations and Reasons (PDF pages 407–431)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 5: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Complete the lesson proper" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 1–3" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 4–7" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the lesson proper + Finish Activities 1–3 + Finish Activities 4–7 = 50 XP.
+
+### Tagalog 23: Agreeing and Disagreeing (PDF pages 432–455)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Choose the Most Appropriate Response (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 5: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Complete the lesson proper" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 1–3" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 4–7" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the lesson proper + Finish Activities 1–3 + Finish Activities 4–7 = 50 XP.
+
+### Tagalog 24: Advanced Sentence Construction (PDF pages 456–479)
+
+**Missing answer key**
+
+- Activity 2: Choose the Appropriate Connector (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Complete the Relative Clauses (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Clause identification" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Sentence combination activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Connector and relative clause exercises" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Paragraph construction" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Clause identification + Sentence combination activities + Connector and relative clause exercises + Paragraph construction = 55 XP.
+
+### Tagalog 25: Verb Forms and Tenses (PDF pages 480–508)
+
+**Missing answer key**
+
+- Activity 2: Choose the Correct Verb Form (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Verb aspect identification" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Verb form transformation" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under vocabulary: Vocabulary and grammar review + Root word and affix identification = 20 XP.
+- "Sentence correction and construction" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Verb aspect identification + Verb form transformation + Sentence correction and construction = 40 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -413,3 +489,8 @@ Meaning of each heading:
 | Tagalog 18: Shopping and Buying | Intermediate | 91 | 0 | 22 | 0 | 35 | 5 | 10 | 70 |
 | Tagalog 19: Talking About Daily Activities | Intermediate | 88 | 0 | 20 | 0 | 30 | 5 | 10 | 70 |
 | Tagalog 20: Describing People, Places, and Things | Intermediate | 76 | 24 | 23 | 0 | 34 | 15 | 0 | 70 |
+| Tagalog 21: Expressing Opinions and Feelings | Advanced | 59 | 20 | 18 | 0 | 34 | 15 | 0 | 80 |
+| Tagalog 22: Giving Explanations and Reasons | Advanced | 51 | 18 | 20 | 0 | 39 | 15 | 0 | 80 |
+| Tagalog 23: Agreeing and Disagreeing | Advanced | 53 | 22 | 23 | 0 | 37 | 15 | 0 | 80 |
+| Tagalog 24: Advanced Sentence Construction | Advanced | 28 | 10 | 18 | 0 | 38 | 15 | 0 | 80 |
+| Tagalog 25: Verb Forms and Tenses | Advanced | 52 | 10 | 18 | 0 | 54 | 15 | 0 | 80 |

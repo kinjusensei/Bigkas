@@ -529,6 +529,46 @@ const tagalogPracticeLevels: PracticeLevel[] = [
     // Structured lesson: its content is in data/lessons/, with no practice game.
     phrases: [],
   },
+  {
+    id: 21,
+    lessonId: "tagalog_21",
+    title: "Expressing Opinions and Feelings",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 22,
+    lessonId: "tagalog_22",
+    title: "Giving Explanations and Reasons",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 23,
+    lessonId: "tagalog_23",
+    title: "Agreeing and Disagreeing",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 24,
+    lessonId: "tagalog_24",
+    title: "Advanced Sentence Construction",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 25,
+    lessonId: "tagalog_25",
+    title: "Verb Forms and Tenses",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
 ];
 
 type PracticeLevelOutline = Pick<PracticeLevel, "id" | "title" | "subtitle">;
