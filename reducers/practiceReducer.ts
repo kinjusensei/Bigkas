@@ -10,7 +10,6 @@ export type PracticeAction =
   | { type: "START" }
   | { type: "PAUSE" }
   | { type: "RESUME" }
-  | { type: "TICK" }
   | { type: "CORRECT_ANSWER" }
   | { type: "WRONG_ANSWER" }
   | { type: "NEXT_PHRASE" }
@@ -22,8 +21,6 @@ export function createInitialState(level: PracticeLevel): PracticeState {
     status: "READY",
 
     level,
-
-    timeLeft: level.timeLimit,
 
     currentPhraseIndex: 0,
 
@@ -66,7 +63,6 @@ function finishPractice(state: PracticeState): PracticeState {
     xpEarned,
     stars,
     badge,
-    timeLeft: 0,
   };
 }
 
@@ -91,12 +87,6 @@ export function practiceReducer(
       return {
         ...state,
         status: "RUNNING",
-      };
-
-    case "TICK":
-      return {
-        ...state,
-        timeLeft: Math.max(state.timeLeft - 1, 0),
       };
 
     case "CORRECT_ANSWER":

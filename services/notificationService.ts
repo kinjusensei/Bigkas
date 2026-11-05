@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export type NotificationKind = "global" | "report_response";
+export type NotificationKind = "global" | "report_response" | "report_seen";
 
 export type AppNotification = {
   id: string;

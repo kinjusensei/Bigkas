@@ -102,3 +102,59 @@ export async function getMyBugReports(): Promise<BugReportRow[]> {
   if (error) throw error;
   return data ?? [];
 }
+
+export type BugReportMessage = {
+  id: string;
+  sender_role: "user" | "admin";
+  body: string;
+  created_at: string;
+};
+
+export type BugReportThread = {
+  report: BugReportRow;
+  messages: BugReportMessage[];
+  // When an admin last opened the report (sql/report_seen.sql). Null if never,
+  // or if that script hasn't been run yet.
+  adminSeenAt: string | null;
+};
+
+/** One of the current user's reports plus every message on it, oldest first. */
+export async function getBugReportThread(reportId: string): Promise<BugReportThread> {
+  const [reportRes, messagesRes, seenRes] = await Promise.all([
+    supabase
+      .from("bug_reports")
+      .select("id, category, title, description, status, created_at")
+      .eq("id", reportId)
+      .single(),
+    supabase
+      .from("bug_report_messages")
+      .select("id, sender_role, body, created_at")
+      .eq("report_id", reportId)
+      .order("created_at", { ascending: true }),
+    // Separate query so the thread still opens before report_seen.sql is run.
+    supabase.from("bug_reports").select("admin_seen_at").eq("id", reportId).maybeSingle(),
+  ]);
+
+  if (reportRes.error) throw reportRes.error;
+  if (messagesRes.error) throw messagesRes.error;
+
+  return {
+    report: reportRes.data,
+    messages: (messagesRes.data ?? []) as BugReportMessage[],
+    adminSeenAt: seenRes.error ? null : (seenRes.data?.admin_seen_at ?? null),
+  };
+}
+
+/** Lets the admins see the user has read their replies. Failures are ignored on purpose. */
+export async function markBugReportThreadSeen(reportId: string): Promise<void> {
+  await supabase.rpc("mark_bug_report_seen_by_user", { p_report_id: reportId });
+}
+
+/** Sends a follow-up from the report's owner to the admins. */
+export async function replyToBugReport(reportId: string, message: string): Promise<void> {
+  const { error } = await supabase.rpc("reply_to_bug_report", {
+    p_report_id: reportId,
+    p_message: message,
+  });
+  if (error) throw error;
+}

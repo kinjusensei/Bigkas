@@ -1,5 +1,5 @@
-import InfoStep from "./tutorial/InfoStep";
-import WelcomeStep from "./tutorial/WelcomeStep";
+import InfoStep from "../../components/tutorial/InfoStep";
+import WelcomeStep from "../../components/tutorial/WelcomeStep";
 
 type TutorialStep = {
   type: string;

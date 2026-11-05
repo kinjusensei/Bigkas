@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { Redirect, useLocalSearchParams, useRouter } from "expo-router";
 import {
   ExpoSpeechRecognitionModule,
   useSpeechRecognitionEvent,
@@ -6,6 +6,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Alert,
+  ActivityIndicator,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -15,10 +16,19 @@ import {
 
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
 
+import LessonGate from "../../components/lesson/LessonGate";
 import { practiceLevels } from "../../data/practiceData";
+import { findStoryForLesson } from "../../data/storyData";
+import { useLogLessonStart } from "../../hooks/useLogLessonStart";
 import { usePractice } from "../../hooks/usePractice";
-import { savePracticeResult } from "../../services/practiceService";
-import { PracticeExpressionResult } from "../../types/practice";
+import {
+  savePracticeResult,
+  type SavePracticeResult,
+} from "../../services/practiceService";
+import {
+  PracticeExpressionResult,
+  PracticeLevel,
+} from "../../types/practice";
 import PracticeCamera from "../components/Practice/PracticeCamera";
 import PracticeTone, {
   ToneLevel,
@@ -36,6 +46,33 @@ interface WordState {
   status: WordStatus;
   heardAs?: string;
 }
+
+type PracticeStage = "voice" | "expression" | "tone";
+
+type StageResults = {
+  voiceCorrect: boolean | null;
+  expressionCorrect: boolean | null;
+  toneCorrect: boolean | null;
+};
+
+const EMPTY_STAGE_RESULTS: StageResults = {
+  voiceCorrect: null,
+  expressionCorrect: null,
+  toneCorrect: null,
+};
+
+const STAGE_TIMEOUT_MS = 10000;
+
+const UNAVAILABLE_PRACTICE_LEVEL: PracticeLevel = {
+  id: -1,
+  lessonId: "unavailable",
+  title: "Practice unavailable",
+  subtitle: "Practice content is not available for this dialect yet.",
+  requiredCorrect: 0,
+  phrases: [],
+};
+
+const DASHBOARD_ROUTE = "/dashboard" as const;
 
 const normalizeWord = (value: string) =>
   value
@@ -75,65 +112,115 @@ const alignFullPhrase = (
   });
 };
 
-/**
- * Retry attempt: only the single active (leftmost non-correct) word needs
- * to be re-said, not the whole phrase.
- */
-const evaluateActiveWord = (transcript: string, expectedWord: string) => {
-  const spokenWords = transcript
-    .trim()
-    .split(/\s+/)
-    .map(normalizeWord)
-    .filter(Boolean);
+// A locked lesson (previous one not complete) doesn't open. Story practice
+// has its own screen, so a story id here (an old link) goes there.
+export default function PracticeRoute() {
+  const { lessonId, storyLessonId } = useLocalSearchParams<{
+    lessonId?: string;
+    storyLessonId?: string;
+  }>();
+  const storyId =
+    storyLessonId ?? (lessonId?.startsWith("story_") ? lessonId : undefined);
+  if (storyId) {
+    const found = findStoryForLesson(storyId);
+    const chapter = found?.story.chapters.find(
+      (item) => item.lessonId === storyId,
+    );
+    return (
+      <Redirect
+        href={{
+          pathname: "/lesson/pretest",
+          params: {
+            storyLessonId: storyId,
+            dialect: found?.dialect ?? "",
+            chapterId: chapter ? String(chapter.id) : "",
+          },
+        }}
+      />
+    );
+  }
+  return (
+    <LessonGate lessonId={lessonId}>
+      <PracticeScreen />
+    </LessonGate>
+  );
+}
 
-  // Take the last spoken token in case of leading filler noise.
-  const spoken = spokenWords[spokenWords.length - 1] ?? "";
-  const expectedNorm = normalizeWord(expectedWord);
-
-  return { matched: spoken === expectedNorm, heardAs: spoken };
-};
-
-export default function PracticeScreen() {
+function PracticeScreen() {
   const router = useRouter();
 
-  const { lessonId } = useLocalSearchParams<{
+  const { lessonId, cameraHints } = useLocalSearchParams<{
     lessonId?: string;
+    cameraHints?: string;
   }>();
+  useLogLessonStart(lessonId, "practice");
 
-  const selectedLesson =
-    practiceLevels.find((level) => level.lessonId === lessonId) ??
-    practiceLevels[0];
+  // Set by the structured lesson flow (components/lesson): there the
+  // facial-expression check is an optional hint that never affects the
+  // score — "off" skips the camera stage, "on" shows it ungraded. Without
+  // the param (every other entry point) expression stays a graded stage.
+  const expressionOptional = cameraHints === "on" || cameraHints === "off";
+  const skipExpressionStage = cameraHints === "off";
 
-  const { state, dispatch, currentPhrase } = usePractice(selectedLesson);
+  const resultLessonId = lessonId;
 
-  const voiceCorrectRef = useRef(false);
-  const expressionCorrectRef = useRef(false);
-  const toneCorrectRef = useRef(false);
-  const completedPhraseRef = useRef<number | null>(null);
-  const recognitionActiveRef = useRef(false);
-  const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const toneMountTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
-    null,
+  const selectedLesson = practiceLevels.find(
+    (level) => level.lessonId === lessonId,
+  );
+  const hasPracticeContent = Boolean(selectedLesson);
+
+  const { state, dispatch, currentPhrase } = usePractice(
+    selectedLesson ?? UNAVAILABLE_PRACTICE_LEVEL,
   );
 
+  const [stage, setStage] = useState<PracticeStage>("voice");
+  const [stageResults, setStageResults] =
+    useState<StageResults>(EMPTY_STAGE_RESULTS);
+  const stageRef = useRef<PracticeStage>("voice");
+  const stageResolvedRef = useRef(false);
+  const completedPhraseRef = useRef<number | null>(null);
+  const recognitionActiveRef = useRef(false);
+  const recognitionStartingRef = useRef(false);
+  const stageTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const voiceRetryTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const stoppingVoiceRef = useRef(false);
+  const savingResultRef = useRef(false);
+  const resultSavedRef = useRef(false);
+  const resultSnapshotRef = useRef<SavePracticeResult | null>(null);
+  const resultWonRef = useRef<boolean | null>(null);
+  const attemptFrozenRef = useRef(false);
+
   const [wordStates, setWordStates] = useState<WordState[]>([]);
+  // Camera-hints mode only: a gentle, dismissible offer shown when the
+  // camera sees signs of difficulty. Never affects the score.
+  const [showComfortHint, setShowComfortHint] = useState(false);
 
   // Tone/vowel-length is checked as one added step AFTER all words are
   // speech-correct — not simultaneously, since PracticeTone's raw mic
   // capture and expo-speech-recognition can't both hold the microphone at
   // once, and PracticeTone only classifies one whole utterance at a time
   // (no per-word breakdown), so it fits the whole phrase as a single check.
-  const [showToneStep, setShowToneStep] = useState(false);
-  const [toneCorrect, setToneCorrect] = useState(false);
   const [toneFeedback, setToneFeedback] = useState<{
     tone: ToneLevel;
     vowelLength: VowelLength;
+    unclear?: boolean;
   } | null>(null);
+  const [latestPitchHz, setLatestPitchHz] = useState<number | null>(null);
+  const [saveError, setSaveError] = useState(false);
+  const [savingResult, setSavingResult] = useState(false);
+  const [attemptFrozen, setAttemptFrozen] = useState(false);
 
   const handleStartSpeechRecognition = useCallback(async () => {
-    if (recognitionActiveRef.current || voiceCorrectRef.current) {
+    if (
+      stageRef.current !== "voice" ||
+      recognitionActiveRef.current ||
+      recognitionStartingRef.current ||
+      attemptFrozenRef.current
+    ) {
       return;
     }
+
+    recognitionStartingRef.current = true;
 
     try {
       const permission =
@@ -141,6 +228,7 @@ export default function PracticeScreen() {
 
       if (!permission.granted) {
         console.log("🎤 Microphone permission was not granted.");
+        recognitionStartingRef.current = false;
         return;
       }
 
@@ -151,36 +239,150 @@ export default function PracticeScreen() {
       });
 
       recognitionActiveRef.current = true;
+      recognitionStartingRef.current = false;
+      stoppingVoiceRef.current = false;
 
       console.log("🎤 Speech recognition started.");
     } catch (error) {
       recognitionActiveRef.current = false;
+      recognitionStartingRef.current = false;
       console.error("🎤 Failed to start speech recognition:", error);
     }
   }, []);
 
-  const completeCurrentPhrase = useCallback(() => {
-    if (
-      state.status !== "RUNNING" ||
-      !currentPhrase ||
-      !voiceCorrectRef.current ||
-      !expressionCorrectRef.current ||
-      !toneCorrectRef.current
-    ) {
-      return;
-    }
+  const finishStage = useCallback(
+    (finishedStage: PracticeStage, passed: boolean) => {
+      console.log("[Practice][Diagnostic] stage result received", {
+        questionIndex: state.currentPhraseIndex,
+        stage: finishedStage,
+        passed,
+      });
+      if (finishedStage === "tone") {
+        console.log("[Practice][Transition] finishStage tone entry", {
+          timestampMs: Date.now(),
+          phraseId: currentPhrase?.id ?? null,
+          passed,
+          currentStage: stageRef.current,
+          status: state.status,
+        });
+      }
+      if (
+        state.status !== "RUNNING" ||
+        attemptFrozenRef.current ||
+        !currentPhrase ||
+        stageRef.current !== finishedStage ||
+        stageResolvedRef.current
+      ) {
+        return;
+      }
 
-    if (completedPhraseRef.current === currentPhrase.id) {
-      return;
-    }
+      stageResolvedRef.current = true;
+      if (stageTimeoutRef.current) {
+        clearTimeout(stageTimeoutRef.current);
+        stageTimeoutRef.current = null;
+      }
 
-    completedPhraseRef.current = currentPhrase.id;
+      if (finishedStage === "voice") {
+        stoppingVoiceRef.current = true;
+        recognitionActiveRef.current = false;
+        ExpoSpeechRecognitionModule.abort();
+      }
 
-    ExpoSpeechRecognitionModule.abort();
+      const nextResults = {
+        ...stageResults,
+        [`${finishedStage}Correct`]: passed,
+      } as StageResults;
+      setStageResults(nextResults);
 
-    dispatch({ type: "CORRECT_ANSWER" });
-    dispatch({ type: "NEXT_PHRASE" });
-  }, [state.status, currentPhrase?.id, dispatch]);
+      if (!passed) {
+        // A failed stage stays active until the learner passes it.
+        stageResolvedRef.current = false;
+
+        if (finishedStage === "voice") {
+          stoppingVoiceRef.current = true;
+          recognitionActiveRef.current = false;
+          ExpoSpeechRecognitionModule.abort();
+
+          // Restart voice recognition so the learner can immediately try
+          // the same phrase again without advancing the stage.
+          if (voiceRetryTimeoutRef.current) {
+            clearTimeout(voiceRetryTimeoutRef.current);
+          }
+          voiceRetryTimeoutRef.current = setTimeout(() => {
+            voiceRetryTimeoutRef.current = null;
+            if (
+              state.status === "RUNNING" &&
+              stageRef.current === "voice" &&
+              !attemptFrozenRef.current
+            ) {
+              stoppingVoiceRef.current = false;
+              handleStartSpeechRecognition();
+            }
+          }, 600);
+        }
+
+        return;
+      }
+
+      if (finishedStage === "voice") {
+        const nextStage = skipExpressionStage ? "tone" : "expression";
+        stageRef.current = nextStage;
+        setStage(nextStage);
+        stageResolvedRef.current = false;
+        return;
+      }
+
+      if (finishedStage === "expression") {
+        stageRef.current = "tone";
+        setStage("tone");
+        stageResolvedRef.current = false;
+        return;
+      }
+
+      if (completedPhraseRef.current === currentPhrase.id) {
+        return;
+      }
+
+      completedPhraseRef.current = currentPhrase.id;
+      const wordCorrect =
+        nextResults.voiceCorrect &&
+        (expressionOptional || nextResults.expressionCorrect) &&
+        nextResults.toneCorrect;
+
+      console.log("[Practice][Diagnostic] word result evaluated", {
+        questionIndex: state.currentPhraseIndex,
+        voiceCorrect: nextResults.voiceCorrect,
+        expressionCorrect: nextResults.expressionCorrect,
+        toneCorrect: nextResults.toneCorrect,
+        wordCorrect,
+      });
+
+      if (wordCorrect) {
+        dispatch({ type: "CORRECT_ANSWER" });
+      }
+      stageRef.current = "voice";
+      setStage("voice");
+      console.log("[Practice][Transition] before NEXT_PHRASE dispatch", {
+        timestampMs: Date.now(),
+        phraseId: currentPhrase.id,
+        wordCorrect,
+      });
+      dispatch({ type: "NEXT_PHRASE" });
+      console.log("[Practice][Transition] after NEXT_PHRASE dispatch", {
+        timestampMs: Date.now(),
+        phraseId: currentPhrase.id,
+      });
+    },
+    [
+      currentPhrase,
+      dispatch,
+      expressionOptional,
+      handleStartSpeechRecognition,
+      skipExpressionStage,
+      stageResults,
+      state.status,
+    ],
+  );
 
   useSpeechRecognitionEvent("result", (event) => {
     const transcript = event.results[0]?.transcript?.trim() ?? "";
@@ -192,8 +394,10 @@ export default function PracticeScreen() {
       !transcript ||
       !isFinal ||
       state.status !== "RUNNING" ||
+      attemptFrozenRef.current ||
+      stoppingVoiceRef.current ||
       !currentPhrase ||
-      voiceCorrectRef.current ||
+      stageRef.current !== "voice" ||
       wordStates.length === 0
     ) {
       return;
@@ -201,79 +405,37 @@ export default function PracticeScreen() {
 
     console.log("🎤 SPEECH RESULT:", transcript);
 
-    const activeIndex = wordStates.findIndex((w) => w.status !== "correct");
+    const voiceStageStates = alignFullPhrase(
+      transcript,
+      wordStates.map((w) => w.text),
+    );
+    setWordStates(voiceStageStates);
+    finishStage(
+      "voice",
+      voiceStageStates.every((w) => w.status === "correct"),
+    );
+    return;
 
-    if (activeIndex === -1) {
-      // Everything already correct; shouldn't normally happen, but guard anyway.
-      voiceCorrectRef.current = true;
-      ExpoSpeechRecognitionModule.abort();
-      completeCurrentPhrase();
-      return;
-    }
-
-    const hasAnyProgress = wordStates.some((w) => w.status !== "pending");
-
-    let nextWordStates: WordState[];
-
-    if (!hasAnyProgress) {
-      // First attempt on this phrase: align the whole spoken phrase.
-      nextWordStates = alignFullPhrase(
-        transcript,
-        wordStates.map((w) => w.text),
-      );
-      console.log(
-        "🎯 First-pass alignment:",
-        nextWordStates.map((w) => `${w.text}:${w.status}`).join(" "),
-      );
-    } else {
-      // Retry: only the active wrong word needs to be re-said.
-      const { matched, heardAs } = evaluateActiveWord(
-        transcript,
-        wordStates[activeIndex].text,
-      );
-
-      console.log(
-        matched ? "✅ Retry word matched!" : "❌ Retry word still wrong.",
-        `expected="${wordStates[activeIndex].text}" heard="${heardAs}"`,
-      );
-
-      nextWordStates = wordStates.map((w, index) =>
-        index === activeIndex
-          ? matched
-            ? { text: w.text, status: "correct" as const }
-            : { text: w.text, status: "wrong" as const, heardAs }
-          : w,
-      );
-    }
-
-    setWordStates(nextWordStates);
-
-    const allCorrect = nextWordStates.every((w) => w.status === "correct");
-
-    if (allCorrect) {
-      console.log("✅ All words matched! Handing off mic to tone check.");
-      voiceCorrectRef.current = true;
-      ExpoSpeechRecognitionModule.abort();
-
-      // Give Android a moment to fully release the mic from speech
-      // recognition before PracticeTone's raw audio capture starts —
-      // starting both at once is what risks the near-silent-audio bug.
-      if (toneMountTimeoutRef.current) {
-        clearTimeout(toneMountTimeoutRef.current);
-      }
-      toneMountTimeoutRef.current = setTimeout(() => {
-        toneMountTimeoutRef.current = null;
-        setShowToneStep(true);
-      }, 400);
-
-      completeCurrentPhrase();
-    }
   });
 
   useSpeechRecognitionEvent("error", (event) => {
     recognitionActiveRef.current = false;
 
+    // abort() intentionally emits an "aborted" error on some platforms.
+    // Ignore only that expected cleanup event; keep logging other errors.
     console.log("🎤 SPEECH ERROR:", event.error, event.message);
+    if (stoppingVoiceRef.current && event.error === "aborted") {
+      console.log("🎤 Ignoring intentional speech abort.");
+      return;
+    }
+
+    // A non-aborted event during an intentional reset is logged above, but
+    // must not resolve the same voice stage a second time.
+    if (stoppingVoiceRef.current) {
+      return;
+    }
+
+    finishStage("voice", false);
   });
 
   useSpeechRecognitionEvent("end", () => {
@@ -281,45 +443,38 @@ export default function PracticeScreen() {
 
     if (
       state.status !== "RUNNING" ||
+      stageRef.current !== "voice" ||
       !currentPhrase ||
-      voiceCorrectRef.current
+      stoppingVoiceRef.current
     ) {
       return;
     }
 
-    if (restartTimeoutRef.current) {
-      return;
-    }
-
-    restartTimeoutRef.current = setTimeout(() => {
-      restartTimeoutRef.current = null;
-
-      if (
-        state.status === "RUNNING" &&
-        currentPhrase &&
-        !voiceCorrectRef.current
-      ) {
-        handleStartSpeechRecognition();
-      }
-    }, 250);
+    finishStage("voice", false);
   });
 
   useEffect(() => {
-    voiceCorrectRef.current = false;
-    expressionCorrectRef.current = false;
-    toneCorrectRef.current = false;
+    stageRef.current = "voice";
+    stageResolvedRef.current = false;
+    stoppingVoiceRef.current = false;
     completedPhraseRef.current = null;
 
-    setShowToneStep(false);
-    setToneCorrect(false);
+    setStage("voice");
+    setStageResults(EMPTY_STAGE_RESULTS);
     setToneFeedback(null);
+    setLatestPitchHz(null);
 
-    if (toneMountTimeoutRef.current) {
-      clearTimeout(toneMountTimeoutRef.current);
-      toneMountTimeoutRef.current = null;
+    if (stageTimeoutRef.current) {
+      clearTimeout(stageTimeoutRef.current);
+      stageTimeoutRef.current = null;
     }
 
     if (currentPhrase) {
+      console.log("[Practice][Transition] phrase initialized", {
+        timestampMs: Date.now(),
+        phraseId: currentPhrase.id,
+        phraseIndex: state.currentPhraseIndex,
+      });
       setWordStates(
         currentPhrase.text
           .trim()
@@ -329,11 +484,6 @@ export default function PracticeScreen() {
       );
     } else {
       setWordStates([]);
-    }
-
-    if (restartTimeoutRef.current) {
-      clearTimeout(restartTimeoutRef.current);
-      restartTimeoutRef.current = null;
     }
 
     if (state.status !== "RUNNING" || !currentPhrase) {
@@ -347,20 +497,62 @@ export default function PracticeScreen() {
     return () => {
       clearTimeout(timeout);
 
-      if (restartTimeoutRef.current) {
-        clearTimeout(restartTimeoutRef.current);
-        restartTimeoutRef.current = null;
+      if (stageTimeoutRef.current) {
+        clearTimeout(stageTimeoutRef.current);
+        stageTimeoutRef.current = null;
       }
 
-      if (toneMountTimeoutRef.current) {
-        clearTimeout(toneMountTimeoutRef.current);
-        toneMountTimeoutRef.current = null;
+      if (voiceRetryTimeoutRef.current) {
+        clearTimeout(voiceRetryTimeoutRef.current);
+        voiceRetryTimeoutRef.current = null;
       }
 
+      stoppingVoiceRef.current = true;
       recognitionActiveRef.current = false;
+      recognitionStartingRef.current = false;
       ExpoSpeechRecognitionModule.abort();
     };
   }, [state.status, currentPhrase?.id, handleStartSpeechRecognition]);
+
+  useEffect(() => {
+    let previousAt = Date.now();
+    const heartbeat = setInterval(() => {
+      const now = Date.now();
+      console.log("[Practice][Heartbeat] JavaScript scheduling", {
+        timestampMs: now,
+        schedulingLagMs: now - previousAt - 1000,
+      });
+      previousAt = now;
+    }, 1000);
+
+    return () => clearInterval(heartbeat);
+  }, []);
+
+  useEffect(() => {
+    if (stageTimeoutRef.current) {
+      clearTimeout(stageTimeoutRef.current);
+      stageTimeoutRef.current = null;
+    }
+
+    if (state.status !== "RUNNING" || !currentPhrase) {
+      return;
+    }
+
+    stageTimeoutRef.current = setTimeout(() => {
+      console.log("[Practice][Diagnostic] stage timeout", {
+        questionIndex: state.currentPhraseIndex,
+        stage: stageRef.current,
+      });
+      finishStage(stageRef.current, false);
+    }, STAGE_TIMEOUT_MS);
+
+    return () => {
+      if (stageTimeoutRef.current) {
+        clearTimeout(stageTimeoutRef.current);
+        stageTimeoutRef.current = null;
+      }
+    };
+  }, [currentPhrase?.id, finishStage, stage, state.status]);
 
   // =========================================================
   // SAVE PRACTICE RESULT
@@ -369,9 +561,14 @@ export default function PracticeScreen() {
   // Shared by the normal FINISHED flow and Surrender — both should show the
   // same result screen using whatever was actually completed so far.
   const goToResultScreen = useCallback(async () => {
-    try {
-      await savePracticeResult({
-        lessonId: state.level.lessonId,
+    if (savingResultRef.current || resultSavedRef.current) {
+      return;
+    }
+
+    const result =
+      resultSnapshotRef.current ??
+      ({
+        lessonId: resultLessonId ?? state.level.lessonId,
         score: state.score,
         correctAnswers: state.correctAnswers,
         totalQuestions: state.totalQuestions,
@@ -379,24 +576,51 @@ export default function PracticeScreen() {
         xpEarned: state.xpEarned,
         stars: state.stars,
         badge: state.badge,
+      } satisfies SavePracticeResult);
+
+    if (!resultSnapshotRef.current) {
+      resultSnapshotRef.current = result;
+      resultWonRef.current =
+        result.correctAnswers >= state.level.requiredCorrect;
+    }
+
+    attemptFrozenRef.current = true;
+    setAttemptFrozen(true);
+    savingResultRef.current = true;
+    setSavingResult(true);
+    setSaveError(false);
+
+    try {
+      await savePracticeResult(result);
+
+      resultSavedRef.current = true;
+      router.replace({
+        pathname: "/lesson/result",
+        params: {
+          score: result.score.toString(),
+          correct: result.correctAnswers.toString(),
+          total: result.totalQuestions.toString(),
+          accuracy: result.accuracy.toString(),
+          xp: result.xpEarned.toString(),
+          won: String(resultWonRef.current),
+          // For the win-streak bonus on the leaderboard score.
+          lessonId: result.lessonId,
+          // Opened from a structured lesson: the result screen asks for
+          // the learner's self-rating.
+          ...(expressionOptional ? { selfRatingLessonId: result.lessonId } : {}),
+        },
       });
     } catch (error) {
       console.error("Failed to save practice result:", error);
+      setSaveError(true);
+    } finally {
+      savingResultRef.current = false;
+      setSavingResult(false);
     }
-
-    router.replace({
-      pathname: "/lesson/result",
-      params: {
-        score: state.score.toString(),
-        correct: state.correctAnswers.toString(),
-        total: state.totalQuestions.toString(),
-        accuracy: state.accuracy.toString(),
-        xp: state.xpEarned.toString(),
-        won: (state.correctAnswers >= state.level.requiredCorrect).toString(),
-      },
-    });
   }, [
+    expressionOptional,
     router,
+    resultLessonId,
     state.level.lessonId,
     state.level.requiredCorrect,
     state.score,
@@ -419,6 +643,14 @@ export default function PracticeScreen() {
   // =========================================================
 
   const handleSurrender = () => {
+    if (
+      attemptFrozenRef.current ||
+      savingResultRef.current ||
+      resultSavedRef.current
+    ) {
+      return;
+    }
+
     Alert.alert(
       "Surrender Practice?",
       "Are you sure you want to surrender? You'll see your results based on what you've completed so far.",
@@ -431,8 +663,13 @@ export default function PracticeScreen() {
           text: "Surrender",
           style: "destructive",
           onPress: () => {
+            attemptFrozenRef.current = true;
+            setAttemptFrozen(true);
+            dispatch({ type: "PAUSE" });
+            stoppingVoiceRef.current = true;
+            recognitionActiveRef.current = false;
             ExpoSpeechRecognitionModule.abort();
-            goToResultScreen();
+            void goToResultScreen();
           },
         },
       ],
@@ -468,11 +705,33 @@ export default function PracticeScreen() {
   const handleExpressionConfirmed = ({
     expression,
   }: PracticeExpressionResult) => {
+    // Hints mode: the expression is never graded. Signs that may mean
+    // difficulty only offer help; the stage always passes.
+    if (expressionOptional) {
+      if (
+        state.status !== "RUNNING" ||
+        stageRef.current !== "expression" ||
+        attemptFrozenRef.current
+      ) {
+        return;
+      }
+      if (
+        expression === "sad" ||
+        expression === "confused" ||
+        expression === "angry"
+      ) {
+        setShowComfortHint(true);
+      }
+      finishStage("expression", true);
+      return;
+    }
+
     if (
       state.status !== "RUNNING" ||
+      stageRef.current !== "expression" ||
+      attemptFrozenRef.current ||
       !currentPhrase ||
-      expression !== currentPhrase.expectedExpression ||
-      expressionCorrectRef.current
+      expression !== currentPhrase.expectedExpression
     ) {
       return;
     }
@@ -481,8 +740,7 @@ export default function PracticeScreen() {
     // phrase advanced on facial expression alone — voice (and now tone)
     // were never actually required. Routing through completeCurrentPhrase
     // makes expression one of three gates, same as voice and tone.
-    expressionCorrectRef.current = true;
-    completeCurrentPhrase();
+    finishStage("expression", true);
   };
 
   // =========================================================
@@ -495,11 +753,14 @@ export default function PracticeScreen() {
       averagePitch: number;
       vowelLength: VowelLength;
       durationMs: number;
+      reliable: boolean;
     }) => {
       if (
         state.status !== "RUNNING" ||
+        stageRef.current !== "tone" ||
+        attemptFrozenRef.current ||
         !currentPhrase ||
-        toneCorrectRef.current
+        stageResolvedRef.current
       ) {
         return;
       }
@@ -509,19 +770,38 @@ export default function PracticeScreen() {
       // see types/practice.ts. No more defensive casting needed here.
       const expectedTone = currentPhrase.expectedTone;
       const expectedVowelLength = currentPhrase.expectedVowelLength;
+      setLatestPitchHz(
+        result.averagePitch > 0 ? result.averagePitch : null,
+      );
+
+      const unclear =
+        !result.reliable ||
+        (!!expectedVowelLength && result.vowelLength === "unknown");
+
+      if (unclear) {
+        setToneFeedback({
+          tone: result.tone,
+          vowelLength: result.vowelLength,
+          unclear: true,
+        });
+        finishStage("tone", false);
+        return;
+      }
 
       const toneMatches = result.tone === expectedTone;
       const vowelMatches =
         !expectedVowelLength || result.vowelLength === expectedVowelLength;
 
-      setToneFeedback({ tone: result.tone, vowelLength: result.vowelLength });
+      setToneFeedback({
+        tone: result.tone,
+        vowelLength: result.vowelLength,
+      });
 
       if (toneMatches && vowelMatches) {
         console.log("✅ Tone/vowel length matched!");
-        toneCorrectRef.current = true;
-        setToneCorrect(true);
-        completeCurrentPhrase();
+        finishStage("tone", true);
       } else {
+        finishStage("tone", false);
         console.log(
           "❌ Tone/vowel length mismatch.",
           `expected tone="${expectedTone}" heard="${result.tone}"`,
@@ -529,12 +809,36 @@ export default function PracticeScreen() {
         );
       }
     },
-    [state.status, currentPhrase, completeCurrentPhrase],
+    [currentPhrase, finishStage, state.status],
   );
 
   // =========================================================
   // UI
   // =========================================================
+
+  if (!hasPracticeContent) {
+    const handleUnavailableBack = () => {
+      router.dismissTo(DASHBOARD_ROUTE);
+    };
+
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.unavailableContainer}>
+          <Text style={styles.unavailableTitle}>Practice unavailable</Text>
+          <Text style={styles.unavailableText}>
+            Practice is unavailable. The questions for this lesson have not
+            been added yet.
+          </Text>
+          <TouchableOpacity
+            style={styles.unavailableButton}
+            onPress={handleUnavailableBack}
+          >
+            <Text style={styles.unavailableButtonText}>Go Back</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -544,6 +848,7 @@ export default function PracticeScreen() {
           <TouchableOpacity
             style={styles.surrenderButton}
             onPress={handleSurrender}
+            disabled={attemptFrozen || savingResult}
             activeOpacity={0.8}
           >
             <Text style={styles.surrenderButtonText}>Surrender</Text>
@@ -551,11 +856,6 @@ export default function PracticeScreen() {
 
           <Text style={styles.headerTitle}>Practice</Text>
 
-          <View style={styles.timerContainer}>
-            <Text style={styles.timerIcon}>⏱</Text>
-
-            <Text style={styles.timer}>{state.timeLeft}s</Text>
-          </View>
         </View>
 
         {/* Lesson Information */}
@@ -626,36 +926,48 @@ export default function PracticeScreen() {
           {/* Tone / vowel-length step — only appears once every word is
               speech-correct, since it takes over the mic from speech
               recognition (see handoff notes on the mic-conflict fix). */}
-          {showToneStep && currentPhrase && (
+          {stage === "tone" && currentPhrase && (
             <View style={styles.toneSection}>
               <Text style={styles.toneLabel}>
-                {toneCorrect
-                  ? "Tone confirmed!"
-                  : "Now say it again with the right tone"}
+                &quot;Now say it again with the right tone&quot;
               </Text>
 
-              {!toneCorrect && (
-                <PracticeTone
-                  expectedTone={currentPhrase.expectedTone}
-                  expectedVowelLength={currentPhrase.expectedVowelLength}
-                  onToneConfirmed={handleToneConfirmed}
-                />
-              )}
+              <PracticeTone
+                expectedTone={currentPhrase.expectedTone}
+                expectedVowelLength={currentPhrase.expectedVowelLength}
+                pitchPilotMode
+                onPitchUpdate={setLatestPitchHz}
+                onToneConfirmed={handleToneConfirmed}
+                onUnavailable={() => finishStage("tone", false)}
+              />
 
-              {toneFeedback && !toneCorrect && (
+              <Text style={styles.pitchHzText}>
+                Measured pitch:{" "}
+                {latestPitchHz === null
+                  ? "Waiting for pitch..."
+                  : latestPitchHz.toFixed(1) + " Hz"}
+              </Text>
+
+              {toneFeedback && (
                 <Text style={styles.toneMismatch}>
-                  Heard: {toneFeedback.tone} tone
-                  {toneFeedback.vowelLength !== "unknown"
-                    ? `, ${toneFeedback.vowelLength} vowel`
-                    : ""}{" "}
-                  — try again
+                  {toneFeedback.unclear
+                    ? "I couldn't hear a stable pitch. Try again in a clear, steady voice."
+                    : "Heard: " +
+                      toneFeedback.tone +
+                      " tone" +
+                      (toneFeedback.vowelLength !== "unknown"
+                        ? ", " + toneFeedback.vowelLength + " vowel"
+                        : "") +
+                      " — try again with a little more " +
+                      currentPhrase.expectedTone +
+                      " pitch."}
                 </Text>
               )}
             </View>
           )}
 
           {/* Camera */}
-          <FaceDetectionProvider
+          {stage === "expression" && <FaceDetectionProvider
             options={{
               performanceMode: "fast",
               classificationMode: true,
@@ -663,13 +975,64 @@ export default function PracticeScreen() {
           >
             {currentPhrase && (
               <PracticeCamera
-                expectedExpression={currentPhrase.expectedExpression}
+                expectedExpression={
+                  expressionOptional
+                    ? undefined
+                    : currentPhrase.expectedExpression
+                }
                 phraseId={currentPhrase.id}
                 onExpressionConfirmed={handleExpressionConfirmed}
+                onUnavailable={() => finishStage("expression", false)}
               />
             )}
-          </FaceDetectionProvider>
+          </FaceDetectionProvider>}
         </View>
+
+        {showComfortHint && (
+          <View style={styles.comfortHint}>
+            <Text style={styles.comfortHintTitle}>
+              Need a little help? That&apos;s okay.
+            </Text>
+            {currentPhrase?.example || currentPhrase?.meaning ? (
+              <Text style={styles.comfortHintText}>
+                Hint: &quot;{currentPhrase.text}&quot; means &quot;
+                {currentPhrase.example || currentPhrase.meaning}&quot;.
+              </Text>
+            ) : null}
+            <View style={styles.comfortHintActions}>
+              {isRunning && (
+                <TouchableOpacity
+                  style={styles.comfortHintButton}
+                  onPress={() => {
+                    setShowComfortHint(false);
+                    stoppingVoiceRef.current = true;
+                    recognitionActiveRef.current = false;
+                    ExpoSpeechRecognitionModule.stop();
+                    dispatch({ type: "PAUSE" });
+                  }}
+                >
+                  <Text style={styles.comfortHintButtonText}>Take a break</Text>
+                </TouchableOpacity>
+              )}
+              <TouchableOpacity
+                style={styles.comfortHintButton}
+                onPress={() => {
+                  setShowComfortHint(false);
+                  if (router.canGoBack()) router.back();
+                  else router.replace("/lessons");
+                }}
+              >
+                <Text style={styles.comfortHintButtonText}>Review lesson</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.comfortHintButton}
+                onPress={() => setShowComfortHint(false)}
+              >
+                <Text style={styles.comfortHintButtonText}>Dismiss</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
 
         {/* Score */}
         <View style={styles.scoreRow}>
@@ -689,6 +1052,28 @@ export default function PracticeScreen() {
         </View>
 
         {/* Status */}
+        {saveError && (
+          <View style={styles.saveErrorContainer}>
+            <Text style={styles.saveErrorText}>
+              Your result was not saved. Check your connection and try again.
+            </Text>
+
+            <TouchableOpacity
+              style={styles.saveRetryButton}
+              onPress={() => {
+                void goToResultScreen();
+              }}
+              disabled={savingResult}
+            >
+              {savingResult ? (
+                <ActivityIndicator color="#FFFFFF" />
+              ) : (
+                <Text style={styles.saveRetryButtonText}>Retry Saving</Text>
+              )}
+            </TouchableOpacity>
+          </View>
+        )}
+
         <View style={styles.statusContainer}>
           <View
             style={[
@@ -713,6 +1098,7 @@ export default function PracticeScreen() {
               dispatch({ type: "START" });
               handleStartSpeechRecognition();
             }}
+            disabled={attemptFrozen || savingResult}
             activeOpacity={0.85}
           >
             <Text style={styles.primaryButtonText}>Start Practice</Text>
@@ -724,6 +1110,7 @@ export default function PracticeScreen() {
           <TouchableOpacity
             style={styles.primaryButton}
             onPress={() => dispatch({ type: "RESUME" })}
+            disabled={attemptFrozen || savingResult}
             activeOpacity={0.85}
           >
             <Text style={styles.primaryButtonText}>Resume Practice</Text>
@@ -735,14 +1122,18 @@ export default function PracticeScreen() {
           <TouchableOpacity
             style={styles.secondaryButton}
             onPress={() => {
+              stoppingVoiceRef.current = true;
+              recognitionActiveRef.current = false;
               ExpoSpeechRecognitionModule.stop();
               dispatch({ type: "PAUSE" });
             }}
+            disabled={attemptFrozen || savingResult}
             activeOpacity={0.85}
           >
             <Text style={styles.secondaryButtonText}>Pause</Text>
           </TouchableOpacity>
         )}
+
       </View>
     </SafeAreaView>
   );
@@ -754,11 +1145,89 @@ const styles = StyleSheet.create({
     backgroundColor: "#F8F8FC",
   },
 
+  comfortHint: {
+    marginTop: 12,
+    padding: 14,
+    borderRadius: 16,
+    backgroundColor: "#FFF7DB",
+  },
+
+  comfortHintTitle: {
+    color: "#8A5A1E",
+    fontSize: 15,
+    fontWeight: "800",
+  },
+
+  comfortHintText: {
+    marginTop: 6,
+    color: "#6B5532",
+    fontSize: 14,
+    lineHeight: 20,
+  },
+
+  comfortHintActions: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginTop: 10,
+  },
+
+  comfortHintButton: {
+    minHeight: 44,
+    justifyContent: "center",
+    paddingHorizontal: 14,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: "#8A5A1E",
+  },
+
+  comfortHintButtonText: {
+    color: "#8A5A1E",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+
   container: {
     flex: 1,
     paddingHorizontal: 20,
     paddingTop: 30,
     paddingBottom: 20,
+  },
+
+  unavailableContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 24,
+  },
+
+  unavailableTitle: {
+    fontSize: 24,
+    fontWeight: "800",
+    color: "#222",
+    textAlign: "center",
+  },
+
+  unavailableText: {
+    marginTop: 10,
+    fontSize: 16,
+    lineHeight: 23,
+    color: "#666",
+    textAlign: "center",
+  },
+
+  unavailableButton: {
+    marginTop: 22,
+    paddingHorizontal: 22,
+    paddingVertical: 12,
+    borderRadius: 12,
+    backgroundColor: "#5E3BEE",
+  },
+
+  unavailableButtonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "700",
   },
 
   /* =========================
@@ -782,7 +1251,7 @@ const styles = StyleSheet.create({
   },
 
   surrenderButtonText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
     color: "#EF4444",
   },
@@ -791,26 +1260,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "800",
     color: "#222",
-  },
-
-  timerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#ECEBFF",
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 14,
-  },
-
-  timerIcon: {
-    fontSize: 16,
-    marginRight: 5,
-  },
-
-  timer: {
-    fontSize: 16,
-    fontWeight: "800",
-    color: "#5E3BEE",
   },
 
   /* =========================
@@ -831,7 +1280,7 @@ const styles = StyleSheet.create({
 
   lessonId: {
     marginTop: 4,
-    fontSize: 13,
+    fontSize: 15,
     color: "#888",
   },
 
@@ -850,13 +1299,13 @@ const styles = StyleSheet.create({
   },
 
   progressLabel: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "700",
     color: "#555",
   },
 
   progressCount: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "700",
     color: "#5E3BEE",
   },
@@ -897,7 +1346,7 @@ const styles = StyleSheet.create({
   },
 
   phraseLabel: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "600",
     color: "#888",
     marginBottom: 12,
@@ -930,7 +1379,7 @@ const styles = StyleSheet.create({
   },
 
   heardText: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "700",
     color: "#EF4444",
     marginBottom: 2,
@@ -953,7 +1402,7 @@ const styles = StyleSheet.create({
   },
 
   retryHint: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "600",
     color: "#EF4444",
     marginBottom: 4,
@@ -973,15 +1422,23 @@ const styles = StyleSheet.create({
   },
 
   toneLabel: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "700",
     color: "#5E3BEE",
     marginBottom: 4,
     textAlign: "center",
   },
 
+  pitchHzText: {
+    marginTop: 4,
+    fontSize: 15,
+    fontWeight: "700",
+    color: "#410FA3",
+    textAlign: "center",
+  },
+
   toneMismatch: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "600",
     color: "#EF4444",
     marginTop: 4,
@@ -1007,7 +1464,7 @@ const styles = StyleSheet.create({
   },
 
   scoreLabel: {
-    fontSize: 13,
+    fontSize: 15,
     color: "#777",
     fontWeight: "600",
   },
@@ -1030,6 +1487,36 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
 
+  saveErrorContainer: {
+    backgroundColor: "#FEF2F2",
+    borderColor: "#FECACA",
+    borderRadius: 14,
+    borderWidth: 1,
+    marginBottom: 12,
+    padding: 12,
+  },
+
+  saveErrorText: {
+    color: "#B91C1C",
+    fontSize: 15,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+
+  saveRetryButton: {
+    alignItems: "center",
+    backgroundColor: "#5E3BEE",
+    borderRadius: 12,
+    marginTop: 10,
+    paddingVertical: 10,
+  },
+
+  saveRetryButtonText: {
+    color: "#FFFFFF",
+    fontSize: 15,
+    fontWeight: "700",
+  },
+
   statusDot: {
     width: 9,
     height: 9,
@@ -1047,7 +1534,7 @@ const styles = StyleSheet.create({
   },
 
   statusText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "600",
     color: "#666",
   },
@@ -1066,7 +1553,7 @@ const styles = StyleSheet.create({
 
   primaryButtonText: {
     color: "#FFFFFF",
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: "800",
   },
 
@@ -1082,7 +1569,7 @@ const styles = StyleSheet.create({
 
   secondaryButtonText: {
     color: "#5E3BEE",
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: "800",
   },
 });

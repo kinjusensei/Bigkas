@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import {
   createInitialState,
   practiceReducer,
@@ -11,24 +11,6 @@ export function usePractice(level: PracticeLevel) {
     level,
     createInitialState,
   );
-
-  // Timer
-  useEffect(() => {
-    if (state.status !== "RUNNING") return;
-
-    const interval = setInterval(() => {
-      dispatch({ type: "TICK" });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [state.status]);
-
-  // Auto finish when timer reaches zero
-  useEffect(() => {
-    if (state.timeLeft <= 0) {
-      dispatch({ type: "FINISH" });
-    }
-  }, [state.timeLeft]);
 
   const currentPhrase = state.level.phrases[state.currentPhraseIndex];
 

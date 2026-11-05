@@ -230,7 +230,7 @@ export default function UserProfileScreen() {
 
 const styles = StyleSheet.create({
   loadingContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F9FAFB', gap: 12 },
-  loadingText: { fontSize: 15, color: '#666' },
+  loadingText: { fontSize: 18, color: '#666' },
   container: { flex: 1, backgroundColor: '#F9FAFB' },
 
   header: { backgroundColor: '#410FA3', paddingHorizontal: 24, paddingTop: 20, paddingBottom: 24, flexDirection: 'row', alignItems: 'center', gap: 12 },
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   backButtonText: { fontSize: 26, color: '#FFFFFF', fontWeight: '300', lineHeight: 30 },
   headerText: { flex: 1, gap: 4 },
   headerTitle: { fontSize: 20, fontWeight: '800', color: '#FFFFFF' },
-  headerSub: { fontSize: 14, color: 'rgba(255,255,255,0.75)' },
+  headerSub: { fontSize: 15, color: 'rgba(255,255,255,0.75)' },
 
   scroll: { padding: 16, gap: 16, paddingBottom: 40 },
 
@@ -249,26 +249,26 @@ const styles = StyleSheet.create({
   avatarLetter: { fontSize: 32, fontWeight: '800', color: '#410FA3' },
   profileName: { fontSize: 22, fontWeight: '800', color: '#1a1a1a' },
   levelBadge: { paddingHorizontal: 14, paddingVertical: 6, borderRadius: 999 },
-  levelBadgeText: { fontSize: 13, fontWeight: '700' },
-  xpText: { fontSize: 14, color: '#666', fontWeight: '500' },
+  levelBadgeText: { fontSize: 15, fontWeight: '700' },
+  xpText: { fontSize: 15, color: '#666', fontWeight: '500' },
 
   statsRow: { flexDirection: 'row', gap: 10 },
   statCard: { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 14, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: '#E5E7EB', gap: 4 },
   statNum: { fontSize: 24, fontWeight: '800', color: '#410FA3' },
-  statLabel: { fontSize: 11, color: '#999', fontWeight: '500' },
+  statLabel: { fontSize: 15, color: '#999', fontWeight: '500' },
 
   section: { gap: 10 },
-  sectionTitle: { fontSize: 17, fontWeight: '800', color: '#1a1a1a' },
-  sectionSub: { fontSize: 13, color: '#999', marginTop: -4 },
+  sectionTitle: { fontSize: 18, fontWeight: '800', color: '#1a1a1a' },
+  sectionSub: { fontSize: 15, color: '#999', marginTop: -4 },
 
   achievementCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFFFFF', borderRadius: 14, padding: 14, gap: 12, borderWidth: 1, borderColor: '#E5E7EB' },
   achievementLocked: { opacity: 0.6 },
   achievementIcon: { width: 48, height: 48, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   achievementEmoji: { fontSize: 24 },
   achievementInfo: { flex: 1, gap: 2 },
-  achievementTitle: { fontSize: 14, fontWeight: '700', color: '#1a1a1a' },
-  achievementDesc: { fontSize: 12, color: '#666' },
-  achievementXP: { fontSize: 11, color: '#DC2626', fontWeight: '600', marginTop: 2 },
+  achievementTitle: { fontSize: 18, fontWeight: '700', color: '#1a1a1a' },
+  achievementDesc: { fontSize: 15, color: '#666' },
+  achievementXP: { fontSize: 15, color: '#DC2626', fontWeight: '600', marginTop: 2 },
   lockedText: { color: '#9CA3AF' },
   earnedBadge: { width: 28, height: 28, borderRadius: 999, backgroundColor: '#1D9E75', alignItems: 'center', justifyContent: 'center' },
   earnedBadgeText: { fontSize: 14, color: '#FFFFFF', fontWeight: '800' },
@@ -277,10 +277,10 @@ const styles = StyleSheet.create({
   badgeCard: { width: '47%', backgroundColor: '#FFFFFF', borderRadius: 14, padding: 14, alignItems: 'center', borderWidth: 1, borderColor: '#E5E7EB', gap: 6 },
   badgeLocked: { opacity: 0.5 },
   badgeEmoji: { fontSize: 30 },
-  badgeTitle: { fontSize: 13, fontWeight: '700', color: '#1a1a1a', textAlign: 'center' },
-  badgeDesc: { fontSize: 11, color: '#999', textAlign: 'center' },
-  badgeXP: { fontSize: 11, color: '#DC2626', fontWeight: '600' },
+  badgeTitle: { fontSize: 18, fontWeight: '700', color: '#1a1a1a', textAlign: 'center' },
+  badgeDesc: { fontSize: 15, color: '#999', textAlign: 'center' },
+  badgeXP: { fontSize: 15, color: '#DC2626', fontWeight: '600' },
 
   backBtn: { marginTop: 8, backgroundColor: '#410FA3', paddingHorizontal: 24, paddingVertical: 12, borderRadius: 12 },
-  backBtnText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  backBtnText: { color: '#fff', fontWeight: '700', fontSize: 18 },
 });

@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
 
   subtitle: {
     marginTop: 5,
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 20,
     color: "#7B7490",
     marginBottom: 18,
@@ -369,7 +369,7 @@ const styles = StyleSheet.create({
 
   cardLabel: {
     marginTop: 10,
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
     color: "#6B6480",
   },
@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
   },
 
   cancelText: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "700",
     color: "#8B84A0",
   },

@@ -217,12 +217,12 @@ const styles = StyleSheet.create({
     paddingTop: 8,
   },
   backText: {
-    fontSize: 14,
+    fontSize: 18,
     color: '#999',
     fontWeight: '600',
   },
   skipText: {
-    fontSize: 14,
+    fontSize: 18,
     color: '#999',
     fontWeight: '600',
   },
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     borderRadius: 999,
   },
   dialectBadgeText: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '800',
     color: '#FFFFFF',
   },
@@ -296,12 +296,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   nextBtnText: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '800',
     color: '#FFFFFF',
   },
   pageCounter: {
-    fontSize: 13,
+    fontSize: 15,
     color: '#999',
     fontWeight: '500',
   },

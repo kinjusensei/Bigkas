@@ -5,10 +5,11 @@ export type PracticeExpression =
   | "angry"
   | "sad"
   | "neutral"
+  | "shocked"
+  | "confused"
   | "unknown";
 
 export type ExpectedPracticeExpression = Exclude<PracticeExpression, "unknown">;
-
 // The pitch-level tone a phrase is expected to be said in. Note this
 // intentionally excludes "unknown" — that's a valid *detection* result
 // (from PracticeTone) when nothing usable was captured, but never a valid
@@ -25,19 +26,45 @@ export interface PracticeExpressionResult {
   smilingProbability: number;
 }
 
+// One word of a phrase with its English meaning — shown on the lesson
+// board (app/lessons.tsx) before the learner starts practice.
+export interface PracticeWord {
+  word: string;
+  meaning: string;
+  audioUrl?: string;
+}
+
 export interface PracticePhrase {
   id: number;
   text: string;
+  meaning?: string;
+  exampleSentence?: string;
+  // Optional reading-screen extras (app/lesson/[lessonId].tsx). Cards for
+  // these stay hidden until a phrase has them.
+  // `example` is the bold line under the divider in the word card (falls
+  // back to the meaning); `howToUse` is the "How to use it" card text
+  // (falls back to the word list). Empty strings count as unset.
+  example?: string;
+  // Small gray line under the big word in the word card. Hidden when empty.
+  subTranslation?: string;
+  howToUse?: string;
+  // English translation shown under `howToUse` in the "How to use it" card.
+  howToUseTranslation?: string;
+  pronunciation?: string;
+  exampleTranslation?: string;
+  pronunciationTip?: string;
   expectedExpression: ExpectedPracticeExpression;
   expectedTone: ExpectedTone;
   expectedVowelLength?: ExpectedVowelLength;
+  audioUrl?: string;
+  words?: PracticeWord[];
 }
 
 export interface PracticeLevel {
   id: number;
   lessonId: string;
   title: string;
-  timeLimit: number;
+  subtitle?: string;
   requiredCorrect: number;
   phrases: PracticePhrase[];
 }
@@ -45,7 +72,6 @@ export interface PracticeLevel {
 export interface PracticeState {
   status: GameStatus;
   level: PracticeLevel;
-  timeLeft: number;
   currentPhraseIndex: number;
   correctAnswers: number;
   score: number;

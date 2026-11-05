@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: '#DC2626',
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '500',
     textAlign: 'center',
   },
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
   },
   submitBtnText: {
     color: '#FFFFFF',
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '700',
   },
   resendBtn: {
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   timerText: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#999',
     textAlign: 'center',
     paddingVertical: 12,

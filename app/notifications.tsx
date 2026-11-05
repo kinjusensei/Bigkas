@@ -13,7 +13,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNotifications } from "../hooks/useNotifications";
 import type { AppNotification } from "../services/notificationService";
-import { timeAgo } from "../utils/reportStatus";
+import { formatTimestamp } from "../utils/formatDate";
 
 const C = {
   bg: "#F7F8FA",
@@ -89,12 +89,19 @@ export default function NotificationsScreen() {
               item={item}
               expanded={expandedId === item.id}
               onPress={() => handleItemPress(item)}
+              onReply={() => {
+                if (!item.is_read) markRead(item.id);
+                router.push({
+                  pathname: "/report-thread/[id]",
+                  params: { id: item.report_id! },
+                } as any);
+              }}
             />
           )}
           ListEmptyComponent={
             error ? (
               <View style={styles.center}>
-                <Text style={styles.emptyTitle}>Couldn't load notifications</Text>
+                <Text style={styles.emptyTitle}>Couldn&apos;t load notifications</Text>
                 <Text style={styles.emptyBody}>{error}</Text>
                 <Pressable onPress={handleRefresh} style={styles.retryButton}>
                   <Text style={styles.retryText}>Try again</Text>
@@ -120,12 +127,17 @@ function NotificationRow({
   item,
   expanded,
   onPress,
+  onReply,
 }: {
   item: AppNotification;
   expanded: boolean;
   onPress: () => void;
+  onReply: () => void;
 }) {
-  const isReport = item.kind === "report_response";
+  const isReport = item.kind === "report_response" || item.kind === "report_seen";
+  const isSeen = item.kind === "report_seen";
+  // report_id is null if the report was deleted after the reply went out.
+  const canReply = isReport && item.report_id !== null;
 
   return (
     <Pressable
@@ -142,7 +154,7 @@ function NotificationRow({
         style={[styles.iconWell, { backgroundColor: isReport ? C.reportWell : C.globalWell }]}
       >
         <Ionicons
-          name={isReport ? "chatbubble-ellipses-outline" : "megaphone-outline"}
+          name={isSeen ? "eye-outline" : isReport ? "chatbubble-ellipses-outline" : "megaphone-outline"}
           size={20}
           color={isReport ? C.report : C.global}
         />
@@ -150,8 +162,8 @@ function NotificationRow({
 
       <View style={styles.rowText}>
         <View style={styles.rowTop}>
-          <Text style={styles.kindLabel}>{isReport ? "Report reply" : "Announcement"}</Text>
-          <Text style={styles.time}>{timeAgo(item.created_at)}</Text>
+          <Text style={styles.kindLabel}>{isSeen ? "Report seen" : isReport ? "Report reply" : "Announcement"}</Text>
+          <Text style={styles.time}>{formatTimestamp(item.created_at)}</Text>
         </View>
         <Text
           style={[styles.title, !item.is_read && styles.titleUnread]}
@@ -162,6 +174,17 @@ function NotificationRow({
         <Text style={styles.body} numberOfLines={expanded ? undefined : 2}>
           {item.body}
         </Text>
+        {canReply && (
+          <Pressable
+            onPress={onReply}
+            accessibilityRole="button"
+            accessibilityLabel="Reply to the Bigkas team about this report"
+            style={({ pressed }) => [styles.replyButton, pressed && styles.rowPressed]}
+          >
+            <Ionicons name="arrow-undo-outline" size={18} color={C.report} />
+            <Text style={styles.replyText}>Reply</Text>
+          </Pressable>
+        )}
       </View>
 
       {!item.is_read && <View style={styles.unreadDot} />}
@@ -182,10 +205,10 @@ const styles = StyleSheet.create({
     backgroundColor: C.surface,
   },
   backButton: { minWidth: 90 },
-  backText: { fontSize: 16, color: C.accent, fontWeight: "600" },
-  headerTitle: { fontSize: 17, fontWeight: "700", color: C.text },
+  backText: { fontSize: 18, color: C.accent, fontWeight: "600" },
+  headerTitle: { fontSize: 18, fontWeight: "700", color: C.text },
   markAllButton: { minWidth: 90, alignItems: "flex-end" },
-  markAllText: { fontSize: 14, color: C.accent, fontWeight: "600" },
+  markAllText: { fontSize: 15, color: C.accent, fontWeight: "600" },
   disabledText: { color: "#B0B6BF" },
 
   list: { paddingVertical: 8 },
@@ -211,11 +234,23 @@ const styles = StyleSheet.create({
   },
   rowText: { flex: 1 },
   rowTop: { flexDirection: "row", justifyContent: "space-between", marginBottom: 2 },
-  kindLabel: { fontSize: 12, color: C.muted, fontWeight: "600" },
-  time: { fontSize: 12, color: C.muted },
-  title: { fontSize: 15, color: C.text, fontWeight: "500", marginBottom: 2 },
+  kindLabel: { fontSize: 15, color: C.muted, fontWeight: "600" },
+  time: { fontSize: 15, color: C.muted },
+  title: { fontSize: 18, color: C.text, fontWeight: "500", marginBottom: 2 },
   titleUnread: { fontWeight: "700" },
-  body: { fontSize: 14, color: "#4B5563", lineHeight: 20 },
+  body: { fontSize: 15, color: "#4B5563", lineHeight: 20 },
+  replyButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    gap: 6,
+    marginTop: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 999,
+    backgroundColor: C.reportWell,
+  },
+  replyText: { fontSize: 18, color: C.report, fontWeight: "700" },
   unreadDot: {
     width: 8,
     height: 8,
@@ -232,8 +267,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     paddingVertical: 48,
   },
-  emptyTitle: { fontSize: 16, fontWeight: "700", color: C.text, marginTop: 12 },
-  emptyBody: { fontSize: 14, color: C.muted, textAlign: "center", marginTop: 6, lineHeight: 20 },
+  emptyTitle: { fontSize: 18, fontWeight: "700", color: C.text, marginTop: 12 },
+  emptyBody: { fontSize: 15, color: C.muted, textAlign: "center", marginTop: 6, lineHeight: 20 },
   retryButton: {
     marginTop: 16,
     paddingHorizontal: 20,

@@ -1,10 +1,11 @@
-import { usePathname, useRouter } from "expo-router";
-import { useEffect, useRef, useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
+import { useFocusEffect, useRouter } from "expo-router";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator,
-  Animated,
   Image,
-  Modal,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -12,17 +13,87 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { colors, radius, shadow, spacing, typography } from "../constant/theme";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
+import { useLessonAudio } from "../components/lesson/useLessonAudio";
+import ProfileMenu, { MenuAnchor } from "../components/ProfileMenu";
+import { bigkas, MIN_TAP } from "../constant/bigkasTheme";
+import { spacing, typography } from "../constant/theme";
+import { structuredLessonsById } from "../data/lessons/structuredLessons";
+import { practiceLevels } from "../data/practiceData";
+import { useLevelUnlockCelebration } from "../hooks/useLevelUnlockCelebration";
+import { useSeenBadges } from "../hooks/useSeenBadges";
+import { useStoryProgress } from "../hooks/useStoryProgress";
 import { updateDailyStreak } from "../services/streak";
 import { supabase } from "../services/supabase";
+import { LessonDialect, StructuredLesson } from "../types/structuredLesson";
 import { resolveAvatarSource } from "../utils/avatars";
+import { levelProgress } from "../utils/lessonCompletion";
+import {
+  currentTierIndex,
+  LESSONS_PER_TIER,
+  TierLanguage,
+  tierLessonIds,
+  TIERS,
+} from "../utils/lessonTiers";
+import { openLesson, UNLOCK_ALL_LESSONS } from "../utils/openLesson";
 import AvatarPicker from "./components/AvatarPicker";
+import BottomNav, {
+  BOTTOM_NAV_GAP,
+  BOTTOM_NAV_HEIGHT,
+} from "./components/BottomNav";
 import NotificationBell from "./components/NotificationBell";
 
-const logoutIcon = require("../assets/images/logout.png");
-const trophyIcon = require("../assets/images/leaderboard-trophy.png");
 const mascotImage = require("../assets/images/bigkas-mascot.png");
+
+// Lessons shown on the Home path at a time.
+const PATH_LENGTH = 5;
+
+// Activities with a screen in the structured flow, plus the ones kept as
+// extra activities (Tagalog Lesson 1: match, fill in, arrange, speaking
+// and self-introduction = 5).
+function countActivities(lesson: StructuredLesson): number {
+  let count = 0;
+  if (lesson.matchActivity?.pairs.length) count += 1;
+  if (lesson.choiceActivity?.questions.length) count += 1;
+  const fillItems = lesson.fillInBlanks?.items ?? [];
+  if (fillItems.length) {
+    // Lessons with several titled fill-in activities in one step.
+    const titles = new Set(fillItems.map((item) => item.title).filter(Boolean));
+    count += Math.max(1, titles.size);
+  }
+  if (lesson.arrangeWords?.items.length) count += 1;
+  if (lesson.speaking?.phrases.length) count += 1;
+  return count + (lesson.extraActivities?.length ?? 0);
+}
+
+// What the hero card shows for a lesson, read from the lesson data.
+function getLessonSummary(lessonId: string, lessonNumber: number) {
+  const practice = practiceLevels.find((level) => level.lessonId === lessonId);
+  const structured = structuredLessonsById[lessonId];
+  const vocabulary = structured
+    ? structured.vocabulary?.length ||
+      (structured.expressionGroups ?? []).reduce(
+        (sum, group) => sum + group.items.length,
+        0,
+      )
+    : (practice?.phrases.length ?? 0);
+
+  return {
+    title: structured?.title ?? practice?.title ?? null,
+    subtitle: practice?.subtitle ?? null,
+    firstPhrase: practice?.phrases[0] ?? null,
+    vocabulary,
+    // Lessons without the structured flow: pretest + practice game.
+    activities: structured ? countActivities(structured) : 2,
+    // Same XP rule as the lessons board (app/lessons.tsx).
+    xp:
+      structured?.rewards?.total ??
+      10 + 10 * (Math.floor(((practice?.id ?? lessonNumber) - 1) / 2) + 1),
+  };
+}
 
 function Avatar({
   size,
@@ -76,7 +147,17 @@ function Avatar({
 
 export default function HomeScreen() {
   const router = useRouter();
-  const pathname = usePathname();
+  const insets = useSafeAreaInsets();
+  const {
+    loading: progressLoading,
+    isLessonComplete,
+    isLessonUnlocked,
+    isTierOpen,
+    getCompletion,
+  } = useStoryProgress();
+
+  // Opens "New level unlocked" once after Easy/Intermediate is finished.
+  useLevelUnlockCelebration({ loading: progressLoading, isTierOpen });
 
   const [displayName, setDisplayName] = useState("");
   const [photoUri, setPhotoUri] = useState<string | null>(null);
@@ -84,34 +165,39 @@ export default function HomeScreen() {
 
   const [currentStreak, setCurrentStreak] = useState(0);
   const [currentWinningStreak, setCurrentWinningStreak] = useState(0);
+  const [totalXp, setTotalXp] = useState(0);
 
+  const [userId, setUserId] = useState<string | null>(null);
   const [menuVisible, setMenuVisible] = useState(false);
+  const [menuAnchor, setMenuAnchor] = useState<MenuAnchor | null>(null);
+  const menuButtonRef = useRef<View>(null);
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
 
   // Opens the avatar picker (presets + custom upload). Replaces the old
   // handlePickPhoto, which went straight to the photo library.
   const [pickerVisible, setPickerVisible] = useState(false);
 
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  // Badges = lessons with a passed assessment (same rule as the Profile
+  // screen), from the progress already loaded for the lesson cards.
+  const earnedBadgeIds = progressLoading
+    ? []
+    : practiceLevels
+        .filter((level) => getCompletion(level.lessonId)?.passed)
+        .map((level) => level.lessonId);
+  const { newCount: newBadgeCount, markAllSeen: markBadgesSeen } =
+    useSeenBadges(progressLoading ? null : userId, earnedBadgeIds);
 
   const [selectedDialect, setSelectedDialect] = useState(0);
-  const [selectedLevel, setSelectedLevel] = useState(0);
+  // Node picked on the path; null = the next lesson to do.
+  const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
 
-  const [dialects, setDialects] = useState([
+  const [dialects] = useState([
     {
       id: 0,
       name: "Tagalog",
       lesson: "Basic Greetings",
       subtitle: "Learn how to greet people in Tagalog.",
-      difficulty: "Beginner",
       duration: "5–10 min",
-      levels: [
-        { id: 1, lessonId: "tagalog_1", completed: false },
-        { id: 2, lessonId: "tagalog_2", completed: false },
-        { id: 3, lessonId: "tagalog_3", completed: false },
-        { id: 4, lessonId: "tagalog_4", completed: false },
-        { id: 5, lessonId: "tagalog_5", completed: false },
-      ],
     },
 
     {
@@ -119,13 +205,6 @@ export default function HomeScreen() {
       name: "Kapampangan",
       lesson: "Pangumusta",
       subtitle: "Learn basic greetings in Kapampangan.",
-      levels: [
-        { id: 1, lessonId: "kapampangan_1", completed: false },
-        { id: 2, lessonId: "kapampangan_2", completed: false },
-        { id: 3, lessonId: "kapampangan_3", completed: false },
-        { id: 4, lessonId: "kapampangan_4", completed: false },
-        { id: 5, lessonId: "kapampangan_5", completed: false },
-      ],
     },
 
     {
@@ -133,17 +212,22 @@ export default function HomeScreen() {
       name: "Waray",
       lesson: "Maupay nga Aga",
       subtitle: "Learn basic greetings in Waray.",
-      levels: [
-        { id: 1, lessonId: "waray_1", completed: false },
-        { id: 2, lessonId: "waray_2", completed: false },
-        { id: 3, lessonId: "waray_3", completed: false },
-        { id: 4, lessonId: "waray_4", completed: false },
-        { id: 5, lessonId: "waray_5", completed: false },
-      ],
     },
   ]);
 
   const currentDialect = dialects[selectedDialect];
+
+  // Pronunciation for the hero card's first phrase (TTS for Tagalog;
+  // Kapampangan and Waray show "Audio coming soon").
+  const audio = useLessonAudio(
+    currentDialect.name.toLowerCase() as LessonDialect,
+  );
+  const stopAudio = audio.stop;
+
+  // Language carousel: one page per dialect, kept in sync with
+  // selectedDialect (language button, swipe and dots all use it).
+  const carouselRef = useRef<ScrollView>(null);
+  const [pageWidth, setPageWidth] = useState(0);
 
   function nextDialect() {
     setSelectedDialect((prev) => (prev + 1) % dialects.length);
@@ -157,27 +241,80 @@ export default function HomeScreen() {
     loadUser();
   }, []);
 
+  // XP, level and win streak, reloaded whenever the dashboard comes back
+  // into view (e.g. after finishing a lesson).
+  const loadStats = useCallback(async () => {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    const userId = session?.user?.id;
+    if (!userId) return;
+
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("xp")
+      .eq("id", userId)
+      .maybeSingle();
+    setTotalXp(profile?.xp ?? 0);
+
+    // Wins in a row (+1 per win, 0 after a loss).
+    const { data: winningStreak, error: winningStreakError } = await supabase
+      .from("winning_streaks")
+      .select("current_streak")
+      .eq("user_id", userId)
+      .maybeSingle();
+    if (winningStreakError) {
+      console.error("🏆 Winning streak load error:", winningStreakError);
+    }
+    setCurrentWinningStreak(winningStreak?.current_streak ?? 0);
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      void loadStats();
+    }, [loadStats]),
+  );
+
   useEffect(() => {
-    setSelectedLevel(0);
+    setSelectedLevel(null);
   }, [selectedDialect]);
 
+  // Stop the phrase audio when the shown lesson changes.
+  useEffect(() => {
+    stopAudio();
+  }, [stopAudio, selectedDialect, selectedLevel]);
+
+  // Move the carousel when the dialect changes from the language button.
+  useEffect(() => {
+    if (pageWidth > 0) {
+      carouselRef.current?.scrollTo({
+        x: selectedDialect * pageWidth,
+        animated: true,
+      });
+    }
+  }, [selectedDialect, pageWidth]);
+
+  function handleCarouselEnd(event: NativeSyntheticEvent<NativeScrollEvent>) {
+    if (pageWidth <= 0) return;
+    const page = Math.round(event.nativeEvent.contentOffset.x / pageWidth);
+    const index = Math.min(Math.max(page, 0), dialects.length - 1);
+    if (index !== selectedDialect) setSelectedDialect(index);
+  }
+
+  // Measures the three-dot button so the menu's arrow points at it.
   function openMenu() {
-    setMenuVisible(true);
-
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 150,
-      useNativeDriver: true,
-    }).start();
+    const button = menuButtonRef.current;
+    if (!button) {
+      setMenuVisible(true);
+      return;
+    }
+    button.measureInWindow((x, y, width, height) => {
+      setMenuAnchor({ x, y, width, height });
+      setMenuVisible(true);
+    });
   }
 
-  function closeMenu() {
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 150,
-      useNativeDriver: true,
-    }).start(() => setMenuVisible(false));
-  }
+  const closeMenu = useCallback(() => setMenuVisible(false), []);
 
   async function loadUser() {
     setLoading(true);
@@ -191,52 +328,18 @@ export default function HomeScreen() {
       return;
     }
 
+    setUserId(user.id);
     const streak = await updateDailyStreak(user.id);
 
     if (streak) {
       setCurrentStreak(streak.current_streak);
     }
 
-    const { data: winningStreak, error: winningStreakError } = await supabase
-      .from("winning_streaks")
-      .select("current_streak")
-      .eq("user_id", user.id)
-      .maybeSingle();
-
-    if (winningStreakError) {
-      console.error("🏆 Winning streak load error:", winningStreakError);
-    }
-
-    setCurrentWinningStreak(winningStreak?.current_streak ?? 0);
-
     const { data: profile } = await supabase
       .from("profiles")
       .select("display_name, avatar_url, tutorial_completed")
       .eq("id", user.id)
       .single();
-
-    const { data: lessonProgress, error: lessonError } = await supabase
-      .from("lesson_progress")
-      .select("lesson_id")
-      .eq("user_id", user.id);
-
-    if (lessonError) {
-      console.error("Lesson progress load error:", lessonError);
-    }
-
-    const completedLessons = new Set(
-      (lessonProgress ?? []).map((lesson) => lesson.lesson_id),
-    );
-
-    setDialects((prevDialects) =>
-      prevDialects.map((dialect) => ({
-        ...dialect,
-        levels: dialect.levels.map((level) => ({
-          ...level,
-          completed: completedLessons.has(level.lessonId),
-        })),
-      })),
-    );
 
     setDisplayName(profile?.display_name ?? "Learner");
     setPhotoUri(profile?.avatar_url ?? null);
@@ -249,40 +352,79 @@ export default function HomeScreen() {
     setLoading(false);
   }
 
-  async function handleLogout() {
-    closeMenu();
+  // Home path for a language: the highest open level (Easy → Intermediate
+  // → Hard), shown as the 5-lesson half that holds the next lesson to do.
+  function pathFor(languageName: string) {
+    const language = languageName.toLowerCase() as TierLanguage;
+    const tierIndex = currentTierIndex(language, isLessonComplete);
+    const ids = tierLessonIds(language, tierIndex);
+    const nextInTier = ids.findIndex((id) => !isLessonComplete(id));
+    const half = nextInTier >= PATH_LENGTH ? 1 : 0;
+    const levels = ids
+      .slice(half * PATH_LENGTH, half * PATH_LENGTH + PATH_LENGTH)
+      .map((lessonId) => ({
+        id: Number(lessonId.split("_")[1]),
+        lessonId,
+        hasContent: practiceLevels.some((item) => item.lessonId === lessonId),
+      }));
+    const next = levels.findIndex((item) => !isLessonComplete(item.lessonId));
+    return {
+      tierIndex,
+      levels,
+      nextIndex: next < 0 ? levels.length - 1 : next,
+      tierDone: ids.filter(isLessonComplete).length,
+    };
+  }
 
+  // Called from the log out sheet, after the menu has closed.
+  async function handleLogout() {
     await supabase.auth.signOut();
 
     router.replace("/" as any);
   }
 
-  if (loading) {
+  if (loading || progressLoading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#410FA3" />
+        <ActivityIndicator size="large" color={bigkas.primary} />
         <Text style={styles.loadingText}>Loading...</Text>
       </View>
     );
   }
 
   const avatarLetter = (displayName ?? "L").charAt(0).toUpperCase();
+  const xpLevel = levelProgress(totalXp);
+  const nextDialectName =
+    dialects[(selectedDialect + 1) % dialects.length].name;
+  const bottomSpace =
+    BOTTOM_NAV_HEIGHT + BOTTOM_NAV_GAP + insets.bottom + spacing.xxl;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} edges={["left", "right"]}>
+      {/* Paint the status-bar strip the header color so the purple header
+          runs all the way to the top of the screen with no gap. */}
+      <View style={[styles.statusBarFill, { height: insets.top }]} />
+
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.scroll}
+        contentContainerStyle={[styles.scroll, { paddingBottom: bottomSpace }]}
       >
         {/* HEADER */}
         <View style={styles.header}>
           <Pressable
-            onPress={() => router.push("/user-profile" as any)}
+            onPress={() =>
+              router.push({
+                pathname: "/profile",
+                params: { dialect: currentDialect.name },
+              } as any)
+            }
             style={styles.avatarWrapper}
+            accessibilityRole="button"
+            accessibilityLabel="Open my profile"
           >
             <Avatar
-              size={60}
-              textSize={24}
+              size={52}
+              textSize={22}
               photoUri={photoUri}
               uploadingPhoto={uploadingPhoto}
               avatarLetter={avatarLetter}
@@ -290,353 +432,467 @@ export default function HomeScreen() {
           </Pressable>
 
           <View style={styles.headerLeft}>
-            <Text style={styles.welcomeText}>Welcome back!</Text>
+            <Text style={styles.welcomeText}>Welcome back</Text>
 
-            <Text style={styles.nameText}>{displayName}</Text>
+            <Text style={styles.nameText} numberOfLines={1}>
+              {displayName}
+            </Text>
           </View>
 
           <View style={styles.headerActions}>
             <Pressable
               onPress={() => router.push("/leaderboard" as any)}
-              style={styles.trophyBtn}
+              style={styles.headerButton}
+              accessibilityRole="button"
+              accessibilityLabel="Open leaderboard"
+              hitSlop={4}
             >
-              <Image
-                source={trophyIcon}
-                style={styles.trophyIcon}
-                resizeMode="contain"
-              />
+              <Ionicons name="trophy" size={22} color={bigkas.gold} />
             </Pressable>
 
-            <View style={styles.bellWrapper}>
+            <View style={styles.headerButton}>
               <NotificationBell
-                color={colors.textOnPrimary}
-                size={26}
-                badgeBorderColor={colors.primary}
+                color={bigkas.white}
+                size={24}
+                badgeBorderColor={bigkas.primary}
               />
             </View>
 
-            <Pressable onPress={openMenu} style={styles.menuBtn}>
-              <View style={styles.menuDot} />
-              <View style={styles.menuDot} />
-              <View style={styles.menuDot} />
+            <Pressable
+              ref={menuButtonRef}
+              collapsable={false}
+              onPress={openMenu}
+              style={styles.headerButton}
+              accessibilityRole="button"
+              accessibilityLabel="Open menu"
+              accessibilityState={{ expanded: menuVisible }}
+              hitSlop={4}
+            >
+              <Ionicons
+                name="ellipsis-vertical"
+                size={20}
+                color={bigkas.white}
+              />
             </Pressable>
           </View>
+        </View>
 
-          {/* TEMP: TONE TEST BUTTON — remove after testing */}
-          {/*
-          <Pressable
-            onPress={() => router.push("/tone-test" as any)}
-            style={{
-              width: 42,
-              height: 42,
-              borderRadius: 21,
-              backgroundColor: "#22C55E",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ fontSize: 18 }}>🎤</Text>
-          </Pressable>*/}
+        {/* LEVEL / XP — overlaps the header */}
+        <View
+          style={styles.levelCard}
+          accessible
+          accessibilityLabel={`Level ${xpLevel.level}, ${xpLevel.intoLevel} of ${xpLevel.perLevel} XP, ${totalXp} XP total`}
+        >
+          <View style={styles.levelTop}>
+            <View style={styles.lvlBadge}>
+              <Text style={styles.lvlBadgeLabel}>LVL</Text>
+              <Text style={styles.lvlBadgeNumber}>{xpLevel.level}</Text>
+            </View>
+
+            <View style={styles.levelInfo}>
+              <Text style={styles.levelXp}>
+                {xpLevel.intoLevel} / {xpLevel.perLevel} XP
+              </Text>
+              <Text style={styles.levelTotal}>{totalXp} XP total</Text>
+            </View>
+          </View>
+
+          <View style={styles.xpTrack}>
+            <View
+              style={[styles.xpFill, { width: `${xpLevel.fraction * 100}%` }]}
+            />
+          </View>
         </View>
 
         {/* STREAKS */}
-        <View style={styles.streakRow}>
-          {currentStreak > 0 && (
-            <View style={styles.streakPill}>
-              <Text style={styles.streakText}>
-                🔥 {currentStreak} {currentStreak === 1 ? "day" : "days"}
-              </Text>
-            </View>
-          )}
+        <View style={styles.chipRow}>
+          <View style={styles.chip}>
+            <Ionicons name="flame" size={16} color={bigkas.podiumGold} />
+            <Text style={styles.chipText}>{currentStreak} day streak</Text>
+          </View>
 
-          <View style={styles.streakPill}>
-            <Text style={styles.streakText}>
-              🏆 {currentWinningStreak}{" "}
-              {currentWinningStreak === 1 ? "win" : "wins"}
+          <View style={styles.chip}>
+            <Ionicons name="trophy" size={15} color={bigkas.primary} />
+            <Text style={styles.chipText}>
+              {currentWinningStreak}{" "}
+              {currentWinningStreak === 1 ? "win in a row" : "wins in a row"}
             </Text>
           </View>
         </View>
 
-        {/* GAME / LESSON CARD */}
-        <View style={styles.gameCard}>
-          {/* DIALECT */}
-          <View style={styles.dialectHeader}>
+        {/* LANGUAGE CARD */}
+        <View style={styles.languageCard}>
+          <View style={styles.languageTop}>
             <TouchableOpacity
-              style={styles.arrowButton}
-              onPress={previousDialect}
-              activeOpacity={0.75}
-            >
-              <Image
-                source={require("../assets/images/next-left.png")}
-                style={styles.arrowImage}
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-
-            <View style={styles.dialectTitleContainer}>
-              <Text style={styles.dialectSmallLabel}>LEARNING</Text>
-
-              <Text style={styles.dialectTitle}>{currentDialect.name}</Text>
-            </View>
-
-            <TouchableOpacity
-              style={styles.arrowButton}
+              style={styles.languageButton}
               onPress={nextDialect}
-              activeOpacity={0.75}
+              activeOpacity={0.85}
+              accessibilityRole="button"
+              accessibilityLabel={`Language: ${currentDialect.name}. Tap to switch to ${nextDialectName}`}
+              accessibilityActions={[
+                { name: "increment", label: "Next language" },
+                { name: "decrement", label: "Previous language" },
+              ]}
+              onAccessibilityAction={(event) => {
+                if (event.nativeEvent.actionName === "increment") nextDialect();
+                if (event.nativeEvent.actionName === "decrement")
+                  previousDialect();
+              }}
             >
-              <Image
-                source={require("../assets/images/next-right.png")}
-                style={styles.arrowImage}
-                resizeMode="contain"
-              />
+              <Ionicons name="globe-outline" size={18} color={bigkas.white} />
+              <Text style={styles.languageButtonText} numberOfLines={1}>
+                {currentDialect.name}
+              </Text>
+              <Ionicons name="swap-horizontal" size={16} color={bigkas.gold} />
             </TouchableOpacity>
-          </View>
 
-          {/* LEVEL PROGRESS */}
-          <View style={styles.progressHeader}>
-            <Text style={styles.levelLabel}>Lesson Progress</Text>
-
-            <Text style={styles.progressHint}>
-              {currentDialect.levels.filter((level) => level.completed).length}/
-              {currentDialect.levels.length}
+            <Text style={styles.languageCount}>
+              {selectedDialect + 1} of {dialects.length} languages
             </Text>
           </View>
 
-          <View style={styles.levelRow}>
-            {currentDialect.levels.map((level, index) => {
-              const unlocked =
-                index === 0 || currentDialect.levels[index - 1].completed;
+          <View
+            style={styles.carousel}
+            onLayout={(event) => setPageWidth(event.nativeEvent.layout.width)}
+          >
+            {pageWidth > 0 && (
+              <ScrollView
+                ref={carouselRef}
+                horizontal
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+                onMomentumScrollEnd={handleCarouselEnd}
+                contentOffset={{ x: selectedDialect * pageWidth, y: 0 }}
+              >
+                {dialects.map((dialect, dialectIndex) => {
+                  const isCurrent = dialectIndex === selectedDialect;
+                  // The path follows the highest open level of this
+                  // language: the 5 lessons around the next one to do.
+                  const path = pathFor(dialect.name);
+                  const pageLevel =
+                    isCurrent && selectedLevel !== null
+                      ? selectedLevel
+                      : path.nextIndex;
+                  const level = path.levels[pageLevel];
+                  const completedCount = path.levels.filter((item) =>
+                    isLessonComplete(item.lessonId),
+                  ).length;
+                  const summary = getLessonSummary(level.lessonId, level.id);
+                  const inProgress =
+                    !isLessonComplete(level.lessonId) &&
+                    !!getCompletion(level.lessonId);
+                  const phrase = summary.firstPhrase;
+                  const phraseKey = `${level.lessonId}:first`;
+                  const playing = isCurrent && audio.playingKey === phraseKey;
+                  // Line runs between the first and last node centres.
+                  const fillFraction =
+                    completedCount > 0
+                      ? Math.min(completedCount / (path.levels.length - 1), 1)
+                      : 0;
 
-              const selected = index === selectedLevel;
+                  return (
+                    <View
+                      key={dialect.id}
+                      style={{ width: pageWidth }}
+                      accessibilityElementsHidden={!isCurrent}
+                      importantForAccessibility={
+                        isCurrent ? "auto" : "no-hide-descendants"
+                      }
+                    >
+                      {/* PATH */}
+                      <View style={styles.pathHeader}>
+                        <Text style={styles.pathTitle} numberOfLines={1}>
+                          {dialect.name} · {TIERS[path.tierIndex].name}
+                        </Text>
+                        <View style={styles.pathPill}>
+                          <Text style={styles.pathPillText}>
+                            {path.tierDone} of {LESSONS_PER_TIER} done
+                          </Text>
+                        </View>
+                      </View>
 
-              return (
-                <TouchableOpacity
-                  key={level.id}
-                  disabled={!unlocked}
-                  onPress={() => setSelectedLevel(index)}
-                  activeOpacity={0.8}
+                      <View style={styles.nodeRow}>
+                        <View style={styles.nodeLine}>
+                          <View
+                            style={[
+                              styles.nodeLineFill,
+                              { width: `${fillFraction * 100}%` },
+                            ]}
+                          />
+                        </View>
+
+                        {path.levels.map((item, index) => {
+                          const completed = isLessonComplete(item.lessonId);
+                          // Same rule as the lessons board and the lesson
+                          // routes.
+                          const unlocked =
+                            UNLOCK_ALL_LESSONS ||
+                            isLessonUnlocked(item.lessonId);
+                          const selected = index === pageLevel;
+
+                          return (
+                            <TouchableOpacity
+                              key={item.id}
+                              disabled={!unlocked || !isCurrent}
+                              onPress={() => setSelectedLevel(index)}
+                              activeOpacity={0.8}
+                              style={styles.nodeSlot}
+                              accessibilityRole="button"
+                              accessibilityState={{
+                                selected,
+                                disabled: !unlocked,
+                              }}
+                              accessibilityLabel={`Lesson ${item.id}, ${
+                                completed
+                                  ? "completed"
+                                  : unlocked
+                                    ? "available"
+                                    : "locked"
+                              }`}
+                            >
+                              <View
+                                style={[
+                                  styles.node,
+                                  completed && styles.nodeDone,
+                                  !completed &&
+                                    unlocked &&
+                                    styles.nodeAvailable,
+                                  !unlocked && styles.nodeLocked,
+                                  selected && styles.nodeSelected,
+                                ]}
+                              >
+                                {completed ? (
+                                  <Ionicons
+                                    name="checkmark"
+                                    size={selected ? 22 : 18}
+                                    color={bigkas.white}
+                                  />
+                                ) : unlocked ? (
+                                  <Text
+                                    style={[
+                                      styles.nodeText,
+                                      selected && styles.nodeTextSelected,
+                                    ]}
+                                  >
+                                    {item.id}
+                                  </Text>
+                                ) : (
+                                  <Ionicons
+                                    name="lock-closed"
+                                    size={16}
+                                    color={bigkas.muted}
+                                  />
+                                )}
+                              </View>
+                            </TouchableOpacity>
+                          );
+                        })}
+                      </View>
+
+                      {/* HERO */}
+                      <View style={styles.heroCard}>
+                        <View style={styles.heroCircleOne} />
+                        <View style={styles.heroCircleTwo} />
+                        <Image
+                          source={mascotImage}
+                          style={styles.heroMascot}
+                          resizeMode="contain"
+                          accessibilityIgnoresInvertColors
+                        />
+
+                        <View style={styles.heroHeading}>
+                          <Text style={styles.heroLessonLabel}>
+                            LESSON {level.id}
+                          </Text>
+                          <Text style={styles.heroTitle}>
+                            {summary.title ?? dialect.lesson}
+                          </Text>
+                          <Text style={styles.heroSubtitle}>
+                            {summary.subtitle ?? dialect.subtitle}
+                          </Text>
+                        </View>
+
+                        {phrase && (
+                          <View style={styles.phraseBox}>
+                            <View style={styles.phraseText}>
+                              <Text style={styles.phraseLabel}>
+                                FIRST PHRASE
+                              </Text>
+                              <Text style={styles.phrase}>{phrase.text}</Text>
+                              <Text style={styles.phraseMeaning}>
+                                {phrase.example}
+                              </Text>
+                            </View>
+
+                            <TouchableOpacity
+                              style={styles.speakerButton}
+                              onPress={() =>
+                                audio.play(phraseKey, { text: phrase.text })
+                              }
+                              activeOpacity={0.85}
+                              accessibilityRole="button"
+                              accessibilityLabel={
+                                playing
+                                  ? "Stop pronunciation"
+                                  : `Play pronunciation of ${phrase.text}`
+                              }
+                            >
+                              <Ionicons
+                                name={playing ? "stop" : "volume-high"}
+                                size={22}
+                                color={bigkas.white}
+                              />
+                            </TouchableOpacity>
+                          </View>
+                        )}
+
+                        {isCurrent && audio.notice ? (
+                          <Text
+                            style={styles.audioNotice}
+                            accessibilityLiveRegion="polite"
+                          >
+                            {audio.notice}
+                          </Text>
+                        ) : null}
+
+                        <View style={styles.statRow}>
+                          {[
+                            {
+                              icon: "book-outline" as const,
+                              value: summary.vocabulary,
+                              label: "Vocabulary",
+                            },
+                            {
+                              icon: "extension-puzzle-outline" as const,
+                              value: summary.activities,
+                              label: "Activities",
+                            },
+                            {
+                              icon: "star-outline" as const,
+                              value: summary.xp,
+                              label: "XP",
+                            },
+                          ].map((stat) => (
+                            <View
+                              key={stat.label}
+                              style={styles.statTile}
+                              accessible
+                              accessibilityLabel={`${stat.value} ${stat.label}`}
+                            >
+                              <Ionicons
+                                name={stat.icon}
+                                size={18}
+                                color={bigkas.gold}
+                              />
+                              <Text style={styles.statValue}>{stat.value}</Text>
+                              <Text style={styles.statLabel} numberOfLines={1}>
+                                {stat.label}
+                              </Text>
+                            </View>
+                          ))}
+                        </View>
+
+                        {/* START PRACTICE */}
+                        <TouchableOpacity
+                          style={styles.ctaButton}
+                          activeOpacity={0.85}
+                          accessibilityRole="button"
+                          onPress={() => {
+                            stopAudio();
+                            // Same entry as the lessons board: the
+                            // structured flow when the lesson has one,
+                            // otherwise the reading → pretest → practice
+                            // flow.
+                            const lessonId = level.lessonId;
+                            // Not written yet (e.g. Hard): show the level
+                            // on the Lessons screen instead.
+                            if (!level.hasContent) {
+                              router.push({
+                                pathname: "/lessons",
+                                params: {
+                                  dialect: dialect.name,
+                                  tier: TIERS[path.tierIndex].key,
+                                },
+                              } as any);
+                              return;
+                            }
+                            openLesson(router, lessonId, {
+                              unlocked: isLessonUnlocked(lessonId),
+                            });
+                          }}
+                        >
+                          <Text style={styles.ctaText}>
+                            {inProgress
+                              ? "Continue your lesson"
+                              : "Start practice"}
+                          </Text>
+                          <Ionicons
+                            name="arrow-forward"
+                            size={20}
+                            color={bigkas.ink}
+                          />
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  );
+                })}
+              </ScrollView>
+            )}
+          </View>
+
+          {/* DOTS */}
+          <View style={styles.dotsRow}>
+            {dialects.map((dialect, index) => (
+              <Pressable
+                key={dialect.id}
+                onPress={() => setSelectedDialect(index)}
+                style={styles.dotHit}
+                accessibilityRole="button"
+                accessibilityLabel={`Show ${dialect.name}`}
+                accessibilityState={{ selected: index === selectedDialect }}
+              >
+                <View
                   style={[
-                    selected
-                      ? styles.levelActive
-                      : level.completed
-                        ? styles.levelCompleted
-                        : unlocked
-                          ? styles.levelUnlocked
-                          : styles.levelLocked,
+                    styles.dot,
+                    index === selectedDialect && styles.dotActive,
                   ]}
-                >
-                  <Text
-                    style={
-                      selected
-                        ? styles.levelActiveText
-                        : level.completed
-                          ? styles.levelCompletedText
-                          : unlocked
-                            ? styles.levelText
-                            : styles.lockText
-                    }
-                  >
-                    {level.completed ? "✓" : unlocked ? level.id : "🔒"}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-
-          {/* HERO */}
-          <View style={styles.heroContainer}>
-            <View style={styles.mascotGlow}>
-              <Image
-                source={mascotImage}
-                style={styles.heroImage}
-                resizeMode="contain"
-              />
-            </View>
-
-            <Text style={styles.lessonTitle}>{currentDialect.lesson}</Text>
-
-            <Text style={styles.lessonSubtitle}>{currentDialect.subtitle}</Text>
-
-            <View style={styles.lessonInfoRow}>
-              <View style={styles.lessonBadge}>
-                <Text style={styles.lessonBadgeText}>
-                  🟢 {currentDialect.difficulty}
-                </Text>
-              </View>
-
-              <View style={styles.lessonBadge}>
-                <Text style={styles.lessonBadgeText}>
-                  ⏱ {currentDialect.duration}
-                </Text>
-              </View>
-            </View>
-
-            {/* START PRACTICE */}
-            <TouchableOpacity
-              style={styles.playButton}
-              activeOpacity={0.85}
-              onPress={() =>
-                router.push({
-                  pathname: "/lesson/pretest",
-                  params: {
-                    lessonId: currentDialect.levels[selectedLevel].lessonId,
-                  },
-                } as any)
-              }
-            >
-              <View style={styles.playIconCircle}>
-                <Image
-                  source={require("../assets/images/play.png")}
-                  style={styles.playImage}
-                  resizeMode="contain"
                 />
-              </View>
-
-              <View style={styles.playButtonContent}>
-                <Text style={styles.playTitle}>START PRACTICE</Text>
-
-                <Text style={styles.playSubtitle}>Continue your lesson</Text>
-              </View>
-            </TouchableOpacity>
+              </Pressable>
+            ))}
           </View>
+          <Text style={styles.swipeHint}>Swipe for {nextDialectName}</Text>
         </View>
-
-        {/* BOTTOM NAVIGATION */}
-        <View style={styles.bottomNav}>
-          <TouchableOpacity
-            style={styles.navItem}
-            onPress={() => router.push("/lessons" as any)}
-            activeOpacity={0.7}
-          >
-            <Image
-              source={
-                pathname === "/lessons"
-                  ? require("../assets/images/Lessons on click.png")
-                  : require("../assets/images/Lessons.png")
-              }
-              style={styles.navImage}
-              resizeMode="contain"
-            />
-
-            <Text style={styles.navText}>Lessons</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.navItem}
-            onPress={() => router.push("/story" as any)}
-            activeOpacity={0.7}
-          >
-            <Image
-              source={
-                pathname === "/story"
-                  ? require("../assets/images/Story on click.png")
-                  : require("../assets/images/Story.png")
-              }
-              style={styles.navImage}
-              resizeMode="contain"
-            />
-
-            <Text style={styles.navText}>Story</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* DROPDOWN MENU */}
-        {menuVisible && (
-          <Modal
-            transparent
-            visible
-            animationType="none"
-            onRequestClose={closeMenu}
-          >
-            <TouchableOpacity
-              style={styles.backdrop}
-              activeOpacity={1}
-              onPress={closeMenu}
-            >
-              <Animated.View style={[styles.dropdown, { opacity: fadeAnim }]}>
-                <View style={styles.dropdownArrow} />
-
-                <View style={styles.dropdownMenu}>
-                  <View style={styles.dropdownHeader}>
-                    <View style={styles.dropdownAvatar}>
-                      <Avatar
-                        size={40}
-                        textSize={18}
-                        photoUri={photoUri}
-                        uploadingPhoto={uploadingPhoto}
-                        avatarLetter={avatarLetter}
-                      />
-                    </View>
-
-                    <View>
-                      <Text style={styles.dropdownName}>{displayName}</Text>
-
-                      <Text style={styles.dropdownRole}>Bigkas Learner</Text>
-                    </View>
-                  </View>
-
-                  <View style={styles.dropdownDivider} />
-
-                  {[
-                    {
-                      icon: "",
-                      label: "My profile",
-                      onPress: () => {
-                        closeMenu();
-
-                        router.push("/user-profile" as any);
-                      },
-                    },
-                    {
-                      icon: "",
-                      label: "Change profile photo",
-                      onPress: () => {
-                        closeMenu();
-
-                        setPickerVisible(true);
-                      },
-                    },
-                    {
-                      icon: "",
-                      label: "Report",
-                      onPress: () => {
-                        closeMenu();
-
-                        router.push("/report" as any);
-                      },
-                    },
-                  ].map(({ icon, label, onPress }) => (
-                    <TouchableOpacity
-                      key={label}
-                      style={styles.dropdownItem}
-                      onPress={onPress}
-                    >
-                      <Text style={styles.dropdownItemIcon}>{icon}</Text>
-
-                      <Text style={styles.dropdownItemText}>{label}</Text>
-                    </TouchableOpacity>
-                  ))}
-
-                  <View style={styles.dropdownDivider} />
-
-                  <TouchableOpacity
-                    style={styles.dropdownItem}
-                    onPress={handleLogout}
-                  >
-                    <Image source={logoutIcon} style={styles.logoutIcon} />
-
-                    <Text
-                      style={[styles.dropdownItemText, styles.dropdownLogout]}
-                    >
-                      Log out
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </Animated.View>
-            </TouchableOpacity>
-          </Modal>
-        )}
       </ScrollView>
+
+      {/* BOTTOM NAVIGATION — shared with the other main screens */}
+      <BottomNav active="home" respectSafeArea />
+
+      {/* Three-dot menu. Like the avatar picker, kept OUTSIDE the
+          ScrollView. */}
+      <ProfileMenu
+        visible={menuVisible}
+        anchor={menuAnchor}
+        onClose={closeMenu}
+        displayName={displayName}
+        photoUri={photoUri}
+        uploadingPhoto={uploadingPhoto}
+        languageName={currentDialect.name}
+        totalXp={totalXp}
+        dayStreak={currentStreak}
+        badgeCount={earnedBadgeIds.length}
+        newBadgeCount={newBadgeCount}
+        onOpenProfile={() => router.push("/user-profile" as any)}
+        onOpenAchievements={() => {
+          markBadgesSeen();
+          router.push({
+            pathname: "/profile",
+            params: { dialect: currentDialect.name, section: "achievements" },
+          } as any);
+        }}
+        onChangePhoto={() => setPickerVisible(true)}
+        onReport={() => router.push("/report" as any)}
+        onLogout={handleLogout}
+      />
 
       {/* Avatar picker lives OUTSIDE the ScrollView — a modal nested in
           a scroll view can misbehave with scroll gestures. */}
@@ -650,698 +906,536 @@ export default function HomeScreen() {
   );
 }
 
+const NODE = 38;
+const NODE_SELECTED = 48;
+
 const styles = StyleSheet.create({
   loadingContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.surface,
+    backgroundColor: bigkas.background,
     gap: spacing.md,
   },
 
   loadingText: {
     fontSize: typography.size.md,
-    color: colors.gray600,
+    color: bigkas.muted,
   },
 
   container: {
     flex: 1,
-    backgroundColor: colors.backgroundAlt,
+    backgroundColor: bigkas.background,
   },
 
   scroll: {
     flexGrow: 1,
-    paddingBottom: 120,
   },
 
   /* ---------------- HEADER ---------------- */
 
+  statusBarFill: {
+    backgroundColor: bigkas.primary,
+  },
+
   header: {
-    backgroundColor: colors.primary,
-    paddingHorizontal: spacing.xxl,
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.xl,
-
+    backgroundColor: bigkas.primary,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    // Room for the level card, which overlaps the header by 40.
+    paddingBottom: 56,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.lg,
-  },
-
-  headerLeft: {
-    flex: 1,
-    gap: spacing.xs,
-  },
-
-  welcomeText: {
-    fontSize: typography.size.md,
-    color: colors.textOnPrimaryMuted,
-    fontWeight: typography.weight.regular,
-  },
-
-  nameText: {
-    fontSize: typography.size.display,
-    fontWeight: typography.weight.extrabold,
-    color: colors.textOnPrimary,
-  },
-
-  headerActions: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  bellWrapper: {
-    marginLeft: spacing.md,
-    marginRight: spacing.sm,
-  },
-
-  trophyBtn: {
-    width: 42,
-    height: 42,
-    borderRadius: 21,
-    backgroundColor: colors.primary,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 0,
-  },
-
-  trophyIcon: {
-    width: 40,
-    height: 40,
-    marginLeft: spacing.sm,
-    resizeMode: "contain",
+    gap: 12,
   },
 
   avatarWrapper: {
-    position: "relative",
+    borderRadius: 30,
   },
 
   avatarCircle: {
-    backgroundColor: colors.overlayWhite,
+    backgroundColor: bigkas.accent,
     alignItems: "center",
     justifyContent: "center",
   },
 
   avatarText: {
-    fontWeight: typography.weight.extrabold,
-    color: colors.textOnPrimary,
+    color: bigkas.white,
+    fontWeight: "800",
   },
 
-  menuBtn: {
-    width: 32,
-    height: 40,
-    gap: spacing.xs,
-    alignItems: "center",
-    justifyContent: "center",
+  headerLeft: {
+    flex: 1,
+    minWidth: 0,
   },
 
-  menuDot: {
-    width: 4,
-    height: 4,
-    borderRadius: radius.round,
-    backgroundColor: colors.textOnPrimary,
+  welcomeText: {
+    fontSize: 13,
+    color: "rgba(255,255,255,0.78)",
+    fontWeight: "600",
   },
 
-  /* ---------------- STREAK ---------------- */
+  nameText: {
+    marginTop: 2,
+    fontSize: 20,
+    fontWeight: "800",
+    color: bigkas.white,
+  },
 
-  streakRow: {
+  headerActions: {
     flexDirection: "row",
     alignItems: "center",
+    gap: 6,
+  },
+
+  headerButton: {
+    width: MIN_TAP,
+    height: MIN_TAP,
+    borderRadius: MIN_TAP / 2,
+    backgroundColor: "rgba(255,255,255,0.14)",
+    alignItems: "center",
     justifyContent: "center",
-    marginTop: spacing.md - 2,
-    marginBottom: 2,
-    gap: spacing.sm,
   },
 
-  streakPill: {
-    paddingHorizontal: 13,
-    paddingVertical: 7,
-    borderRadius: radius.xl,
-    backgroundColor: colors.surface,
+  /* ---------------- LEVEL CARD ---------------- */
+
+  levelCard: {
+    marginTop: -40,
+    marginHorizontal: 16,
+    padding: 16,
+    borderRadius: 22,
+    backgroundColor: bigkas.white,
     borderWidth: 1,
-    borderColor: colors.borderLight,
-    ...shadow.cardSoft,
-  },
-
-  streakText: {
-    fontSize: typography.size.base,
-    fontWeight: typography.weight.bold,
-    color: "#6B4B00", // one-off gold-brown accent, only used here
-  },
-
-  /* ---------------- GAME CARD ---------------- */
-
-  gameCard: {
-    backgroundColor: "rgba(255,255,255,0.94)", // intentional translucency over background
-    marginHorizontal: spacing.xl - 2,
-    marginTop: spacing.lg,
-    borderRadius: radius.xxxl + 4,
-    paddingHorizontal: spacing.xl - 2,
-    paddingTop: spacing.xl - 2,
-    paddingBottom: spacing.xxl - 2,
-    borderWidth: 1,
-    borderColor: colors.borderMuted,
-
-    // unique shadow tint (purple-black), not the standard shadow.card
-    shadowColor: "#2D1B69",
+    borderColor: bigkas.border,
+    shadowColor: bigkas.ink,
+    shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.08,
-    shadowRadius: 18,
-    shadowOffset: { width: 0, height: 7 },
-    elevation: 5,
+    shadowRadius: 14,
+    elevation: 4,
   },
 
-  /* ---------------- DIALECT ---------------- */
-
-  dialectHeader: {
+  levelTop: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: spacing.lg,
+    gap: 12,
   },
 
-  dialectTitleContainer: {
+  lvlBadge: {
+    width: 52,
+    height: 52,
+    borderRadius: 16,
+    backgroundColor: bigkas.primary,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  lvlBadgeLabel: {
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1,
+    color: bigkas.gold,
+  },
+
+  lvlBadgeNumber: {
+    fontSize: 20,
+    fontWeight: "800",
+    color: bigkas.white,
+    lineHeight: 24,
+  },
+
+  levelInfo: {
     flex: 1,
   },
 
-  dialectSmallLabel: {
-    fontSize: typography.size.xs + 0,
-    fontWeight: typography.weight.extrabold,
-    letterSpacing: 1.5,
-    color: colors.textLabel,
-    marginBottom: 2,
+  levelXp: {
+    fontSize: 18,
+    fontWeight: "800",
+    color: bigkas.ink,
   },
 
-  dialectTitle: {
-    textAlign: "center",
-    fontSize: 23,
-    fontWeight: typography.weight.extrabold,
-    color: colors.primary,
+  levelTotal: {
+    marginTop: 2,
+    fontSize: 13,
+    fontWeight: "600",
+    color: bigkas.muted,
   },
 
-  arrowButton: {
-    width: 42,
-    height: 42,
-    borderRadius: radius.sm,
-    backgroundColor: colors.primarySoft,
-    justifyContent: "center",
+  xpTrack: {
+    marginTop: 14,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: bigkas.chip,
+    overflow: "hidden",
+  },
+
+  xpFill: {
+    height: "100%",
+    borderRadius: 5,
+    backgroundColor: bigkas.accent,
+  },
+
+  chipRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginTop: 12,
+    marginHorizontal: 16,
+  },
+
+  chip: {
+    minHeight: 36,
+    flexDirection: "row",
     alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 12,
+    borderRadius: 18,
+    backgroundColor: bigkas.chip,
+  },
+
+  chipText: {
+    fontSize: 13,
+    fontWeight: "700",
+    color: bigkas.ink,
+  },
+
+  /* ---------------- LANGUAGE CARD ---------------- */
+
+  languageCard: {
+    marginTop: 16,
+    marginHorizontal: 16,
+    padding: 16,
+    borderRadius: 24,
+    backgroundColor: bigkas.white,
     borderWidth: 1,
-    borderColor: colors.primaryBorderSoft,
+    borderColor: bigkas.border,
   },
 
-  arrowImage: {
-    width: 22,
-    height: 22,
+  languageTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: 10,
   },
 
-  /* ---------------- LEVEL PROGRESS ---------------- */
+  languageButton: {
+    minHeight: MIN_TAP,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    paddingHorizontal: 14,
+    borderRadius: MIN_TAP / 2,
+    backgroundColor: bigkas.primary,
+    maxWidth: "100%",
+  },
 
-  progressHeader: {
+  languageButtonText: {
+    fontSize: 15,
+    fontWeight: "800",
+    color: bigkas.white,
+    flexShrink: 1,
+  },
+
+  languageCount: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: bigkas.muted,
+  },
+
+  carousel: {
+    marginTop: 16,
+  },
+
+  pathHeader: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: spacing.md - 2,
+    gap: 8,
   },
 
-  levelLabel: {
-    fontSize: typography.size.base,
-    fontWeight: typography.weight.bold,
-    color: "#777185", // close to textMutedSoft but distinct enough to leave as-is
+  pathTitle: {
+    flex: 1,
+    fontSize: 17,
+    fontWeight: "800",
+    color: bigkas.ink,
   },
 
-  progressHint: {
-    fontSize: typography.size.sm + 1,
-    fontWeight: typography.weight.bold,
-    color: colors.primary,
-    backgroundColor: colors.primarySoft,
-    paddingHorizontal: 9,
-    paddingVertical: 4,
-    borderRadius: radius.sm - 2,
+  pathPill: {
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 12,
+    backgroundColor: bigkas.chip,
   },
 
-  levelRow: {
+  pathPillText: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: bigkas.primary,
+  },
+
+  nodeRow: {
+    marginTop: 14,
+    height: NODE_SELECTED + 4,
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
   },
 
-  levelActive: {
-    width: 55,
-    height: 55,
-    borderRadius: radius.lg,
-    backgroundColor: colors.primary,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 3,
-    borderColor: colors.surface,
-    ...shadow.primaryGlow,
-    shadowOpacity: 0.28,
-    shadowRadius: 9,
-    shadowOffset: { width: 0, height: 5 },
+  nodeLine: {
+    position: "absolute",
+    left: NODE_SELECTED / 2,
+    right: NODE_SELECTED / 2,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: bigkas.locked,
   },
 
-  levelUnlocked: {
-    width: 55,
-    height: 55,
-    borderRadius: radius.lg,
-    backgroundColor: colors.surface,
+  nodeLineFill: {
+    height: "100%",
+    borderRadius: 2,
+    backgroundColor: bigkas.success,
+  },
+
+  nodeSlot: {
+    width: NODE_SELECTED,
+    height: NODE_SELECTED,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1.5,
-    borderColor: colors.borderStrong,
-    ...shadow.cardSoft,
-    shadowOpacity: 0.06,
-    shadowRadius: 4,
   },
 
-  levelCompleted: {
-    width: 55,
-    height: 55,
-    borderRadius: radius.lg,
-    backgroundColor: colors.success,
+  node: {
+    width: NODE,
+    height: NODE,
+    borderRadius: NODE / 2,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth: 1.5,
-    borderColor: colors.successDark,
-    ...shadow.successGlow,
   },
 
-  levelLocked: {
-    width: 55,
-    height: 55,
-    borderRadius: radius.lg,
-    backgroundColor: colors.gray100,
-    borderWidth: 1,
-    borderColor: colors.gray200,
-    alignItems: "center",
-    justifyContent: "center",
-    opacity: 0.7,
+  nodeDone: {
+    backgroundColor: bigkas.success,
   },
 
-  levelText: {
-    color: colors.primary,
-    fontWeight: typography.weight.black,
-    fontSize: 20,
-    lineHeight: 24,
-    textAlign: "center",
-    includeFontPadding: false,
+  nodeAvailable: {
+    backgroundColor: bigkas.white,
+    borderWidth: 2,
+    borderColor: bigkas.primary,
   },
 
-  levelActiveText: {
-    color: colors.textOnPrimary,
-    fontWeight: typography.weight.black,
-    fontSize: 20,
-    lineHeight: 24,
-    textAlign: "center",
-    includeFontPadding: false,
+  nodeLocked: {
+    backgroundColor: bigkas.locked,
   },
 
-  levelCompletedText: {
-    color: colors.textOnPrimary,
-    fontWeight: typography.weight.black,
-    fontSize: 20,
-    lineHeight: 24,
-    textAlign: "center",
-    includeFontPadding: false,
+  nodeSelected: {
+    width: NODE_SELECTED,
+    height: NODE_SELECTED,
+    borderRadius: NODE_SELECTED / 2,
+    borderWidth: 4,
+    borderColor: bigkas.chip,
+    backgroundColor: bigkas.primary,
   },
 
-  lockText: {
-    fontSize: typography.size.xxl,
-    opacity: 0.7,
+  nodeText: {
+    fontSize: 15,
+    fontWeight: "800",
+    color: bigkas.primary,
+  },
+
+  nodeTextSelected: {
+    fontSize: 18,
+    color: bigkas.white,
   },
 
   /* ---------------- HERO ---------------- */
 
-  heroContainer: {
-    alignItems: "center",
-    marginTop: spacing.xxl,
-    paddingTop: 2,
+  heroCard: {
+    marginTop: 16,
+    padding: 18,
+    borderRadius: 22,
+    backgroundColor: bigkas.primary,
+    overflow: "hidden",
   },
 
-  mascotGlow: {
+  heroCircleOne: {
+    position: "absolute",
+    top: -50,
+    right: -40,
     width: 150,
     height: 150,
     borderRadius: 75,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
   },
 
-  heroImage: {
-    width: 135,
-    height: 135,
+  heroCircleTwo: {
+    position: "absolute",
+    top: 40,
+    right: -60,
+    width: 110,
+    height: 110,
+    borderRadius: 55,
+    backgroundColor: "rgba(255,255,255,0.06)",
   },
 
-  lessonTitle: {
-    fontSize: typography.size.display,
-    fontWeight: typography.weight.extrabold,
-    marginTop: spacing.xl - 2,
-    color: "#202020",
-    textAlign: "center",
+  heroMascot: {
+    position: "absolute",
+    top: 12,
+    right: 10,
+    width: 64,
+    height: 64,
   },
 
-  lessonSubtitle: {
-    marginTop: 7,
-    color: colors.textMutedAlt,
-    textAlign: "center",
-    paddingHorizontal: spacing.lg,
-    fontSize: typography.size.md,
+  heroHeading: {
+    paddingRight: 64,
+  },
+
+  heroLessonLabel: {
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 1.2,
+    color: bigkas.gold,
+  },
+
+  heroTitle: {
+    marginTop: 4,
+    fontSize: 24,
+    fontWeight: "800",
+    color: bigkas.white,
+    lineHeight: 30,
+  },
+
+  heroSubtitle: {
+    marginTop: 6,
+    fontSize: 14,
     lineHeight: 20,
+    color: "rgba(255,255,255,0.82)",
   },
 
-  lessonInfoRow: {
-    flexDirection: "row",
-    justifyContent: "center",
-    gap: spacing.sm,
-    marginTop: 15,
-    marginBottom: 3,
-  },
-
-  lessonBadge: {
-    backgroundColor: colors.primarySoft,
-    paddingHorizontal: spacing.md,
-    paddingVertical: 7,
-    borderRadius: radius.xl,
-    borderWidth: 1,
-    borderColor: colors.primaryBorderSoft,
-  },
-
-  lessonBadgeText: {
-    color: "#5A477C", // one-off, close to primary but muted
-    fontWeight: typography.weight.bold,
-    fontSize: typography.size.base - 1,
-  },
-
-  /* --------------- PLAY BUTTON ---------------- */
-
-  playButton: {
-    width: "100%",
-    marginTop: spacing.xxl - 2,
-    backgroundColor: colors.primary,
-    borderRadius: radius.xl - 1,
-    paddingVertical: 13,
-    paddingHorizontal: 14,
+  phraseBox: {
+    marginTop: 16,
+    padding: 14,
+    borderRadius: 16,
+    backgroundColor: bigkas.white,
     flexDirection: "row",
     alignItems: "center",
-    ...shadow.primaryGlow,
+    gap: 12,
   },
 
-  playIconCircle: {
-    width: 42,
-    height: 42,
-    borderRadius: 21,
-    backgroundColor: colors.overlayWhite,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  playImage: {
-    width: 20,
-    height: 20,
-  },
-
-  playButtonContent: {
+  phraseText: {
     flex: 1,
-    marginLeft: spacing.md,
   },
 
-  playTitle: {
-    color: colors.textOnPrimary,
-    fontWeight: typography.weight.extrabold,
-    fontSize: typography.size.xl,
-    letterSpacing: 0.3,
+  phraseLabel: {
+    fontSize: 11,
+    fontWeight: "800",
+    letterSpacing: 1,
+    color: bigkas.muted,
   },
 
-  playSubtitle: {
-    color: "rgba(255,255,255,0.72)",
+  phrase: {
+    marginTop: 4,
+    fontSize: 18,
+    fontWeight: "800",
+    color: bigkas.ink,
+  },
+
+  phraseMeaning: {
     marginTop: 2,
-    fontSize: typography.size.sm,
-    fontWeight: typography.weight.regular,
+    fontSize: 13,
+    color: bigkas.muted,
   },
 
-  playArrow: {
-    color: colors.textOnPrimary,
-    fontSize: 23,
+  speakerButton: {
+    width: MIN_TAP + 4,
+    height: MIN_TAP + 4,
+    borderRadius: (MIN_TAP + 4) / 2,
+    backgroundColor: bigkas.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  audioNotice: {
+    marginTop: 8,
+    fontSize: 13,
     fontWeight: "600",
-    marginRight: 3,
+    color: bigkas.gold,
   },
 
-  /* ---------------- BOTTOM NAV ---------------- */
-
-  bottomNav: {
-    position: "absolute",
-    bottom: 20,
-    left: 20,
-    right: 20,
-    backgroundColor: colors.surface,
-    borderRadius: radius.xxxl + 1,
+  statRow: {
+    marginTop: 14,
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    paddingVertical: spacing.lg,
-    ...shadow.card,
+    gap: 8,
   },
 
-  navItem: {
+  statTile: {
     flex: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 4,
+    borderRadius: 14,
+    backgroundColor: "rgba(255,255,255,0.12)",
     alignItems: "center",
   },
 
-  navText: {
-    marginTop: 5,
-    fontWeight: typography.weight.bold,
-    color: colors.primary,
+  statValue: {
+    marginTop: 4,
+    fontSize: 18,
+    fontWeight: "800",
+    color: bigkas.white,
   },
 
-  navImage: {
-    width: 28,
-    height: 28,
-    resizeMode: "contain",
+  statLabel: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: "rgba(255,255,255,0.8)",
   },
 
-  /* ---------------- DROPDOWN ---------------- */
-
-  backdrop: {
-    flex: 1,
-    backgroundColor: colors.overlayDark,
-  },
-
-  dropdown: {
-    position: "absolute",
-    top: 100,
-    right: 16,
-    width: 240,
-  },
-
-  dropdownArrow: {
-    width: 12,
-    height: 12,
-    backgroundColor: colors.surface,
-    transform: [{ rotate: "45deg" }],
-    alignSelf: "flex-end",
-    marginRight: spacing.lg,
-    marginBottom: -6,
-    borderTopLeftRadius: 2,
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
-    borderColor: colors.borderSoft,
-  },
-
-  dropdownMenu: {
-    backgroundColor: colors.surface,
-    borderRadius: radius.md,
-    overflow: "hidden",
-    borderWidth: 1,
-    borderColor: colors.borderSoft,
-  },
-
-  dropdownHeader: {
+  ctaButton: {
+    marginTop: 16,
+    minHeight: 52,
+    borderRadius: 16,
+    backgroundColor: bigkas.gold,
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.md,
-    padding: spacing.lg,
-    backgroundColor: colors.surfaceMuted,
-  },
-
-  dropdownAvatar: {
-    width: 40,
-    height: 40,
-    borderRadius: radius.round,
-    overflow: "hidden",
-  },
-
-  dropdownName: {
-    fontSize: typography.size.lg,
-    fontWeight: typography.weight.bold,
-    color: colors.textBody,
-  },
-
-  dropdownRole: {
-    fontSize: typography.size.sm,
-    color: colors.gray400,
-  },
-
-  dropdownDivider: {
-    height: 1,
-    backgroundColor: colors.borderSoft,
-  },
-
-  dropdownItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.md,
-    paddingHorizontal: spacing.lg,
-    paddingVertical: 14,
-  },
-
-  dropdownItemIcon: {
-    fontSize: typography.size.xxl,
-  },
-
-  dropdownItemText: {
-    fontSize: typography.size.lg,
-    color: colors.textBody,
-    fontWeight: typography.weight.regular,
-  },
-
-  dropdownLogout: {
-    color: colors.dangerDark,
-  },
-
-  logoutIcon: {
-    width: 20,
-    height: 20,
-  },
-
-  /* ---------------- EXISTING UNUSED MODAL STYLES ---------------- */
-
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: colors.overlayDarker,
-    justifyContent: "flex-end",
-  },
-
-  sheet: {
-    backgroundColor: colors.background,
-    borderTopLeftRadius: radius.xxxl + 6,
-    borderTopRightRadius: radius.xxxl + 6,
-    padding: 25,
-  },
-
-  sheetTitle: {
-    fontSize: typography.size.display,
-    fontWeight: typography.weight.extrabold,
-    textAlign: "center",
-    color: colors.textBody,
-  },
-
-  sheetSubtitle: {
-    textAlign: "center",
-    marginTop: 6,
-    marginBottom: 25,
-    color: colors.gray500,
-  },
-
-  dialectCard: {
-    backgroundColor: colors.surface,
-    borderRadius: radius.xl,
-    padding: spacing.lg + 2,
-    marginBottom: 15,
-    flexDirection: "row",
-    alignItems: "center",
-    ...shadow.cardSoft,
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 3,
-  },
-
-  cardEmoji: {
-    fontSize: 34,
-  },
-
-  cardText: {
-    flex: 1,
-    marginLeft: spacing.lg - 1,
-  },
-
-  cardTitle: {
-    fontSize: typography.size.xxl,
-    fontWeight: typography.weight.bold,
-  },
-
-  cardSub: {
-    color: colors.gray500,
-    marginTop: 2,
-  },
-
-  cardLessons: {
-    marginTop: 6,
-    color: "#5B5CFF", // one-off accent used only in unused legacy styles
-    fontWeight: typography.weight.semibold,
-  },
-
-  cardArrow: {
-    fontSize: 32,
-    color: "#5B5CFF",
-  },
-
-  cancelButton: {
-    marginTop: spacing.xl,
-    backgroundColor: colors.primary,
-    paddingVertical: spacing.lg,
-    borderRadius: radius.md - 1,
-    alignItems: "center",
-  },
-
-  cancelText: {
-    color: colors.textOnPrimary,
-    fontWeight: typography.weight.bold,
-    fontSize: typography.size.xl,
-  },
-
-  /* Existing compatibility styles */
-
-  levelSelector: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
-    marginBottom: 25,
-  },
-
-  levelButton: {
-    width: 52,
-    height: 52,
-    borderRadius: radius.lg - 2,
-    backgroundColor: "#3D1A83", // one-off legacy color
     justifyContent: "center",
+    gap: 8,
+    paddingHorizontal: 16,
+  },
+
+  ctaText: {
+    fontSize: 16,
+    fontWeight: "800",
+    color: bigkas.ink,
+  },
+
+  dotsRow: {
+    marginTop: 12,
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+
+  dotHit: {
+    minWidth: 32,
+    height: 32,
     alignItems: "center",
+    justifyContent: "center",
   },
 
-  levelButtonActive: {
-    backgroundColor: "#5B5CFF",
-    borderWidth: 2,
-    borderColor: "#22D3EE",
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: bigkas.border,
   },
 
-  levelButtonLocked: {
-    opacity: 0.4,
+  dotActive: {
+    width: 24,
+    backgroundColor: bigkas.primary,
   },
 
-  levelButtonText: {
-    color: colors.textOnPrimary,
-    fontWeight: typography.weight.extrabold,
-    fontSize: typography.size.xxl,
-  },
-
-  levelButtonTextActive: {
-    color: colors.textOnPrimary,
-  },
-
-  playButtonText: {
-    color: colors.textOnPrimary,
-    fontSize: typography.size.lg,
-    fontWeight: typography.weight.extrabold,
+  swipeHint: {
+    marginTop: 2,
+    textAlign: "center",
+    fontSize: 12,
+    fontWeight: "600",
+    color: bigkas.muted,
   },
 });

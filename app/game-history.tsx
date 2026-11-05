@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
   },
 
   loadingText: {
-    fontSize: 14,
+    fontSize: 15,
     color: "#777777",
     fontWeight: "600",
   },
@@ -498,7 +498,7 @@ const styles = StyleSheet.create({
   headerSubtitle: {
     marginTop: 3,
     color: "#85838D",
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "500",
   },
 
@@ -569,7 +569,7 @@ const styles = StyleSheet.create({
 
   summaryLabel: {
     marginTop: 2,
-    fontSize: 11,
+    fontSize: 15,
     color: "#85838D",
     fontWeight: "600",
   },
@@ -597,7 +597,7 @@ const styles = StyleSheet.create({
 
   sectionSubtitle: {
     marginTop: 3,
-    fontSize: 11,
+    fontSize: 15,
     color: "#8A8892",
     fontWeight: "500",
   },
@@ -614,7 +614,7 @@ const styles = StyleSheet.create({
 
   sectionCountText: {
     color: "#410FA3",
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "900",
   },
 
@@ -665,14 +665,14 @@ const styles = StyleSheet.create({
   },
 
   gameTitle: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "900",
     color: "#1B1B1F",
   },
 
   playedAt: {
     marginTop: 5,
-    fontSize: 11,
+    fontSize: 15,
     color: "#85838D",
     fontWeight: "500",
   },
@@ -686,7 +686,7 @@ const styles = StyleSheet.create({
   },
 
   scoreLabel: {
-    fontSize: 8,
+    fontSize: 15,
     fontWeight: "900",
     color: "#A09EA7",
     letterSpacing: 0.8,
@@ -723,26 +723,26 @@ const styles = StyleSheet.create({
   },
 
   statValue: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "900",
     color: "#333238",
   },
 
   starValue: {
-    fontSize: 10,
+    fontSize: 15,
     color: "#F5B800",
     letterSpacing: -1,
   },
 
   xpValue: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "900",
     color: "#1D9E75",
   },
 
   statLabel: {
     marginTop: 3,
-    fontSize: 9,
+    fontSize: 15,
     color: "#929098",
     fontWeight: "600",
   },
@@ -773,7 +773,7 @@ const styles = StyleSheet.create({
   },
 
   badgeSmallLabel: {
-    fontSize: 8,
+    fontSize: 15,
     fontWeight: "900",
     color: "#B77900",
     letterSpacing: 0.6,
@@ -781,7 +781,7 @@ const styles = StyleSheet.create({
 
   badgeText: {
     marginTop: 2,
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "800",
     color: "#755000",
   },
@@ -820,7 +820,7 @@ const styles = StyleSheet.create({
 
   emptyText: {
     marginTop: 8,
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 20,
     color: "#85838D",
     textAlign: "center",
@@ -837,7 +837,7 @@ const styles = StyleSheet.create({
 
   playButtonText: {
     color: "#FFFFFF",
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: "900",
   },
 
@@ -872,7 +872,7 @@ const styles = StyleSheet.create({
 
   messageText: {
     marginTop: 7,
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 20,
     color: "#777777",
     textAlign: "center",
@@ -888,7 +888,7 @@ const styles = StyleSheet.create({
 
   retryButtonText: {
     color: "#FFFFFF",
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: "800",
   },
 

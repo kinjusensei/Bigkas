@@ -1,3 +1,4 @@
+import { REVIEW_MODE } from "../constant/devFlags";
 import { supabase } from "./supabase";
 
 export type DailyStreak = {
@@ -36,6 +37,10 @@ export async function updateDailyStreak(
       console.log("🔥 Streak fetch error:", fetchError.message);
       return null;
     }
+
+    // Review mode shows the saved streak without changing it
+    // (constant/devFlags.ts).
+    if (REVIEW_MODE) return existingStreak ?? null;
 
     const now = new Date();
     const today = getLocalDateString(now);

@@ -497,7 +497,7 @@ const styles = StyleSheet.create({
   },
 
   loadingText: {
-    fontSize: 15,
+    fontSize: 18,
     color: "#666",
   },
 
@@ -534,7 +534,7 @@ const styles = StyleSheet.create({
   },
 
   headerSub: {
-    fontSize: 14,
+    fontSize: 15,
     color: "rgba(255,255,255,0.75)",
   },
 
@@ -614,7 +614,7 @@ const styles = StyleSheet.create({
   },
 
   levelBadgeText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
   },
 
@@ -635,7 +635,7 @@ const styles = StyleSheet.create({
   },
 
   xpLevelText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "800",
     color: "#410FA3",
   },
@@ -660,7 +660,7 @@ const styles = StyleSheet.create({
   },
 
   xpProgressHint: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: "600",
     color: "#666",
     textAlign: "left",
@@ -691,7 +691,7 @@ const styles = StyleSheet.create({
   },
 
   statLabel: {
-    fontSize: 11,
+    fontSize: 15,
     color: "#999",
     fontWeight: "500",
   },
@@ -732,14 +732,14 @@ const styles = StyleSheet.create({
   },
 
   historyButtonTitle: {
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: "800",
     color: "#1B1B1F",
   },
 
   historyButtonSubtitle: {
     marginTop: 3,
-    fontSize: 12,
+    fontSize: 15,
     color: "#777777",
   },
 
@@ -756,13 +756,13 @@ const styles = StyleSheet.create({
   },
 
   sectionTitle: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: "800",
     color: "#1a1a1a",
   },
 
   sectionSub: {
-    fontSize: 13,
+    fontSize: 15,
     color: "#999",
     marginTop: -4,
   },
@@ -794,18 +794,18 @@ const styles = StyleSheet.create({
   },
 
   achievementTitle: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: "700",
     color: "#1a1a1a",
   },
 
   achievementDesc: {
-    fontSize: 12,
+    fontSize: 15,
     color: "#666",
   },
 
   achievementXP: {
-    fontSize: 11,
+    fontSize: 15,
     color: "#DC2626",
     fontWeight: "600",
     marginTop: 2,
@@ -858,20 +858,20 @@ const styles = StyleSheet.create({
   },
 
   badgeTitle: {
-    fontSize: 13,
+    fontSize: 18,
     fontWeight: "700",
     color: "#1a1a1a",
     textAlign: "center",
   },
 
   badgeDesc: {
-    fontSize: 11,
+    fontSize: 15,
     color: "#999",
     textAlign: "center",
   },
 
   badgeXP: {
-    fontSize: 11,
+    fontSize: 15,
     color: "#DC2626",
     fontWeight: "600",
   },

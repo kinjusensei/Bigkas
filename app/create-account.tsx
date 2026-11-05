@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -14,6 +14,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { PRIVACY_POLICY_VERSION } from "../data/privacyPolicy";
+import {
+  resetPrivacyConsent,
+  usePrivacyConsent,
+} from "../services/privacyConsent";
 import { supabase } from "../services/supabase";
 
 export default function CreateAccountScreen() {
@@ -29,19 +33,32 @@ export default function CreateAccountScreen() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // Consent — both are required by the Data Privacy Act before we collect data.
-  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  // Privacy agreement can ONLY be given by reading the policy to the end and
+  // tapping "Allow" on the privacy screen; it comes back through this store.
+  const { accepted: agreedToPrivacy, acceptedAt } = usePrivacyConsent();
   const [confirmedAge, setConfirmedAge] = useState(false);
   const consentGiven = agreedToPrivacy && confirmedAge;
 
-  const openPrivacyPolicy = () => router.push("/privacy" as any);
+  // Every visit to this screen starts with fresh, un-given consent.
+  useEffect(() => {
+    resetPrivacyConsent();
+  }, []);
+
+  const openPrivacyPolicy = () => router.push("/privacy?mode=consent" as any);
 
   async function handleRegister() {
+    const normalizedEmail = email.trim().toLowerCase();
+
     if (!displayName.trim()) {
       setError("Please enter your name.");
       return;
     }
-    if (!email.trim()) {
+    if (!normalizedEmail) {
       setError("Please enter your email.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setError("Please enter a valid email address.");
       return;
     }
     if (password.length < 6) {
@@ -67,22 +84,36 @@ export default function CreateAccountScreen() {
     setError("");
 
     // Recorded as proof of consent (the Data Privacy Act requires consent to
-    // be evidenced). Saved in the auth metadata AND the profile, so it's kept
-    // even if the profile insert below has to wait for email confirmation.
-    const consentAt = new Date().toISOString();
+    // be evidenced). Uses the moment the user tapped "Allow". Saved in the auth
+    // metadata AND the profile, so it's kept even if the profile insert below
+    // has to wait for email confirmation.
+    const consentAt = acceptedAt ?? new Date().toISOString();
 
-    const { data, error: signUpError } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-      options: {
-        data: {
-          display_name: displayName.trim(),
-          privacy_accepted_at: consentAt,
-          privacy_version: PRIVACY_POLICY_VERSION,
-          age_confirmed: true,
+    let data: Awaited<ReturnType<typeof supabase.auth.signUp>>["data"];
+    let signUpError: Awaited<ReturnType<typeof supabase.auth.signUp>>["error"];
+
+    try {
+      ({ data, error: signUpError } = await supabase.auth.signUp({
+        email: normalizedEmail,
+        password,
+        options: {
+          data: {
+            display_name: displayName.trim(),
+            privacy_accepted_at: consentAt,
+            privacy_version: PRIVACY_POLICY_VERSION,
+            age_confirmed: true,
+          },
         },
-      },
-    });
+      }));
+    } catch (caughtError) {
+      setError(
+        caughtError instanceof Error
+          ? caughtError.message
+          : "Unable to create your account. Please try again.",
+      );
+      setLoading(false);
+      return;
+    }
 
     if (signUpError) {
       setError(signUpError.message);
@@ -90,55 +121,10 @@ export default function CreateAccountScreen() {
       return;
     }
 
-    if (data.user) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      // Check if profile already exists (to avoid duplicate insert)
-      const { data: existing } = await supabase
-        .from("profiles")
-        .select("id")
-        .eq("id", data.user.id)
-        .single();
-
-      if (!existing) {
-        const { error: profileError } = await supabase.from("profiles").insert({
-          id: data.user.id,
-          display_name: displayName.trim(),
-          email: email.trim().toLowerCase(),
-          role: "user",
-          xp: 0,
-          level: 1,
-          active_dialect: "tagalog",
-          studying_dialects: ["tagalog"],
-          daily_goal_minutes: 10,
-          privacy_accepted_at: consentAt,
-          privacy_version: PRIVACY_POLICY_VERSION,
-          age_confirmed: true,
-        });
-
-        if (profileError) {
-          setError(profileError.message);
-          setLoading(false);
-          return;
-        }
-      } else {
-        // Profile exists but display_name / consent might be missing — update it
-        const { error: updateError } = await supabase
-          .from("profiles")
-          .update({
-            display_name: displayName.trim(),
-            privacy_accepted_at: consentAt,
-            privacy_version: PRIVACY_POLICY_VERSION,
-            age_confirmed: true,
-          })
-          .eq("id", data.user.id);
-
-        if (updateError) {
-          setError(updateError.message);
-          setLoading(false);
-          return;
-        }
-      }
+    if (!data.user) {
+      setError("Account creation did not return a user. Please try again.");
+      setLoading(false);
+      return;
     }
 
     setLoading(false);
@@ -301,17 +287,11 @@ export default function CreateAccountScreen() {
 
             {/* Consent */}
             <View style={styles.consentGroup}>
-              <ConsentCheckbox
-                checked={agreedToPrivacy}
-                onToggle={() => setAgreedToPrivacy((v) => !v)}
-                accessibilityLabel="I have read and agree to the Privacy Policy"
-              >
-                I have read and agree to the{" "}
-                <Text style={styles.consentLink} onPress={openPrivacyPolicy}>
-                  Privacy Policy
-                </Text>
-                , and I consent to Bigkas processing my data as described there.
-              </ConsentCheckbox>
+              {/* Tapping anywhere here opens the policy — it can't be ticked directly. */}
+              <PrivacyConsentRow
+                accepted={agreedToPrivacy}
+                onPress={openPrivacyPolicy}
+              />
 
               <ConsentCheckbox
                 checked={confirmedAge}
@@ -367,6 +347,55 @@ export default function CreateAccountScreen() {
   );
 }
 
+function PrivacyConsentRow({
+  accepted,
+  onPress,
+}: {
+  accepted: boolean;
+  onPress: () => void;
+}) {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.privacyCard,
+        accepted && styles.privacyCardAccepted,
+        pressed && { opacity: 0.7 },
+      ]}
+      accessibilityRole="checkbox"
+      accessibilityState={{ checked: accepted }}
+      accessibilityLabel="I have read and agree to the Privacy Policy"
+      accessibilityHint={
+        accepted
+          ? "Opens the Privacy Policy again"
+          : "Opens the Privacy Policy. Read it to the end and tap Allow to agree."
+      }
+    >
+      <View style={[styles.checkbox, accepted && styles.checkboxChecked]}>
+        {accepted && <Text style={styles.checkmark}>✓</Text>}
+      </View>
+      <View style={{ flex: 1, gap: 4 }}>
+        <Text style={styles.consentText}>
+          I have read and agree to the{" "}
+          <Text style={styles.consentLink}>Privacy Policy</Text>, and I consent
+          to Bigkas processing my data as described there.
+        </Text>
+        <Text
+          style={[
+            styles.privacyCardHint,
+            accepted && styles.privacyCardHintDone,
+          ]}
+        >
+          {accepted
+            ? "Read and accepted"
+            : "Tap to read it. You can agree at the end."}
+        </Text>
+      </View>
+      {!accepted && <Text style={styles.chevron}>›</Text>}
+    </Pressable>
+  );
+}
+
 function ConsentCheckbox({
   checked,
   onToggle,
@@ -390,7 +419,6 @@ function ConsentCheckbox({
       <View style={[styles.checkbox, checked && styles.checkboxChecked]}>
         {checked && <Text style={styles.checkmark}>✓</Text>}
       </View>
-      {/* Text (not View) so the "Privacy Policy" link can sit inline. */}
       <Text style={styles.consentText}>{children}</Text>
     </Pressable>
   );
@@ -406,15 +434,15 @@ const styles = StyleSheet.create({
   subheading: { fontSize: 15, color: "#666" },
   form: { gap: 16 },
   inputGroup: { gap: 6 },
-  label: { fontSize: 14, fontWeight: "600", color: "#1a1a1a" },
-  hint: { fontSize: 12, color: "#9CA3AF", marginTop: 2 },
+  label: { fontSize: 15, fontWeight: "600", color: "#1a1a1a" },
+  hint: { fontSize: 15, color: "#9CA3AF", marginTop: 2 },
   input: {
     borderWidth: 1,
     borderColor: "#E5E7EB",
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    fontSize: 15,
+    fontSize: 18,
     color: "#1a1a1a",
     backgroundColor: "#FAFAFA",
   },
@@ -430,15 +458,36 @@ const styles = StyleSheet.create({
   passwordInput: {
     flex: 1,
     paddingVertical: 14,
-    fontSize: 15,
+    fontSize: 18,
     color: "#1a1a1a",
   },
   eyeButton: { paddingLeft: 10, paddingVertical: 14 },
   eyeImage: { width: 22, height: 22 },
-  matchText: { fontSize: 12, fontWeight: "600", marginTop: 4 },
+  matchText: { fontSize: 15, fontWeight: "600", marginTop: 4 },
 
   consentGroup: { gap: 14, marginTop: 4 },
   consentRow: { flexDirection: "row", alignItems: "flex-start", gap: 12 },
+
+  privacyCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    padding: 14,
+    borderRadius: 14,
+    borderWidth: 1.5,
+    borderStyle: "dashed",
+    borderColor: "#A78BDA",
+    backgroundColor: "#F7F4FC",
+  },
+  privacyCardAccepted: {
+    borderStyle: "solid",
+    borderColor: "#410FA3",
+    backgroundColor: "#EFEAF9",
+  },
+  privacyCardHint: { fontSize: 15, color: "#4B5563" },
+  privacyCardHintDone: { color: "#410FA3", fontWeight: "600" },
+  chevron: { fontSize: 24, color: "#410FA3", fontWeight: "600" },
+
   checkbox: {
     width: 22,
     height: 22,
@@ -457,7 +506,7 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     lineHeight: 16,
   },
-  consentText: { flex: 1, fontSize: 14, color: "#374151", lineHeight: 21 },
+  consentText: { flex: 1, fontSize: 15, color: "#374151", lineHeight: 21 },
   consentLink: {
     color: "#410FA3",
     fontWeight: "700",
@@ -465,7 +514,7 @@ const styles = StyleSheet.create({
   },
 
   errorBox: { backgroundColor: "#FEE2E2", borderRadius: 10, padding: 12 },
-  errorText: { color: "#DC2626", fontSize: 14, fontWeight: "500" },
+  errorText: { color: "#DC2626", fontSize: 15, fontWeight: "500" },
   submitBtn: {
     backgroundColor: "#410FA3",
     paddingVertical: 16,
@@ -473,10 +522,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 8,
   },
-  submitBtnText: { color: "#FFFFFF", fontSize: 17, fontWeight: "700" },
+  submitBtnText: { color: "#FFFFFF", fontSize: 18, fontWeight: "700" },
   loginLink: { alignItems: "center", paddingVertical: 12 },
   loginLinkText: { fontSize: 15, color: "#410FA3", fontWeight: "600" },
-  privacy: { fontSize: 12, color: "#999", textAlign: "center" },
+  privacy: { fontSize: 15, color: "#999", textAlign: "center" },
   privacyLink: {
     color: "#410FA3",
     fontWeight: "600",

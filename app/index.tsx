@@ -101,11 +101,11 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   dialectItem: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '700',
   },
   dialectDivider: {
-    fontSize: 14,
+    fontSize: 15,
     color: 'rgba(255,255,255,0.4)',
     fontWeight: '700',
   },
@@ -132,12 +132,12 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.3)',
   },
   secondaryButtonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
     color: 'rgba(255,255,255,0.85)',
   },
   footer: {
-    fontSize: 12,
+    fontSize: 15,
     color: 'rgba(255,255,255,0.4)',
     textAlign: 'center',
   },

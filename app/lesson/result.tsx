@@ -1,7 +1,8 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  InteractionManager,
   ScrollView,
   StyleSheet,
   Text,
@@ -9,35 +10,112 @@ import {
   View,
 } from "react-native";
 import ConfettiCannon from "react-native-confetti-cannon";
+import SelfRatingCard from "../../components/lesson/SelfRatingCard";
+import StoryPracticeResult from "../../components/story-practice/StoryPracticeResult";
+import { parsePracticeByType } from "../../utils/storyPractice";
+import {
+  getStoryPracticeRequiredCorrect,
+} from "../../data/storyPracticeData";
+import { saveLeaderboardBonus } from "../../services/practiceService";
 import { supabase } from "../../services/supabase";
 import { updateWinningStreak } from "../../services/winningStreak";
+import { streakBonusPercent } from "../../utils/lessonCompletion";
 
 export default function ResultScreen() {
   const router = useRouter();
 
-  const { score, correct, total, accuracy, xp, won } = useLocalSearchParams();
+  const {
+    score,
+    correct,
+    total,
+    accuracy,
+    xp,
+    won,
+    selfRatingLessonId,
+    lessonId,
+    storyLessonId,
+    dialect,
+    chapterId,
+    passMark,
+    byType,
+  } = useLocalSearchParams();
 
   const streakSavedRef = useRef(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  // Win streak after this game and the leaderboard score with its bonus.
+  const [streakBonus, setStreakBonus] = useState<{
+    streak: number;
+    leaderboardScore: number;
+  } | null>(null);
 
+  // Wait until the screen has finished opening before starting the
+  // confetti and the streak save, so neither competes with the transition.
   useEffect(() => {
-    if (streakSavedRef.current) return;
+    const task = InteractionManager.runAfterInteractions(() => {
+      if (won === "true") {
+        setShowConfetti(true);
+      }
 
-    if (won !== "true" && won !== "false") return;
+      if (streakSavedRef.current) return;
+      if (won !== "true" && won !== "false") return;
 
-    streakSavedRef.current = true;
+      streakSavedRef.current = true;
 
-    const saveWinningStreak = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      const saveWinningStreak = async () => {
+        // Session stored on the device — no auth server round trip.
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
 
-      if (!user) return;
+        if (!session?.user) return;
 
-      await updateWinningStreak(user.id, won === "true");
-    };
+        const streakRow = await updateWinningStreak(
+          session.user.id,
+          won === "true",
+        );
 
-    saveWinningStreak();
-  }, [won]);
+        // A win adds 10% per streak win to this game's leaderboard score.
+        if (won !== "true" || !streakRow || typeof lessonId !== "string") {
+          return;
+        }
+        const streak = streakRow.current_streak ?? 0;
+        const leaderboardScore = await saveLeaderboardBonus(
+          session.user.id,
+          lessonId,
+          Number(score) || 0,
+          streak,
+        );
+        if (leaderboardScore !== null) {
+          setStreakBonus({ streak, leaderboardScore });
+        }
+      };
+
+      saveWinningStreak();
+    });
+
+    return () => task.cancel();
+  }, [won, lessonId, score]);
+
+  // Every story practice: same save and streak logic above, its own look.
+  const flowLessonId = typeof storyLessonId === "string" ? storyLessonId : "";
+  if (flowLessonId) {
+    return (
+      <StoryPracticeResult
+        storyLessonId={flowLessonId}
+        dialect={String(dialect)}
+        chapterId={String(chapterId)}
+        correct={Number(correct) || 0}
+        total={Number(total) || 0}
+        passMark={
+          Number(passMark) ||
+          (getStoryPracticeRequiredCorrect(flowLessonId) ?? 0)
+        }
+        passed={won === "true"}
+        rows={parsePracticeByType(byType)}
+        xpEarned={Number(xp) || 0}
+      />
+    );
+  }
 
   const accuracyValue = Number(accuracy);
 
@@ -87,7 +165,9 @@ export default function ResultScreen() {
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
     >
-      <ConfettiCannon count={500} origin={{ x: 200, y: 0 }} />
+      {showConfetti ? (
+        <ConfettiCannon count={120} origin={{ x: 200, y: 0 }} fadeOut />
+      ) : null}
       {/* Trophy */}
       <View style={styles.hero}>
         <MaterialCommunityIcons name="trophy" size={90} color="#FBBF24" />
@@ -165,6 +245,24 @@ export default function ResultScreen() {
         </View>
       </View>
 
+      {streakBonus ? (
+        <View style={[styles.card, styles.bonusCard]}>
+          <MaterialCommunityIcons name="fire" size={32} color="#F97316" />
+          <Text style={styles.cardTitle}>
+            {streakBonus.streak}-win streak · +
+            {streakBonusPercent(streakBonus.streak)}% bonus
+          </Text>
+          <Text style={styles.cardValue}>
+            {streakBonus.leaderboardScore}
+          </Text>
+          <Text style={styles.cardTitle}>Leaderboard score</Text>
+        </View>
+      ) : null}
+
+      {typeof selfRatingLessonId === "string" && selfRatingLessonId ? (
+        <SelfRatingCard lessonId={selfRatingLessonId} />
+      ) : null}
+
       {/* Action Buttons */}
       <TouchableOpacity
         style={styles.primaryButton}
@@ -188,6 +286,12 @@ export default function ResultScreen() {
 }
 
 const styles = StyleSheet.create({
+  bonusCard: {
+    flex: 0,
+    alignSelf: "stretch",
+    marginBottom: 16,
+  },
+
   container: {
     flexGrow: 1,
     backgroundColor: "#F5F3FF",

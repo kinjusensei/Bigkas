@@ -1,0 +1,195 @@
+/** Compact story vocabulary: [Tagalog term, English meaning]. */
+export type TagalogTerm = readonly [word: string, meaning: string];
+
+export const tagalogTermsByChapter: Record<number, readonly TagalogTerm[]> = {
+  1: [
+    ["dahan-dahan", "slowly"],
+    ["nayon", "village"],
+    ["hamog", "mist"],
+    ["pamana", "inheritance"],
+    ["pumanaw", "passed away"],
+    ["reputasyon", "reputation"],
+  ],
+  2: [
+    ["silangang pakpak", "east wing"],
+    ["kandado", "padlock"],
+    ["talaarawan", "diary"],
+    ["mantsa", "stain"],
+  ],
+  3: [
+    ["mansiyon", "mansion"],
+    ["susi", "key"],
+    ["pinto", "door"],
+    ["lihim", "secret"],
+  ],
+  4: [
+    ["sulat", "letter"],
+    ["kandila", "candle"],
+    ["anino", "shadow"],
+    ["takot", "fear"],
+  ],
+  5: [
+    ["alaala", "memory"],
+    ["larawan", "picture"],
+    ["pighati", "grief"],
+    ["saksi", "witness"],
+  ],
+  6: [
+    ["libing", "funeral"],
+    ["kapilya", "chapel"],
+    ["hagdan", "stairs"],
+    ["mana", "inheritance"],
+  ],
+  7: [
+    ["kapilya", "chapel"],
+    ["hagdan", "stairs"],
+    ["pangalan", "name"],
+    ["mana", "inheritance"],
+  ],
+  8: [
+    ["kasinungalingan", "lie"],
+    ["katotohanan", "truth"],
+    ["interpretasyon", "interpretation"],
+    ["panganib", "danger"],
+  ],
+  9: [
+    ["manyika", "doll"],
+    ["bakod", "fence"],
+    ["karamihan", "majority"],
+    ["paghamak", "contempt"],
+  ],
+  10: [
+    ["larawan", "picture"],
+    ["anino", "shadow"],
+    ["mata", "eye"],
+    ["galaw", "movement"],
+  ],
+  11: [
+    ["tagapagmana", "heir"],
+    ["talaan", "record"],
+    ["sanga", "branch"],
+    ["binyag", "baptism"],
+  ],
+  12: [
+    ["apoy", "fire"],
+    ["pinsala", "damage"],
+    ["alarma", "alarm"],
+    ["usok", "smoke"],
+  ],
+  13: [
+    ["pista", "festival"],
+    ["plasa", "town square"],
+    ["ina", "mother"],
+    ["isinumpa", "cursed"],
+  ],
+  14: [
+    ["sulat-kamay", "handwriting"],
+    ["dugo", "blood"],
+    ["mana", "inheritance"],
+    ["bulong", "whisper"],
+  ],
+  15: [
+    ["tubig", "water"],
+    ["libingan", "crypt / tomb"],
+    ["kadena", "chain"],
+    ["bato", "stone"],
+  ],
+  16: [
+    ["pari", "priest"],
+    ["sumpa", "curse"],
+    ["layunin", "purpose"],
+    ["katapatan", "loyalty"],
+  ],
+  17: [
+    ["dokumento", "document"],
+    ["utang", "debt"],
+    ["kabangisan", "cruelty"],
+    ["ebidensya", "evidence"],
+  ],
+  18: [
+    ["guni-guni", "hallucination"],
+    ["silid", "room"],
+    ["paningin", "vision"],
+    ["tala", "note"],
+  ],
+  19: [
+    ["imbestigador", "investigator"],
+    ["aksidente", "accident"],
+    ["alaala", "memory"],
+    ["budhi", "conscience"],
+  ],
+  20: [
+    ["tinig", "voice"],
+    ["rekord", "record"],
+    ["labi", "lips"],
+    ["kadena", "chain"],
+  ],
+  21: [
+    ["paglilitis", "trial"],
+    ["publiko", "public"],
+    ["pahayag", "statement"],
+    ["akusasyon", "accusation"],
+  ],
+  22: [
+    ["ninuno", "ancestor"],
+    ["katotohanan", "truth"],
+    ["kasaysayan", "history"],
+    ["lihim", "secret"],
+  ],
+  23: [
+    ["binaligtad", "reversed"],
+    ["plano", "plan"],
+    ["pagtataksil", "betrayal"],
+    ["pagpili", "choice"],
+  ],
+  24: [
+    ["koro", "chorus"],
+    ["bulong", "whisper"],
+    ["tinig", "voice"],
+    ["tunog", "sound"],
+  ],
+  25: [
+    ["kasunduan", "agreement"],
+    ["nakatago", "hidden"],
+    ["pangako", "promise"],
+    ["pamana", "inheritance"],
+  ],
+  26: [
+    ["tinanggap", "accepted"],
+    ["ninuno", "ancestor"],
+    ["pag-amin", "confession"],
+    ["takot", "fear"],
+  ],
+  27: [
+    ["pag-aalsa", "uprising"],
+    ["bayan", "town"],
+    ["ama", "father"],
+    ["pagkakaisa", "unity"],
+  ],
+  28: [
+    ["pagtatangka", "attempt"],
+    ["huling", "final / last"],
+    ["desisyon", "decision"],
+    ["panganib", "danger"],
+  ],
+  29: [
+    ["nawala sa katinuan", "lost one's sanity"],
+    ["alaala", "memory"],
+    ["pagkalito", "confusion"],
+    ["katotohanan", "truth"],
+  ],
+  30: [
+    ["pamilya", "family"],
+    ["mana", "inheritance"],
+    ["pangalan", "name"],
+    ["kinabukasan", "future"],
+  ],
+  31: [
+    ["huling bulong", "final whisper"],
+    ["katahimikan", "silence"],
+    ["pag-asa", "hope"],
+    ["pagpapasya", "decision-making"],
+  ],
+};
+
+export default tagalogTermsByChapter;

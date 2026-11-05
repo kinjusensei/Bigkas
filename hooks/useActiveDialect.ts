@@ -2,7 +2,10 @@ import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
 
 import { StoryDialect } from "../data/storyData";
-import { supabase } from "../services/supabase";
+import {
+  retryOnJwtIssuedAtFuture,
+  supabase,
+} from "../services/supabase";
 
 // Reads the user's currently-selected dialect from profiles.active_dialect.
 // Story screens need this because chapter content is now shared across
@@ -45,13 +48,16 @@ export function useActiveDialect() {
             return;
           }
 
-          const { data, error } = await supabase
-            .from("profiles")
-            .select("active_dialect")
-            .eq("id", user.id)
-            .single();
+          const { data } = await retryOnJwtIssuedAtFuture(async () => {
+            const result = await supabase
+              .from("profiles")
+              .select("active_dialect")
+              .eq("id", user.id)
+              .single();
 
-          if (error) throw error;
+            if (result.error) throw result.error;
+            return result;
+          });
 
           if (!cancelled) {
             setDialect(normalize(data?.active_dialect));

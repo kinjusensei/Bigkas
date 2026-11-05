@@ -4,7 +4,8 @@
 // somewhere like "./supabase" or "../lib/supabase"). Fix this import
 // to match whatever practiceService.ts uses at the top of that file.
 // =========================================================
-import { supabase } from "./supabase";
+import { REVIEW_MODE } from "../constant/devFlags";
+import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
 
 export type PretestResult = {
   score: number;
@@ -24,6 +25,9 @@ export async function savePretestResult(
   totalQuestions: number,
   passingScore: number,
 ): Promise<void> {
+  // Review mode saves nothing (constant/devFlags.ts).
+  if (REVIEW_MODE) return;
+
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -67,23 +71,25 @@ export async function getAllPretestProgress(): Promise<
     return {};
   }
 
-  const { data, error } = await supabase
-    .from("pretest_progress")
-    .select("lesson_id, score, total_questions, passed")
-    .eq("user_id", user.id);
+  return retryOnJwtIssuedAtFuture(async () => {
+    const { data, error } = await supabase
+      .from("pretest_progress")
+      .select("lesson_id, score, total_questions, passed")
+      .eq("user_id", user.id);
 
-  if (error) {
-    throw error;
-  }
+    if (error) {
+      throw error;
+    }
 
-  const map: Record<string, PretestResult> = {};
-  (data ?? []).forEach((row) => {
-    map[row.lesson_id] = {
-      score: row.score,
-      totalQuestions: row.total_questions,
-      passed: row.passed,
-    };
+    const map: Record<string, PretestResult> = {};
+    (data ?? []).forEach((row) => {
+      map[row.lesson_id] = {
+        score: row.score,
+        totalQuestions: row.total_questions,
+        passed: row.passed,
+      };
+    });
+
+    return map;
   });
-
-  return map;
 }

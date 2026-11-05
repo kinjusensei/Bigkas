@@ -196,12 +196,12 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   waitingText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '700',
     color: '#1a1a1a',
   },
   waitingNote: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#999',
   },
   header: {
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   label: {
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '600',
     color: '#1a1a1a',
   },
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    fontSize: 15,
+    fontSize: 18,
     color: '#1a1a1a',
     backgroundColor: '#FAFAFA',
   },
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: '#DC2626',
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: '500',
   },
   submitBtn: {
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
   },
   submitBtnText: {
     color: '#FFFFFF',
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '700',
   },
   successBox: {
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     color: '#1a1a1a',
   },
   successText: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#666',
     textAlign: 'center',
     lineHeight: 22,

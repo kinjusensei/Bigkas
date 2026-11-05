@@ -3,21 +3,61 @@ import {
     ExpoSpeechRecognitionModule,
     useSpeechRecognitionEvent,
 } from "expo-speech-recognition";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+    ActivityIndicator,
+    Alert,
     Animated,
+    BackHandler,
+    KeyboardAvoidingView,
+    Platform,
     SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
+    TextInput,
     TouchableOpacity,
     View,
 } from "react-native";
 
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
 
+import LessonGate from "../../components/lesson/LessonGate";
+import StoryGate from "../../components/story/StoryGate";
+import ChoiceQuestion from "../../components/story-practice/ChoiceQuestion";
+import FillQuestion from "../../components/story-practice/FillQuestion";
+import PracticeBottomBar from "../../components/story-practice/PracticeBottomBar";
+import PracticeHeader from "../../components/story-practice/PracticeHeader";
+import PracticeProgress from "../../components/story-practice/PracticeProgress";
+import { FLOW } from "../../components/story-practice/practiceTheme";
+import ShowItQuestion from "../../components/story-practice/ShowItQuestion";
+import StoryPracticeResult from "../../components/story-practice/StoryPracticeResult";
+import SpeakQuestion from "../../components/story-practice/SpeakQuestion";
 import { pretestByLessonId, PretestQuestion } from "../../data/pretestData";
+import { findStoryForLesson } from "../../data/storyData";
+import {
+  getStoryPracticeRequiredCorrect,
+  prepareStoryPracticeQuestions,
+} from "../../data/storyPracticeData";
+import {
+  matchCardsCaption,
+  matchesFillAnswer,
+  PRACTICE_TYPE_LABELS,
+  practiceTypeLabel,
+  storyChoiceInstruction,
+  storyFillInstruction,
+  summarizePracticeByType,
+} from "../../utils/storyPractice";
 import { PracticeExpressionResult } from "../../types/practice";
+import { useLogLessonStart } from "../../hooks/useLogLessonStart";
+import { savePretestResult } from "../../services/Pretestservice";
+import { savePracticeResultWithXp } from "../../services/practiceService";
+import {
+  calculateAccuracy,
+  calculateBadge,
+  calculateStars,
+  calculateXP,
+} from "../../utils/practiceUtils";
 import PracticeCamera from "../components/Practice/PracticeCamera";
 
 // =========================================================
@@ -41,30 +81,107 @@ const normalizeWord = (value: string) =>
     .replace(/[^a-z0-9]/g, "")
     .trim();
 
-const TYPE_LABELS: Record<PretestQuestion["type"], string> = {
-  multiple_choice: "🗨️ Translate",
-  speak: "🎤 Speak It",
-  expression: "😊 Show It",
+const TYPE_LABELS: Record<PretestQuestion["type"], string> = PRACTICE_TYPE_LABELS;
+
+// Speech errors that mean the mic can't be used at all, as opposed to
+// "didn't catch that" (no-speech), which just listens again.
+const MIC_UNAVAILABLE_ERRORS = [
+  "not-allowed",
+  "service-not-allowed",
+  "audio-capture",
+  "language-not-supported",
+  "network",
+];
+
+const DIALECT_LABELS: Record<string, string> = {
+  tagalog: "Tagalog",
+  kapampangan: "Kapampangan",
+  waray: "Waray",
 };
 
-export default function PretestScreen() {
-  const router = useRouter();
-  const { lessonId } = useLocalSearchParams<{ lessonId?: string }>();
+// A locked lesson (previous one not complete) doesn't open; story pretests
+// (storyLessonId) aren't gated.
+export default function PretestRoute() {
+  const { lessonId, storyLessonId } = useLocalSearchParams<{
+    lessonId?: string;
+    storyLessonId?: string;
+  }>();
+  return (
+    <StoryGate lessonId={storyLessonId}>
+      <LessonGate lessonId={storyLessonId ? undefined : lessonId}>
+        <PretestScreen />
+      </LessonGate>
+    </StoryGate>
+  );
+}
 
-  const questions: PretestQuestion[] = lessonId
-    ? (pretestByLessonId[lessonId] ?? [])
-    : [];
+function PretestScreen() {
+  const router = useRouter();
+  const { lessonId, storyLessonId, dialect, chapterId } = useLocalSearchParams<{
+    lessonId?: string;
+    storyLessonId?: string;
+    chapterId?: string;
+    dialect?: string;
+  }>();
+
+  // The root layout can restore this screen on launch with nothing under
+  // it in the stack, so fall back to the matching board instead of back().
+  const goBack = useCallback(() => {
+    if (router.canGoBack()) router.back();
+    else router.replace(storyLessonId ? "/story" : "/lessons");
+  }, [router, storyLessonId]);
+
+  const isStoryPractice = Boolean(storyLessonId);
+  // Story practice looks like docs/story-practice-mockups: tap the mic to
+  // speak, check answers with a button. Lesson pre-tests keep their screen.
+  const storyChapterNumber = useMemo(() => {
+    if (!storyLessonId) return 0;
+    const chapters = findStoryForLesson(storyLessonId)?.story.chapters ?? [];
+    return (
+      chapters.findIndex((chapter) => chapter.lessonId === storyLessonId) + 1
+    );
+  }, [storyLessonId]);
+
+  const activeLessonId = storyLessonId ?? lessonId;
+  // This screen also runs story practice, which saves as a practice result.
+  useLogLessonStart(activeLessonId, isStoryPractice ? "practice" : "pretest");
+
+  const dialectKey = dialect ?? lessonId?.split("_")[0] ?? "";
+  const dialectLabel =
+    DIALECT_LABELS[dialectKey] ?? "the selected dialect";
+
+  // Memoized: Story options may be shuffled, once per attempt.
+  const questions: PretestQuestion[] = useMemo(
+    () =>
+      isStoryPractice
+        ? prepareStoryPracticeQuestions(storyLessonId)
+        : activeLessonId
+          ? (pretestByLessonId[activeLessonId] ?? [])
+          : [],
+    [isStoryPractice, storyLessonId, activeLessonId],
+  );
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [correctIds, setCorrectIds] = useState<number[]>([]);
   const [finished, setFinished] = useState(false);
+  const pretestSaveStartedRef = useRef(false);
+  const [saveFailed, setSaveFailed] = useState(false);
+  const [saveAttempt, setSaveAttempt] = useState(0);
 
   // Multiple choice
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
+  // Fill in the blank
+  const [fillAnswer, setFillAnswer] = useState("");
+  const [fillSubmitted, setFillSubmitted] = useState(false);
+
   // Speak
   const [speakMatched, setSpeakMatched] = useState(false);
   const [speakHeard, setSpeakHeard] = useState<string | null>(null);
+  const [micUnavailable, setMicUnavailable] = useState(false);
+  const micUnavailableRef = useRef(false);
+  const [speakListening, setSpeakListening] = useState(false);
   const speakMatchedRef = useRef(false);
   const recognitionActiveRef = useRef(false);
   const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -74,15 +191,101 @@ export default function PretestScreen() {
 
   const currentQuestion = questions[currentIndex];
 
+  const creditCurrentQuestion = useCallback(() => {
+    setScore((s) => s + 1);
+    if (currentQuestion) {
+      setCorrectIds((ids) => [...ids, currentQuestion.id]);
+    }
+  }, [currentQuestion]);
+
   // ------- Animated progress bar -------
   const progressAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (
+      !finished ||
+      !activeLessonId ||
+      questions.length === 0 ||
+      pretestSaveStartedRef.current
+    ) {
+      return;
+    }
+
+    pretestSaveStartedRef.current = true;
+    if (isStoryPractice) {
+      setSaveFailed(false);
+      const accuracy = calculateAccuracy(score, questions.length);
+      const requiredCorrect =
+        getStoryPracticeRequiredCorrect(activeLessonId) ??
+        Math.ceil(questions.length * 0.6);
+      void savePracticeResultWithXp({
+        lessonId: activeLessonId,
+        score: score * 10,
+        correctAnswers: score,
+        totalQuestions: questions.length,
+        accuracy,
+        xpEarned: calculateXP(score),
+        stars: calculateStars(accuracy),
+        badge: calculateBadge(accuracy),
+      })
+        .then(({ xpEarned }) =>
+          router.replace({
+            pathname: "/lesson/result",
+            params: {
+              score: String(score * 10),
+              correct: String(score),
+              total: String(questions.length),
+              accuracy: String(accuracy),
+              xp: String(xpEarned),
+              won: String(score >= requiredCorrect),
+              storyLessonId: activeLessonId,
+              dialect: dialect ?? "",
+              chapterId: chapterId ?? "",
+              passMark: String(requiredCorrect),
+              byType: JSON.stringify(
+                summarizePracticeByType(questions, correctIds),
+              ),
+            },
+          }),
+        )
+        .catch((error) => {
+          console.error("Failed to save Story Practice result:", error);
+          pretestSaveStartedRef.current = false;
+          setSaveFailed(true);
+        });
+    } else {
+      void savePretestResult(
+        activeLessonId,
+        score,
+        questions.length,
+        Math.ceil(questions.length * 0.6),
+      ).catch((error) => {
+        console.error("Failed to save pretest result:", error);
+      });
+    }
+  }, [
+    finished,
+    activeLessonId,
+    isStoryPractice,
+    questions,
+    correctIds,
+    score,
+    router,
+    dialect,
+    chapterId,
+    saveAttempt,
+  ]);
 
   useEffect(() => {
     const target = questions.length
       ? finished
         ? 1
-        : (currentIndex +
-            (selectedOption || speakMatched || expressionMatched ? 1 : 0)) /
+        : isStoryPractice
+          ? currentIndex / questions.length
+          : (currentIndex +
+            (selectedOption || fillSubmitted || speakMatched || expressionMatched
+              ? 1
+              : 0)) /
           questions.length
       : 0;
 
@@ -92,9 +295,11 @@ export default function PretestScreen() {
       useNativeDriver: false,
     }).start();
   }, [
+    isStoryPractice,
     currentIndex,
     finished,
     selectedOption,
+    fillSubmitted,
     speakMatched,
     expressionMatched,
     questions.length,
@@ -146,7 +351,20 @@ export default function PretestScreen() {
   ]);
 
   const goToNextQuestion = useCallback(() => {
+    // Whatever the camera saw (or didn't): attempted or skipped, it counts.
+    if (
+      currentQuestion?.type === "expression" &&
+      currentQuestion.countsAsCompleted
+    ) {
+      creditCurrentQuestion();
+    }
+
+    setMicUnavailable(false);
+    micUnavailableRef.current = false;
+    setSpeakListening(false);
     setSelectedOption(null);
+    setFillAnswer("");
+    setFillSubmitted(false);
     setSpeakMatched(false);
     setSpeakHeard(null);
     speakMatchedRef.current = false;
@@ -157,7 +375,7 @@ export default function PretestScreen() {
     } else {
       setCurrentIndex((i) => i + 1);
     }
-  }, [currentIndex, questions.length]);
+  }, [currentIndex, currentQuestion, questions.length, creditCurrentQuestion]);
 
   // Cleanly stop the mic before leaving/advancing — matters specifically
   // for the speak question, harmless as a no-op otherwise.
@@ -169,32 +387,102 @@ export default function PretestScreen() {
 
   const handleBack = useCallback(() => {
     stopListeningIfActive();
-    router.back();
-  }, [stopListeningIfActive, router]);
+    goBack();
+  }, [stopListeningIfActive, goBack]);
+
+  const confirmLeave = useCallback(() => {
+    Alert.alert("Leave practice?", "Your answers so far won't be saved.", [
+      { text: "Stay", style: "cancel" },
+      { text: "Leave", style: "destructive", onPress: handleBack },
+    ]);
+  }, [handleBack]);
+
+  // The phone's back button asks too.
+  useEffect(() => {
+    if (!isStoryPractice || finished) return;
+    const subscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        confirmLeave();
+        return true;
+      },
+    );
+    return () => subscription.remove();
+  }, [isStoryPractice, finished, confirmLeave]);
 
   const handleSkip = useCallback(() => {
+    stopListeningIfActive();
+    // Never lose a point because the mic can't be used.
+    if (
+      currentQuestion?.type === "speak" &&
+      currentQuestion.micOptional &&
+      micUnavailable
+    ) {
+      creditCurrentQuestion();
+    }
+    goToNextQuestion();
+  }, [
+    stopListeningIfActive,
+    goToNextQuestion,
+    currentQuestion,
+    micUnavailable,
+    creditCurrentQuestion,
+  ]);
+
+  const handleContinueFromSpeak = useCallback(() => {
     stopListeningIfActive();
     goToNextQuestion();
   }, [stopListeningIfActive, goToNextQuestion]);
 
+  const markMicUnavailable = useCallback(() => {
+    micUnavailableRef.current = true;
+    setMicUnavailable(true);
+  }, []);
+
   // Skip is only useful before the question is already answered — once
   // answered, "Next"/"Finish" is the way forward.
   const isAnswered =
-    selectedOption !== null || speakMatched || expressionMatched;
+    selectedOption !== null ||
+    fillSubmitted ||
+    speakMatched ||
+    expressionMatched;
 
   // =========================================================
   // MULTIPLE CHOICE
   // =========================================================
 
   const handleSelectOption = (option: string) => {
-    if (selectedOption || currentQuestion?.type !== "multiple_choice") {
+    if (
+      selectedOption ||
+      (currentQuestion?.type !== "multiple_choice" &&
+        currentQuestion?.type !== "card_match")
+    ) {
       return;
     }
 
     setSelectedOption(option);
 
     if (option === currentQuestion.correctMeaning) {
-      setScore((s) => s + 1);
+      creditCurrentQuestion();
+    }
+  };
+
+  const handleSubmitFillBlank = () => {
+    if (
+      fillSubmitted ||
+      currentQuestion?.type !== "fill_blank" ||
+      !fillAnswer.trim()
+    ) {
+      return;
+    }
+
+    setFillSubmitted(true);
+    if (
+      currentQuestion.acceptedAnswers
+        ? matchesFillAnswer(fillAnswer, currentQuestion.acceptedAnswers)
+        : normalizeWord(fillAnswer) === normalizeWord(currentQuestion.correctWord)
+    ) {
+      creditCurrentQuestion();
     }
   };
 
@@ -203,7 +491,11 @@ export default function PretestScreen() {
   // =========================================================
 
   const handleStartListening = useCallback(async () => {
-    if (recognitionActiveRef.current || speakMatchedRef.current) {
+    if (
+      recognitionActiveRef.current ||
+      speakMatchedRef.current ||
+      micUnavailableRef.current
+    ) {
       return;
     }
 
@@ -213,6 +505,7 @@ export default function PretestScreen() {
 
       if (!permission.granted) {
         console.log("🎤 Pretest: microphone permission not granted.");
+        markMicUnavailable();
         return;
       }
 
@@ -223,11 +516,14 @@ export default function PretestScreen() {
       });
 
       recognitionActiveRef.current = true;
+      setSpeakListening(true);
     } catch (error) {
       recognitionActiveRef.current = false;
+      setSpeakListening(false);
       console.error("🎤 Pretest speech start failed:", error);
+      markMicUnavailable();
     }
-  }, []);
+  }, [markMicUnavailable]);
 
   useSpeechRecognitionEvent("result", (event) => {
     if (
@@ -241,31 +537,55 @@ export default function PretestScreen() {
     const transcript = event.results[0]?.transcript?.trim() ?? "";
     const isFinal = (event as any).isFinal ?? true;
 
+    if (transcript && isStoryPractice) {
+      setSpeakHeard(transcript);
+    }
+
     if (!transcript || !isFinal) {
       return;
     }
 
     const spokenWords = transcript.trim().split(/\s+/).map(normalizeWord);
-    const spoken = spokenWords[spokenWords.length - 1] ?? "";
+    const spoken = normalizeWord(transcript);
+    const spokenLastWord = spokenWords[spokenWords.length - 1] ?? "";
     const expected = normalizeWord(currentQuestion.word);
+    const expectedIsSingleWord = currentQuestion.word.trim().split(/\s+/).length === 1;
 
-    setSpeakHeard(spoken);
+    setSpeakHeard(transcript);
 
-    if (spoken === expected) {
+    if (spoken === expected || (expectedIsSingleWord && spokenLastWord === expected)) {
       speakMatchedRef.current = true;
       setSpeakMatched(true);
-      setScore((s) => s + 1);
+      creditCurrentQuestion();
       ExpoSpeechRecognitionModule.abort();
+    } else if (isStoryPractice) {
+      // Show what was heard; the learner chooses Try again or Continue.
+      ExpoSpeechRecognitionModule.abort();
+    }
+  });
+
+  useSpeechRecognitionEvent("error", (event) => {
+    if (isStoryPractice) {
+      recognitionActiveRef.current = false;
+      setSpeakListening(false);
+    }
+    if (MIC_UNAVAILABLE_ERRORS.includes(event.error)) {
+      markMicUnavailable();
     }
   });
 
   useSpeechRecognitionEvent("end", () => {
     recognitionActiveRef.current = false;
+    setSpeakListening(false);
+
+    // The lesson flow listens once per tap.
+    if (isStoryPractice) return;
 
     if (
       !currentQuestion ||
       currentQuestion.type !== "speak" ||
-      speakMatchedRef.current
+      speakMatchedRef.current ||
+      micUnavailableRef.current
     ) {
       return;
     }
@@ -289,10 +609,30 @@ export default function PretestScreen() {
     }
 
     speakMatchedRef.current = false;
-    const timeout = setTimeout(() => handleStartListening(), 250);
+    // The lesson flow starts on a tap, so find out up front if a mic is
+    // impossible: then its Skip counts without having to tap first.
+    if (isStoryPractice) {
+      try {
+        if (!ExpoSpeechRecognitionModule.isRecognitionAvailable()) {
+          markMicUnavailable();
+        }
+        ExpoSpeechRecognitionModule.getPermissionsAsync()
+          .then((permission) => {
+            if (!permission.granted && !permission.canAskAgain) {
+              markMicUnavailable();
+            }
+          })
+          .catch(() => markMicUnavailable());
+      } catch {
+        markMicUnavailable();
+      }
+    }
+    const timeout = isStoryPractice
+      ? undefined
+      : setTimeout(() => handleStartListening(), 250);
 
     return () => {
-      clearTimeout(timeout);
+      if (timeout) clearTimeout(timeout);
 
       if (restartTimeoutRef.current) {
         clearTimeout(restartTimeoutRef.current);
@@ -302,8 +642,13 @@ export default function PretestScreen() {
       recognitionActiveRef.current = false;
       ExpoSpeechRecognitionModule.abort();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentQuestion?.id, currentQuestion?.type, handleStartListening]);
+  }, [
+    currentQuestion?.id,
+    currentQuestion?.type,
+    handleStartListening,
+    isStoryPractice,
+    markMicUnavailable,
+  ]);
 
   // =========================================================
   // FACIAL EXPRESSION (item 10)
@@ -316,20 +661,52 @@ export default function PretestScreen() {
       !currentQuestion ||
       currentQuestion.type !== "expression" ||
       expressionMatched ||
-      expression !== currentQuestion.expectedExpression
+      (currentQuestion.expectedExpression &&
+        expression !== currentQuestion.expectedExpression)
     ) {
       return;
     }
 
     setExpressionMatched(true);
-    setScore((s) => s + 1);
+    // Questionnaire FER items may be observational: the source asks the
+    // researcher to record the detected expression but does not provide a
+    // correct expression label. Such items advance without affecting score.
+    if (currentQuestion.expectedExpression && !currentQuestion.countsAsCompleted) {
+      creditCurrentQuestion();
+    }
   };
+
+  const storyTitle = storyChapterNumber
+    ? `${dialectLabel} · Chapter ${storyChapterNumber}`
+    : dialectLabel;
 
   // =========================================================
   // NO CONTENT FALLBACK
   // =========================================================
 
-  if (!lessonId || questions.length === 0) {
+  if (isStoryPractice && questions.length === 0) {
+    return (
+      <View style={styles.flowRoot}>
+        <PracticeHeader
+          title={storyTitle}
+          onBack={goBack}
+          backLabel="Back to the story"
+        />
+        <View style={styles.flowEmpty}>
+          <Text style={styles.flowEmptyTitle} accessibilityRole="header">
+            Story Practice unavailable
+          </Text>
+          <Text style={styles.flowEmptyText}>
+            The practice questions for this story chapter have not been added
+            yet.
+          </Text>
+        </View>
+        <PracticeBottomBar label="Back to the story" onPress={goBack} />
+      </View>
+    );
+  }
+
+  if (!activeLessonId || questions.length === 0) {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.centered}>
@@ -342,7 +719,7 @@ export default function PretestScreen() {
 
           <TouchableOpacity
             style={styles.primaryButton}
-            onPress={() => router.back()}
+            onPress={goBack}
             activeOpacity={0.85}
           >
             <Text style={styles.primaryButtonText}>Go Back</Text>
@@ -355,6 +732,32 @@ export default function PretestScreen() {
   // =========================================================
   // SUMMARY
   // =========================================================
+
+  if (finished && isStoryPractice) {
+    if (saveFailed) {
+      const passMark =
+        getStoryPracticeRequiredCorrect(storyLessonId ?? "") ??
+        Math.ceil(questions.length * 0.6);
+      return (
+        <StoryPracticeResult
+          storyLessonId={storyLessonId ?? ""}
+          dialect={dialect ?? ""}
+          chapterId={chapterId ?? ""}
+          correct={score}
+          total={questions.length}
+          passMark={passMark}
+          passed={score >= passMark}
+          rows={summarizePracticeByType(questions, correctIds)}
+          onRetrySave={() => setSaveAttempt((attempt) => attempt + 1)}
+        />
+      );
+    }
+    return (
+      <View style={styles.flowCentered}>
+        <ActivityIndicator size="large" color={FLOW.purple} />
+      </View>
+    );
+  }
 
   if (finished) {
     const ratio = score / questions.length;
@@ -387,7 +790,7 @@ export default function PretestScreen() {
             onPress={() =>
               router.replace({
                 pathname: "/lesson/practice",
-                params: { lessonId },
+                params: { lessonId: activeLessonId },
               })
             }
             activeOpacity={0.85}
@@ -402,6 +805,102 @@ export default function PretestScreen() {
   // =========================================================
   // QUESTION UI
   // =========================================================
+
+  if (isStoryPractice) {
+    return (
+      <View style={styles.flowRoot}>
+        <PracticeHeader
+          title={storyTitle}
+          onBack={confirmLeave}
+          backLabel="Leave practice"
+        />
+        <PracticeProgress
+          index={currentIndex}
+          total={questions.length}
+          barWidth={progressWidth}
+        />
+
+        <KeyboardAvoidingView
+          style={styles.flowBody}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+          {(currentQuestion.type === "multiple_choice" ||
+            currentQuestion.type === "card_match") && (
+            <ChoiceQuestion
+              key={currentQuestion.id}
+              label={practiceTypeLabel(currentQuestion)}
+              instruction={
+                currentQuestion.type === "card_match"
+                  ? matchCardsCaption(dialectLabel)
+                  : storyChoiceInstruction(currentQuestion.word)
+              }
+              word={currentQuestion.word}
+              options={currentQuestion.options}
+              correctMeaning={currentQuestion.correctMeaning}
+              checkedOption={selectedOption}
+              onCheck={handleSelectOption}
+              onContinue={goToNextQuestion}
+            />
+          )}
+
+          {currentQuestion.type === "fill_blank" && (
+            <FillQuestion
+              key={currentQuestion.id}
+              label={TYPE_LABELS.fill_blank}
+              instruction={storyFillInstruction(currentQuestion.meaning)}
+              word={currentQuestion.meaning}
+              languageLabel={dialectLabel}
+              answer={fillAnswer}
+              onChangeAnswer={setFillAnswer}
+              checked={fillSubmitted}
+              isCorrect={matchesFillAnswer(
+                fillAnswer,
+                currentQuestion.acceptedAnswers ?? [currentQuestion.correctWord],
+              )}
+              correctAnswer={currentQuestion.correctWord}
+              onCheck={handleSubmitFillBlank}
+              onContinue={goToNextQuestion}
+            />
+          )}
+
+          {currentQuestion.type === "speak" && (
+            <SpeakQuestion
+              key={currentQuestion.id}
+              label={TYPE_LABELS.speak}
+              instruction="Say this word out loud"
+              word={currentQuestion.word}
+              dialect={dialectKey}
+              listening={speakListening}
+              heard={speakHeard}
+              matched={speakMatched}
+              micUnavailable={micUnavailable}
+              skipStillCounts={!!currentQuestion.micOptional}
+              onStart={() => {
+                setSpeakHeard(null);
+                void handleStartListening();
+              }}
+              onStop={() => ExpoSpeechRecognitionModule.abort()}
+              onContinue={handleContinueFromSpeak}
+              onSkip={handleSkip}
+            />
+          )}
+
+          {currentQuestion.type === "expression" && (
+            <ShowItQuestion
+              key={currentQuestion.id}
+              label={TYPE_LABELS.expression}
+              prompt={currentQuestion.prompt}
+              questionId={currentQuestion.id}
+              expectedExpression={currentQuestion.expectedExpression}
+              onExpressionConfirmed={handleExpressionConfirmed}
+              onDone={goToNextQuestion}
+              onSkip={goToNextQuestion}
+            />
+          )}
+        </KeyboardAvoidingView>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -446,13 +945,18 @@ export default function PretestScreen() {
         {/* TYPE BADGE */}
         <View style={styles.typeBadge}>
           <Text style={styles.typeBadgeText}>
-            {TYPE_LABELS[currentQuestion.type]}
+            {practiceTypeLabel(currentQuestion)}
           </Text>
         </View>
 
-        {currentQuestion.type === "multiple_choice" && (
+        {(currentQuestion.type === "multiple_choice" ||
+          currentQuestion.type === "card_match") && (
           <View style={styles.card}>
-            <Text style={styles.caption}>What does this word mean?</Text>
+            <Text style={styles.caption}>
+              {currentQuestion.type === "card_match"
+                ? matchCardsCaption("Tagalog")
+                : "What does this word mean?"}
+            </Text>
             <Text style={styles.wordDisplay}>{currentQuestion.word}</Text>
 
             <View style={styles.optionsGroup}>
@@ -517,6 +1021,61 @@ export default function PretestScreen() {
           </View>
         )}
 
+        {currentQuestion.type === "fill_blank" && (
+          <View style={styles.card}>
+            <Text style={styles.caption}>
+              Translate this English meaning into {dialectLabel}
+            </Text>
+            <Text style={styles.inputLabel}>
+              {currentQuestion.acceptedAnswers
+                ? `${dialectLabel} word`
+                : "English meaning"}
+            </Text>
+            <Text style={styles.wordDisplay}>{currentQuestion.meaning}</Text>
+
+            <TextInput
+              value={fillAnswer}
+              onChangeText={setFillAnswer}
+              placeholder={`Type the ${dialectLabel} word`}
+              autoCapitalize="sentences"
+              editable={!fillSubmitted}
+              style={styles.fillInput}
+            />
+
+            {fillSubmitted && (
+              <Text style={styles.statusText}>
+                {(currentQuestion.acceptedAnswers
+                  ? matchesFillAnswer(fillAnswer, currentQuestion.acceptedAnswers)
+                  : normalizeWord(fillAnswer) ===
+                    normalizeWord(currentQuestion.correctWord))
+                  ? "Correct!"
+                  : `Correct answer: ${currentQuestion.correctWord}`}
+              </Text>
+            )}
+
+            {!fillSubmitted ? (
+              <TouchableOpacity
+                style={styles.primaryButton}
+                onPress={handleSubmitFillBlank}
+                disabled={!fillAnswer.trim()}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.primaryButtonText}>Check Answer</Text>
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity
+                style={styles.primaryButton}
+                onPress={goToNextQuestion}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.primaryButtonText}>
+                  {currentIndex + 1 >= questions.length ? "Finish" : "Next"}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+
         {currentQuestion.type === "speak" && (
           <View style={styles.card}>
             <Text style={styles.caption}>Say this word out loud</Text>
@@ -540,10 +1099,22 @@ export default function PretestScreen() {
             <Text style={styles.statusText}>
               {speakMatched
                 ? "Correct!"
-                : speakHeard
-                  ? `Heard: "${speakHeard}" — try again`
-                  : "Listening..."}
+                : currentQuestion.micOptional && micUnavailable
+                  ? "The microphone isn't available. You can skip this word."
+                  : speakHeard
+                    ? `Heard: "${speakHeard}" — try again`
+                    : "Listening..."}
             </Text>
+
+            {currentQuestion.micOptional && micUnavailable && !speakMatched && (
+              <TouchableOpacity
+                style={styles.primaryButton}
+                onPress={handleSkip}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.primaryButtonText}>Skip</Text>
+              </TouchableOpacity>
+            )}
 
             {speakMatched && (
               <TouchableOpacity
@@ -585,16 +1156,24 @@ export default function PretestScreen() {
             </Animated.View>
 
             <Text style={styles.statusText}>
-              {expressionMatched ? "Correct!" : "Show the expression above"}
+              {currentQuestion.countsAsCompleted
+                ? expressionMatched
+                  ? "Nice work!"
+                  : "Try it, or tap Continue. The camera is optional."
+                : expressionMatched
+                  ? "Correct!"
+                  : "Show the expression above"}
             </Text>
 
-            {expressionMatched && (
+            {(expressionMatched || currentQuestion.countsAsCompleted) && (
               <TouchableOpacity
                 style={styles.primaryButton}
                 onPress={goToNextQuestion}
                 activeOpacity={0.85}
               >
-                <Text style={styles.primaryButtonText}>Finish</Text>
+                <Text style={styles.primaryButtonText}>
+                  {expressionMatched ? "Finish" : "Continue"}
+                </Text>
               </TouchableOpacity>
             )}
           </View>
@@ -605,6 +1184,39 @@ export default function PretestScreen() {
 }
 
 const styles = StyleSheet.create({
+  flowRoot: { flex: 1, backgroundColor: FLOW.page },
+
+  flowBody: { flex: 1 },
+
+  flowEmpty: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    padding: 24,
+  },
+
+  flowEmptyTitle: {
+    fontSize: 21,
+    fontWeight: "800",
+    color: FLOW.deepPurple,
+    textAlign: "center",
+  },
+
+  flowEmptyText: {
+    fontSize: 15,
+    lineHeight: 21,
+    color: FLOW.muted,
+    textAlign: "center",
+  },
+
+  flowCentered: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: FLOW.page,
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#F9FAFB",
@@ -647,7 +1259,7 @@ const styles = StyleSheet.create({
   },
 
   headerButtonText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
     color: "#5E3BEE",
   },
@@ -664,7 +1276,7 @@ const styles = StyleSheet.create({
   },
 
   progressLabel: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "800",
     letterSpacing: 1,
     color: "#5E3BEE",
@@ -672,7 +1284,7 @@ const styles = StyleSheet.create({
   },
 
   progressCount: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "800",
     color: "#5E3BEE",
     backgroundColor: "#ECEBFF",
@@ -711,7 +1323,7 @@ const styles = StyleSheet.create({
   },
 
   typeBadgeText: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
     color: "#5E3BEE",
   },
@@ -780,7 +1392,7 @@ const styles = StyleSheet.create({
   },
 
   optionText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "700",
     color: "#333",
     textAlign: "center",
@@ -793,6 +1405,22 @@ const styles = StyleSheet.create({
 
   optionTextWrong: {
     color: "#B91C1C",
+  },
+
+  fillInput: {
+    borderColor: "#D8D0EA",
+    borderRadius: 10,
+    borderWidth: 1,
+    color: "#333",
+    fontSize: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+  },
+  inputLabel: {
+    color: "#666",
+    fontSize: 13,
+    fontWeight: "700",
+    marginBottom: -4,
   },
 
   /* =========================
@@ -866,7 +1494,7 @@ const styles = StyleSheet.create({
 
   primaryButtonText: {
     color: "#FFFFFF",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "800",
   },
 
@@ -899,7 +1527,7 @@ const styles = StyleSheet.create({
   ========================= */
 
   summaryEyebrow: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "800",
     letterSpacing: 1.5,
     color: "#5E3BEE",
@@ -927,14 +1555,14 @@ const styles = StyleSheet.create({
   },
 
   scoreDenominator: {
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: "700",
     color: "#5E3BEE",
     marginTop: 2,
   },
 
   summaryMessage: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: "800",
     color: "#222",
     textAlign: "center",
@@ -943,7 +1571,7 @@ const styles = StyleSheet.create({
   },
 
   summarySubtitle: {
-    fontSize: 14,
+    fontSize: 15,
     color: "#888",
     textAlign: "center",
     marginBottom: 28,
