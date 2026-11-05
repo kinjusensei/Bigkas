@@ -17,8 +17,10 @@ const root = path.resolve(__dirname, "..");
 const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "bigkas-lessons-"));
 
 // Lessons require() their recordings; only the app can load those.
-require.extensions[".aac"] = (module) => {
-  module.exports = 0;
+const Module = require("module");
+const originalRequire = Module.prototype.require;
+Module.prototype.require = function (id) {
+  return id.endsWith(".aac") ? 0 : originalRequire.apply(this, arguments);
 };
 
 function transpile(relativePath) {
