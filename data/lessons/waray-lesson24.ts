@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson24: StructuredLesson = {
   lessonId: "waray_24",
@@ -882,19 +884,6 @@ export const warayLesson24: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray connecting expression with its English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Ngan | A. If",
-        "2 | Pero | B. While",
-        "3 | Kon | C. And",
-        "4 | Samtang | D. But",
-        "5 | Bisan kon | E. Even if",
-      ],
-    },
-    {
       title: "Combine the Sentences",
       kind: "rewrite",
       instructions: "Combine each pair of simple sentences into one longer sentence using the suggested connecting expression.",
@@ -948,10 +937,42 @@ export const warayLesson24: StructuredLesson = {
       note: "Your paragraph must include:",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray connecting expression with its English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Ngan",
+        answer: "And",
+      },
+      {
+        id: "2",
+        term: "Pero",
+        answer: "But",
+      },
+      {
+        id: "3",
+        term: "Kon",
+        answer: "If",
+      },
+      {
+        id: "4",
+        term: "Samtang",
+        answer: "While",
+      },
+      {
+        id: "5",
+        term: "Bisan kon",
+        answer: "Even if",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
-        section: "conversation",
+        section: "match",
         label: "Vocabulary Matching + Combine the Sentences + Expand the Sentences + Paragraph Construction",
         xp: 45,
       },

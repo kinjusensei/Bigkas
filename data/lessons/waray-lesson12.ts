@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson12: StructuredLesson = {
   lessonId: "waray_12",
@@ -882,46 +884,6 @@ export const warayLesson12: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Location Words",
-      kind: "match",
-      instructions: "Match each Waray word with its English meaning.",
-      items: [
-        "Waray",
-        "Hirani",
-        "Hirayo",
-        "Luyo",
-        "Tuo",
-        "Wala",
-      ],
-      choices: [
-        "Answer Choices",
-        "Behind",
-        "Right",
-        "Near",
-        "Far",
-        "Left",
-      ],
-    },
-    {
-      title: "Complete the Directions",
-      kind: "fill",
-      instructions: "Choose the correct Waray expression to complete each sentence.",
-      items: [
-        "______ la. (Go straight.)",
-        "Liko ha ______. (Turn right.)",
-        "Liko ha ______. (Turn left.)",
-        "Aada an tindahan ha ______ han balay. (The store is behind the house.)",
-        "______ ba ito tikang dinhi? (Is it far from here?)",
-      ],
-      choices: [
-        "Diretso",
-        "tuo",
-        "wala",
-        "luyo",
-        "Hirayo",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate each English sentence into Waray.",
@@ -931,18 +893,6 @@ export const warayLesson12: StructuredLesson = {
         "The school is near the church.",
         "Is the hospital far from here?",
         "Please show me the way.",
-      ],
-    },
-    {
-      title: "Follow the Directions",
-      kind: "other",
-      instructions: "Read each direction and identify the correct action.",
-      items: [
-        "Diretso la.\nA. Turn left.\nB. Go straight.\nC. Stop.\nD. Turn right.",
-        "Liko ha tuo.\nA. Turn right.\nB. Turn left.\nC. Go straight.\nD. Go back.",
-        "Liko ha wala.\nA. Stop.\nB. Turn right.\nC. Turn left.\nD. Cross the road.",
-        "Aada ha luyo han balay.\nA. In front of the house.\nB. Beside the house.\nC. Behind the house.\nD. Inside the house.",
-        "Hirani la ito.\nA. It is far.\nB. It is nearby.\nC. It is behind.\nD. It is outside.",
       ],
     },
     {
@@ -958,6 +908,313 @@ export const warayLesson12: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Location Words",
+    instructions: "Match each Waray word with its English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Hirani",
+        answer: "Near",
+      },
+      {
+        id: "2",
+        term: "Hirayo",
+        answer: "Far",
+      },
+      {
+        id: "3",
+        term: "Luyo",
+        answer: "Behind",
+      },
+      {
+        id: "4",
+        term: "Tuo",
+        answer: "Right",
+      },
+      {
+        id: "5",
+        term: "Wala",
+        answer: "Left",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Complete the Directions",
+    questions: [
+      {
+        id: 1,
+        prompt: "______ la. (Go straight.)",
+        options: [
+          {
+            key: "A",
+            text: "Diretso",
+          },
+          {
+            key: "B",
+            text: "tuo",
+          },
+          {
+            key: "C",
+            text: "wala",
+          },
+          {
+            key: "D",
+            text: "luyo",
+          },
+          {
+            key: "E",
+            text: "Hirayo",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Directions",
+        instructions: "Choose the correct Waray expression to complete each sentence.",
+      },
+      {
+        id: 2,
+        prompt: "Liko ha ______. (Turn right.)",
+        options: [
+          {
+            key: "A",
+            text: "Diretso",
+          },
+          {
+            key: "B",
+            text: "tuo",
+          },
+          {
+            key: "C",
+            text: "wala",
+          },
+          {
+            key: "D",
+            text: "luyo",
+          },
+          {
+            key: "E",
+            text: "Hirayo",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Directions",
+        instructions: "Choose the correct Waray expression to complete each sentence.",
+      },
+      {
+        id: 3,
+        prompt: "Liko ha ______. (Turn left.)",
+        options: [
+          {
+            key: "A",
+            text: "Diretso",
+          },
+          {
+            key: "B",
+            text: "tuo",
+          },
+          {
+            key: "C",
+            text: "wala",
+          },
+          {
+            key: "D",
+            text: "luyo",
+          },
+          {
+            key: "E",
+            text: "Hirayo",
+          },
+        ],
+        answerKey: "C",
+        title: "Complete the Directions",
+        instructions: "Choose the correct Waray expression to complete each sentence.",
+      },
+      {
+        id: 4,
+        prompt: "Aada an tindahan ha ______ han balay. (The store is behind the house.)",
+        options: [
+          {
+            key: "A",
+            text: "Diretso",
+          },
+          {
+            key: "B",
+            text: "tuo",
+          },
+          {
+            key: "C",
+            text: "wala",
+          },
+          {
+            key: "D",
+            text: "luyo",
+          },
+          {
+            key: "E",
+            text: "Hirayo",
+          },
+        ],
+        answerKey: "D",
+        title: "Complete the Directions",
+        instructions: "Choose the correct Waray expression to complete each sentence.",
+      },
+      {
+        id: 5,
+        prompt: "______ ba ito tikang dinhi? (Is it far from here?)",
+        options: [
+          {
+            key: "A",
+            text: "Diretso",
+          },
+          {
+            key: "B",
+            text: "tuo",
+          },
+          {
+            key: "C",
+            text: "wala",
+          },
+          {
+            key: "D",
+            text: "luyo",
+          },
+          {
+            key: "E",
+            text: "Hirayo",
+          },
+        ],
+        answerKey: "E",
+        title: "Complete the Directions",
+        instructions: "Choose the correct Waray expression to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "Diretso la.",
+        options: [
+          {
+            key: "A",
+            text: "Turn left.",
+          },
+          {
+            key: "B",
+            text: "Go straight.",
+          },
+          {
+            key: "C",
+            text: "Stop.",
+          },
+          {
+            key: "D",
+            text: "Turn right.",
+          },
+        ],
+        answerKey: "B",
+        title: "Follow the Directions",
+        instructions: "Read each direction and identify the correct action.",
+      },
+      {
+        id: 7,
+        prompt: "Liko ha tuo.",
+        options: [
+          {
+            key: "A",
+            text: "Turn right.",
+          },
+          {
+            key: "B",
+            text: "Turn left.",
+          },
+          {
+            key: "C",
+            text: "Go straight.",
+          },
+          {
+            key: "D",
+            text: "Go back.",
+          },
+        ],
+        answerKey: "A",
+        title: "Follow the Directions",
+        instructions: "Read each direction and identify the correct action.",
+      },
+      {
+        id: 8,
+        prompt: "Liko ha wala.",
+        options: [
+          {
+            key: "A",
+            text: "Stop.",
+          },
+          {
+            key: "B",
+            text: "Turn right.",
+          },
+          {
+            key: "C",
+            text: "Turn left.",
+          },
+          {
+            key: "D",
+            text: "Cross the road.",
+          },
+        ],
+        answerKey: "C",
+        title: "Follow the Directions",
+        instructions: "Read each direction and identify the correct action.",
+      },
+      {
+        id: 9,
+        prompt: "Aada ha luyo han balay.",
+        options: [
+          {
+            key: "A",
+            text: "In front of the house.",
+          },
+          {
+            key: "B",
+            text: "Beside the house.",
+          },
+          {
+            key: "C",
+            text: "Behind the house.",
+          },
+          {
+            key: "D",
+            text: "Inside the house.",
+          },
+        ],
+        answerKey: "C",
+        title: "Follow the Directions",
+        instructions: "Read each direction and identify the correct action.",
+      },
+      {
+        id: 10,
+        prompt: "Hirani la ito.",
+        options: [
+          {
+            key: "A",
+            text: "It is far.",
+          },
+          {
+            key: "B",
+            text: "It is nearby.",
+          },
+          {
+            key: "C",
+            text: "It is behind.",
+          },
+          {
+            key: "D",
+            text: "It is outside.",
+          },
+        ],
+        answerKey: "B",
+        title: "Follow the Directions",
+        instructions: "Read each direction and identify the correct action.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -967,8 +1224,13 @@ export const warayLesson12: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

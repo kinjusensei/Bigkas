@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson27: StructuredLesson = {
   lessonId: "waray_27",
@@ -929,54 +931,6 @@ export const warayLesson27: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match the Waray vocabulary in Column A with its English meaning in Column B.",
-      items: [
-        "Eskwelahan",
-        "Buruhaton",
-        "Pakiana",
-        "Asaynment",
-        "Iskedyul",
-      ],
-      choices: [
-        "Assignment",
-        "School",
-        "Task",
-        "Question",
-        "Schedule",
-      ],
-    },
-    {
-      title: "Choose the Appropriate Expression",
-      kind: "choice",
-      instructions: "Select the most appropriate Waray expression for each situation.",
-      items: [
-        "You want to ask your teacher about an assignment.\nA. Pwede ba ako magpakiana?\nB. Dako an balay.\nC. Gutom ako.",
-        "You need assistance with a workplace task.\nA. Kinahanglan ko hin bulig hini nga buruhaton.\nB. Ano an imo ngaran?\nC. Lami an pagkaon.",
-        "You want to tell your colleague that your report is finished.\nA. Natapos ko na an akon report.\nB. Waray ako maaram.\nC. Taga diin ka?",
-        "You need more time to finish your assignment.\nA. Kinahanglan ko pa hin dugang nga panahon.\nB. Maupay nga gab-i.\nC. Hain an eskwelahan?",
-        "You want someone to explain an instruction again.\nA. Mahimo mo ba utrahon an instruksyon?\nB. Pira na an imo edad?\nC. Ano an imo karuyag kaunon?",
-      ],
-    },
-    {
-      title: "Complete the Conversation",
-      kind: "roleplay",
-      instructions: "Fill in the blanks using the appropriate expressions from the word bank.\nWord Bank:",
-      items: [
-        "Salamat ha imo bulig.",
-        "Pwede ba ako magpakiana?",
-        "Natapos ko na an akon trabaho.",
-        "Kinahanglan ko pa hin panahon.",
-        "Mahimo mo ba ini igsaysay?",
-        "Student: Maestra, __________________________ mahitungod han amon proyekto?",
-        "Student: Diri ko nasasabtan ini nga instruksyon. __________________________",
-        "Employee: Waray ko pa mahuman an report. __________________________",
-        "Employee: __________________________ ngan andam na ako magpasa.",
-        "Employee: __________________________",
-      ],
-    },
-    {
       title: "Role-Playing",
       kind: "roleplay",
       instructions: "Work with a partner. Choose one of the following situations and create a short Waray conversation.\nSituation 1: School\nYou are a student asking your teacher about an assignment. Ask about the instructions, deadline, and required materials.\nSituation 2: Group Project\nYou and your classmate are discussing your assigned responsibilities. Explain what you have completed and what still needs to be done.\nSituation 3: Workplace\nYou are an employee reporting your progress to a supervisor. Explain the status of your task and ask for clarification about an instruction.\nSituation 4: Colleague Assistance\nYou need help understanding a document. Politely ask a colleague to explain it.\nEach conversation should contain:",
@@ -988,6 +942,215 @@ export const warayLesson27: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match the Waray vocabulary in Column A with its English meaning in Column B.",
+    pairs: [
+      {
+        id: "1",
+        term: "Eskwelahan",
+        answer: "School",
+      },
+      {
+        id: "2",
+        term: "Buruhaton",
+        answer: "Task",
+      },
+      {
+        id: "3",
+        term: "Pakiana",
+        answer: "Question",
+      },
+      {
+        id: "4",
+        term: "Asaynment",
+        answer: "Assignment",
+      },
+      {
+        id: "5",
+        term: "Iskedyul",
+        answer: "Schedule",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Choose the Appropriate Expression",
+    instructions: "Select the most appropriate Waray expression for each situation.",
+    questions: [
+      {
+        id: 1,
+        prompt: "You want to ask your teacher about an assignment.",
+        options: [
+          {
+            key: "A",
+            text: "Pwede ba ako magpakiana?",
+          },
+          {
+            key: "B",
+            text: "Dako an balay.",
+          },
+          {
+            key: "C",
+            text: "Gutom ako.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "You need assistance with a workplace task.",
+        options: [
+          {
+            key: "A",
+            text: "Kinahanglan ko hin bulig hini nga buruhaton.",
+          },
+          {
+            key: "B",
+            text: "Ano an imo ngaran?",
+          },
+          {
+            key: "C",
+            text: "Lami an pagkaon.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 3,
+        prompt: "You want to tell your colleague that your report is finished.",
+        options: [
+          {
+            key: "A",
+            text: "Natapos ko na an akon report.",
+          },
+          {
+            key: "B",
+            text: "Waray ako maaram.",
+          },
+          {
+            key: "C",
+            text: "Taga diin ka?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "You need more time to finish your assignment.",
+        options: [
+          {
+            key: "A",
+            text: "Kinahanglan ko pa hin dugang nga panahon.",
+          },
+          {
+            key: "B",
+            text: "Maupay nga gab-i.",
+          },
+          {
+            key: "C",
+            text: "Hain an eskwelahan?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 5,
+        prompt: "You want someone to explain an instruction again.",
+        options: [
+          {
+            key: "A",
+            text: "Mahimo mo ba utrahon an instruksyon?",
+          },
+          {
+            key: "B",
+            text: "Pira na an imo edad?",
+          },
+          {
+            key: "C",
+            text: "Ano an imo karuyag kaunon?",
+          },
+        ],
+        answerKey: "A",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Conversation",
+    instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+    items: [
+      {
+        id: "1",
+        sentence: "Student: Maestra, __________________________ mahitungod han amon proyekto?",
+        answer: "Pwede ba ako magpakiana?",
+        title: "Complete the Conversation",
+        instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+        wordBank: [
+          "Salamat ha imo bulig.",
+          "Pwede ba ako magpakiana?",
+          "Natapos ko na an akon trabaho.",
+          "Kinahanglan ko pa hin panahon.",
+          "Mahimo mo ba ini igsaysay?",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Student: Diri ko nasasabtan ini nga instruksyon. __________________________",
+        answer: "Mahimo mo ba ini igsaysay?",
+        title: "Complete the Conversation",
+        instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+        wordBank: [
+          "Salamat ha imo bulig.",
+          "Pwede ba ako magpakiana?",
+          "Natapos ko na an akon trabaho.",
+          "Kinahanglan ko pa hin panahon.",
+          "Mahimo mo ba ini igsaysay?",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Employee: Waray ko pa mahuman an report. __________________________",
+        answer: "Kinahanglan ko pa hin panahon.",
+        title: "Complete the Conversation",
+        instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+        wordBank: [
+          "Salamat ha imo bulig.",
+          "Pwede ba ako magpakiana?",
+          "Natapos ko na an akon trabaho.",
+          "Kinahanglan ko pa hin panahon.",
+          "Mahimo mo ba ini igsaysay?",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Employee: __________________________ ngan andam na ako magpasa.",
+        answer: "Natapos ko na an akon trabaho.",
+        title: "Complete the Conversation",
+        instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+        wordBank: [
+          "Salamat ha imo bulig.",
+          "Pwede ba ako magpakiana?",
+          "Natapos ko na an akon trabaho.",
+          "Kinahanglan ko pa hin panahon.",
+          "Mahimo mo ba ini igsaysay?",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Employee: __________________________",
+        answer: "Salamat ha imo bulig.",
+        title: "Complete the Conversation",
+        instructions: "Fill in the blanks using the appropriate expressions from the word bank.",
+        wordBank: [
+          "Salamat ha imo bulig.",
+          "Pwede ba ako magpakiana?",
+          "Natapos ko na an akon trabaho.",
+          "Kinahanglan ko pa hin panahon.",
+          "Mahimo mo ba ini igsaysay?",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -997,8 +1160,13 @@ export const warayLesson27: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

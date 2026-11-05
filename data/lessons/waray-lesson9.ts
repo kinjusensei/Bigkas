@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson9: StructuredLesson = {
   lessonId: "waray_9",
@@ -860,46 +862,6 @@ export const warayLesson9: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Question Words",
-      kind: "match",
-      instructions: "Match each Waray question word with its correct English meaning.",
-      items: [
-        "Waray",
-        "Ano",
-        "Hin-o",
-        "Diin",
-        "San-o",
-        "Pira",
-      ],
-      choices: [
-        "Answer Choices",
-        "When",
-        "How many / How much",
-        "What",
-        "Who",
-        "Where",
-      ],
-    },
-    {
-      title: "Complete the Questions",
-      kind: "fill",
-      instructions: "Choose the correct Waray question word to complete each sentence.",
-      items: [
-        "______ an imo ngaran?",
-        "______ ka?",
-        "Taga ______ ka?",
-        "______ ka makadto?",
-        "______ ini?",
-      ],
-      choices: [
-        "Ano",
-        "Hin-o",
-        "Diin",
-        "San-o",
-        "Pira",
-      ],
-    },
-    {
       title: "Translate the Questions",
       kind: "translate",
       instructions: "Translate the following English questions into Waray.",
@@ -923,6 +885,179 @@ export const warayLesson9: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Question Words",
+    instructions: "Match each Waray question word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Ano",
+        answer: "What",
+      },
+      {
+        id: "2",
+        term: "Hin-o",
+        answer: "Who",
+      },
+      {
+        id: "3",
+        term: "Diin",
+        answer: "Where",
+      },
+      {
+        id: "4",
+        term: "San-o",
+        answer: "When",
+      },
+      {
+        id: "5",
+        term: "Pira",
+        answer: "How many / How much",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Complete the Questions",
+    instructions: "Choose the correct Waray question word to complete each sentence.",
+    questions: [
+      {
+        id: 1,
+        prompt: "______ an imo ngaran?",
+        options: [
+          {
+            key: "A",
+            text: "Ano",
+          },
+          {
+            key: "B",
+            text: "Hin-o",
+          },
+          {
+            key: "C",
+            text: "Diin",
+          },
+          {
+            key: "D",
+            text: "San-o",
+          },
+          {
+            key: "E",
+            text: "Pira",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "______ ka?",
+        options: [
+          {
+            key: "A",
+            text: "Ano",
+          },
+          {
+            key: "B",
+            text: "Hin-o",
+          },
+          {
+            key: "C",
+            text: "Diin",
+          },
+          {
+            key: "D",
+            text: "San-o",
+          },
+          {
+            key: "E",
+            text: "Pira",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "Taga ______ ka?",
+        options: [
+          {
+            key: "A",
+            text: "Ano",
+          },
+          {
+            key: "B",
+            text: "Hin-o",
+          },
+          {
+            key: "C",
+            text: "Diin",
+          },
+          {
+            key: "D",
+            text: "San-o",
+          },
+          {
+            key: "E",
+            text: "Pira",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "______ ka makadto?",
+        options: [
+          {
+            key: "A",
+            text: "Ano",
+          },
+          {
+            key: "B",
+            text: "Hin-o",
+          },
+          {
+            key: "C",
+            text: "Diin",
+          },
+          {
+            key: "D",
+            text: "San-o",
+          },
+          {
+            key: "E",
+            text: "Pira",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "______ ini?",
+        options: [
+          {
+            key: "A",
+            text: "Ano",
+          },
+          {
+            key: "B",
+            text: "Hin-o",
+          },
+          {
+            key: "C",
+            text: "Diin",
+          },
+          {
+            key: "D",
+            text: "San-o",
+          },
+          {
+            key: "E",
+            text: "Pira",
+          },
+        ],
+        answerKey: "E",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -932,8 +1067,13 @@ export const warayLesson9: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson7: StructuredLesson = {
   lessonId: "waray_7",
@@ -769,46 +771,6 @@ export const warayLesson7: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Colors",
-      kind: "match",
-      instructions: "Match each English color with its correct Waray equivalent.",
-      items: [
-        "Red",
-        "Blue",
-        "Green",
-        "Black",
-        "White",
-      ],
-      choices: [
-        "Puti",
-        "Berde",
-        "Itom",
-        "Pula",
-        "Asul",
-      ],
-    },
-    {
-      title: "Identify the Shape",
-      kind: "choice",
-      instructions: "Choose the correct Waray equivalent.",
-      items: [
-        "Circle\nA. Sirkulo\nB. Kuwadrado\nC. Trayanggulo",
-        "Square\nA. Ovalo\nB. Kuwadrado\nC. Rektanggulo",
-        "Triangle\nA. Sirkulo\nB. Ovalo\nC. Trayanggulo",
-        "Rectangle\nA. Rektanggulo\nB. Bitoon\nC. Kasingkasing",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word to complete each sentence.",
-      items: [
-        "______ an bag. (The bag is black.)\nA. Itom\nB. Puti\nC. Pula",
-        "______ an libro. (The book is small.)\nA. Dako\nB. Gutiay\nC. Bag-o",
-        "______ ini? (What shape is this?)\nA. Ano nga porma\nB. Pira na\nC. Ano nga adlaw",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray.",
@@ -833,6 +795,190 @@ export const warayLesson7: StructuredLesson = {
       note: "Example:\nObject: Ball\nColor: Pula\nShape: Sirkulo\nSentence: Pula an bola.",
     },
   ],
+  matchActivity: {
+    title: "Match the Colors",
+    instructions: "Match each English color with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Red",
+        answer: "Pula",
+      },
+      {
+        id: "2",
+        term: "Blue",
+        answer: "Asul",
+      },
+      {
+        id: "3",
+        term: "Green",
+        answer: "Berde",
+      },
+      {
+        id: "4",
+        term: "Black",
+        answer: "Itom",
+      },
+      {
+        id: "5",
+        term: "White",
+        answer: "Puti",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Shape",
+    questions: [
+      {
+        id: 1,
+        prompt: "Circle",
+        options: [
+          {
+            key: "A",
+            text: "Sirkulo",
+          },
+          {
+            key: "B",
+            text: "Kuwadrado",
+          },
+          {
+            key: "C",
+            text: "Trayanggulo",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Shape",
+        instructions: "Choose the correct Waray equivalent.",
+      },
+      {
+        id: 2,
+        prompt: "Square",
+        options: [
+          {
+            key: "A",
+            text: "Ovalo",
+          },
+          {
+            key: "B",
+            text: "Kuwadrado",
+          },
+          {
+            key: "C",
+            text: "Rektanggulo",
+          },
+        ],
+        answerKey: "B",
+        title: "Identify the Shape",
+        instructions: "Choose the correct Waray equivalent.",
+      },
+      {
+        id: 3,
+        prompt: "Triangle",
+        options: [
+          {
+            key: "A",
+            text: "Sirkulo",
+          },
+          {
+            key: "B",
+            text: "Ovalo",
+          },
+          {
+            key: "C",
+            text: "Trayanggulo",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Shape",
+        instructions: "Choose the correct Waray equivalent.",
+      },
+      {
+        id: 4,
+        prompt: "Rectangle",
+        options: [
+          {
+            key: "A",
+            text: "Rektanggulo",
+          },
+          {
+            key: "B",
+            text: "Bitoon",
+          },
+          {
+            key: "C",
+            text: "Kasingkasing",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Shape",
+        instructions: "Choose the correct Waray equivalent.",
+      },
+      {
+        id: 5,
+        prompt: "______ an bag. (The bag is black.)",
+        options: [
+          {
+            key: "A",
+            text: "Itom",
+          },
+          {
+            key: "B",
+            text: "Puti",
+          },
+          {
+            key: "C",
+            text: "Pula",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "______ an libro. (The book is small.)",
+        options: [
+          {
+            key: "A",
+            text: "Dako",
+          },
+          {
+            key: "B",
+            text: "Gutiay",
+          },
+          {
+            key: "C",
+            text: "Bag-o",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 7,
+        prompt: "______ ini? (What shape is this?)",
+        options: [
+          {
+            key: "A",
+            text: "Ano nga porma",
+          },
+          {
+            key: "B",
+            text: "Pira na",
+          },
+          {
+            key: "C",
+            text: "Ano nga adlaw",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -842,8 +988,13 @@ export const warayLesson7: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

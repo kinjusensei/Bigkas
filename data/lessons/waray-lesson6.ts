@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson6: StructuredLesson = {
   lessonId: "waray_6",
@@ -830,46 +832,6 @@ export const warayLesson6: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Food",
-      kind: "match",
-      instructions: "Match each English word with its correct Waray equivalent.",
-      items: [
-        "Rice (cooked)",
-        "Fish",
-        "Chicken",
-        "Banana",
-        "Water",
-      ],
-      choices: [
-        "Tubig",
-        "Saging",
-        "Manok",
-        "Kan-on",
-        "Isda",
-      ],
-    },
-    {
-      title: "Identify the Correct Translation",
-      kind: "rewrite",
-      instructions: "Choose the correct Waray word.",
-      items: [
-        "What is the Waray word for mango?\nA. Mangga\nB. Nangka\nC. Lubi",
-        "What is the Waray word for egg?\nA. Asin\nB. Itlog\nC. Lana",
-        "What is the Waray word for milk?\nA. Kape\nB. Tsaa\nC. Gatas",
-        "What does busog mean?\nA. Hungry\nB. Full\nC. Thirsty",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word to complete each sentence.",
-      items: [
-        "______ ako. (I am hungry.)\nA. Gutom\nB. Uhaw\nC. Busog",
-        "Karuyag ko hin ______. (I want water.)\nA. tubig\nB. mangga\nC. manok",
-        "Lami an ______. (The food is delicious.)\nA. oras\nB. pagkaon\nC. adlaw",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray.",
@@ -894,6 +856,190 @@ export const warayLesson6: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Food",
+    instructions: "Match each English word with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Rice (cooked)",
+        answer: "Kan-on",
+      },
+      {
+        id: "2",
+        term: "Fish",
+        answer: "Isda",
+      },
+      {
+        id: "3",
+        term: "Chicken",
+        answer: "Manok",
+      },
+      {
+        id: "4",
+        term: "Banana",
+        answer: "Saging",
+      },
+      {
+        id: "5",
+        term: "Water",
+        answer: "Tubig",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Correct Translation",
+    questions: [
+      {
+        id: 1,
+        prompt: "What is the Waray word for mango?",
+        options: [
+          {
+            key: "A",
+            text: "Mangga",
+          },
+          {
+            key: "B",
+            text: "Nangka",
+          },
+          {
+            key: "C",
+            text: "Lubi",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Correct Translation",
+        instructions: "Choose the correct Waray word.",
+      },
+      {
+        id: 2,
+        prompt: "What is the Waray word for egg?",
+        options: [
+          {
+            key: "A",
+            text: "Asin",
+          },
+          {
+            key: "B",
+            text: "Itlog",
+          },
+          {
+            key: "C",
+            text: "Lana",
+          },
+        ],
+        answerKey: "B",
+        title: "Identify the Correct Translation",
+        instructions: "Choose the correct Waray word.",
+      },
+      {
+        id: 3,
+        prompt: "What is the Waray word for milk?",
+        options: [
+          {
+            key: "A",
+            text: "Kape",
+          },
+          {
+            key: "B",
+            text: "Tsaa",
+          },
+          {
+            key: "C",
+            text: "Gatas",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Correct Translation",
+        instructions: "Choose the correct Waray word.",
+      },
+      {
+        id: 4,
+        prompt: "What does busog mean?",
+        options: [
+          {
+            key: "A",
+            text: "Hungry",
+          },
+          {
+            key: "B",
+            text: "Full",
+          },
+          {
+            key: "C",
+            text: "Thirsty",
+          },
+        ],
+        answerKey: "B",
+        title: "Identify the Correct Translation",
+        instructions: "Choose the correct Waray word.",
+      },
+      {
+        id: 5,
+        prompt: "______ ako. (I am hungry.)",
+        options: [
+          {
+            key: "A",
+            text: "Gutom",
+          },
+          {
+            key: "B",
+            text: "Uhaw",
+          },
+          {
+            key: "C",
+            text: "Busog",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "Karuyag ko hin ______. (I want water.)",
+        options: [
+          {
+            key: "A",
+            text: "tubig",
+          },
+          {
+            key: "B",
+            text: "mangga",
+          },
+          {
+            key: "C",
+            text: "manok",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 7,
+        prompt: "Lami an ______. (The food is delicious.)",
+        options: [
+          {
+            key: "A",
+            text: "oras",
+          },
+          {
+            key: "B",
+            text: "pagkaon",
+          },
+          {
+            key: "C",
+            text: "adlaw",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -903,8 +1049,13 @@ export const warayLesson6: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

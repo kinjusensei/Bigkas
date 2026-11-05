@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson13: StructuredLesson = {
   lessonId: "waray_13",
@@ -879,46 +881,6 @@ export const warayLesson13: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Vocabulary",
-      kind: "match",
-      instructions: "Match each Waray word with its correct English meaning.",
-      items: [
-        "Waray",
-        "Pakiana",
-        "Baton",
-        "Kahulogan",
-        "Presyo",
-        "Pagsaysay",
-      ],
-      choices: [
-        "Answer Choices",
-        "Meaning",
-        "Question",
-        "Price",
-        "Answer",
-        "Explanation",
-      ],
-    },
-    {
-      title: "Complete the Expressions",
-      kind: "fill",
-      instructions: "Choose the correct word to complete each sentence.",
-      items: [
-        "May ______ ako. (I have a question.)",
-        "Ano an ______ hini? (What is the meaning of this?)",
-        "Mahimo mo ba ako ______ hin impormasyon? (Can you give me information?)",
-        "Diri ko ______. (I don't understand.)",
-        "Salamat ha imo ______. (Thank you for your explanation.)",
-      ],
-      choices: [
-        "pakiana",
-        "kahulogan",
-        "tagan",
-        "nasasabtan",
-        "pagsaysay",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following English expressions into Waray.",
@@ -928,18 +890,6 @@ export const warayLesson13: StructuredLesson = {
         "What is the reason?",
         "I need more details.",
         "Thank you for the information.",
-      ],
-    },
-    {
-      title: "Choose the Appropriate Response",
-      kind: "choice",
-      instructions: "Select the best response for each situation.",
-      items: [
-        "Someone asks you, \"San-o an programa?\"\nA. Buwas ha alas-nuwebe han aga.\nB. Hirani la ito.\nC. Sangkay ko hiya.\nD. Diri ako maaram magluto.",
-        "You do not understand what someone said. What should you say?\nA. Mangaon na kita.\nB. Diri ko nasasabtan.\nC. Pag-amping.\nD. Taga Samar ako.",
-        "You want someone to explain an unfamiliar instruction.\nA. Mahimo mo ba ini igsaysay?\nB. Pira na an imo edad?\nC. Hain an merkado?\nD. Kumusta ka?",
-        "Someone gives you useful information. What should you say?\nA. Salamat ha impormasyon.\nB. Liko ha tuo.\nC. Waray pa.\nD. Hulat anay.",
-        "You want to ask how much something costs.\nA. Hin-o ini?\nB. Pira an bayad?\nC. San-o ito?\nD. Diin ka naukoy?",
       ],
     },
     {
@@ -956,6 +906,240 @@ export const warayLesson13: StructuredLesson = {
       note: "Write at least eight exchanges between the speakers.",
     },
   ],
+  matchActivity: {
+    title: "Match the Vocabulary",
+    instructions: "Match each Waray word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Pakiana",
+        answer: "Question",
+      },
+      {
+        id: "2",
+        term: "Baton",
+        answer: "Answer",
+      },
+      {
+        id: "3",
+        term: "Kahulogan",
+        answer: "Meaning",
+      },
+      {
+        id: "4",
+        term: "Presyo",
+        answer: "Price",
+      },
+      {
+        id: "5",
+        term: "Pagsaysay",
+        answer: "Explanation",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Choose the Appropriate Response",
+    instructions: "Select the best response for each situation.",
+    questions: [
+      {
+        id: 1,
+        prompt: "Someone asks you, \"San-o an programa?\"",
+        options: [
+          {
+            key: "A",
+            text: "Buwas ha alas-nuwebe han aga.",
+          },
+          {
+            key: "B",
+            text: "Hirani la ito.",
+          },
+          {
+            key: "C",
+            text: "Sangkay ko hiya.",
+          },
+          {
+            key: "D",
+            text: "Diri ako maaram magluto.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "You do not understand what someone said. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Mangaon na kita.",
+          },
+          {
+            key: "B",
+            text: "Diri ko nasasabtan.",
+          },
+          {
+            key: "C",
+            text: "Pag-amping.",
+          },
+          {
+            key: "D",
+            text: "Taga Samar ako.",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "You want someone to explain an unfamiliar instruction.",
+        options: [
+          {
+            key: "A",
+            text: "Mahimo mo ba ini igsaysay?",
+          },
+          {
+            key: "B",
+            text: "Pira na an imo edad?",
+          },
+          {
+            key: "C",
+            text: "Hain an merkado?",
+          },
+          {
+            key: "D",
+            text: "Kumusta ka?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "Someone gives you useful information. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Salamat ha impormasyon.",
+          },
+          {
+            key: "B",
+            text: "Liko ha tuo.",
+          },
+          {
+            key: "C",
+            text: "Waray pa.",
+          },
+          {
+            key: "D",
+            text: "Hulat anay.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 5,
+        prompt: "You want to ask how much something costs.",
+        options: [
+          {
+            key: "A",
+            text: "Hin-o ini?",
+          },
+          {
+            key: "B",
+            text: "Pira an bayad?",
+          },
+          {
+            key: "C",
+            text: "San-o ito?",
+          },
+          {
+            key: "D",
+            text: "Diin ka naukoy?",
+          },
+        ],
+        answerKey: "B",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Expressions",
+    instructions: "Choose the correct word to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "May ______ ako.",
+        hint: "I have a question.",
+        answer: "pakiana",
+        title: "Complete the Expressions",
+        instructions: "Choose the correct word to complete each sentence.",
+        wordBank: [
+          "pakiana",
+          "kahulogan",
+          "tagan",
+          "nasasabtan",
+          "pagsaysay",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Ano an ______ hini?",
+        hint: "What is the meaning of this?",
+        answer: "kahulogan",
+        title: "Complete the Expressions",
+        instructions: "Choose the correct word to complete each sentence.",
+        wordBank: [
+          "pakiana",
+          "kahulogan",
+          "tagan",
+          "nasasabtan",
+          "pagsaysay",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Mahimo mo ba ako ______ hin impormasyon?",
+        hint: "Can you give me information?",
+        answer: "tagan",
+        title: "Complete the Expressions",
+        instructions: "Choose the correct word to complete each sentence.",
+        wordBank: [
+          "pakiana",
+          "kahulogan",
+          "tagan",
+          "nasasabtan",
+          "pagsaysay",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Diri ko ______.",
+        hint: "I don't understand.",
+        answer: "nasasabtan",
+        title: "Complete the Expressions",
+        instructions: "Choose the correct word to complete each sentence.",
+        wordBank: [
+          "pakiana",
+          "kahulogan",
+          "tagan",
+          "nasasabtan",
+          "pagsaysay",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Salamat ha imo ______.",
+        hint: "Thank you for your explanation.",
+        answer: "pagsaysay",
+        title: "Complete the Expressions",
+        instructions: "Choose the correct word to complete each sentence.",
+        wordBank: [
+          "pakiana",
+          "kahulogan",
+          "tagan",
+          "nasasabtan",
+          "pagsaysay",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -965,8 +1149,13 @@ export const warayLesson13: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

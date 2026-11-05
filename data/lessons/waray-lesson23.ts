@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson23: StructuredLesson = {
   lessonId: "waray_23",
@@ -845,53 +847,6 @@ export const warayLesson23: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray expression with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Nauyon ako | A. I have a different opinion",
-        "2 | Diri ako nauyon | B. I agree",
-        "3 | Iba an akon panhunahuna | C. I disagree",
-        "4 | Husto ka | D. You are right",
-        "5 | Opinyon | E. Opinion",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct expression from the word bank.",
-      items: [
-        "__________, importante an pag-aram hin mga yinaknan.",
-        "__________ ha imo kay husto an imo ginsiring.",
-        "__________ hito nga ideya kay may iba pa nga solusyon.",
-        "Importante an pagpraktis __________ nakakabulig ito ha pagpauswag han aton abilidad.",
-        "__________, mahimo kita magbasa hin mga libro kada adlaw.",
-      ],
-      choices: [
-        "Nauyon ako",
-        "Diri ako nauyon",
-        "kay",
-        "Para ha akon",
-        "Pananglitan",
-      ],
-    },
-    {
-      title: "Identify the Response",
-      kind: "choice",
-      instructions: "Read each statement and identify whether the response expresses agreement or disagreement.",
-      items: [
-        "Nauyon ako ha imo.",
-        "Diri ako nauyon hito.",
-        "Husto ka.",
-        "Iba an akon panhunahuna.",
-        "Tinuod ito.",
-        "Diri ako bug-os nga nauyon.",
-        "Amo gud ito an akon panhunahuna.",
-        "Nasasabtan ko, pero iba an akon pagtan-aw hito.",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following English sentences into Waray.",
@@ -917,12 +872,256 @@ export const warayLesson23: StructuredLesson = {
       note: "Your response should include:\n• An expression of agreement or disagreement.\n• At least one reason.\n• At least one supporting example or detail.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray expression with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Nauyon ako",
+        answer: "I agree",
+      },
+      {
+        id: "2",
+        term: "Diri ako nauyon",
+        answer: "I disagree",
+      },
+      {
+        id: "3",
+        term: "Iba an akon panhunahuna",
+        answer: "I have a different opinion",
+      },
+      {
+        id: "4",
+        term: "Husto ka",
+        answer: "You are right",
+      },
+      {
+        id: "5",
+        term: "Opinyon",
+        answer: "Opinion",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Response",
+    instructions: "Read each statement and identify whether the response expresses agreement or disagreement.",
+    questions: [
+      {
+        id: 1,
+        prompt: "Nauyon ako ha imo.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "Diri ako nauyon hito.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "Husto ka.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "Iba an akon panhunahuna.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 5,
+        prompt: "Tinuod ito.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 6,
+        prompt: "Diri ako bug-os nga nauyon.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 7,
+        prompt: "Amo gud ito an akon panhunahuna.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 8,
+        prompt: "Nasasabtan ko, pero iba an akon pagtan-aw hito.",
+        options: [
+          {
+            key: "A",
+            text: "Agreement",
+          },
+          {
+            key: "B",
+            text: "Disagreement",
+          },
+        ],
+        answerKey: "B",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct expression from the word bank.",
+    items: [
+      {
+        id: "1",
+        sentence: "__________, importante an pag-aram hin mga yinaknan.",
+        answer: "Para ha akon",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "Nauyon ako",
+          "Diri ako nauyon",
+          "kay",
+          "Para ha akon",
+          "Pananglitan",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "__________ ha imo kay husto an imo ginsiring.",
+        answer: "Nauyon ako",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "Nauyon ako",
+          "Diri ako nauyon",
+          "kay",
+          "Para ha akon",
+          "Pananglitan",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "__________ hito nga ideya kay may iba pa nga solusyon.",
+        answer: "Diri ako nauyon",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "Nauyon ako",
+          "Diri ako nauyon",
+          "kay",
+          "Para ha akon",
+          "Pananglitan",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Importante an pagpraktis __________ nakakabulig ito ha pagpauswag han aton abilidad.",
+        answer: "kay",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "Nauyon ako",
+          "Diri ako nauyon",
+          "kay",
+          "Para ha akon",
+          "Pananglitan",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "__________, mahimo kita magbasa hin mga libro kada adlaw.",
+        answer: "Pananglitan",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "Nauyon ako",
+          "Diri ako nauyon",
+          "kay",
+          "Para ha akon",
+          "Pananglitan",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Sentences + Practice Activities",
+        xp: 25,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
-        xp: 45,
+        label: "Guided Conversation",
+        xp: 10,
       },
       {
         section: "assessment",

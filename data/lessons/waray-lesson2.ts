@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson2: StructuredLesson = {
   lessonId: "waray_2",
@@ -937,64 +939,6 @@ export const warayLesson2: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each English expression in Column A with its correct Waray translation in Column B.",
-      items: [
-        "Yes",
-        "Thank you",
-        "No",
-        "You're welcome",
-        "I don't know",
-      ],
-      choices: [
-        "Waray sapayan",
-        "Diri",
-        "Salamat",
-        "Oo",
-        "Diri ako maaram",
-      ],
-    },
-    {
-      title: "Multiple Choice",
-      kind: "choice",
-      instructions: "Choose the correct Waray translation of each English expression.",
-      items: [
-        "How do you say \"I don't understand\" in Waray?\nA. Nasasabtan ko.\nB. Diri ko nasasabtan.\nC. Maaram ako.\nD. Salamat.",
-        "What does \"Alayon, hinay-hinay la pagyakan\" mean?\nA. Please speak slowly.\nB. Please come here.\nC. Thank you very much.\nD. I don't know.",
-        "Which expression means \"I agree\"?\nA. Diri ako maaram.\nB. Nauyon ako.\nC. Waray sapayan.\nD. Hulat anay.",
-        "What does \"Hulat anay\" mean?\nA. Let's go.\nB. Come here.\nC. Wait a moment.\nD. I understand.",
-        "Which expression means \"Can you help me?\"\nA. Pwede mo ba ako buligan?\nB. Ano an imo ngaran?\nC. Taga diin ka?\nD. Kumusta ka?",
-      ],
-    },
-    {
-      title: "Fill in the Blanks",
-      kind: "fill",
-      instructions: "Complete each sentence using the correct word or expression from the choices.",
-      items: [
-        "_____, nauyon ako.",
-        "_____ ako nauyon.",
-        "Damo nga _____!",
-        "_____ anay, alayon.",
-        "_____ ako hini nga pulong.",
-      ],
-      choices: [
-        "Oo – Diri – Salamat – Hulat – Maaram",
-      ],
-    },
-    {
-      title: "Choose the Appropriate Response",
-      kind: "choice",
-      instructions: "Read each situation and choose the most appropriate Waray response.",
-      items: [
-        "Someone gives you a glass of water. What should you say?\nA. Diri ako maaram.\nB. Damo nga salamat.\nC. Hulat anay.\nD. Ano an imo ngaran?",
-        "Someone says something you cannot understand. What should you say?\nA. Diri ko nasasabtan.\nB. Oo, maupay.\nC. Waray sapayan.\nD. Kadto didto.",
-        "Someone asks if you agree with their statement, and you agree. What should you say?\nA. Diri ako nauyon.\nB. Oo, nauyon ako.\nC. Diri ako maaram.\nD. Pasayloa ako.",
-        "You need someone to wait for a moment. What should you say?\nA. Hulat anay.\nB. Salamat.\nC. Babay.\nD. Maupay nga aga.",
-        "Someone helps you carry something. What should you say?\nA. Diri ko kaya.\nB. Damo nga salamat.\nC. Diri ako maaram.\nD. Taga Samar ako.",
-      ],
-    },
-    {
       title: "Complete the Conversation",
       kind: "roleplay",
       instructions: "Complete the following conversation by choosing the appropriate expressions.\nMaria: Pasaylo, __________________________?\nAna: Oo, ano an imo kinahanglan?\nMaria: __________________________ ini nga pulong.\nAna: Sige, isaysay ko ha imo.\nMaria: __________________________!\nAna: __________________________.",
@@ -1016,6 +960,369 @@ export const warayLesson2: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each English expression in Column A with its correct Waray translation in Column B.",
+    pairs: [
+      {
+        id: "1",
+        term: "Yes",
+        answer: "Oo",
+      },
+      {
+        id: "2",
+        term: "Thank you",
+        answer: "Salamat",
+      },
+      {
+        id: "3",
+        term: "No",
+        answer: "Diri",
+      },
+      {
+        id: "4",
+        term: "You're welcome",
+        answer: "Waray sapayan",
+      },
+      {
+        id: "5",
+        term: "I don't know",
+        answer: "Diri ako maaram",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Multiple Choice",
+    questions: [
+      {
+        id: 1,
+        prompt: "How do you say \"I don't understand\" in Waray?",
+        options: [
+          {
+            key: "A",
+            text: "Nasasabtan ko.",
+          },
+          {
+            key: "B",
+            text: "Diri ko nasasabtan.",
+          },
+          {
+            key: "C",
+            text: "Maaram ako.",
+          },
+          {
+            key: "D",
+            text: "Salamat.",
+          },
+        ],
+        answerKey: "B",
+        title: "Multiple Choice",
+        instructions: "Choose the correct Waray translation of each English expression.",
+      },
+      {
+        id: 2,
+        prompt: "What does \"Alayon, hinay-hinay la pagyakan\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Please speak slowly.",
+          },
+          {
+            key: "B",
+            text: "Please come here.",
+          },
+          {
+            key: "C",
+            text: "Thank you very much.",
+          },
+          {
+            key: "D",
+            text: "I don't know.",
+          },
+        ],
+        answerKey: "A",
+        title: "Multiple Choice",
+        instructions: "Choose the correct Waray translation of each English expression.",
+      },
+      {
+        id: 3,
+        prompt: "Which expression means \"I agree\"?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ako maaram.",
+          },
+          {
+            key: "B",
+            text: "Nauyon ako.",
+          },
+          {
+            key: "C",
+            text: "Waray sapayan.",
+          },
+          {
+            key: "D",
+            text: "Hulat anay.",
+          },
+        ],
+        answerKey: "B",
+        title: "Multiple Choice",
+        instructions: "Choose the correct Waray translation of each English expression.",
+      },
+      {
+        id: 4,
+        prompt: "What does \"Hulat anay\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Let's go.",
+          },
+          {
+            key: "B",
+            text: "Come here.",
+          },
+          {
+            key: "C",
+            text: "Wait a moment.",
+          },
+          {
+            key: "D",
+            text: "I understand.",
+          },
+        ],
+        answerKey: "C",
+        title: "Multiple Choice",
+        instructions: "Choose the correct Waray translation of each English expression.",
+      },
+      {
+        id: 5,
+        prompt: "Which expression means \"Can you help me?\"",
+        options: [
+          {
+            key: "A",
+            text: "Pwede mo ba ako buligan?",
+          },
+          {
+            key: "B",
+            text: "Ano an imo ngaran?",
+          },
+          {
+            key: "C",
+            text: "Taga diin ka?",
+          },
+          {
+            key: "D",
+            text: "Kumusta ka?",
+          },
+        ],
+        answerKey: "A",
+        title: "Multiple Choice",
+        instructions: "Choose the correct Waray translation of each English expression.",
+      },
+      {
+        id: 6,
+        prompt: "Someone gives you a glass of water. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ako maaram.",
+          },
+          {
+            key: "B",
+            text: "Damo nga salamat.",
+          },
+          {
+            key: "C",
+            text: "Hulat anay.",
+          },
+          {
+            key: "D",
+            text: "Ano an imo ngaran?",
+          },
+        ],
+        answerKey: "B",
+        title: "Choose the Appropriate Response",
+        instructions: "Read each situation and choose the most appropriate Waray response.",
+      },
+      {
+        id: 7,
+        prompt: "Someone says something you cannot understand. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ko nasasabtan.",
+          },
+          {
+            key: "B",
+            text: "Oo, maupay.",
+          },
+          {
+            key: "C",
+            text: "Waray sapayan.",
+          },
+          {
+            key: "D",
+            text: "Kadto didto.",
+          },
+        ],
+        answerKey: "A",
+        title: "Choose the Appropriate Response",
+        instructions: "Read each situation and choose the most appropriate Waray response.",
+      },
+      {
+        id: 8,
+        prompt: "Someone asks if you agree with their statement, and you agree. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ako nauyon.",
+          },
+          {
+            key: "B",
+            text: "Oo, nauyon ako.",
+          },
+          {
+            key: "C",
+            text: "Diri ako maaram.",
+          },
+          {
+            key: "D",
+            text: "Pasayloa ako.",
+          },
+        ],
+        answerKey: "B",
+        title: "Choose the Appropriate Response",
+        instructions: "Read each situation and choose the most appropriate Waray response.",
+      },
+      {
+        id: 9,
+        prompt: "You need someone to wait for a moment. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Hulat anay.",
+          },
+          {
+            key: "B",
+            text: "Salamat.",
+          },
+          {
+            key: "C",
+            text: "Babay.",
+          },
+          {
+            key: "D",
+            text: "Maupay nga aga.",
+          },
+        ],
+        answerKey: "A",
+        title: "Choose the Appropriate Response",
+        instructions: "Read each situation and choose the most appropriate Waray response.",
+      },
+      {
+        id: 10,
+        prompt: "Someone helps you carry something. What should you say?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ko kaya.",
+          },
+          {
+            key: "B",
+            text: "Damo nga salamat.",
+          },
+          {
+            key: "C",
+            text: "Diri ako maaram.",
+          },
+          {
+            key: "D",
+            text: "Taga Samar ako.",
+          },
+        ],
+        answerKey: "B",
+        title: "Choose the Appropriate Response",
+        instructions: "Read each situation and choose the most appropriate Waray response.",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Fill in the Blanks",
+    instructions: "Complete each sentence using the correct word or expression from the choices.",
+    items: [
+      {
+        id: "1",
+        sentence: "_____, nauyon ako.",
+        answer: "Oo",
+        title: "Fill in the Blanks",
+        instructions: "Complete each sentence using the correct word or expression from the choices.",
+        wordBank: [
+          "Oo",
+          "Diri",
+          "Salamat",
+          "Hulat",
+          "Maaram",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "_____ ako nauyon.",
+        answer: "Diri",
+        title: "Fill in the Blanks",
+        instructions: "Complete each sentence using the correct word or expression from the choices.",
+        wordBank: [
+          "Oo",
+          "Diri",
+          "Salamat",
+          "Hulat",
+          "Maaram",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Damo nga _____!",
+        answer: "Salamat",
+        title: "Fill in the Blanks",
+        instructions: "Complete each sentence using the correct word or expression from the choices.",
+        wordBank: [
+          "Oo",
+          "Diri",
+          "Salamat",
+          "Hulat",
+          "Maaram",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "_____ anay, alayon.",
+        answer: "Hulat",
+        title: "Fill in the Blanks",
+        instructions: "Complete each sentence using the correct word or expression from the choices.",
+        wordBank: [
+          "Oo",
+          "Diri",
+          "Salamat",
+          "Hulat",
+          "Maaram",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "_____ ako hini nga pulong.",
+        answer: "Maaram",
+        title: "Fill in the Blanks",
+        instructions: "Complete each sentence using the correct word or expression from the choices.",
+        wordBank: [
+          "Oo",
+          "Diri",
+          "Salamat",
+          "Hulat",
+          "Maaram",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -1025,8 +1332,13 @@ export const warayLesson2: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

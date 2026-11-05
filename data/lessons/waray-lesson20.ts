@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson20: StructuredLesson = {
   lessonId: "waray_20",
@@ -1135,38 +1137,6 @@ export const warayLesson20: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray word with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Buotan | A. Expensive",
-        "2 | Matahom | B. Kind",
-        "3 | Mahal | C. Beautiful",
-        "4 | Mabug-at | D. Wide",
-        "5 | Halapad | E. Heavy",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word from the word bank to complete each sentence.",
-      items: [
-        "______ hiya. (He/She is kind.)",
-        "______ an balay. (The house is big.)",
-        "______ an lugar. (The place is beautiful.)",
-        "______ ini nga bag. (This bag is expensive.)",
-        "______ an eskwelahan. (The school is clean.)",
-      ],
-      choices: [
-        "buotan",
-        "dako",
-        "matahom",
-        "mahal",
-        "limpyo",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate each English sentence into Waray.",
@@ -1202,12 +1172,195 @@ export const warayLesson20: StructuredLesson = {
       note: "Challenge: Give at least three descriptive clues before your partner makes a guess.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Buotan",
+        answer: "Kind",
+      },
+      {
+        id: "2",
+        term: "Matahom",
+        answer: "Beautiful",
+      },
+      {
+        id: "3",
+        term: "Mahal",
+        answer: "Expensive",
+      },
+      {
+        id: "4",
+        term: "Mabug-at",
+        answer: "Heavy",
+      },
+      {
+        id: "5",
+        term: "Halapad",
+        answer: "Wide",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct word from the word bank to complete each sentence.",
+    questions: [
+      {
+        id: 1,
+        prompt: "______ hiya.",
+        options: [
+          {
+            key: "A",
+            text: "buotan",
+          },
+          {
+            key: "B",
+            text: "dako",
+          },
+          {
+            key: "C",
+            text: "matahom",
+          },
+          {
+            key: "D",
+            text: "mahal",
+          },
+          {
+            key: "E",
+            text: "limpyo",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "______ an balay. (The house is big.)",
+        options: [
+          {
+            key: "A",
+            text: "buotan",
+          },
+          {
+            key: "B",
+            text: "dako",
+          },
+          {
+            key: "C",
+            text: "matahom",
+          },
+          {
+            key: "D",
+            text: "mahal",
+          },
+          {
+            key: "E",
+            text: "limpyo",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "______ an lugar. (The place is beautiful.)",
+        options: [
+          {
+            key: "A",
+            text: "buotan",
+          },
+          {
+            key: "B",
+            text: "dako",
+          },
+          {
+            key: "C",
+            text: "matahom",
+          },
+          {
+            key: "D",
+            text: "mahal",
+          },
+          {
+            key: "E",
+            text: "limpyo",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "______ ini nga bag. (This bag is expensive.)",
+        options: [
+          {
+            key: "A",
+            text: "buotan",
+          },
+          {
+            key: "B",
+            text: "dako",
+          },
+          {
+            key: "C",
+            text: "matahom",
+          },
+          {
+            key: "D",
+            text: "mahal",
+          },
+          {
+            key: "E",
+            text: "limpyo",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "______ an eskwelahan. (The school is clean.)",
+        options: [
+          {
+            key: "A",
+            text: "buotan",
+          },
+          {
+            key: "B",
+            text: "dako",
+          },
+          {
+            key: "C",
+            text: "matahom",
+          },
+          {
+            key: "D",
+            text: "mahal",
+          },
+          {
+            key: "E",
+            text: "limpyo",
+          },
+        ],
+        answerKey: "E",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Sentences + Practice Activities",
+        xp: 25,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
-        xp: 45,
+        label: "Guided Conversation",
+        xp: 10,
       },
       {
         section: "assessment",

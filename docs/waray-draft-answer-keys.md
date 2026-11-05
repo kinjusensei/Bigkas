@@ -1,6 +1,6 @@
-# Waray draft answer keys: FOR REVIEW
+# Waray draft answer keys
 
-**Every answer here is inferred. None comes from an answer key in the PDF, and none is in the app yet.** Tell me what to change, then I will add the approved answers to the lessons. No Waray was written from scratch: answers are the PDF's own options or text from its lessons.
+**Every answer here is inferred. None comes from an answer key in the PDF.** They were approved as drafted and now run the Waray activity steps and the Waray 30 assessment, but a Waray speaker has not checked them. Tell me what to change and I will update the lessons. No Waray was written from scratch: answers are the PDF's own options or text from its lessons.
 
 | How the answer was found | Items | What to do |
 |---|---:|---|

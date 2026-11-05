@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson15: StructuredLesson = {
   lessonId: "waray_15",
@@ -722,18 +724,6 @@ export const warayLesson15: StructuredLesson = {
       ],
     },
     {
-      title: "Arrange the Words",
-      kind: "arrange",
-      instructions: "Arrange the following words into meaningful Waray sentences.",
-      items: [
-        "ako / Nagbabasa / hin libro",
-        "hiya / nagluluto / Diri",
-        "an imo libro / Hain",
-        "ha eskwelahan / Nag-aadal / kami",
-        "buwas / Makadto / hira",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences using the lesson examples.",
@@ -774,16 +764,96 @@ export const warayLesson15: StructuredLesson = {
       ],
     },
   ],
+  arrangeWords: {
+    title: "Arrange the Words",
+    instructions: "Arrange the following words into meaningful Waray sentences.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "ako",
+          "Nagbabasa",
+          "hin libro",
+        ],
+        answer: [
+          "Nagbabasa",
+          "ako",
+          "hin libro",
+        ],
+        display: "Nagbabasa ako hin libro.",
+      },
+      {
+        id: "2",
+        words: [
+          "hiya",
+          "nagluluto",
+          "Diri",
+        ],
+        answer: [
+          "Diri",
+          "hiya",
+          "nagluluto",
+        ],
+        display: "Diri hiya nagluluto.",
+      },
+      {
+        id: "3",
+        words: [
+          "an imo libro",
+          "Hain",
+        ],
+        answer: [
+          "Hain",
+          "an imo libro",
+        ],
+        display: "Hain an imo libro?",
+      },
+      {
+        id: "4",
+        words: [
+          "ha eskwelahan",
+          "Nag-aadal",
+          "kami",
+        ],
+        answer: [
+          "Nag-aadal",
+          "kami",
+          "ha eskwelahan",
+        ],
+        display: "Nag-aadal kami ha eskwelahan.",
+      },
+      {
+        id: "5",
+        words: [
+          "buwas",
+          "Makadto",
+          "hira",
+        ],
+        answer: [
+          "Makadto",
+          "hira",
+          "buwas",
+        ],
+        display: "Makadto hira buwas.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
-        section: "conversation",
-        label: "Sentence Parts Identification + Negative Sentence Practice + Question Formation + Lesson Assessment",
-        xp: 45,
+        section: "sentences",
+        label: "Sentence Parts Identification + Negative Sentence Practice + Question Formation",
+        xp: 30,
       },
       {
         section: "vocabulary",
         label: "Word Arrangement and Translation",
+        xp: 15,
+      },
+      {
+        section: "conversation",
+        label: "Lesson Assessment",
         xp: 15,
       },
     ],

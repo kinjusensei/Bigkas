@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson11: StructuredLesson = {
   lessonId: "waray_11",
@@ -922,46 +924,6 @@ export const warayLesson11: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Expressions",
-      kind: "match",
-      instructions: "Match each Waray expression with its correct English meaning.",
-      items: [
-        "Waray",
-        "Usahay",
-        "Pag-amping",
-        "Hulat anay",
-        "Mangaon na kita",
-        "Waray pa",
-      ],
-      choices: [
-        "Answer Choices",
-        "Take care",
-        "Sometimes",
-        "Let's eat",
-        "Wait a moment",
-        "Not yet",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word or expression to complete each sentence.",
-      items: [
-        "Kumusta an imo ______? (How was your day?)",
-        "______ ako kada adlaw. (I study every day.)",
-        "______ kita. (Let's eat.)",
-        "______ pa. (Not yet.)",
-        "______ anay. (Wait a moment.)",
-      ],
-      choices: [
-        "adlaw",
-        "Nag-aadal",
-        "Mangaon",
-        "Waray",
-        "Hulat",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following English sentences into Waray.",
@@ -994,6 +956,114 @@ export const warayLesson11: StructuredLesson = {
       note: "Write at least eight exchanges between the speakers.",
     },
   ],
+  matchActivity: {
+    title: "Match the Expressions",
+    instructions: "Match each Waray expression with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Usahay",
+        answer: "Sometimes",
+      },
+      {
+        id: "2",
+        term: "Pag-amping",
+        answer: "Take care",
+      },
+      {
+        id: "3",
+        term: "Hulat anay",
+        answer: "Wait a moment",
+      },
+      {
+        id: "4",
+        term: "Mangaon na kita",
+        answer: "Let's eat",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct word or expression to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "Kumusta an imo ______?",
+        hint: "How was your day?",
+        answer: "adlaw",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word or expression to complete each sentence.",
+        wordBank: [
+          "adlaw",
+          "Nag-aadal",
+          "Mangaon",
+          "Waray",
+          "Hulat",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "______ ako kada adlaw.",
+        hint: "I study every day.",
+        answer: "Nag-aadal",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word or expression to complete each sentence.",
+        wordBank: [
+          "adlaw",
+          "Nag-aadal",
+          "Mangaon",
+          "Waray",
+          "Hulat",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "______ kita.",
+        hint: "Let's eat.",
+        answer: "Mangaon",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word or expression to complete each sentence.",
+        wordBank: [
+          "adlaw",
+          "Nag-aadal",
+          "Mangaon",
+          "Waray",
+          "Hulat",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______ pa.",
+        hint: "Not yet.",
+        answer: "Waray",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word or expression to complete each sentence.",
+        wordBank: [
+          "adlaw",
+          "Nag-aadal",
+          "Mangaon",
+          "Waray",
+          "Hulat",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "______ anay.",
+        hint: "Wait a moment.",
+        answer: "Hulat",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word or expression to complete each sentence.",
+        wordBank: [
+          "adlaw",
+          "Nag-aadal",
+          "Mangaon",
+          "Waray",
+          "Hulat",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -1003,8 +1073,13 @@ export const warayLesson11: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

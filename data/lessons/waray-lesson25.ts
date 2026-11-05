@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson25: StructuredLesson = {
   lessonId: "waray_25",
@@ -1137,49 +1139,6 @@ export const warayLesson25: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray verb with its English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Magbasa | A. To cook",
-        "2 | Magsurat | B. To clean",
-        "3 | Magluto | C. To read",
-        "4 | Maglimpyo | D. To write",
-        "5 | Mag-adal | E. To study",
-      ],
-    },
-    {
-      title: "Identify the Time Reference",
-      kind: "choice",
-      instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.\nWrite:",
-      items: [
-        "C – Completed action",
-        "O – Ongoing action",
-        "F – Intended or future action",
-        "Nagbabasa ako hin libro yana.",
-        "Nagluto hi Nanay kagab-i.",
-        "Magbabasa ako buwas.",
-        "Nag-aram kami kahapon.",
-        "Magsusurat hiya hin surat.",
-        "Naglilimpyo hira han balay yana.",
-        "Nagbasa hiya hin libro.",
-        "Magluluto kami yana nga gab-i.",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the appropriate verb form from the choices.",
-      items: [
-        "__________ ako hin libro yana. (Nagbabasa / Nagbasa / Magbabasa)",
-        "__________ hi Nanay kagab-i. (Nagluluto / Nagluto / Magluluto)",
-        "__________ kami buwas. (Nag-aadal / Nag-aram / Mag-aadal)",
-        "__________ hiya hin surat yana. (Nagsusurat / Nagsurat / Magsusurat)",
-        "__________ hira han balay kahapon. (Naglilimpyo / Naglimpyo / Maglilimpyo)",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following English sentences into Waray.",
@@ -1203,12 +1162,327 @@ export const warayLesson25: StructuredLesson = {
       note: "Use time expressions such as kahapon, yana, buwas, and sunod nga semana.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray verb with its English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Magbasa",
+        answer: "To read",
+      },
+      {
+        id: "2",
+        term: "Magsurat",
+        answer: "To write",
+      },
+      {
+        id: "3",
+        term: "Magluto",
+        answer: "To cook",
+      },
+      {
+        id: "4",
+        term: "Maglimpyo",
+        answer: "To clean",
+      },
+      {
+        id: "5",
+        term: "Mag-adal",
+        answer: "To study",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Time Reference",
+    questions: [
+      {
+        id: 1,
+        prompt: "Nagbabasa ako hin libro yana.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "O",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 2,
+        prompt: "Nagluto hi Nanay kagab-i.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 3,
+        prompt: "Magbabasa ako buwas.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "F",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 4,
+        prompt: "Nag-aram kami kahapon.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 5,
+        prompt: "Magsusurat hiya hin surat.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "F",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 6,
+        prompt: "Naglilimpyo hira han balay yana.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "O",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 7,
+        prompt: "Nagbasa hiya hin libro.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 8,
+        prompt: "Magluluto kami yana nga gab-i.",
+        options: [
+          {
+            key: "C",
+            text: "Completed action",
+          },
+          {
+            key: "O",
+            text: "Ongoing action",
+          },
+          {
+            key: "F",
+            text: "Intended or future action",
+          },
+        ],
+        answerKey: "F",
+        title: "Identify the Time Reference",
+        instructions: "Identify whether each sentence describes a completed, ongoing, or intended/future action.",
+      },
+      {
+        id: 9,
+        prompt: "__________ ako hin libro yana.",
+        options: [
+          {
+            key: "A",
+            text: "Nagbabasa",
+          },
+          {
+            key: "B",
+            text: "Nagbasa",
+          },
+          {
+            key: "C",
+            text: "Magbabasa",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the appropriate verb form from the choices.",
+      },
+      {
+        id: 10,
+        prompt: "__________ hi Nanay kagab-i.",
+        options: [
+          {
+            key: "A",
+            text: "Nagluluto",
+          },
+          {
+            key: "B",
+            text: "Nagluto",
+          },
+          {
+            key: "C",
+            text: "Magluluto",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the appropriate verb form from the choices.",
+      },
+      {
+        id: 11,
+        prompt: "__________ kami buwas.",
+        options: [
+          {
+            key: "A",
+            text: "Nag-aadal",
+          },
+          {
+            key: "B",
+            text: "Nag-aram",
+          },
+          {
+            key: "C",
+            text: "Mag-aadal",
+          },
+        ],
+        answerKey: "C",
+        title: "Complete the Sentences",
+        instructions: "Choose the appropriate verb form from the choices.",
+      },
+      {
+        id: 12,
+        prompt: "__________ hiya hin surat yana.",
+        options: [
+          {
+            key: "A",
+            text: "Nagsusurat",
+          },
+          {
+            key: "B",
+            text: "Nagsurat",
+          },
+          {
+            key: "C",
+            text: "Magsusurat",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the appropriate verb form from the choices.",
+      },
+      {
+        id: 13,
+        prompt: "__________ hira han balay kahapon.",
+        options: [
+          {
+            key: "A",
+            text: "Naglilimpyo",
+          },
+          {
+            key: "B",
+            text: "Naglimpyo",
+          },
+          {
+            key: "C",
+            text: "Maglilimpyo",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the appropriate verb form from the choices.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
-        section: "conversation",
-        label: "Vocabulary Matching + Identify the Time Reference + Complete the Sentences + Describe Your Activities",
-        xp: 45,
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Identify the Time Reference + Complete the Sentences + Describe Your Activities",
+        xp: 35,
       },
       {
         section: "assessment",

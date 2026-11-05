@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson22: StructuredLesson = {
   lessonId: "waray_22",
@@ -903,38 +905,6 @@ export const warayLesson22: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray word or expression with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Hinungdan | A. Example",
-        "2 | Salit | B. Reason / Cause",
-        "3 | Pananglitan | C. Therefore / So",
-        "4 | Pagsaysay | D. Explanation",
-        "5 | Katuyoan | E. Purpose",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct expression from the word bank.",
-      items: [
-        "Nagpahuway ako ______ kapoy ako.",
-        "Nag-uran, ______ nabasa an akon bado.",
-        "______, kinahanglan naton mag-andam.",
-        "______, mahimo kita magbasa hin libro.",
-        "Importante ini ______ nakakabulig ini ha aton.",
-      ],
-      choices: [
-        "kay",
-        "salit",
-        "pananglitan",
-        "tungod kay",
-        "siyahan",
-      ],
-    },
-    {
       title: "Identify the Cause and Effect",
       kind: "choice",
       instructions: "Read each sentence and identify its cause and effect.",
@@ -946,6 +916,13 @@ export const warayLesson22: StructuredLesson = {
         "Nagpraktis hira kada adlaw, salit nag-uswag an ira abilidad.",
       ],
       note: "For each sentence, identify:\n• Cause: Why did the situation happen?\n• Effect: What happened as a result?",
+      answers: [
+        "Cause: Nag-uran. Effect: waray kami makagawas.",
+        "Cause: Waray hiya magkaon. Effect: ginugutom hiya.",
+        "Cause: Nag-aram hiya hin maupay. Effect: nakapasar hiya ha eksam.",
+        "Cause: Waray koryente. Effect: diri kami nakakagamit han kompyuter.",
+        "Cause: Nagpraktis hira kada adlaw. Effect: nag-uswag an ira abilidad.",
+      ],
     },
     {
       title: "Translate into Waray",
@@ -977,12 +954,130 @@ export const warayLesson22: StructuredLesson = {
       note: "Your explanation must include:",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray word or expression with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Hinungdan",
+        answer: "Reason / Cause",
+      },
+      {
+        id: "2",
+        term: "Salit",
+        answer: "Therefore / So",
+      },
+      {
+        id: "3",
+        term: "Pananglitan",
+        answer: "Example",
+      },
+      {
+        id: "4",
+        term: "Pagsaysay",
+        answer: "Explanation",
+      },
+      {
+        id: "5",
+        term: "Katuyoan",
+        answer: "Purpose",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct expression from the word bank.",
+    items: [
+      {
+        id: "1",
+        sentence: "Nagpahuway ako ______ kapoy ako.",
+        answer: "kay",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "kay",
+          "salit",
+          "pananglitan",
+          "tungod kay",
+          "siyahan",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Nag-uran, ______ nabasa an akon bado.",
+        answer: "salit",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "kay",
+          "salit",
+          "pananglitan",
+          "tungod kay",
+          "siyahan",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "______, kinahanglan naton mag-andam.",
+        answer: "siyahan",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "kay",
+          "salit",
+          "pananglitan",
+          "tungod kay",
+          "siyahan",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______, mahimo kita magbasa hin libro.",
+        answer: "pananglitan",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "kay",
+          "salit",
+          "pananglitan",
+          "tungod kay",
+          "siyahan",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Importante ini ______ nakakabulig ini ha aton.",
+        answer: "tungod kay",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank.",
+        wordBank: [
+          "kay",
+          "salit",
+          "pananglitan",
+          "tungod kay",
+          "siyahan",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Sentences + Practice Activities",
+        xp: 25,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
-        xp: 45,
+        label: "Guided Conversation",
+        xp: 10,
       },
       {
         section: "assessment",

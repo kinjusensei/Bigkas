@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson18: StructuredLesson = {
   lessonId: "waray_18",
@@ -1083,38 +1085,6 @@ export const warayLesson18: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray word with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Merkado | A. Change",
-        "2 | Sukli | B. Expensive",
-        "3 | Barato | C. Market",
-        "4 | Mahal | D. Inexpensive",
-        "5 | Presyo | E. Price",
-      ],
-    },
-    {
-      title: "Complete the Shopping Expressions",
-      kind: "fill",
-      instructions: "Fill in the blanks using the correct Waray word from the choices.",
-      items: [
-        "______ ini? (How much is this?)",
-        "______ ko ini. (I want this.)",
-        "______ ini. (This is expensive.)",
-        "______ ini. (This is inexpensive.)",
-        "Karuyag ko ______ ini. (I want to buy this.)",
-      ],
-      choices: [
-        "pira",
-        "karuyag",
-        "mahal",
-        "barato",
-        "paliton",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate each English sentence into Waray.",
@@ -1141,17 +1111,200 @@ export const warayLesson18: StructuredLesson = {
       note: "Challenge: Complete the conversation using Waray without reading the sample dialogues.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Merkado",
+        answer: "Market",
+      },
+      {
+        id: "2",
+        term: "Sukli",
+        answer: "Change",
+      },
+      {
+        id: "3",
+        term: "Barato",
+        answer: "Inexpensive",
+      },
+      {
+        id: "4",
+        term: "Mahal",
+        answer: "Expensive",
+      },
+      {
+        id: "5",
+        term: "Presyo",
+        answer: "Price",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Complete the Shopping Expressions",
+    instructions: "Fill in the blanks using the correct Waray word from the choices.",
+    questions: [
+      {
+        id: 1,
+        prompt: "______ ini? (How much is this?)",
+        options: [
+          {
+            key: "A",
+            text: "pira",
+          },
+          {
+            key: "B",
+            text: "karuyag",
+          },
+          {
+            key: "C",
+            text: "mahal",
+          },
+          {
+            key: "D",
+            text: "barato",
+          },
+          {
+            key: "E",
+            text: "paliton",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "______ ko ini. (I want this.)",
+        options: [
+          {
+            key: "A",
+            text: "pira",
+          },
+          {
+            key: "B",
+            text: "karuyag",
+          },
+          {
+            key: "C",
+            text: "mahal",
+          },
+          {
+            key: "D",
+            text: "barato",
+          },
+          {
+            key: "E",
+            text: "paliton",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "______ ini. (This is expensive.)",
+        options: [
+          {
+            key: "A",
+            text: "pira",
+          },
+          {
+            key: "B",
+            text: "karuyag",
+          },
+          {
+            key: "C",
+            text: "mahal",
+          },
+          {
+            key: "D",
+            text: "barato",
+          },
+          {
+            key: "E",
+            text: "paliton",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "______ ini. (This is inexpensive.)",
+        options: [
+          {
+            key: "A",
+            text: "pira",
+          },
+          {
+            key: "B",
+            text: "karuyag",
+          },
+          {
+            key: "C",
+            text: "mahal",
+          },
+          {
+            key: "D",
+            text: "barato",
+          },
+          {
+            key: "E",
+            text: "paliton",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "Karuyag ko ______ ini. (I want to buy this.)",
+        options: [
+          {
+            key: "A",
+            text: "pira",
+          },
+          {
+            key: "B",
+            text: "karuyag",
+          },
+          {
+            key: "C",
+            text: "mahal",
+          },
+          {
+            key: "D",
+            text: "barato",
+          },
+          {
+            key: "E",
+            text: "paliton",
+          },
+        ],
+        answerKey: "E",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
-        section: "conversation",
-        label: "Vocabulary Matching + Guided Conversation + Practice Activities",
-        xp: 35,
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
       },
       {
         section: "vocabulary",
         label: "Shopping Expressions",
         xp: 10,
+      },
+      {
+        section: "conversation",
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

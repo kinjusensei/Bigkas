@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson21: StructuredLesson = {
   lessonId: "waray_21",
@@ -1027,50 +1029,6 @@ export const warayLesson21: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray expression with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Nalilipay | A. I agree",
-        "2 | Nasusubo | B. Worried",
-        "3 | Nabababaraka | C. Happy",
-        "4 | Nauyon ako | D. Sad",
-        "5 | Tungod kay | E. Because",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct expression from the word bank to complete each sentence.",
-      items: [
-        "______, importante an pag-adal.",
-        "______ ha imo opinyon.",
-        "______ nga may bag-o ako nga nahibabaroan.",
-        "______ importante ini.",
-        "______ hito nga ideya.",
-      ],
-      choices: [
-        "Nauyon ako",
-        "Nalilipay ako",
-        "Tungod kay",
-        "Diri ako nauyon",
-        "Para ha akon",
-      ],
-    },
-    {
-      title: "Identify the Feeling",
-      kind: "choice",
-      instructions: "Read each situation and choose the most appropriate Waray expression.",
-      items: [
-        "You received good news from your family.\nA. Nasusubo ako.\nB. Nalilipay ako.\nC. Nasisina ako.",
-        "You lost something important.\nA. Nasusubo ako.\nB. Eksitado ako.\nC. Nalilipay ako.",
-        "You are worried about an upcoming examination.\nA. Nabababaraka ako.\nB. Malipayon ako.\nC. Nauyon ako.",
-        "You are afraid of a dangerous situation.\nA. Nahahadlok ako.\nB. Nalilipay ako.\nC. Nasisina ako.",
-        "You are angry because someone damaged your belongings.\nA. Nasusubo ako.\nB. Nasisina ako.\nC. Mapasalamaton ako.",
-      ],
-    },
-    {
       title: "Express Your Opinion",
       kind: "open",
       instructions: "Answer the following questions using complete Waray sentences.",
@@ -1100,12 +1058,231 @@ export const warayLesson21: StructuredLesson = {
       note: "Your response must include:\nChallenge: Speak for approximately 30–60 seconds without reading a prepared script.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray expression with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Nalilipay",
+        answer: "Happy",
+      },
+      {
+        id: "2",
+        term: "Nasusubo",
+        answer: "Sad",
+      },
+      {
+        id: "3",
+        term: "Nabababaraka",
+        answer: "Worried",
+      },
+      {
+        id: "4",
+        term: "Nauyon ako",
+        answer: "I agree",
+      },
+      {
+        id: "5",
+        term: "Tungod kay",
+        answer: "Because",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Feeling",
+    instructions: "Read each situation and choose the most appropriate Waray expression.",
+    questions: [
+      {
+        id: 1,
+        prompt: "You received good news from your family.",
+        options: [
+          {
+            key: "A",
+            text: "Nasusubo ako.",
+          },
+          {
+            key: "B",
+            text: "Nalilipay ako.",
+          },
+          {
+            key: "C",
+            text: "Nasisina ako.",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 2,
+        prompt: "You lost something important.",
+        options: [
+          {
+            key: "A",
+            text: "Nasusubo ako.",
+          },
+          {
+            key: "B",
+            text: "Eksitado ako.",
+          },
+          {
+            key: "C",
+            text: "Nalilipay ako.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 3,
+        prompt: "You are worried about an upcoming examination.",
+        options: [
+          {
+            key: "A",
+            text: "Nabababaraka ako.",
+          },
+          {
+            key: "B",
+            text: "Malipayon ako.",
+          },
+          {
+            key: "C",
+            text: "Nauyon ako.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "You are afraid of a dangerous situation.",
+        options: [
+          {
+            key: "A",
+            text: "Nahahadlok ako.",
+          },
+          {
+            key: "B",
+            text: "Nalilipay ako.",
+          },
+          {
+            key: "C",
+            text: "Nasisina ako.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 5,
+        prompt: "You are angry because someone damaged your belongings.",
+        options: [
+          {
+            key: "A",
+            text: "Nasusubo ako.",
+          },
+          {
+            key: "B",
+            text: "Nasisina ako.",
+          },
+          {
+            key: "C",
+            text: "Mapasalamaton ako.",
+          },
+        ],
+        answerKey: "B",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct expression from the word bank to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "______, importante an pag-adal.",
+        answer: "Para ha akon",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank to complete each sentence.",
+        wordBank: [
+          "Nauyon ako",
+          "Nalilipay ako",
+          "Tungod kay",
+          "Diri ako nauyon",
+          "Para ha akon",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "______ ha imo opinyon.",
+        answer: "Nauyon ako",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank to complete each sentence.",
+        wordBank: [
+          "Nauyon ako",
+          "Nalilipay ako",
+          "Tungod kay",
+          "Diri ako nauyon",
+          "Para ha akon",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "______ nga may bag-o ako nga nahibabaroan.",
+        answer: "Nalilipay ako",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank to complete each sentence.",
+        wordBank: [
+          "Nauyon ako",
+          "Nalilipay ako",
+          "Tungod kay",
+          "Diri ako nauyon",
+          "Para ha akon",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______ importante ini.",
+        answer: "Tungod kay",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank to complete each sentence.",
+        wordBank: [
+          "Nauyon ako",
+          "Nalilipay ako",
+          "Tungod kay",
+          "Diri ako nauyon",
+          "Para ha akon",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "______ hito nga ideya.",
+        answer: "Diri ako nauyon",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct expression from the word bank to complete each sentence.",
+        wordBank: [
+          "Nauyon ako",
+          "Nalilipay ako",
+          "Tungod kay",
+          "Diri ako nauyon",
+          "Para ha akon",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Sentences + Practice Activities",
+        xp: 25,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
-        xp: 45,
+        label: "Guided Conversation",
+        xp: 10,
       },
       {
         section: "assessment",

@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson3: StructuredLesson = {
   lessonId: "waray_3",
@@ -1039,52 +1041,6 @@ export const warayLesson3: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Number Matching",
-      kind: "match",
-      instructions: "Match each number with its correct Waray equivalent.",
-      items: [
-        "Three",
-        "Five",
-        "Seven",
-        "Nine",
-        "Ten",
-      ],
-      choices: [
-        "Lima",
-        "Siyam",
-        "Tulo",
-        "Pito",
-        "Napulo",
-      ],
-    },
-    {
-      title: "Multiple Choice",
-      kind: "choice",
-      instructions: "Choose the correct Waray number.",
-      items: [
-        "What is the Waray word for \"Two\"?\nA. Usa\nB. Duha\nC. Tulo\nD. Upat",
-        "What does \"Unom\" mean?\nA. Four\nB. Five\nC. Six\nD. Seven",
-        "Which Waray word means \"Eight\"?\nA. Walo\nB. Siyam\nC. Pito\nD. Lima",
-        "What is the Waray form of \"Fifteen\" in the number list?\nA. Trese\nB. Katorse\nC. Kinse\nD. Dose",
-        "What does \"Baynte\" mean?\nA. Ten\nB. Fifteen\nC. Twenty\nD. Thirty",
-      ],
-    },
-    {
-      title: "Fill in the Blanks",
-      kind: "fill",
-      instructions: "Complete the sentences using the correct Waray number.",
-      items: [
-        "One is usa. Two is _____.",
-        "Five is _____.",
-        "Ten is _____.",
-        "Nine is _____.",
-        "Seven is _____.",
-      ],
-      choices: [
-        "Duha – Lima – Napulo – Siyam – Pito",
-      ],
-    },
-    {
       title: "Translate the Sentences",
       kind: "translate",
       instructions: "Translate the following English sentences into Waray.",
@@ -1126,6 +1082,235 @@ export const warayLesson3: StructuredLesson = {
       note: "Try answering each question in Waray using the numbers you learned.",
     },
   ],
+  matchActivity: {
+    title: "Number Matching",
+    instructions: "Match each number with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Three",
+        answer: "Tulo",
+      },
+      {
+        id: "2",
+        term: "Five",
+        answer: "Lima",
+      },
+      {
+        id: "3",
+        term: "Seven",
+        answer: "Pito",
+      },
+      {
+        id: "4",
+        term: "Nine",
+        answer: "Siyam",
+      },
+      {
+        id: "5",
+        term: "Ten",
+        answer: "Napulo",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Multiple Choice",
+    instructions: "Choose the correct Waray number.",
+    questions: [
+      {
+        id: 1,
+        prompt: "What is the Waray word for \"Two\"?",
+        options: [
+          {
+            key: "A",
+            text: "Usa",
+          },
+          {
+            key: "B",
+            text: "Duha",
+          },
+          {
+            key: "C",
+            text: "Tulo",
+          },
+          {
+            key: "D",
+            text: "Upat",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 2,
+        prompt: "What does \"Unom\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Four",
+          },
+          {
+            key: "B",
+            text: "Five",
+          },
+          {
+            key: "C",
+            text: "Six",
+          },
+          {
+            key: "D",
+            text: "Seven",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 3,
+        prompt: "Which Waray word means \"Eight\"?",
+        options: [
+          {
+            key: "A",
+            text: "Walo",
+          },
+          {
+            key: "B",
+            text: "Siyam",
+          },
+          {
+            key: "C",
+            text: "Pito",
+          },
+          {
+            key: "D",
+            text: "Lima",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "What is the Waray form of \"Fifteen\" in the number list?",
+        options: [
+          {
+            key: "A",
+            text: "Trese",
+          },
+          {
+            key: "B",
+            text: "Katorse",
+          },
+          {
+            key: "C",
+            text: "Kinse",
+          },
+          {
+            key: "D",
+            text: "Dose",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 5,
+        prompt: "What does \"Baynte\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Ten",
+          },
+          {
+            key: "B",
+            text: "Fifteen",
+          },
+          {
+            key: "C",
+            text: "Twenty",
+          },
+          {
+            key: "D",
+            text: "Thirty",
+          },
+        ],
+        answerKey: "C",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Fill in the Blanks",
+    instructions: "Complete the sentences using the correct Waray number.",
+    items: [
+      {
+        id: "1",
+        sentence: "One is usa. Two is _____.",
+        answer: "Duha",
+        title: "Fill in the Blanks",
+        instructions: "Complete the sentences using the correct Waray number.",
+        wordBank: [
+          "Duha",
+          "Lima",
+          "Napulo",
+          "Siyam",
+          "Pito",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Five is _____.",
+        answer: "Lima",
+        title: "Fill in the Blanks",
+        instructions: "Complete the sentences using the correct Waray number.",
+        wordBank: [
+          "Duha",
+          "Lima",
+          "Napulo",
+          "Siyam",
+          "Pito",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Ten is _____.",
+        answer: "Napulo",
+        title: "Fill in the Blanks",
+        instructions: "Complete the sentences using the correct Waray number.",
+        wordBank: [
+          "Duha",
+          "Lima",
+          "Napulo",
+          "Siyam",
+          "Pito",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Nine is _____.",
+        answer: "Siyam",
+        title: "Fill in the Blanks",
+        instructions: "Complete the sentences using the correct Waray number.",
+        wordBank: [
+          "Duha",
+          "Lima",
+          "Napulo",
+          "Siyam",
+          "Pito",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Seven is _____.",
+        answer: "Pito",
+        title: "Fill in the Blanks",
+        instructions: "Complete the sentences using the correct Waray number.",
+        wordBank: [
+          "Duha",
+          "Lima",
+          "Napulo",
+          "Siyam",
+          "Pito",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -1135,8 +1320,13 @@ export const warayLesson3: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

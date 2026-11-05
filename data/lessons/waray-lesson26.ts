@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson26: StructuredLesson = {
   lessonId: "waray_26",
@@ -591,47 +593,6 @@ export const warayLesson26: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Identify the Meaning",
-      kind: "choice",
-      instructions: "Read each expression and select the meaning that best describes it.",
-      items: [
-        "Maupay an buot niya.\nA. He/She is kind-hearted.\nB. He/She is physically tall.\nC. He/She is hungry.",
-        "Marig-on an iya buot.\nA. He/She is strong-willed.\nB. He/She is sleepy.\nC. He/She is confused.",
-        "Ayaw kawad-i hin paglaom.\nA. Do not lose hope.\nB. Do not leave the house.\nC. Do not forget your name.",
-        "Mapailubon hiya.\nA. He/She is patient.\nB. He/She is careless.\nC. He/She is angry.",
-        "Kinahanglan hunahunaon hin maupay.\nA. It needs to be considered carefully.\nB. It needs to be forgotten.\nC. It needs to be thrown away.",
-      ],
-    },
-    {
-      title: "Literal or Figurative?",
-      kind: "choice",
-      instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
-      items: [
-        "Dako an balay.",
-        "Maupay an buot ni Maria.",
-        "Itom an iya bag.",
-        "Marig-on an iya buot.",
-        "Mapailubon hiya.",
-      ],
-    },
-    {
-      title: "Complete the Conversation",
-      kind: "roleplay",
-      instructions: "Choose the appropriate expression to complete each conversation.",
-      items: [
-        "Maupay an buot niya.",
-        "Ayaw kawad-i hin paglaom.",
-        "Mapailubon hiya.",
-        "Hunahunaa anay hin maupay.",
-        "Salamat ha imo pagdasig.",
-        "A: Nasusubo ako kay napakyas ako ha akon proyekto. B: __________________________",
-        "A: Ano an imo masisiring kan Ana? B: __________________________ kay pirme hiya nabulig ha iba.",
-        "A: Diri ako sigurado kon ano an akon pipilion. B: __________________________",
-        "A: Diri hiya nasisina bisan maiha an paghuwat. B: __________________________",
-        "A: Ayaw pag-undang. Makakaya mo ito. B: __________________________",
-      ],
-    },
-    {
       title: "Use the Expression in Context",
       kind: "other",
       instructions: "Write one short Waray sentence using each expression. Provide its English translation.",
@@ -644,6 +605,278 @@ export const warayLesson26: StructuredLesson = {
       ],
     },
   ],
+  choiceActivity: {
+    title: "Identify the Meaning",
+    questions: [
+      {
+        id: 1,
+        prompt: "Maupay an buot niya.",
+        options: [
+          {
+            key: "A",
+            text: "He/She is kind-hearted.",
+          },
+          {
+            key: "B",
+            text: "He/She is physically tall.",
+          },
+          {
+            key: "C",
+            text: "He/She is hungry.",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Meaning",
+        instructions: "Read each expression and select the meaning that best describes it.",
+      },
+      {
+        id: 2,
+        prompt: "Marig-on an iya buot.",
+        options: [
+          {
+            key: "A",
+            text: "He/She is strong-willed.",
+          },
+          {
+            key: "B",
+            text: "He/She is sleepy.",
+          },
+          {
+            key: "C",
+            text: "He/She is confused.",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Meaning",
+        instructions: "Read each expression and select the meaning that best describes it.",
+      },
+      {
+        id: 3,
+        prompt: "Ayaw kawad-i hin paglaom.",
+        options: [
+          {
+            key: "A",
+            text: "Do not lose hope.",
+          },
+          {
+            key: "B",
+            text: "Do not leave the house.",
+          },
+          {
+            key: "C",
+            text: "Do not forget your name.",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Meaning",
+        instructions: "Read each expression and select the meaning that best describes it.",
+      },
+      {
+        id: 4,
+        prompt: "Mapailubon hiya.",
+        options: [
+          {
+            key: "A",
+            text: "He/She is patient.",
+          },
+          {
+            key: "B",
+            text: "He/She is careless.",
+          },
+          {
+            key: "C",
+            text: "He/She is angry.",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Meaning",
+        instructions: "Read each expression and select the meaning that best describes it.",
+      },
+      {
+        id: 5,
+        prompt: "Kinahanglan hunahunaon hin maupay.",
+        options: [
+          {
+            key: "A",
+            text: "It needs to be considered carefully.",
+          },
+          {
+            key: "B",
+            text: "It needs to be forgotten.",
+          },
+          {
+            key: "C",
+            text: "It needs to be thrown away.",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Meaning",
+        instructions: "Read each expression and select the meaning that best describes it.",
+      },
+      {
+        id: 6,
+        prompt: "Dako an balay.",
+        options: [
+          {
+            key: "A",
+            text: "Literal",
+          },
+          {
+            key: "B",
+            text: "Figurative/descriptive",
+          },
+        ],
+        answerKey: "A",
+        title: "Literal or Figurative?",
+        instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
+      },
+      {
+        id: 7,
+        prompt: "Maupay an buot ni Maria.",
+        options: [
+          {
+            key: "A",
+            text: "Literal",
+          },
+          {
+            key: "B",
+            text: "Figurative/descriptive",
+          },
+        ],
+        answerKey: "B",
+        title: "Literal or Figurative?",
+        instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
+      },
+      {
+        id: 8,
+        prompt: "Itom an iya bag.",
+        options: [
+          {
+            key: "A",
+            text: "Literal",
+          },
+          {
+            key: "B",
+            text: "Figurative/descriptive",
+          },
+        ],
+        answerKey: "A",
+        title: "Literal or Figurative?",
+        instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
+      },
+      {
+        id: 9,
+        prompt: "Marig-on an iya buot.",
+        options: [
+          {
+            key: "A",
+            text: "Literal",
+          },
+          {
+            key: "B",
+            text: "Figurative/descriptive",
+          },
+        ],
+        answerKey: "B",
+        title: "Literal or Figurative?",
+        instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
+      },
+      {
+        id: 10,
+        prompt: "Mapailubon hiya.",
+        options: [
+          {
+            key: "A",
+            text: "Literal",
+          },
+          {
+            key: "B",
+            text: "Figurative/descriptive",
+          },
+        ],
+        answerKey: "B",
+        title: "Literal or Figurative?",
+        instructions: "Identify whether each statement is primarily literal or figurative/descriptive.",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Conversation",
+    instructions: "Choose the appropriate expression to complete each conversation.",
+    items: [
+      {
+        id: "1",
+        sentence: "A: Nasusubo ako kay napakyas ako ha akon proyekto. B: __________________________",
+        answer: "Ayaw kawad-i hin paglaom.",
+        title: "Complete the Conversation",
+        instructions: "Choose the appropriate expression to complete each conversation.",
+        wordBank: [
+          "Maupay an buot niya.",
+          "Ayaw kawad-i hin paglaom.",
+          "Mapailubon hiya.",
+          "Hunahunaa anay hin maupay.",
+          "Salamat ha imo pagdasig.",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "A: Ano an imo masisiring kan Ana? B: __________________________ kay pirme hiya nabulig ha iba.",
+        answer: "Maupay an buot niya.",
+        title: "Complete the Conversation",
+        instructions: "Choose the appropriate expression to complete each conversation.",
+        wordBank: [
+          "Maupay an buot niya.",
+          "Ayaw kawad-i hin paglaom.",
+          "Mapailubon hiya.",
+          "Hunahunaa anay hin maupay.",
+          "Salamat ha imo pagdasig.",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "A: Diri ako sigurado kon ano an akon pipilion. B: __________________________",
+        answer: "Hunahunaa anay hin maupay.",
+        title: "Complete the Conversation",
+        instructions: "Choose the appropriate expression to complete each conversation.",
+        wordBank: [
+          "Maupay an buot niya.",
+          "Ayaw kawad-i hin paglaom.",
+          "Mapailubon hiya.",
+          "Hunahunaa anay hin maupay.",
+          "Salamat ha imo pagdasig.",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "A: Diri hiya nasisina bisan maiha an paghuwat. B: __________________________",
+        answer: "Mapailubon hiya.",
+        title: "Complete the Conversation",
+        instructions: "Choose the appropriate expression to complete each conversation.",
+        wordBank: [
+          "Maupay an buot niya.",
+          "Ayaw kawad-i hin paglaom.",
+          "Mapailubon hiya.",
+          "Hunahunaa anay hin maupay.",
+          "Salamat ha imo pagdasig.",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "A: Ayaw pag-undang. Makakaya mo ito. B: __________________________",
+        answer: "Salamat ha imo pagdasig.",
+        title: "Complete the Conversation",
+        instructions: "Choose the appropriate expression to complete each conversation.",
+        wordBank: [
+          "Maupay an buot niya.",
+          "Ayaw kawad-i hin paglaom.",
+          "Mapailubon hiya.",
+          "Hunahunaa anay hin maupay.",
+          "Salamat ha imo pagdasig.",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -653,8 +886,13 @@ export const warayLesson26: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

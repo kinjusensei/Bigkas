@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson4: StructuredLesson = {
   lessonId: "waray_4",
@@ -842,45 +844,6 @@ export const warayLesson4: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Days",
-      kind: "match",
-      instructions: "Match each English day with its correct Waray equivalent.",
-      items: [
-        "Monday",
-        "Wednesday",
-        "Friday",
-        "Sunday",
-        "Saturday",
-      ],
-      choices: [
-        "Domingo",
-        "Biyernes",
-        "Miyerkoles",
-        "Sabado",
-        "Lunes",
-      ],
-    },
-    {
-      title: "Identify the Month",
-      kind: "choice",
-      instructions: "Choose the correct Waray month.",
-      items: [
-        "February\nA. Pebrero\nB. Agosto\nC. Abril",
-        "June\nA. Marso\nB. Hunyo\nC. Enero",
-        "December\nA. Mayo\nB. Setyembre\nC. Disyembre",
-      ],
-    },
-    {
-      title: "Complete the Sentence",
-      kind: "fill",
-      instructions: "Select the correct word to complete each sentence.",
-      items: [
-        "______ yana. (Today)\nA. Yana\nB. Buwas\nC. Kahapon",
-        "Makadto ako ______. (I will go tomorrow.)\nA. kahapon\nB. buwas\nC. Domingo",
-        "Pira na an ______? (What time is it?)\nA. adlaw\nB. bulan\nC. oras",
-      ],
-    },
-    {
       title: "Translate the Expressions",
       kind: "translate",
       instructions: "Translate the following expressions into Waray.",
@@ -904,6 +867,169 @@ export const warayLesson4: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Days",
+    instructions: "Match each English day with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Monday",
+        answer: "Lunes",
+      },
+      {
+        id: "2",
+        term: "Wednesday",
+        answer: "Miyerkoles",
+      },
+      {
+        id: "3",
+        term: "Friday",
+        answer: "Biyernes",
+      },
+      {
+        id: "4",
+        term: "Sunday",
+        answer: "Domingo",
+      },
+      {
+        id: "5",
+        term: "Saturday",
+        answer: "Sabado",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Month",
+    questions: [
+      {
+        id: 1,
+        prompt: "February",
+        options: [
+          {
+            key: "A",
+            text: "Pebrero",
+          },
+          {
+            key: "B",
+            text: "Agosto",
+          },
+          {
+            key: "C",
+            text: "Abril",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Month",
+        instructions: "Choose the correct Waray month.",
+      },
+      {
+        id: 2,
+        prompt: "June",
+        options: [
+          {
+            key: "A",
+            text: "Marso",
+          },
+          {
+            key: "B",
+            text: "Hunyo",
+          },
+          {
+            key: "C",
+            text: "Enero",
+          },
+        ],
+        answerKey: "B",
+        title: "Identify the Month",
+        instructions: "Choose the correct Waray month.",
+      },
+      {
+        id: 3,
+        prompt: "December",
+        options: [
+          {
+            key: "A",
+            text: "Mayo",
+          },
+          {
+            key: "B",
+            text: "Setyembre",
+          },
+          {
+            key: "C",
+            text: "Disyembre",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Month",
+        instructions: "Choose the correct Waray month.",
+      },
+      {
+        id: 4,
+        prompt: "______ yana. (Today)",
+        options: [
+          {
+            key: "A",
+            text: "Yana",
+          },
+          {
+            key: "B",
+            text: "Buwas",
+          },
+          {
+            key: "C",
+            text: "Kahapon",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentence",
+        instructions: "Select the correct word to complete each sentence.",
+      },
+      {
+        id: 5,
+        prompt: "Makadto ako ______. (I will go tomorrow.)",
+        options: [
+          {
+            key: "A",
+            text: "kahapon",
+          },
+          {
+            key: "B",
+            text: "buwas",
+          },
+          {
+            key: "C",
+            text: "Domingo",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentence",
+        instructions: "Select the correct word to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "Pira na an ______? (What time is it?)",
+        options: [
+          {
+            key: "A",
+            text: "adlaw",
+          },
+          {
+            key: "B",
+            text: "bulan",
+          },
+          {
+            key: "C",
+            text: "oras",
+          },
+        ],
+        answerKey: "C",
+        title: "Complete the Sentence",
+        instructions: "Select the correct word to complete each sentence.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -913,8 +1039,13 @@ export const warayLesson4: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

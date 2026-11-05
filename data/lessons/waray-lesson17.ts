@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson17: StructuredLesson = {
   lessonId: "waray_17",
@@ -675,43 +677,6 @@ export const warayLesson17: StructuredLesson = {
   ],
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each English word with its corresponding Waray equivalent.",
-      items: [
-        "Cooked rice",
-        "Fish",
-        "Water",
-        "Restaurant",
-        "Menu",
-        "Chicken",
-        "Bill",
-        "Bread",
-      ],
-      choices: [
-        "Tubig",
-        "Menu",
-        "Isda",
-        "Kan-on",
-        "Bayranan",
-        "Restawran",
-        "Tinapay",
-        "Manok",
-      ],
-    },
-    {
-      title: "Complete the Order",
-      kind: "fill",
-      instructions: "Complete each expression using the appropriate Waray word.",
-      items: [
-        "Karuyag ko hin ______. (water)",
-        "May ______ ba kamo? (fish)",
-        "Pira an usa nga ______? (serving)",
-        "______ la ito. (That is all.)",
-        "Mahimo ba ako mangaro han ______? (bill)",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following expressions into Waray.",
@@ -782,12 +747,150 @@ export const warayLesson17: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each English word with its corresponding Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Cooked rice",
+        answer: "Kan-on",
+      },
+      {
+        id: "2",
+        term: "Fish",
+        answer: "Isda",
+      },
+      {
+        id: "3",
+        term: "Water",
+        answer: "Tubig",
+      },
+      {
+        id: "4",
+        term: "Restaurant",
+        answer: "Restawran",
+      },
+      {
+        id: "5",
+        term: "Menu",
+        answer: "Menu",
+      },
+      {
+        id: "6",
+        term: "Chicken",
+        answer: "Manok",
+      },
+      {
+        id: "7",
+        term: "Bill",
+        answer: "Bayranan",
+      },
+      {
+        id: "8",
+        term: "Bread",
+        answer: "Tinapay",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Order",
+    instructions: "Complete each expression using the appropriate Waray word.",
+    items: [
+      {
+        id: "1",
+        sentence: "Karuyag ko hin ______.",
+        hint: "water",
+        answer: "tubig",
+        title: "Complete the Order",
+        instructions: "Complete each expression using the appropriate Waray word.",
+        wordBank: [
+          "tubig",
+          "isda",
+          "serving",
+          "Amo",
+          "bayranan",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "May ______ ba kamo?",
+        hint: "fish",
+        answer: "isda",
+        title: "Complete the Order",
+        instructions: "Complete each expression using the appropriate Waray word.",
+        wordBank: [
+          "tubig",
+          "isda",
+          "serving",
+          "Amo",
+          "bayranan",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Pira an usa nga ______?",
+        hint: "serving",
+        answer: "serving",
+        title: "Complete the Order",
+        instructions: "Complete each expression using the appropriate Waray word.",
+        wordBank: [
+          "tubig",
+          "isda",
+          "serving",
+          "Amo",
+          "bayranan",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______ la ito.",
+        hint: "That is all.",
+        answer: "Amo",
+        title: "Complete the Order",
+        instructions: "Complete each expression using the appropriate Waray word.",
+        wordBank: [
+          "tubig",
+          "isda",
+          "serving",
+          "Amo",
+          "bayranan",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Mahimo ba ako mangaro han ______?",
+        hint: "bill",
+        answer: "bayranan",
+        title: "Complete the Order",
+        instructions: "Complete each expression using the appropriate Waray word.",
+        wordBank: [
+          "tubig",
+          "isda",
+          "serving",
+          "Amo",
+          "bayranan",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Order + Translation Activity",
+        xp: 20,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Order + Translation Activity + Restaurant Role-Play + Lesson Assessment",
-        xp: 60,
+        label: "Restaurant Role-Play + Lesson Assessment",
+        xp: 30,
       },
     ],
     total: 60,

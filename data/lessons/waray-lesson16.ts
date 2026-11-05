@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson16: StructuredLesson = {
   lessonId: "waray_16",
@@ -547,18 +549,6 @@ export const warayLesson16: StructuredLesson = {
   ],
   extraActivities: [
     {
-      title: "Identify the Connecting Word",
-      kind: "choice",
-      instructions: "Identify the Waray connecting word in each sentence and give its English meaning.",
-      items: [
-        "Nagbabasa ako ngan nagsusurat.",
-        "Karuyag ko kumadto, pero waray ako panahon.",
-        "Nag-aadal hiya kay may eksam hira.",
-        "Kon umuran, magpapabilin kami ha balay.",
-        "Bisan kon kapoy ako, magpapadayon ako.",
-      ],
-    },
-    {
       title: "Combine the Sentences",
       kind: "rewrite",
       instructions: "Combine each pair of sentences using the connecting word indicated.",
@@ -568,18 +558,6 @@ export const warayLesson16: StructuredLesson = {
         "May panahon ako. Magbabasa ako. (kon)",
         "Nagbabasa ako. Nagsusurat ako. (ngan)",
         "Kapoy hiya. Nagpapadayon hiya. (bisan kon)",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose an appropriate connecting word to complete each sentence.",
-      items: [
-        "Nagluluto ako _____ gutom kami.",
-        "Karuyag ko kumadto, _____ uran yana.",
-        "_____ may panahon ako, mabisita ako ha imo.",
-        "Nagbabasa hiya _____ nagsusurat.",
-        "_____ kapoy hiya, nagtatrabaho hiya gihapon.",
       ],
     },
     {
@@ -647,6 +625,224 @@ export const warayLesson16: StructuredLesson = {
       ],
     },
   ],
+  choiceActivity: {
+    title: "Identify the Connecting Word",
+    instructions: "Identify the Waray connecting word in each sentence and give its English meaning.",
+    questions: [
+      {
+        id: 1,
+        prompt: "Nagbabasa ako ngan nagsusurat.",
+        options: [
+          {
+            key: "A",
+            text: "ngan (And)",
+          },
+          {
+            key: "B",
+            text: "pero (But)",
+          },
+          {
+            key: "C",
+            text: "kay (Because)",
+          },
+          {
+            key: "D",
+            text: "Kon (If)",
+          },
+          {
+            key: "E",
+            text: "Bisan kon (Although / Even though)",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "Karuyag ko kumadto, pero waray ako panahon.",
+        options: [
+          {
+            key: "A",
+            text: "ngan (And)",
+          },
+          {
+            key: "B",
+            text: "pero (But)",
+          },
+          {
+            key: "C",
+            text: "kay (Because)",
+          },
+          {
+            key: "D",
+            text: "Kon (If)",
+          },
+          {
+            key: "E",
+            text: "Bisan kon (Although / Even though)",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "Nag-aadal hiya kay may eksam hira.",
+        options: [
+          {
+            key: "A",
+            text: "ngan (And)",
+          },
+          {
+            key: "B",
+            text: "pero (But)",
+          },
+          {
+            key: "C",
+            text: "kay (Because)",
+          },
+          {
+            key: "D",
+            text: "Kon (If)",
+          },
+          {
+            key: "E",
+            text: "Bisan kon (Although / Even though)",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "Kon umuran, magpapabilin kami ha balay.",
+        options: [
+          {
+            key: "A",
+            text: "ngan (And)",
+          },
+          {
+            key: "B",
+            text: "pero (But)",
+          },
+          {
+            key: "C",
+            text: "kay (Because)",
+          },
+          {
+            key: "D",
+            text: "Kon (If)",
+          },
+          {
+            key: "E",
+            text: "Bisan kon (Although / Even though)",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "Bisan kon kapoy ako, magpapadayon ako.",
+        options: [
+          {
+            key: "A",
+            text: "ngan (And)",
+          },
+          {
+            key: "B",
+            text: "pero (But)",
+          },
+          {
+            key: "C",
+            text: "kay (Because)",
+          },
+          {
+            key: "D",
+            text: "Kon (If)",
+          },
+          {
+            key: "E",
+            text: "Bisan kon (Although / Even though)",
+          },
+        ],
+        answerKey: "E",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose an appropriate connecting word to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "Nagluluto ako _____ gutom kami.",
+        answer: "kay",
+        title: "Complete the Sentences",
+        instructions: "Choose an appropriate connecting word to complete each sentence.",
+        wordBank: [
+          "kay",
+          "pero",
+          "Kon",
+          "ngan",
+          "Bisan kon",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Karuyag ko kumadto, _____ uran yana.",
+        answer: "pero",
+        title: "Complete the Sentences",
+        instructions: "Choose an appropriate connecting word to complete each sentence.",
+        wordBank: [
+          "kay",
+          "pero",
+          "Kon",
+          "ngan",
+          "Bisan kon",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "_____ may panahon ako, mabisita ako ha imo.",
+        answer: "Kon",
+        title: "Complete the Sentences",
+        instructions: "Choose an appropriate connecting word to complete each sentence.",
+        wordBank: [
+          "kay",
+          "pero",
+          "Kon",
+          "ngan",
+          "Bisan kon",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Nagbabasa hiya _____ nagsusurat.",
+        answer: "ngan",
+        title: "Complete the Sentences",
+        instructions: "Choose an appropriate connecting word to complete each sentence.",
+        wordBank: [
+          "kay",
+          "pero",
+          "Kon",
+          "ngan",
+          "Bisan kon",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "_____ kapoy hiya, nagtatrabaho hiya gihapon.",
+        answer: "Bisan kon",
+        title: "Complete the Sentences",
+        instructions: "Choose an appropriate connecting word to complete each sentence.",
+        wordBank: [
+          "kay",
+          "pero",
+          "Kon",
+          "ngan",
+          "Bisan kon",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -655,9 +851,14 @@ export const warayLesson16: StructuredLesson = {
         xp: 10,
       },
       {
+        section: "sentences",
+        label: "Sentence Combination + Sentence Completion + Sentence Expansion and Translation",
+        xp: 35,
+      },
+      {
         section: "conversation",
-        label: "Sentence Combination + Sentence Completion + Sentence Expansion and Translation + Lesson Assessment",
-        xp: 50,
+        label: "Lesson Assessment",
+        xp: 15,
       },
     ],
     total: 60,

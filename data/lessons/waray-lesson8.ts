@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson8: StructuredLesson = {
   lessonId: "waray_8",
@@ -928,46 +930,6 @@ export const warayLesson8: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Animals",
-      kind: "match",
-      instructions: "Match each English animal with its correct Waray equivalent.",
-      items: [
-        "Dog",
-        "Cat",
-        "Bird",
-        "Cow",
-        "Goat",
-      ],
-      choices: [
-        "Kanding",
-        "Aso",
-        "Tamsi",
-        "Baka",
-        "Kuring",
-      ],
-    },
-    {
-      title: "Identify the Nature Vocabulary",
-      kind: "choice",
-      instructions: "Choose the correct Waray translation.",
-      items: [
-        "Tree\nA. Kahoy\nB. Bulak\nC. Dahon",
-        "Rain\nA. Hangin\nB. Ulan\nC. Dagat",
-        "Mountain\nA. Salog\nB. Langit\nC. Bukid",
-        "Flower\nA. Bulak\nB. Liso\nC. Gamut",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word to complete each sentence.",
-      items: [
-        "Dako an ______. (The dog is big.)\nA. aso\nB. ulan\nC. bulak",
-        "Berde an ______. (The leaf is green.)\nA. dagat\nB. dahon\nC. bato",
-        "Nag-uuran. (It is ______.)\nA. windy\nB. raining\nC. sunny",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray.",
@@ -992,6 +954,190 @@ export const warayLesson8: StructuredLesson = {
       note: "You may choose a pet, farm animal, or wild animal.",
     },
   ],
+  matchActivity: {
+    title: "Match the Animals",
+    instructions: "Match each English animal with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Dog",
+        answer: "Aso",
+      },
+      {
+        id: "2",
+        term: "Cat",
+        answer: "Kuring",
+      },
+      {
+        id: "3",
+        term: "Bird",
+        answer: "Tamsi",
+      },
+      {
+        id: "4",
+        term: "Cow",
+        answer: "Baka",
+      },
+      {
+        id: "5",
+        term: "Goat",
+        answer: "Kanding",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Identify the Nature Vocabulary",
+    questions: [
+      {
+        id: 1,
+        prompt: "Tree",
+        options: [
+          {
+            key: "A",
+            text: "Kahoy",
+          },
+          {
+            key: "B",
+            text: "Bulak",
+          },
+          {
+            key: "C",
+            text: "Dahon",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Nature Vocabulary",
+        instructions: "Choose the correct Waray translation.",
+      },
+      {
+        id: 2,
+        prompt: "Rain",
+        options: [
+          {
+            key: "A",
+            text: "Hangin",
+          },
+          {
+            key: "B",
+            text: "Ulan",
+          },
+          {
+            key: "C",
+            text: "Dagat",
+          },
+        ],
+        answerKey: "B",
+        title: "Identify the Nature Vocabulary",
+        instructions: "Choose the correct Waray translation.",
+      },
+      {
+        id: 3,
+        prompt: "Mountain",
+        options: [
+          {
+            key: "A",
+            text: "Salog",
+          },
+          {
+            key: "B",
+            text: "Langit",
+          },
+          {
+            key: "C",
+            text: "Bukid",
+          },
+        ],
+        answerKey: "C",
+        title: "Identify the Nature Vocabulary",
+        instructions: "Choose the correct Waray translation.",
+      },
+      {
+        id: 4,
+        prompt: "Flower",
+        options: [
+          {
+            key: "A",
+            text: "Bulak",
+          },
+          {
+            key: "B",
+            text: "Liso",
+          },
+          {
+            key: "C",
+            text: "Gamut",
+          },
+        ],
+        answerKey: "A",
+        title: "Identify the Nature Vocabulary",
+        instructions: "Choose the correct Waray translation.",
+      },
+      {
+        id: 5,
+        prompt: "Dako an ______. (The dog is big.)",
+        options: [
+          {
+            key: "A",
+            text: "aso",
+          },
+          {
+            key: "B",
+            text: "ulan",
+          },
+          {
+            key: "C",
+            text: "bulak",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "Berde an ______. (The leaf is green.)",
+        options: [
+          {
+            key: "A",
+            text: "dagat",
+          },
+          {
+            key: "B",
+            text: "dahon",
+          },
+          {
+            key: "C",
+            text: "bato",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 7,
+        prompt: "Nag-uuran. (It is ______.)",
+        options: [
+          {
+            key: "A",
+            text: "windy",
+          },
+          {
+            key: "B",
+            text: "raining",
+          },
+          {
+            key: "C",
+            text: "sunny",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -1001,8 +1147,13 @@ export const warayLesson8: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

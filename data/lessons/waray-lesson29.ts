@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson29: StructuredLesson = {
   lessonId: "waray_29",
@@ -986,35 +988,6 @@ export const warayLesson29: StructuredLesson = {
       note: "Choose from:\n• Asking for directions\n• Requesting emergency assistance\n• Introducing yourself\n• Participating in a community activity\n• Reporting a lost belonging",
     },
     {
-      title: "Choose the Appropriate Response",
-      kind: "choice",
-      instructions: "Select the best response for each situation.",
-      items: [
-        "Someone asks, \"Hain an terminal?\"\nA. Aada ito hirani ha merkado.\nB. Lami an pagkaon.\nC. Malipayon ako.\nD. Pira an imo edad?",
-        "You need help because someone is injured.\nA. Kinahanglan namon hin bulig. May usa nga nasamaran.\nB. Karuyag ko kumaon.\nC. Maupay nga gab-i.\nD. Hain an eskwelahan?",
-        "Someone invites you to a community activity.\nA. Sige, maupod ako.\nB. Diri ako maaram han imo ngaran.\nC. Pira ini?\nD. Waray ako pagkaon.",
-        "You want to ask how much transportation costs.\nA. Pira an plete?\nB. Hain an imo balay?\nC. Ano an imo trabaho?\nD. San-o an imo birthday?",
-        "You want someone to repeat what they said.\nA. Mahimo mo ba utrahon?\nB. Nalilipay ako.\nC. Salamat ha pagkaon.\nD. Taga diin ka?",
-      ],
-    },
-    {
-      title: "Complete the Dialogue",
-      kind: "roleplay",
-      instructions: "Complete each dialogue using the expressions from the word bank.\nWord Bank:",
-      items: [
-        "Hain an pinakahirani nga ospital?",
-        "Sige, maupod ako.",
-        "Pira an plete?",
-        "Kinahanglan ko hin bulig.",
-        "Nalilipay ako nga makilala ka.",
-        "A: Maupay nga kulop! Bag-o ka ba dinhi? B: Oo, bag-o pa la ako dinhi. __________________________",
-        "A: Karuyag mo ba umupod ha amon ha programa? B: __________________________",
-        "A: Paonan-o ka makadto ha bungto? B: Sakay ako hin traysikol. __________________________",
-        "A: Ano an nahitabo? B: Nawara an akon pitaka. __________________________",
-        "A: May usa nga nasamaran. Diin kami makakadto? B: __________________________",
-      ],
-    },
-    {
       title: "Situational Role-Playing",
       kind: "roleplay",
       instructions: "Work with a partner. Choose one scenario and create a Waray dialogue.\nScenario 1: Tourist Asking for Directions\nOne learner acts as a visitor, while the other acts as a local resident. The visitor asks about a destination, transportation, and fare.\nScenario 2: Reporting an Emergency\nOne learner explains an emergency situation, while the other responds by asking relevant questions and helping identify where assistance is needed.\nScenario 3: Meeting New People\nTwo learners meet at a community gathering. They introduce themselves, ask about each other, and discuss the activity.\nScenario 4: Community Participation\nOne learner acts as an organizer, while the other acts as a volunteer. They discuss responsibilities, materials, and schedules.\nScenario 5: Lost Belongings\nOne learner has lost an important belonging and asks another person for help finding it.\nEach role-play should include:",
@@ -1027,6 +1000,204 @@ export const warayLesson29: StructuredLesson = {
       ],
     },
   ],
+  choiceActivity: {
+    title: "Choose the Appropriate Response",
+    instructions: "Select the best response for each situation.",
+    questions: [
+      {
+        id: 1,
+        prompt: "Someone asks, \"Hain an terminal?\"",
+        options: [
+          {
+            key: "A",
+            text: "Aada ito hirani ha merkado.",
+          },
+          {
+            key: "B",
+            text: "Lami an pagkaon.",
+          },
+          {
+            key: "C",
+            text: "Malipayon ako.",
+          },
+          {
+            key: "D",
+            text: "Pira an imo edad?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "You need help because someone is injured.",
+        options: [
+          {
+            key: "A",
+            text: "Kinahanglan namon hin bulig. May usa nga nasamaran.",
+          },
+          {
+            key: "B",
+            text: "Karuyag ko kumaon.",
+          },
+          {
+            key: "C",
+            text: "Maupay nga gab-i.",
+          },
+          {
+            key: "D",
+            text: "Hain an eskwelahan?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 3,
+        prompt: "Someone invites you to a community activity.",
+        options: [
+          {
+            key: "A",
+            text: "Sige, maupod ako.",
+          },
+          {
+            key: "B",
+            text: "Diri ako maaram han imo ngaran.",
+          },
+          {
+            key: "C",
+            text: "Pira ini?",
+          },
+          {
+            key: "D",
+            text: "Waray ako pagkaon.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 4,
+        prompt: "You want to ask how much transportation costs.",
+        options: [
+          {
+            key: "A",
+            text: "Pira an plete?",
+          },
+          {
+            key: "B",
+            text: "Hain an imo balay?",
+          },
+          {
+            key: "C",
+            text: "Ano an imo trabaho?",
+          },
+          {
+            key: "D",
+            text: "San-o an imo birthday?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 5,
+        prompt: "You want someone to repeat what they said.",
+        options: [
+          {
+            key: "A",
+            text: "Mahimo mo ba utrahon?",
+          },
+          {
+            key: "B",
+            text: "Nalilipay ako.",
+          },
+          {
+            key: "C",
+            text: "Salamat ha pagkaon.",
+          },
+          {
+            key: "D",
+            text: "Taga diin ka?",
+          },
+        ],
+        answerKey: "A",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Dialogue",
+    instructions: "Complete each dialogue using the expressions from the word bank.",
+    items: [
+      {
+        id: "1",
+        sentence: "A: Maupay nga kulop! Bag-o ka ba dinhi? B: Oo, bag-o pa la ako dinhi. __________________________",
+        answer: "Nalilipay ako nga makilala ka.",
+        title: "Complete the Dialogue",
+        instructions: "Complete each dialogue using the expressions from the word bank.",
+        wordBank: [
+          "Hain an pinakahirani nga ospital?",
+          "Sige, maupod ako.",
+          "Pira an plete?",
+          "Kinahanglan ko hin bulig.",
+          "Nalilipay ako nga makilala ka.",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "A: Karuyag mo ba umupod ha amon ha programa? B: __________________________",
+        answer: "Sige, maupod ako.",
+        title: "Complete the Dialogue",
+        instructions: "Complete each dialogue using the expressions from the word bank.",
+        wordBank: [
+          "Hain an pinakahirani nga ospital?",
+          "Sige, maupod ako.",
+          "Pira an plete?",
+          "Kinahanglan ko hin bulig.",
+          "Nalilipay ako nga makilala ka.",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "A: Paonan-o ka makadto ha bungto? B: Sakay ako hin traysikol. __________________________",
+        answer: "Pira an plete?",
+        title: "Complete the Dialogue",
+        instructions: "Complete each dialogue using the expressions from the word bank.",
+        wordBank: [
+          "Hain an pinakahirani nga ospital?",
+          "Sige, maupod ako.",
+          "Pira an plete?",
+          "Kinahanglan ko hin bulig.",
+          "Nalilipay ako nga makilala ka.",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "A: Ano an nahitabo? B: Nawara an akon pitaka. __________________________",
+        answer: "Kinahanglan ko hin bulig.",
+        title: "Complete the Dialogue",
+        instructions: "Complete each dialogue using the expressions from the word bank.",
+        wordBank: [
+          "Hain an pinakahirani nga ospital?",
+          "Sige, maupod ako.",
+          "Pira an plete?",
+          "Kinahanglan ko hin bulig.",
+          "Nalilipay ako nga makilala ka.",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "A: May usa nga nasamaran. Diin kami makakadto? B: __________________________",
+        answer: "Hain an pinakahirani nga ospital?",
+        title: "Complete the Dialogue",
+        instructions: "Complete each dialogue using the expressions from the word bank.",
+        wordBank: [
+          "Hain an pinakahirani nga ospital?",
+          "Sige, maupod ako.",
+          "Pira an plete?",
+          "Kinahanglan ko hin bulig.",
+          "Nalilipay ako nga makilala ka.",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -1035,9 +1206,14 @@ export const warayLesson29: StructuredLesson = {
         xp: 10,
       },
       {
+        section: "sentences",
+        label: "Situation Recognition",
+        xp: 10,
+      },
+      {
         section: "conversation",
-        label: "Situation Recognition + Guided Conversations + Role-Playing Activities",
-        xp: 35,
+        label: "Guided Conversations + Role-Playing Activities",
+        xp: 25,
       },
       {
         section: "assessment",

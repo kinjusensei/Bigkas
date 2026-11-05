@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson10: StructuredLesson = {
   lessonId: "waray_10",
@@ -828,46 +830,6 @@ export const warayLesson10: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Vocabulary",
-      kind: "match",
-      instructions: "Match each Waray word with its correct English meaning.",
-      items: [
-        "Waray",
-        "Sangkay",
-        "Nanay",
-        "Bugto",
-        "Klasmet",
-        "Tatay",
-      ],
-      choices: [
-        "Answer Choices",
-        "Mother",
-        "Classmate",
-        "Friend",
-        "Brother or sister",
-        "Father",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the appropriate Waray word to complete each sentence.",
-      items: [
-        "______ ko ini. (This is my friend.)",
-        "______ ko ini. (This is my mother.)",
-        "Buotan ______. (He or she is kind.)",
-        "Ano an iya ______? (What is his or her name?)",
-        "______ mo ba hiya? (Do you know him or her?)",
-      ],
-      choices: [
-        "Sangkay",
-        "Nanay",
-        "hiya",
-        "ngaran",
-        "Kilala",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate each English sentence into Waray.",
@@ -891,6 +853,179 @@ export const warayLesson10: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Vocabulary",
+    instructions: "Match each Waray word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Sangkay",
+        answer: "Friend",
+      },
+      {
+        id: "2",
+        term: "Nanay",
+        answer: "Mother",
+      },
+      {
+        id: "3",
+        term: "Bugto",
+        answer: "Brother or sister",
+      },
+      {
+        id: "4",
+        term: "Klasmet",
+        answer: "Classmate",
+      },
+      {
+        id: "5",
+        term: "Tatay",
+        answer: "Father",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Complete the Sentences",
+    instructions: "Choose the appropriate Waray word to complete each sentence.",
+    questions: [
+      {
+        id: 1,
+        prompt: "______ ko ini. (This is my friend.)",
+        options: [
+          {
+            key: "A",
+            text: "Sangkay",
+          },
+          {
+            key: "B",
+            text: "Nanay",
+          },
+          {
+            key: "C",
+            text: "hiya",
+          },
+          {
+            key: "D",
+            text: "ngaran",
+          },
+          {
+            key: "E",
+            text: "Kilala",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "______ ko ini. (This is my mother.)",
+        options: [
+          {
+            key: "A",
+            text: "Sangkay",
+          },
+          {
+            key: "B",
+            text: "Nanay",
+          },
+          {
+            key: "C",
+            text: "hiya",
+          },
+          {
+            key: "D",
+            text: "ngaran",
+          },
+          {
+            key: "E",
+            text: "Kilala",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "Buotan ______. (He or she is kind.)",
+        options: [
+          {
+            key: "A",
+            text: "Sangkay",
+          },
+          {
+            key: "B",
+            text: "Nanay",
+          },
+          {
+            key: "C",
+            text: "hiya",
+          },
+          {
+            key: "D",
+            text: "ngaran",
+          },
+          {
+            key: "E",
+            text: "Kilala",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "Ano an iya ______? (What is his or her name?)",
+        options: [
+          {
+            key: "A",
+            text: "Sangkay",
+          },
+          {
+            key: "B",
+            text: "Nanay",
+          },
+          {
+            key: "C",
+            text: "hiya",
+          },
+          {
+            key: "D",
+            text: "ngaran",
+          },
+          {
+            key: "E",
+            text: "Kilala",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "______ mo ba hiya? (Do you know him or her?)",
+        options: [
+          {
+            key: "A",
+            text: "Sangkay",
+          },
+          {
+            key: "B",
+            text: "Nanay",
+          },
+          {
+            key: "C",
+            text: "hiya",
+          },
+          {
+            key: "D",
+            text: "ngaran",
+          },
+          {
+            key: "E",
+            text: "Kilala",
+          },
+        ],
+        answerKey: "E",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -900,8 +1035,13 @@ export const warayLesson10: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversations + Practice Activities",
-        xp: 25,
+        label: "Guided Conversations",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

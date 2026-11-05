@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson28: StructuredLesson = {
   lessonId: "waray_28",
@@ -839,49 +841,6 @@ export const warayLesson28: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Arrange the Events",
-      kind: "arrange",
-      instructions: "Arrange the following events in the correct chronological order by writing the appropriate sequence number.",
-      items: [
-        "_____ Inuli kami katapos han programa.",
-        "_____ Nag-andam kami han amon mga gamit.",
-        "_____ Nagkatirok kami ha eskwelahan.",
-        "_____ Nagpresentar kami han amon proyekto.",
-      ],
-    },
-    {
-      title: "Identify the Correct Connector",
-      kind: "rewrite",
-      instructions: "Choose the most appropriate Waray connector to complete each sentence.",
-      items: [
-        "Nagbasa hiya ______ nagsurat hin nota.",
-        "Karuyag ko umupod, ______ waray ako panahon.",
-        "Nalipay ako ______ nakita ko an akon pamilya.",
-        "______ nagluluto hi Nanay, nag-aandam ako han lamesa.",
-        "______ han klase, kinadto kami ha librarya.",
-      ],
-      choices: [
-        "ngan",
-        "pero",
-        "kay",
-        "samtang",
-        "katapos",
-      ],
-    },
-    {
-      title: "Complete the Narrative",
-      kind: "fill",
-      instructions: "Choose the correct expression from the word bank to complete the paragraph.\nWord Bank:",
-      items: [
-        "Ha kataposan",
-        "Usa ka adlaw",
-        "Katapos hito",
-        "Tigda",
-        "Nalipay kami",
-      ],
-      note: "__________, kinadto kami han akon mga sangkay ha parke. __________, nag-uyag kami ngan nag-istorya. __________ nga nag-uran, salit kinadto kami ha usa nga tindahan. __________, inuli kami han nahunong na an uran. __________ kay nagkaada kami hin panahon nga mag-upod.",
-    },
-    {
       title: "Create a Short Narrative",
       kind: "open",
       instructions: "Write a short Waray narrative about one of the following topics:",
@@ -895,6 +854,175 @@ export const warayLesson28: StructuredLesson = {
       note: "Your narrative should contain:\n• A beginning, middle, and ending.\n• At least five connected sentences.\n• At least three sequence or connecting expressions.\n• A description of at least one person, place, or experience.\n• An English translation.",
     },
   ],
+  fillInBlanks: {
+    title: "Identify the Correct Connector",
+    instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "Nagbasa hiya ______ nagsurat hin nota.",
+        answer: "ngan",
+        title: "Identify the Correct Connector",
+        instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+        wordBank: [
+          "ngan",
+          "pero",
+          "kay",
+          "samtang",
+          "katapos",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Karuyag ko umupod, ______ waray ako panahon.",
+        answer: "pero",
+        title: "Identify the Correct Connector",
+        instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+        wordBank: [
+          "ngan",
+          "pero",
+          "kay",
+          "samtang",
+          "katapos",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Nalipay ako ______ nakita ko an akon pamilya.",
+        answer: "kay",
+        title: "Identify the Correct Connector",
+        instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+        wordBank: [
+          "ngan",
+          "pero",
+          "kay",
+          "samtang",
+          "katapos",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______ nagluluto hi Nanay, nag-aandam ako han lamesa.",
+        answer: "samtang",
+        title: "Identify the Correct Connector",
+        instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+        wordBank: [
+          "ngan",
+          "pero",
+          "kay",
+          "samtang",
+          "katapos",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "______ han klase, kinadto kami ha librarya.",
+        answer: "katapos",
+        title: "Identify the Correct Connector",
+        instructions: "Choose the most appropriate Waray connector to complete each sentence.",
+        wordBank: [
+          "ngan",
+          "pero",
+          "kay",
+          "samtang",
+          "katapos",
+        ],
+      },
+      {
+        id: "6",
+        sentence: "__________, kinadto kami han akon mga sangkay ha parke.",
+        answer: "Usa ka adlaw",
+        title: "Complete the Narrative",
+        instructions: "Choose the correct expression from the word bank to complete the paragraph.",
+        wordBank: [
+          "Ha kataposan",
+          "Usa ka adlaw",
+          "Katapos hito",
+          "Tigda",
+          "Nalipay kami",
+        ],
+      },
+      {
+        id: "7",
+        sentence: "__________, nag-uyag kami ngan nag-istorya.",
+        answer: "Katapos hito",
+        title: "Complete the Narrative",
+        instructions: "Choose the correct expression from the word bank to complete the paragraph.",
+        wordBank: [
+          "Ha kataposan",
+          "Usa ka adlaw",
+          "Katapos hito",
+          "Tigda",
+          "Nalipay kami",
+        ],
+      },
+      {
+        id: "8",
+        sentence: "__________ nga nag-uran, salit kinadto kami ha usa nga tindahan.",
+        answer: "Tigda",
+        title: "Complete the Narrative",
+        instructions: "Choose the correct expression from the word bank to complete the paragraph.",
+        wordBank: [
+          "Ha kataposan",
+          "Usa ka adlaw",
+          "Katapos hito",
+          "Tigda",
+          "Nalipay kami",
+        ],
+      },
+      {
+        id: "9",
+        sentence: "__________, inuli kami han nahunong na an uran.",
+        answer: "Ha kataposan",
+        title: "Complete the Narrative",
+        instructions: "Choose the correct expression from the word bank to complete the paragraph.",
+        wordBank: [
+          "Ha kataposan",
+          "Usa ka adlaw",
+          "Katapos hito",
+          "Tigda",
+          "Nalipay kami",
+        ],
+      },
+      {
+        id: "10",
+        sentence: "__________ kay nagkaada kami hin panahon nga mag-upod.",
+        answer: "Nalipay kami",
+        title: "Complete the Narrative",
+        instructions: "Choose the correct expression from the word bank to complete the paragraph.",
+        wordBank: [
+          "Ha kataposan",
+          "Usa ka adlaw",
+          "Katapos hito",
+          "Tigda",
+          "Nalipay kami",
+        ],
+      },
+    ],
+  },
+  arrangeWords: {
+    title: "Arrange the Events",
+    instructions: "Arrange the following events in the correct chronological order by writing the appropriate sequence number.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "Inuli kami katapos han programa.",
+          "Nag-andam kami han amon mga gamit.",
+          "Nagkatirok kami ha eskwelahan.",
+          "Nagpresentar kami han amon proyekto.",
+        ],
+        answer: [
+          "Nag-andam kami han amon mga gamit.",
+          "Nagkatirok kami ha eskwelahan.",
+          "Nagpresentar kami han amon proyekto.",
+          "Inuli kami katapos han programa.",
+        ],
+        display: "Nag-andam kami han amon mga gamit. Nagkatirok kami ha eskwelahan. Nagpresentar kami han amon proyekto. Inuli kami katapos han programa.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -903,7 +1031,7 @@ export const warayLesson28: StructuredLesson = {
         xp: 10,
       },
       {
-        section: "conversation",
+        section: "sentences",
         label: "Sequence Recognition + Guided Narration + Practice Activities",
         xp: 35,
       },

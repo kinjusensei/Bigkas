@@ -294,6 +294,10 @@ export interface StructuredLesson {
   // Several conversations, shown one at a time (used instead of
   // `conversation`).
   conversations?: LessonConversation[];
+  // True when this lesson's practice answers were inferred rather than taken
+  // from an answer key in the lesson plan. Learners don't see this; the
+  // drafts are listed in docs/waray-draft-answer-keys.md.
+  answerKeysInferred?: boolean;
   matchActivity?: LessonMatchActivity;
   choiceActivity?: LessonChoiceActivity;
   fillInBlanks?: LessonFillBlanks;

@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson19: StructuredLesson = {
   lessonId: "waray_19",
@@ -1041,38 +1043,6 @@ export const warayLesson19: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each Waray word with its correct English meaning.",
-      items: [
-        "No. | Waray | Choices",
-        "1 | Mata | A. To cook",
-        "2 | Magluto | B. To wake up",
-        "3 | Pahuway | C. To study",
-        "4 | Mag-adal | D. To rest",
-        "5 | Maglakat | E. To walk",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word from the word bank to complete each sentence.",
-      items: [
-        "Nag-aadal ako ha ______.",
-        "Natuturog ako ha ______.",
-        "______ ako nagbabasa hin libro, pero diri kada adlaw.",
-        "______ ako nabulig ha akon pamilya.",
-        "Magtatrabaho ako ______.",
-      ],
-      choices: [
-        "aga",
-        "gab-i",
-        "usahay",
-        "pirme",
-        "buwas",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray.",
@@ -1115,12 +1085,130 @@ export const warayLesson19: StructuredLesson = {
       note: "Focus on clear pronunciation and complete sentences.",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each Waray word with its correct English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Mata",
+        answer: "To wake up",
+      },
+      {
+        id: "2",
+        term: "Magluto",
+        answer: "To cook",
+      },
+      {
+        id: "3",
+        term: "Pahuway",
+        answer: "To rest",
+      },
+      {
+        id: "4",
+        term: "Mag-adal",
+        answer: "To study",
+      },
+      {
+        id: "5",
+        term: "Maglakat",
+        answer: "To walk",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Choose the correct word from the word bank to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "Nag-aadal ako ha ______.",
+        answer: "aga",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word from the word bank to complete each sentence.",
+        wordBank: [
+          "aga",
+          "gab-i",
+          "usahay",
+          "pirme",
+          "buwas",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Natuturog ako ha ______.",
+        answer: "gab-i",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word from the word bank to complete each sentence.",
+        wordBank: [
+          "aga",
+          "gab-i",
+          "usahay",
+          "pirme",
+          "buwas",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "______ ako nagbabasa hin libro, pero diri kada adlaw.",
+        answer: "usahay",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word from the word bank to complete each sentence.",
+        wordBank: [
+          "aga",
+          "gab-i",
+          "usahay",
+          "pirme",
+          "buwas",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "______ ako nabulig ha akon pamilya.",
+        answer: "pirme",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word from the word bank to complete each sentence.",
+        wordBank: [
+          "aga",
+          "gab-i",
+          "usahay",
+          "pirme",
+          "buwas",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Magtatrabaho ako ______.",
+        answer: "buwas",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word from the word bank to complete each sentence.",
+        wordBank: [
+          "aga",
+          "gab-i",
+          "usahay",
+          "pirme",
+          "buwas",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "match",
+        label: "Vocabulary Matching",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Complete the Sentences + Practice Activities",
+        xp: 25,
+      },
+      {
         section: "conversation",
-        label: "Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities",
-        xp: 45,
+        label: "Guided Conversation",
+        xp: 10,
       },
       {
         section: "assessment",

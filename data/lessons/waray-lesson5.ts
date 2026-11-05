@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson5: StructuredLesson = {
   lessonId: "waray_5",
@@ -802,46 +804,6 @@ export const warayLesson5: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Match the Family Members",
-      kind: "match",
-      instructions: "Match each English word with its correct Waray equivalent.",
-      items: [
-        "Father",
-        "Mother",
-        "Brother",
-        "Grandmother",
-        "Younger sibling",
-      ],
-      choices: [
-        "Nanay",
-        "Manghod",
-        "Lola",
-        "Tatay",
-        "Bugto nga lalaki",
-      ],
-    },
-    {
-      title: "Choose the Correct Answer",
-      kind: "rewrite",
-      instructions: "Select the correct Waray word.",
-      items: [
-        "What is the Waray word for family?\nA. Balay\nB. Pamilya\nC. Bugto",
-        "What does magurang mean?\nA. Older sibling\nB. Younger sibling\nC. Grandfather",
-        "What is the Waray word for grandmother?\nA. Tiya\nB. Lola\nC. Nanay",
-        "What does akon mean?\nA. Your\nB. Their\nC. My",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Choose the correct word to complete each sentence.",
-      items: [
-        "Amo ini an ______ tatay.\nA. akon\nB. imo\nC. ira",
-        "May duha ako nga ______.\nA. bulan\nB. bugto\nC. adlaw",
-        "Hinigugma ko an akon ______.\nA. pamilya\nB. oras\nC. semana",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray.",
@@ -867,6 +829,190 @@ export const warayLesson5: StructuredLesson = {
       note: "You may use your actual family information or create an imaginary family for this activity.",
     },
   ],
+  matchActivity: {
+    title: "Match the Family Members",
+    instructions: "Match each English word with its correct Waray equivalent.",
+    pairs: [
+      {
+        id: "1",
+        term: "Father",
+        answer: "Tatay",
+      },
+      {
+        id: "2",
+        term: "Mother",
+        answer: "Nanay",
+      },
+      {
+        id: "3",
+        term: "Brother",
+        answer: "Bugto nga lalaki",
+      },
+      {
+        id: "4",
+        term: "Grandmother",
+        answer: "Lola",
+      },
+      {
+        id: "5",
+        term: "Younger sibling",
+        answer: "Manghod",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Choose the Correct Answer",
+    questions: [
+      {
+        id: 1,
+        prompt: "What is the Waray word for family?",
+        options: [
+          {
+            key: "A",
+            text: "Balay",
+          },
+          {
+            key: "B",
+            text: "Pamilya",
+          },
+          {
+            key: "C",
+            text: "Bugto",
+          },
+        ],
+        answerKey: "B",
+        title: "Choose the Correct Answer",
+        instructions: "Select the correct Waray word.",
+      },
+      {
+        id: 2,
+        prompt: "What does magurang mean?",
+        options: [
+          {
+            key: "A",
+            text: "Older sibling",
+          },
+          {
+            key: "B",
+            text: "Younger sibling",
+          },
+          {
+            key: "C",
+            text: "Grandfather",
+          },
+        ],
+        answerKey: "A",
+        title: "Choose the Correct Answer",
+        instructions: "Select the correct Waray word.",
+      },
+      {
+        id: 3,
+        prompt: "What is the Waray word for grandmother?",
+        options: [
+          {
+            key: "A",
+            text: "Tiya",
+          },
+          {
+            key: "B",
+            text: "Lola",
+          },
+          {
+            key: "C",
+            text: "Nanay",
+          },
+        ],
+        answerKey: "B",
+        title: "Choose the Correct Answer",
+        instructions: "Select the correct Waray word.",
+      },
+      {
+        id: 4,
+        prompt: "What does akon mean?",
+        options: [
+          {
+            key: "A",
+            text: "Your",
+          },
+          {
+            key: "B",
+            text: "Their",
+          },
+          {
+            key: "C",
+            text: "My",
+          },
+        ],
+        answerKey: "C",
+        title: "Choose the Correct Answer",
+        instructions: "Select the correct Waray word.",
+      },
+      {
+        id: 5,
+        prompt: "Amo ini an ______ tatay.",
+        options: [
+          {
+            key: "A",
+            text: "akon",
+          },
+          {
+            key: "B",
+            text: "imo",
+          },
+          {
+            key: "C",
+            text: "ira",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 6,
+        prompt: "May duha ako nga ______.",
+        options: [
+          {
+            key: "A",
+            text: "bulan",
+          },
+          {
+            key: "B",
+            text: "bugto",
+          },
+          {
+            key: "C",
+            text: "adlaw",
+          },
+        ],
+        answerKey: "B",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+      {
+        id: 7,
+        prompt: "Hinigugma ko an akon ______.",
+        options: [
+          {
+            key: "A",
+            text: "pamilya",
+          },
+          {
+            key: "B",
+            text: "oras",
+          },
+          {
+            key: "C",
+            text: "semana",
+          },
+        ],
+        answerKey: "A",
+        title: "Complete the Sentences",
+        instructions: "Choose the correct word to complete each sentence.",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -876,8 +1022,13 @@ export const warayLesson5: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

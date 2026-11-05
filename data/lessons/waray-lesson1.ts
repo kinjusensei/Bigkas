@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson1: StructuredLesson = {
   lessonId: "waray_1",
@@ -870,64 +872,6 @@ export const warayLesson1: StructuredLesson = {
   },
   extraActivities: [
     {
-      title: "Vocabulary Matching",
-      kind: "match",
-      instructions: "Match each English expression in Column A with its correct Waray translation in Column B.",
-      items: [
-        "Good morning",
-        "Thank you",
-        "How are you?",
-        "Yes",
-        "Goodbye",
-      ],
-      choices: [
-        "Salamat",
-        "Kumusta ka?",
-        "Maupay nga aga",
-        "Oo",
-        "Babay",
-      ],
-    },
-    {
-      title: "Multiple Choice",
-      kind: "choice",
-      instructions: "Choose the correct answer for each question.",
-      items: [
-        "How do you say \"Good evening\" in Waray?\nA. Maupay nga aga\nB. Maupay nga gab-i\nC. Salamat\nD. Kumusta ka",
-        "What does \"Ano an imo ngaran?\" mean?\nA. Where are you from?\nB. How are you?\nC. What is your name?\nD. How old are you?",
-        "Which Waray word means \"Thank you\"?\nA. Diri\nB. Salamat\nC. Ako\nD. Diin",
-        "How do you say \"I am from Samar\"?\nA. Taga Samar ako.\nB. Ano an imo ngaran?\nC. Maupay man.\nD. Kumusta ka?",
-        "Which pronoun means \"we, including the person being addressed\"?\nA. Kami\nB. Hira\nC. Kita\nD. Hiya",
-      ],
-    },
-    {
-      title: "Fill in the Blanks",
-      kind: "fill",
-      instructions: "Complete each Waray sentence using the correct word from the choices.",
-      items: [
-        "Ano an _____ ngaran?",
-        "An _____ ngaran hi Maria.",
-        "Taga _____ ka?",
-        "_____, maupay man ako.",
-        "Damo nga _____.",
-      ],
-      choices: [
-        "Akon – Imo – Oo – Salamat – Diin",
-      ],
-    },
-    {
-      title: "Sentence Arrangement",
-      kind: "arrange",
-      instructions: "Arrange the words to form a correct Waray sentence.",
-      items: [
-        "Samar / ako / Taga",
-        "ngaran / imo / Ano / an",
-        "hi / akon / Maria / ngaran / An",
-        "ka / Kumusta",
-        "aga / Maupay / nga",
-      ],
-    },
-    {
       title: "Self-Introduction Practice",
       kind: "other",
       instructions: "Complete the following introduction using your own information. Practice reading your answers aloud.",
@@ -941,6 +885,315 @@ export const warayLesson1: StructuredLesson = {
       note: "Example:\nMaupay nga aga!\nAn akon ngaran hi Maria.\nTaga Samar ako.\nMaupay man ako.\nSalamat!",
     },
   ],
+  matchActivity: {
+    title: "Vocabulary Matching",
+    instructions: "Match each English expression in Column A with its correct Waray translation in Column B.",
+    pairs: [
+      {
+        id: "1",
+        term: "Good morning",
+        answer: "Maupay nga aga",
+      },
+      {
+        id: "2",
+        term: "Thank you",
+        answer: "Salamat",
+      },
+      {
+        id: "3",
+        term: "How are you?",
+        answer: "Kumusta ka?",
+      },
+      {
+        id: "4",
+        term: "Yes",
+        answer: "Oo",
+      },
+      {
+        id: "5",
+        term: "Goodbye",
+        answer: "Babay",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Multiple Choice",
+    instructions: "Choose the correct answer for each question.",
+    questions: [
+      {
+        id: 1,
+        prompt: "How do you say \"Good evening\" in Waray?",
+        options: [
+          {
+            key: "A",
+            text: "Maupay nga aga",
+          },
+          {
+            key: "B",
+            text: "Maupay nga gab-i",
+          },
+          {
+            key: "C",
+            text: "Salamat",
+          },
+          {
+            key: "D",
+            text: "Kumusta ka",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 2,
+        prompt: "What does \"Ano an imo ngaran?\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Where are you from?",
+          },
+          {
+            key: "B",
+            text: "How are you?",
+          },
+          {
+            key: "C",
+            text: "What is your name?",
+          },
+          {
+            key: "D",
+            text: "How old are you?",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 3,
+        prompt: "Which Waray word means \"Thank you\"?",
+        options: [
+          {
+            key: "A",
+            text: "Diri",
+          },
+          {
+            key: "B",
+            text: "Salamat",
+          },
+          {
+            key: "C",
+            text: "Ako",
+          },
+          {
+            key: "D",
+            text: "Diin",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 4,
+        prompt: "How do you say \"I am from Samar\"?",
+        options: [
+          {
+            key: "A",
+            text: "Taga Samar ako.",
+          },
+          {
+            key: "B",
+            text: "Ano an imo ngaran?",
+          },
+          {
+            key: "C",
+            text: "Maupay man.",
+          },
+          {
+            key: "D",
+            text: "Kumusta ka?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 5,
+        prompt: "Which pronoun means \"we, including the person being addressed\"?",
+        options: [
+          {
+            key: "A",
+            text: "Kami",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Hiya",
+          },
+        ],
+        answerKey: "C",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Fill in the Blanks",
+    instructions: "Complete each Waray sentence using the correct word from the choices.",
+    items: [
+      {
+        id: "1",
+        sentence: "Ano an _____ ngaran?",
+        answer: "Imo",
+        title: "Fill in the Blanks",
+        instructions: "Complete each Waray sentence using the correct word from the choices.",
+        wordBank: [
+          "Akon",
+          "Imo",
+          "Oo",
+          "Salamat",
+          "Diin",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "An _____ ngaran hi Maria.",
+        answer: "Akon",
+        title: "Fill in the Blanks",
+        instructions: "Complete each Waray sentence using the correct word from the choices.",
+        wordBank: [
+          "Akon",
+          "Imo",
+          "Oo",
+          "Salamat",
+          "Diin",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Taga _____ ka?",
+        answer: "Diin",
+        title: "Fill in the Blanks",
+        instructions: "Complete each Waray sentence using the correct word from the choices.",
+        wordBank: [
+          "Akon",
+          "Imo",
+          "Oo",
+          "Salamat",
+          "Diin",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "_____, maupay man ako.",
+        answer: "Oo",
+        title: "Fill in the Blanks",
+        instructions: "Complete each Waray sentence using the correct word from the choices.",
+        wordBank: [
+          "Akon",
+          "Imo",
+          "Oo",
+          "Salamat",
+          "Diin",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Damo nga _____.",
+        answer: "Salamat",
+        title: "Fill in the Blanks",
+        instructions: "Complete each Waray sentence using the correct word from the choices.",
+        wordBank: [
+          "Akon",
+          "Imo",
+          "Oo",
+          "Salamat",
+          "Diin",
+        ],
+      },
+    ],
+  },
+  arrangeWords: {
+    title: "Sentence Arrangement",
+    instructions: "Arrange the words to form a correct Waray sentence.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "Samar",
+          "ako",
+          "Taga",
+        ],
+        answer: [
+          "Taga",
+          "Samar",
+          "ako",
+        ],
+        display: "Taga Samar ako.",
+      },
+      {
+        id: "2",
+        words: [
+          "ngaran",
+          "imo",
+          "Ano",
+          "an",
+        ],
+        answer: [
+          "Ano",
+          "an",
+          "imo",
+          "ngaran",
+        ],
+        display: "Ano an imo ngaran?",
+      },
+      {
+        id: "3",
+        words: [
+          "hi",
+          "akon",
+          "Maria",
+          "ngaran",
+          "An",
+        ],
+        answer: [
+          "An",
+          "akon",
+          "ngaran",
+          "hi",
+          "Maria",
+        ],
+        display: "An akon ngaran hi Maria.",
+      },
+      {
+        id: "4",
+        words: [
+          "ka",
+          "Kumusta",
+        ],
+        answer: [
+          "Kumusta",
+          "ka",
+        ],
+        display: "Kumusta ka?",
+      },
+      {
+        id: "5",
+        words: [
+          "aga",
+          "Maupay",
+          "nga",
+        ],
+        answer: [
+          "Maupay",
+          "nga",
+          "aga",
+        ],
+        display: "Maupay nga aga",
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
@@ -950,8 +1203,13 @@ export const warayLesson1: StructuredLesson = {
       },
       {
         section: "conversation",
-        label: "Guided Conversation + Practice Activities",
-        xp: 25,
+        label: "Guided Conversation",
+        xp: 10,
+      },
+      {
+        section: "sentences",
+        label: "Practice Activities",
+        xp: 15,
       },
       {
         section: "assessment",

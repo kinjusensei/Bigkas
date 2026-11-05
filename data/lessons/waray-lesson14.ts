@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// The practice answers are INFERRED drafts, not from the PDF. See
+// docs/waray-draft-answer-keys.md for each answer and how it was found.
 
 export const warayLesson14: StructuredLesson = {
   lessonId: "waray_14",
@@ -569,50 +571,6 @@ export const warayLesson14: StructuredLesson = {
   ],
   extraActivities: [
     {
-      title: "Pronoun Identification",
-      kind: "other",
-      instructions: "Choose the correct Waray pronoun based on the English description.",
-      items: [
-        "I",
-        "They",
-        "We, including the listener",
-        "You, plural",
-        "He/She",
-        "We, excluding the listener",
-      ],
-    },
-    {
-      title: "Match the Verbs",
-      kind: "match",
-      instructions: "Match each English verb with its corresponding Waray word.",
-      items: [
-        "Read",
-        "Cook",
-        "Write",
-        "Sleep",
-        "Study",
-      ],
-      choices: [
-        "Magluto",
-        "Magbasa",
-        "Maturog",
-        "Magsurat",
-        "Mag-adal",
-      ],
-    },
-    {
-      title: "Complete the Sentences",
-      kind: "fill",
-      instructions: "Select the appropriate pronoun to complete each sentence.",
-      items: [
-        "Nagbabasa _____ . (I)",
-        "Nagluluto _____ . (He/She)",
-        "Nagtatrabaho _____ . (They)",
-        "Nag-aadal _____ . (You, singular)",
-        "Nag-uuyag _____ . (We, including the listener)",
-      ],
-    },
-    {
       title: "Translate into Waray",
       kind: "translate",
       instructions: "Translate the following sentences into Waray using the expressions introduced in this lesson.",
@@ -659,12 +617,327 @@ export const warayLesson14: StructuredLesson = {
       ],
     },
   ],
+  matchActivity: {
+    title: "Match the Verbs",
+    instructions: "Match each English verb with its corresponding Waray word.",
+    pairs: [
+      {
+        id: "1",
+        term: "Read",
+        answer: "Magbasa",
+      },
+      {
+        id: "2",
+        term: "Cook",
+        answer: "Magluto",
+      },
+      {
+        id: "3",
+        term: "Write",
+        answer: "Magsurat",
+      },
+      {
+        id: "4",
+        term: "Sleep",
+        answer: "Maturog",
+      },
+      {
+        id: "5",
+        term: "Study",
+        answer: "Mag-adal",
+      },
+    ],
+  },
+  choiceActivity: {
+    title: "Pronoun Identification",
+    instructions: "Choose the correct Waray pronoun based on the English description.",
+    questions: [
+      {
+        id: 1,
+        prompt: "I",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 2,
+        prompt: "They",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 3,
+        prompt: "We, including the listener",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "You, plural",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "D",
+      },
+      {
+        id: 5,
+        prompt: "He/She",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "E",
+      },
+      {
+        id: 6,
+        prompt: "We, excluding the listener",
+        options: [
+          {
+            key: "A",
+            text: "Ako",
+          },
+          {
+            key: "B",
+            text: "Hira",
+          },
+          {
+            key: "C",
+            text: "Kita",
+          },
+          {
+            key: "D",
+            text: "Kamo",
+          },
+          {
+            key: "E",
+            text: "Hiya",
+          },
+          {
+            key: "F",
+            text: "Kami",
+          },
+        ],
+        answerKey: "F",
+      },
+    ],
+  },
+  fillInBlanks: {
+    title: "Complete the Sentences",
+    instructions: "Select the appropriate pronoun to complete each sentence.",
+    items: [
+      {
+        id: "1",
+        sentence: "Nagbabasa _____ .",
+        hint: "I",
+        answer: "ako",
+        title: "Complete the Sentences",
+        instructions: "Select the appropriate pronoun to complete each sentence.",
+        wordBank: [
+          "ako",
+          "hiya",
+          "hira",
+          "ka",
+          "kita",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "Nagluluto _____ .",
+        hint: "He/She",
+        answer: "hiya",
+        title: "Complete the Sentences",
+        instructions: "Select the appropriate pronoun to complete each sentence.",
+        wordBank: [
+          "ako",
+          "hiya",
+          "hira",
+          "ka",
+          "kita",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Nagtatrabaho _____ .",
+        hint: "They",
+        answer: "hira",
+        title: "Complete the Sentences",
+        instructions: "Select the appropriate pronoun to complete each sentence.",
+        wordBank: [
+          "ako",
+          "hiya",
+          "hira",
+          "ka",
+          "kita",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Nag-aadal _____ .",
+        hint: "You, singular",
+        answer: "ka",
+        title: "Complete the Sentences",
+        instructions: "Select the appropriate pronoun to complete each sentence.",
+        wordBank: [
+          "ako",
+          "hiya",
+          "hira",
+          "ka",
+          "kita",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Nag-uuyag _____ .",
+        hint: "We, including the listener",
+        answer: "kita",
+        title: "Complete the Sentences",
+        instructions: "Select the appropriate pronoun to complete each sentence.",
+        wordBank: [
+          "ako",
+          "hiya",
+          "hira",
+          "ka",
+          "kita",
+        ],
+      },
+    ],
+  },
+  answerKeysInferred: true,
   rewards: {
     items: [
       {
+        section: "sentences",
+        label: "Pronoun Identification + Sentence Completion + Translation Activity",
+        xp: 35,
+      },
+      {
+        section: "match",
+        label: "Verb Matching",
+        xp: 10,
+      },
+      {
         section: "conversation",
-        label: "Pronoun Identification + Verb Matching + Sentence Completion + Translation Activity + Lesson Assessment",
-        xp: 60,
+        label: "Lesson Assessment",
+        xp: 15,
       },
     ],
     total: 60,
