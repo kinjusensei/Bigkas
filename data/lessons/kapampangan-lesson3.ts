@@ -211,7 +211,7 @@ const situationGroups: LessonExpressionGroup[] = [
         { speaker: "A", text: "Pilan la ding lapis ing atin ka?" },
         { speaker: "B", text: "Atin kung apat a lapis." },
         { speaker: "A", text: "Mapalyari ku ba kung manghiram ning metung?" },
-        { speaker: "B", text: "Wa naman!" },
+        { speaker: "B", text: "Wa naman!", audioUrl: require("../../assets/audio/kapampangan/Wa naman.m4a") },
       ],
     ],
   },

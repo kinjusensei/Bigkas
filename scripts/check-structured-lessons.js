@@ -20,7 +20,7 @@ const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "bigkas-lessons-"));
 const Module = require("module");
 const originalRequire = Module.prototype.require;
 Module.prototype.require = function (id) {
-  return id.endsWith(".aac") ? 0 : originalRequire.apply(this, arguments);
+  return /\.(aac|m4a)$/.test(id) ? 0 : originalRequire.apply(this, arguments);
 };
 
 function transpile(relativePath) {

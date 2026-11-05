@@ -31,6 +31,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Mayap a abak!" },
       { speaker: "B", text: "Mayap a abak din!" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a"),
   },
   {
     term: "Mayap a gatpanapun",
@@ -40,6 +41,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Mayap a gatpanapun pu, Guru!" },
       { speaker: "B", text: "Mayap a gatpanapun din keka!" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a gatpanapun.m4a"),
   },
   {
     term: "Mayap a bengi",
@@ -49,6 +51,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Mayap a bengi!" },
       { speaker: "B", text: "Mayap a bengi din!" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a bengi.m4a"),
   },
   {
     term: "Kumusta?",
@@ -59,6 +62,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "B", text: "Mayap naman. Ika?" },
       { speaker: "A", text: "Mayap din, salamat!" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/kumusta.m4a"),
   },
   {
     term: "Paalam",
@@ -68,6 +72,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Paalam! Mikit tapa bukas." },
       { speaker: "B", text: "Sige! Mag-ingat ka!" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Paalam.m4a"),
   },
 ];
 
@@ -88,36 +93,42 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "How are you?",
     pronunciation: "ku-mus-ta",
     ...fromGreeting("Kumusta?"),
+    audioUrl: require("../../assets/audio/kapampangan/kumusta.m4a"),
   },
   {
     term: "Mayap a abak",
     meaning: "Good morning",
     pronunciation: "ma-yap a a-bak",
     ...fromGreeting("Mayap a abak"),
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a"),
   },
   {
     term: "Mayap a gatpanapun",
     meaning: "Good afternoon",
     pronunciation: "ma-yap a gat-pa-na-pun",
     ...fromGreeting("Mayap a gatpanapun"),
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a gatpanapun.m4a"),
   },
   {
     term: "Mayap a bengi",
     meaning: "Good evening",
     pronunciation: "ma-yap a be-ngi",
     ...fromGreeting("Mayap a bengi"),
+    audioUrl: require("../../assets/audio/kapampangan/Mayap a bengi.m4a"),
   },
   {
     term: "Paalam",
     meaning: "Goodbye",
     pronunciation: "a-di-yos",
     ...fromGreeting("Paalam"),
+    audioUrl: require("../../assets/audio/kapampangan/Paalam.m4a"),
   },
   {
     term: "Salamat",
     meaning: "Thank you",
     pronunciation: "sa-la-mat",
     example: [{ speaker: "", text: "Salamat king saup mu." }],
+    audioUrl: require("../../assets/audio/kapampangan/Salamat.m4a"),
   },
   {
     term: "Wa",
@@ -127,6 +138,7 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Wa, aku ya ing kausap mu." },
       { speaker: "B", text: "Wa, mamunta na ku." },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Wa.m4a"),
   },
   {
     term: "Alì",
@@ -136,16 +148,19 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Alì, e ku ya ing sira ning bage a iyan." },
       { speaker: "B", text: "Alì, e ku ya ing mikit." },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Ali.m4a"),
   },
   {
     term: "Aku",
     meaning: "I / Me",
     example: [{ speaker: "", text: "Aku si Ana.", translation: "I am Ana." }],
+    audioUrl: require("../../assets/audio/kapampangan/Aku.m4a"),
   },
   {
     term: "Ika",
     meaning: "You",
     example: fromGreeting("Kumusta?").example,
+    audioUrl: require("../../assets/audio/kapampangan/Ika.m4a"),
   },
   {
     term: "Lagyu",
@@ -155,6 +170,7 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Nanu ya ing lagyu mu?" },
       { speaker: "B", text: "Nanu ya ing lagyu ning kaibigan mu?" },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Lagyu.m4a"),
   },
   {
     term: "Kaluguran",
@@ -170,6 +186,7 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "Good / Fine",
     pronunciation: "ma-yap",
     example: fromGreeting("Kumusta?").example,
+    audioUrl: require("../../assets/audio/kapampangan/Mayap.m4a"),
   },
   {
     term: "Wa naman",
@@ -179,11 +196,13 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Wa naman, mamunta ku." },
       { speaker: "B", text: "Wa naman, makamunta ku bayu ya mamulang." },
     ],
+    audioUrl: require("../../assets/audio/kapampangan/Wa naman.m4a"),
   },
   {
     term: "Pasensya na",
     meaning: "I'm sorry / Excuse me",
     pronunciation: "pa-sen-sya na",
+    audioUrl: require("../../assets/audio/kapampangan/Pasensya na.m4a"),
   },
 ];
 
@@ -201,6 +220,7 @@ const speaking: LessonSpeaking = {
       text: "Mayap a abak!",
       respelling: "ma-yap a a-bak",
       meaning: "Good morning",
+      audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a"),
     },
     { id: "2", text: "Kumusta ka?", meaning: "How are you?" },
     { id: "3", text: "Aku si Maria.", meaning: "I am Maria." },
@@ -209,6 +229,7 @@ const speaking: LessonSpeaking = {
       id: "5",
       text: "Masaya ku akilala daka.",
       meaning: "Nice to meet you.",
+      audioUrl: require("../../assets/audio/kapampangan/Masaya ku akilala daka.m4a"),
     },
     {
       id: "6",
@@ -285,10 +306,10 @@ export const kapampanganLesson1: StructuredLesson = {
   sentences: [
     { text: "Aku si Ana.", meaning: "I am Ana." },
     { text: "Ing lagyu ku ay Ana.", meaning: "My name is Ana." },
-    { text: "Nanu ya ing lagyu mu?", meaning: "What is your name?" },
-    { text: "Taga nokarin ka?", meaning: "Where are you from?" },
-    { text: "Taga Angeles City ku.", meaning: "I am from Angeles City." },
-    { text: "Masaya ku akilala daka.", meaning: "Nice to meet you." },
+    { text: "Nanu ya ing lagyu mu?", meaning: "What is your name?", audioUrl: require("../../assets/audio/kapampangan/Nanu ya ing lagyu mu.m4a") },
+    { text: "Taga nokarin ka?", meaning: "Where are you from?", audioUrl: require("../../assets/audio/kapampangan/Taga nokarin ka.m4a") },
+    { text: "Taga Angeles City ku.", meaning: "I am from Angeles City.", audioUrl: require("../../assets/audio/kapampangan/Taga Angeles city ku.m4a") },
+    { text: "Masaya ku akilala daka.", meaning: "Nice to meet you.", audioUrl: require("../../assets/audio/kapampangan/Masaya ku akilala daka.m4a") },
     { text: "Pilan na kang banua?", meaning: "How old are you?" },
     { text: "Labinsiyam a banua ku na.", meaning: "I am 19 years old." },
   ],
@@ -299,7 +320,7 @@ export const kapampanganLesson1: StructuredLesson = {
       "Read the conversation below. Pay attention to how the speakers greet each other and introduce themselves.",
     situation: "Two students meet for the first time at school.",
     lines: [
-      { speaker: "Ana", text: "Mayap a abak!" },
+      { speaker: "Ana", text: "Mayap a abak!", audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a") },
       { speaker: "Mark", text: "Mayap a abak din!" },
       { speaker: "Ana", text: "Aku si Ana. Nanu ya ing lagyu mu?" },
       { speaker: "Mark", text: "Aku si Mark. Masaya ku akilala daka." },

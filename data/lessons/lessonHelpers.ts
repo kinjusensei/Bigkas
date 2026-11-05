@@ -1,6 +1,7 @@
 import {
   LessonArrangeItem,
   LessonAssessmentQuestion,
+  LessonAudioSource,
   LessonDialogueLine,
   LessonFillBlankItem,
   LessonGreeting,
@@ -13,14 +14,20 @@ import {
 // types/structuredLesson.ts. Content only, no app code, so
 // scripts/check-structured-lessons.js can load them.
 
-// [term, meaning, pronunciation?] → word cards.
+// [term, meaning, pronunciation?, recording?] → word cards.
 export const words = (
-  rows: [term: string, meaning: string, pronunciation?: string][],
+  rows: [
+    term: string,
+    meaning: string,
+    pronunciation?: string,
+    audioUrl?: LessonAudioSource,
+  ][],
 ): LessonGreeting[] =>
-  rows.map(([term, meaning, pronunciation]) => ({
+  rows.map(([term, meaning, pronunciation, audioUrl]) => ({
     term,
     meaning,
     pronunciation,
+    audioUrl,
   }));
 
 // [text, meaning] → example sentences.
