@@ -903,6 +903,7 @@ export const warayLesson21: StructuredLesson = {
       meaning: "Perhaps / Maybe",
       pronunciation: "ba-ngin",
       usage: "An expression for giving opinions.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bangin.aac"),
     },
     {
       term: "Malipayon",
@@ -1236,6 +1237,7 @@ export const warayLesson21: StructuredLesson = {
           translation: "True. There are still many things we can learn.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tinuod.aac"),
     },
     {
       term: "Amo ba?",
@@ -1266,6 +1268,7 @@ export const warayLesson21: StructuredLesson = {
       meaning: "I do not understand",
       pronunciation: "di-ri ko na-sa-sab-tan",
       usage: "From this lesson's word list: responses during conversations.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       term: "Nauyon ako ha imo",
@@ -1493,6 +1496,7 @@ export const warayLesson21: StructuredLesson = {
       meaning: "Perhaps / Maybe",
       pronunciation: "ba-ngin",
       usage: "An expression for giving opinions.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bangin.aac"),
     },
     {
       term: "Tinuod?",
@@ -1511,6 +1515,7 @@ export const warayLesson21: StructuredLesson = {
           translation: "True. There are still many things we can learn.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tinuod.aac"),
     },
     {
       term: "Amo ba?",
@@ -1541,6 +1546,7 @@ export const warayLesson21: StructuredLesson = {
       meaning: "I do not understand",
       pronunciation: "di-ri ko na-sa-sab-tan",
       usage: "From this lesson's word list: responses during conversations.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       term: "Nauyon ako ha imo",

@@ -683,6 +683,7 @@ export const warayLesson18: StructuredLesson = {
         text: "Pira ini?",
         respelling: "PEE-rah EE-nee",
         meaning: "How much is this?",
+        audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
       },
       {
         id: "2",
@@ -1072,12 +1073,14 @@ export const warayLesson18: StructuredLesson = {
       meaning: "Many / Much",
       pronunciation: "da-mo",
       usage: "From this lesson's word list: price, quantity, and product descriptions.",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo.aac"),
     },
     {
       term: "Pipira",
       meaning: "Few / A little",
       pronunciation: "pi-pi-ra",
       usage: "From this lesson's word list: price, quantity, and product descriptions.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pipira.aac"),
     },
     {
       term: "Usa ka piraso",
@@ -1132,6 +1135,7 @@ export const warayLesson18: StructuredLesson = {
           translation: "This is two hundred pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Ini",
@@ -1266,6 +1270,7 @@ export const warayLesson18: StructuredLesson = {
           translation: "This is two hundred pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Ini",
@@ -1415,6 +1420,7 @@ export const warayLesson18: StructuredLesson = {
     {
       text: "Pira ini?",
       meaning: "How much is this?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
     },
     {
       text: "Pira ini nga butang?",
@@ -1483,6 +1489,7 @@ export const warayLesson18: StructuredLesson = {
     {
       text: "Salamat.",
       meaning: "Thank you.",
+      audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
     },
     {
       text: "Pira an presyo hini nga bado?",
@@ -1570,6 +1577,7 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Customer",
           text: "Maupay nga aga.",
           translation: "Good morning.",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Seller",
@@ -1605,6 +1613,7 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Seller",
           text: "Sige.",
           translation: "All right.",
+          audioUrl: require("../../assets/audio/Lesson Waray/sige.aac"),
         },
         {
           speaker: "Customer",
@@ -1615,6 +1624,7 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Seller",
           text: "Salamat.",
           translation: "Thank you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
     },
@@ -1626,6 +1636,7 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Customer",
           text: "Maupay nga aga.",
           translation: "Good morning.",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Seller",
@@ -1671,11 +1682,13 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Seller",
           text: "Sige.",
           translation: "All right.",
+          audioUrl: require("../../assets/audio/Lesson Waray/sige.aac"),
         },
         {
           speaker: "Customer",
           text: "Salamat.",
           translation: "Thank you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
     },
@@ -1727,6 +1740,7 @@ export const warayLesson18: StructuredLesson = {
           speaker: "Customer",
           text: "Salamat.",
           translation: "Thank you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
       instructions: "The number expressions in these dialogues are examples. Learners should also recognize that prices and number forms may be expressed differently by individual speakers.",

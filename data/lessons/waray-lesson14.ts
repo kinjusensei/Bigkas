@@ -783,6 +783,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "I am studying.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ako.aac"),
     },
     {
       term: "Ikaw / Ka",
@@ -801,6 +802,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "Yes, I am cooking.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ikaw.aac"),
     },
     {
       term: "Hiya",
@@ -814,6 +816,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "He/She is writing.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hiya.aac"),
     },
     {
       term: "Kami",
@@ -827,6 +830,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "We are cooking.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kami.aac"),
     },
     {
       term: "Kita",
@@ -845,6 +849,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "Let's read at the library.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kita.aac"),
     },
     {
       term: "Kamo",
@@ -858,6 +863,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "You are working.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kamo.aac"),
     },
     {
       term: "Hira",
@@ -871,6 +877,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "They are playing.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hira.aac"),
     },
     {
       term: "Ini",
@@ -925,6 +932,7 @@ export const warayLesson14: StructuredLesson = {
       meaning: "My / Mine",
       pronunciation: "A-kon",
       usage: "From this lesson's word list: possessive forms.",
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -943,12 +951,14 @@ export const warayLesson14: StructuredLesson = {
           translation: "What are you studying?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Iya",
       meaning: "His / Hers",
       pronunciation: "I-ya",
       usage: "From this lesson's word list: possessive forms.",
+      audioUrl: require("../../assets/audio/Lesson Waray/iya.aac"),
     },
     {
       term: "Amon",
@@ -967,18 +977,21 @@ export const warayLesson14: StructuredLesson = {
           translation: "For our family.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/amon.aac"),
     },
     {
       term: "Aton",
       meaning: "Our (including listener)",
       pronunciation: "A-ton",
       usage: "From this lesson's word list: possessive forms.",
+      audioUrl: require("../../assets/audio/Lesson Waray/aton.aac"),
     },
     {
       term: "Ira",
       meaning: "Their / Theirs",
       pronunciation: "I-ra",
       usage: "From this lesson's word list: possessive forms.",
+      audioUrl: require("../../assets/audio/Lesson Waray/ira.aac"),
     },
     {
       term: "Akon ini.",
@@ -1107,6 +1120,7 @@ export const warayLesson14: StructuredLesson = {
       meaning: "Help",
       pronunciation: "Bu-lig",
       usage: "From this lesson's word list: everyday actions.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bulig.aac"),
     },
     {
       term: "Maaram",
@@ -1179,6 +1193,7 @@ export const warayLesson14: StructuredLesson = {
           translation: "Okay, I'll come along.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kita.aac"),
     },
     {
       term: "Nag-aadal ako.",
@@ -1410,6 +1425,7 @@ export const warayLesson14: StructuredLesson = {
           speaker: "Ben",
           text: "Salamat.",
           translation: "Thank you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
       situation: "Ana and Ben: Talking About School Activities.",
@@ -1446,6 +1462,7 @@ export const warayLesson14: StructuredLesson = {
           speaker: "Rosa",
           text: "Damo nga salamat.",
           translation: "Thank you very much.",
+          audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
         },
       ],
       situation: "Maria and Rosa: Talking About Daily Activities.",
@@ -1477,6 +1494,7 @@ export const warayLesson14: StructuredLesson = {
           speaker: "Carlo",
           text: "Kitaay kita buwas.",
           translation: "See you tomorrow.",
+          audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
         },
         {
           speaker: "Mark",

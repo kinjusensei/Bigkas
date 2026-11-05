@@ -967,6 +967,7 @@ export const warayLesson25: StructuredLesson = {
       meaning: "To help",
       pronunciation: "bu-lig",
       usage: "A common action verb.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bulig.aac"),
     },
     {
       term: "Pamati",
@@ -1015,6 +1016,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I am studying for our examination.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -1033,6 +1035,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I will go to my grandparents' house.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Yana",
@@ -1051,6 +1054,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I am studying for our examination.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Kanina",
@@ -1090,6 +1094,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I study every day.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -1133,6 +1138,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I will study for our examination next week.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga semana.aac"),
     },
     {
       term: "Naglabay nga bulan",
@@ -1145,6 +1151,7 @@ export const warayLesson25: StructuredLesson = {
       meaning: "Next month",
       pronunciation: "su-nod nga bu-lan",
       usage: "A time expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga bulan.aac"),
     },
     {
       term: "Na",
@@ -1176,6 +1183,7 @@ export const warayLesson25: StructuredLesson = {
       meaning: "Before",
       pronunciation: "an-tes",
       usage: "An expression related to action and time.",
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
@@ -1194,6 +1202,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "Yes, I will rest after this lesson.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Agsob",
@@ -1438,6 +1447,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I am studying for our examination.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -1456,6 +1466,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I will go to my grandparents' house.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Yana",
@@ -1474,6 +1485,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I am studying for our examination.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Kanina",
@@ -1513,6 +1525,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I study every day.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -1556,6 +1569,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "I will study for our examination next week.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga semana.aac"),
     },
     {
       term: "Naglabay nga bulan",
@@ -1568,6 +1582,7 @@ export const warayLesson25: StructuredLesson = {
       meaning: "Next month",
       pronunciation: "su-nod nga bu-lan",
       usage: "A time expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga bulan.aac"),
     },
     {
       term: "Na",
@@ -1599,6 +1614,7 @@ export const warayLesson25: StructuredLesson = {
       meaning: "Before",
       pronunciation: "an-tes",
       usage: "An expression related to action and time.",
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
@@ -1617,6 +1633,7 @@ export const warayLesson25: StructuredLesson = {
           translation: "Yes, I will rest after this lesson.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Agsob",

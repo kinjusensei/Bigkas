@@ -707,6 +707,7 @@ export const warayLesson3: StructuredLesson = {
         text: "Disiotso anyos ako.",
         respelling: "di-syot-so an-yos a-ko",
         meaning: "I am eighteen years old.",
+        audioUrl: require("../../assets/audio/Lesson Waray/disiotso anyos ako.aac"),
       },
       {
         id: "4",
@@ -761,6 +762,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "Okay, just one.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/usa.aac"),
     },
     {
       term: "Duha",
@@ -779,6 +781,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "Ah, there is a two-year difference between us.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/duha.aac"),
     },
     {
       term: "Tulo",
@@ -792,6 +795,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "Three books",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tulo.aac"),
     },
     {
       term: "Upat",
@@ -805,6 +809,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "Four people",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/upat.aac"),
     },
     {
       term: "Lima",
@@ -823,30 +828,35 @@ export const warayLesson3: StructuredLesson = {
           translation: "There are five pencils.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/lima.aac"),
     },
     {
       term: "Unom",
       meaning: "Six",
       pronunciation: "u-nom",
       usage: "Number: 6",
+      audioUrl: require("../../assets/audio/Lesson Waray/unom.aac"),
     },
     {
       term: "Pito",
       meaning: "Seven",
       pronunciation: "pi-to",
       usage: "Number: 7",
+      audioUrl: require("../../assets/audio/Lesson Waray/pito.aac"),
     },
     {
       term: "Walo",
       meaning: "Eight",
       pronunciation: "wa-lo",
       usage: "Number: 8",
+      audioUrl: require("../../assets/audio/Lesson Waray/walo.aac"),
     },
     {
       term: "Siyam",
       meaning: "Nine",
       pronunciation: "si-yam",
       usage: "Number: 9",
+      audioUrl: require("../../assets/audio/Lesson Waray/siyam.aac"),
     },
     {
       term: "Napulo",
@@ -860,30 +870,35 @@ export const warayLesson3: StructuredLesson = {
           translation: "Ten students",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/napulo.aac"),
     },
     {
       term: "Onse",
       meaning: "Eleven",
       pronunciation: "on-se",
       usage: "Number: 11",
+      audioUrl: require("../../assets/audio/Lesson Waray/onse.aac"),
     },
     {
       term: "Dose",
       meaning: "Twelve",
       pronunciation: "do-se",
       usage: "Number: 12",
+      audioUrl: require("../../assets/audio/Lesson Waray/dose.aac"),
     },
     {
       term: "Trese",
       meaning: "Thirteen",
       pronunciation: "tre-se",
       usage: "Number: 13",
+      audioUrl: require("../../assets/audio/Lesson Waray/trese.aac"),
     },
     {
       term: "Katorse",
       meaning: "Fourteen",
       pronunciation: "ka-tor-se",
       usage: "Number: 14",
+      audioUrl: require("../../assets/audio/Lesson Waray/katorse.aac"),
     },
     {
       term: "Kinse",
@@ -902,6 +917,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "Yes, there is one for fifteen pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kinse.aac"),
     },
     {
       term: "Disisais",
@@ -920,12 +936,14 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am sixteen years old.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/disisais.aac"),
     },
     {
       term: "Disisiete",
       meaning: "Seventeen",
       pronunciation: "di-si-sye-te",
       usage: "Number: 17",
+      audioUrl: require("../../assets/audio/Lesson Waray/disisiete.aac"),
     },
     {
       term: "Disiotso",
@@ -944,12 +962,14 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/disiotso.aac"),
     },
     {
       term: "Disinuebe",
       meaning: "Nineteen",
       pronunciation: "di-si-nwe-be",
       usage: "Number: 19",
+      audioUrl: require("../../assets/audio/Lesson Waray/disinuebe.aac"),
     },
     {
       term: "Baynte",
@@ -968,18 +988,21 @@ export const warayLesson3: StructuredLesson = {
           translation: "Twenty pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/baynte.aac"),
     },
     {
       term: "Traynta",
       meaning: "Thirty",
       pronunciation: "tray-nta",
       usage: "Number: 30",
+      audioUrl: require("../../assets/audio/Lesson Waray/traynta.aac"),
     },
     {
       term: "Kwarenta",
       meaning: "Forty",
       pronunciation: "kwa-ren-ta",
       usage: "Number: 40",
+      audioUrl: require("../../assets/audio/Lesson Waray/kwarenta.aac"),
     },
     {
       term: "Singkwenta",
@@ -993,30 +1016,35 @@ export const warayLesson3: StructuredLesson = {
           translation: "I have fifty pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/singkwenta.aac"),
     },
     {
       term: "Saisenta",
       meaning: "Sixty",
       pronunciation: "sa-i-sen-ta",
       usage: "Number: 60",
+      audioUrl: require("../../assets/audio/Lesson Waray/saisenta.aac"),
     },
     {
       term: "Sitenta",
       meaning: "Seventy",
       pronunciation: "si-ten-ta",
       usage: "Number: 70",
+      audioUrl: require("../../assets/audio/Lesson Waray/sitenta.aac"),
     },
     {
       term: "Otsenta",
       meaning: "Eighty",
       pronunciation: "ot-sen-ta",
       usage: "Number: 80",
+      audioUrl: require("../../assets/audio/Lesson Waray/otsenta.aac"),
     },
     {
       term: "Nobenta",
       meaning: "Ninety",
       pronunciation: "no-ben-ta",
       usage: "Number: 90",
+      audioUrl: require("../../assets/audio/Lesson Waray/nobenta.aac"),
     },
     {
       term: "Usa ka gatos",
@@ -1030,12 +1058,14 @@ export const warayLesson3: StructuredLesson = {
           translation: "I have one hundred pesos.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/usa ka gatos.aac"),
     },
     {
       term: "Usa ka yukot",
       meaning: "One thousand",
       pronunciation: "u-sa ka yu-kot",
       usage: "Number: 1,000",
+      audioUrl: require("../../assets/audio/Lesson Waray/usa ka yukot.aac"),
     },
     {
       term: "Numero",
@@ -1060,6 +1090,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Pira?",
@@ -1078,6 +1109,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Edad",
@@ -1096,6 +1128,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Anyos",
@@ -1114,42 +1147,49 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/anyos.aac"),
     },
     {
       term: "Damo",
       meaning: "Many",
       pronunciation: "da-mo",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo.aac"),
     },
     {
       term: "Pipira",
       meaning: "Few",
       pronunciation: "pi-pi-ra",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pipira.aac"),
     },
     {
       term: "Ngatanan",
       meaning: "All",
       pronunciation: "nga-ta-nan",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/ngatanan.aac"),
     },
     {
       term: "Kada",
       meaning: "Each",
       pronunciation: "ka-da",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kada.aac"),
     },
     {
       term: "Dugang",
       meaning: "More",
       pronunciation: "du-gang",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/dugang.aac"),
     },
     {
       term: "Kulang",
       meaning: "Less",
       pronunciation: "ku-lang",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kulang.aac"),
     },
   ],
   greetings: [
@@ -1176,6 +1216,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Pira?",
@@ -1194,6 +1235,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Edad",
@@ -1212,6 +1254,7 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Anyos",
@@ -1230,42 +1273,49 @@ export const warayLesson3: StructuredLesson = {
           translation: "I am eighteen years old. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/anyos.aac"),
     },
     {
       term: "Damo",
       meaning: "Many",
       pronunciation: "da-mo",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo.aac"),
     },
     {
       term: "Pipira",
       meaning: "Few",
       pronunciation: "pi-pi-ra",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pipira.aac"),
     },
     {
       term: "Ngatanan",
       meaning: "All",
       pronunciation: "nga-ta-nan",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/ngatanan.aac"),
     },
     {
       term: "Kada",
       meaning: "Each",
       pronunciation: "ka-da",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kada.aac"),
     },
     {
       term: "Dugang",
       meaning: "More",
       pronunciation: "du-gang",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/dugang.aac"),
     },
     {
       term: "Kulang",
       meaning: "Less",
       pronunciation: "ku-lang",
       usage: "Used when counting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kulang.aac"),
     },
   ],
   patterns: [
@@ -1301,6 +1351,7 @@ export const warayLesson3: StructuredLesson = {
     {
       text: "Pira?",
       meaning: "How many?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       text: "Pira hira?",
@@ -1313,6 +1364,7 @@ export const warayLesson3: StructuredLesson = {
     {
       text: "Pira ini?",
       meaning: "How much is this?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
     },
     {
       text: "Pira kamo?",
@@ -1325,10 +1377,12 @@ export const warayLesson3: StructuredLesson = {
     {
       text: "Pira na an imo edad?",
       meaning: "How old are you?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pera na an imo edad.aac"),
     },
     {
       text: "Disiotso anyos ako.",
       meaning: "I am eighteen years old.",
+      audioUrl: require("../../assets/audio/Lesson Waray/disiotso anyos ako.aac"),
     },
     {
       text: "Baynte anyos ako.",
@@ -1369,6 +1423,7 @@ export const warayLesson3: StructuredLesson = {
     {
       text: "Baynte pesos.",
       meaning: "It costs twenty pesos.",
+      audioUrl: require("../../assets/audio/Lesson Waray/baynte pesos.aac"),
     },
     {
       text: "May-ada ako singkwenta pesos.",
@@ -1399,6 +1454,7 @@ export const warayLesson3: StructuredLesson = {
           speaker: "Ana",
           text: "Pira na an imo edad?",
           translation: "How old are you?",
+          audioUrl: require("../../assets/audio/Lesson Waray/pera na an imo edad.aac"),
         },
         {
           speaker: "Maria",
@@ -1445,6 +1501,7 @@ export const warayLesson3: StructuredLesson = {
           speaker: "Juan",
           text: "Salamat!",
           translation: "Thank you!",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
       situation: "Asking about quantities. Counting objects. Using numbers in simple exchanges.",
@@ -1461,6 +1518,7 @@ export const warayLesson3: StructuredLesson = {
           speaker: "Vendor",
           text: "Baynte pesos.",
           translation: "Twenty pesos.",
+          audioUrl: require("../../assets/audio/Lesson Waray/baynte pesos.aac"),
         },
         {
           speaker: "Maria",
@@ -1481,6 +1539,7 @@ export const warayLesson3: StructuredLesson = {
           speaker: "Vendor",
           text: "Salamat!",
           translation: "Thank you!",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
       situation: "Asking about prices. Understanding number expressions. Using numbers while shopping.",

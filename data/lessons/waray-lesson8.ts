@@ -1077,12 +1077,14 @@ export const warayLesson8: StructuredLesson = {
           translation: "The sun is shining.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/adlaw.aac"),
     },
     {
       term: "Bulan",
       meaning: "Moon",
       pronunciation: "BU-lan",
       usage: "From this lesson's word list: elements of nature.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bulan.aac"),
     },
     {
       term: "Bitoon",

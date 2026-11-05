@@ -1064,6 +1064,7 @@ export const warayLesson22: StructuredLesson = {
       meaning: "Afterward",
       pronunciation: "ka-TA-pos",
       usage: "From the language note \"Organizing Explanations\".",
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
   ],
   greetings: [
@@ -1490,6 +1491,7 @@ export const warayLesson22: StructuredLesson = {
       text: "Diri ko nasasabtan.",
       meaning: "I do not understand.",
       pronunciation: "di-ri ko na-sa-sab-tan",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       text: "Nasasabtan ko na yana.",

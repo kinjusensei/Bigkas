@@ -7,6 +7,9 @@
 
 export type LessonDialect = "tagalog" | "kapampangan" | "waray";
 
+// A recording: a web address, or a bundled file from require().
+export type LessonAudioSource = string | number;
+
 // One line of a short dialogue. `speaker` is shown as written ("A", "B",
 // "Ana", "Mark").
 // A single example sentence leaves `speaker` empty and may carry its
@@ -15,7 +18,7 @@ export interface LessonDialogueLine {
   speaker: string;
   text: string;
   translation?: string;
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 export interface LessonVocabularyItem {
@@ -26,7 +29,7 @@ export interface LessonVocabularyItem {
   // "How to use it" card.
   usage?: string;
   example?: LessonDialogueLine[];
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 export interface LessonGreeting {
@@ -36,7 +39,7 @@ export interface LessonGreeting {
   pronunciation?: string;
   usage?: string;
   example?: LessonDialogueLine[];
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 export interface LessonSentencePattern {
@@ -50,7 +53,7 @@ export interface LessonSentence {
   meaning: string;
   // The plan's respelling; not shown on the sentence list.
   pronunciation?: string;
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 // A group of expressions (e.g. "Expressions of Gratitude") shown as word
@@ -182,7 +185,7 @@ export interface LessonSpeakingPhrase {
   // English meaning; hidden when missing.
   meaning?: string;
   // Recorded model audio; without it "Listen" uses TTS.
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 export interface LessonSpeaking {

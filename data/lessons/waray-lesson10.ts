@@ -702,6 +702,7 @@ export const warayLesson10: StructuredLesson = {
         text: "Nalilipay ako nga makilala ka.",
         respelling: "nah-lee-lee-PAI AH-koh ngah mah-kee-LAH-lah kah",
         meaning: "Nice to meet you.",
+        audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
       },
       {
         id: "7",
@@ -750,6 +751,7 @@ export const warayLesson10: StructuredLesson = {
       meaning: "Family",
       pronunciation: "pah-MEEL-yah",
       usage: "From this lesson's word list: people and relationships.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pamilya.aac"),
     },
     {
       term: "Tatay",
@@ -763,6 +765,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "This is my father.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tatay.aac"),
     },
     {
       term: "Nanay",
@@ -781,6 +784,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "This is my mother.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/nanay.aac"),
     },
     {
       term: "Bugto",
@@ -794,30 +798,35 @@ export const warayLesson10: StructuredLesson = {
           translation: "This is my brother/sister. / This is my brother or sister.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bugto.aac"),
     },
     {
       term: "Magurang",
       meaning: "Older sibling",
       pronunciation: "mah-GOO-rahng",
       usage: "From this lesson's word list: people and relationships.",
+      audioUrl: require("../../assets/audio/Lesson Waray/magurang.aac"),
     },
     {
       term: "Manghod",
       meaning: "Younger sibling",
       pronunciation: "MAHNG-hod",
       usage: "From this lesson's word list: people and relationships.",
+      audioUrl: require("../../assets/audio/Lesson Waray/manghod.aac"),
     },
     {
       term: "Lolo",
       meaning: "Grandfather",
       pronunciation: "LOH-loh",
       usage: "From this lesson's word list: people and relationships.",
+      audioUrl: require("../../assets/audio/Lesson Waray/lolo.aac"),
     },
     {
       term: "Lola",
       meaning: "Grandmother",
       pronunciation: "LOH-lah",
       usage: "From this lesson's word list: people and relationships.",
+      audioUrl: require("../../assets/audio/Lesson Waray/lola.aac"),
     },
     {
       term: "Klasmet",
@@ -909,6 +918,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "He is my friend, Daniel.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hiya.aac"),
     },
     {
       term: "Akon",
@@ -927,6 +937,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "Good day! My name is Ben.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -945,6 +956,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "Okay.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Iya",
@@ -963,24 +975,28 @@ export const warayLesson10: StructuredLesson = {
           translation: "What is her name?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/iya.aac"),
     },
     {
       term: "Amon",
       meaning: "Our (exclusive)",
       pronunciation: "AH-mohn",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/amon.aac"),
     },
     {
       term: "Aton",
       meaning: "Our (inclusive)",
       pronunciation: "AH-tohn",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/aton.aac"),
     },
     {
       term: "Ira",
       meaning: "Their",
       pronunciation: "EE-rah",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/ira.aac"),
     },
     {
       term: "Ngaran",
@@ -1011,6 +1027,7 @@ export const warayLesson10: StructuredLesson = {
       meaning: "Together",
       pronunciation: "mahg-OO-pod",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/mag-upod.aac"),
     },
     {
       term: "Kilala",
@@ -1171,6 +1188,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "He is my friend, Daniel.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hiya.aac"),
     },
     {
       term: "Akon",
@@ -1189,6 +1207,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "Good day! My name is Ben.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -1207,6 +1226,7 @@ export const warayLesson10: StructuredLesson = {
           translation: "Okay.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Iya",
@@ -1225,24 +1245,28 @@ export const warayLesson10: StructuredLesson = {
           translation: "What is her name?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/iya.aac"),
     },
     {
       term: "Amon",
       meaning: "Our (exclusive)",
       pronunciation: "AH-mohn",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/amon.aac"),
     },
     {
       term: "Aton",
       meaning: "Our (inclusive)",
       pronunciation: "AH-tohn",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/aton.aac"),
     },
     {
       term: "Ira",
       meaning: "Their",
       pronunciation: "EE-rah",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/ira.aac"),
     },
     {
       term: "Ngaran",
@@ -1273,6 +1297,7 @@ export const warayLesson10: StructuredLesson = {
       meaning: "Together",
       pronunciation: "mahg-OO-pod",
       usage: "Used when introducing people.",
+      audioUrl: require("../../assets/audio/Lesson Waray/mag-upod.aac"),
     },
     {
       term: "Kilala",
@@ -1402,6 +1427,7 @@ export const warayLesson10: StructuredLesson = {
       text: "Nalilipay ako nga makilala ka.",
       meaning: "Nice to meet you.",
       pronunciation: "nah-lee-lee-PAI AH-koh ngah mah-kee-LAH-lah kah",
+      audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
     },
     {
       text: "Maria an ngaran han akon nanay.",
@@ -1441,6 +1467,7 @@ export const warayLesson10: StructuredLesson = {
           speaker: "Ben",
           text: "Sige.",
           translation: "Okay.",
+          audioUrl: require("../../assets/audio/Lesson Waray/sige.aac"),
         },
         {
           speaker: "Ana",
@@ -1461,6 +1488,7 @@ export const warayLesson10: StructuredLesson = {
           speaker: "Maria",
           text: "Nalilipay ako nga makilala ka.",
           translation: "I am happy to meet you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
         },
       ],
       situation: "Ana and Ben and Maria: Introducing a Friend.",

@@ -858,6 +858,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Schedule",
       pronunciation: "is-keh-DYOOL",
       usage: "From this lesson's word list: information and details.",
+      audioUrl: require("../../assets/audio/Lesson Waray/iskedyul.aac"),
     },
     {
       term: "Kinahanglanon",
@@ -889,6 +890,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Time",
       pronunciation: "OH-rahs",
       usage: "From this lesson's word list: information and details.",
+      audioUrl: require("../../assets/audio/Lesson Waray/oras.aac"),
     },
     {
       term: "Ano",
@@ -999,6 +1001,7 @@ export const warayLesson13: StructuredLesson = {
           translation: "How much is the payment?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Ano nga klase",
@@ -1078,6 +1081,7 @@ export const warayLesson13: StructuredLesson = {
           translation: "Which part don't you understand?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       term: "Alayon, igsaysay",
@@ -1133,6 +1137,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Maybe",
       pronunciation: "bah-NGEEN",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bangin.aac"),
     },
     {
       term: "Sigurado",
@@ -1145,6 +1150,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Correct",
       pronunciation: "HOOS-toh",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/husto.aac"),
     },
     {
       term: "Sayop",
@@ -1170,12 +1176,14 @@ export const warayLesson13: StructuredLesson = {
           translation: "Where can I get more information?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/dugang.aac"),
     },
     {
       term: "Kulang",
       meaning: "Less",
       pronunciation: "KOO-lahng",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kulang.aac"),
     },
     {
       term: "Pariho",
@@ -1313,6 +1321,7 @@ export const warayLesson13: StructuredLesson = {
           translation: "How much is the payment?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Ano nga klase",
@@ -1392,6 +1401,7 @@ export const warayLesson13: StructuredLesson = {
           translation: "Which part don't you understand?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       term: "Alayon, igsaysay",
@@ -1447,6 +1457,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Maybe",
       pronunciation: "bah-NGEEN",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/bangin.aac"),
     },
     {
       term: "Sigurado",
@@ -1459,6 +1470,7 @@ export const warayLesson13: StructuredLesson = {
       meaning: "Correct",
       pronunciation: "HOOS-toh",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/husto.aac"),
     },
     {
       term: "Sayop",
@@ -1484,12 +1496,14 @@ export const warayLesson13: StructuredLesson = {
           translation: "Where can I get more information?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/dugang.aac"),
     },
     {
       term: "Kulang",
       meaning: "Less",
       pronunciation: "KOO-lahng",
       usage: "From this lesson's word list: useful response words.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kulang.aac"),
     },
     {
       term: "Pariho",
@@ -1708,6 +1722,7 @@ export const warayLesson13: StructuredLesson = {
           speaker: "Teacher",
           text: "Waray sapayan.",
           translation: "You're welcome.",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Ana and Teacher: Asking About a School Program.",
@@ -1754,6 +1769,7 @@ export const warayLesson13: StructuredLesson = {
           speaker: "Liza",
           text: "Waray sapayan.",
           translation: "You're welcome.",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Mark and Liza: Requesting Clarification.",
@@ -1810,6 +1826,7 @@ export const warayLesson13: StructuredLesson = {
           speaker: "Resident",
           text: "Waray sapayan.",
           translation: "You're welcome.",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Carlo and Resident: Asking About an Event.",

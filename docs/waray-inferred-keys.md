@@ -48,7 +48,7 @@ Screens 9 to 11 show the phrase, the respelling and the target tags from screen 
 - **Waray 30, screens 2 to 6.** This lesson is only the final exam. Its words, phrases and dialogues are the exam questions, so teaching them first would give away the answers.
 - **729 of 1259 vocabulary cards have no example.** No sentence in that lesson uses the word, and no Waray may be invented. The card hides the example block.
 - **Waray 30, Part F.** This is a practical speaking and writing task, so it stays unscored in `extraActivities`.
-- **Audio.** No recordings exist yet, so all audio uses text-to-speech, as before.
+- **Audio without a recording.** Waray has no text-to-speech voice, so these show "Audio coming soon". See Recordings below.
 
 ## Also different from Tagalog Lesson 1
 
@@ -58,6 +58,57 @@ Screens 9 to 11 show the phrase, the respelling and the target tags from screen 
 - **Waray 4–8 assessment.** The plan gives 3 options per question. The fourth is a wrong option taken from another question in the same assessment.
 - **Waray 14–17 assessment.** The plan has open questions with written answers. They became multiple choice: the plan's answer is the key, the wrong options come from the same lesson, and the 70% pass mark is inferred.
 - **Conversations.** Most lessons have 3 or 4, shown one at a time on the same screen, because the plan has that many.
+
+## Recordings
+
+Recordings are in `assets/audio/Lesson Waray` and are matched by file name. Nobody has listened to check that each one matches its text.
+
+| Lesson | Words | Sentences | Conversation lines | Speaking |
+| --- | --- | --- | --- | --- |
+| W1 | 27/35 | 9/18 | 7/15 | 3/7 |
+| W2 | 17/36 | 9/32 | 4/16 | 0/7 |
+| W3 | 39/40 | 5/23 | 4/15 | 1/7 |
+| W4 | 41/57 | 3/25 | 1/12 | 2/7 |
+| W5 | 27/38 | 4/27 | 0/15 | 3/7 |
+| W6 | 0/51 | 0/25 | 1/15 | 0/7 |
+| W7 | 0/34 | 0/25 | 1/15 | 0/7 |
+| W8 | 2/63 | 0/26 | 0/16 | 0/7 |
+| W9 | 10/28 | 8/41 | 6/19 | 2/7 |
+| W10 | 16/38 | 1/22 | 2/18 | 1/7 |
+| W11 | 6/41 | 2/34 | 1/25 | 0/7 |
+| W12 | 1/43 | 1/31 | 2/24 | 0/7 |
+| W13 | 8/44 | 0/24 | 3/28 | 0/7 |
+| W14 | 15/52 | 0/11 | 3/18 | 0/7 |
+| W15 | 3/28 | 0/40 | 1/18 | 0/7 |
+| W16 | 0/8 | 0/41 | 1/18 | 0/7 |
+| W17 | 9/49 | 3/40 | 4/22 | 0/7 |
+| W18 | 3/52 | 2/37 | 7/30 | 1/7 |
+| W19 | 13/62 | 0/44 | 0/25 | 0/7 |
+| W20 | 0/67 | 0/50 | 1/24 | 0/7 |
+| W21 | 3/53 | 0/47 | 0/21 | 0/7 |
+| W22 | 1/32 | 1/38 | 0/23 | 0/7 |
+| W23 | 1/38 | 0/22 | 0/22 | 0/7 |
+| W24 | 3/41 | 0/23 | 0/23 | 0/7 |
+| W25 | 9/60 | 0/36 | 0/20 | 0/7 |
+| W26 | 0/15 | 0/8 | 0/14 | 0/7 |
+| W27 | 1/51 | 2/38 | 1/27 | 1/7 |
+| W28 | 4/49 | 0/21 | 0/14 | 0/7 |
+| W29 | 2/54 | 2/32 | 1/28 | 0/7 |
+| W30 | 0/0 | 0/0 | 0/0 | 3/7 |
+
+A conversation's Play button needs a recording for every line, so it shows "Audio coming soon" until all of them exist.
+
+**Linked although the spelling differs. Please check:**
+
+- huybes.aac → Huwebes
+- oktubri.aac → Oktubre
+- maupaya nga aga.aac → Maupay nga aga
+- pakikstorya.aac → Pakiistorya
+- pera na an imo edad.aac → Pira na an imo edad?
+- puydi mo ba ako buligan.aac → Pwede mo ba ako buligan?
+- ikaw.aac → Ikaw / Ka
+
+**Not linked, because no text in the lessons clearly matches:** ano na nga oras, ka, kakulop, nauyon, patod, simama, temprano, umangkon.
 
 ## How the values were made
 

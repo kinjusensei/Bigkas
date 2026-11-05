@@ -826,6 +826,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "I study every day.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -892,6 +893,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "I am just resting.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Ha urhi",
@@ -935,6 +937,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "See you tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Na",
@@ -1033,12 +1036,14 @@ export const warayLesson11: StructuredLesson = {
       meaning: "Really?",
       pronunciation: "tee-noo-OHD",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/tinuod.aac"),
     },
     {
       term: "Syempre",
       meaning: "Of course",
       pronunciation: "SHYEM-preh",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/syempre.aac"),
     },
     {
       term: "Kadto na kita",
@@ -1057,6 +1062,7 @@ export const warayLesson11: StructuredLesson = {
       meaning: "Wait a moment",
       pronunciation: "HOO-laht AH-nai",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/hulat anay.aac"),
     },
     {
       term: "Kitaay kita ha urhi",
@@ -1108,6 +1114,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "I study every day.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -1174,6 +1181,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "I am just resting.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Ha urhi",
@@ -1217,6 +1225,7 @@ export const warayLesson11: StructuredLesson = {
           translation: "See you tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Na",
@@ -1315,12 +1324,14 @@ export const warayLesson11: StructuredLesson = {
       meaning: "Really?",
       pronunciation: "tee-noo-OHD",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/tinuod.aac"),
     },
     {
       term: "Syempre",
       meaning: "Of course",
       pronunciation: "SHYEM-preh",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/syempre.aac"),
     },
     {
       term: "Kadto na kita",
@@ -1339,6 +1350,7 @@ export const warayLesson11: StructuredLesson = {
       meaning: "Wait a moment",
       pronunciation: "HOO-laht AH-nai",
       usage: "A conversation expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/hulat anay.aac"),
     },
     {
       term: "Kitaay kita ha urhi",
@@ -1484,6 +1496,7 @@ export const warayLesson11: StructuredLesson = {
       text: "Kitaay kita buwas.",
       meaning: "See you tomorrow.",
       pronunciation: "kee-TAH-ai KEE-tah BOO-wahs",
+      audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
     },
     {
       text: "Kumusta ka yana?",
@@ -1552,6 +1565,7 @@ export const warayLesson11: StructuredLesson = {
     {
       text: "Diri ko nasasabtan.",
       meaning: "I don't understand.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
     {
       text: "Pakiusara, utraha daw.",
@@ -1637,6 +1651,7 @@ export const warayLesson11: StructuredLesson = {
           speaker: "Carlo",
           text: "Yana nga kulop.",
           translation: "This afternoon.",
+          audioUrl: require("../../assets/audio/Lesson Waray/yana nga kulop.aac"),
         },
         {
           speaker: "Ben",

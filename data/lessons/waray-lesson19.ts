@@ -900,6 +900,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Good as well. What do you do every morning?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/aga.aac"),
     },
     {
       term: "Kulop",
@@ -913,6 +914,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I rest in the afternoon.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kulop.aac"),
     },
     {
       term: "Gab-i",
@@ -931,6 +933,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Yes, sometimes I read my lessons.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/gab-i.aac"),
     },
     {
       term: "Gab-i",
@@ -949,6 +952,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do at night?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/gab-i.aac"),
     },
     {
       term: "Yana",
@@ -962,6 +966,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I do not have time today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -980,6 +985,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I prepare my things for tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Kahapon",
@@ -1017,6 +1023,7 @@ export const warayLesson19: StructuredLesson = {
       meaning: "Late",
       pronunciation: "ur-hi",
       usage: "A time expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/urhi.aac"),
     },
     {
       term: "Kada adlaw",
@@ -1030,6 +1037,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do every day?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -1072,6 +1080,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do before sleeping?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
@@ -1090,6 +1099,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do after class?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Ha urhi",
@@ -1109,6 +1119,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I do not have time today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Pirme",
@@ -1226,6 +1237,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Good as well. What do you do every morning?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada.aac"),
     },
     {
       term: "Panalagsa",
@@ -1250,6 +1262,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Do you study at home?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Eskwelahan",
@@ -1399,6 +1412,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Good as well. What do you do every morning?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/aga.aac"),
     },
     {
       term: "Kulop",
@@ -1412,6 +1426,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I rest in the afternoon.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kulop.aac"),
     },
     {
       term: "Gab-i",
@@ -1430,6 +1445,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "Yes, sometimes I read my lessons.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/gab-i.aac"),
     },
     {
       term: "Gab-i",
@@ -1448,6 +1464,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do at night?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/gab-i.aac"),
     },
     {
       term: "Yana",
@@ -1461,6 +1478,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I do not have time today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -1479,6 +1497,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I prepare my things for tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Kahapon",
@@ -1516,6 +1535,7 @@ export const warayLesson19: StructuredLesson = {
       meaning: "Late",
       pronunciation: "ur-hi",
       usage: "A time expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/urhi.aac"),
     },
     {
       term: "Kada adlaw",
@@ -1529,6 +1549,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do every day?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Kada aga",
@@ -1571,6 +1592,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do before sleeping?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
@@ -1589,6 +1611,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "What do you do after class?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Ha urhi",
@@ -1608,6 +1631,7 @@ export const warayLesson19: StructuredLesson = {
           translation: "I do not have time today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
   ],
   patterns: [

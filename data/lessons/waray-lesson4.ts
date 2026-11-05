@@ -651,6 +651,7 @@ export const warayLesson4: StructuredLesson = {
         text: "Ano nga adlaw yana?",
         respelling: "A-no nga AD-law YA-na?",
         meaning: "What day is it today?",
+        audioUrl: require("../../assets/audio/Lesson Waray/ano nga adlaw yana.aac"),
       },
       {
         id: "2",
@@ -663,6 +664,7 @@ export const warayLesson4: StructuredLesson = {
         text: "Kitaay kita buwas.",
         respelling: "ki-TA-ay KI-ta BU-was",
         meaning: "See you tomorrow.",
+        audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
       },
       {
         id: "4",
@@ -712,6 +714,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Sunday is our rest day.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/domingo.aac"),
     },
     {
       term: "Lunes",
@@ -730,6 +733,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is Monday today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/lunes.aac"),
     },
     {
       term: "Martes",
@@ -743,18 +747,21 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is Tuesday today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/martes.aac"),
     },
     {
       term: "Miyerkoles",
       meaning: "Wednesday",
       pronunciation: "mi-YER-ko-les",
       usage: "From this lesson's word list: days of the week.",
+      audioUrl: require("../../assets/audio/Lesson Waray/miyerkoles.aac"),
     },
     {
       term: "Huwebes",
       meaning: "Thursday",
       pronunciation: "hwe-BES",
       usage: "From this lesson's word list: days of the week.",
+      audioUrl: require("../../assets/audio/Lesson Waray/huybes.aac"),
     },
     {
       term: "Biyernes",
@@ -773,12 +780,14 @@ export const warayLesson4: StructuredLesson = {
           translation: "On Friday.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/biyernes.aac"),
     },
     {
       term: "Sabado",
       meaning: "Saturday",
       pronunciation: "sa-BA-do",
       usage: "From this lesson's word list: days of the week.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sabado.aac"),
     },
     {
       term: "Enero",
@@ -792,24 +801,28 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is January.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/enero.aac"),
     },
     {
       term: "Pebrero",
       meaning: "February",
       pronunciation: "pe-BRE-ro",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pebrero.aac"),
     },
     {
       term: "Marso",
       meaning: "March",
       pronunciation: "MAR-so",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/marso.aac"),
     },
     {
       term: "Abril",
       meaning: "April",
       pronunciation: "A-bril",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/abril.aac"),
     },
     {
       term: "Mayo",
@@ -823,42 +836,49 @@ export const warayLesson4: StructuredLesson = {
           translation: "May is my favorite month.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/mayo.aac"),
     },
     {
       term: "Hunyo",
       meaning: "June",
       pronunciation: "HUN-yo",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/hunyo.aac"),
     },
     {
       term: "Hulyo",
       meaning: "July",
       pronunciation: "HUL-yo",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/hulyo.aac"),
     },
     {
       term: "Agosto",
       meaning: "August",
       pronunciation: "a-GOS-to",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/agosto.aac"),
     },
     {
       term: "Setyembre",
       meaning: "September",
       pronunciation: "set-YEM-bre",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/setyembre.aac"),
     },
     {
       term: "Oktubre",
       meaning: "October",
       pronunciation: "ok-TU-bre",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/oktubri.aac"),
     },
     {
       term: "Nobyembre",
       meaning: "November",
       pronunciation: "no-BYEM-bre",
       usage: "From this lesson's word list: months of the year.",
+      audioUrl: require("../../assets/audio/Lesson Waray/nobyembre.aac"),
     },
     {
       term: "Disyembre",
@@ -872,6 +892,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "December is the last month of the year.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/disyembre.aac"),
     },
     {
       term: "Adlaw",
@@ -890,6 +911,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is Monday today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/adlaw.aac"),
     },
     {
       term: "Semana",
@@ -909,6 +931,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "What month is it? / What month is it now?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bulan.aac"),
     },
     {
       term: "Tuig",
@@ -922,6 +945,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "January is the first month of the year.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tuig.aac"),
     },
     {
       term: "Yana",
@@ -940,6 +964,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Do we have class today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -958,6 +983,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Yes, I will go.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Kahapon",
@@ -977,36 +1003,42 @@ export const warayLesson4: StructuredLesson = {
       meaning: "This morning",
       pronunciation: "YA-na nga A-ga",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga aga.aac"),
     },
     {
       term: "Yana nga kulop",
       meaning: "This afternoon",
       pronunciation: "YA-na nga KU-lop",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga kulop.aac"),
     },
     {
       term: "Yana nga gab-i",
       meaning: "Tonight",
       pronunciation: "YA-na nga GAB-i",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga gab-i.aac"),
     },
     {
       term: "Sunod nga semana",
       meaning: "Next week",
       pronunciation: "SO-nod nga se-MA-na",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga semana.aac"),
     },
     {
       term: "Sunod nga bulan",
       meaning: "Next month",
       pronunciation: "SO-nod nga BU-lan",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga bulan.aac"),
     },
     {
       term: "Kada adlaw",
       meaning: "Every day",
       pronunciation: "KA-da AD-law",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Oras",
@@ -1025,12 +1057,14 @@ export const warayLesson4: StructuredLesson = {
           translation: "What time is it?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/oras.aac"),
     },
     {
       term: "Minuto",
       meaning: "Minute",
       pronunciation: "mi-NU-to",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/minuto.aac"),
     },
     {
       term: "Aga",
@@ -1049,6 +1083,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "At seven in the morning.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/aga.aac"),
     },
     {
       term: "Kulop",
@@ -1067,12 +1102,14 @@ export const warayLesson4: StructuredLesson = {
           translation: "At three in the afternoon.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kulop.aac"),
     },
     {
       term: "Gab-i",
       meaning: "Evening / Night",
       pronunciation: "GAB-i",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/gab-i.aac"),
     },
     {
       term: "Sayo",
@@ -1085,6 +1122,7 @@ export const warayLesson4: StructuredLesson = {
       meaning: "Late",
       pronunciation: "UR-hi",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/urhi.aac"),
     },
     {
       term: "Yana",
@@ -1103,6 +1141,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Yes, we have class.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Ha urhi",
@@ -1115,18 +1154,21 @@ export const warayLesson4: StructuredLesson = {
       meaning: "Before",
       pronunciation: "AN-tes",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
       meaning: "After",
       pronunciation: "ka-TA-pos",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Iskedyul",
       meaning: "Schedule",
       pronunciation: "is-ke-DYUL",
       usage: "From this lesson's word list: time vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/iskedyul.aac"),
     },
     {
       term: "Yana",
@@ -1145,6 +1187,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is Monday today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Alas-una",
@@ -1275,6 +1318,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "It is Monday today.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/adlaw.aac"),
     },
     {
       term: "Semana",
@@ -1294,6 +1338,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "What month is it? / What month is it now?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bulan.aac"),
     },
     {
       term: "Tuig",
@@ -1307,6 +1352,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "January is the first month of the year.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tuig.aac"),
     },
     {
       term: "Yana",
@@ -1325,6 +1371,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Do we have class today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -1343,6 +1390,7 @@ export const warayLesson4: StructuredLesson = {
           translation: "Yes, I will go.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Kahapon",
@@ -1362,36 +1410,42 @@ export const warayLesson4: StructuredLesson = {
       meaning: "This morning",
       pronunciation: "YA-na nga A-ga",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga aga.aac"),
     },
     {
       term: "Yana nga kulop",
       meaning: "This afternoon",
       pronunciation: "YA-na nga KU-lop",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga kulop.aac"),
     },
     {
       term: "Yana nga gab-i",
       meaning: "Tonight",
       pronunciation: "YA-na nga GAB-i",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana nga gab-i.aac"),
     },
     {
       term: "Sunod nga semana",
       meaning: "Next week",
       pronunciation: "SO-nod nga se-MA-na",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga semana.aac"),
     },
     {
       term: "Sunod nga bulan",
       meaning: "Next month",
       pronunciation: "SO-nod nga BU-lan",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/sunod nga bulan.aac"),
     },
     {
       term: "Kada adlaw",
       meaning: "Every day",
       pronunciation: "KA-da AD-law",
       usage: "A common calendar expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
   ],
   patterns: [
@@ -1426,6 +1480,7 @@ export const warayLesson4: StructuredLesson = {
       text: "Ano nga adlaw yana?",
       meaning: "What day is it today?",
       pronunciation: "A-no nga AD-law YA-na?",
+      audioUrl: require("../../assets/audio/Lesson Waray/ano nga adlaw yana.aac"),
     },
     {
       text: "Lunes yana.",
@@ -1451,6 +1506,7 @@ export const warayLesson4: StructuredLesson = {
       text: "Alas-tres na.",
       meaning: "It is three o'clock.",
       pronunciation: "A-las-TRES na.",
+      audioUrl: require("../../assets/audio/Lesson Waray/alas-tres na.aac"),
     },
     {
       text: "Aga na.",
@@ -1461,6 +1517,7 @@ export const warayLesson4: StructuredLesson = {
       text: "Kitaay kita buwas.",
       meaning: "See you tomorrow.",
       pronunciation: "ki-TA-ay KI-ta BU-was",
+      audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
     },
     {
       text: "Makadto ako buwas.",
@@ -1543,6 +1600,7 @@ export const warayLesson4: StructuredLesson = {
           speaker: "Ana",
           text: "Ano nga adlaw yana?",
           translation: "What day is it today?",
+          audioUrl: require("../../assets/audio/Lesson Waray/ano nga adlaw yana.aac"),
         },
         {
           speaker: "Ben",

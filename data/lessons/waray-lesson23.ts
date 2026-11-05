@@ -817,6 +817,7 @@ export const warayLesson23: StructuredLesson = {
       meaning: "Of course",
       pronunciation: "syem-pre",
       usage: "An expression of agreement.",
+      audioUrl: require("../../assets/audio/Lesson Waray/syempre.aac"),
     },
     {
       term: "Amo liwat an akon panhunahuna",
@@ -1180,6 +1181,7 @@ export const warayLesson23: StructuredLesson = {
       meaning: "Of course",
       pronunciation: "syem-pre",
       usage: "An expression of agreement.",
+      audioUrl: require("../../assets/audio/Lesson Waray/syempre.aac"),
     },
     {
       term: "Amo liwat an akon panhunahuna",

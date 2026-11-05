@@ -876,6 +876,7 @@ export const warayLesson29: StructuredLesson = {
           translation: "What happened?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bulig.aac"),
     },
     {
       term: "Ospital",
@@ -1110,6 +1111,7 @@ export const warayLesson29: StructuredLesson = {
           translation: "Thank you very much for your help.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bulig.aac"),
     },
     {
       term: "Respeto",
@@ -1351,6 +1353,7 @@ export const warayLesson29: StructuredLesson = {
     {
       text: "Kinahanglan ko hin bulig.",
       meaning: "I need help.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kinahanglan ko hin bulig.aac"),
     },
     {
       text: "May aksidente nga nahitabo.",
@@ -1383,6 +1386,7 @@ export const warayLesson29: StructuredLesson = {
     {
       text: "Nalilipay ako nga makilala ka.",
       meaning: "Nice to meet you.",
+      audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
     },
     {
       text: "Taga dinhi ka ba nga komunidad?",
@@ -1545,6 +1549,7 @@ export const warayLesson29: StructuredLesson = {
           speaker: "Dina",
           text: "Nalilipay ako nga makilala ka.",
           translation: "I am happy to meet you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
         },
         {
           speaker: "Ella",

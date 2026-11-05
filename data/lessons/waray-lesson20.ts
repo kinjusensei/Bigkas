@@ -2221,6 +2221,7 @@ export const warayLesson20: StructuredLesson = {
           speaker: "Resident",
           text: "Salamat.",
           translation: "Thank you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
         },
       ],
     },

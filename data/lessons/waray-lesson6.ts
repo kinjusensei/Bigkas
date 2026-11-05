@@ -1596,6 +1596,7 @@ export const warayLesson6: StructuredLesson = {
           speaker: "Customer",
           text: "Pira ini?",
           translation: "How much is this?",
+          audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
         },
         {
           speaker: "Vendor",

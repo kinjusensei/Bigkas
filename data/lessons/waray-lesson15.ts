@@ -805,6 +805,7 @@ export const warayLesson15: StructuredLesson = {
           translation: "I am reading a book.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ako.aac"),
     },
     {
       term: "Hiya",
@@ -818,6 +819,7 @@ export const warayLesson15: StructuredLesson = {
           translation: "He/She worked yesterday.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hiya.aac"),
     },
     {
       term: "An bata",
@@ -1032,6 +1034,7 @@ export const warayLesson15: StructuredLesson = {
           text: "Pira ini?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
   ],
   greetings: [
@@ -1417,6 +1420,7 @@ export const warayLesson15: StructuredLesson = {
           speaker: "Mark",
           text: "Kitaay kita buwas.",
           translation: "See you tomorrow.",
+          audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
         },
       ],
       situation: "Carlo and Mark: Making a Simple Plan.",

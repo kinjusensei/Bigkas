@@ -669,6 +669,7 @@ export const warayLesson1: StructuredLesson = {
         text: "An akon ngaran hi Ana.",
         respelling: "an a-kon nga-ran hi ah-nah",
         meaning: "My name is Ana.",
+        audioUrl: require("../../assets/audio/Lesson Waray/an akon ngaran hi ana.aac"),
       },
       {
         id: "2",
@@ -681,12 +682,14 @@ export const warayLesson1: StructuredLesson = {
         text: "Ano an imo ngaran?",
         respelling: "AH-noh ahn EE-moh NGAH-rahn",
         meaning: "What is your name?",
+        audioUrl: require("../../assets/audio/Lesson Waray/ano an imo ngaran.aac"),
       },
       {
         id: "4",
         text: "Pira na an imo edad?",
         respelling: "PEE-rah nah ahn EE-moh eh-DAHD",
         meaning: "How old are you?",
+        audioUrl: require("../../assets/audio/Lesson Waray/pera na an imo edad.aac"),
       },
       {
         id: "5",
@@ -735,18 +738,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "Good morning!",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
     },
     {
       term: "Maupay nga kulop",
       meaning: "Good afternoon",
       pronunciation: "ma-u-pay nga ku-lop",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay nga kulop.aac"),
     },
     {
       term: "Maupay nga gab-i",
       meaning: "Good evening",
       pronunciation: "ma-u-pay nga gab-i",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay nga gab-i.aac"),
     },
     {
       term: "Kumusta",
@@ -765,6 +771,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "How are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta.aac"),
     },
     {
       term: "Kumusta ka?",
@@ -783,6 +790,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine. Thank you. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
     },
     {
       term: "Maupay man.",
@@ -801,6 +809,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine too.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay man.aac"),
     },
     {
       term: "Salamat.",
@@ -819,18 +828,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine. Thank you. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
     },
     {
       term: "Damo nga salamat.",
       meaning: "Thank you very much.",
       pronunciation: "da-mo nga sa-la-mat",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
     },
     {
       term: "Waray sapayan.",
       meaning: "You're welcome.",
       pronunciation: "wa-ray sa-pa-yan",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
     },
     {
       term: "Oo",
@@ -844,6 +856,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "Yes, I am fine.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/oo.aac"),
     },
     {
       term: "Diri",
@@ -857,18 +870,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "No, I am not okay.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri.aac"),
     },
     {
       term: "Alayon",
       meaning: "Please",
       pronunciation: "a-la-yon",
       usage: "A common responses and expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/alayon.aac"),
     },
     {
       term: "Pasayloa ako.",
       meaning: "I'm sorry.",
       pronunciation: "pa-say-lo-a a-ko",
       usage: "A common responses and expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pasayloa ako.aac"),
     },
     {
       term: "Pasaylo.",
@@ -911,6 +927,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I am happy to meet you.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ako.aac"),
     },
     {
       term: "Ikaw / Ka",
@@ -929,48 +946,56 @@ export const warayLesson1: StructuredLesson = {
           translation: "My name is Pedro. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ikaw.aac"),
     },
     {
       term: "Hiya",
       meaning: "He / She",
       pronunciation: "HEE-yah",
       usage: "Refers to another person",
+      audioUrl: require("../../assets/audio/Lesson Waray/hiya.aac"),
     },
     {
       term: "Kami",
       meaning: "We (excluding the listener)",
       pronunciation: "Ka-mi",
       usage: "Refers to the speaker and others, but not the listener",
+      audioUrl: require("../../assets/audio/Lesson Waray/kami.aac"),
     },
     {
       term: "Kita",
       meaning: "We (including the listener)",
       pronunciation: "ki-ta",
       usage: "Includes both the speaker and listener",
+      audioUrl: require("../../assets/audio/Lesson Waray/kita.aac"),
     },
     {
       term: "Kamo",
       meaning: "You (plural)",
       pronunciation: "Ka-mo",
       usage: "Refers to two or more people",
+      audioUrl: require("../../assets/audio/Lesson Waray/kamo.aac"),
     },
     {
       term: "Hira",
       meaning: "They",
       pronunciation: "Hi-ra",
       usage: "Refers to other people",
+      audioUrl: require("../../assets/audio/Lesson Waray/hira.aac"),
     },
     {
       term: "Kami",
       meaning: "We, but not you.",
       pronunciation: "Ka-mi",
       usage: "From this lesson's word list: personal pronouns.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kami.aac"),
     },
     {
       term: "Kita",
       meaning: "We, including you.",
       pronunciation: "ki-ta",
       usage: "From this lesson's word list: personal pronouns.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kita.aac"),
     },
     {
       term: "Ngaran",
@@ -1061,6 +1086,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "My name is Pedro. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -1079,12 +1105,14 @@ export const warayLesson1: StructuredLesson = {
           translation: "My name is Pedro. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Yana",
       meaning: "Today",
       pronunciation: "ya-na",
       usage: "Used in self-introduction.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Edad",
@@ -1098,6 +1126,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Anyos",
@@ -1111,6 +1140,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I am eighteen years old.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/anyos.aac"),
     },
   ],
   greetings: [
@@ -1131,18 +1161,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "Good morning!",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
     },
     {
       term: "Maupay nga kulop",
       meaning: "Good afternoon",
       pronunciation: "ma-u-pay nga ku-lop",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay nga kulop.aac"),
     },
     {
       term: "Maupay nga gab-i",
       meaning: "Good evening",
       pronunciation: "ma-u-pay nga gab-i",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay nga gab-i.aac"),
     },
     {
       term: "Kumusta",
@@ -1161,6 +1194,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "How are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta.aac"),
     },
     {
       term: "Kumusta ka?",
@@ -1179,6 +1213,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine. Thank you. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
     },
     {
       term: "Maupay man.",
@@ -1197,6 +1232,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine too.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay man.aac"),
     },
     {
       term: "Salamat.",
@@ -1215,18 +1251,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "I'm fine. Thank you. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
     },
     {
       term: "Damo nga salamat.",
       meaning: "Thank you very much.",
       pronunciation: "da-mo nga sa-la-mat",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
     },
     {
       term: "Waray sapayan.",
       meaning: "You're welcome.",
       pronunciation: "wa-ray sa-pa-yan",
       usage: "A common greeting.",
+      audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
     },
     {
       term: "Oo",
@@ -1240,6 +1279,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "Yes, I am fine.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/oo.aac"),
     },
     {
       term: "Diri",
@@ -1253,18 +1293,21 @@ export const warayLesson1: StructuredLesson = {
           translation: "No, I am not okay.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri.aac"),
     },
     {
       term: "Alayon",
       meaning: "Please",
       pronunciation: "a-la-yon",
       usage: "A common responses and expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/alayon.aac"),
     },
     {
       term: "Pasayloa ako.",
       meaning: "I'm sorry.",
       pronunciation: "pa-say-lo-a a-ko",
       usage: "A common responses and expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pasayloa ako.aac"),
     },
     {
       term: "Pasaylo.",
@@ -1379,6 +1422,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "My name is Pedro. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -1397,12 +1441,14 @@ export const warayLesson1: StructuredLesson = {
           translation: "My name is Pedro. And you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Yana",
       meaning: "Today",
       pronunciation: "ya-na",
       usage: "Used in self-introduction.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Edad",
@@ -1416,6 +1462,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Anyos",
@@ -1429,6 +1476,7 @@ export const warayLesson1: StructuredLesson = {
           translation: "I am eighteen years old.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/anyos.aac"),
     },
   ],
   patterns: [
@@ -1467,10 +1515,12 @@ export const warayLesson1: StructuredLesson = {
     {
       text: "An akon ngaran hi Ana.",
       meaning: "My name is Ana.",
+      audioUrl: require("../../assets/audio/Lesson Waray/an akon ngaran hi ana.aac"),
     },
     {
       text: "Taga Samar ako.",
       meaning: "I am from Samar. / I am from Western Samar.",
+      audioUrl: require("../../assets/audio/Lesson Waray/taga samar ako.aac"),
     },
     {
       text: "Taga Pilipinas ako.",
@@ -1479,22 +1529,27 @@ export const warayLesson1: StructuredLesson = {
     {
       text: "Nalilipay ako nga makilala ka.",
       meaning: "I am happy to meet you.",
+      audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
     },
     {
       text: "Ano an imo ngaran?",
       meaning: "What is your name?",
+      audioUrl: require("../../assets/audio/Lesson Waray/ano an imo ngaran.aac"),
     },
     {
       text: "Kumusta ka?",
       meaning: "How are you?",
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
     },
     {
       text: "Taga diin ka?",
       meaning: "Where are you from?",
+      audioUrl: require("../../assets/audio/Lesson Waray/taga diin ka.aac"),
     },
     {
       text: "Pira na an imo edad?",
       meaning: "How old are you?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pera na an imo edad.aac"),
     },
     {
       text: "Okay ka la?",
@@ -1507,10 +1562,12 @@ export const warayLesson1: StructuredLesson = {
     {
       text: "Maupay man.",
       meaning: "I am fine.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maupay man.aac"),
     },
     {
       text: "Disiotso anyos ako.",
       meaning: "I am eighteen years old.",
+      audioUrl: require("../../assets/audio/Lesson Waray/disiotso anyos ako.aac"),
     },
     {
       text: "Oo, maupay man.",
@@ -1541,16 +1598,19 @@ export const warayLesson1: StructuredLesson = {
           speaker: "Ana",
           text: "Maupay nga aga!",
           translation: "Good morning!",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Maria",
           text: "Maupay nga aga!",
           translation: "Good morning!",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Ana",
           text: "Kumusta ka?",
           translation: "How are you?",
+          audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
         },
         {
           speaker: "Maria",
@@ -1587,6 +1647,7 @@ export const warayLesson1: StructuredLesson = {
           speaker: "Pedro",
           text: "Nalilipay ako nga makilala ka.",
           translation: "I am happy to meet you.",
+          audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
         },
         {
           speaker: "Juan",
@@ -1603,16 +1664,19 @@ export const warayLesson1: StructuredLesson = {
           speaker: "Maria",
           text: "Kumusta ka?",
           translation: "How are you?",
+          audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
         },
         {
           speaker: "Ana",
           text: "Maupay man.",
           translation: "I'm fine.",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupay man.aac"),
         },
         {
           speaker: "Maria",
           text: "Taga diin ka?",
           translation: "Where are you from?",
+          audioUrl: require("../../assets/audio/Lesson Waray/taga diin ka.aac"),
         },
         {
           speaker: "Ana",

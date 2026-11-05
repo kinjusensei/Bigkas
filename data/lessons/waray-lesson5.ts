@@ -684,12 +684,14 @@ export const warayLesson5: StructuredLesson = {
         text: "Amo ini an akon pamilya.",
         respelling: "A-mo I-ni an A-kon pa-MIL-ya",
         meaning: "This is my family.",
+        audioUrl: require("../../assets/audio/Lesson Waray/amo ini an akon pamilya.aac"),
       },
       {
         id: "2",
         text: "May usa ako nga bugto nga lalaki.",
         respelling: "May U-sa A-ko nga BUG-to nga la-LA-ki",
         meaning: "I have one brother.",
+        audioUrl: require("../../assets/audio/Lesson Waray/may usa ako nga bugto nga lalaki.aac"),
       },
       {
         id: "3",
@@ -702,6 +704,7 @@ export const warayLesson5: StructuredLesson = {
         text: "Hinigugma ko an akon pamilya.",
         respelling: "hi-ni-GUG-ma ko an A-kon pa-MIL-ya",
         meaning: "I love my family.",
+        audioUrl: require("../../assets/audio/Lesson Waray/hinigugma ko an akon pamilya.aac"),
       },
       {
         id: "5",
@@ -750,6 +753,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Your family is lovely.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pamilya.aac"),
     },
     {
       term: "Tatay",
@@ -768,6 +772,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "This is my father.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/tatay.aac"),
     },
     {
       term: "Nanay",
@@ -786,24 +791,28 @@ export const warayLesson5: StructuredLesson = {
           translation: "This is my mother.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/nanay.aac"),
     },
     {
       term: "Kag-anak",
       meaning: "Parents",
       pronunciation: "kag-A-nak",
       usage: "From this lesson's word list: immediate family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kag-anak.aac"),
     },
     {
       term: "Anak nga lalaki",
       meaning: "Son",
       pronunciation: "A-nak nga la-LA-ki",
       usage: "From this lesson's word list: immediate family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/anak nga lalaki.aac"),
     },
     {
       term: "Anak nga babaye",
       meaning: "Daughter",
       pronunciation: "A-nak nga ba-BA-ye",
       usage: "From this lesson's word list: immediate family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/anak nga babaye.aac"),
     },
     {
       term: "Anak",
@@ -829,6 +838,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "I have one brother.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bugto nga lalaki.aac"),
     },
     {
       term: "Bugto nga babaye",
@@ -842,6 +852,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "I have one sister.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bugto nga babaye.aac"),
     },
     {
       term: "Bugto",
@@ -860,18 +871,21 @@ export const warayLesson5: StructuredLesson = {
           translation: "Yes, I have two siblings.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/bugto.aac"),
     },
     {
       term: "Magurang",
       meaning: "Older sibling",
       pronunciation: "ma-GOO-rang",
       usage: "From this lesson's word list: immediate family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/magurang.aac"),
     },
     {
       term: "Manghod",
       meaning: "Younger sibling",
       pronunciation: "MANG-hod",
       usage: "From this lesson's word list: immediate family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/manghod.aac"),
     },
     {
       term: "Lolo",
@@ -885,6 +899,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "This is my grandfather.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/lolo.aac"),
     },
     {
       term: "Lola",
@@ -898,6 +913,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "This is my grandmother.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/lola.aac"),
     },
     {
       term: "Lolo ngan Lola",
@@ -910,12 +926,14 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Uncle",
       pronunciation: "TI-yo",
       usage: "From this lesson's word list: extended family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/tiyo.aac"),
     },
     {
       term: "Tiya",
       meaning: "Aunt",
       pronunciation: "TI-ya",
       usage: "From this lesson's word list: extended family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/tiya.aac"),
     },
     {
       term: "Ig-agaw",
@@ -940,6 +958,7 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Grandchild",
       pronunciation: "A-po",
       usage: "From this lesson's word list: extended family members.",
+      audioUrl: require("../../assets/audio/Lesson Waray/apo.aac"),
     },
     {
       term: "Pariente",
@@ -958,6 +977,7 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Wife",
       pronunciation: "a-SA-wa",
       usage: "From this lesson's word list: family and relationship vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/asawa.aac"),
     },
     {
       term: "Kasado",
@@ -976,6 +996,7 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Family member",
       pronunciation: "ka-pa-MIL-ya",
       usage: "From this lesson's word list: family and relationship vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kapamilya.aac"),
     },
     {
       term: "Hinigugma",
@@ -989,6 +1010,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "I love my family.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hinigugma.aac"),
     },
     {
       term: "Higugmaon",
@@ -1008,6 +1030,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "We are together at home.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Mag-upod",
@@ -1026,6 +1049,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "It is nice for the family to be together.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/mag-upod.aac"),
     },
     {
       term: "Akon",
@@ -1044,6 +1068,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Who is this one?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/akon.aac"),
     },
     {
       term: "Imo",
@@ -1062,6 +1087,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Your family is lovely.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/imo.aac"),
     },
     {
       term: "Iya",
@@ -1075,6 +1101,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "His/Her sibling",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/iya.aac"),
     },
     {
       term: "Amon",
@@ -1093,6 +1120,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Yes, our family is big.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/amon.aac"),
     },
     {
       term: "Aton",
@@ -1106,6 +1134,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Our family (including you)",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/aton.aac"),
     },
     {
       term: "Ira",
@@ -1119,6 +1148,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "Their grandfather",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/ira.aac"),
     },
   ],
   greetings: [
@@ -1133,6 +1163,7 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Wife",
       pronunciation: "a-SA-wa",
       usage: "From this lesson's word list: family and relationship vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/asawa.aac"),
     },
     {
       term: "Kasado",
@@ -1151,6 +1182,7 @@ export const warayLesson5: StructuredLesson = {
       meaning: "Family member",
       pronunciation: "ka-pa-MIL-ya",
       usage: "From this lesson's word list: family and relationship vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/kapamilya.aac"),
     },
     {
       term: "Hinigugma",
@@ -1164,6 +1196,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "I love my family.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/hinigugma.aac"),
     },
     {
       term: "Higugmaon",
@@ -1183,6 +1216,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "We are together at home.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Mag-upod",
@@ -1201,6 +1235,7 @@ export const warayLesson5: StructuredLesson = {
           translation: "It is nice for the family to be together.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/mag-upod.aac"),
     },
   ],
   patterns: [
@@ -1227,6 +1262,7 @@ export const warayLesson5: StructuredLesson = {
       text: "Amo ini an akon pamilya.",
       meaning: "This is my family.",
       pronunciation: "A-mo I-ni an A-kon pa-MIL-ya",
+      audioUrl: require("../../assets/audio/Lesson Waray/amo ini an akon pamilya.aac"),
     },
     {
       text: "Amo ini an akon tatay.",
@@ -1242,6 +1278,7 @@ export const warayLesson5: StructuredLesson = {
       text: "May usa ako nga bugto nga lalaki.",
       meaning: "I have one brother.",
       pronunciation: "May U-sa A-ko nga BUG-to nga la-LA-ki",
+      audioUrl: require("../../assets/audio/Lesson Waray/may usa ako nga bugto nga lalaki.aac"),
     },
     {
       text: "May usa ako nga bugto nga babaye.",
@@ -1252,6 +1289,7 @@ export const warayLesson5: StructuredLesson = {
       text: "Pira an imo bugto?",
       meaning: "How many siblings do you have?",
       pronunciation: "PI-ra an I-mo BUG-to?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira an imo bugto.aac"),
     },
     {
       text: "Duha an akon bugto.",
@@ -1282,6 +1320,7 @@ export const warayLesson5: StructuredLesson = {
       text: "Hinigugma ko an akon pamilya.",
       meaning: "I love my family.",
       pronunciation: "hi-ni-GUG-ma ko an A-kon pa-MIL-ya",
+      audioUrl: require("../../assets/audio/Lesson Waray/hinigugma ko an akon pamilya.aac"),
     },
     {
       text: "Amo ini an akon lolo.",

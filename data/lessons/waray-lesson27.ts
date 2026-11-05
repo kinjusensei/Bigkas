@@ -655,6 +655,7 @@ export const warayLesson27: StructuredLesson = {
         text: "Pwede mo ba ako buligan?",
         respelling: "pweh-deh mo ba? a-ko bu-li-gan",
         meaning: "Can you help me?",
+        audioUrl: require("../../assets/audio/Lesson Waray/puydi mo ba ako buligan.aac"),
       },
       {
         id: "2",
@@ -855,6 +856,7 @@ export const warayLesson27: StructuredLesson = {
       meaning: "Schedule",
       pronunciation: "Is-ke-dyul",
       usage: "From this lesson's word list: school vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/iskedyul.aac"),
     },
     {
       term: "Asignatura",
@@ -1288,6 +1290,7 @@ export const warayLesson27: StructuredLesson = {
     {
       text: "Pwede mo ba ako buligan?",
       meaning: "Can you help me?",
+      audioUrl: require("../../assets/audio/Lesson Waray/puydi mo ba ako buligan.aac"),
     },
     {
       text: "Kinahanglan ko hin bulig hini nga buruhaton.",
@@ -1368,6 +1371,7 @@ export const warayLesson27: StructuredLesson = {
     {
       text: "Pasayloa ako.",
       meaning: "Excuse me.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pasayloa ako.aac"),
     },
     {
       text: "Pwede ba ako magpakiana?",
@@ -1528,6 +1532,7 @@ export const warayLesson27: StructuredLesson = {
           speaker: "Employee",
           text: "Maupay nga aga.",
           translation: "Good morning.",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Supervisor",

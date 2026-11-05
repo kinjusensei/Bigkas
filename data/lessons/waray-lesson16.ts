@@ -1280,6 +1280,7 @@ export const warayLesson16: StructuredLesson = {
           speaker: "Mark",
           text: "Kitaay kita buwas.",
           translation: "See you tomorrow.",
+          audioUrl: require("../../assets/audio/Lesson Waray/kitaay kita buwas.aac"),
         },
       ],
       situation: "Carlo and Mark: Making Plans Despite the Weather.",

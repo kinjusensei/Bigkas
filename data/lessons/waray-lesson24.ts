@@ -1013,12 +1013,14 @@ export const warayLesson24: StructuredLesson = {
           translation: "I agree. First, we need to divide the tasks.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
       meaning: "After",
       pronunciation: "ka-ta-pos",
       usage: "An expression for adding details.",
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Durante",
@@ -1043,6 +1045,7 @@ export const warayLesson24: StructuredLesson = {
           translation: "Do you study every day?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Usahay",
@@ -1500,12 +1503,14 @@ export const warayLesson24: StructuredLesson = {
           translation: "I agree. First, we need to divide the tasks.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
       meaning: "After",
       pronunciation: "ka-ta-pos",
       usage: "An expression for adding details.",
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Durante",
@@ -1530,6 +1535,7 @@ export const warayLesson24: StructuredLesson = {
           translation: "Do you study every day?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/kada adlaw.aac"),
     },
     {
       term: "Usahay",

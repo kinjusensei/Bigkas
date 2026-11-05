@@ -869,6 +869,7 @@ export const warayLesson12: StructuredLesson = {
           translation: "Is there a store near your house?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Eskwelahan",
@@ -1651,6 +1652,7 @@ export const warayLesson12: StructuredLesson = {
     {
       text: "Pwede mo ba ako buligan?",
       meaning: "Can you help me?",
+      audioUrl: require("../../assets/audio/Lesson Waray/puydi mo ba ako buligan.aac"),
     },
   ],
   conversations: [
@@ -1691,11 +1693,13 @@ export const warayLesson12: StructuredLesson = {
           speaker: "Mark",
           text: "Damo nga salamat!",
           translation: "Thank you very much!",
+          audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
         },
         {
           speaker: "Resident",
           text: "Waray sapayan.",
           translation: "You're welcome.",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Mark and Resident: Finding the Market.",

@@ -671,6 +671,7 @@ export const warayLesson9: StructuredLesson = {
         text: "Ano an imo ngaran?",
         respelling: "AH-noh ahn EE-moh NGAH-rahn",
         meaning: "What is your name?",
+        audioUrl: require("../../assets/audio/Lesson Waray/ano an imo ngaran.aac"),
       },
       {
         id: "2",
@@ -695,6 +696,7 @@ export const warayLesson9: StructuredLesson = {
         text: "Taga Samar ako.",
         respelling: "ta-ga sa-mar a-ko",
         meaning: "I am from Samar.",
+        audioUrl: require("../../assets/audio/Lesson Waray/taga samar ako.aac"),
       },
       {
         id: "6",
@@ -835,6 +837,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Hain",
@@ -884,6 +887,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Lugar",
@@ -908,6 +912,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Because I have something to do at home.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Eskwelahan",
@@ -981,6 +986,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Why aren't you going today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -999,6 +1005,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Okay, see you tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Dinhi",
@@ -1036,6 +1043,7 @@ export const warayLesson9: StructuredLesson = {
       meaning: "Yes",
       pronunciation: "oh-OH",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/oo.aac"),
     },
     {
       term: "Diri",
@@ -1054,18 +1062,21 @@ export const warayLesson9: StructuredLesson = {
           translation: "Why aren't you going today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri.aac"),
     },
     {
       term: "Maaram ako",
       meaning: "I know",
       pronunciation: "mah-AH-rahm AH-koh",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maaram ako.aac"),
     },
     {
       term: "Diri ako maaram",
       meaning: "I don't know",
       pronunciation: "DEE-ree AH-koh mah-AH-rahm",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ako maaram.aac"),
     },
     {
       term: "Nasasabtan ko",
@@ -1078,6 +1089,7 @@ export const warayLesson9: StructuredLesson = {
       meaning: "I don't understand",
       pronunciation: "DEE-ree koh nah-sah-SAHB-tahn",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
   ],
   greetings: [
@@ -1196,6 +1208,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       term: "Hain",
@@ -1245,6 +1258,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "How old are you?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/edad.aac"),
     },
     {
       term: "Lugar",
@@ -1269,6 +1283,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Because I have something to do at home.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/balay.aac"),
     },
     {
       term: "Eskwelahan",
@@ -1342,6 +1357,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Why aren't you going today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
@@ -1360,6 +1376,7 @@ export const warayLesson9: StructuredLesson = {
           translation: "Okay, see you tomorrow.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Dinhi",
@@ -1397,6 +1414,7 @@ export const warayLesson9: StructuredLesson = {
       meaning: "Yes",
       pronunciation: "oh-OH",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/oo.aac"),
     },
     {
       term: "Diri",
@@ -1415,18 +1433,21 @@ export const warayLesson9: StructuredLesson = {
           translation: "Why aren't you going today?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/diri.aac"),
     },
     {
       term: "Maaram ako",
       meaning: "I know",
       pronunciation: "mah-AH-rahm AH-koh",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/maaram ako.aac"),
     },
     {
       term: "Diri ako maaram",
       meaning: "I don't know",
       pronunciation: "DEE-ree AH-koh mah-AH-rahm",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ako maaram.aac"),
     },
     {
       term: "Nasasabtan ko",
@@ -1439,6 +1460,7 @@ export const warayLesson9: StructuredLesson = {
       meaning: "I don't understand",
       pronunciation: "DEE-ree koh nah-sah-SAHB-tahn",
       usage: "From this lesson's word list: short answers and responses.",
+      audioUrl: require("../../assets/audio/Lesson Waray/diri ko nasasabtan.aac"),
     },
   ],
   patterns: [
@@ -1464,6 +1486,7 @@ export const warayLesson9: StructuredLesson = {
       text: "Ano an imo ngaran?",
       meaning: "What is your name?",
       pronunciation: "AH-noh ahn EE-moh NGAH-rahn",
+      audioUrl: require("../../assets/audio/Lesson Waray/ano an imo ngaran.aac"),
     },
     {
       text: "Hin-o ka?",
@@ -1474,6 +1497,7 @@ export const warayLesson9: StructuredLesson = {
       text: "Taga diin ka?",
       meaning: "Where are you from?",
       pronunciation: "tah-gah DEE-in kah",
+      audioUrl: require("../../assets/audio/Lesson Waray/taga diin ka.aac"),
     },
     {
       text: "Hain an iyo balay?",
@@ -1494,16 +1518,19 @@ export const warayLesson9: StructuredLesson = {
       text: "Kumusta ka?",
       meaning: "How are you?",
       pronunciation: "koo-MOOS-tah kah",
+      audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
     },
     {
       text: "Pira na an imo edad?",
       meaning: "How old are you?",
       pronunciation: "PEE-rah nah ahn EE-moh eh-DAHD",
+      audioUrl: require("../../assets/audio/Lesson Waray/pera na an imo edad.aac"),
     },
     {
       text: "Pira ini?",
       meaning: "How much is this?",
       pronunciation: "PEE-rah EE-nee",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
     },
     {
       text: "Ano an imo karuyag?",
@@ -1551,6 +1578,7 @@ export const warayLesson9: StructuredLesson = {
     {
       text: "An akon ngaran hi Ana.",
       meaning: "My name is Ana.",
+      audioUrl: require("../../assets/audio/Lesson Waray/an akon ngaran hi ana.aac"),
     },
     {
       text: "Karuyag ko kumaon.",
@@ -1563,6 +1591,7 @@ export const warayLesson9: StructuredLesson = {
     {
       text: "Taga Samar ako.",
       meaning: "I am from Samar.",
+      audioUrl: require("../../assets/audio/Lesson Waray/taga samar ako.aac"),
     },
     {
       text: "Aada ha Samar an amon balay.",
@@ -1627,6 +1656,7 @@ export const warayLesson9: StructuredLesson = {
     {
       text: "Disiotso anyos ako.",
       meaning: "I am eighteen years old.",
+      audioUrl: require("../../assets/audio/Lesson Waray/disiotso anyos ako.aac"),
     },
     {
       text: "Baynte pesos ini.",
@@ -1645,16 +1675,19 @@ export const warayLesson9: StructuredLesson = {
           speaker: "Ana",
           text: "Maupay nga aga!",
           translation: "Good morning!",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Ben",
           text: "Maupay nga aga!",
           translation: "Good morning!",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Ana",
           text: "Ano an imo ngaran?",
           translation: "What is your name?",
+          audioUrl: require("../../assets/audio/Lesson Waray/ano an imo ngaran.aac"),
         },
         {
           speaker: "Ben",
@@ -1670,11 +1703,13 @@ export const warayLesson9: StructuredLesson = {
           speaker: "Ben",
           text: "Taga diin ka?",
           translation: "Where are you from?",
+          audioUrl: require("../../assets/audio/Lesson Waray/taga diin ka.aac"),
         },
         {
           speaker: "Ana",
           text: "Taga Samar ako.",
           translation: "I am from Samar.",
+          audioUrl: require("../../assets/audio/Lesson Waray/taga samar ako.aac"),
         },
       ],
       situation: "Ana and Ben: Meeting a New Friend.",
@@ -1711,6 +1746,7 @@ export const warayLesson9: StructuredLesson = {
           speaker: "Liza",
           text: "Waray sapayan!",
           translation: "You're welcome!",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Mark and Liza: Asking for Directions.",

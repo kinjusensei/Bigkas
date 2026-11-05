@@ -846,18 +846,21 @@ export const warayLesson28: StructuredLesson = {
       meaning: "Today",
       pronunciation: "Ya-na",
       usage: "From this lesson's word list: time and sequence vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/yana.aac"),
     },
     {
       term: "Buwas",
       meaning: "Tomorrow",
       pronunciation: "Bu-was",
       usage: "From this lesson's word list: time and sequence vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/buwas.aac"),
     },
     {
       term: "Antes",
       meaning: "Before",
       pronunciation: "An-tes",
       usage: "From this lesson's word list: time and sequence vocabulary.",
+      audioUrl: require("../../assets/audio/Lesson Waray/antes.aac"),
     },
     {
       term: "Katapos",
@@ -876,6 +879,7 @@ export const warayLesson28: StructuredLesson = {
           translation: "What did you do after that?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/katapos.aac"),
     },
     {
       term: "Siyahan",

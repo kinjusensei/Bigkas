@@ -1096,12 +1096,14 @@ export const warayLesson30: StructuredLesson = {
         text: "Kumusta ka?",
         respelling: "ku-mus-ta ka",
         meaning: "How are you?",
+        audioUrl: require("../../assets/audio/Lesson Waray/kumusta ka.aac"),
       },
       {
         id: "2",
         text: "Diri ako maaram.",
         respelling: "di-ri a-ko ma-a-ram",
         meaning: "I do not know.",
+        audioUrl: require("../../assets/audio/Lesson Waray/diri ako maaram.aac"),
       },
       {
         id: "3",
@@ -1126,6 +1128,7 @@ export const warayLesson30: StructuredLesson = {
         text: "Nalilipay ako nga makilala ka.",
         respelling: "nah-lee-lee-PAI AH-koh ngah mah-kee-LAH-lah kah",
         meaning: "I am happy to meet you.",
+        audioUrl: require("../../assets/audio/Lesson Waray/nalilipay ako nga makilala ka.aac"),
       },
       {
         id: "7",

@@ -1098,6 +1098,7 @@ export const warayLesson17: StructuredLesson = {
           translation: "What would you like to drink?",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/usa.aac"),
     },
     {
       term: "Duha",
@@ -1111,12 +1112,14 @@ export const warayLesson17: StructuredLesson = {
           translation: "Two servings, please.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/duha.aac"),
     },
     {
       term: "Tulo",
       meaning: "Three",
       pronunciation: "Tu-lo",
       usage: "From this lesson's word list: asking about quantities.",
+      audioUrl: require("../../assets/audio/Lesson Waray/tulo.aac"),
     },
     {
       term: "Gutiay",
@@ -1148,12 +1151,14 @@ export const warayLesson17: StructuredLesson = {
           translation: "Thank you very much.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/damo.aac"),
     },
     {
       term: "Dugang",
       meaning: "More",
       pronunciation: "Du-gang",
       usage: "From this lesson's word list: asking about quantities.",
+      audioUrl: require("../../assets/audio/Lesson Waray/dugang.aac"),
     },
     {
       term: "Igo",
@@ -1178,6 +1183,7 @@ export const warayLesson17: StructuredLesson = {
           translation: "Okay.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/alayon.aac"),
     },
     {
       term: "Salamat",
@@ -1196,6 +1202,7 @@ export const warayLesson17: StructuredLesson = {
           translation: "You're welcome.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/salamat.aac"),
     },
     {
       term: "Waray sapayan",
@@ -1214,12 +1221,14 @@ export const warayLesson17: StructuredLesson = {
           translation: "You're welcome.",
         },
       ],
+      audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
     },
     {
       term: "Pasayloa ako",
       meaning: "I'm sorry",
       pronunciation: "Pa-say-lo-a a-ko",
       usage: "A common expression.",
+      audioUrl: require("../../assets/audio/Lesson Waray/pasayloa ako.aac"),
     },
   ],
   greetings: [
@@ -1453,6 +1462,7 @@ export const warayLesson17: StructuredLesson = {
     {
       text: "Pira ini?",
       meaning: "How much is this?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira ini.aac"),
     },
     {
       text: "Pira an pagkaon?",
@@ -1473,6 +1483,7 @@ export const warayLesson17: StructuredLesson = {
     {
       text: "Pira?",
       meaning: "How many?",
+      audioUrl: require("../../assets/audio/Lesson Waray/pira.aac"),
     },
     {
       text: "Pira ini nga pagkaon?",
@@ -1493,6 +1504,7 @@ export const warayLesson17: StructuredLesson = {
     {
       text: "Damo nga salamat",
       meaning: "Thank you very much",
+      audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
     },
     {
       text: "Hulat anay, alayon",
@@ -1539,6 +1551,7 @@ export const warayLesson17: StructuredLesson = {
           speaker: "Customer",
           text: "Maupay nga aga.",
           translation: "Good morning.",
+          audioUrl: require("../../assets/audio/Lesson Waray/maupaya nga aga.aac"),
         },
         {
           speaker: "Server",
@@ -1574,6 +1587,7 @@ export const warayLesson17: StructuredLesson = {
           speaker: "Server",
           text: "Sige.",
           translation: "Okay.",
+          audioUrl: require("../../assets/audio/Lesson Waray/sige.aac"),
         },
       ],
       situation: "Customer and Server: Ordering at a Local Eatery.",
@@ -1651,11 +1665,13 @@ export const warayLesson17: StructuredLesson = {
           speaker: "Carlo",
           text: "Damo nga salamat.",
           translation: "Thank you very much.",
+          audioUrl: require("../../assets/audio/Lesson Waray/damo nga salamat.aac"),
         },
         {
           speaker: "Server",
           text: "Waray sapayan.",
           translation: "You're welcome.",
+          audioUrl: require("../../assets/audio/Lesson Waray/waray sapayan.aac"),
         },
       ],
       situation: "Carlo and Mark and Server: Asking for the Bill.",

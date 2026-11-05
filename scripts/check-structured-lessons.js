@@ -16,6 +16,11 @@ const ts = require("typescript");
 const root = path.resolve(__dirname, "..");
 const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "bigkas-lessons-"));
 
+// Lessons require() their recordings; only the app can load those.
+require.extensions[".aac"] = (module) => {
+  module.exports = 0;
+};
+
 function transpile(relativePath) {
   const source = fs.readFileSync(path.join(root, relativePath), "utf8");
   const { outputText } = ts.transpileModule(source, {

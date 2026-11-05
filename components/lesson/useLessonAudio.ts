@@ -2,7 +2,7 @@ import { createAudioPlayer } from "expo-audio";
 import * as Speech from "expo-speech";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { LessonDialect } from "../../types/structuredLesson";
+import { LessonAudioSource, LessonDialect } from "../../types/structuredLesson";
 
 // Same playback rules as the story term card
 // (app/components/Story/TermExplanationModal.tsx) and the reading screen:
@@ -18,7 +18,7 @@ const TTS_LOCALE_BY_DIALECT: Record<LessonDialect, string | null> = {
 
 export interface LessonAudioClip {
   text: string;
-  audioUrl?: string;
+  audioUrl?: LessonAudioSource;
 }
 
 export function useLessonAudio(dialect: LessonDialect) {
@@ -95,7 +95,11 @@ export function useLessonAudio(dialect: LessonDialect) {
       const clip = playable[index];
       try {
         if (clip.audioUrl) {
-          const player = createAudioPlayer({ uri: clip.audioUrl });
+          const player = createAudioPlayer(
+            typeof clip.audioUrl === "string"
+              ? { uri: clip.audioUrl }
+              : clip.audioUrl,
+          );
           playerRef.current = player;
           subscriptionRef.current = player.addListener(
             "playbackStatusUpdate",
