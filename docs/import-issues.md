@@ -473,6 +473,88 @@ Meaning of each heading:
 - "Sentence correction and construction" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Verb aspect identification + Verb form transformation + Sentence correction and construction = 40 XP.
 
+### Tagalog 26: Idiomatic Expressions and Common Sayings (PDF pages 509–533)
+
+**Missing answer key**
+
+- Activity 1: Identify the Meaning of the Idiom (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Match the Proverb with Its Lesson (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Idiom identification" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Proverb matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Context interpretation" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Sentence construction" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Idiom identification + Proverb matching + Context interpretation + Sentence construction + Dialogue construction = 60 XP.
+
+### Tagalog 27: Workplace and School Conversations (PDF pages 534–556)
+
+**Missing answer key**
+
+- Activity 1: Identify the Appropriate Expression (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Lesson Proper" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Lesson Proper + Guided Conversations + Practice Activities = 40 XP.
+
+### Tagalog 28: Storytelling and Narration (PDF pages 557–583)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Lesson Proper" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Lesson Proper + Guided Conversations + Practice Activities = 40 XP.
+
+### Tagalog 29: Situational Dialogues and Role-Playing (PDF pages 584–605)
+
+**Missing answer key**
+
+- Activity 1: Match the Situation with the Appropriate Expression (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Identify the Appropriate Response (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Lesson Proper" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (20 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Lesson Proper + Guided Situational Dialogues + Practice Activities = 40 XP.
+
+### Tagalog 30: Comprehensive Language Assessment (PDF pages 606–631)
+
+**Not scored**
+
+- Assessment PART D: Listening Comprehension: 7 question(s) need recordings that do not exist yet; saved but not scored.
+- Assessment PART F: Writing and Narration: 5 question(s) are not multiple choice; saved but not scored.
+- The score uses 48 of the PDF's 60 assessment questions.
+
+**Passing score**
+
+- The PDF sets this lesson's passing score at 80%, not 70%. The PDF's value was used.
+
+**XP moved**
+
+- "Grammar Review" (10 XP) has no screen in this lesson, so its XP is earned with vocabulary.
+- "Reading Comprehension" (15 XP) has no screen in this lesson, so its XP is earned with vocabulary.
+- "Listening Comprehension" (15 XP) has no screen in this lesson, so its XP is earned with vocabulary.
+- "Practical Communication" (20 XP) has no screen in this lesson, so its XP is earned with vocabulary.
+- "Writing and Narration" (30 XP) has no screen in this lesson, so its XP is earned with vocabulary.
+- XP rows merged under vocabulary: Vocabulary Review + Grammar Review + Reading Comprehension + Listening Comprehension + Practical Communication + Writing and Narration = 100 XP.
+
+**Lesson information**
+
+- No guided conversation found.
+- No practice activities section.
+
+**Other text**
+
+- Vocabulary text without a table, kept as a note: C. Grammar Review / Learners should remember the following concepts: / • Personal pronouns and possessive forms. / • Common verbs and their aspects. / • Sentenc
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -494,3 +576,8 @@ Meaning of each heading:
 | Tagalog 23: Agreeing and Disagreeing | Advanced | 53 | 22 | 23 | 0 | 37 | 15 | 0 | 80 |
 | Tagalog 24: Advanced Sentence Construction | Advanced | 28 | 10 | 18 | 0 | 38 | 15 | 0 | 80 |
 | Tagalog 25: Verb Forms and Tenses | Advanced | 52 | 10 | 18 | 0 | 54 | 15 | 0 | 80 |
+| Tagalog 26: Idiomatic Expressions and Common Sayings | Advanced | 51 | 15 | 17 | 0 | 46 | 15 | 0 | 80 |
+| Tagalog 27: Workplace and School Conversations | Advanced | 60 | 0 | 30 | 0 | 33 | 15 | 0 | 80 |
+| Tagalog 28: Storytelling and Narration | Advanced | 75 | 0 | 21 | 0 | 33 | 15 | 0 | 80 |
+| Tagalog 29: Situational Dialogues and Role-Playing | Advanced | 40 | 0 | 46 | 0 | 31 | 15 | 0 | 80 |
+| Tagalog 30: Comprehensive Language Assessment | Advanced | 24 | 0 | 0 | 0 | 0 | 48 | 12 | 100 |
