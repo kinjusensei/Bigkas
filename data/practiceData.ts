@@ -488,221 +488,46 @@ const tagalogPracticeLevels: PracticeLevel[] = [
   {
     id: 16,
     lessonId: "tagalog_16",
-    title: "Compound Words & Expressions",
-    subtitle: "Learn words made by joining two words.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Bahaghari",
-        example: "Rainbow",
-        howToUse: "May bahaghari sa langit.",
-        howToUseTranslation: "There is a rainbow in the sky.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Bahaghari", meaning: "Rainbow" }],
-      },
-      {
-        id: 2,
-        text: "Takipsilim",
-        example: "Dusk / Twilight",
-        howToUse: "Umuuwi kami tuwing takipsilim.",
-        howToUseTranslation: "We go home every dusk.",
-        expectedExpression: "neutral",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Takipsilim", meaning: "Dusk / Twilight" }],
-      },
-      {
-        id: 3,
-        text: "Balikbayan",
-        example: "A Filipino returning home from abroad",
-        howToUse: "Balikbayan ang tita ko.",
-        howToUseTranslation:
-          "My aunt is a balikbayan (she came home from abroad).",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [
-          {
-            word: "Balikbayan",
-            meaning: "A Filipino returning home from abroad",
-          },
-        ],
-      },
-    ],
+    title: "Constructing More Complex Sentences",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 17,
     lessonId: "tagalog_17",
-    title: "Honorifics & Social Courtesy",
-    subtitle: "Show respect to elders and strangers.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Po",
-        example: "Respect word (for elders and strangers)",
-        howToUse: "Salamat po.",
-        howToUseTranslation: "Thank you (said respectfully).",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [
-          { word: "Po", meaning: "Respect word (for elders and strangers)" },
-        ],
-      },
-      {
-        id: 2,
-        text: "Opo",
-        example: "Yes (respectful)",
-        howToUse: "Opo, kumain na po ako.",
-        howToUseTranslation: "Yes, I have already eaten.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Opo", meaning: "Yes (respectful)" }],
-      },
-      {
-        id: 3,
-        text: "Mano po",
-        example: "Asking an elder for a blessing",
-        howToUse: "Mano po, Lola.",
-        howToUseTranslation: "Your blessing, please, Grandma.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Mano po", meaning: "Asking an elder for a blessing" }],
-      },
-    ],
+    title: "Ordering Food",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 18,
     lessonId: "tagalog_18",
-    title: "Idiomatic Tagalog Expressions",
-    subtitle: "Learn sayings that don't mean exactly what they say.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Bahala na",
-        example: "Come what may",
-        howToUse: "Bahala na kung ano ang mangyari.",
-        howToUseTranslation: "Come what may, whatever happens.",
-        expectedExpression: "neutral",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Bahala na", meaning: "Come what may" }],
-      },
-      {
-        id: 2,
-        text: "Mababaw ang luha",
-        example: "Easily moved to tears",
-        howToUse: "Mababaw ang luha ni Ate.",
-        howToUseTranslation: "My older sister cries easily.",
-        expectedExpression: "sad",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Mababaw ang luha", meaning: "Easily moved to tears" }],
-      },
-      {
-        id: 3,
-        text: "Nagbibilang ng poste",
-        example: "Jobless (literally: counting lamp posts)",
-        howToUse: "Nagbibilang pa siya ng poste.",
-        howToUseTranslation: "He / She still doesn't have a job.",
-        expectedExpression: "sad",
-        expectedTone: "low", // TODO: verify
-        words: [
-          {
-            word: "Nagbibilang ng poste",
-            meaning: "Jobless (literally: counting lamp posts)",
-          },
-        ],
-      },
-    ],
+    title: "Shopping and Buying",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 19,
     lessonId: "tagalog_19",
-    title: "Storytelling & Linking Words",
-    subtitle: "Connect your ideas to tell a story.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Noong unang panahon",
-        example: "Once upon a time",
-        howToUse: "Noong unang panahon, may isang hari.",
-        howToUseTranslation: "Once upon a time, there was a king.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Noong unang panahon", meaning: "Once upon a time" }],
-      },
-      {
-        id: 2,
-        text: "Pagkatapos",
-        example: "After that / Then",
-        howToUse: "Pagkatapos, umuwi na sila.",
-        howToUseTranslation: "After that, they went home.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Pagkatapos", meaning: "After that / Then" }],
-      },
-      {
-        id: 3,
-        text: "Kaya",
-        example: "So / Therefore",
-        howToUse: "Umulan, kaya hindi kami lumabas.",
-        howToUseTranslation: "It rained, so we didn't go out.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Kaya", meaning: "So / Therefore" }],
-      },
-    ],
+    title: "Talking About Daily Activities",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 20,
     lessonId: "tagalog_20",
-    title: "Tagalog Mastery Boss",
-    subtitle: "Put everything together in one final challenge.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Ikinagagalak kitang makilala",
-        example: "Nice to meet you",
-        howToUse: "Ikinagagalak kitang makilala, Ana.",
-        howToUseTranslation: "Nice to meet you, Ana.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [
-          { word: "Ikinagagalak kitang makilala", meaning: "Nice to meet you" },
-        ],
-      },
-      {
-        id: 2,
-        text: "Mag-ingat ka",
-        example: "Take care",
-        howToUse: "Mag-ingat ka sa biyahe.",
-        howToUseTranslation: "Take care on your trip.",
-        expectedExpression: "happy",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Mag-ingat ka", meaning: "Take care" }],
-      },
-      {
-        id: 3,
-        text: "Hanggang sa muli",
-        example: "Until next time",
-        howToUse: "Paalam, hanggang sa muli!",
-        howToUseTranslation: "Goodbye, until next time!",
-        expectedExpression: "sad",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Hanggang sa muli", meaning: "Until next time" }],
-      },
-    ],
+    title: "Describing People, Places, and Things",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 ];
 

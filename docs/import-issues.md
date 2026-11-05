@@ -14,6 +14,10 @@ These are candidates from reading and from comparing similar words. They are sti
 
 These notes are written for the authors, but they are in the lesson intros and will show to learners as written. Tell me if they should be hidden.
 
+- **Tagalog 16** (`pronunciationTip`): The following are simplified pronunciation guides for learners. They are not a substitute for audio recorded and reviewed by a Filipino language speaker.
+- **Tagalog 17** (`pronunciationTip`): These are simplified pronunciation guides for practice. Audio recordings reviewed by Filipino speakers should be used in the final application.
+- **Tagalog 18** (`pronunciationTip`): These are simplified pronunciation guides for learners. Final audio recordings should be reviewed by a Filipino language speaker.
+- **Tagalog 19** (`pronunciationTip`): These are simplified pronunciation guides. They should be supplemented with audio recordings reviewed by Filipino language speakers.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -284,6 +288,115 @@ Meaning of each heading:
 
 - XP rows merged under sentences: Complete Sentence Structure Exercises + Complete Sentence Construction Challenge = 30 XP.
 
+### Tagalog 16: Constructing More Complex Sentences (PDF pages 273–290)
+
+**Missing answer key**
+
+- Activity 1: Identify the Connector (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**Not scored**
+
+- Assessment Part B: Fill in the Blanks: 5 question(s) are not multiple choice; saved but not scored.
+- Assessment Part C: Sentence Construction: 5 question(s) are not multiple choice; saved but not scored.
+- The score uses 5 of the PDF's 15 assessment questions.
+
+**XP moved**
+
+- "Complete the connector exercises" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the sentence construction activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the connector exercises + Finish the guided conversation activity + Complete the sentence construction activities = 40 XP.
+
+### Tagalog 17: Ordering Food (PDF pages 291–313)
+
+**Missing answer key**
+
+- Activity 1: Match the Vocabulary (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Choose the Correct Expression (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**Not scored**
+
+- Assessment Part B: Fill in the Blanks: 5 question(s) are not multiple choice; saved but not scored.
+- Assessment Part C: Situational Responses: 5 question(s) are not multiple choice; saved but not scored.
+- The score uses 5 of the PDF's 15 assessment questions.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Complete the vocabulary lesson + Complete the ordering expression exercises = 25 XP.
+- XP rows merged under conversation: Finish the guided conversation activity + Complete the restaurant role-playing activity = 25 XP.
+
+**Pronunciation**
+
+- Pronunciation guide lists "mairerekomenda" (mah-ee-reh-reh-koh-men-dah), which is not in the vocabulary tables, so it was not added.
+
+### Tagalog 18: Shopping and Buying (PDF pages 314–338)
+
+**Missing answer key**
+
+- Activity 1: Match the Vocabulary (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Choose the Correct Expression (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**Not scored**
+
+- Assessment Part B: Fill in the Blanks: 5 question(s) are not multiple choice; saved but not scored.
+- Assessment Part C: Situational Responses: 5 question(s) are not multiple choice; saved but not scored.
+- The score uses 5 of the PDF's 15 assessment questions.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Complete the vocabulary lesson + Complete the shopping expression exercises = 25 XP.
+- XP rows merged under conversation: Finish the guided conversation activity + Complete the shopping role-playing activity = 25 XP.
+
+### Tagalog 19: Talking About Daily Activities (PDF pages 339–362)
+
+**Missing answer key**
+
+- Activity 1: Match the Vocabulary (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Identify the Frequency Expression (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**Answer key problem**
+
+- Assessment question 3: key says "C – Rarely" but choice C reads "Bihira". The letter was used.
+- Assessment question 5: key says "A – To rest" but choice A reads "Magpahinga". The letter was used.
+
+**Not scored**
+
+- Assessment Part B: Fill in the Blanks: 5 question(s) are not multiple choice; saved but not scored.
+- Assessment Part C: Sentence Construction: 5 question(s) are not multiple choice; saved but not scored.
+- The score uses 5 of the PDF's 15 assessment questions.
+
+**XP moved**
+
+- "Complete the daily routine exercises" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the personal routine paragraph" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the daily routine exercises + Finish the guided conversation activity + Complete the personal routine paragraph = 40 XP.
+
+**Pronunciation**
+
+- Pronunciation guide lists "iskedyul" (ees-keh-dyool), which is not in the vocabulary tables, so it was not added.
+
+### Tagalog 20: Describing People, Places, and Things (PDF pages 363–387)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Choose the Appropriate Description (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Finish Activities 1–3" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Finish Activities 4–6" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Complete the guided conversations + Finish Activities 1–3 + Finish Activities 4–6 = 40 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -295,3 +408,8 @@ Meaning of each heading:
 | Tagalog 13: Asking for Information | Intermediate | 49 | 25 | 27 | 29 | 13 | 10 | 0 | 70 |
 | Tagalog 14: Pronouns and Common Verbs | Intermediate | 60 | 20 | 20 | 39 | 6 | 10 | 0 | 70 |
 | Tagalog 15: Basic Sentence Structure | Intermediate | 49 | 20 | 18 | 13 | 27 | 10 | 0 | 70 |
+| Tagalog 16: Constructing More Complex Sentences | Intermediate | 24 | 0 | 17 | 0 | 30 | 5 | 10 | 70 |
+| Tagalog 17: Ordering Food | Intermediate | 68 | 0 | 22 | 0 | 35 | 5 | 10 | 70 |
+| Tagalog 18: Shopping and Buying | Intermediate | 91 | 0 | 22 | 0 | 35 | 5 | 10 | 70 |
+| Tagalog 19: Talking About Daily Activities | Intermediate | 88 | 0 | 20 | 0 | 30 | 5 | 10 | 70 |
+| Tagalog 20: Describing People, Places, and Things | Intermediate | 76 | 24 | 23 | 0 | 34 | 15 | 0 | 70 |
