@@ -9,8 +9,11 @@ These are candidates from reading and from comparing similar words. They are sti
 | Lesson | Where | What looks wrong |
 |---|---|---|
 | Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
+| Waray 14 | Vocabulary | "Kinahanglan" has "Ki-nang-ha-lan" (same in Waray 22, 23). Waray 13 writes "kee-nahng-LAHN". |
+| Waray 14 | Vocabulary | "Nagtatrabaho hira." has "Nag-tra-tra-ba-ho hi-ra". The word has "ta", not "tra", in the second syllable. |
 | Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
 | Waray 6 | Vocabulary | "Tuba han lubi / Tubig han lubi" has one pronunciation, "TU-big han LU-bi", for the second form only. |
+| Waray 13 | Vocabulary | "Mahimo mo ba igsaysay?" has "ig-sah-SAI", while Waray 22 has "ig-say-say". |
 | Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
 
 ## 2. Text the PDF itself marks as needing review
@@ -715,6 +718,87 @@ Meaning of each heading:
 - "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
 
+### Waray 11: Common Daily Conversations (PDF pages 805–817)
+
+**Missing answer key**
+
+- Activity 1: Match the Expressions (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Phrases = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
+### Waray 12: Giving Directions and Locations (PDF pages 818–830)
+
+**Missing answer key**
+
+- Activity 1: Match the Location Words (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Directions (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Follow the Directions (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Phrases = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
+### Waray 13: Asking for Information (PDF pages 831–843)
+
+**Missing answer key**
+
+- Activity 1: Match the Vocabulary (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Expressions (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Choose the Appropriate Response (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Review + Useful Phrases = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversations + Practice Activities = 25 XP.
+
+### Waray 14: Pronouns and Common Verbs (PDF pages 844–853)
+
+**Missing answer key**
+
+- Activity 2: Match the Verbs (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
+
+**Not scored**
+
+- Assessment : 10 question(s) are not multiple choice; saved but not scored.
+
+**XP moved**
+
+- "Pronoun Identification" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Verb Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Sentence Completion" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Translation Activity" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Pronoun Identification + Verb Matching + Sentence Completion + Translation Activity + Lesson Assessment = 60 XP.
+
+### Waray 15: Basic Sentence Structure (PDF pages 854–869)
+
+**Missing answer key**
+
+- Activity 4: Arrange the Words (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
+
+**Not scored**
+
+- Assessment : 10 question(s) are not multiple choice; saved but not scored.
+
+**XP moved**
+
+- "Sentence Parts Identification" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Negative Sentence Practice" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Question Formation" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Sentence Parts Identification + Negative Sentence Practice + Question Formation + Lesson Assessment = 45 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -751,3 +835,8 @@ Meaning of each heading:
 | Waray 8: Animals and Nature | Beginner | 63 | 14 | 16 | 0 | 21 | 10 | 0 | 60 |
 | Waray 9: Asking and Answering Simple Questions | Beginner | 30 | 12 | 19 | 0 | 20 | 10 | 0 | 60 |
 | Waray 10: Introducing Other People | Beginner | 38 | 16 | 18 | 0 | 20 | 10 | 0 | 60 |
+| Waray 11: Common Daily Conversations | Intermediate | 41 | 16 | 25 | 0 | 22 | 10 | 0 | 60 |
+| Waray 12: Giving Directions and Locations | Intermediate | 43 | 15 | 24 | 0 | 26 | 10 | 0 | 60 |
+| Waray 13: Asking for Information | Intermediate | 44 | 14 | 28 | 0 | 26 | 10 | 0 | 60 |
+| Waray 14: Pronouns and Common Verbs | Intermediate | 54 | 0 | 18 | 0 | 21 | 0 | 10 | 60 |
+| Waray 15: Basic Sentence Structure | Intermediate | 15 | 0 | 18 | 0 | 25 | 0 | 10 | 60 |

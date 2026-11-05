@@ -1,0 +1,1033 @@
+import { StructuredLesson } from "../../types/structuredLesson";
+
+// Waray Lesson 11 — imported from "Lesson Plan.pdf", pages 805–817.
+// The Waray and English text is copied as written, including likely
+// typos, which are listed in docs/import-issues.md. Activities without an
+// answer key or a screen are in extraActivities.
+
+export const warayLesson11: StructuredLesson = {
+  lessonId: "waray_11",
+  dialect: "waray",
+  dialectLabel: "Waray",
+  lessonNumber: 11,
+  title: "Common Daily Conversations",
+  level: "Intermediate",
+  unit: "Unit 1 – Everyday Communication",
+  estimatedDuration: "40–50 minutes",
+  prerequisite: "Beginner Level (Lessons 1–10)",
+  languageVariety: "Waray-Waray",
+  intro: [
+    "Everyday conversations allow people to exchange information, share experiences, and maintain relationships. These conversations may happen at home, in school, at work, in public places, or while spending time with friends.",
+    "At the Beginner Level, you learned how to greet people, introduce yourself, and ask simple questions. In this lesson, you will build on those skills by learning how to maintain a conversation beyond a single question and answer.",
+    "You will practice expressions for asking about someone's day, talking about activities, making plans, inviting someone, and responding naturally.",
+  ],
+  objectivesIntro: "At the end of this lesson, learners should be able to:",
+  objectives: [
+    "Recognize common Waray expressions used in everyday conversations.",
+    "Understand and respond to questions about daily activities.",
+    "Describe familiar routines and activities using simple connected sentences.",
+    "Make and respond to invitations and suggestions.",
+    "Participate in longer conversations in familiar everyday situations.",
+  ],
+  expressionGroups: [
+    {
+      title: "A. Everyday Activities",
+      items: [
+        {
+          term: "Mata",
+          meaning: "Wake up",
+          pronunciation: "MAH-tah",
+        },
+        {
+          term: "Katurog",
+          meaning: "Sleep",
+          pronunciation: "kah-too-ROHG",
+        },
+        {
+          term: "Kumaon",
+          meaning: "Eat",
+          pronunciation: "koo-mah-OHN",
+        },
+        {
+          term: "Uminom",
+          meaning: "Drink",
+          pronunciation: "oo-mee-NOHM",
+        },
+        {
+          term: "Magluto",
+          meaning: "Cook",
+          pronunciation: "mahg-LOO-toh",
+        },
+        {
+          term: "Mag-adal",
+          meaning: "Study",
+          pronunciation: "mahg-AH-dahl",
+        },
+        {
+          term: "Magbasa",
+          meaning: "Read",
+          pronunciation: "mahg-BAH-sah",
+        },
+        {
+          term: "Magsurat",
+          meaning: "Write",
+          pronunciation: "mahg-SOO-raht",
+        },
+        {
+          term: "Magtrabaho",
+          meaning: "Work",
+          pronunciation: "mahg-trah-BAH-hoh",
+        },
+        {
+          term: "Maglimpyo",
+          meaning: "Clean",
+          pronunciation: "mahg-LEEM-pyoh",
+        },
+        {
+          term: "Maglakat",
+          meaning: "Walk",
+          pronunciation: "mahg-lah-KAHT",
+        },
+        {
+          term: "Mag-uyag",
+          meaning: "Play",
+          pronunciation: "mahg-OO-yahg",
+        },
+        {
+          term: "Pahuway",
+          meaning: "Rest",
+          pronunciation: "pah-HOO-wai",
+        },
+        {
+          term: "Umuli",
+          meaning: "Go home",
+          pronunciation: "oo-MOO-lee",
+        },
+        {
+          term: "Bumalik",
+          meaning: "Return",
+          pronunciation: "boo-mah-LEEK",
+        },
+      ],
+    },
+    {
+      title: "B. Time and Frequency Expressions",
+      items: [
+        {
+          term: "Kada adlaw",
+          meaning: "Every day",
+          pronunciation: "KAH-dah AHD-lahw",
+        },
+        {
+          term: "Kada aga",
+          meaning: "Every morning",
+          pronunciation: "KAH-dah AH-gah",
+        },
+        {
+          term: "Kada gab-i",
+          meaning: "Every night",
+          pronunciation: "KAH-dah GAH-bee",
+        },
+        {
+          term: "Usahay",
+          meaning: "Sometimes",
+          pronunciation: "oo-sah-HAI",
+        },
+        {
+          term: "Pirme",
+          meaning: "Always",
+          pronunciation: "PEER-meh",
+        },
+        {
+          term: "Kasagaran",
+          meaning: "Usually",
+          pronunciation: "kah-sah-gah-RAHN",
+        },
+        {
+          term: "Agsob",
+          meaning: "Often",
+          pronunciation: "AHG-sob",
+        },
+        {
+          term: "Yana",
+          meaning: "Now",
+          pronunciation: "YAH-nah",
+        },
+        {
+          term: "Ha urhi",
+          meaning: "Later",
+          pronunciation: "hah OOR-hee",
+        },
+        {
+          term: "Kanina",
+          meaning: "Earlier",
+          pronunciation: "kah-NEE-nah",
+        },
+        {
+          term: "Kahapon",
+          meaning: "Yesterday",
+          pronunciation: "kah-hah-POHN",
+        },
+        {
+          term: "Buwas",
+          meaning: "Tomorrow",
+          pronunciation: "BOO-wahs",
+        },
+        {
+          term: "Na",
+          meaning: "Already",
+          pronunciation: "nah",
+        },
+        {
+          term: "Waray pa",
+          meaning: "Not yet",
+          pronunciation: "wah-RAI pah",
+        },
+      ],
+    },
+    {
+      title: "C. Conversation Expressions",
+      items: [
+        {
+          term: "Kumusta an imo adlaw?",
+          meaning: "How was your day?",
+          pronunciation: "koo-MOOS-tah ahn EE-moh AHD-lahw",
+        },
+        {
+          term: "Ano an imo ginbubuhat?",
+          meaning: "What are you doing?",
+          pronunciation: "AH-noh ahn EE-moh gin-boo-BOO-haht",
+        },
+        {
+          term: "Ano an nahitabo?",
+          meaning: "What happened?",
+          pronunciation: "AH-noh ahn nah-hee-TAH-boh",
+        },
+        {
+          term: "Maupay ito",
+          meaning: "That's good",
+          pronunciation: "mah-OO-pai EE-toh",
+        },
+        {
+          term: "Husto ito",
+          meaning: "That's right",
+          pronunciation: "HOOS-toh EE-toh",
+        },
+        {
+          term: "Tinuod?",
+          meaning: "Really?",
+          pronunciation: "tee-noo-OHD",
+        },
+        {
+          term: "Syempre",
+          meaning: "Of course",
+          pronunciation: "SHYEM-preh",
+        },
+        {
+          term: "Kadto na kita",
+          meaning: "Let's go",
+          pronunciation: "KAHD-toh nah KEE-tah",
+        },
+        {
+          term: "Mangaon na kita",
+          meaning: "Let's eat",
+          pronunciation: "mah-ngah-OHN nah KEE-tah",
+        },
+        {
+          term: "Hulat anay",
+          meaning: "Wait a moment",
+          pronunciation: "HOO-laht AH-nai",
+        },
+        {
+          term: "Kitaay kita ha urhi",
+          meaning: "See you later",
+          pronunciation: "kee-TAH-ai KEE-tah hah OOR-hee",
+        },
+        {
+          term: "Pag-amping",
+          meaning: "Take care",
+          pronunciation: "pahg-AHM-ping",
+        },
+      ],
+    },
+  ],
+  languageNotes: [
+    {
+      title: "A. Starting an Everyday Conversation",
+      body: [
+        "A conversation usually begins with a greeting or a question about another person's condition or activities.",
+      ],
+      examples: [
+        {
+          text: "Kumusta an imo adlaw?",
+          meaning: "How was your day?",
+        },
+        {
+          text: "Kumusta ka yana?",
+          meaning: "How are you today?",
+        },
+        {
+          text: "Ano an imo ginbubuhat?",
+          meaning: "What are you doing?",
+        },
+      ],
+    },
+    {
+      title: "A. Starting an Everyday Conversation",
+      body: [
+        "Possible responses:",
+      ],
+      examples: [
+        {
+          text: "Maupay man an akon adlaw.",
+          meaning: "My day is good too.",
+        },
+        {
+          text: "Maopay man ako.",
+          meaning: "I am doing well.",
+        },
+        {
+          text: "Nag-aadal ako.",
+          meaning: "I am studying.",
+        },
+      ],
+    },
+    {
+      title: "A. Starting an Everyday Conversation",
+      body: [
+        "A good conversation does not end with a single answer. You can ask another question or share related information to keep the conversation going.",
+      ],
+    },
+    {
+      title: "B. Talking About Daily Routines",
+      body: [
+        "When describing daily activities, learners can use familiar action words and time expressions.",
+      ],
+      examples: [
+        {
+          text: "Nakamata ako hin temprano.",
+          meaning: "I woke up early.",
+        },
+        {
+          text: "Nag-aadal ako kada adlaw.",
+          meaning: "I study every day.",
+        },
+        {
+          text: "Nagluluto hi Nanay ha aga.",
+          meaning: "Mother cooks in the morning.",
+        },
+        {
+          text: "Nagpapahuway ako katapos han akon buruhaton.",
+          meaning: "I rest after my activities.",
+        },
+      ],
+    },
+    {
+      title: "B. Talking About Daily Routines",
+      body: [
+        "Time expressions such as kada adlaw, ha aga, and ha gab-i help explain when an activity happens.",
+      ],
+    },
+    {
+      title: "C. Asking Whether Someone Has Done Something",
+      body: [
+        "You can ask about an activity someone has already completed.",
+      ],
+      examples: [
+        {
+          text: "Kinaon ka na?",
+          meaning: "Have you eaten?",
+        },
+        {
+          text: "Nakadto ka na ha eskwelahan?",
+          meaning: "Have you gone to school?",
+        },
+        {
+          text: "Nahuman mo na an imo buruhaton?",
+          meaning: "Have you finished your task?",
+        },
+      ],
+    },
+    {
+      title: "C. Asking Whether Someone Has Done Something",
+      body: [
+        "Possible responses:",
+      ],
+      examples: [
+        {
+          text: "Oo, kinaon na ako.",
+          meaning: "Yes, I have already eaten.",
+        },
+        {
+          text: "Waray pa ako makadto.",
+          meaning: "I have not gone yet.",
+        },
+        {
+          text: "Oo, nahuman ko na.",
+          meaning: "Yes, I have finished.",
+        },
+      ],
+    },
+    {
+      title: "D. Making Invitations and Suggestions",
+      body: [
+        "You can invite someone to join an activity or suggest doing something together.",
+      ],
+      examples: [
+        {
+          text: "Mangaon na kita.",
+          meaning: "Let's eat.",
+        },
+        {
+          text: "Mag-upod kita.",
+          meaning: "Let's go together.",
+        },
+        {
+          text: "Karuyag mo ba umupod ha akon?",
+          meaning: "Would you like to come with me?",
+        },
+        {
+          text: "Kadto kita ha merkado.",
+          meaning: "Let's go to the market.",
+        },
+      ],
+    },
+    {
+      title: "D. Making Invitations and Suggestions",
+      body: [
+        "Possible responses:",
+      ],
+      examples: [
+        {
+          text: "Sige, maupod ako.",
+          meaning: "Okay, I will come along.",
+        },
+        {
+          text: "Pasayloa ako, busy ako yana.",
+          meaning: "Sorry, I am busy right now.",
+        },
+        {
+          text: "Bangin ha urhi.",
+          meaning: "Maybe later.",
+        },
+      ],
+    },
+    {
+      title: "E. Responding Naturally in Conversations",
+      body: [
+        "People use short expressions to show that they are listening, agreeing, or asking for clarification.",
+      ],
+      examples: [
+        {
+          text: "Tinuod?",
+          meaning: "Really?",
+        },
+        {
+          text: "Maupay ito.",
+          meaning: "That's good.",
+        },
+        {
+          text: "Husto ito.",
+          meaning: "That's right.",
+        },
+        {
+          text: "Nasasabtan ko.",
+          meaning: "I understand.",
+        },
+        {
+          text: "Diri ko nasasabtan.",
+          meaning: "I don't understand.",
+        },
+        {
+          text: "Pakiusara, utraha daw.",
+          meaning: "Please repeat that.",
+        },
+      ],
+    },
+    {
+      title: "E. Responding Naturally in Conversations",
+      body: [
+        "Using these expressions makes conversations more interactive and helps learners respond appropriately.",
+      ],
+    },
+  ],
+  situationsTitle: "Useful Phrases and Sentences",
+  situationGroups: [
+    {
+      title: "Useful Phrases and Sentences",
+      intro: [
+        "Study the following expressions and their meanings.",
+      ],
+      items: [
+        {
+          term: "Kumusta an imo adlaw?",
+          meaning: "How was your day?",
+          pronunciation: "koo-MOOS-tah ahn EE-moh AHD-lahw",
+        },
+        {
+          term: "Ano an imo ginbuhat yana nga adlaw?",
+          meaning: "What did you do today?",
+          pronunciation: "AH-noh ahn EE-moh gin-boo-HAHT YAH-nah ngah AHD-lahw",
+        },
+        {
+          term: "Ano an imo ginbubuhat?",
+          meaning: "What are you doing?",
+          pronunciation: "AH-noh ahn EE-moh gin-boo-BOO-haht",
+        },
+        {
+          term: "Nag-aadal ako.",
+          meaning: "I am studying.",
+          pronunciation: "nahg-ah-AH-dahl AH-koh",
+        },
+        {
+          term: "Nagluluto ako.",
+          meaning: "I am cooking.",
+          pronunciation: "nahg-loo-LOO-toh AH-koh",
+        },
+        {
+          term: "Mauuli na ako.",
+          meaning: "I am going home.",
+          pronunciation: "mah-oo-OO-lee nah AH-koh",
+        },
+        {
+          term: "Makadto ako ha eskwelahan.",
+          meaning: "I am going to school.",
+          pronunciation: "mah-kahd-TOH AH-koh hah es-kweh-LAH-hahn",
+        },
+        {
+          term: "Kinaon ka na?",
+          meaning: "Have you eaten?",
+          pronunciation: "kee-NAH-ohn kah nah",
+        },
+        {
+          term: "Waray pa.",
+          meaning: "Not yet.",
+          pronunciation: "wah-RAI pah",
+        },
+        {
+          term: "Oo, kinaon na ako.",
+          meaning: "Yes, I have already eaten.",
+          pronunciation: "oh-OH kee-NAH-ohn nah AH-koh",
+        },
+        {
+          term: "Karuyag mo ba umupod ha akon?",
+          meaning: "Would you like to come with me?",
+          pronunciation: "kah-roo-YAHG moh bah oo-oo-MOO-pod hah AH-kohn",
+        },
+        {
+          term: "Mag-upod kita.",
+          meaning: "Let's go together.",
+          pronunciation: "mahg-OO-pod KEE-tah",
+        },
+        {
+          term: "Busy ako yana.",
+          meaning: "I am busy right now.",
+          pronunciation: "BEE-zee AH-koh YAH-nah",
+        },
+        {
+          term: "Bubuhaton ko ito ha urhi.",
+          meaning: "I will do it later.",
+          pronunciation: "boo-boo-HAH-tohn koh EE-toh hah OOR-hee",
+        },
+        {
+          term: "Salamat ha pag-imbitar ha akon.",
+          meaning: "Thank you for inviting me.",
+          pronunciation: "sah-LAH-maht hah pahg-im-bee-TAHR hah AH-kohn",
+        },
+        {
+          term: "Kitaay kita buwas.",
+          meaning: "See you tomorrow.",
+          pronunciation: "kee-TAH-ai KEE-tah BOO-wahs",
+        },
+      ],
+    },
+  ],
+  conversations: [
+    {
+      title: "Conversation A: Asking About a Friend's Day",
+      lines: [
+        {
+          speaker: "Ana",
+          text: "Maupay nga kulop, Maria!",
+          translation: "Good afternoon, Maria!",
+        },
+        {
+          speaker: "Maria",
+          text: "Maupay nga kulop, Ana!",
+          translation: "Good afternoon, Ana!",
+        },
+        {
+          speaker: "Ana",
+          text: "Kumusta an imo adlaw?",
+          translation: "How was your day?",
+        },
+        {
+          speaker: "Maria",
+          text: "Maupay man. Nag-adal ako ha balay.",
+          translation: "It was good. I studied at home.",
+        },
+        {
+          speaker: "Ana",
+          text: "Ano an imo gin-adalan?",
+          translation: "What did you study?",
+        },
+        {
+          speaker: "Maria",
+          text: "Nagbasa ako hin libro ha Waray.",
+          translation: "I read a book in Waray.",
+        },
+        {
+          speaker: "Ana",
+          text: "Maupay ito!",
+          translation: "That's good!",
+        },
+        {
+          speaker: "Maria",
+          text: "Ikaw, kumusta man an imo adlaw?",
+          translation: "How about you? How was your day?",
+        },
+        {
+          speaker: "Ana",
+          text: "Maupay liwat. Nagbulig ako ha balay.",
+          translation: "It was good too. I helped at home.",
+        },
+      ],
+    },
+    {
+      title: "Conversation B: Inviting a Friend",
+      lines: [
+        {
+          speaker: "Carlo",
+          text: "Ano an imo ginbubuhat yana?",
+          translation: "What are you doing now?",
+        },
+        {
+          speaker: "Ben",
+          text: "Nagpapahuway la ako.",
+          translation: "I am just resting.",
+        },
+        {
+          speaker: "Carlo",
+          text: "Karuyag mo ba umupod ha akon ha merkado?",
+          translation: "Would you like to come with me to the market?",
+        },
+        {
+          speaker: "Ben",
+          text: "San-o kita makadto?",
+          translation: "When will we go?",
+        },
+        {
+          speaker: "Carlo",
+          text: "Yana nga kulop.",
+          translation: "This afternoon.",
+        },
+        {
+          speaker: "Ben",
+          text: "Sige, maupod ako.",
+          translation: "Okay, I will come along.",
+        },
+        {
+          speaker: "Carlo",
+          text: "Maopay! Kitaay kita ha urhi.",
+          translation: "Great! See you later.",
+        },
+        {
+          speaker: "Ben",
+          text: "Sige, pag-amping!",
+          translation: "Okay, take care!",
+        },
+      ],
+    },
+    {
+      title: "Conversation C: Talking About Daily Routines",
+      lines: [
+        {
+          speaker: "Liza",
+          text: "Ano an imo ginbubuhat kada aga?",
+          translation: "What do you do every morning?",
+        },
+        {
+          speaker: "Mark",
+          text: "Nakamata ako hin temprano ngan nangungudkod.",
+          translation: "I wake up early and brush my teeth.",
+        },
+        {
+          speaker: "Liza",
+          text: "Katapos hito, ano an imo ginbubuhat?",
+          translation: "After that, what do you do?",
+        },
+        {
+          speaker: "Mark",
+          text: "Nangangaon ako hin pamahaw.",
+          translation: "I eat breakfast.",
+        },
+        {
+          speaker: "Liza",
+          text: "Ngan katapos?",
+          translation: "And after that?",
+        },
+        {
+          speaker: "Mark",
+          text: "Nakadto ako ha eskwelahan.",
+          translation: "I go to school.",
+        },
+        {
+          speaker: "Liza",
+          text: "Damo ngay-an an imo buruhaton kada aga!",
+          translation: "You really have many activities every morning!",
+        },
+        {
+          speaker: "Mark",
+          text: "Oo, importante ha akon nga magin andam temprano.",
+          translation: "Yes, it is important to me to be ready early.",
+        },
+      ],
+    },
+  ],
+  assessment: {
+    instructions: "Choose the best answer for each question.",
+    passPercent: 70,
+    questions: [
+      {
+        id: 1,
+        prompt: "What does \"Kumusta an imo adlaw?\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Where are you going?",
+          },
+          {
+            key: "B",
+            text: "How was your day?",
+          },
+          {
+            key: "C",
+            text: "What is your name?",
+          },
+          {
+            key: "D",
+            text: "How old are you?",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 2,
+        prompt: "Which expression means \"I am studying\"?",
+        options: [
+          {
+            key: "A",
+            text: "Nag-aadal ako.",
+          },
+          {
+            key: "B",
+            text: "Nagluluto ako.",
+          },
+          {
+            key: "C",
+            text: "Nagpapahuway ako.",
+          },
+          {
+            key: "D",
+            text: "Naglalakat ako.",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 3,
+        prompt: "What does \"Usahay\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Always",
+          },
+          {
+            key: "B",
+            text: "Never",
+          },
+          {
+            key: "C",
+            text: "Sometimes",
+          },
+          {
+            key: "D",
+            text: "Tomorrow",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 4,
+        prompt: "Which expression means \"Have you eaten?\"",
+        options: [
+          {
+            key: "A",
+            text: "Ano an imo ngaran?",
+          },
+          {
+            key: "B",
+            text: "Kinaon ka na?",
+          },
+          {
+            key: "C",
+            text: "San-o ka makadto?",
+          },
+          {
+            key: "D",
+            text: "Hain an imo balay?",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 5,
+        prompt: "What is the meaning of \"Waray pa\"?",
+        options: [
+          {
+            key: "A",
+            text: "Already",
+          },
+          {
+            key: "B",
+            text: "Not yet",
+          },
+          {
+            key: "C",
+            text: "Always",
+          },
+          {
+            key: "D",
+            text: "Later",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 6,
+        prompt: "Which expression is an invitation to eat?",
+        options: [
+          {
+            key: "A",
+            text: "Hulat anay.",
+          },
+          {
+            key: "B",
+            text: "Mangaon na kita.",
+          },
+          {
+            key: "C",
+            text: "Pag-amping.",
+          },
+          {
+            key: "D",
+            text: "Diri ako maaram.",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 7,
+        prompt: "What does \"Ano an imo ginbubuhat?\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "What are you doing?",
+          },
+          {
+            key: "B",
+            text: "What did you eat?",
+          },
+          {
+            key: "C",
+            text: "Where are you from?",
+          },
+          {
+            key: "D",
+            text: "Who is your friend?",
+          },
+        ],
+        answerKey: "A",
+      },
+      {
+        id: 8,
+        prompt: "Which expression means \"Take care\"?",
+        options: [
+          {
+            key: "A",
+            text: "Salamat.",
+          },
+          {
+            key: "B",
+            text: "Pag-amping.",
+          },
+          {
+            key: "C",
+            text: "Sige.",
+          },
+          {
+            key: "D",
+            text: "Tinuod?",
+          },
+        ],
+        answerKey: "B",
+      },
+      {
+        id: 9,
+        prompt: "What is the best response to an invitation if you agree to come along?",
+        options: [
+          {
+            key: "A",
+            text: "Diri ako maaram.",
+          },
+          {
+            key: "B",
+            text: "Waray pa.",
+          },
+          {
+            key: "C",
+            text: "Sige, maupod ako.",
+          },
+          {
+            key: "D",
+            text: "Pasayloa ako.",
+          },
+        ],
+        answerKey: "C",
+      },
+      {
+        id: 10,
+        prompt: "What does \"Kitaay kita buwas\" mean?",
+        options: [
+          {
+            key: "A",
+            text: "Let's eat now.",
+          },
+          {
+            key: "B",
+            text: "See you tomorrow.",
+          },
+          {
+            key: "C",
+            text: "Wait for me.",
+          },
+          {
+            key: "D",
+            text: "I am going home.",
+          },
+        ],
+        answerKey: "B",
+      },
+    ],
+  },
+  extraActivities: [
+    {
+      title: "Match the Expressions",
+      kind: "match",
+      instructions: "Match each Waray expression with its correct English meaning.",
+      items: [
+        "Waray",
+        "Usahay",
+        "Pag-amping",
+        "Hulat anay",
+        "Mangaon na kita",
+        "Waray pa",
+      ],
+      choices: [
+        "Answer Choices",
+        "Take care",
+        "Sometimes",
+        "Let's eat",
+        "Wait a moment",
+        "Not yet",
+      ],
+    },
+    {
+      title: "Complete the Sentences",
+      kind: "fill",
+      instructions: "Choose the correct word or expression to complete each sentence.",
+      items: [
+        "Kumusta an imo ______? (How was your day?)",
+        "______ ako kada adlaw. (I study every day.)",
+        "______ kita. (Let's eat.)",
+        "______ pa. (Not yet.)",
+        "______ anay. (Wait a moment.)",
+      ],
+      choices: [
+        "adlaw",
+        "Nag-aadal",
+        "Mangaon",
+        "Waray",
+        "Hulat",
+      ],
+    },
+    {
+      title: "Translate into Waray",
+      kind: "translate",
+      instructions: "Translate the following English sentences into Waray.",
+      items: [
+        "What are you doing?",
+        "I am studying.",
+        "Have you eaten?",
+        "Let's go together.",
+        "I will do it later.",
+      ],
+    },
+    {
+      title: "Conversation Completion",
+      kind: "roleplay",
+      instructions: "Complete the conversation using appropriate Waray expressions.\nAna: Maupay nga aga, Ben! Kumusta an imo adlaw?\nBen: ______________________________\nAna: Ano an imo ginbubuhat yana?\nBen: ______________________________\nAna: Karuyag mo ba umupod ha akon?\nBen: ______________________________\nAna: Sige, kitaay kita ha urhi!\nBen: ______________________________",
+      items: [],
+    },
+    {
+      title: "Create an Everyday Conversation",
+      kind: "roleplay",
+      instructions: "Create a conversation between two people who meet during an ordinary day.\nYour conversation must include:",
+      items: [
+        "A greeting.",
+        "A question about someone's day.",
+        "A question about an activity.",
+        "An invitation or suggestion.",
+        "An appropriate response.",
+        "A closing expression.",
+      ],
+      note: "Write at least eight exchanges between the speakers.",
+    },
+  ],
+  rewards: {
+    items: [
+      {
+        section: "vocabulary",
+        label: "Vocabulary Review + Useful Phrases",
+        xp: 20,
+      },
+      {
+        section: "conversation",
+        label: "Guided Conversations + Practice Activities",
+        xp: 25,
+      },
+      {
+        section: "assessment",
+        label: "Lesson Assessment",
+        xp: 15,
+      },
+    ],
+    total: 60,
+    badge: {
+      name: "Everyday Communicator Badge",
+      description: "Awarded after successfully completing the lesson assessment with at least 70%.",
+    },
+  },
+  expectedOutcomes: [
+    "Start and maintain simple everyday conversations.",
+    "Ask about another person's day and activities.",
+    "Describe familiar routines.",
+    "Invite someone to participate in an activity.",
+    "Respond appropriately to common conversational expressions.",
+    "Complete the vocabulary review.",
+    "Study the useful phrases and lesson explanations.",
+    "Finish the guided conversation exercises.",
+    "Complete all practice activities.",
+    "Obtain at least 70% in the lesson assessment.",
+  ],
+};

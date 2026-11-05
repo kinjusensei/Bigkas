@@ -1917,191 +1917,46 @@ export const warayPracticeLevels: PracticeLevel[] = [
   {
     id: 11,
     lessonId: "waray_11",
-    title: "Daily Verbs & Actions",
-    subtitle: "Say what you do every day.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "To sleep",
-        howToUse: "",
-        howToUseTranslation: "Go to sleep now.",
-        expectedExpression: "neutral",
-        expectedTone: "low",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "To play",
-        howToUse: "",
-        howToUseTranslation: "Let's play outside.",
-        expectedExpression: "happy",
-        expectedTone: "high",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "To read",
-        howToUse: "",
-        howToUseTranslation: "Let's read a book.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Common Daily Conversations",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 12,
     lessonId: "waray_12",
-    title: "Emotions & Feelings",
-    subtitle: "Say how you feel, and show it on your face.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Happy",
-        howToUse: "",
-        howToUseTranslation: "I am happy today.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Sad",
-        howToUse: "",
-        howToUseTranslation: "He / She is sad.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Angry",
-        howToUse: "",
-        howToUseTranslation: "Mom is angry at me.",
-        expectedExpression: "angry",
-        expectedTone: "high",
-      },
-    ],
+    title: "Giving Directions and Locations",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 13,
     lessonId: "waray_13",
-    title: "Body Parts & Health",
-    subtitle: "Name parts of the body and say what hurts.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Head",
-        howToUse: "",
-        howToUseTranslation: "My head hurts.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Hand",
-        howToUse: "",
-        howToUseTranslation: "Wash your hands.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Eye",
-        howToUse: "",
-        howToUseTranslation: "The cat's eyes are big.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Asking for Information",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 14,
     lessonId: "waray_14",
-    title: "Home & Objects",
-    subtitle: "Name the places and things at home.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "House",
-        howToUse: "",
-        howToUseTranslation: "Our house is big.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Door",
-        howToUse: "",
-        howToUseTranslation: "Close the door.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Chair",
-        howToUse: "",
-        howToUseTranslation: "Sit on the chair.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Pronouns and Common Verbs",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 15,
     lessonId: "waray_15",
-    title: "Waray Verb Tenses (Past, Present, Future)",
-    subtitle: "See how one verb changes for past, present and future.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Ate (past)",
-        howToUse: "",
-        howToUseTranslation: "I ate adobo yesterday.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Eating (present)",
-        howToUse: "",
-        howToUseTranslation: "I am eating now.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Will eat (future)",
-        howToUse: "",
-        howToUseTranslation: "I will eat later.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Basic Sentence Structure",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
