@@ -102,7 +102,7 @@ const expressionGroups: LessonExpressionGroup[] = [
     title: "C. Expressions of Agreement and Disagreement",
     items: [
       { term: "Wa.", meaning: "Yes.", audioUrl: require("../../assets/audio/kapampangan/Wa.m4a") },
-      { term: "Alì.", meaning: "No.", audioUrl: require("../../assets/audio/kapampangan/Ali.m4a") },
+      { term: "Ali.", meaning: "No.", audioUrl: require("../../assets/audio/kapampangan/Ali.m4a") },
       { term: "Sige.", meaning: "Okay / Sure." },
       { term: "Tutu ka.", meaning: "You're right." },
       { term: "Mayasa ku.", meaning: "I agree." },
@@ -481,7 +481,7 @@ export const kapampanganLesson2: StructuredLesson = {
         id: 2,
         prompt: 'What is the respectful way of saying "Yes" in Kapampangan?',
         options: [
-          { key: "A", text: "Alì" },
+          { key: "A", text: "Ali" },
           { key: "B", text: "Sige" },
           { key: "C", text: "Wa pu" },
           { key: "D", text: "Siguru" },

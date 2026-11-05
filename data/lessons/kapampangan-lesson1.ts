@@ -13,13 +13,13 @@ import {
 //   - Intro: "Keng kultura ning Filipinu, mapilan ya ing bati at respetu
 //     nung kayabe mu ding pamilya, kaibigan, guru, at e mu kilala."
 //   - Paalam (Goodbye)
-//   - Alì examples: "Alì, e ku ya ing sira ning bage a iyan.",
-//     "Alì, e ku ya ing mikit."
+//   - Ali examples: "Ali, e ku ya ing sira ning bage a iyan.",
+//     "Ali, e ku ya ing mikit."
 //   - Kaluguran example: "Malagu ya ing kaibigan mu!"
 //   - Wa naman example: "Wa naman, makamunta ku bayu ya mamulang."
 //   - "Masaya ku a makilala daka." (Nice to meet you)
 //   - "Pilan na kang banua?" (How old are you?)
-//   - "Labinsiyam a banua ku na." (I am 19 years old.)
+//   - "Labinsiyam a banua na ku." (I am 19 years old.)
 
 // Common Greetings and Their Usage
 const greetings: LessonGreeting[] = [
@@ -28,7 +28,7 @@ const greetings: LessonGreeting[] = [
     meaning: "Good morning",
     usage: "Used when greeting someone in the morning.",
     example: [
-      { speaker: "A", text: "Mayap a abak!" },
+      { speaker: "A", text: "Mayap a abak!", audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a") },
       { speaker: "B", text: "Mayap a abak din!" },
     ],
     audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a"),
@@ -48,7 +48,7 @@ const greetings: LessonGreeting[] = [
     meaning: "Good evening",
     usage: "Used when greeting someone in the evening.",
     example: [
-      { speaker: "A", text: "Mayap a bengi!" },
+      { speaker: "A", text: "Mayap a bengi!", audioUrl: require("../../assets/audio/kapampangan/Mayap a bengi.m4a") },
       { speaker: "B", text: "Mayap a bengi din!" },
     ],
     audioUrl: require("../../assets/audio/kapampangan/Mayap a bengi.m4a"),
@@ -83,7 +83,7 @@ const fromGreeting = (term: string) => {
   return greeting ? { usage: greeting.usage, example: greeting.example } : {};
 };
 
-// Vocabulary + Pronunciation Guide. Usage and examples for Wa, Alì,
+// Vocabulary + Pronunciation Guide. Usage and examples for Wa, Ali,
 // Lagyu, Kaluguran and Wa naman are from the greetings section of the
 // document; Ika and Mayap reuse the Kumusta? dialogue and Aku the
 // self-introduction, as in the Tagalog lesson.
@@ -141,19 +141,19 @@ const vocabulary: LessonVocabularyItem[] = [
     audioUrl: require("../../assets/audio/kapampangan/Wa.m4a"),
   },
   {
-    term: "Alì",
+    term: "Ali",
     meaning: "No",
     usage: "Used when you do not agree.",
     example: [
-      { speaker: "A", text: "Alì, e ku ya ing sira ning bage a iyan." },
-      { speaker: "B", text: "Alì, e ku ya ing mikit." },
+      { speaker: "A", text: "Ali, e ku ya ing sira ning bage a iyan." },
+      { speaker: "B", text: "Ali, e ku ya ing mikit." },
     ],
     audioUrl: require("../../assets/audio/kapampangan/Ali.m4a"),
   },
   {
     term: "Aku",
     meaning: "I / Me",
-    example: [{ speaker: "", text: "Aku si Ana.", translation: "I am Ana." }],
+    example: [{ speaker: "", text: "Aku i Ana.", translation: "I am Ana.", audioUrl: require("../../assets/audio/kapampangan/Aku I ana.m4a") }],
     audioUrl: require("../../assets/audio/kapampangan/Aku.m4a"),
   },
   {
@@ -167,7 +167,7 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "Name",
     pronunciation: "lag-yu",
     example: [
-      { speaker: "A", text: "Nanu ya ing lagyu mu?" },
+      { speaker: "A", text: "Nanu ya ing lagyu mu?", audioUrl: require("../../assets/audio/kapampangan/Nanu ya ing lagyu mu.m4a") },
       { speaker: "B", text: "Nanu ya ing lagyu ning kaibigan mu?" },
     ],
     audioUrl: require("../../assets/audio/kapampangan/Lagyu.m4a"),
@@ -304,14 +304,14 @@ export const kapampanganLesson1: StructuredLesson = {
     },
   ],
   sentences: [
-    { text: "Aku si Ana.", meaning: "I am Ana.", audioUrl: require("../../assets/audio/kapampangan/Aku I ana.m4a") },
-    { text: "Ing lagyu ku ay Ana.", meaning: "My name is Ana.", audioUrl: require("../../assets/audio/kapampangan/Ing lagyu ku I ana.m4a") },
+    { text: "Aku i Ana.", meaning: "I am Ana.", audioUrl: require("../../assets/audio/kapampangan/Aku I ana.m4a") },
+    { text: "Ing lagyu ku i Ana.", meaning: "My name is Ana.", audioUrl: require("../../assets/audio/kapampangan/Ing lagyu ku I ana.m4a") },
     { text: "Nanu ya ing lagyu mu?", meaning: "What is your name?", audioUrl: require("../../assets/audio/kapampangan/Nanu ya ing lagyu mu.m4a") },
     { text: "Taga nokarin ka?", meaning: "Where are you from?", audioUrl: require("../../assets/audio/kapampangan/Taga nokarin ka.m4a") },
     { text: "Taga Angeles City ku.", meaning: "I am from Angeles City.", audioUrl: require("../../assets/audio/kapampangan/Taga Angeles city ku.m4a") },
     { text: "Masaya ku akilala daka.", meaning: "Nice to meet you.", audioUrl: require("../../assets/audio/kapampangan/Masaya ku akilala daka.m4a") },
     { text: "Pilan na kang banua?", meaning: "How old are you?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
-    { text: "Labinsiyam a banua ku na.", meaning: "I am 19 years old.", audioUrl: require("../../assets/audio/kapampangan/Labinsiyam a banua naku.m4a") },
+    { text: "Labinsiyam a banua na ku.", meaning: "I am 19 years old.", audioUrl: require("../../assets/audio/kapampangan/Labinsiyam a banua naku.m4a") },
   ],
 
   // Guided Conversation
@@ -322,7 +322,7 @@ export const kapampanganLesson1: StructuredLesson = {
     lines: [
       { speaker: "Ana", text: "Mayap a abak!", audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a") },
       { speaker: "Mark", text: "Mayap a abak din!" },
-      { speaker: "Ana", text: "Aku si Ana. Nanu ya ing lagyu mu?" },
+      { speaker: "Ana", text: "Aku i Ana. Nanu ya ing lagyu mu?" },
       { speaker: "Mark", text: "Aku si Mark. Masaya ku akilala daka." },
       {
         speaker: "Ana",
@@ -530,7 +530,7 @@ export const kapampanganLesson1: StructuredLesson = {
         "Mayap a aldo!",
         "Aku si _______.",
         "Taga _______ ku.",
-        "_________ a banua ku na.",
+        "_________ a banua na ku.",
         "Masaya ku a makilala kayu!",
       ],
       note: "Record your introduction using the application's speaking activity.",

@@ -84,7 +84,7 @@ export const kapampanganReviewItems: string[] = [
   "Atiu ya king bale ing kuya mu. – Your older brother is at home.",
   "Masaya ya ing pamilya mi. – Our family is happy.",
   "Use Atin ka bang ... ? to ask whether someone has a particular family member.",
-  "Ing lagyu ku ay Ana. Maragul ya ing pamilya ku. Atin kung ima, tatang, metung a kuya, at metung a ate. Aku ing bunsu keng magkakapatad mi. Mabait at masaya ya ing pamilya ku.",
+  "Ing lagyu ku i Ana. Maragul ya ing pamilya ku. Atin kung ima, tatang, metung a kuya, at metung a ate. Aku ing bunsu keng magkakapatad mi. Mabait at masaya ya ing pamilya ku.",
 ];
 
 // Not marked in the document, but worth checking too.
@@ -358,7 +358,7 @@ export const kapampanganLesson5: StructuredLesson = {
       ],
       examples: sentences([
         [
-          "Ing lagyu ku ay Ana. Maragul ya ing pamilya ku. Atin kung ima, tatang, metung a kuya, at metung a ate. Aku ing bunsu keng magkakapatad mi. Mabait at masaya ya ing pamilya ku.",
+          "Ing lagyu ku i Ana. Maragul ya ing pamilya ku. Atin kung ima, tatang, metung a kuya, at metung a ate. Aku ing bunsu keng magkakapatad mi. Mabait at masaya ya ing pamilya ku.",
           "My name is Ana. I have a big family. I have a mother, father, one older brother, and one older sister. I am the youngest among our siblings. My family is kind and cheerful.",
         ],
       ]),

@@ -56,7 +56,7 @@ export interface PracticePhrase {
   expectedExpression: ExpectedPracticeExpression;
   expectedTone: ExpectedTone;
   expectedVowelLength?: ExpectedVowelLength;
-  audioUrl?: string;
+  audioUrl?: string | number;
   words?: PracticeWord[];
 }
 

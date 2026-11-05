@@ -270,7 +270,11 @@ function PhraseReadingScreen() {
 
     try {
       if (currentPhrase.audioUrl) {
-        const player = createAudioPlayer({ uri: currentPhrase.audioUrl });
+        const player = createAudioPlayer(
+          typeof currentPhrase.audioUrl === "string"
+            ? { uri: currentPhrase.audioUrl }
+            : currentPhrase.audioUrl,
+        );
         audioPlayerRef.current = player;
         const subscription = player.addListener(
           "playbackStatusUpdate",
