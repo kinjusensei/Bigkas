@@ -128,7 +128,7 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "Thank you",
     pronunciation: "sa-la-mat",
     example: [{ speaker: "", text: "Salamat king saup mu." }],
-    audioUrl: require("../../assets/audio/kapampangan/Salamat.m4a"),
+    audioUrl: require("../../assets/audio/kapampangan/Salamat.aac"),
   },
   {
     term: "Wa",

@@ -20,6 +20,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Magandang umaga!" },
       { speaker: "B", text: "Magandang umaga rin!" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/magandang umaga.aac"),
   },
   {
     term: "Magandang Hapon",
@@ -29,6 +30,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Magandang hapon po, Guro!" },
       { speaker: "B", text: "Magandang hapon din sa iyo!" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/magandang hapon.aac"),
   },
   {
     term: "Magandang Gabi",
@@ -38,6 +40,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Magandang gabi!" },
       { speaker: "B", text: "Magandang gabi rin!" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/magandang gabi.aac"),
   },
   {
     term: "Kamusta?",
@@ -48,6 +51,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "B", text: "Mabuti naman. Ikaw?" },
       { speaker: "A", text: "Mabuti rin, salamat!" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/kamusta.aac"),
   },
   {
     term: "Paalam",
@@ -76,24 +80,28 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "How are you?",
     pronunciation: "ka-mus-ta",
     ...fromGreeting("Kamusta?"),
+    audioUrl: require("../../assets/audio/Tagalog/kamusta.aac"),
   },
   {
     term: "Magandang umaga",
     meaning: "Good morning",
     pronunciation: "ma-gan-dang u-ma-ga",
     ...fromGreeting("Magandang umaga"),
+    audioUrl: require("../../assets/audio/Tagalog/magandang umaga.aac"),
   },
   {
     term: "Magandang hapon",
     meaning: "Good afternoon",
     pronunciation: "ma-gan-dang ha-pon",
     ...fromGreeting("Magandang hapon"),
+    audioUrl: require("../../assets/audio/Tagalog/magandang hapon.aac"),
   },
   {
     term: "Magandang gabi",
     meaning: "Good evening",
     pronunciation: "ma-gan-dang ga-bi",
     ...fromGreeting("Magandang gabi"),
+    audioUrl: require("../../assets/audio/Tagalog/magandang gabi.aac"),
   },
   {
     term: "Paalam",
@@ -111,6 +119,7 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "Thank you",
     pronunciation: "sa-la-mat",
     example: [{ speaker: "", text: "Salamat sa iyong tulong." }],
+    audioUrl: require("../../assets/audio/Tagalog/Salamat.aac"),
   },
   {
     term: "Oo",
@@ -120,6 +129,7 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Oo ako ang iyong kausap" },
       { speaker: "B", text: "Oo ako ay pupunta na" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/oo.aac"),
   },
   {
     term: "Hindi",
@@ -129,16 +139,19 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Hindi ako ang nakasira ng gamit na yan" },
       { speaker: "B", text: "Hindi ako ang nakakita" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/hindi.aac"),
   },
   {
     term: "Ako",
     meaning: "I / Me",
     example: [{ speaker: "", text: "Ako si Ana.", translation: "I am Ana." }],
+    audioUrl: require("../../assets/audio/Tagalog/ako.aac"),
   },
   {
     term: "Ikaw",
     meaning: "You",
     example: fromGreeting("Kamusta?").example,
+    audioUrl: require("../../assets/audio/Tagalog/ikaw.aac"),
   },
   {
     term: "Pangalan",
@@ -148,6 +161,7 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Ano ang pangalan mo?" },
       { speaker: "B", text: "Ano ang pangalan ng kaibigan mo?" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/pangalan.aac"),
   },
   {
     term: "Kaibigan",
@@ -157,12 +171,14 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Ang ganda naman ng kaibigan" },
       { speaker: "B", text: "Sino yung kaibigan na kasama mo?" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/kaibigan.aac"),
   },
   {
     term: "Mabuti",
     meaning: "Good / Fine",
     pronunciation: "ma-bu-ti",
     example: fromGreeting("Kamusta?").example,
+    audioUrl: require("../../assets/audio/Tagalog/mabuti.aac"),
   },
   {
     term: "Oo naman",
@@ -172,11 +188,13 @@ const vocabulary: LessonVocabularyItem[] = [
       { speaker: "A", text: "Oo naman pupunta ako" },
       { speaker: "B", text: "Oo naman makakapunta ako bago magsimula" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/oo naman.aac"),
   },
   {
     term: "Pasensya na",
     meaning: "I'm sorry / Excuse me",
     pronunciation: "pa-sen-sya na",
+    audioUrl: require("../../assets/audio/Tagalog/pasensya na.aac"),
   },
 ];
 
@@ -260,7 +278,7 @@ export const tagalogLesson1: StructuredLesson = {
       "Read the conversation below. Pay attention to how the speakers greet each other and introduce themselves.",
     situation: "Two students meet for the first time at school.",
     lines: [
-      { speaker: "Ana", text: "Magandang umaga!" },
+      { speaker: "Ana", text: "Magandang umaga!", audioUrl: require("../../assets/audio/Tagalog/magandang umaga.aac") },
       { speaker: "Mark", text: "Magandang umaga rin!" },
       { speaker: "Ana", text: "Ako si Ana. Ano ang pangalan mo?" },
       { speaker: "Mark", text: "Ako si Mark. Ikinagagalak kitang makilala." },

@@ -22,6 +22,7 @@ export const tagalogLesson1Speaking: LessonSpeaking = {
       text: "Magandang umaga!",
       respelling: "ma-gan-dang u-ma-ga",
       meaning: "Good morning",
+      audioUrl: require("../../assets/audio/Tagalog/magandang umaga.aac"),
     },
     { id: "2", text: "Kamusta ka?", meaning: "How are you?" },
     { id: "3", text: "Ako si Maria.", meaning: "I am Maria." },

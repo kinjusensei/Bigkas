@@ -25,6 +25,7 @@ const tagalogPracticeLevels: PracticeLevel[] = [
         id: 1,
         text: "Magandang Umaga",
         example: "Good Morning",
+        audioUrl: require("../assets/audio/Tagalog/magandang umaga.aac"),
         howToUse: "Magandang Umaga po aling Teresita",
         howToUseTranslation: "Good Morning Ms. Teresita",
         expectedExpression: "happy",
