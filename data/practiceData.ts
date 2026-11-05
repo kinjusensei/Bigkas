@@ -443,206 +443,46 @@ const tagalogPracticeLevels: PracticeLevel[] = [
   {
     id: 11,
     lessonId: "tagalog_11",
-    title: "Daily Verbs & Actions",
-    subtitle: "Say what you do every day.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Matulog",
-        example: "To sleep",
-        howToUse: "Matulog ka na.",
-        howToUseTranslation: "Go to sleep now.",
-        expectedExpression: "neutral",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Matulog", meaning: "To sleep" }],
-      },
-      {
-        id: 2,
-        text: "Maglaro",
-        example: "To play",
-        howToUse: "Maglaro tayo sa labas.",
-        howToUseTranslation: "Let's play outside.",
-        expectedExpression: "happy",
-        expectedTone: "high", // TODO: verify
-        words: [{ word: "Maglaro", meaning: "To play" }],
-      },
-      {
-        id: 3,
-        text: "Magbasa",
-        example: "To read",
-        howToUse: "Magbasa tayo ng libro.",
-        howToUseTranslation: "Let's read a book.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Magbasa", meaning: "To read" }],
-      },
-    ],
+    title: "Common Daily Conversations",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 12,
     lessonId: "tagalog_12",
-    title: "Emotions & Feelings",
-    subtitle: "Say how you feel, and show it on your face.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Masaya",
-        example: "Happy",
-        howToUse: "Masaya ako ngayon.",
-        howToUseTranslation: "I am happy today.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Masaya", meaning: "Happy" }],
-      },
-      {
-        id: 2,
-        text: "Malungkot",
-        example: "Sad",
-        howToUse: "Malungkot siya.",
-        howToUseTranslation: "He / She is sad.",
-        expectedExpression: "sad",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Malungkot", meaning: "Sad" }],
-      },
-      {
-        id: 3,
-        text: "Galit",
-        example: "Angry",
-        howToUse: "Galit si Nanay sa akin.",
-        howToUseTranslation: "Mom is angry at me.",
-        expectedExpression: "angry",
-        expectedTone: "high", // TODO: verify
-        words: [{ word: "Galit", meaning: "Angry" }],
-      },
-    ],
+    title: "Giving Directions and Locations",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 13,
     lessonId: "tagalog_13",
-    title: "Body Parts & Health",
-    subtitle: "Name parts of the body and say what hurts.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Ulo",
-        example: "Head",
-        howToUse: "Masakit ang ulo ko.",
-        howToUseTranslation: "My head hurts.",
-        expectedExpression: "sad",
-        expectedTone: "low", // TODO: verify
-        words: [{ word: "Ulo", meaning: "Head" }],
-      },
-      {
-        id: 2,
-        text: "Kamay",
-        example: "Hand",
-        howToUse: "Maghugas ka ng kamay.",
-        howToUseTranslation: "Wash your hands.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Kamay", meaning: "Hand" }],
-      },
-      {
-        id: 3,
-        text: "Mata",
-        example: "Eye",
-        howToUse: "Malaki ang mata ng pusa.",
-        howToUseTranslation: "The cat's eyes are big.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Mata", meaning: "Eye" }],
-      },
-    ],
+    title: "Asking for Information",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 14,
     lessonId: "tagalog_14",
-    title: "Home & Objects",
-    subtitle: "Name the places and things at home.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Bahay",
-        example: "House",
-        howToUse: "Malaki ang bahay namin.",
-        howToUseTranslation: "Our house is big.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Bahay", meaning: "House" }],
-      },
-      {
-        id: 2,
-        text: "Pinto",
-        example: "Door",
-        howToUse: "Isara mo ang pinto.",
-        howToUseTranslation: "Close the door.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Pinto", meaning: "Door" }],
-      },
-      {
-        id: 3,
-        text: "Upuan",
-        example: "Chair",
-        howToUse: "Umupo ka sa upuan.",
-        howToUseTranslation: "Sit on the chair.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Upuan", meaning: "Chair" }],
-      },
-    ],
+    title: "Pronouns and Common Verbs",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 15,
     lessonId: "tagalog_15",
-    title: "Tagalog Verb Tenses (Past, Present, Future)",
-    subtitle: "See how one verb changes for past, present and future.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Kumain",
-        example: "Ate (past)",
-        howToUse: "Kumain ako ng adobo kahapon.",
-        howToUseTranslation: "I ate adobo yesterday.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Kumain", meaning: "Ate (past)" }],
-      },
-      {
-        id: 2,
-        text: "Kumakain",
-        example: "Eating (present)",
-        howToUse: "Kumakain ako ngayon.",
-        howToUseTranslation: "I am eating now.",
-        expectedExpression: "happy",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Kumakain", meaning: "Eating (present)" }],
-      },
-      {
-        id: 3,
-        text: "Kakain",
-        example: "Will eat (future)",
-        howToUse: "Kakain ako mamaya.",
-        howToUseTranslation: "I will eat later.",
-        expectedExpression: "neutral",
-        expectedTone: "medium", // TODO: verify
-        words: [{ word: "Kakain", meaning: "Will eat (future)" }],
-      },
-    ],
+    title: "Basic Sentence Structure",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {

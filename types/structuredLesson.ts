@@ -106,6 +106,12 @@ export interface LessonAssessmentQuestion {
   prompt: string;
   options: LessonAssessmentOption[];
   answerKey: string;
+  // Several activities or assessment parts can share one choice step: a
+  // question's own title and instructions are shown above it. `passage` is
+  // the reading text or short dialogue the question is about.
+  title?: string;
+  instructions?: string;
+  passage?: string;
 }
 
 // A practice multiple-choice activity (e.g. "Choose the Appropriate
@@ -214,8 +220,30 @@ export interface LessonRewards {
 // they can be built later without re-copying the text.
 export interface LessonExtraActivity {
   title: string;
+  // What screen it would need: typed answers (translate, rewrite), the
+  // learner's own words (open, roleplay), an existing kind whose answer
+  // key is missing (match, choice, fill, arrange), or an assessment
+  // question that isn't scored (assessment).
+  kind?:
+    | "translate"
+    | "rewrite"
+    | "roleplay"
+    | "open"
+    | "match"
+    | "choice"
+    | "fill"
+    | "arrange"
+    | "speaking"
+    | "assessment"
+    | "other";
   instructions?: string;
+  // A multiple-choice item keeps its choices on the lines under its prompt.
   items: string[];
+  // Shared answer choices or word bank.
+  choices?: string[];
+  // The document's answers, same order as `items`; "" where it has none.
+  // Left out when the document has no answer key for the activity.
+  answers?: string[];
   note?: string;
 }
 
@@ -235,6 +263,11 @@ export interface StructuredLesson {
   title: string;
   level?: string;
   unit?: string;
+  // From the document's lesson information; not shown yet.
+  estimatedDuration?: string;
+  prerequisite?: string;
+  languageVariety?: string;
+  expectedOutcomes?: string[];
   intro?: string[];
   objectivesIntro?: string;
   objectives?: string[];

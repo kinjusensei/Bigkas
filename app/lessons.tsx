@@ -96,11 +96,19 @@ const getLevelTitle = (level: number) =>
         ? "Intermediate"
         : "Beginner";
 
-const countWords = (lesson: PracticeLevel) =>
-  lesson.phrases.reduce(
+const countWords = (lesson: PracticeLevel) => {
+  // Lessons without a practice game count their vocabulary instead.
+  if (lesson.phrases.length === 0) {
+    return (structuredLessonsById[lesson.lessonId]?.expressionGroups ?? []).reduce(
+      (total, group) => total + group.items.length,
+      0,
+    );
+  }
+  return lesson.phrases.reduce(
     (total, phrase) => total + (phrase.words?.length || 1),
     0,
   );
+};
 
 export default function LessonsScreen() {
   const router = useRouter();

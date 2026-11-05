@@ -53,7 +53,7 @@ type Props = {
 // Splits 'Which expression means "Good morning"?' so the quoted part can
 // be shown large; prompts without quotes render as one line.
 const splitPrompt = (prompt: string) => {
-  const match = prompt.match(/^(.*?)"([^"]+)"(.*)$/);
+  const match = prompt.match(/^([\s\S]*?)["“]([^"”]+)["”]([\s\S]*)$/);
   if (!match) return null;
   return { before: match[1].trim(), quoted: match[2], after: match[3].trim() };
 };
@@ -135,6 +135,18 @@ export default function AssessmentSection({
       <Text style={lessonStyles.label}>
         QUESTION {state.index + 1} OF {total}
       </Text>
+
+      {question.title ? (
+        <Text style={lessonStyles.cardTitle}>{question.title}</Text>
+      ) : null}
+      {question.instructions ? (
+        <Text style={lessonStyles.body}>{question.instructions}</Text>
+      ) : null}
+      {question.passage ? (
+        <View style={lessonStyles.card}>
+          <Text style={lessonStyles.body}>{question.passage}</Text>
+        </View>
+      ) : null}
 
       <View style={[lessonStyles.card, lessonStyles.cardHighlighted]}>
         {prompt ? (
