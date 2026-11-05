@@ -11,7 +11,7 @@
 // - The "New level unlocked" screen doesn't appear and isn't marked as seen.
 //
 // Turn it off: set UNLOCK_ALL_CONTENT to false and reload the app.
-const UNLOCK_ALL_CONTENT = true;
+const UNLOCK_ALL_CONTENT = false;
 
 // __DEV__ is false in release builds, so review mode can't reach learners even
 // if the flag above is left on.
