@@ -1962,192 +1962,46 @@ export const warayPracticeLevels: PracticeLevel[] = [
   {
     id: 16,
     lessonId: "waray_16",
-    title: "Compound Words & Expressions",
-    subtitle: "Learn words made by joining two words.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Rainbow",
-        howToUse: "",
-        howToUseTranslation: "There is a rainbow in the sky.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Dusk / Twilight",
-        howToUse: "",
-        howToUseTranslation: "We go home every dusk.",
-        expectedExpression: "neutral",
-        expectedTone: "low",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "A Filipino returning home from abroad",
-        howToUse: "",
-        howToUseTranslation:
-          "My aunt is a balikbayan (she came home from abroad).",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Constructing More Complex Sentences",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 17,
     lessonId: "waray_17",
-    title: "Honorifics & Social Courtesy",
-    subtitle: "Show respect to elders and strangers.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Respect word (for elders and strangers)",
-        howToUse: "",
-        howToUseTranslation: "Thank you (said respectfully).",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Yes (respectful)",
-        howToUse: "",
-        howToUseTranslation: "Yes, I have already eaten.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Asking an elder for a blessing",
-        howToUse: "",
-        howToUseTranslation: "Your blessing, please, Grandma.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Ordering Food",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 18,
     lessonId: "waray_18",
-    title: "Idiomatic Waray Expressions",
-    subtitle: "Learn sayings that don't mean exactly what they say.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Come what may",
-        howToUse: "",
-        howToUseTranslation: "Come what may, whatever happens.",
-        expectedExpression: "neutral",
-        expectedTone: "low",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Easily moved to tears",
-        howToUse: "",
-        howToUseTranslation: "My older sister cries easily.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Jobless (literally: counting lamp posts)",
-        howToUse: "",
-        howToUseTranslation: "He / She still doesn't have a job.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-    ],
+    title: "Shopping and Buying",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 19,
     lessonId: "waray_19",
-    title: "Storytelling & Linking Words",
-    subtitle: "Connect your ideas to tell a story.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Once upon a time",
-        howToUse: "",
-        howToUseTranslation: "Once upon a time, there was a king.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "After that / Then",
-        howToUse: "",
-        howToUseTranslation: "After that, they went home.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "So / Therefore",
-        howToUse: "",
-        howToUseTranslation: "It rained, so we didn't go out.",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Talking About Daily Activities",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 20,
     lessonId: "waray_20",
-    title: "Waray Mastery Boss",
-    subtitle: "Put everything together in one final challenge.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Nice to meet you",
-        howToUse: "",
-        howToUseTranslation: "Nice to meet you, Ana.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Take care",
-        howToUse: "",
-        howToUseTranslation: "Take care on your trip.",
-        expectedExpression: "happy",
-        expectedTone: "low",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Until next time",
-        howToUse: "",
-        howToUseTranslation: "Goodbye, until next time!",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-    ],
+    title: "Describing People, Places, and Things",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 ];
 

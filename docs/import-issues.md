@@ -13,6 +13,7 @@ These are candidates from reading and from comparing similar words. They are sti
 | Waray 14 | Vocabulary | "Nagtatrabaho hira." has "Nag-tra-tra-ba-ho hi-ra". The word has "ta", not "tra", in the second syllable. |
 | Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
 | Waray 6 | Vocabulary | "Tuba han lubi / Tubig han lubi" has one pronunciation, "TU-big han LU-bi", for the second form only. |
+| Waray 17 | Vocabulary | "Baroto han pagkaon / puwesto han pagkaon (descriptive)" has one pronunciation, "Pu-wes-to han pag-ka-on", for the second form only. |
 | Waray 13 | Vocabulary | "Mahimo mo ba igsaysay?" has "ig-sah-SAI", while Waray 22 has "ig-say-say". |
 | Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
 
@@ -28,6 +29,8 @@ These notes are written for the authors, but they are in the lesson intros and w
 - **Waray 5** (`intro`): Note: Some family terms have alternative forms depending on the speaker, context, and locality. The words above are introductory vocabulary candidates for evaluator review.
 - **Waray 6** (`intro`): Note: Some drink names may be borrowed or expressed differently in everyday speech. Use the terms familiar to your local evaluator and intended learners.
 - **Waray 9** (`intro`): Note: Some question forms have more than one natural way of being expressed. For example, diin, hain, and ngain can appear in different location-related questions. Their exact usage should be checked with a Western Samar Waray language evaluator.
+- **Waray 19** (`body`): The last example is included only as a tentative construction and should be replaced or corrected by a language evaluator before use.
+- **Waray 19** (`intro`): Note: The sentences above are learning examples. Some verb forms and expressions may vary across Western Samar communities and should be checked by a native speaker.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -799,6 +802,95 @@ Meaning of each heading:
 - "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 - XP rows merged under conversation: Sentence Parts Identification + Negative Sentence Practice + Question Formation + Lesson Assessment = 45 XP.
 
+### Waray 16: Constructing More Complex Sentences (PDF pages 870–883)
+
+**Missing answer key**
+
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
+
+**Not scored**
+
+- Assessment : 10 question(s) are not multiple choice; saved but not scored.
+
+**XP moved**
+
+- "Sentence Combination" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Sentence Completion" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Sentence Expansion and Translation" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Sentence Combination + Sentence Completion + Sentence Expansion and Translation + Lesson Assessment = 50 XP.
+
+### Waray 17: Ordering Food (PDF pages 884–899)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Complete the Order (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
+
+**Not scored**
+
+- Assessment : 10 question(s) are not multiple choice; saved but not scored.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Order" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Translation Activity" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Order + Translation Activity + Restaurant Role-Play + Lesson Assessment = 60 XP.
+
+### Waray 18: Shopping and Buying (PDF pages 900–920)
+
+**Missing answer key**
+
+- Activity 2: Complete the Shopping Expressions (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Guided Conversation + Practice Activities = 35 XP.
+
+**Lesson information**
+
+- The PDF does not state a level on this lesson; "Intermediate" comes from its lesson number.
+
+### Waray 19: Talking About Daily Activities (PDF pages 921–941)
+
+**Missing answer key**
+
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with speaking.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with speaking.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with speaking.
+- XP rows merged under speaking: Vocabulary Matching + Complete the Sentences + Practice Activities = 35 XP.
+
+**Lesson information**
+
+- The PDF does not state a level on this lesson; "Intermediate" comes from its lesson number.
+
+### Waray 20: Describing People, Places, and Things (PDF pages 942–964)
+
+**Missing answer key**
+
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities = 45 XP.
+
+**Lesson information**
+
+- The PDF does not state a level on this lesson; "Intermediate" comes from its lesson number.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -840,3 +932,8 @@ Meaning of each heading:
 | Waray 13: Asking for Information | Intermediate | 44 | 14 | 28 | 0 | 26 | 10 | 0 | 60 |
 | Waray 14: Pronouns and Common Verbs | Intermediate | 54 | 0 | 18 | 0 | 21 | 0 | 10 | 60 |
 | Waray 15: Basic Sentence Structure | Intermediate | 15 | 0 | 18 | 0 | 25 | 0 | 10 | 60 |
+| Waray 16: Constructing More Complex Sentences | Intermediate | 14 | 0 | 18 | 0 | 30 | 0 | 10 | 60 |
+| Waray 17: Ordering Food | Intermediate | 58 | 0 | 22 | 0 | 33 | 0 | 10 | 60 |
+| Waray 18: Shopping and Buying | Intermediate | 52 | 27 | 31 | 0 | 22 | 10 | 0 | 60 |
+| Waray 19: Talking About Daily Activities | Intermediate | 62 | 18 | 25 | 5 | 25 | 10 | 0 | 60 |
+| Waray 20: Describing People, Places, and Things | Intermediate | 69 | 18 | 24 | 0 | 24 | 10 | 0 | 60 |
