@@ -13,7 +13,7 @@ import {
     View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { supabase } from '../services/supabase';
+import { AUTH_REDIRECT_URL, supabase } from '../services/supabase';
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -23,6 +23,9 @@ export default function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [needsConfirmation, setNeedsConfirmation] = useState(false);
+  const [resendMessage, setResendMessage] = useState('');
+  const [resending, setResending] = useState(false);
 
   async function handleLogin() {
     if (!email.trim()) { setError('Please enter your email.'); return; }
@@ -30,6 +33,8 @@ export default function LoginScreen() {
 
     setLoading(true);
     setError('');
+    setNeedsConfirmation(false);
+    setResendMessage('');
 
     const { error: loginError } = await supabase.auth.signInWithPassword({
       email: email.trim(),
@@ -38,12 +43,31 @@ export default function LoginScreen() {
 
     if (loginError) {
       setError(loginError.message);
+      setNeedsConfirmation(loginError.code === 'email_not_confirmed');
       setLoading(false);
       return;
     }
 
     setLoading(false);
     router.replace('/dashboard' as any);
+  }
+
+  async function handleResendConfirmation() {
+    setResending(true);
+    setResendMessage('');
+
+    const { error: resendError } = await supabase.auth.resend({
+      type: 'signup',
+      email: email.trim(),
+      options: { emailRedirectTo: AUTH_REDIRECT_URL },
+    });
+
+    setResendMessage(
+      resendError
+        ? resendError.message
+        : 'Confirmation email sent. Open it on this phone and tap the link.',
+    );
+    setResending(false);
   }
 
   return (
@@ -122,6 +146,22 @@ export default function LoginScreen() {
               </View>
             )}
 
+            {needsConfirmation && (
+              <Pressable
+                style={styles.forgotBtn}
+                onPress={handleResendConfirmation}
+                disabled={resending}
+              >
+                <Text style={styles.forgotText}>
+                  {resending ? 'Sending...' : 'Send a new confirmation email'}
+                </Text>
+              </Pressable>
+            )}
+
+            {resendMessage !== '' && (
+              <Text style={styles.resendMessage}>{resendMessage}</Text>
+            )}
+
             <Pressable
               style={styles.submitBtn}
               onPress={handleLogin}
@@ -180,6 +220,7 @@ const styles = StyleSheet.create({
   errorText: { color: '#DC2626', fontSize: 15, fontWeight: '500' },
   submitBtn: { backgroundColor: '#410FA3', paddingVertical: 16, borderRadius: 16, alignItems: 'center', marginTop: 8 },
   submitBtnText: { color: '#FFFFFF', fontSize: 18, fontWeight: '700' },
+  resendMessage: { fontSize: 15, color: '#374151', textAlign: 'center' },
   forgotBtn: { alignItems: 'center', paddingVertical: 12 },
   forgotText: { fontSize: 15, color: '#410FA3', fontWeight: '600' },
   registerLink: { alignItems: 'center', paddingVertical: 4 },

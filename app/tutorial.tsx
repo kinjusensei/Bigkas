@@ -1,10 +1,11 @@
 import { useCameraPermissions } from "expo-camera";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { tutorialSteps } from "../data/tutorialSteps";
-import { supabase } from "../services/supabase";
+import { retryOnJwtIssuedAtFuture, supabase } from "../services/supabase";
+import { saveTutorialCompleted } from "../utils/tutorialCompletion";
 import TutorialButton from "./components/TutorialButton";
 import TutorialContent from "./components/TutorialContent";
 import TutorialProgress from "./components/TutorialProgress";
@@ -13,6 +14,8 @@ export default function TutorialScreen() {
 
   const [step, setStep] = useState(1);
   const [, requestPermission] = useCameraPermissions();
+  const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
   const totalSteps = tutorialSteps.length;
   const currentStep = tutorialSteps[step - 1];
   const handleNext = async () => {
@@ -33,27 +36,35 @@ export default function TutorialScreen() {
 
     // Last tutorial page
     if (step === totalSteps) {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+      if (savingRef.current) return;
+      savingRef.current = true;
+      setSaving(true);
 
-      if (user) {
-        const { error } = await supabase
-          .from("profiles")
-          .update({
-            tutorial_completed: true,
-          })
-          .eq("id", user.id);
+      try {
+        await retryOnJwtIssuedAtFuture(async () => {
+          const {
+            data: { user },
+            error: userError,
+          } = await supabase.auth.getUser();
 
-        if (error) {
-          Alert.alert(
-            "Error",
-            "Unable to save your tutorial progress. Please try again.",
-          );
-          return;
-        }
+          if (userError) throw userError;
+          if (!user) throw new Error("You are not logged in.");
+
+          await saveTutorialCompleted(supabase, user);
+        });
+      } catch (error) {
+        const reason =
+          (error as { message?: unknown })?.message ?? "Unknown error";
+        Alert.alert(
+          "Couldn't save your progress",
+          `Please check your connection and try again.\n\n${String(reason)}`,
+        );
+        savingRef.current = false;
+        setSaving(false);
+        return;
       }
 
+      // Only reached once the saved value has been read back.
       router.replace("/dashboard"); // change if your dashboard route is different
       return;
     }
@@ -68,7 +79,10 @@ export default function TutorialScreen() {
         <TutorialContent step={currentStep} />
       </View>
 
-      <TutorialButton label={currentStep.button} onPress={handleNext} />
+      <TutorialButton
+        label={saving ? "Saving..." : currentStep.button}
+        onPress={handleNext}
+      />
     </SafeAreaView>
   );
 }

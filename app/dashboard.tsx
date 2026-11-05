@@ -27,7 +27,7 @@ import { useLevelUnlockCelebration } from "../hooks/useLevelUnlockCelebration";
 import { useSeenBadges } from "../hooks/useSeenBadges";
 import { useStoryProgress } from "../hooks/useStoryProgress";
 import { updateDailyStreak } from "../services/streak";
-import { supabase } from "../services/supabase";
+import { retryOnJwtIssuedAtFuture, supabase } from "../services/supabase";
 import { LessonDialect, StructuredLesson } from "../types/structuredLesson";
 import { resolveAvatarSource } from "../utils/avatars";
 import { levelProgress } from "../utils/lessonCompletion";
@@ -162,6 +162,7 @@ export default function HomeScreen() {
   const [displayName, setDisplayName] = useState("");
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   const [currentStreak, setCurrentStreak] = useState(0);
   const [currentWinningStreak, setCurrentWinningStreak] = useState(0);
@@ -318,6 +319,7 @@ export default function HomeScreen() {
 
   async function loadUser() {
     setLoading(true);
+    setLoadError(null);
 
     const {
       data: { user },
@@ -335,11 +337,28 @@ export default function HomeScreen() {
       setCurrentStreak(streak.current_streak);
     }
 
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("display_name, avatar_url, tutorial_completed")
-      .eq("id", user.id)
-      .single();
+    // A failed read must not look like an unfinished tutorial, or the user is
+    // sent back to step 1. No row (null, no error) does mean not finished.
+    let profile: {
+      display_name: string | null;
+      avatar_url: string | null;
+      tutorial_completed: boolean | null;
+    } | null;
+    try {
+      profile = await retryOnJwtIssuedAtFuture(async () => {
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("display_name, avatar_url, tutorial_completed")
+          .eq("id", user.id)
+          .maybeSingle();
+        if (error) throw error;
+        return data;
+      });
+    } catch (error) {
+      setLoadError(String((error as { message?: unknown })?.message ?? error));
+      setLoading(false);
+      return;
+    }
 
     setDisplayName(profile?.display_name ?? "Learner");
     setPhotoUri(profile?.avatar_url ?? null);
@@ -381,6 +400,21 @@ export default function HomeScreen() {
     await supabase.auth.signOut();
 
     router.replace("/" as any);
+  }
+
+  if (loadError) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>
+          Couldn&apos;t load your profile. Please check your connection and try
+          again.
+        </Text>
+        <Text style={styles.loadingText}>{loadError}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={loadUser}>
+          <Text style={styles.retryButtonText}>Try again</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   if (loading || progressLoading) {
@@ -910,6 +944,15 @@ const NODE = 38;
 const NODE_SELECTED = 48;
 
 const styles = StyleSheet.create({
+  retryButton: {
+    backgroundColor: bigkas.primary,
+    borderRadius: 16,
+    minHeight: MIN_TAP,
+    paddingHorizontal: spacing.xl,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  retryButtonText: { color: "#FFFFFF", fontSize: 18, fontWeight: "700" },
   loadingContainer: {
     flex: 1,
     alignItems: "center",

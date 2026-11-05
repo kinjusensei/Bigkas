@@ -18,7 +18,7 @@ import {
   resetPrivacyConsent,
   usePrivacyConsent,
 } from "../services/privacyConsent";
-import { supabase } from "../services/supabase";
+import { AUTH_REDIRECT_URL, supabase } from "../services/supabase";
 
 export default function CreateAccountScreen() {
   const router = useRouter();
@@ -97,6 +97,7 @@ export default function CreateAccountScreen() {
         email: normalizedEmail,
         password,
         options: {
+          emailRedirectTo: AUTH_REDIRECT_URL,
           data: {
             display_name: displayName.trim(),
             privacy_accepted_at: consentAt,
@@ -132,7 +133,9 @@ export default function CreateAccountScreen() {
     if (data.session) {
       router.replace("/dashboard" as any);
     } else {
-      setError("Account created! Check your email to confirm, then log in.");
+      setError(
+        "Account created! Open the confirmation email on this phone and tap the link. If you open it on another device, come back and log in afterwards.",
+      );
     }
   }
 
