@@ -176,7 +176,7 @@ const situationGroups: LessonExpressionGroup[] = [
   {
     title: "A. Asking About Age",
     items: [
-      { term: "Pilan na kang banua?", meaning: "How old are you?" },
+      { term: "Pilan na kang banua?", meaning: "How old are you?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
       { term: "Pilan na yang banua ya?", meaning: "How old is he/she?" },
       {
         term: "Labing walung banua ku na.",
@@ -186,7 +186,7 @@ const situationGroups: LessonExpressionGroup[] = [
     ],
     examples: [
       [
-        { speaker: "A", text: "Pilan na kang banua?" },
+        { speaker: "A", text: "Pilan na kang banua?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
         { speaker: "B", text: "Labing walung banua ku na. Ika?" },
         { speaker: "A", text: "Adwampulung banua ku na." },
       ],
@@ -408,7 +408,7 @@ const speaking: LessonSpeaking = {
       meaning: "30, 40, 50",
     },
     { id: "6", text: "Metung a dinalan.", meaning: "100" },
-    { id: "7", text: "Pilan na kang banua?", meaning: "How old are you?" },
+    { id: "7", text: "Pilan na kang banua?", meaning: "How old are you?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
     { id: "8", text: "Magkanu pu ini?", meaning: "How much is this?" },
   ],
 };
@@ -502,7 +502,7 @@ export const kapampanganLesson3: StructuredLesson = {
     {
       situation: "Situation 1: Asking About Age",
       lines: [
-        { speaker: "Maria", text: "Pilan na kang banua?" },
+        { speaker: "Maria", text: "Pilan na kang banua?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
         { speaker: "Ana", text: "Labing pitung banua ku." },
         { speaker: "Maria", text: "Aku naman ay labing walung banua." },
         { speaker: "Ana", text: "Magkalapit lang pala ing banua tamu!" },

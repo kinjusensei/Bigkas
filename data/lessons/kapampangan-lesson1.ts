@@ -304,14 +304,14 @@ export const kapampanganLesson1: StructuredLesson = {
     },
   ],
   sentences: [
-    { text: "Aku si Ana.", meaning: "I am Ana." },
-    { text: "Ing lagyu ku ay Ana.", meaning: "My name is Ana." },
+    { text: "Aku si Ana.", meaning: "I am Ana.", audioUrl: require("../../assets/audio/kapampangan/Aku I ana.m4a") },
+    { text: "Ing lagyu ku ay Ana.", meaning: "My name is Ana.", audioUrl: require("../../assets/audio/kapampangan/Ing lagyu ku I ana.m4a") },
     { text: "Nanu ya ing lagyu mu?", meaning: "What is your name?", audioUrl: require("../../assets/audio/kapampangan/Nanu ya ing lagyu mu.m4a") },
     { text: "Taga nokarin ka?", meaning: "Where are you from?", audioUrl: require("../../assets/audio/kapampangan/Taga nokarin ka.m4a") },
     { text: "Taga Angeles City ku.", meaning: "I am from Angeles City.", audioUrl: require("../../assets/audio/kapampangan/Taga Angeles city ku.m4a") },
     { text: "Masaya ku akilala daka.", meaning: "Nice to meet you.", audioUrl: require("../../assets/audio/kapampangan/Masaya ku akilala daka.m4a") },
-    { text: "Pilan na kang banua?", meaning: "How old are you?" },
-    { text: "Labinsiyam a banua ku na.", meaning: "I am 19 years old." },
+    { text: "Pilan na kang banua?", meaning: "How old are you?", audioUrl: require("../../assets/audio/kapampangan/Pilian nalang banua.m4a") },
+    { text: "Labinsiyam a banua ku na.", meaning: "I am 19 years old.", audioUrl: require("../../assets/audio/kapampangan/Labinsiyam a banua naku.m4a") },
   ],
 
   // Guided Conversation
