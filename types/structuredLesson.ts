@@ -48,6 +48,8 @@ export interface LessonSentencePattern {
 export interface LessonSentence {
   text: string;
   meaning: string;
+  // The plan's respelling; not shown on the sentence list.
+  pronunciation?: string;
   audioUrl?: string;
 }
 
@@ -298,6 +300,13 @@ export interface StructuredLesson {
   // from an answer key in the lesson plan. Learners don't see this; the
   // drafts are listed in docs/waray-draft-answer-keys.md.
   answerKeysInferred?: boolean;
+  // Waray: which fields were inferred from the lesson's own content because the
+  // plan has no source for them. Learners don't see this; every value is listed
+  // in docs/waray-inferred-keys.md.
+  inferredFields?: string[];
+  // Language notes kept from the document. They have no screen in the Tagalog
+  // Lesson 1 flow, so `languageNotes` is empty and these stay unshown.
+  savedLanguageNotes?: LessonLanguageNote[];
   matchActivity?: LessonMatchActivity;
   choiceActivity?: LessonChoiceActivity;
   fillInBlanks?: LessonFillBlanks;

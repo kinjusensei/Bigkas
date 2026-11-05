@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// Fields not given by the plan are INFERRED from this lesson's own content and
+// listed in docs/waray-inferred-keys.md: situation, usage, example, pattern, fill-in, arrange, fourth option, speaking phrase, target pitch and mood, respelling, example situation, pronunciation tip, completion requirement.
 // The practice answers are INFERRED drafts, not from the PDF. See
 // docs/waray-draft-answer-keys.md for each answer and how it was found.
 
@@ -29,709 +31,6 @@ export const warayLesson8: StructuredLesson = {
     "Ask and answer basic questions about animals and nature.",
     "Use common nature-related vocabulary in everyday conversations.",
   ],
-  expressionGroups: [
-    {
-      title: "A. Common Animals",
-      items: [
-        {
-          term: "Hayop",
-          meaning: "Animal",
-          pronunciation: "HA-yop",
-        },
-        {
-          term: "Aso",
-          meaning: "Dog",
-          pronunciation: "A-so",
-        },
-        {
-          term: "Kuring",
-          meaning: "Cat",
-          pronunciation: "KU-ring",
-        },
-        {
-          term: "Tamsi",
-          meaning: "Bird",
-          pronunciation: "TAM-si",
-        },
-        {
-          term: "Manok",
-          meaning: "Chicken",
-          pronunciation: "MA-nok",
-        },
-        {
-          term: "Pato",
-          meaning: "Duck",
-          pronunciation: "PA-to",
-        },
-        {
-          term: "Baboy",
-          meaning: "Pig",
-          pronunciation: "BA-boy",
-        },
-        {
-          term: "Baka",
-          meaning: "Cow",
-          pronunciation: "BA-ka",
-        },
-        {
-          term: "Kanding",
-          meaning: "Goat",
-          pronunciation: "KAN-ding",
-        },
-        {
-          term: "Kabayo",
-          meaning: "Horse",
-          pronunciation: "ka-BA-yo",
-        },
-        {
-          term: "Kabaw",
-          meaning: "Carabao",
-          pronunciation: "KA-baw",
-        },
-        {
-          term: "Unggoy",
-          meaning: "Monkey",
-          pronunciation: "UN-goy",
-        },
-        {
-          term: "Halas",
-          meaning: "Snake",
-          pronunciation: "HA-las",
-        },
-        {
-          term: "Pakô",
-          meaning: "Frog",
-          pronunciation: "pa-KO",
-        },
-        {
-          term: "Alibangbang",
-          meaning: "Butterfly",
-          pronunciation: "a-li-bang-BANG",
-        },
-        {
-          term: "Putyukan",
-          meaning: "Bee",
-          pronunciation: "put-YU-kan",
-        },
-        {
-          term: "Hulmigas",
-          meaning: "Ant",
-          pronunciation: "hul-MI-gas",
-        },
-        {
-          term: "Ilaga",
-          meaning: "Rat",
-          pronunciation: "i-LA-ga",
-        },
-      ],
-    },
-    {
-      title: "B. Sea and Water Animals",
-      items: [
-        {
-          term: "Isda",
-          meaning: "Fish",
-          pronunciation: "IS-da",
-        },
-        {
-          term: "Pating",
-          meaning: "Shark",
-          pronunciation: "PA-ting",
-        },
-        {
-          term: "Alimango",
-          meaning: "Crab",
-          pronunciation: "a-li-MANG-go",
-        },
-        {
-          term: "Pasayan",
-          meaning: "Shrimp",
-          pronunciation: "pa-SA-yan",
-        },
-        {
-          term: "Kugita",
-          meaning: "Octopus",
-          pronunciation: "ku-GI-ta",
-        },
-        {
-          term: "Bao",
-          meaning: "Turtle",
-          pronunciation: "BA-o",
-        },
-        {
-          term: "Balyena",
-          meaning: "Whale",
-          pronunciation: "bal-YE-na",
-        },
-        {
-          term: "Dolpin",
-          meaning: "Dolphin",
-          pronunciation: "DOL-pin",
-        },
-        {
-          term: "Dikya",
-          meaning: "Jellyfish",
-          pronunciation: "DIK-ya",
-        },
-        {
-          term: "Kabhang",
-          meaning: "Shell",
-          pronunciation: "KAB-hang",
-        },
-      ],
-    },
-    {
-      title: "C. Plants and Flowers",
-      items: [
-        {
-          term: "Tanom",
-          meaning: "Plant",
-          pronunciation: "TA-nom",
-        },
-        {
-          term: "Kahoy",
-          meaning: "Tree",
-          pronunciation: "KA-hoy",
-        },
-        {
-          term: "Bulak",
-          meaning: "Flower",
-          pronunciation: "BU-lak",
-        },
-        {
-          term: "Dahon",
-          meaning: "Leaf",
-          pronunciation: "DA-hon",
-        },
-        {
-          term: "Sagbot",
-          meaning: "Grass",
-          pronunciation: "SAG-bot",
-        },
-        {
-          term: "Gamut",
-          meaning: "Root",
-          pronunciation: "GA-mut",
-        },
-        {
-          term: "Prutas",
-          meaning: "Fruit",
-          pronunciation: "PRU-tas",
-        },
-        {
-          term: "Liso",
-          meaning: "Seed",
-          pronunciation: "LI-so",
-        },
-        {
-          term: "Puno han lubi",
-          meaning: "Coconut tree",
-          pronunciation: "PU-no han LU-bi",
-        },
-        {
-          term: "Kawayan",
-          meaning: "Bamboo",
-          pronunciation: "ka-WA-yan",
-        },
-      ],
-    },
-    {
-      title: "D. Elements of Nature",
-      items: [
-        {
-          term: "Kinaiyahan",
-          meaning: "Nature",
-          pronunciation: "ki-na-i-YA-han",
-        },
-        {
-          term: "Adlaw",
-          meaning: "Sun",
-          pronunciation: "AD-law",
-        },
-        {
-          term: "Bulan",
-          meaning: "Moon",
-          pronunciation: "BU-lan",
-        },
-        {
-          term: "Bitoon",
-          meaning: "Star",
-          pronunciation: "bi-TO-on",
-        },
-        {
-          term: "Langit",
-          meaning: "Sky",
-          pronunciation: "LA-ngit",
-        },
-        {
-          term: "Panganod",
-          meaning: "Cloud",
-          pronunciation: "pa-NGA-nod",
-        },
-        {
-          term: "Ulan",
-          meaning: "Rain",
-          pronunciation: "U-lan",
-        },
-        {
-          term: "Hangin",
-          meaning: "Wind",
-          pronunciation: "HA-ngin",
-        },
-        {
-          term: "Dagat",
-          meaning: "Sea",
-          pronunciation: "DA-gat",
-        },
-        {
-          term: "Salog",
-          meaning: "River",
-          pronunciation: "SA-log",
-        },
-        {
-          term: "Bukid",
-          meaning: "Mountain",
-          pronunciation: "BU-kid",
-        },
-        {
-          term: "Kagurangan",
-          meaning: "Forest",
-          pronunciation: "ka-gu-RANG-an",
-        },
-        {
-          term: "Tuna",
-          meaning: "Land / Ground",
-          pronunciation: "TU-na",
-        },
-        {
-          term: "Bato",
-          meaning: "Stone",
-          pronunciation: "BA-to",
-        },
-        {
-          term: "Kalayo",
-          meaning: "Fire",
-          pronunciation: "ka-LA-yo",
-        },
-      ],
-    },
-    {
-      title: "E. Describing Animals and Nature",
-      items: [
-        {
-          term: "Dako",
-          meaning: "Big",
-          pronunciation: "DA-ko",
-        },
-        {
-          term: "Gutiay",
-          meaning: "Small",
-          pronunciation: "gu-TI-ay",
-        },
-        {
-          term: "Malaksi",
-          meaning: "Fast",
-          pronunciation: "ma-LAK-si",
-        },
-        {
-          term: "Hinay",
-          meaning: "Slow",
-          pronunciation: "HI-nay",
-        },
-        {
-          term: "Mahusay",
-          meaning: "Beautiful",
-          pronunciation: "ma-HU-say",
-        },
-        {
-          term: "Makusog",
-          meaning: "Strong",
-          pronunciation: "ma-KU-sog",
-        },
-        {
-          term: "Ihalas",
-          meaning: "Wild",
-          pronunciation: "i-HA-las",
-        },
-        {
-          term: "Amoon",
-          meaning: "Domestic / Tame",
-          pronunciation: "a-MO-on",
-        },
-        {
-          term: "Berde",
-          meaning: "Green",
-          pronunciation: "BER-de",
-        },
-        {
-          term: "Limpyo",
-          meaning: "Clean",
-          pronunciation: "LIM-pyo",
-        },
-      ],
-    },
-  ],
-  languageNotes: [
-    {
-      title: "A. Identifying Animals",
-      body: [
-        "Animals are commonly found in homes, farms, forests, and bodies of water.",
-      ],
-      examples: [
-        {
-          text: "Aso",
-          meaning: "Dog",
-        },
-        {
-          text: "Kuring",
-          meaning: "Cat",
-        },
-        {
-          text: "Manok",
-          meaning: "Chicken",
-        },
-        {
-          text: "Baka",
-          meaning: "Cow",
-        },
-        {
-          text: "Kanding",
-          meaning: "Goat",
-        },
-        {
-          text: "Kabaw",
-          meaning: "Carabao",
-        },
-        {
-          text: "Isda",
-          meaning: "Fish",
-        },
-        {
-          text: "Tamsi",
-          meaning: "Bird",
-        },
-      ],
-    },
-    {
-      title: "A. Identifying Animals",
-      body: [
-        "To ask what animal someone is looking at, use:",
-      ],
-      examples: [
-        {
-          text: "Ano ini nga hayop?",
-          meaning: "What animal is this?",
-        },
-      ],
-    },
-    {
-      title: "A. Identifying Animals",
-      body: [
-        "You can answer by naming the animal:",
-      ],
-      examples: [
-        {
-          text: "Aso ini.",
-          meaning: "This is a dog.",
-        },
-      ],
-    },
-    {
-      title: "B. Talking About Animal Actions",
-      body: [
-        "You can describe what an animal is doing using simple action sentences.",
-      ],
-      examples: [
-        {
-          text: "Naglupad an tamsi.",
-          meaning: "The bird is flying.",
-        },
-        {
-          text: "Nalanguy an isda.",
-          meaning: "The fish is swimming.",
-        },
-        {
-          text: "Nadalagan an aso.",
-          meaning: "The dog is running.",
-        },
-        {
-          text: "Nakaturog an kuring.",
-          meaning: "The cat is sleeping.",
-        },
-      ],
-    },
-    {
-      title: "C. Identifying Plants and Flowers",
-      body: [
-        "Plants are an important part of the environment. They provide food, shade, and shelter for different living things.",
-      ],
-      examples: [
-        {
-          text: "Kahoy",
-          meaning: "Tree",
-        },
-        {
-          text: "Bulak",
-          meaning: "Flower",
-        },
-        {
-          text: "Dahon",
-          meaning: "Leaf",
-        },
-        {
-          text: "Tanom",
-          meaning: "Plant",
-        },
-        {
-          text: "Sagbot",
-          meaning: "Grass",
-        },
-        {
-          text: "Lubi",
-          meaning: "Coconut",
-        },
-        {
-          text: "Damo nga kahoy ha amon lugar.",
-          meaning: "There are many trees in our area.",
-        },
-        {
-          text: "May mga bulak ha hardin.",
-          meaning: "There are flowers in the garden.",
-        },
-        {
-          text: "Berde an dahon.",
-          meaning: "The leaf is green.",
-        },
-      ],
-    },
-    {
-      title: "D. Talking About the Weather and Environment",
-      body: [
-        "You can use nature vocabulary to describe your surroundings and the weather.",
-      ],
-      examples: [
-        {
-          text: "Nag-uuran.",
-          meaning: "It is raining.",
-        },
-        {
-          text: "Mahangin yana.",
-          meaning: "It is windy today.",
-        },
-        {
-          text: "Madaop an adlaw.",
-          meaning: "The sun is hot.",
-        },
-        {
-          text: "Mahusay an dagat.",
-          meaning: "The sea is beautiful.",
-        },
-        {
-          text: "Dako an bukid.",
-          meaning: "The mountain is big.",
-        },
-      ],
-    },
-    {
-      title: "E. Describing Animals and Their Characteristics",
-      body: [
-        "You can combine animal names with descriptive words.",
-      ],
-      examples: [
-        {
-          text: "Dako an baka.",
-          meaning: "The cow is big.",
-        },
-        {
-          text: "Gutiay an kuring.",
-          meaning: "The cat is small.",
-        },
-        {
-          text: "Makusog an kabaw.",
-          meaning: "The carabao is strong.",
-        },
-        {
-          text: "Malaksi an kabayo.",
-          meaning: "The horse is fast.",
-        },
-      ],
-    },
-  ],
-  situationsTitle: "Useful Phrases and Sentences",
-  situationGroups: [
-    {
-      title: "Useful Phrases and Sentences",
-      items: [
-        {
-          term: "Ano ini nga hayop?",
-          meaning: "What animal is this?",
-          pronunciation: "A-no I-ni nga HA-yop?",
-        },
-        {
-          term: "Aso ini.",
-          meaning: "This is a dog.",
-          pronunciation: "A-so I-ni",
-        },
-        {
-          term: "May kuring ako.",
-          meaning: "I have a cat.",
-          pronunciation: "May KU-ring A-ko",
-        },
-        {
-          term: "Naglupad an tamsi.",
-          meaning: "The bird is flying.",
-          pronunciation: "nag-LU-pad an TAM-si",
-        },
-        {
-          term: "Aada ha tubig an isda.",
-          meaning: "The fish is in the water.",
-          pronunciation: "A-a-da ha TU-big an IS-da",
-        },
-        {
-          term: "Dako an aso.",
-          meaning: "The dog is big.",
-          pronunciation: "DA-ko an A-so",
-        },
-        {
-          term: "Gutiay an kuring.",
-          meaning: "The cat is small.",
-          pronunciation: "gu-TI-ay an KU-ring",
-        },
-        {
-          term: "Naruruyag ako hin mga hayop.",
-          meaning: "I like animals.",
-          pronunciation: "na-ru-RU-yag A-ko hin ma-NGA HA-yop",
-        },
-        {
-          term: "Ano ito nga tanom?",
-          meaning: "What is that plant?",
-          pronunciation: "A-no I-to nga TA-nom?",
-        },
-        {
-          term: "Mahusay an bulak.",
-          meaning: "The flower is beautiful.",
-          pronunciation: "ma-HU-say an BU-lak",
-        },
-        {
-          term: "Nag-uuran.",
-          meaning: "It is raining.",
-          pronunciation: "nag-U-u-ran",
-        },
-        {
-          term: "Nasirang an adlaw.",
-          meaning: "The sun is shining.",
-          pronunciation: "na-SI-rang an AD-law",
-        },
-        {
-          term: "Mahusay an dagat.",
-          meaning: "The sea is beautiful.",
-          pronunciation: "ma-HU-say an DA-gat",
-        },
-        {
-          term: "Damo an mga kahoy.",
-          meaning: "There are many trees.",
-          pronunciation: "DA-mo an ma-NGA KA-hoy",
-        },
-      ],
-    },
-  ],
-  conversations: [
-    {
-      title: "Conversation 1: Talking About Pets",
-      lines: [
-        {
-          speaker: "Ana",
-          text: "May hayop ka ba ha balay?",
-          translation: "Do you have an animal at home?",
-        },
-        {
-          speaker: "Ben",
-          text: "Oo, may kuring ako.",
-          translation: "Yes, I have a cat.",
-        },
-        {
-          speaker: "Ana",
-          text: "Ano an kolor han imo kuring?",
-          translation: "What is the color of your cat?",
-        },
-        {
-          speaker: "Ben",
-          text: "Itom an iya kolor.",
-          translation: "Its color is black.",
-        },
-        {
-          speaker: "Ana",
-          text: "Gutiay ba hiya?",
-          translation: "Is it small?",
-        },
-        {
-          speaker: "Ben",
-          text: "Oo, gutiay pa hiya.",
-          translation: "Yes, it is still small.",
-        },
-      ],
-    },
-    {
-      title: "Conversation 2: Seeing Animals",
-      lines: [
-        {
-          speaker: "Mia",
-          text: "Ano ito nga hayop?",
-          translation: "What animal is that?",
-        },
-        {
-          speaker: "Carlo",
-          text: "Kabayo ito.",
-          translation: "That is a horse.",
-        },
-        {
-          speaker: "Mia",
-          text: "Malaksi ba ito?",
-          translation: "Is it fast?",
-        },
-        {
-          speaker: "Carlo",
-          text: "Oo, malaksi ito.",
-          translation: "Yes, it is fast.",
-        },
-        {
-          speaker: "Mia",
-          text: "Mahusay ito nga hayop.",
-          translation: "It is a beautiful animal.",
-        },
-      ],
-    },
-    {
-      title: "Conversation 3: Talking About Nature",
-      lines: [
-        {
-          speaker: "Liza",
-          text: "Mahusay an aton palibot.",
-          translation: "Our surroundings are beautiful.",
-        },
-        {
-          speaker: "Mark",
-          text: "Oo, damo an mga kahoy ngan bulak.",
-          translation: "Yes, there are many trees and flowers.",
-        },
-        {
-          speaker: "Liza",
-          text: "Nag-uuran ba yana?",
-          translation: "Is it raining now?",
-        },
-        {
-          speaker: "Mark",
-          text: "Diri, mahangin la.",
-          translation: "No, it is only windy.",
-        },
-        {
-          speaker: "Liza",
-          text: "Karuyag ko maglakat ha gawas.",
-          translation: "I want to walk outside.",
-        },
-      ],
-    },
-  ],
   assessment: {
     instructions: "Choose the correct answer. Each question is worth one point.",
     passPercent: 70,
@@ -752,6 +51,10 @@ export const warayLesson8: StructuredLesson = {
             key: "C",
             text: "Baka",
           },
+          {
+            key: "D",
+            text: "Leaf",
+          },
         ],
         answerKey: "B",
       },
@@ -770,6 +73,10 @@ export const warayLesson8: StructuredLesson = {
           {
             key: "C",
             text: "Goat",
+          },
+          {
+            key: "D",
+            text: "Kuring",
           },
         ],
         answerKey: "A",
@@ -790,6 +97,10 @@ export const warayLesson8: StructuredLesson = {
             key: "C",
             text: "Kahoy",
           },
+          {
+            key: "D",
+            text: "Kuring",
+          },
         ],
         answerKey: "C",
       },
@@ -808,6 +119,10 @@ export const warayLesson8: StructuredLesson = {
           {
             key: "C",
             text: "Sun",
+          },
+          {
+            key: "D",
+            text: "Kuring",
           },
         ],
         answerKey: "B",
@@ -828,6 +143,10 @@ export const warayLesson8: StructuredLesson = {
             key: "C",
             text: "Salog",
           },
+          {
+            key: "D",
+            text: "Kuring",
+          },
         ],
         answerKey: "A",
       },
@@ -846,6 +165,10 @@ export const warayLesson8: StructuredLesson = {
           {
             key: "C",
             text: "Horse",
+          },
+          {
+            key: "D",
+            text: "Bulak",
           },
         ],
         answerKey: "B",
@@ -866,6 +189,10 @@ export const warayLesson8: StructuredLesson = {
             key: "C",
             text: "Gutiay an kuring.",
           },
+          {
+            key: "D",
+            text: "Kuring",
+          },
         ],
         answerKey: "A",
       },
@@ -884,6 +211,10 @@ export const warayLesson8: StructuredLesson = {
           {
             key: "C",
             text: "Root",
+          },
+          {
+            key: "D",
+            text: "Bukid",
           },
         ],
         answerKey: "B",
@@ -904,6 +235,10 @@ export const warayLesson8: StructuredLesson = {
             key: "C",
             text: "Bukid",
           },
+          {
+            key: "D",
+            text: "Kuring",
+          },
         ],
         answerKey: "B",
       },
@@ -922,6 +257,10 @@ export const warayLesson8: StructuredLesson = {
           {
             key: "C",
             text: "It is sunny.",
+          },
+          {
+            key: "D",
+            text: "Leaf",
           },
         ],
         answerKey: "A",
@@ -1166,6 +505,7 @@ export const warayLesson8: StructuredLesson = {
       name: "Nature Explorer Badge",
       description: "Awarded to learners who successfully identify common animals and elements of nature and use basic Waray expressions to describe their surroundings.",
     },
+    completionRequirement: "Obtain at least 70% in the lesson assessment. Learners may repeat the activities and assessment if they do not meet the requirement.",
   },
   expectedOutcomes: [
     "Identify common animals in Waray.",
@@ -1173,5 +513,1346 @@ export const warayLesson8: StructuredLesson = {
     "Describe familiar animals using simple sentences.",
     "Identify common natural elements such as the sun, rain, sea, and mountains.",
     "Use basic nature-related expressions in everyday conversations.",
+  ],
+  fillInBlanks: {
+    title: "Fill in the Blanks",
+    instructions: "Complete each sentence using the appropriate Waray word.",
+    items: [
+      {
+        id: "1",
+        sentence: "Ano ini nga ___?",
+        hint: "What animal is this?",
+        answer: "hayop",
+        wordBank: [
+          "Makusog",
+          "hayop",
+          "Dagat",
+          "Kagurangan",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "May ___ ako.",
+        hint: "I have a cat.",
+        answer: "kuring",
+        wordBank: [
+          "Gamut",
+          "Hulmigas",
+          "Kabayo",
+          "kuring",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "Naglupad an ___.",
+        hint: "The bird is flying.",
+        answer: "tamsi",
+        wordBank: [
+          "Pasayan",
+          "Baka",
+          "Tuna",
+          "tamsi",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "Aada ha tubig an ___.",
+        hint: "The fish is in the water.",
+        answer: "isda",
+        wordBank: [
+          "Halas",
+          "Ihalas",
+          "isda",
+          "Malaksi",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "Dako an ___.",
+        hint: "The dog is big.",
+        answer: "aso",
+        wordBank: [
+          "Bulan",
+          "Alimango",
+          "aso",
+          "Bitoon",
+        ],
+      },
+    ],
+  },
+  arrangeWords: {
+    title: "Arrange the Words",
+    instructions: "Arrange the words to form a correct Waray sentence.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "ini",
+          "hayop",
+          "Ano",
+          "nga",
+        ],
+        answer: [
+          "Ano",
+          "ini",
+          "nga",
+          "hayop",
+        ],
+        display: "Ano ini nga hayop?",
+      },
+      {
+        id: "2",
+        words: [
+          "ako",
+          "May",
+          "kuring",
+        ],
+        answer: [
+          "May",
+          "kuring",
+          "ako",
+        ],
+        display: "May kuring ako.",
+      },
+      {
+        id: "3",
+        words: [
+          "tamsi",
+          "an",
+          "Naglupad",
+        ],
+        answer: [
+          "Naglupad",
+          "an",
+          "tamsi",
+        ],
+        display: "Naglupad an tamsi.",
+      },
+      {
+        id: "4",
+        words: [
+          "ha",
+          "isda",
+          "an",
+          "tubig",
+          "Aada",
+        ],
+        answer: [
+          "Aada",
+          "ha",
+          "tubig",
+          "an",
+          "isda",
+        ],
+        display: "Aada ha tubig an isda.",
+      },
+      {
+        id: "5",
+        words: [
+          "an",
+          "Dako",
+          "aso",
+        ],
+        answer: [
+          "Dako",
+          "an",
+          "aso",
+        ],
+        display: "Dako an aso.",
+      },
+    ],
+  },
+  speaking: {
+    title: "Speaking Practice",
+    instructions: "Read the following sentences aloud.",
+    note: "Learners should listen to the model pronunciation before recording their own voice.",
+    practiceLessonId: "waray_8",
+    phrases: [
+      {
+        id: "1",
+        text: "Ano ini nga hayop?",
+        respelling: "A-no I-ni nga HA-yop?",
+        meaning: "What animal is this?",
+      },
+      {
+        id: "2",
+        text: "Naglupad an tamsi.",
+        respelling: "nag-LU-pad an TAM-si",
+        meaning: "The bird is flying.",
+      },
+      {
+        id: "3",
+        text: "Naruruyag ako hin mga hayop.",
+        respelling: "na-ru-RU-yag A-ko hin ma-NGA HA-yop",
+        meaning: "I like animals.",
+      },
+      {
+        id: "4",
+        text: "Nasirang an adlaw.",
+        respelling: "na-SI-rang an AD-law",
+        meaning: "The sun is shining.",
+      },
+      {
+        id: "5",
+        text: "Nadalagan an aso.",
+        respelling: "na-da-la-gan an a-so",
+        meaning: "The dog is running.",
+      },
+      {
+        id: "6",
+        text: "May mga bulak ha hardin.",
+        respelling: "may ma-nga bu-lak ha har-din",
+        meaning: "There are flowers in the garden.",
+      },
+      {
+        id: "7",
+        text: "Dako an bukid.",
+        respelling: "da-ko an bu-kid",
+        meaning: "The mountain is big.",
+      },
+    ],
+  },
+  exampleSituation: {
+    description: "Imagine this situation from the lesson: Talking About Pets.",
+    lead: "You can begin by saying:",
+    line: "May hayop ka ba ha balay?",
+    translation: "Do you have an animal at home?",
+  },
+  vocabularyIntro: "Learn the following words and expressions before proceeding to the activities.",
+  pronunciationTip: "Read each syllable clearly. Avoid rushing through longer expressions.",
+  selfIntroIntro: "Use these patterns and phrases from the lesson.",
+  vocabulary: [
+    {
+      term: "Hayop",
+      meaning: "Animal",
+      pronunciation: "HA-yop",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "A",
+          text: "May hayop ka ba ha balay?",
+          translation: "Do you have an animal at home?",
+        },
+        {
+          speaker: "B",
+          text: "Oo, may kuring ako.",
+          translation: "Yes, I have a cat.",
+        },
+      ],
+    },
+    {
+      term: "Aso",
+      meaning: "Dog",
+      pronunciation: "A-so",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "",
+          text: "Aso ini.",
+          translation: "This is a dog.",
+        },
+      ],
+    },
+    {
+      term: "Kuring",
+      meaning: "Cat",
+      pronunciation: "KU-ring",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, may kuring ako.",
+          translation: "Yes, I have a cat.",
+        },
+        {
+          speaker: "B",
+          text: "Ano an kolor han imo kuring?",
+          translation: "What is the color of your cat?",
+        },
+      ],
+    },
+    {
+      term: "Tamsi",
+      meaning: "Bird",
+      pronunciation: "TAM-si",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "",
+          text: "Naglupad an tamsi.",
+          translation: "The bird is flying.",
+        },
+      ],
+    },
+    {
+      term: "Manok",
+      meaning: "Chicken",
+      pronunciation: "MA-nok",
+      usage: "A common animal.",
+    },
+    {
+      term: "Pato",
+      meaning: "Duck",
+      pronunciation: "PA-to",
+      usage: "A common animal.",
+    },
+    {
+      term: "Baboy",
+      meaning: "Pig",
+      pronunciation: "BA-boy",
+      usage: "A common animal.",
+    },
+    {
+      term: "Baka",
+      meaning: "Cow",
+      pronunciation: "BA-ka",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "",
+          text: "Dako an baka.",
+          translation: "The cow is big.",
+        },
+      ],
+    },
+    {
+      term: "Kanding",
+      meaning: "Goat",
+      pronunciation: "KAN-ding",
+      usage: "A common animal.",
+    },
+    {
+      term: "Kabayo",
+      meaning: "Horse",
+      pronunciation: "ka-BA-yo",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano ito nga hayop?",
+          translation: "What animal is that?",
+        },
+        {
+          speaker: "B",
+          text: "Kabayo ito.",
+          translation: "That is a horse.",
+        },
+      ],
+    },
+    {
+      term: "Kabaw",
+      meaning: "Carabao",
+      pronunciation: "KA-baw",
+      usage: "A common animal.",
+      example: [
+        {
+          speaker: "",
+          text: "Makusog an kabaw.",
+          translation: "The carabao is strong.",
+        },
+      ],
+    },
+    {
+      term: "Unggoy",
+      meaning: "Monkey",
+      pronunciation: "UN-goy",
+      usage: "A common animal.",
+    },
+    {
+      term: "Halas",
+      meaning: "Snake",
+      pronunciation: "HA-las",
+      usage: "A common animal.",
+    },
+    {
+      term: "Pakô",
+      meaning: "Frog",
+      pronunciation: "pa-KO",
+      usage: "A common animal.",
+    },
+    {
+      term: "Alibangbang",
+      meaning: "Butterfly",
+      pronunciation: "a-li-bang-BANG",
+      usage: "A common animal.",
+    },
+    {
+      term: "Putyukan",
+      meaning: "Bee",
+      pronunciation: "put-YU-kan",
+      usage: "A common animal.",
+    },
+    {
+      term: "Hulmigas",
+      meaning: "Ant",
+      pronunciation: "hul-MI-gas",
+      usage: "A common animal.",
+    },
+    {
+      term: "Ilaga",
+      meaning: "Rat",
+      pronunciation: "i-LA-ga",
+      usage: "A common animal.",
+    },
+    {
+      term: "Isda",
+      meaning: "Fish",
+      pronunciation: "IS-da",
+      usage: "From this lesson's word list: sea and water animals.",
+      example: [
+        {
+          speaker: "",
+          text: "Aada ha tubig an isda.",
+          translation: "The fish is in the water.",
+        },
+      ],
+    },
+    {
+      term: "Pating",
+      meaning: "Shark",
+      pronunciation: "PA-ting",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Alimango",
+      meaning: "Crab",
+      pronunciation: "a-li-MANG-go",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Pasayan",
+      meaning: "Shrimp",
+      pronunciation: "pa-SA-yan",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Kugita",
+      meaning: "Octopus",
+      pronunciation: "ku-GI-ta",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Bao",
+      meaning: "Turtle",
+      pronunciation: "BA-o",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Balyena",
+      meaning: "Whale",
+      pronunciation: "bal-YE-na",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Dolpin",
+      meaning: "Dolphin",
+      pronunciation: "DOL-pin",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Dikya",
+      meaning: "Jellyfish",
+      pronunciation: "DIK-ya",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Kabhang",
+      meaning: "Shell",
+      pronunciation: "KAB-hang",
+      usage: "From this lesson's word list: sea and water animals.",
+    },
+    {
+      term: "Tanom",
+      meaning: "Plant",
+      pronunciation: "TA-nom",
+      usage: "From this lesson's word list: plants and flowers.",
+      example: [
+        {
+          speaker: "",
+          text: "Ano ito nga tanom?",
+          translation: "What is that plant?",
+        },
+      ],
+    },
+    {
+      term: "Kahoy",
+      meaning: "Tree",
+      pronunciation: "KA-hoy",
+      usage: "From this lesson's word list: plants and flowers.",
+      example: [
+        {
+          speaker: "A",
+          text: "Mahusay an aton palibot.",
+          translation: "Our surroundings are beautiful.",
+        },
+        {
+          speaker: "B",
+          text: "Oo, damo an mga kahoy ngan bulak.",
+          translation: "Yes, there are many trees and flowers.",
+        },
+      ],
+    },
+    {
+      term: "Bulak",
+      meaning: "Flower",
+      pronunciation: "BU-lak",
+      usage: "From this lesson's word list: plants and flowers.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, damo an mga kahoy ngan bulak.",
+          translation: "Yes, there are many trees and flowers.",
+        },
+        {
+          speaker: "B",
+          text: "Nag-uuran ba yana?",
+          translation: "Is it raining now?",
+        },
+      ],
+    },
+    {
+      term: "Dahon",
+      meaning: "Leaf",
+      pronunciation: "DA-hon",
+      usage: "From this lesson's word list: plants and flowers.",
+      example: [
+        {
+          speaker: "",
+          text: "Berde an dahon.",
+          translation: "The leaf is green.",
+        },
+      ],
+    },
+    {
+      term: "Sagbot",
+      meaning: "Grass",
+      pronunciation: "SAG-bot",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Gamut",
+      meaning: "Root",
+      pronunciation: "GA-mut",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Prutas",
+      meaning: "Fruit",
+      pronunciation: "PRU-tas",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Liso",
+      meaning: "Seed",
+      pronunciation: "LI-so",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Puno han lubi",
+      meaning: "Coconut tree",
+      pronunciation: "PU-no han LU-bi",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Kawayan",
+      meaning: "Bamboo",
+      pronunciation: "ka-WA-yan",
+      usage: "From this lesson's word list: plants and flowers.",
+    },
+    {
+      term: "Kinaiyahan",
+      meaning: "Nature",
+      pronunciation: "ki-na-i-YA-han",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Adlaw",
+      meaning: "Sun",
+      pronunciation: "AD-law",
+      usage: "From this lesson's word list: elements of nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Nasirang an adlaw.",
+          translation: "The sun is shining.",
+        },
+      ],
+    },
+    {
+      term: "Bulan",
+      meaning: "Moon",
+      pronunciation: "BU-lan",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Bitoon",
+      meaning: "Star",
+      pronunciation: "bi-TO-on",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Langit",
+      meaning: "Sky",
+      pronunciation: "LA-ngit",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Panganod",
+      meaning: "Cloud",
+      pronunciation: "pa-NGA-nod",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Ulan",
+      meaning: "Rain",
+      pronunciation: "U-lan",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Hangin",
+      meaning: "Wind",
+      pronunciation: "HA-ngin",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Dagat",
+      meaning: "Sea",
+      pronunciation: "DA-gat",
+      usage: "From this lesson's word list: elements of nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Mahusay an dagat.",
+          translation: "The sea is beautiful.",
+        },
+      ],
+    },
+    {
+      term: "Salog",
+      meaning: "River",
+      pronunciation: "SA-log",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Bukid",
+      meaning: "Mountain",
+      pronunciation: "BU-kid",
+      usage: "From this lesson's word list: elements of nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Dako an bukid.",
+          translation: "The mountain is big.",
+        },
+      ],
+    },
+    {
+      term: "Kagurangan",
+      meaning: "Forest",
+      pronunciation: "ka-gu-RANG-an",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Tuna",
+      meaning: "Land / Ground",
+      pronunciation: "TU-na",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Bato",
+      meaning: "Stone",
+      pronunciation: "BA-to",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Kalayo",
+      meaning: "Fire",
+      pronunciation: "ka-LA-yo",
+      usage: "From this lesson's word list: elements of nature.",
+    },
+    {
+      term: "Dako",
+      meaning: "Big",
+      pronunciation: "DA-ko",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Dako an aso.",
+          translation: "The dog is big.",
+        },
+      ],
+    },
+    {
+      term: "Gutiay",
+      meaning: "Small",
+      pronunciation: "gu-TI-ay",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Itom an iya kolor.",
+          translation: "Its color is black.",
+        },
+        {
+          speaker: "B",
+          text: "Gutiay ba hiya?",
+          translation: "Is it small?",
+        },
+      ],
+    },
+    {
+      term: "Malaksi",
+      meaning: "Fast",
+      pronunciation: "ma-LAK-si",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Kabayo ito.",
+          translation: "That is a horse.",
+        },
+        {
+          speaker: "B",
+          text: "Malaksi ba ito?",
+          translation: "Is it fast?",
+        },
+      ],
+    },
+    {
+      term: "Hinay",
+      meaning: "Slow",
+      pronunciation: "HI-nay",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Mahusay",
+      meaning: "Beautiful",
+      pronunciation: "ma-HU-say",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, malaksi ito.",
+          translation: "Yes, it is fast.",
+        },
+        {
+          speaker: "B",
+          text: "Mahusay ito nga hayop.",
+          translation: "It is a beautiful animal.",
+        },
+      ],
+    },
+    {
+      term: "Makusog",
+      meaning: "Strong",
+      pronunciation: "ma-KU-sog",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Makusog an kabaw.",
+          translation: "The carabao is strong.",
+        },
+      ],
+    },
+    {
+      term: "Ihalas",
+      meaning: "Wild",
+      pronunciation: "i-HA-las",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Amoon",
+      meaning: "Domestic / Tame",
+      pronunciation: "a-MO-on",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Berde",
+      meaning: "Green",
+      pronunciation: "BER-de",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Berde an dahon.",
+          translation: "The leaf is green.",
+        },
+      ],
+    },
+    {
+      term: "Limpyo",
+      meaning: "Clean",
+      pronunciation: "LIM-pyo",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+  ],
+  greetings: [
+    {
+      term: "Dako",
+      meaning: "Big",
+      pronunciation: "DA-ko",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Dako an aso.",
+          translation: "The dog is big.",
+        },
+      ],
+    },
+    {
+      term: "Gutiay",
+      meaning: "Small",
+      pronunciation: "gu-TI-ay",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Itom an iya kolor.",
+          translation: "Its color is black.",
+        },
+        {
+          speaker: "B",
+          text: "Gutiay ba hiya?",
+          translation: "Is it small?",
+        },
+      ],
+    },
+    {
+      term: "Malaksi",
+      meaning: "Fast",
+      pronunciation: "ma-LAK-si",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Kabayo ito.",
+          translation: "That is a horse.",
+        },
+        {
+          speaker: "B",
+          text: "Malaksi ba ito?",
+          translation: "Is it fast?",
+        },
+      ],
+    },
+    {
+      term: "Hinay",
+      meaning: "Slow",
+      pronunciation: "HI-nay",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Mahusay",
+      meaning: "Beautiful",
+      pronunciation: "ma-HU-say",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, malaksi ito.",
+          translation: "Yes, it is fast.",
+        },
+        {
+          speaker: "B",
+          text: "Mahusay ito nga hayop.",
+          translation: "It is a beautiful animal.",
+        },
+      ],
+    },
+    {
+      term: "Makusog",
+      meaning: "Strong",
+      pronunciation: "ma-KU-sog",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Makusog an kabaw.",
+          translation: "The carabao is strong.",
+        },
+      ],
+    },
+    {
+      term: "Ihalas",
+      meaning: "Wild",
+      pronunciation: "i-HA-las",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Amoon",
+      meaning: "Domestic / Tame",
+      pronunciation: "a-MO-on",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+    {
+      term: "Berde",
+      meaning: "Green",
+      pronunciation: "BER-de",
+      usage: "From this lesson's word list: describing animals and nature.",
+      example: [
+        {
+          speaker: "",
+          text: "Berde an dahon.",
+          translation: "The leaf is green.",
+        },
+      ],
+    },
+    {
+      term: "Limpyo",
+      meaning: "Clean",
+      pronunciation: "LIM-pyo",
+      usage: "From this lesson's word list: describing animals and nature.",
+    },
+  ],
+  patterns: [
+    {
+      label: "Pattern 1: Saying Something Is Big",
+      pattern: "Dako an + Animal or thing.",
+      examples: [
+        "Dako an aso.",
+        "Dako an bukid.",
+        "Dako an baka.",
+      ],
+    },
+    {
+      label: "Pattern 2: Saying Something Is Beautiful",
+      pattern: "Mahusay an + Thing.",
+      examples: [
+        "Mahusay an bulak.",
+        "Mahusay an dagat.",
+      ],
+    },
+    {
+      label: "Pattern 3: Asking About an Animal or Plant",
+      pattern: "Ano ito nga + hayop / tanom?",
+      examples: [
+        "Ano ito nga hayop?",
+        "Ano ito nga tanom?",
+      ],
+    },
+  ],
+  sentences: [
+    {
+      text: "Ano ini nga hayop?",
+      meaning: "What animal is this?",
+      pronunciation: "A-no I-ni nga HA-yop?",
+    },
+    {
+      text: "Aso ini.",
+      meaning: "This is a dog.",
+      pronunciation: "A-so I-ni",
+    },
+    {
+      text: "May kuring ako.",
+      meaning: "I have a cat.",
+      pronunciation: "May KU-ring A-ko",
+    },
+    {
+      text: "Naglupad an tamsi.",
+      meaning: "The bird is flying.",
+      pronunciation: "nag-LU-pad an TAM-si",
+    },
+    {
+      text: "Aada ha tubig an isda.",
+      meaning: "The fish is in the water.",
+      pronunciation: "A-a-da ha TU-big an IS-da",
+    },
+    {
+      text: "Dako an aso.",
+      meaning: "The dog is big.",
+      pronunciation: "DA-ko an A-so",
+    },
+    {
+      text: "Gutiay an kuring.",
+      meaning: "The cat is small.",
+      pronunciation: "gu-TI-ay an KU-ring",
+    },
+    {
+      text: "Naruruyag ako hin mga hayop.",
+      meaning: "I like animals.",
+      pronunciation: "na-ru-RU-yag A-ko hin ma-NGA HA-yop",
+    },
+    {
+      text: "Ano ito nga tanom?",
+      meaning: "What is that plant?",
+      pronunciation: "A-no I-to nga TA-nom?",
+    },
+    {
+      text: "Mahusay an bulak.",
+      meaning: "The flower is beautiful.",
+      pronunciation: "ma-HU-say an BU-lak",
+    },
+    {
+      text: "Nag-uuran.",
+      meaning: "It is raining.",
+      pronunciation: "nag-U-u-ran",
+    },
+    {
+      text: "Nasirang an adlaw.",
+      meaning: "The sun is shining.",
+      pronunciation: "na-SI-rang an AD-law",
+    },
+    {
+      text: "Mahusay an dagat.",
+      meaning: "The sea is beautiful.",
+      pronunciation: "ma-HU-say an DA-gat",
+    },
+    {
+      text: "Damo an mga kahoy.",
+      meaning: "There are many trees.",
+      pronunciation: "DA-mo an ma-NGA KA-hoy",
+    },
+    {
+      text: "Nalanguy an isda.",
+      meaning: "The fish is swimming.",
+    },
+    {
+      text: "Nadalagan an aso.",
+      meaning: "The dog is running.",
+    },
+    {
+      text: "Nakaturog an kuring.",
+      meaning: "The cat is sleeping.",
+    },
+    {
+      text: "Damo nga kahoy ha amon lugar.",
+      meaning: "There are many trees in our area.",
+    },
+    {
+      text: "May mga bulak ha hardin.",
+      meaning: "There are flowers in the garden.",
+    },
+    {
+      text: "Berde an dahon.",
+      meaning: "The leaf is green.",
+    },
+    {
+      text: "Mahangin yana.",
+      meaning: "It is windy today.",
+    },
+    {
+      text: "Madaop an adlaw.",
+      meaning: "The sun is hot.",
+    },
+    {
+      text: "Dako an bukid.",
+      meaning: "The mountain is big.",
+    },
+    {
+      text: "Dako an baka.",
+      meaning: "The cow is big.",
+    },
+    {
+      text: "Makusog an kabaw.",
+      meaning: "The carabao is strong.",
+    },
+    {
+      text: "Malaksi an kabayo.",
+      meaning: "The horse is fast.",
+    },
+  ],
+  conversations: [
+    {
+      title: "Conversation 1: Talking About Pets",
+      lines: [
+        {
+          speaker: "Ana",
+          text: "May hayop ka ba ha balay?",
+          translation: "Do you have an animal at home?",
+        },
+        {
+          speaker: "Ben",
+          text: "Oo, may kuring ako.",
+          translation: "Yes, I have a cat.",
+        },
+        {
+          speaker: "Ana",
+          text: "Ano an kolor han imo kuring?",
+          translation: "What is the color of your cat?",
+        },
+        {
+          speaker: "Ben",
+          text: "Itom an iya kolor.",
+          translation: "Its color is black.",
+        },
+        {
+          speaker: "Ana",
+          text: "Gutiay ba hiya?",
+          translation: "Is it small?",
+        },
+        {
+          speaker: "Ben",
+          text: "Oo, gutiay pa hiya.",
+          translation: "Yes, it is still small.",
+        },
+      ],
+      situation: "Ana and Ben: Talking About Pets.",
+    },
+    {
+      title: "Conversation 2: Seeing Animals",
+      lines: [
+        {
+          speaker: "Mia",
+          text: "Ano ito nga hayop?",
+          translation: "What animal is that?",
+        },
+        {
+          speaker: "Carlo",
+          text: "Kabayo ito.",
+          translation: "That is a horse.",
+        },
+        {
+          speaker: "Mia",
+          text: "Malaksi ba ito?",
+          translation: "Is it fast?",
+        },
+        {
+          speaker: "Carlo",
+          text: "Oo, malaksi ito.",
+          translation: "Yes, it is fast.",
+        },
+        {
+          speaker: "Mia",
+          text: "Mahusay ito nga hayop.",
+          translation: "It is a beautiful animal.",
+        },
+      ],
+      situation: "Mia and Carlo: Seeing Animals.",
+    },
+    {
+      title: "Conversation 3: Talking About Nature",
+      lines: [
+        {
+          speaker: "Liza",
+          text: "Mahusay an aton palibot.",
+          translation: "Our surroundings are beautiful.",
+        },
+        {
+          speaker: "Mark",
+          text: "Oo, damo an mga kahoy ngan bulak.",
+          translation: "Yes, there are many trees and flowers.",
+        },
+        {
+          speaker: "Liza",
+          text: "Nag-uuran ba yana?",
+          translation: "Is it raining now?",
+        },
+        {
+          speaker: "Mark",
+          text: "Diri, mahangin la.",
+          translation: "No, it is only windy.",
+        },
+        {
+          speaker: "Liza",
+          text: "Karuyag ko maglakat ha gawas.",
+          translation: "I want to walk outside.",
+        },
+      ],
+      situation: "Liza and Mark: Talking About Nature.",
+    },
+  ],
+  savedLanguageNotes: [
+    {
+      title: "A. Identifying Animals",
+      body: [
+        "Animals are commonly found in homes, farms, forests, and bodies of water.",
+      ],
+      examples: [
+        {
+          text: "Aso",
+          meaning: "Dog",
+        },
+        {
+          text: "Kuring",
+          meaning: "Cat",
+        },
+        {
+          text: "Manok",
+          meaning: "Chicken",
+        },
+        {
+          text: "Baka",
+          meaning: "Cow",
+        },
+        {
+          text: "Kanding",
+          meaning: "Goat",
+        },
+        {
+          text: "Kabaw",
+          meaning: "Carabao",
+        },
+        {
+          text: "Isda",
+          meaning: "Fish",
+        },
+        {
+          text: "Tamsi",
+          meaning: "Bird",
+        },
+      ],
+    },
+    {
+      title: "A. Identifying Animals",
+      body: [
+        "To ask what animal someone is looking at, use:",
+      ],
+      examples: [
+        {
+          text: "Ano ini nga hayop?",
+          meaning: "What animal is this?",
+        },
+      ],
+    },
+    {
+      title: "A. Identifying Animals",
+      body: [
+        "You can answer by naming the animal:",
+      ],
+      examples: [
+        {
+          text: "Aso ini.",
+          meaning: "This is a dog.",
+        },
+      ],
+    },
+    {
+      title: "B. Talking About Animal Actions",
+      body: [
+        "You can describe what an animal is doing using simple action sentences.",
+      ],
+      examples: [
+        {
+          text: "Naglupad an tamsi.",
+          meaning: "The bird is flying.",
+        },
+        {
+          text: "Nalanguy an isda.",
+          meaning: "The fish is swimming.",
+        },
+        {
+          text: "Nadalagan an aso.",
+          meaning: "The dog is running.",
+        },
+        {
+          text: "Nakaturog an kuring.",
+          meaning: "The cat is sleeping.",
+        },
+      ],
+    },
+    {
+      title: "C. Identifying Plants and Flowers",
+      body: [
+        "Plants are an important part of the environment. They provide food, shade, and shelter for different living things.",
+      ],
+      examples: [
+        {
+          text: "Kahoy",
+          meaning: "Tree",
+        },
+        {
+          text: "Bulak",
+          meaning: "Flower",
+        },
+        {
+          text: "Dahon",
+          meaning: "Leaf",
+        },
+        {
+          text: "Tanom",
+          meaning: "Plant",
+        },
+        {
+          text: "Sagbot",
+          meaning: "Grass",
+        },
+        {
+          text: "Lubi",
+          meaning: "Coconut",
+        },
+        {
+          text: "Damo nga kahoy ha amon lugar.",
+          meaning: "There are many trees in our area.",
+        },
+        {
+          text: "May mga bulak ha hardin.",
+          meaning: "There are flowers in the garden.",
+        },
+        {
+          text: "Berde an dahon.",
+          meaning: "The leaf is green.",
+        },
+      ],
+    },
+    {
+      title: "D. Talking About the Weather and Environment",
+      body: [
+        "You can use nature vocabulary to describe your surroundings and the weather.",
+      ],
+      examples: [
+        {
+          text: "Nag-uuran.",
+          meaning: "It is raining.",
+        },
+        {
+          text: "Mahangin yana.",
+          meaning: "It is windy today.",
+        },
+        {
+          text: "Madaop an adlaw.",
+          meaning: "The sun is hot.",
+        },
+        {
+          text: "Mahusay an dagat.",
+          meaning: "The sea is beautiful.",
+        },
+        {
+          text: "Dako an bukid.",
+          meaning: "The mountain is big.",
+        },
+      ],
+    },
+    {
+      title: "E. Describing Animals and Their Characteristics",
+      body: [
+        "You can combine animal names with descriptive words.",
+      ],
+      examples: [
+        {
+          text: "Dako an baka.",
+          meaning: "The cow is big.",
+        },
+        {
+          text: "Gutiay an kuring.",
+          meaning: "The cat is small.",
+        },
+        {
+          text: "Makusog an kabaw.",
+          meaning: "The carabao is strong.",
+        },
+        {
+          text: "Malaksi an kabayo.",
+          meaning: "The horse is fast.",
+        },
+      ],
+    },
+  ],
+  inferredFields: [
+    "situation",
+    "usage",
+    "example",
+    "pattern",
+    "fill-in",
+    "arrange",
+    "fourth option",
+    "speaking phrase",
+    "target pitch and mood",
+    "respelling",
+    "example situation",
+    "pronunciation tip",
+    "completion requirement",
   ],
 };

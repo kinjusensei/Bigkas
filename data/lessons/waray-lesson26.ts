@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// Fields not given by the plan are INFERRED from this lesson's own content and
+// listed in docs/waray-inferred-keys.md: situation, usage, example, pattern, match, arrange, speaking phrase, respelling, target pitch and mood, example situation, pronunciation tip, completion requirement.
 // The practice answers are INFERRED drafts, not from the PDF. See
 // docs/waray-draft-answer-keys.md for each answer and how it was found.
 
@@ -33,327 +35,6 @@ export const warayLesson26: StructuredLesson = {
     "Use appropriate expressions when communicating feelings, attitudes, and opinions.",
     "Interpret common sayings without translating them word for word.",
     "Recognize that expressions may vary depending on the speaker, community, and situation.",
-  ],
-  expressionGroups: [
-    {
-      title: "Vocabulary",
-      intro: [
-        "Note: The vocabulary includes descriptive expressions as well as terminology used to discuss figurative language. Some expressions may have different preferred forms in different Western Samar communities.",
-      ],
-      items: [
-        {
-          term: "Idiom / pananglitan nga diri literal an kahulogan",
-          meaning: "Idiom",
-          pronunciation: "I-di-yom",
-        },
-        {
-          term: "Ekspresyon",
-          meaning: "Expression",
-          pronunciation: "Eks-pres-yon",
-        },
-        {
-          term: "Panultihon",
-          meaning: "Saying",
-          pronunciation: "Pa-nul-ti-hon",
-        },
-        {
-          term: "Kahulogan",
-          meaning: "Meaning",
-          pronunciation: "Ka-hu-lo-gan",
-        },
-        {
-          term: "Literal nga kahulogan",
-          meaning: "Literal meaning",
-          pronunciation: "Li-te-ral nga ka-hu-lo-gan",
-        },
-        {
-          term: "Diri literal nga kahulogan",
-          meaning: "Figurative meaning",
-          pronunciation: "Di-ri li-te-ral nga ka-hu-lo-gan",
-        },
-        {
-          term: "Konteksto",
-          meaning: "Context",
-          pronunciation: "Kon-tek-sto",
-        },
-        {
-          term: "Pagbati",
-          meaning: "Feeling",
-          pronunciation: "Pag-ba-ti",
-        },
-        {
-          term: "Pamatasan / batasan",
-          meaning: "Attitude",
-          pronunciation: "Pa-ma-ta-san",
-        },
-        {
-          term: "Eksperyensya",
-          meaning: "Experience",
-          pronunciation: "Eks-per-yen-sya",
-        },
-        {
-          term: "Maupay an buot",
-          meaning: "Kind-hearted",
-          pronunciation: "Ma-u-pay an bu-ot",
-        },
-        {
-          term: "Marig-on an buot",
-          meaning: "Courageous / Strong-willed",
-          pronunciation: "Ma-ri-gon an bu-ot",
-        },
-        {
-          term: "Maluya an buot",
-          meaning: "Discouraged",
-          pronunciation: "Ma-lu-ya an bu-ot",
-        },
-        {
-          term: "Mapailubon",
-          meaning: "Patient",
-          pronunciation: "Ma-pa-i-lu-bon",
-        },
-        {
-          term: "Mahunahunaon",
-          meaning: "Thoughtful",
-          pronunciation: "Ma-hu-na-hu-na-on",
-        },
-      ],
-    },
-  ],
-  languageNotes: [
-    {
-      title: "Understanding Idiomatic Expressions",
-      body: [
-        "An idiom is a group of words that communicates a meaning different from the direct meaning of its individual words.",
-        "For example:",
-        "• English: “He has a big heart.”",
-        "• Meaning: He is kind and generous.",
-        "• The expression does not describe the physical size of his heart.",
-        "In Waray, expressions describing a person's buot may communicate something about their attitude, character, or disposition.",
-        "Consider these candidate expressions:",
-      ],
-      table: {
-        leftHeading: "",
-        rightHeading: "",
-        rows: [
-          {
-            left: "Waray Expression",
-            right: "Possible English Meaning · Explanation",
-          },
-          {
-            left: "Maupay an buot",
-            right: "Kind-hearted · Describes someone who treats others well.",
-          },
-          {
-            left: "Marig-on an buot",
-            right: "Strong-willed · Describes someone who remains determined.",
-          },
-          {
-            left: "Maluya an buot",
-            right: "Discouraged or lacking confidence · May describe someone who feels emotionally weak or discouraged.",
-          },
-          {
-            left: "Mapailubon",
-            right: "Patient · Describes someone who can tolerate difficulties without easily becoming upset.",
-          },
-        ],
-      },
-    },
-    {
-      title: "Understanding Idiomatic Expressions",
-      body: [
-        "These examples should not automatically be treated as fixed idioms. Some are descriptive expressions whose meanings depend on context.",
-      ],
-    },
-    {
-      title: "Literal and Figurative Meanings",
-      body: [
-        "Compare the following:",
-        "Example A: Literal Meaning",
-        "• Waray: Dako an balay.",
-        "• English: The house is big.",
-        "• Explanation: The statement describes the actual size of a house.",
-        "Example B: Figurative Description",
-        "• Waray: Maupay an iya buot.",
-        "• English: He/She is kind-hearted.",
-        "• Explanation: The expression describes the person's character rather than a physical object.",
-        "Understanding the surrounding conversation helps learners identify the intended meaning.",
-      ],
-    },
-    {
-      title: "Selected Expressions and Their Uses",
-      body: [
-        "The following examples introduce useful expressions for describing people and situations.",
-      ],
-      table: {
-        leftHeading: "Waray Expression",
-        rightHeading: "English Meaning · Example Situation",
-        rows: [
-          {
-            left: "Maupay an buot niya.",
-            right: "He/She is kind-hearted. · Describing a helpful person.",
-          },
-          {
-            left: "Marig-on an iya buot.",
-            right: "He/She is strong-willed. · Describing someone who does not easily give up.",
-          },
-          {
-            left: "Maluya an iya buot.",
-            right: "He/She feels discouraged. · Describing someone who has lost confidence.",
-          },
-          {
-            left: "Mapailubon hiya.",
-            right: "He/She is patient. · Describing someone who remains calm while waiting.",
-          },
-          {
-            left: "Diri hiya basta-basta nawawad-an hin paglaom.",
-            right: "He/She does not easily lose hope. · Describing someone who keeps trying.",
-          },
-          {
-            left: "Damo an iya naeksperyensyahan.",
-            right: "He/She has experienced many things. · Describing someone with considerable life experience.",
-          },
-          {
-            left: "May rason hiya ha iya ginhimo.",
-            right: "He/She has a reason for what was done. · Explaining someone's actions.",
-          },
-          {
-            left: "Kinahanglan hunahunaon hin maupay.",
-            right: "It needs to be thought through carefully. · Advising someone to consider a decision.",
-          },
-        ],
-      },
-    },
-    {
-      title: "Selected Expressions and Their Uses",
-      body: [
-        "Important: These are practical descriptive expressions, not all established idioms or traditional proverbs. Their naturalness and preferred wording should be confirmed by a Western Samar speaker.",
-      ],
-    },
-    {
-      title: "Interpreting Expressions Through Context",
-      body: [
-        "The meaning of an expression can change depending on the situation in which it is used.",
-      ],
-    },
-    {
-      title: "Situation A: Describing a Helpful Person",
-      body: [
-        "Waray: Maupay an buot ni Maria kay pirme hiya nabulig ha iya mga sangkay.",
-        "English: Maria is kind-hearted because she always helps her friends.",
-        "Explanation: The expression maupay an buot describes Maria's character. It does not refer to her physical appearance.",
-      ],
-    },
-    {
-      title: "Situation B: Encouraging Someone",
-      body: [
-        "Waray: Ayaw kawad-i hin paglaom. Padayon la ha imo ginbubuhat.",
-        "English: Do not lose hope. Just continue what you are doing.",
-        "Explanation: The speaker encourages someone to remain hopeful and continue working toward a goal.",
-      ],
-    },
-    {
-      title: "Situation C: Describing Determination",
-      body: [
-        "Waray: Marig-on an iya buot, salit waray hiya umundang bisan makuri an iya gin-aatubang.",
-        "English: He/She is strong-willed, so he/she did not stop even though the situation was difficult.",
-        "Explanation: The expression describes determination and the ability to continue despite difficulties.",
-      ],
-    },
-    {
-      title: "Situation D: Giving Advice",
-      body: [
-        "Waray: Kinahanglan hunahunaon mo anay hin maupay an imo desisyon.",
-        "English: You need to think carefully about your decision first.",
-        "Explanation: The speaker advises someone not to make a decision without considering its possible consequences.",
-      ],
-    },
-  ],
-  conversations: [
-    {
-      title: "Conversation A: Describing a Friend",
-      lines: [
-        {
-          speaker: "Ana",
-          text: "Kumusta an imo bag-o nga sangkay?",
-          translation: "How is your new friend?",
-        },
-        {
-          speaker: "Ben",
-          text: "Maupay an iya buot. Pirme hiya nabulig ha iba.",
-          translation: "He/She is kind-hearted. He/She always helps others.",
-        },
-        {
-          speaker: "Ana",
-          text: "Maupay man ito nga batasan.",
-          translation: "That is a good attitude.",
-        },
-        {
-          speaker: "Ben",
-          text: "Oo. Mapailubon liwat hiya.",
-          translation: "Yes. He/She is also patient.",
-        },
-      ],
-    },
-    {
-      title: "Conversation B: Encouraging a Classmate",
-      lines: [
-        {
-          speaker: "Carlo",
-          text: "Nasusubo ako kay waray ako makapasar ha eksam.",
-          translation: "I feel sad because I did not pass the examination.",
-        },
-        {
-          speaker: "Dina",
-          text: "Ayaw kawad-i hin paglaom.",
-          translation: "Do not lose hope.",
-        },
-        {
-          speaker: "Carlo",
-          text: "Pero makuri gud an leksyon.",
-          translation: "But the lesson is really difficult.",
-        },
-        {
-          speaker: "Dina",
-          text: "Padayon la ha pag-aram. Mahibabaro ka liwat.",
-          translation: "Just continue studying. You will learn eventually.",
-        },
-        {
-          speaker: "Carlo",
-          text: "Salamat ha imo pagdasig.",
-          translation: "Thank you for encouraging me.",
-        },
-      ],
-    },
-    {
-      title: "Conversation C: Giving Advice",
-      lines: [
-        {
-          speaker: "Ella",
-          text: "Diri ako sigurado kon kakarawaton ko an trabaho.",
-          translation: "I am not sure whether I should accept the job.",
-        },
-        {
-          speaker: "Fred",
-          text: "Hunahunaa anay hin maupay an imo desisyon.",
-          translation: "Think carefully about your decision first.",
-        },
-        {
-          speaker: "Ella",
-          text: "Kay ano nga kinahanglan ko maghunahuna hin dugay?",
-          translation: "Why do I need to think about it carefully?",
-        },
-        {
-          speaker: "Fred",
-          text: "Importante nga hibaroan mo an mga bentaha ngan disbentaha.",
-          translation: "It is important to know the advantages and disadvantages.",
-        },
-        {
-          speaker: "Ella",
-          text: "Husto ka. Susumatan ko ikaw kon nakadesisyon na ako.",
-          translation: "You are right. I will tell you once I have decided.",
-        },
-      ],
-    },
   ],
   assessment: {
     instructions: "Choose the best answer for each question.",
@@ -905,6 +586,7 @@ export const warayLesson26: StructuredLesson = {
       name: "Figurative Language Explorer Badge",
       description: "Awarded to learners who successfully identify and interpret selected Waray expressions using context.",
     },
+    completionRequirement: "Obtain at least 70% in the lesson assessment. Learners may repeat the activities and assessment if they do not meet the requirement.",
   },
   expectedOutcomes: [
     "Recognize selected Waray expressions and their intended meanings.",
@@ -918,5 +600,743 @@ export const warayLesson26: StructuredLesson = {
     "Participate in the guided conversation exercises.",
     "Obtain at least 70% in the lesson assessment.",
     "Earn up to 60 XP and unlock the Figurative Language Explorer Badge.",
+  ],
+  matchActivity: {
+    title: "Match the Words",
+    instructions: "Match the Waray expression with its English meaning.",
+    pairs: [
+      {
+        id: "1",
+        term: "Kahulogan",
+        answer: "Meaning",
+      },
+      {
+        id: "2",
+        term: "Panultihon",
+        answer: "Saying",
+      },
+      {
+        id: "3",
+        term: "Ekspresyon",
+        answer: "Expression",
+      },
+      {
+        id: "4",
+        term: "Marig-on an buot",
+        answer: "Courageous / Strong-willed",
+      },
+      {
+        id: "5",
+        term: "Pagbati",
+        answer: "Feeling",
+      },
+    ],
+  },
+  arrangeWords: {
+    title: "Arrange the Words",
+    instructions: "Arrange the words to form a correct Waray sentence.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "buot",
+          "niya",
+          "an",
+          "Maupay",
+        ],
+        answer: [
+          "Maupay",
+          "an",
+          "buot",
+          "niya",
+        ],
+        display: "Maupay an buot niya.",
+      },
+      {
+        id: "2",
+        words: [
+          "iya",
+          "an",
+          "buot",
+          "Marig-on",
+        ],
+        answer: [
+          "Marig-on",
+          "an",
+          "iya",
+          "buot",
+        ],
+        display: "Marig-on an iya buot.",
+      },
+      {
+        id: "3",
+        words: [
+          "iya",
+          "an",
+          "Maluya",
+          "buot",
+        ],
+        answer: [
+          "Maluya",
+          "an",
+          "iya",
+          "buot",
+        ],
+        display: "Maluya an iya buot.",
+      },
+      {
+        id: "4",
+        words: [
+          "nawawad-an",
+          "basta-basta",
+          "hiya",
+          "Diri",
+          "paglaom",
+          "hin",
+        ],
+        answer: [
+          "Diri",
+          "hiya",
+          "basta-basta",
+          "nawawad-an",
+          "hin",
+          "paglaom",
+        ],
+        display: "Diri hiya basta-basta nawawad-an hin paglaom.",
+      },
+      {
+        id: "5",
+        words: [
+          "naeksperyensyahan",
+          "Damo",
+          "an",
+          "iya",
+        ],
+        answer: [
+          "Damo",
+          "an",
+          "iya",
+          "naeksperyensyahan",
+        ],
+        display: "Damo an iya naeksperyensyahan.",
+      },
+    ],
+  },
+  speaking: {
+    title: "Speaking Practice",
+    instructions: "Read the following sentences aloud.",
+    note: "Learners should listen to the model pronunciation before recording their own voice.",
+    practiceLessonId: "waray_26",
+    phrases: [
+      {
+        id: "1",
+        text: "Maupay an buot niya.",
+        respelling: "ma-u-pay an bu-ot ni-ya",
+        meaning: "He/She is kind-hearted.",
+      },
+      {
+        id: "2",
+        text: "Marig-on an iya buot.",
+        respelling: "ma-ri-gon an ee-yah bu-ot",
+        meaning: "He/She is strong-willed.",
+      },
+      {
+        id: "3",
+        text: "Maluya an iya buot.",
+        respelling: "ma-lu-ya an ee-yah bu-ot",
+        meaning: "He/She feels discouraged.",
+      },
+      {
+        id: "4",
+        text: "Mapailubon hiya.",
+        respelling: "ma-pa-i-lu-bon hee-yah",
+        meaning: "He/She is patient.",
+      },
+      {
+        id: "5",
+        text: "Diri hiya basta-basta nawawad-an hin paglaom.",
+        respelling: "di-ri hee-yah bas-ta-bas-ta na-wa-wad-an hin pag-la-om",
+        meaning: "He/She does not easily lose hope.",
+      },
+      {
+        id: "6",
+        text: "Damo an iya naeksperyensyahan.",
+        respelling: "da-mo an ee-yah na-ek-sper-yen-sya-han",
+        meaning: "He/She has experienced many things.",
+      },
+      {
+        id: "7",
+        text: "May rason hiya ha iya ginhimo.",
+        respelling: "may rah-sohn hee-yah ha ee-yah gin-hi-mo",
+        meaning: "He/She has a reason for what was done.",
+      },
+    ],
+  },
+  exampleSituation: {
+    description: "Imagine this situation from the lesson: Describing a Friend.",
+    lead: "You can begin by saying:",
+    line: "Kumusta an imo bag-o nga sangkay?",
+    translation: "How is your new friend?",
+  },
+  vocabularyIntro: "Learn the following words and expressions before proceeding to the activities.",
+  pronunciationTip: "Read each syllable clearly. Avoid rushing through longer expressions.",
+  selfIntroIntro: "Use these patterns and phrases from the lesson.",
+  vocabulary: [
+    {
+      term: "Idiom / pananglitan nga diri literal an kahulogan",
+      meaning: "Idiom",
+      pronunciation: "I-di-yom",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Ekspresyon",
+      meaning: "Expression",
+      pronunciation: "Eks-pres-yon",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Panultihon",
+      meaning: "Saying",
+      pronunciation: "Pa-nul-ti-hon",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Kahulogan",
+      meaning: "Meaning",
+      pronunciation: "Ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Literal nga kahulogan",
+      meaning: "Literal meaning",
+      pronunciation: "Li-te-ral nga ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Diri literal nga kahulogan",
+      meaning: "Figurative meaning",
+      pronunciation: "Di-ri li-te-ral nga ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Konteksto",
+      meaning: "Context",
+      pronunciation: "Kon-tek-sto",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Pagbati",
+      meaning: "Feeling",
+      pronunciation: "Pag-ba-ti",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Pamatasan / batasan",
+      meaning: "Attitude",
+      pronunciation: "Pa-ma-ta-san",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "A",
+          text: "Maupay an iya buot. Pirme hiya nabulig ha iba.",
+          translation: "He/She is kind-hearted. He/She always helps others.",
+        },
+        {
+          speaker: "B",
+          text: "Maupay man ito nga batasan.",
+          translation: "That is a good attitude.",
+        },
+      ],
+    },
+    {
+      term: "Eksperyensya",
+      meaning: "Experience",
+      pronunciation: "Eks-per-yen-sya",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Maupay an buot",
+      meaning: "Kind-hearted",
+      pronunciation: "Ma-u-pay an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "",
+          text: "Maupay an buot niya.",
+          translation: "He/She is kind-hearted. · Describing a helpful person.",
+        },
+      ],
+    },
+    {
+      term: "Marig-on an buot",
+      meaning: "Courageous / Strong-willed",
+      pronunciation: "Ma-ri-gon an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Maluya an buot",
+      meaning: "Discouraged",
+      pronunciation: "Ma-lu-ya an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Mapailubon",
+      meaning: "Patient",
+      pronunciation: "Ma-pa-i-lu-bon",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "A",
+          text: "Maupay man ito nga batasan.",
+          translation: "That is a good attitude.",
+        },
+        {
+          speaker: "B",
+          text: "Oo. Mapailubon liwat hiya.",
+          translation: "Yes. He/She is also patient.",
+        },
+      ],
+    },
+    {
+      term: "Mahunahunaon",
+      meaning: "Thoughtful",
+      pronunciation: "Ma-hu-na-hu-na-on",
+      usage: "From this lesson's vocabulary list.",
+    },
+  ],
+  greetings: [
+    {
+      term: "Idiom / pananglitan nga diri literal an kahulogan",
+      meaning: "Idiom",
+      pronunciation: "I-di-yom",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Ekspresyon",
+      meaning: "Expression",
+      pronunciation: "Eks-pres-yon",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Panultihon",
+      meaning: "Saying",
+      pronunciation: "Pa-nul-ti-hon",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Kahulogan",
+      meaning: "Meaning",
+      pronunciation: "Ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Literal nga kahulogan",
+      meaning: "Literal meaning",
+      pronunciation: "Li-te-ral nga ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Diri literal nga kahulogan",
+      meaning: "Figurative meaning",
+      pronunciation: "Di-ri li-te-ral nga ka-hu-lo-gan",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Konteksto",
+      meaning: "Context",
+      pronunciation: "Kon-tek-sto",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Pagbati",
+      meaning: "Feeling",
+      pronunciation: "Pag-ba-ti",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Pamatasan / batasan",
+      meaning: "Attitude",
+      pronunciation: "Pa-ma-ta-san",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "A",
+          text: "Maupay an iya buot. Pirme hiya nabulig ha iba.",
+          translation: "He/She is kind-hearted. He/She always helps others.",
+        },
+        {
+          speaker: "B",
+          text: "Maupay man ito nga batasan.",
+          translation: "That is a good attitude.",
+        },
+      ],
+    },
+    {
+      term: "Eksperyensya",
+      meaning: "Experience",
+      pronunciation: "Eks-per-yen-sya",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Maupay an buot",
+      meaning: "Kind-hearted",
+      pronunciation: "Ma-u-pay an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "",
+          text: "Maupay an buot niya.",
+          translation: "He/She is kind-hearted. · Describing a helpful person.",
+        },
+      ],
+    },
+    {
+      term: "Marig-on an buot",
+      meaning: "Courageous / Strong-willed",
+      pronunciation: "Ma-ri-gon an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Maluya an buot",
+      meaning: "Discouraged",
+      pronunciation: "Ma-lu-ya an bu-ot",
+      usage: "From this lesson's vocabulary list.",
+    },
+    {
+      term: "Mapailubon",
+      meaning: "Patient",
+      pronunciation: "Ma-pa-i-lu-bon",
+      usage: "From this lesson's vocabulary list.",
+      example: [
+        {
+          speaker: "A",
+          text: "Maupay man ito nga batasan.",
+          translation: "That is a good attitude.",
+        },
+        {
+          speaker: "B",
+          text: "Oo. Mapailubon liwat hiya.",
+          translation: "Yes. He/She is also patient.",
+        },
+      ],
+    },
+    {
+      term: "Mahunahunaon",
+      meaning: "Thoughtful",
+      pronunciation: "Ma-hu-na-hu-na-on",
+      usage: "From this lesson's vocabulary list.",
+    },
+  ],
+  patterns: [
+    {
+      label: "Pattern 1: Describing Character",
+      pattern: "Word + an buot",
+      examples: [
+        "Maupay an buot",
+        "Marig-on an buot",
+        "Maluya an buot",
+      ],
+    },
+    {
+      label: "Pattern 2: Describing Someone",
+      pattern: "Word + an iya buot.",
+      examples: [
+        "Marig-on an iya buot.",
+        "Maluya an iya buot.",
+      ],
+    },
+  ],
+  sentences: [
+    {
+      text: "Maupay an buot niya.",
+      meaning: "He/She is kind-hearted. · Describing a helpful person.",
+    },
+    {
+      text: "Marig-on an iya buot.",
+      meaning: "He/She is strong-willed. · Describing someone who does not easily give up.",
+    },
+    {
+      text: "Maluya an iya buot.",
+      meaning: "He/She feels discouraged. · Describing someone who has lost confidence.",
+    },
+    {
+      text: "Mapailubon hiya.",
+      meaning: "He/She is patient. · Describing someone who remains calm while waiting.",
+    },
+    {
+      text: "Diri hiya basta-basta nawawad-an hin paglaom.",
+      meaning: "He/She does not easily lose hope. · Describing someone who keeps trying.",
+    },
+    {
+      text: "Damo an iya naeksperyensyahan.",
+      meaning: "He/She has experienced many things. · Describing someone with considerable life experience.",
+    },
+    {
+      text: "May rason hiya ha iya ginhimo.",
+      meaning: "He/She has a reason for what was done. · Explaining someone's actions.",
+    },
+    {
+      text: "Kinahanglan hunahunaon hin maupay.",
+      meaning: "It needs to be thought through carefully. · Advising someone to consider a decision.",
+    },
+  ],
+  conversations: [
+    {
+      title: "Conversation A: Describing a Friend",
+      lines: [
+        {
+          speaker: "Ana",
+          text: "Kumusta an imo bag-o nga sangkay?",
+          translation: "How is your new friend?",
+        },
+        {
+          speaker: "Ben",
+          text: "Maupay an iya buot. Pirme hiya nabulig ha iba.",
+          translation: "He/She is kind-hearted. He/She always helps others.",
+        },
+        {
+          speaker: "Ana",
+          text: "Maupay man ito nga batasan.",
+          translation: "That is a good attitude.",
+        },
+        {
+          speaker: "Ben",
+          text: "Oo. Mapailubon liwat hiya.",
+          translation: "Yes. He/She is also patient.",
+        },
+      ],
+      situation: "Ana and Ben: Describing a Friend.",
+    },
+    {
+      title: "Conversation B: Encouraging a Classmate",
+      lines: [
+        {
+          speaker: "Carlo",
+          text: "Nasusubo ako kay waray ako makapasar ha eksam.",
+          translation: "I feel sad because I did not pass the examination.",
+        },
+        {
+          speaker: "Dina",
+          text: "Ayaw kawad-i hin paglaom.",
+          translation: "Do not lose hope.",
+        },
+        {
+          speaker: "Carlo",
+          text: "Pero makuri gud an leksyon.",
+          translation: "But the lesson is really difficult.",
+        },
+        {
+          speaker: "Dina",
+          text: "Padayon la ha pag-aram. Mahibabaro ka liwat.",
+          translation: "Just continue studying. You will learn eventually.",
+        },
+        {
+          speaker: "Carlo",
+          text: "Salamat ha imo pagdasig.",
+          translation: "Thank you for encouraging me.",
+        },
+      ],
+      situation: "Carlo and Dina: Encouraging a Classmate.",
+    },
+    {
+      title: "Conversation C: Giving Advice",
+      lines: [
+        {
+          speaker: "Ella",
+          text: "Diri ako sigurado kon kakarawaton ko an trabaho.",
+          translation: "I am not sure whether I should accept the job.",
+        },
+        {
+          speaker: "Fred",
+          text: "Hunahunaa anay hin maupay an imo desisyon.",
+          translation: "Think carefully about your decision first.",
+        },
+        {
+          speaker: "Ella",
+          text: "Kay ano nga kinahanglan ko maghunahuna hin dugay?",
+          translation: "Why do I need to think about it carefully?",
+        },
+        {
+          speaker: "Fred",
+          text: "Importante nga hibaroan mo an mga bentaha ngan disbentaha.",
+          translation: "It is important to know the advantages and disadvantages.",
+        },
+        {
+          speaker: "Ella",
+          text: "Husto ka. Susumatan ko ikaw kon nakadesisyon na ako.",
+          translation: "You are right. I will tell you once I have decided.",
+        },
+      ],
+      situation: "Ella and Fred: Giving Advice.",
+    },
+  ],
+  savedLanguageNotes: [
+    {
+      title: "Understanding Idiomatic Expressions",
+      body: [
+        "An idiom is a group of words that communicates a meaning different from the direct meaning of its individual words.",
+        "For example:",
+        "• English: “He has a big heart.”",
+        "• Meaning: He is kind and generous.",
+        "• The expression does not describe the physical size of his heart.",
+        "In Waray, expressions describing a person's buot may communicate something about their attitude, character, or disposition.",
+        "Consider these candidate expressions:",
+      ],
+      table: {
+        leftHeading: "",
+        rightHeading: "",
+        rows: [
+          {
+            left: "Waray Expression",
+            right: "Possible English Meaning · Explanation",
+          },
+          {
+            left: "Maupay an buot",
+            right: "Kind-hearted · Describes someone who treats others well.",
+          },
+          {
+            left: "Marig-on an buot",
+            right: "Strong-willed · Describes someone who remains determined.",
+          },
+          {
+            left: "Maluya an buot",
+            right: "Discouraged or lacking confidence · May describe someone who feels emotionally weak or discouraged.",
+          },
+          {
+            left: "Mapailubon",
+            right: "Patient · Describes someone who can tolerate difficulties without easily becoming upset.",
+          },
+        ],
+      },
+    },
+    {
+      title: "Understanding Idiomatic Expressions",
+      body: [
+        "These examples should not automatically be treated as fixed idioms. Some are descriptive expressions whose meanings depend on context.",
+      ],
+    },
+    {
+      title: "Literal and Figurative Meanings",
+      body: [
+        "Compare the following:",
+        "Example A: Literal Meaning",
+        "• Waray: Dako an balay.",
+        "• English: The house is big.",
+        "• Explanation: The statement describes the actual size of a house.",
+        "Example B: Figurative Description",
+        "• Waray: Maupay an iya buot.",
+        "• English: He/She is kind-hearted.",
+        "• Explanation: The expression describes the person's character rather than a physical object.",
+        "Understanding the surrounding conversation helps learners identify the intended meaning.",
+      ],
+    },
+    {
+      title: "Selected Expressions and Their Uses",
+      body: [
+        "The following examples introduce useful expressions for describing people and situations.",
+      ],
+      table: {
+        leftHeading: "Waray Expression",
+        rightHeading: "English Meaning · Example Situation",
+        rows: [
+          {
+            left: "Maupay an buot niya.",
+            right: "He/She is kind-hearted. · Describing a helpful person.",
+          },
+          {
+            left: "Marig-on an iya buot.",
+            right: "He/She is strong-willed. · Describing someone who does not easily give up.",
+          },
+          {
+            left: "Maluya an iya buot.",
+            right: "He/She feels discouraged. · Describing someone who has lost confidence.",
+          },
+          {
+            left: "Mapailubon hiya.",
+            right: "He/She is patient. · Describing someone who remains calm while waiting.",
+          },
+          {
+            left: "Diri hiya basta-basta nawawad-an hin paglaom.",
+            right: "He/She does not easily lose hope. · Describing someone who keeps trying.",
+          },
+          {
+            left: "Damo an iya naeksperyensyahan.",
+            right: "He/She has experienced many things. · Describing someone with considerable life experience.",
+          },
+          {
+            left: "May rason hiya ha iya ginhimo.",
+            right: "He/She has a reason for what was done. · Explaining someone's actions.",
+          },
+          {
+            left: "Kinahanglan hunahunaon hin maupay.",
+            right: "It needs to be thought through carefully. · Advising someone to consider a decision.",
+          },
+        ],
+      },
+    },
+    {
+      title: "Selected Expressions and Their Uses",
+      body: [
+        "Important: These are practical descriptive expressions, not all established idioms or traditional proverbs. Their naturalness and preferred wording should be confirmed by a Western Samar speaker.",
+      ],
+    },
+    {
+      title: "Interpreting Expressions Through Context",
+      body: [
+        "The meaning of an expression can change depending on the situation in which it is used.",
+      ],
+    },
+    {
+      title: "Situation A: Describing a Helpful Person",
+      body: [
+        "Waray: Maupay an buot ni Maria kay pirme hiya nabulig ha iya mga sangkay.",
+        "English: Maria is kind-hearted because she always helps her friends.",
+        "Explanation: The expression maupay an buot describes Maria's character. It does not refer to her physical appearance.",
+      ],
+    },
+    {
+      title: "Situation B: Encouraging Someone",
+      body: [
+        "Waray: Ayaw kawad-i hin paglaom. Padayon la ha imo ginbubuhat.",
+        "English: Do not lose hope. Just continue what you are doing.",
+        "Explanation: The speaker encourages someone to remain hopeful and continue working toward a goal.",
+      ],
+    },
+    {
+      title: "Situation C: Describing Determination",
+      body: [
+        "Waray: Marig-on an iya buot, salit waray hiya umundang bisan makuri an iya gin-aatubang.",
+        "English: He/She is strong-willed, so he/she did not stop even though the situation was difficult.",
+        "Explanation: The expression describes determination and the ability to continue despite difficulties.",
+      ],
+    },
+    {
+      title: "Situation D: Giving Advice",
+      body: [
+        "Waray: Kinahanglan hunahunaon mo anay hin maupay an imo desisyon.",
+        "English: You need to think carefully about your decision first.",
+        "Explanation: The speaker advises someone not to make a decision without considering its possible consequences.",
+      ],
+    },
+    {
+      title: "Vocabulary",
+      body: [
+        "Note: The vocabulary includes descriptive expressions as well as terminology used to discuss figurative language. Some expressions may have different preferred forms in different Western Samar communities.",
+      ],
+    },
+  ],
+  inferredFields: [
+    "situation",
+    "usage",
+    "example",
+    "pattern",
+    "match",
+    "arrange",
+    "speaking phrase",
+    "respelling",
+    "target pitch and mood",
+    "example situation",
+    "pronunciation tip",
+    "completion requirement",
   ],
 };

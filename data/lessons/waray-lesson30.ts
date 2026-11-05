@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// Fields not given by the plan are INFERRED from this lesson's own content and
+// listed in docs/waray-inferred-keys.md: speaking phrase, target pitch and mood, respelling, example situation.
 // The practice answers are INFERRED drafts, not from the PDF. See
 // docs/waray-draft-answer-keys.md for each answer and how it was found.
 
@@ -1083,4 +1085,65 @@ export const warayLesson30: StructuredLesson = {
     },
     completionRequirement: "Complete Lessons 1–29. Complete the comprehensive assessment. Obtain at least 70% in the final assessment.",
   },
+  speaking: {
+    title: "Speaking Practice",
+    instructions: "Read the following sentences aloud.",
+    note: "Learners should listen to the model pronunciation before recording their own voice.",
+    practiceLessonId: "waray_30",
+    phrases: [
+      {
+        id: "1",
+        text: "Kumusta ka?",
+        respelling: "ku-mus-ta ka",
+        meaning: "How are you?",
+      },
+      {
+        id: "2",
+        text: "Diri ako maaram.",
+        respelling: "di-ri a-ko ma-a-ram",
+        meaning: "I do not know.",
+      },
+      {
+        id: "3",
+        text: "Hain an eskwelahan?",
+        respelling: "HAH-in ahn es-kweh-LAH-hahn",
+        meaning: "Where is the school?",
+      },
+      {
+        id: "4",
+        text: "Nauyon ako.",
+        respelling: "na-u-yon a-ko",
+        meaning: "I agree.",
+      },
+      {
+        id: "5",
+        text: "Ayaw kawad-i hin paglaom.",
+        respelling: "a-yaw ka-wad-i hin pag-la-om",
+        meaning: "Do not lose hope.",
+      },
+      {
+        id: "6",
+        text: "Nalilipay ako nga makilala ka.",
+        respelling: "nah-lee-lee-PAI AH-koh ngah mah-kee-LAH-lah kah",
+        meaning: "I am happy to meet you.",
+      },
+      {
+        id: "7",
+        text: "Pira an plete?",
+        respelling: "pi-ra an ple-te",
+        meaning: "How much is the fare?",
+      },
+    ],
+  },
+  exampleSituation: {
+    description: "This final assessment includes a short story about a day at school. It begins:",
+    line: "Usa ka adlaw, sayo nga kinadto hi Ana ha eskwelahan.",
+    translation: "One day, Ana went to school early.",
+  },
+  inferredFields: [
+    "speaking phrase",
+    "target pitch and mood",
+    "respelling",
+    "example situation",
+  ],
 };

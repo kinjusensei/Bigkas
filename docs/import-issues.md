@@ -7,7 +7,8 @@ From `Lesson Plan.pdf`. The Tagalog and Waray text is in the app exactly as the 
 - **Tagalog 16–29 practice activities have no answer key.** Their matching, choice, fill-in and arrange activities are saved in `extraActivities` with no answers. Learners do not see them yet.
 - **Waray practice answers are inferred drafts, not from the PDF.** You approved them as drafted, and they now run the activity steps. Every answer and how it was found is in `docs/waray-draft-answer-keys.md`. A Waray speaker has not checked them.
 - **Waray 30 has no answer key in the PDF.** Its 40 multiple-choice questions are now scored with the inferred drafts, at the 70% pass mark in the PDF. All 60 XP is earned on the assessment, because it is the only activity in this lesson. Part F is a practical task and stays unscored.
-- **Waray 14–17 assessments are open questions** with written answers, so they are saved but not scored. These lessons have no scored assessment and can be finished without one.
+- **Waray 14–17 assessments are open questions** with written answers in the PDF. They are now multiple choice: the PDF answer is the key, the wrong options come from the same lesson, and the 70% pass mark is inferred.
+- **Waray lessons now use the same fields as Tagalog Lesson 1.** Every field the PDF does not give is listed in `docs/waray-inferred-keys.md`.
 - **Typed-answer, open-ended and role-play activities have no screens yet**, in any lesson. They are saved in `extraActivities` for a later task.
 - **Levels inferred:** Waray 18, 19 and 20 do not state a level in the PDF. "Intermediate" comes from their lesson numbers.
 
@@ -39,17 +40,17 @@ These notes are written for the authors, but they are in the lesson text and lea
 - **Tagalog 17** (`pronunciationTip`): These are simplified pronunciation guides for practice. Audio recordings reviewed by Filipino speakers should be used in the final application.
 - **Tagalog 18** (`pronunciationTip`): These are simplified pronunciation guides for learners. Final audio recordings should be reviewed by a Filipino language speaker.
 - **Tagalog 19** (`pronunciationTip`): These are simplified pronunciation guides. They should be supplemented with audio recordings reviewed by Filipino language speakers.
-- **Waray 3** (`intro`): Number systems and everyday number usage can vary among Waray-speaking communities. The larger-number forms above are candidate teaching forms and should be checked by a Western Samar language evaluator, especially before teaching compound numbers as fixed patterns.
-- **Waray 5** (`intro`): Note: Some family terms have alternative forms depending on the speaker, context, and locality. The words above are introductory vocabulary candidates for evaluator review.
-- **Waray 6** (`intro`): Note: Some drink names may be borrowed or expressed differently in everyday speech. Use the terms familiar to your local evaluator and intended learners.
-- **Waray 9** (`intro`): Note: Some question forms have more than one natural way of being expressed. For example, diin, hain, and ngain can appear in different location-related questions. Their exact usage should be checked with a Western Samar Waray language evaluator.
+- **Waray 3** (`body`): Number systems and everyday number usage can vary among Waray-speaking communities. The larger-number forms above are candidate teaching forms and should be checked by a Western Samar language evaluator, especially before teaching compound numbers as fixed patterns.
+- **Waray 5** (`body`): Note: Some family terms have alternative forms depending on the speaker, context, and locality. The words above are introductory vocabulary candidates for evaluator review.
+- **Waray 6** (`body`): Note: Some drink names may be borrowed or expressed differently in everyday speech. Use the terms familiar to your local evaluator and intended learners.
+- **Waray 9** (`body`): Note: Some question forms have more than one natural way of being expressed. For example, diin, hain, and ngain can appear in different location-related questions. Their exact usage should be checked with a Western Samar Waray language evaluator.
 - **Waray 19** (`body`): The last example is included only as a tentative construction and should be replaced or corrected by a language evaluator before use.
-- **Waray 19** (`intro`): Note: The sentences above are learning examples. Some verb forms and expressions may vary across Western Samar communities and should be checked by a native speaker.
+- **Waray 19** (`body`): Note: The sentences above are learning examples. Some verb forms and expressions may vary across Western Samar communities and should be checked by a native speaker.
 - **Waray 26** (`intro`): In this lesson, learners will explore selected expressions and practice understanding them through context. The examples are learning candidates and should be checked by a Western Samar Waray language evaluator before being finalized in the application.
 - **Waray 26** (`body`): Consider these candidate expressions:
-- **Waray 27** (`intro`): Note: Some vocabulary items are borrowed or adapted from Filipino, Spanish, or English. Their spelling and preferred everyday forms should be checked by a Western Samar language evaluator.
-- **Waray 28** (`intro`): Note: The vocabulary includes borrowed and descriptive terms. Some expressions may have alternative forms in Western Samar communities and should be reviewed before implementation.
-- **Waray 29** (`intro`): Note: Some terms are borrowed or have alternative regional forms. The vocabulary should be reviewed by a Western Samar Waray evaluator, especially terms for transportation, neighbors, and actions.
+- **Waray 27** (`body`): Note: Some vocabulary items are borrowed or adapted from Filipino, Spanish, or English. Their spelling and preferred everyday forms should be checked by a Western Samar language evaluator.
+- **Waray 28** (`body`): Note: The vocabulary includes borrowed and descriptive terms. Some expressions may have alternative forms in Western Samar communities and should be reviewed before implementation.
+- **Waray 29** (`body`): Note: Some terms are borrowed or have alternative regional forms. The vocabulary should be reviewed by a Western Samar Waray evaluator, especially terms for transportation, neighbors, and actions.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -691,10 +692,6 @@ Meaning of each heading:
 
 ### Waray 14: Pronouns and Common Verbs (PDF pages 844–853)
 
-**Missing answer key**
-
-- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
-
 **Not scored**
 
 - Assessment : 10 question(s) are not multiple choice; saved but not scored.
@@ -705,10 +702,6 @@ Meaning of each heading:
 - "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 
 ### Waray 15: Basic Sentence Structure (PDF pages 854–869)
-
-**Missing answer key**
-
-- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
 
 **Not scored**
 
@@ -721,10 +714,6 @@ Meaning of each heading:
 
 ### Waray 16: Constructing More Complex Sentences (PDF pages 870–883)
 
-**Missing answer key**
-
-- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
-
 **Not scored**
 
 - Assessment : 10 question(s) are not multiple choice; saved but not scored.
@@ -735,10 +724,6 @@ Meaning of each heading:
 - "Lesson Assessment" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
 
 ### Waray 17: Ordering Food (PDF pages 884–899)
-
-**Missing answer key**
-
-- No scored assessment: the PDF's questions are not multiple choice, so they were saved (with their answers) but not scored.
 
 **Not scored**
 
@@ -894,33 +879,33 @@ Meaning of each heading:
 | Tagalog 28: Storytelling and Narration | Advanced | 75 | 0 | 21 | 0 | 33 | 15 | 0 | 80 |
 | Tagalog 29: Situational Dialogues and Role-Playing | Advanced | 40 | 0 | 46 | 0 | 31 | 15 | 0 | 80 |
 | Tagalog 30: Comprehensive Language Assessment | Advanced | 24 | 0 | 0 | 0 | 0 | 48 | 12 | 100 |
-| Waray 1: Basic Greetings and Self-Introduction | Beginner | 35 | 16 | 27 | 20 | 5 | 10 | 0 | 60 |
-| Waray 2: Common Expressions and Responses | Beginner | 36 | 32 | 28 | 20 | 5 | 10 | 0 | 60 |
-| Waray 3: Numbers and Counting | Beginner | 41 | 21 | 27 | 15 | 19 | 10 | 0 | 60 |
-| Waray 4: Days, Months, and Time | Beginner | 44 | 12 | 12 | 11 | 9 | 10 | 0 | 60 |
-| Waray 5: Family Members and Relationships | Beginner | 33 | 12 | 15 | 12 | 10 | 10 | 0 | 60 |
-| Waray 6: Food and Drinks | Beginner | 51 | 12 | 15 | 12 | 10 | 10 | 0 | 60 |
-| Waray 7: Colors and Shapes | Beginner | 34 | 12 | 15 | 12 | 9 | 10 | 0 | 60 |
-| Waray 8: Animals and Nature | Beginner | 63 | 14 | 16 | 12 | 9 | 10 | 0 | 60 |
-| Waray 9: Asking and Answering Simple Questions | Beginner | 30 | 12 | 19 | 10 | 9 | 10 | 0 | 60 |
-| Waray 10: Introducing Other People | Beginner | 38 | 16 | 18 | 10 | 9 | 10 | 0 | 60 |
-| Waray 11: Common Daily Conversations | Intermediate | 41 | 16 | 25 | 9 | 11 | 10 | 0 | 60 |
-| Waray 12: Giving Directions and Locations | Intermediate | 43 | 15 | 24 | 15 | 10 | 10 | 0 | 60 |
-| Waray 13: Asking for Information | Intermediate | 44 | 14 | 28 | 15 | 10 | 10 | 0 | 60 |
-| Waray 14: Pronouns and Common Verbs | Intermediate | 54 | 0 | 18 | 16 | 5 | 0 | 10 | 60 |
-| Waray 15: Basic Sentence Structure | Intermediate | 15 | 0 | 18 | 5 | 20 | 0 | 10 | 60 |
-| Waray 16: Constructing More Complex Sentences | Intermediate | 14 | 0 | 18 | 10 | 20 | 0 | 10 | 60 |
-| Waray 17: Ordering Food | Intermediate | 58 | 0 | 22 | 13 | 20 | 0 | 10 | 60 |
-| Waray 18: Shopping and Buying | Intermediate | 52 | 27 | 31 | 10 | 11 | 10 | 0 | 60 |
-| Waray 19: Talking About Daily Activities | Intermediate | 62 | 18 | 25 | 10 | 19 | 10 | 0 | 60 |
-| Waray 20: Describing People, Places, and Things | Intermediate | 69 | 18 | 24 | 10 | 13 | 10 | 0 | 60 |
-| Waray 21: Expressing Opinions and Feelings | Advanced | 53 | 32 | 21 | 15 | 14 | 10 | 0 | 60 |
-| Waray 22: Giving Explanations and Reasons | Advanced | 41 | 21 | 23 | 10 | 19 | 10 | 0 | 60 |
-| Waray 23: Agreeing and Disagreeing | Advanced | 38 | 17 | 22 | 18 | 10 | 10 | 0 | 60 |
-| Waray 24: Advanced Sentence Construction | Advanced | 42 | 20 | 23 | 5 | 24 | 10 | 0 | 60 |
-| Waray 25: Verb Forms and Tenses | Advanced | 47 | 21 | 20 | 18 | 8 | 10 | 0 | 60 |
-| Waray 26: Idiomatic Expressions and Common Sayings | Advanced | 15 | 0 | 14 | 15 | 5 | 10 | 0 | 60 |
-| Waray 27: Workplace and School Conversations | Advanced | 51 | 27 | 27 | 15 | 4 | 10 | 0 | 60 |
-| Waray 28: Storytelling and Narration | Advanced | 44 | 21 | 14 | 11 | 5 | 10 | 0 | 60 |
-| Waray 29: Situational Dialogues and Role-Playing | Advanced | 54 | 32 | 28 | 10 | 10 | 10 | 0 | 60 |
-| Waray 30: Comprehensive Language Assessment | Advanced | 0 | 0 | 0 | 0 | 0 | 40 | 1 | 60 |
+| Waray 1: Basic Greetings and Self-Introduction | Beginner | 0 | 0 | 15 | 27 | 5 | 10 | 0 | 60 |
+| Waray 2: Common Expressions and Responses | Beginner | 0 | 0 | 16 | 32 | 5 | 10 | 0 | 60 |
+| Waray 3: Numbers and Counting | Beginner | 0 | 0 | 15 | 27 | 19 | 10 | 0 | 60 |
+| Waray 4: Days, Months, and Time | Beginner | 0 | 0 | 12 | 28 | 9 | 10 | 0 | 60 |
+| Waray 5: Family Members and Relationships | Beginner | 0 | 0 | 15 | 29 | 10 | 10 | 0 | 60 |
+| Waray 6: Food and Drinks | Beginner | 0 | 0 | 15 | 29 | 10 | 10 | 0 | 60 |
+| Waray 7: Colors and Shapes | Beginner | 0 | 0 | 15 | 29 | 9 | 10 | 0 | 60 |
+| Waray 8: Animals and Nature | Beginner | 0 | 0 | 16 | 29 | 9 | 10 | 0 | 60 |
+| Waray 9: Asking and Answering Simple Questions | Beginner | 0 | 0 | 19 | 27 | 9 | 10 | 0 | 60 |
+| Waray 10: Introducing Other People | Beginner | 0 | 0 | 18 | 27 | 9 | 10 | 0 | 60 |
+| Waray 11: Common Daily Conversations | Intermediate | 0 | 0 | 25 | 26 | 11 | 10 | 0 | 60 |
+| Waray 12: Giving Directions and Locations | Intermediate | 0 | 0 | 24 | 32 | 10 | 10 | 0 | 60 |
+| Waray 13: Asking for Information | Intermediate | 0 | 0 | 28 | 27 | 10 | 10 | 0 | 60 |
+| Waray 14: Pronouns and Common Verbs | Intermediate | 0 | 0 | 18 | 28 | 5 | 10 | 0 | 60 |
+| Waray 15: Basic Sentence Structure | Intermediate | 0 | 0 | 18 | 27 | 20 | 10 | 0 | 60 |
+| Waray 16: Constructing More Complex Sentences | Intermediate | 0 | 0 | 18 | 27 | 20 | 10 | 0 | 60 |
+| Waray 17: Ordering Food | Intermediate | 0 | 0 | 22 | 30 | 20 | 10 | 0 | 60 |
+| Waray 18: Shopping and Buying | Intermediate | 0 | 0 | 30 | 27 | 11 | 10 | 0 | 60 |
+| Waray 19: Talking About Daily Activities | Intermediate | 0 | 0 | 25 | 27 | 19 | 10 | 0 | 60 |
+| Waray 20: Describing People, Places, and Things | Intermediate | 0 | 0 | 24 | 27 | 13 | 10 | 0 | 60 |
+| Waray 21: Expressing Opinions and Feelings | Advanced | 0 | 0 | 21 | 27 | 14 | 10 | 0 | 60 |
+| Waray 22: Giving Explanations and Reasons | Advanced | 0 | 0 | 23 | 27 | 19 | 10 | 0 | 60 |
+| Waray 23: Agreeing and Disagreeing | Advanced | 0 | 0 | 22 | 30 | 10 | 10 | 0 | 60 |
+| Waray 24: Advanced Sentence Construction | Advanced | 0 | 0 | 23 | 27 | 24 | 10 | 0 | 60 |
+| Waray 25: Verb Forms and Tenses | Advanced | 0 | 0 | 20 | 35 | 8 | 10 | 0 | 60 |
+| Waray 26: Idiomatic Expressions and Common Sayings | Advanced | 0 | 0 | 14 | 32 | 5 | 10 | 0 | 60 |
+| Waray 27: Workplace and School Conversations | Advanced | 0 | 0 | 27 | 27 | 4 | 10 | 0 | 60 |
+| Waray 28: Storytelling and Narration | Advanced | 0 | 0 | 14 | 28 | 5 | 10 | 0 | 60 |
+| Waray 29: Situational Dialogues and Role-Playing | Advanced | 0 | 0 | 28 | 27 | 10 | 10 | 0 | 60 |
+| Waray 30: Comprehensive Language Assessment | Advanced | 0 | 0 | 0 | 7 | 0 | 40 | 1 | 60 |

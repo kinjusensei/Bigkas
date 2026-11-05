@@ -4,6 +4,8 @@ import { StructuredLesson } from "../../types/structuredLesson";
 // The Waray and English text is copied as written, including likely
 // typos, which are listed in docs/import-issues.md. Activities without an
 // answer key or a screen are in extraActivities.
+// Fields not given by the plan are INFERRED from this lesson's own content and
+// listed in docs/waray-inferred-keys.md: usage, example, pattern, fill-in, arrange, speaking phrase, target pitch and mood, respelling, example situation, unit, pronunciation tip, badge description, completion requirement.
 // The practice answers are INFERRED drafts, not from the PDF. See
 // docs/waray-draft-answer-keys.md for each answer and how it was found.
 
@@ -39,865 +41,6 @@ export const warayLesson20: StructuredLesson = {
     "Identify and explain the characteristics of everyday objects.",
     "Compare two people, places, or things using simple descriptive expressions.",
     "Participate in conversations involving descriptions and comparisons.",
-  ],
-  expressionGroups: [
-    {
-      title: "A. Physical Appearance",
-      items: [
-        {
-          term: "Hataas",
-          meaning: "Tall",
-          pronunciation: "ha-ta-as",
-        },
-        {
-          term: "Halipot",
-          meaning: "Short (height)",
-          pronunciation: "ha-li-pot",
-        },
-        {
-          term: "Dako",
-          meaning: "Big",
-          pronunciation: "da-ko",
-        },
-        {
-          term: "Gutiay",
-          meaning: "Small",
-          pronunciation: "gu-ti-ay",
-        },
-        {
-          term: "Matahom",
-          meaning: "Beautiful / Handsome",
-          pronunciation: "ma-ta-hom",
-        },
-        {
-          term: "Matahom",
-          meaning: "Pretty",
-          pronunciation: "ma-ta-hom",
-        },
-        {
-          term: "Bata",
-          meaning: "Young",
-          pronunciation: "ba-ta",
-        },
-        {
-          term: "Lagas",
-          meaning: "Old / Elderly",
-          pronunciation: "la-gas",
-        },
-        {
-          term: "Payat",
-          meaning: "Thin",
-          pronunciation: "pa-yat",
-        },
-        {
-          term: "Tambok",
-          meaning: "Fat / Plump",
-          pronunciation: "tam-bok",
-        },
-        {
-          term: "Makusog",
-          meaning: "Strong",
-          pronunciation: "ma-ku-sog",
-        },
-        {
-          term: "Maluya",
-          meaning: "Weak",
-          pronunciation: "ma-lu-ya",
-        },
-        {
-          term: "Hilaba",
-          meaning: "Long",
-          pronunciation: "hi-la-ba",
-        },
-        {
-          term: "Kulot",
-          meaning: "Curly",
-          pronunciation: "ku-lot",
-        },
-        {
-          term: "Tul-id",
-          meaning: "Straight",
-          pronunciation: "tu-lid",
-        },
-      ],
-    },
-    {
-      title: "B. Personality and Character",
-      intro: [
-        "Some personality words may have different shades of meaning depending on context and community usage.",
-      ],
-      items: [
-        {
-          term: "Buotan",
-          meaning: "Kind",
-          pronunciation: "bu-o-tan",
-        },
-        {
-          term: "Mahigalaon",
-          meaning: "Friendly",
-          pronunciation: "ma-hi-ga-la-on",
-        },
-        {
-          term: "Matinabangon",
-          meaning: "Helpful",
-          pronunciation: "ma-ti-na-ba-ngon",
-        },
-        {
-          term: "Maduruto",
-          meaning: "Hardworking",
-          pronunciation: "ma-du-ru-to",
-        },
-        {
-          term: "Maaram",
-          meaning: "Intelligent",
-          pronunciation: "ma-a-ram",
-        },
-        {
-          term: "Mapailubon",
-          meaning: "Patient",
-          pronunciation: "ma-pa-i-lu-bon",
-        },
-        {
-          term: "Matinumanon",
-          meaning: "Honest",
-          pronunciation: "ma-ti-nu-ma-non",
-        },
-        {
-          term: "Maalwan",
-          meaning: "Generous",
-          pronunciation: "ma-al-wan",
-        },
-        {
-          term: "Malipayon",
-          meaning: "Cheerful",
-          pronunciation: "ma-li-pa-yon",
-        },
-        {
-          term: "Hilom",
-          meaning: "Quiet",
-          pronunciation: "hi-lom",
-        },
-        {
-          term: "Awawon",
-          meaning: "Shy",
-          pronunciation: "a-wa-won",
-        },
-        {
-          term: "Maisog",
-          meaning: "Brave",
-          pronunciation: "ma-i-sog",
-        },
-        {
-          term: "Mahinay",
-          meaning: "Careful",
-          pronunciation: "ma-hi-nay",
-        },
-        {
-          term: "Hubya",
-          meaning: "Lazy",
-          pronunciation: "hub-ya",
-        },
-      ],
-    },
-    {
-      title: "C. Describing Places",
-      items: [
-        {
-          term: "Matahom",
-          meaning: "Beautiful",
-          pronunciation: "ma-ta-hom",
-        },
-        {
-          term: "Mahimyang",
-          meaning: "Peaceful",
-          pronunciation: "ma-him-yang",
-        },
-        {
-          term: "Limpyo",
-          meaning: "Clean",
-          pronunciation: "lim-pyo",
-        },
-        {
-          term: "Mahugaw",
-          meaning: "Dirty",
-          pronunciation: "ma-hu-gaw",
-        },
-        {
-          term: "Matawo",
-          meaning: "Crowded",
-          pronunciation: "ma-ta-wo",
-        },
-        {
-          term: "Hilom",
-          meaning: "Quiet",
-          pronunciation: "hi-lom",
-        },
-        {
-          term: "Samok",
-          meaning: "Noisy",
-          pronunciation: "sa-mok",
-        },
-        {
-          term: "Halapad",
-          meaning: "Wide",
-          pronunciation: "ha-la-pad",
-        },
-        {
-          term: "Halipot",
-          meaning: "Narrow",
-          pronunciation: "ha-li-pot",
-        },
-        {
-          term: "Hirayo",
-          meaning: "Far",
-          pronunciation: "hi-ra-yo",
-        },
-        {
-          term: "Hirani",
-          meaning: "Near",
-          pronunciation: "hi-ra-ni",
-        },
-        {
-          term: "Mapaso",
-          meaning: "Hot",
-          pronunciation: "ma-pa-so",
-        },
-        {
-          term: "Matugnaw",
-          meaning: "Cold",
-          pronunciation: "ma-tug-naw",
-        },
-        {
-          term: "Berde",
-          meaning: "Green",
-          pronunciation: "ber-de",
-        },
-        {
-          term: "Mabuhi",
-          meaning: "Lively",
-          pronunciation: "ma-bu-hi",
-        },
-      ],
-    },
-    {
-      title: "D. Describing Objects",
-      items: [
-        {
-          term: "Bag-o",
-          meaning: "New",
-          pronunciation: "ba-go",
-        },
-        {
-          term: "Daan",
-          meaning: "Old",
-          pronunciation: "da-an",
-        },
-        {
-          term: "Mahal",
-          meaning: "Expensive",
-          pronunciation: "ma-hal",
-        },
-        {
-          term: "Barato",
-          meaning: "Inexpensive",
-          pronunciation: "ba-ra-to",
-        },
-        {
-          term: "Mabug-at",
-          meaning: "Heavy",
-          pronunciation: "ma-bug-at",
-        },
-        {
-          term: "Magaan",
-          meaning: "Light (weight)",
-          pronunciation: "ma-ga-an",
-        },
-        {
-          term: "Malumo",
-          meaning: "Soft",
-          pronunciation: "ma-lu-mo",
-        },
-        {
-          term: "Matig-a",
-          meaning: "Hard",
-          pronunciation: "ma-tig-a",
-        },
-        {
-          term: "Hamis",
-          meaning: "Smooth",
-          pronunciation: "ha-mis",
-        },
-        {
-          term: "Magaspang",
-          meaning: "Rough",
-          pronunciation: "ma-gas-pang",
-        },
-        {
-          term: "Limpyo",
-          meaning: "Clean",
-          pronunciation: "lim-pyo",
-        },
-        {
-          term: "Guba",
-          meaning: "Broken",
-          pronunciation: "gu-ba",
-        },
-        {
-          term: "Mapulsanon",
-          meaning: "Useful",
-          pronunciation: "ma-pul-sa-non",
-        },
-        {
-          term: "Makolor",
-          meaning: "Colorful",
-          pronunciation: "ma-ko-lor",
-        },
-        {
-          term: "Lingin",
-          meaning: "Round",
-          pronunciation: "li-ngin",
-        },
-      ],
-    },
-    {
-      title: "E. Descriptive Question Words and Expressions",
-      items: [
-        {
-          term: "Ano nga klase?",
-          meaning: "What kind?",
-          pronunciation: "a-no nga kla-se",
-        },
-        {
-          term: "Hain?",
-          meaning: "Which one?",
-          pronunciation: "ha-in",
-        },
-        {
-          term: "Ano an hitsura hini?",
-          meaning: "What does it look like?",
-          pronunciation: "a-no an hit-su-ra hi-ni",
-        },
-        {
-          term: "Gaano kadako?",
-          meaning: "How big?",
-          pronunciation: "ga-a-no ka-da-ko",
-        },
-        {
-          term: "Gaano kagutiay?",
-          meaning: "How small?",
-          pronunciation: "ga-a-no ka-gu-ti-ay",
-        },
-        {
-          term: "Sugad",
-          meaning: "Like / Similar",
-          pronunciation: "su-gad",
-        },
-        {
-          term: "Iba",
-          meaning: "Different",
-          pronunciation: "i-ba",
-        },
-        {
-          term: "Pariho",
-          meaning: "Same",
-          pronunciation: "pa-ri-ho",
-        },
-        {
-          term: "Mas",
-          meaning: "More",
-          pronunciation: "mas",
-        },
-        {
-          term: "Gud / Kaayo",
-          meaning: "Very",
-          pronunciation: "gud / ka-a-yo",
-        },
-      ],
-    },
-  ],
-  languageNotes: [
-    {
-      title: "A. Describing People",
-      body: [
-        "When describing people, you may talk about their physical appearance, personality, or other characteristics.",
-      ],
-      table: {
-        leftHeading: "Waray",
-        rightHeading: "English",
-        rows: [
-          {
-            left: "Buotan hiya.",
-            right: "He/She is kind.",
-          },
-          {
-            left: "Mahigalaon hiya.",
-            right: "He/She is friendly.",
-          },
-          {
-            left: "Maduruto hiya.",
-            right: "He/She is hardworking.",
-          },
-          {
-            left: "Hataas hiya.",
-            right: "He/She is tall.",
-          },
-          {
-            left: "Bata pa hiya.",
-            right: "He/She is still young.",
-          },
-          {
-            left: "Maisog hiya.",
-            right: "He/She is brave.",
-          },
-        ],
-      },
-    },
-    {
-      title: "A. Describing People",
-      body: [
-        "You can also include a person's relationship to you.",
-      ],
-      examples: [
-        {
-          text: "Buotan an akon sangkay.",
-          meaning: "My friend is kind.",
-        },
-        {
-          text: "Maduruto an akon bugto.",
-          meaning: "My sibling is hardworking.",
-        },
-        {
-          text: "Mahigalaon an amon maestra.",
-          meaning: "Our teacher is friendly.",
-        },
-      ],
-    },
-    {
-      title: "B. Describing Places",
-      body: [
-        "When describing a place, you can talk about its appearance, size, condition, or surroundings.",
-      ],
-      table: {
-        leftHeading: "Waray",
-        rightHeading: "English",
-        rows: [
-          {
-            left: "Matahom an baybayon.",
-            right: "The beach is beautiful.",
-          },
-          {
-            left: "Limpyo an eskwelahan.",
-            right: "The school is clean.",
-          },
-          {
-            left: "Halapad an dalan.",
-            right: "The road is wide.",
-          },
-          {
-            left: "Hirayo an merkado.",
-            right: "The market is far.",
-          },
-          {
-            left: "Hirani an botika.",
-            right: "The pharmacy is near.",
-          },
-          {
-            left: "Matawo an merkado.",
-            right: "The market is crowded.",
-          },
-        ],
-      },
-    },
-    {
-      title: "B. Describing Places",
-      body: [
-        "You can also describe the atmosphere of a place.",
-      ],
-      examples: [
-        {
-          text: "Hilom an baryo.",
-          meaning: "The village is quiet.",
-        },
-        {
-          text: "Samok an kalsada.",
-          meaning: "The street is noisy or chaotic.",
-        },
-        {
-          text: "Mahimyang an lugar.",
-          meaning: "The place is peaceful.",
-        },
-      ],
-    },
-    {
-      title: "C. Describing Objects",
-      body: [
-        "Descriptive words help identify objects and explain their characteristics.",
-      ],
-      table: {
-        leftHeading: "Waray",
-        rightHeading: "English",
-        rows: [
-          {
-            left: "Bag-o ini nga libro.",
-            right: "This is a new book.",
-          },
-          {
-            left: "Mabug-at ini nga bag.",
-            right: "This bag is heavy.",
-          },
-          {
-            left: "Magaan ini nga kahon.",
-            right: "This box is light.",
-          },
-          {
-            left: "Guba an lingkoran.",
-            right: "The chair is broken.",
-          },
-          {
-            left: "Mahal ini nga relo.",
-            right: "This watch is expensive.",
-          },
-          {
-            left: "Barato ini nga lapis.",
-            right: "This pencil is inexpensive.",
-          },
-        ],
-      },
-    },
-    {
-      title: "C. Describing Objects",
-      body: [
-        "When describing an object, you can mention its size, color, condition, or usefulness.",
-      ],
-    },
-    {
-      title: "D. Making Comparisons",
-      body: [
-        "Comparisons allow learners to explain similarities and differences.",
-        "The word mas can be used to express a greater degree of a characteristic.",
-      ],
-      table: {
-        leftHeading: "Waray",
-        rightHeading: "English",
-        rows: [
-          {
-            left: "Mas dako ini.",
-            right: "This is bigger.",
-          },
-          {
-            left: "Mas gutiay ito.",
-            right: "That is smaller.",
-          },
-          {
-            left: "Mas mahal ini nga bag.",
-            right: "This bag is more expensive.",
-          },
-          {
-            left: "Mas halapad ini nga dalan.",
-            right: "This road is wider.",
-          },
-          {
-            left: "Mas hirani an eskwelahan.",
-            right: "The school is nearer.",
-          },
-        ],
-      },
-    },
-    {
-      title: "D. Making Comparisons",
-      body: [
-        "To express similarity, you may use pariho.",
-      ],
-      examples: [
-        {
-          text: "Pariho hira.",
-          meaning: "They are alike.",
-        },
-        {
-          text: "Pariho an ira kolor.",
-          meaning: "Their colors are the same.",
-        },
-      ],
-    },
-    {
-      title: "D. Making Comparisons",
-      body: [
-        "To express difference, you may use iba or magkaiba.",
-      ],
-      examples: [
-        {
-          text: "Iba an kolor hini.",
-          meaning: "This has a different color.",
-        },
-        {
-          text: "Magkaiba an duha nga butang.",
-          meaning: "The two objects are different.",
-        },
-      ],
-    },
-    {
-      title: "E. Asking for Descriptions",
-      body: [
-        "You can ask questions to obtain more information about a person, place, or object.",
-      ],
-      table: {
-        leftHeading: "Waray",
-        rightHeading: "English",
-        rows: [
-          {
-            left: "Ano an hitsura niya?",
-            right: "What does he/she look like?",
-          },
-          {
-            left: "Ano an hitsura hini?",
-            right: "What does this look like?",
-          },
-          {
-            left: "Ano an hitsura han iyo balay?",
-            right: "What does your house look like?",
-          },
-          {
-            left: "Ano nga klase nga lugar ini?",
-            right: "What kind of place is this?",
-          },
-          {
-            left: "Dako ba an balay?",
-            right: "Is the house big?",
-          },
-          {
-            left: "Mahal ba ini?",
-            right: "Is this expensive?",
-          },
-          {
-            left: "Hain an mas barato?",
-            right: "Which one is less expensive?",
-          },
-        ],
-      },
-    },
-  ],
-  situationsTitle: "USEFUL PHRASES AND SENTENCES",
-  situationGroups: [
-    {
-      title: "USEFUL PHRASES AND SENTENCES",
-      intro: [
-        "The following expressions can help learners describe people, places, and objects.",
-      ],
-      items: [
-        {
-          term: "Buotan hiya.",
-          meaning: "He is kind.",
-        },
-        {
-          term: "Mahigalaon hiya.",
-          meaning: "She is friendly.",
-        },
-        {
-          term: "Maduruto an akon sangkay.",
-          meaning: "My friend is hardworking.",
-        },
-        {
-          term: "Hataas an akon bugto nga lalaki.",
-          meaning: "My brother is tall.",
-        },
-        {
-          term: "Bata pa an akon bugto nga babaye.",
-          meaning: "My sister is young.",
-        },
-        {
-          term: "Dako an balay.",
-          meaning: "The house is big.",
-        },
-        {
-          term: "Matahom an lugar.",
-          meaning: "The place is beautiful.",
-        },
-        {
-          term: "Matawo an merkado.",
-          meaning: "The market is crowded.",
-        },
-        {
-          term: "Limpyo an sulod-klase.",
-          meaning: "The classroom is clean.",
-        },
-        {
-          term: "Gutiay ini nga libro.",
-          meaning: "This book is small.",
-        },
-        {
-          term: "Mahal ini nga bag.",
-          meaning: "This bag is expensive.",
-        },
-        {
-          term: "Daan ito nga silya.",
-          meaning: "That chair is old.",
-        },
-        {
-          term: "Mas dako ini.",
-          meaning: "This one is bigger.",
-        },
-        {
-          term: "Mas gutiay ito.",
-          meaning: "That one is smaller.",
-        },
-        {
-          term: "Magkaiba hira.",
-          meaning: "They are different.",
-        },
-        {
-          term: "Pariho hira.",
-          meaning: "They are similar.",
-        },
-        {
-          term: "Ano an hitsura han iyo balay?",
-          meaning: "What does your house look like?",
-        },
-        {
-          term: "Ano ini nga klase nga lugar?",
-          meaning: "What kind of place is this?",
-        },
-      ],
-    },
-  ],
-  conversations: [
-    {
-      title: "Conversation 1: Describing a Friend",
-      situation: "Two classmates talk about a friend they both know.",
-      lines: [
-        {
-          speaker: "Ana",
-          text: "Hin-o an imo bag-o nga sangkay?",
-          translation: "Who is your new friend?",
-        },
-        {
-          speaker: "Ben",
-          text: "Hi Mark.",
-          translation: "Mark.",
-        },
-        {
-          speaker: "Ana",
-          text: "Ano an iya hitsura?",
-          translation: "What does he look like?",
-        },
-        {
-          speaker: "Ben",
-          text: "Hataas hiya ngan matahom an iya buhok.",
-          translation: "He is tall and has beautiful hair.",
-        },
-        {
-          speaker: "Ana",
-          text: "Ano man an iya batasan?",
-          translation: "What is his personality like?",
-        },
-        {
-          speaker: "Ben",
-          text: "Buotan ngan mahigalaon hiya.",
-          translation: "He is kind and friendly.",
-        },
-        {
-          speaker: "Ana",
-          text: "Maupay ito nga klase hin sangkay.",
-          translation: "That is a good kind of friend.",
-        },
-        {
-          speaker: "Ben",
-          text: "Oo, maduruto liwat hiya ha pag-adal.",
-          translation: "Yes, he is also hardworking in his studies.",
-        },
-      ],
-    },
-    {
-      title: "Conversation 2: Describing a Hometown",
-      situation: "A visitor asks a local resident about their hometown.",
-      lines: [
-        {
-          speaker: "Visitor",
-          text: "Ano an hitsura hini nga lugar?",
-          translation: "What is this place like?",
-        },
-        {
-          speaker: "Resident",
-          text: "Matahom ngan mahimyang an amon baryo.",
-          translation: "Our village is beautiful and peaceful.",
-        },
-        {
-          speaker: "Visitor",
-          text: "Damo ba an mga tawo dinhi?",
-          translation: "Are there many people here?",
-        },
-        {
-          speaker: "Resident",
-          text: "Diri man. Diri duro kadamo an mga tawo.",
-          translation: "Not really. There are not too many people.",
-        },
-        {
-          speaker: "Visitor",
-          text: "May baybayon ba hirani?",
-          translation: "Is there a beach nearby?",
-        },
-        {
-          speaker: "Resident",
-          text: "Oo, hirani la an baybayon.",
-          translation: "Yes, the beach is nearby.",
-        },
-        {
-          speaker: "Visitor",
-          text: "Maupay gud ini nga lugar.",
-          translation: "This is really a nice place.",
-        },
-        {
-          speaker: "Resident",
-          text: "Salamat.",
-          translation: "Thank you.",
-        },
-      ],
-    },
-    {
-      title: "Conversation 3: Comparing Two Products",
-      situation: "A customer compares two bags before purchasing one.",
-      lines: [
-        {
-          speaker: "Customer",
-          text: "Hain an mas barato hini nga duha?",
-          translation: "Which of these two is less expensive?",
-        },
-        {
-          speaker: "Seller",
-          text: "Mas barato ini nga bag.",
-          translation: "This bag is less expensive.",
-        },
-        {
-          speaker: "Customer",
-          text: "Hain man an mas dako?",
-          translation: "Which one is bigger?",
-        },
-        {
-          speaker: "Seller",
-          text: "Mas dako ito nga bag.",
-          translation: "That bag is bigger.",
-        },
-        {
-          speaker: "Customer",
-          text: "Ano an kaibahan nira?",
-          translation: "What is the difference between them?",
-        },
-        {
-          speaker: "Seller",
-          text: "Iba an ira kadako ngan kolor.",
-          translation: "Their sizes and colors are different.",
-        },
-        {
-          speaker: "Customer",
-          text: "Sige, ini na la an akon paliton.",
-          translation: "All right, I will buy this one instead.",
-        },
-        {
-          speaker: "Seller",
-          text: "Salamat ha imo pagpalit.",
-          translation: "Thank you for your purchase.",
-        },
-      ],
-    },
   ],
   assessment: {
     instructions: "Choose the correct answer for each question.",
@@ -1371,7 +514,9 @@ export const warayLesson20: StructuredLesson = {
     total: 60,
     badge: {
       name: "Description Expert Badge",
+      description: "Awarded after successfully completing Lesson 20.",
     },
+    completionRequirement: "Obtain at least 70% in the lesson assessment. Learners may repeat the activities and assessment if they do not meet the requirement.",
   },
   expectedOutcomes: [
     "Before proceeding to the Advanced Level, learners should be able to:",
@@ -1384,5 +529,2034 @@ export const warayLesson20: StructuredLesson = {
     "Achieve at least 70% in the lesson assessment.",
     "Congratulations! You have completed the Intermediate Level (Lessons 11–20).",
     "You have practiced everyday conversations, asking for information, constructing sentences, ordering food, shopping, describing routines, and expressing descriptions.",
+  ],
+  fillInBlanks: {
+    title: "Fill in the Blanks",
+    instructions: "Complete each sentence using the appropriate Waray word.",
+    items: [
+      {
+        id: "1",
+        sentence: "___ an akon sangkay.",
+        hint: "My friend is hardworking.",
+        answer: "Maduruto",
+        wordBank: [
+          "Hirayo",
+          "Maduruto",
+          "Halipot",
+          "Matinumanon",
+        ],
+      },
+      {
+        id: "2",
+        sentence: "___ an akon bugto nga lalaki.",
+        hint: "My brother is tall.",
+        answer: "Hataas",
+        wordBank: [
+          "Maluya",
+          "Hilom",
+          "Hataas",
+          "Matahom",
+        ],
+      },
+      {
+        id: "3",
+        sentence: "___ pa an akon bugto nga babaye.",
+        hint: "My sister is young.",
+        answer: "Bata",
+        wordBank: [
+          "Makusog",
+          "Matig-a",
+          "Makolor",
+          "Bata",
+        ],
+      },
+      {
+        id: "4",
+        sentence: "___ an balay.",
+        hint: "The house is big.",
+        answer: "Dako",
+        wordBank: [
+          "Dako",
+          "Mabug-at",
+          "Matahom",
+          "Mapailubon",
+        ],
+      },
+      {
+        id: "5",
+        sentence: "___ an lugar.",
+        hint: "The place is beautiful.",
+        answer: "Matahom",
+        wordBank: [
+          "Matahom",
+          "Makusog",
+          "Mahigalaon",
+          "Mapailubon",
+        ],
+      },
+    ],
+  },
+  arrangeWords: {
+    title: "Arrange the Words",
+    instructions: "Arrange the words to form a correct Waray sentence.",
+    items: [
+      {
+        id: "1",
+        words: [
+          "sangkay",
+          "akon",
+          "an",
+          "Maduruto",
+        ],
+        answer: [
+          "Maduruto",
+          "an",
+          "akon",
+          "sangkay",
+        ],
+        display: "Maduruto an akon sangkay.",
+      },
+      {
+        id: "2",
+        words: [
+          "nga",
+          "an",
+          "akon",
+          "bugto",
+          "Hataas",
+          "lalaki",
+        ],
+        answer: [
+          "Hataas",
+          "an",
+          "akon",
+          "bugto",
+          "nga",
+          "lalaki",
+        ],
+        display: "Hataas an akon bugto nga lalaki.",
+      },
+      {
+        id: "3",
+        words: [
+          "bugto",
+          "akon",
+          "pa",
+          "an",
+          "Bata",
+          "babaye",
+          "nga",
+        ],
+        answer: [
+          "Bata",
+          "pa",
+          "an",
+          "akon",
+          "bugto",
+          "nga",
+          "babaye",
+        ],
+        display: "Bata pa an akon bugto nga babaye.",
+      },
+      {
+        id: "4",
+        words: [
+          "Dako",
+          "balay",
+          "an",
+        ],
+        answer: [
+          "Dako",
+          "an",
+          "balay",
+        ],
+        display: "Dako an balay.",
+      },
+      {
+        id: "5",
+        words: [
+          "Matahom",
+          "lugar",
+          "an",
+        ],
+        answer: [
+          "Matahom",
+          "an",
+          "lugar",
+        ],
+        display: "Matahom an lugar.",
+      },
+    ],
+  },
+  speaking: {
+    title: "Speaking Practice",
+    instructions: "Read the following sentences aloud.",
+    note: "Learners should listen to the model pronunciation before recording their own voice.",
+    practiceLessonId: "waray_20",
+    phrases: [
+      {
+        id: "1",
+        text: "Buotan hiya.",
+        respelling: "boo-OH-tahn HEE-yah",
+        meaning: "He is kind. / He/She is kind.",
+      },
+      {
+        id: "2",
+        text: "Matawo an merkado.",
+        respelling: "ma-ta-wo an mehr-kah-doh",
+        meaning: "The market is crowded.",
+      },
+      {
+        id: "3",
+        text: "Magkaiba hira.",
+        respelling: "mag-ka-i-ba hi-ra",
+        meaning: "They are different.",
+      },
+      {
+        id: "4",
+        text: "Maisog hiya.",
+        respelling: "ma-i-sog hee-yah",
+        meaning: "He/She is brave.",
+      },
+      {
+        id: "5",
+        text: "Hirayo an merkado.",
+        respelling: "hee-rah-yoh an mehr-kah-doh",
+        meaning: "The market is far.",
+      },
+      {
+        id: "6",
+        text: "Magaan ini nga kahon.",
+        respelling: "ma-ga-an i-ni nga ka-hon",
+        meaning: "This box is light.",
+      },
+      {
+        id: "7",
+        text: "Pariho an ira kolor.",
+        respelling: "pah-ree-hoh an ee-rah ko-lor",
+        meaning: "Their colors are the same.",
+      },
+    ],
+  },
+  exampleSituation: {
+    description: "Imagine this situation from the lesson: Describing a Friend.",
+    lead: "You can begin by saying:",
+    line: "Hin-o an imo bag-o nga sangkay?",
+    translation: "Who is your new friend?",
+  },
+  unit: "Practical Conversations",
+  vocabularyIntro: "Learn the following words and expressions before proceeding to the activities.",
+  pronunciationTip: "Read each syllable clearly. Avoid rushing through longer expressions.",
+  selfIntroIntro: "Use these patterns and phrases from the lesson.",
+  vocabulary: [
+    {
+      term: "Hataas",
+      meaning: "Tall",
+      pronunciation: "ha-ta-as",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an iya hitsura?",
+          translation: "What does he look like?",
+        },
+        {
+          speaker: "B",
+          text: "Hataas hiya ngan matahom an iya buhok.",
+          translation: "He is tall and has beautiful hair.",
+        },
+      ],
+    },
+    {
+      term: "Halipot",
+      meaning: "Short (height)",
+      pronunciation: "ha-li-pot",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Dako",
+      meaning: "Big",
+      pronunciation: "da-ko",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "A",
+          text: "Mas barato ini nga bag.",
+          translation: "This bag is less expensive.",
+        },
+        {
+          speaker: "B",
+          text: "Hain man an mas dako?",
+          translation: "Which one is bigger?",
+        },
+      ],
+    },
+    {
+      term: "Gutiay",
+      meaning: "Small",
+      pronunciation: "gu-ti-ay",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "",
+          text: "Gutiay ini nga libro.",
+          translation: "This book is small.",
+        },
+      ],
+    },
+    {
+      term: "Matahom",
+      meaning: "Beautiful / Handsome",
+      pronunciation: "ma-ta-hom",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hataas hiya ngan matahom an iya buhok.",
+          translation: "He is tall and has beautiful hair.",
+        },
+        {
+          speaker: "B",
+          text: "Ano man an iya batasan?",
+          translation: "What is his personality like?",
+        },
+      ],
+    },
+    {
+      term: "Matahom",
+      meaning: "Pretty",
+      pronunciation: "ma-ta-hom",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "B",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+      ],
+    },
+    {
+      term: "Bata",
+      meaning: "Young",
+      pronunciation: "ba-ta",
+      usage: "From this lesson's word list: physical appearance.",
+      example: [
+        {
+          speaker: "",
+          text: "Bata pa an akon bugto nga babaye.",
+          translation: "My sister is young.",
+        },
+      ],
+    },
+    {
+      term: "Lagas",
+      meaning: "Old / Elderly",
+      pronunciation: "la-gas",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Payat",
+      meaning: "Thin",
+      pronunciation: "pa-yat",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Tambok",
+      meaning: "Fat / Plump",
+      pronunciation: "tam-bok",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Makusog",
+      meaning: "Strong",
+      pronunciation: "ma-ku-sog",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Maluya",
+      meaning: "Weak",
+      pronunciation: "ma-lu-ya",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Hilaba",
+      meaning: "Long",
+      pronunciation: "hi-la-ba",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Kulot",
+      meaning: "Curly",
+      pronunciation: "ku-lot",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Tul-id",
+      meaning: "Straight",
+      pronunciation: "tu-lid",
+      usage: "From this lesson's word list: physical appearance.",
+    },
+    {
+      term: "Buotan",
+      meaning: "Kind",
+      pronunciation: "bu-o-tan",
+      usage: "From this lesson's word list: personality and character.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano man an iya batasan?",
+          translation: "What is his personality like?",
+        },
+        {
+          speaker: "B",
+          text: "Buotan ngan mahigalaon hiya.",
+          translation: "He is kind and friendly.",
+        },
+      ],
+    },
+    {
+      term: "Mahigalaon",
+      meaning: "Friendly",
+      pronunciation: "ma-hi-ga-la-on",
+      usage: "From this lesson's word list: personality and character.",
+      example: [
+        {
+          speaker: "A",
+          text: "Buotan ngan mahigalaon hiya.",
+          translation: "He is kind and friendly.",
+        },
+        {
+          speaker: "B",
+          text: "Maupay ito nga klase hin sangkay.",
+          translation: "That is a good kind of friend.",
+        },
+      ],
+    },
+    {
+      term: "Matinabangon",
+      meaning: "Helpful",
+      pronunciation: "ma-ti-na-ba-ngon",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Maduruto",
+      meaning: "Hardworking",
+      pronunciation: "ma-du-ru-to",
+      usage: "From this lesson's word list: personality and character.",
+      example: [
+        {
+          speaker: "A",
+          text: "Maupay ito nga klase hin sangkay.",
+          translation: "That is a good kind of friend.",
+        },
+        {
+          speaker: "B",
+          text: "Oo, maduruto liwat hiya ha pag-adal.",
+          translation: "Yes, he is also hardworking in his studies.",
+        },
+      ],
+    },
+    {
+      term: "Maaram",
+      meaning: "Intelligent",
+      pronunciation: "ma-a-ram",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Mapailubon",
+      meaning: "Patient",
+      pronunciation: "ma-pa-i-lu-bon",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Matinumanon",
+      meaning: "Honest",
+      pronunciation: "ma-ti-nu-ma-non",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Maalwan",
+      meaning: "Generous",
+      pronunciation: "ma-al-wan",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Malipayon",
+      meaning: "Cheerful",
+      pronunciation: "ma-li-pa-yon",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Hilom",
+      meaning: "Quiet",
+      pronunciation: "hi-lom",
+      usage: "From this lesson's word list: personality and character.",
+      example: [
+        {
+          speaker: "",
+          text: "Hilom an baryo.",
+          translation: "The village is quiet.",
+        },
+      ],
+    },
+    {
+      term: "Awawon",
+      meaning: "Shy",
+      pronunciation: "a-wa-won",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Maisog",
+      meaning: "Brave",
+      pronunciation: "ma-i-sog",
+      usage: "From this lesson's word list: personality and character.",
+      example: [
+        {
+          speaker: "",
+          text: "Maisog hiya.",
+          translation: "He/She is brave.",
+        },
+      ],
+    },
+    {
+      term: "Mahinay",
+      meaning: "Careful",
+      pronunciation: "ma-hi-nay",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Hubya",
+      meaning: "Lazy",
+      pronunciation: "hub-ya",
+      usage: "From this lesson's word list: personality and character.",
+    },
+    {
+      term: "Matahom",
+      meaning: "Beautiful",
+      pronunciation: "ma-ta-hom",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+        {
+          speaker: "B",
+          text: "Damo ba an mga tawo dinhi?",
+          translation: "Are there many people here?",
+        },
+      ],
+    },
+    {
+      term: "Mahimyang",
+      meaning: "Peaceful",
+      pronunciation: "ma-him-yang",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "B",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+      ],
+    },
+    {
+      term: "Limpyo",
+      meaning: "Clean",
+      pronunciation: "lim-pyo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Limpyo an sulod-klase.",
+          translation: "The classroom is clean.",
+        },
+      ],
+    },
+    {
+      term: "Mahugaw",
+      meaning: "Dirty",
+      pronunciation: "ma-hu-gaw",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Matawo",
+      meaning: "Crowded",
+      pronunciation: "ma-ta-wo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Matawo an merkado.",
+          translation: "The market is crowded.",
+        },
+      ],
+    },
+    {
+      term: "Samok",
+      meaning: "Noisy",
+      pronunciation: "sa-mok",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Samok an kalsada.",
+          translation: "The street is noisy or chaotic.",
+        },
+      ],
+    },
+    {
+      term: "Halapad",
+      meaning: "Wide",
+      pronunciation: "ha-la-pad",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Halapad an dalan.",
+          translation: "The road is wide.",
+        },
+      ],
+    },
+    {
+      term: "Halipot",
+      meaning: "Narrow",
+      pronunciation: "ha-li-pot",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Hirayo",
+      meaning: "Far",
+      pronunciation: "hi-ra-yo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Hirayo an merkado.",
+          translation: "The market is far.",
+        },
+      ],
+    },
+    {
+      term: "Hirani",
+      meaning: "Near",
+      pronunciation: "hi-ra-ni",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Diri man. Diri duro kadamo an mga tawo.",
+          translation: "Not really. There are not too many people.",
+        },
+        {
+          speaker: "B",
+          text: "May baybayon ba hirani?",
+          translation: "Is there a beach nearby?",
+        },
+      ],
+    },
+    {
+      term: "Mapaso",
+      meaning: "Hot",
+      pronunciation: "ma-pa-so",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Matugnaw",
+      meaning: "Cold",
+      pronunciation: "ma-tug-naw",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Berde",
+      meaning: "Green",
+      pronunciation: "ber-de",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Mabuhi",
+      meaning: "Lively",
+      pronunciation: "ma-bu-hi",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Bag-o",
+      meaning: "New",
+      pronunciation: "ba-go",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hin-o an imo bag-o nga sangkay?",
+          translation: "Who is your new friend?",
+        },
+        {
+          speaker: "B",
+          text: "Hi Mark.",
+          translation: "Mark.",
+        },
+      ],
+    },
+    {
+      term: "Daan",
+      meaning: "Old",
+      pronunciation: "da-an",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Daan ito nga silya.",
+          translation: "That chair is old.",
+        },
+      ],
+    },
+    {
+      term: "Mahal",
+      meaning: "Expensive",
+      pronunciation: "ma-hal",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Mahal ini nga bag.",
+          translation: "This bag is expensive.",
+        },
+      ],
+    },
+    {
+      term: "Barato",
+      meaning: "Inexpensive",
+      pronunciation: "ba-ra-to",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hain an mas barato hini nga duha?",
+          translation: "Which of these two is less expensive?",
+        },
+        {
+          speaker: "B",
+          text: "Mas barato ini nga bag.",
+          translation: "This bag is less expensive.",
+        },
+      ],
+    },
+    {
+      term: "Mabug-at",
+      meaning: "Heavy",
+      pronunciation: "ma-bug-at",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Mabug-at ini nga bag.",
+          translation: "This bag is heavy.",
+        },
+      ],
+    },
+    {
+      term: "Magaan",
+      meaning: "Light (weight)",
+      pronunciation: "ma-ga-an",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Magaan ini nga kahon.",
+          translation: "This box is light.",
+        },
+      ],
+    },
+    {
+      term: "Malumo",
+      meaning: "Soft",
+      pronunciation: "ma-lu-mo",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Matig-a",
+      meaning: "Hard",
+      pronunciation: "ma-tig-a",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Hamis",
+      meaning: "Smooth",
+      pronunciation: "ha-mis",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Magaspang",
+      meaning: "Rough",
+      pronunciation: "ma-gas-pang",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Guba",
+      meaning: "Broken",
+      pronunciation: "gu-ba",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Guba an lingkoran.",
+          translation: "The chair is broken.",
+        },
+      ],
+    },
+    {
+      term: "Mapulsanon",
+      meaning: "Useful",
+      pronunciation: "ma-pul-sa-non",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Makolor",
+      meaning: "Colorful",
+      pronunciation: "ma-ko-lor",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Lingin",
+      meaning: "Round",
+      pronunciation: "li-ngin",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Ano nga klase?",
+      meaning: "What kind?",
+      pronunciation: "a-no nga kla-se",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "",
+          text: "Ano nga klase nga lugar ini?",
+          translation: "What kind of place is this?",
+        },
+      ],
+    },
+    {
+      term: "Hain?",
+      meaning: "Which one?",
+      pronunciation: "ha-in",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hain man an mas dako?",
+          translation: "Which one is bigger?",
+        },
+        {
+          speaker: "B",
+          text: "Mas dako ito nga bag.",
+          translation: "That bag is bigger.",
+        },
+      ],
+    },
+    {
+      term: "Ano an hitsura hini?",
+      meaning: "What does it look like?",
+      pronunciation: "a-no an hit-su-ra hi-ni",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "B",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+      ],
+    },
+    {
+      term: "Gaano kadako?",
+      meaning: "How big?",
+      pronunciation: "ga-a-no ka-da-ko",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Gaano kagutiay?",
+      meaning: "How small?",
+      pronunciation: "ga-a-no ka-gu-ti-ay",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Sugad",
+      meaning: "Like / Similar",
+      pronunciation: "su-gad",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Iba",
+      meaning: "Different",
+      pronunciation: "i-ba",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an kaibahan nira?",
+          translation: "What is the difference between them?",
+        },
+        {
+          speaker: "B",
+          text: "Iba an ira kadako ngan kolor.",
+          translation: "Their sizes and colors are different.",
+        },
+      ],
+    },
+    {
+      term: "Pariho",
+      meaning: "Same",
+      pronunciation: "pa-ri-ho",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "",
+          text: "Pariho hira.",
+          translation: "They are similar. / They are alike.",
+        },
+      ],
+    },
+    {
+      term: "Mas",
+      meaning: "More",
+      pronunciation: "mas",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Mas dako ito nga bag.",
+          translation: "That bag is bigger.",
+        },
+        {
+          speaker: "B",
+          text: "Ano an kaibahan nira?",
+          translation: "What is the difference between them?",
+        },
+      ],
+    },
+    {
+      term: "Gud / Kaayo",
+      meaning: "Very",
+      pronunciation: "gud / ka-a-yo",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, hirani la an baybayon.",
+          translation: "Yes, the beach is nearby.",
+        },
+        {
+          speaker: "B",
+          text: "Maupay gud ini nga lugar.",
+          translation: "This is really a nice place.",
+        },
+      ],
+    },
+  ],
+  greetings: [
+    {
+      term: "Matahom",
+      meaning: "Beautiful",
+      pronunciation: "ma-ta-hom",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+        {
+          speaker: "B",
+          text: "Damo ba an mga tawo dinhi?",
+          translation: "Are there many people here?",
+        },
+      ],
+    },
+    {
+      term: "Mahimyang",
+      meaning: "Peaceful",
+      pronunciation: "ma-him-yang",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "B",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+      ],
+    },
+    {
+      term: "Limpyo",
+      meaning: "Clean",
+      pronunciation: "lim-pyo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Limpyo an sulod-klase.",
+          translation: "The classroom is clean.",
+        },
+      ],
+    },
+    {
+      term: "Mahugaw",
+      meaning: "Dirty",
+      pronunciation: "ma-hu-gaw",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Matawo",
+      meaning: "Crowded",
+      pronunciation: "ma-ta-wo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Matawo an merkado.",
+          translation: "The market is crowded.",
+        },
+      ],
+    },
+    {
+      term: "Samok",
+      meaning: "Noisy",
+      pronunciation: "sa-mok",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Samok an kalsada.",
+          translation: "The street is noisy or chaotic.",
+        },
+      ],
+    },
+    {
+      term: "Halapad",
+      meaning: "Wide",
+      pronunciation: "ha-la-pad",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Halapad an dalan.",
+          translation: "The road is wide.",
+        },
+      ],
+    },
+    {
+      term: "Halipot",
+      meaning: "Narrow",
+      pronunciation: "ha-li-pot",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Hirayo",
+      meaning: "Far",
+      pronunciation: "hi-ra-yo",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "",
+          text: "Hirayo an merkado.",
+          translation: "The market is far.",
+        },
+      ],
+    },
+    {
+      term: "Hirani",
+      meaning: "Near",
+      pronunciation: "hi-ra-ni",
+      usage: "From this lesson's word list: describing places.",
+      example: [
+        {
+          speaker: "A",
+          text: "Diri man. Diri duro kadamo an mga tawo.",
+          translation: "Not really. There are not too many people.",
+        },
+        {
+          speaker: "B",
+          text: "May baybayon ba hirani?",
+          translation: "Is there a beach nearby?",
+        },
+      ],
+    },
+    {
+      term: "Mapaso",
+      meaning: "Hot",
+      pronunciation: "ma-pa-so",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Matugnaw",
+      meaning: "Cold",
+      pronunciation: "ma-tug-naw",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Berde",
+      meaning: "Green",
+      pronunciation: "ber-de",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Mabuhi",
+      meaning: "Lively",
+      pronunciation: "ma-bu-hi",
+      usage: "From this lesson's word list: describing places.",
+    },
+    {
+      term: "Bag-o",
+      meaning: "New",
+      pronunciation: "ba-go",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hin-o an imo bag-o nga sangkay?",
+          translation: "Who is your new friend?",
+        },
+        {
+          speaker: "B",
+          text: "Hi Mark.",
+          translation: "Mark.",
+        },
+      ],
+    },
+    {
+      term: "Daan",
+      meaning: "Old",
+      pronunciation: "da-an",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Daan ito nga silya.",
+          translation: "That chair is old.",
+        },
+      ],
+    },
+    {
+      term: "Mahal",
+      meaning: "Expensive",
+      pronunciation: "ma-hal",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Mahal ini nga bag.",
+          translation: "This bag is expensive.",
+        },
+      ],
+    },
+    {
+      term: "Barato",
+      meaning: "Inexpensive",
+      pronunciation: "ba-ra-to",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hain an mas barato hini nga duha?",
+          translation: "Which of these two is less expensive?",
+        },
+        {
+          speaker: "B",
+          text: "Mas barato ini nga bag.",
+          translation: "This bag is less expensive.",
+        },
+      ],
+    },
+    {
+      term: "Mabug-at",
+      meaning: "Heavy",
+      pronunciation: "ma-bug-at",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Mabug-at ini nga bag.",
+          translation: "This bag is heavy.",
+        },
+      ],
+    },
+    {
+      term: "Magaan",
+      meaning: "Light (weight)",
+      pronunciation: "ma-ga-an",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Magaan ini nga kahon.",
+          translation: "This box is light.",
+        },
+      ],
+    },
+    {
+      term: "Malumo",
+      meaning: "Soft",
+      pronunciation: "ma-lu-mo",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Matig-a",
+      meaning: "Hard",
+      pronunciation: "ma-tig-a",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Hamis",
+      meaning: "Smooth",
+      pronunciation: "ha-mis",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Magaspang",
+      meaning: "Rough",
+      pronunciation: "ma-gas-pang",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Guba",
+      meaning: "Broken",
+      pronunciation: "gu-ba",
+      usage: "From this lesson's word list: describing objects.",
+      example: [
+        {
+          speaker: "",
+          text: "Guba an lingkoran.",
+          translation: "The chair is broken.",
+        },
+      ],
+    },
+    {
+      term: "Mapulsanon",
+      meaning: "Useful",
+      pronunciation: "ma-pul-sa-non",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Makolor",
+      meaning: "Colorful",
+      pronunciation: "ma-ko-lor",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Lingin",
+      meaning: "Round",
+      pronunciation: "li-ngin",
+      usage: "From this lesson's word list: describing objects.",
+    },
+    {
+      term: "Ano nga klase?",
+      meaning: "What kind?",
+      pronunciation: "a-no nga kla-se",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "",
+          text: "Ano nga klase nga lugar ini?",
+          translation: "What kind of place is this?",
+        },
+      ],
+    },
+    {
+      term: "Hain?",
+      meaning: "Which one?",
+      pronunciation: "ha-in",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Hain man an mas dako?",
+          translation: "Which one is bigger?",
+        },
+        {
+          speaker: "B",
+          text: "Mas dako ito nga bag.",
+          translation: "That bag is bigger.",
+        },
+      ],
+    },
+    {
+      term: "Ano an hitsura hini?",
+      meaning: "What does it look like?",
+      pronunciation: "a-no an hit-su-ra hi-ni",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "B",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+      ],
+    },
+    {
+      term: "Gaano kadako?",
+      meaning: "How big?",
+      pronunciation: "ga-a-no ka-da-ko",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Gaano kagutiay?",
+      meaning: "How small?",
+      pronunciation: "ga-a-no ka-gu-ti-ay",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Sugad",
+      meaning: "Like / Similar",
+      pronunciation: "su-gad",
+      usage: "A descriptive question words and expression.",
+    },
+    {
+      term: "Iba",
+      meaning: "Different",
+      pronunciation: "i-ba",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Ano an kaibahan nira?",
+          translation: "What is the difference between them?",
+        },
+        {
+          speaker: "B",
+          text: "Iba an ira kadako ngan kolor.",
+          translation: "Their sizes and colors are different.",
+        },
+      ],
+    },
+    {
+      term: "Pariho",
+      meaning: "Same",
+      pronunciation: "pa-ri-ho",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "",
+          text: "Pariho hira.",
+          translation: "They are similar. / They are alike.",
+        },
+      ],
+    },
+    {
+      term: "Mas",
+      meaning: "More",
+      pronunciation: "mas",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Mas dako ito nga bag.",
+          translation: "That bag is bigger.",
+        },
+        {
+          speaker: "B",
+          text: "Ano an kaibahan nira?",
+          translation: "What is the difference between them?",
+        },
+      ],
+    },
+    {
+      term: "Gud / Kaayo",
+      meaning: "Very",
+      pronunciation: "gud / ka-a-yo",
+      usage: "A descriptive question words and expression.",
+      example: [
+        {
+          speaker: "A",
+          text: "Oo, hirani la an baybayon.",
+          translation: "Yes, the beach is nearby.",
+        },
+        {
+          speaker: "B",
+          text: "Maupay gud ini nga lugar.",
+          translation: "This is really a nice place.",
+        },
+      ],
+    },
+  ],
+  patterns: [
+    {
+      label: "Pattern 1: Describing Someone",
+      pattern: "Description + hiya.",
+      examples: [
+        "Buotan hiya.",
+        "Mahigalaon hiya.",
+        "Hataas hiya.",
+      ],
+    },
+    {
+      label: "Pattern 2: Comparing Things",
+      pattern: "Mas + Description + ini nga bag.",
+      examples: [
+        "Mas mahal ini nga bag.",
+        "Mas barato ini nga bag.",
+      ],
+    },
+    {
+      label: "Pattern 3: Describing a Friend",
+      pattern: "Description + an akon sangkay.",
+      examples: [
+        "Maduruto an akon sangkay.",
+        "Buotan an akon sangkay.",
+      ],
+    },
+  ],
+  sentences: [
+    {
+      text: "Buotan hiya.",
+      meaning: "He is kind. / He/She is kind.",
+    },
+    {
+      text: "Mahigalaon hiya.",
+      meaning: "She is friendly. / He/She is friendly.",
+    },
+    {
+      text: "Maduruto an akon sangkay.",
+      meaning: "My friend is hardworking.",
+    },
+    {
+      text: "Hataas an akon bugto nga lalaki.",
+      meaning: "My brother is tall.",
+    },
+    {
+      text: "Bata pa an akon bugto nga babaye.",
+      meaning: "My sister is young.",
+    },
+    {
+      text: "Dako an balay.",
+      meaning: "The house is big.",
+    },
+    {
+      text: "Matahom an lugar.",
+      meaning: "The place is beautiful.",
+    },
+    {
+      text: "Matawo an merkado.",
+      meaning: "The market is crowded.",
+    },
+    {
+      text: "Limpyo an sulod-klase.",
+      meaning: "The classroom is clean.",
+    },
+    {
+      text: "Gutiay ini nga libro.",
+      meaning: "This book is small.",
+    },
+    {
+      text: "Mahal ini nga bag.",
+      meaning: "This bag is expensive.",
+    },
+    {
+      text: "Daan ito nga silya.",
+      meaning: "That chair is old.",
+    },
+    {
+      text: "Mas dako ini.",
+      meaning: "This one is bigger. / This is bigger.",
+    },
+    {
+      text: "Mas gutiay ito.",
+      meaning: "That one is smaller. / That is smaller.",
+    },
+    {
+      text: "Magkaiba hira.",
+      meaning: "They are different.",
+    },
+    {
+      text: "Pariho hira.",
+      meaning: "They are similar. / They are alike.",
+    },
+    {
+      text: "Ano an hitsura han iyo balay?",
+      meaning: "What does your house look like?",
+    },
+    {
+      text: "Ano ini nga klase nga lugar?",
+      meaning: "What kind of place is this?",
+    },
+    {
+      text: "Maduruto hiya.",
+      meaning: "He/She is hardworking.",
+    },
+    {
+      text: "Hataas hiya.",
+      meaning: "He/She is tall.",
+    },
+    {
+      text: "Bata pa hiya.",
+      meaning: "He/She is still young.",
+    },
+    {
+      text: "Maisog hiya.",
+      meaning: "He/She is brave.",
+    },
+    {
+      text: "Buotan an akon sangkay.",
+      meaning: "My friend is kind.",
+    },
+    {
+      text: "Maduruto an akon bugto.",
+      meaning: "My sibling is hardworking.",
+    },
+    {
+      text: "Mahigalaon an amon maestra.",
+      meaning: "Our teacher is friendly.",
+    },
+    {
+      text: "Matahom an baybayon.",
+      meaning: "The beach is beautiful.",
+    },
+    {
+      text: "Limpyo an eskwelahan.",
+      meaning: "The school is clean.",
+    },
+    {
+      text: "Halapad an dalan.",
+      meaning: "The road is wide.",
+    },
+    {
+      text: "Hirayo an merkado.",
+      meaning: "The market is far.",
+    },
+    {
+      text: "Hirani an botika.",
+      meaning: "The pharmacy is near.",
+    },
+    {
+      text: "Hilom an baryo.",
+      meaning: "The village is quiet.",
+    },
+    {
+      text: "Samok an kalsada.",
+      meaning: "The street is noisy or chaotic.",
+    },
+    {
+      text: "Mahimyang an lugar.",
+      meaning: "The place is peaceful.",
+    },
+    {
+      text: "Bag-o ini nga libro.",
+      meaning: "This is a new book.",
+    },
+    {
+      text: "Mabug-at ini nga bag.",
+      meaning: "This bag is heavy.",
+    },
+    {
+      text: "Magaan ini nga kahon.",
+      meaning: "This box is light.",
+    },
+    {
+      text: "Guba an lingkoran.",
+      meaning: "The chair is broken.",
+    },
+    {
+      text: "Mahal ini nga relo.",
+      meaning: "This watch is expensive.",
+    },
+    {
+      text: "Barato ini nga lapis.",
+      meaning: "This pencil is inexpensive.",
+    },
+    {
+      text: "Mas mahal ini nga bag.",
+      meaning: "This bag is more expensive.",
+    },
+    {
+      text: "Mas halapad ini nga dalan.",
+      meaning: "This road is wider.",
+    },
+    {
+      text: "Mas hirani an eskwelahan.",
+      meaning: "The school is nearer.",
+    },
+    {
+      text: "Pariho an ira kolor.",
+      meaning: "Their colors are the same.",
+    },
+    {
+      text: "Iba an kolor hini.",
+      meaning: "This has a different color.",
+    },
+    {
+      text: "Magkaiba an duha nga butang.",
+      meaning: "The two objects are different.",
+    },
+    {
+      text: "Ano an hitsura niya?",
+      meaning: "What does he/she look like?",
+    },
+    {
+      text: "Ano nga klase nga lugar ini?",
+      meaning: "What kind of place is this?",
+    },
+    {
+      text: "Dako ba an balay?",
+      meaning: "Is the house big?",
+    },
+    {
+      text: "Mahal ba ini?",
+      meaning: "Is this expensive?",
+    },
+    {
+      text: "Hain an mas barato?",
+      meaning: "Which one is less expensive?",
+    },
+  ],
+  conversations: [
+    {
+      title: "Conversation 1: Describing a Friend",
+      situation: "Two classmates talk about a friend they both know.",
+      lines: [
+        {
+          speaker: "Ana",
+          text: "Hin-o an imo bag-o nga sangkay?",
+          translation: "Who is your new friend?",
+        },
+        {
+          speaker: "Ben",
+          text: "Hi Mark.",
+          translation: "Mark.",
+        },
+        {
+          speaker: "Ana",
+          text: "Ano an iya hitsura?",
+          translation: "What does he look like?",
+        },
+        {
+          speaker: "Ben",
+          text: "Hataas hiya ngan matahom an iya buhok.",
+          translation: "He is tall and has beautiful hair.",
+        },
+        {
+          speaker: "Ana",
+          text: "Ano man an iya batasan?",
+          translation: "What is his personality like?",
+        },
+        {
+          speaker: "Ben",
+          text: "Buotan ngan mahigalaon hiya.",
+          translation: "He is kind and friendly.",
+        },
+        {
+          speaker: "Ana",
+          text: "Maupay ito nga klase hin sangkay.",
+          translation: "That is a good kind of friend.",
+        },
+        {
+          speaker: "Ben",
+          text: "Oo, maduruto liwat hiya ha pag-adal.",
+          translation: "Yes, he is also hardworking in his studies.",
+        },
+      ],
+    },
+    {
+      title: "Conversation 2: Describing a Hometown",
+      situation: "A visitor asks a local resident about their hometown.",
+      lines: [
+        {
+          speaker: "Visitor",
+          text: "Ano an hitsura hini nga lugar?",
+          translation: "What is this place like?",
+        },
+        {
+          speaker: "Resident",
+          text: "Matahom ngan mahimyang an amon baryo.",
+          translation: "Our village is beautiful and peaceful.",
+        },
+        {
+          speaker: "Visitor",
+          text: "Damo ba an mga tawo dinhi?",
+          translation: "Are there many people here?",
+        },
+        {
+          speaker: "Resident",
+          text: "Diri man. Diri duro kadamo an mga tawo.",
+          translation: "Not really. There are not too many people.",
+        },
+        {
+          speaker: "Visitor",
+          text: "May baybayon ba hirani?",
+          translation: "Is there a beach nearby?",
+        },
+        {
+          speaker: "Resident",
+          text: "Oo, hirani la an baybayon.",
+          translation: "Yes, the beach is nearby.",
+        },
+        {
+          speaker: "Visitor",
+          text: "Maupay gud ini nga lugar.",
+          translation: "This is really a nice place.",
+        },
+        {
+          speaker: "Resident",
+          text: "Salamat.",
+          translation: "Thank you.",
+        },
+      ],
+    },
+    {
+      title: "Conversation 3: Comparing Two Products",
+      situation: "A customer compares two bags before purchasing one.",
+      lines: [
+        {
+          speaker: "Customer",
+          text: "Hain an mas barato hini nga duha?",
+          translation: "Which of these two is less expensive?",
+        },
+        {
+          speaker: "Seller",
+          text: "Mas barato ini nga bag.",
+          translation: "This bag is less expensive.",
+        },
+        {
+          speaker: "Customer",
+          text: "Hain man an mas dako?",
+          translation: "Which one is bigger?",
+        },
+        {
+          speaker: "Seller",
+          text: "Mas dako ito nga bag.",
+          translation: "That bag is bigger.",
+        },
+        {
+          speaker: "Customer",
+          text: "Ano an kaibahan nira?",
+          translation: "What is the difference between them?",
+        },
+        {
+          speaker: "Seller",
+          text: "Iba an ira kadako ngan kolor.",
+          translation: "Their sizes and colors are different.",
+        },
+        {
+          speaker: "Customer",
+          text: "Sige, ini na la an akon paliton.",
+          translation: "All right, I will buy this one instead.",
+        },
+        {
+          speaker: "Seller",
+          text: "Salamat ha imo pagpalit.",
+          translation: "Thank you for your purchase.",
+        },
+      ],
+    },
+  ],
+  savedLanguageNotes: [
+    {
+      title: "A. Describing People",
+      body: [
+        "When describing people, you may talk about their physical appearance, personality, or other characteristics.",
+      ],
+      table: {
+        leftHeading: "Waray",
+        rightHeading: "English",
+        rows: [
+          {
+            left: "Buotan hiya.",
+            right: "He/She is kind.",
+          },
+          {
+            left: "Mahigalaon hiya.",
+            right: "He/She is friendly.",
+          },
+          {
+            left: "Maduruto hiya.",
+            right: "He/She is hardworking.",
+          },
+          {
+            left: "Hataas hiya.",
+            right: "He/She is tall.",
+          },
+          {
+            left: "Bata pa hiya.",
+            right: "He/She is still young.",
+          },
+          {
+            left: "Maisog hiya.",
+            right: "He/She is brave.",
+          },
+        ],
+      },
+    },
+    {
+      title: "A. Describing People",
+      body: [
+        "You can also include a person's relationship to you.",
+      ],
+      examples: [
+        {
+          text: "Buotan an akon sangkay.",
+          meaning: "My friend is kind.",
+        },
+        {
+          text: "Maduruto an akon bugto.",
+          meaning: "My sibling is hardworking.",
+        },
+        {
+          text: "Mahigalaon an amon maestra.",
+          meaning: "Our teacher is friendly.",
+        },
+      ],
+    },
+    {
+      title: "B. Describing Places",
+      body: [
+        "When describing a place, you can talk about its appearance, size, condition, or surroundings.",
+      ],
+      table: {
+        leftHeading: "Waray",
+        rightHeading: "English",
+        rows: [
+          {
+            left: "Matahom an baybayon.",
+            right: "The beach is beautiful.",
+          },
+          {
+            left: "Limpyo an eskwelahan.",
+            right: "The school is clean.",
+          },
+          {
+            left: "Halapad an dalan.",
+            right: "The road is wide.",
+          },
+          {
+            left: "Hirayo an merkado.",
+            right: "The market is far.",
+          },
+          {
+            left: "Hirani an botika.",
+            right: "The pharmacy is near.",
+          },
+          {
+            left: "Matawo an merkado.",
+            right: "The market is crowded.",
+          },
+        ],
+      },
+    },
+    {
+      title: "B. Describing Places",
+      body: [
+        "You can also describe the atmosphere of a place.",
+      ],
+      examples: [
+        {
+          text: "Hilom an baryo.",
+          meaning: "The village is quiet.",
+        },
+        {
+          text: "Samok an kalsada.",
+          meaning: "The street is noisy or chaotic.",
+        },
+        {
+          text: "Mahimyang an lugar.",
+          meaning: "The place is peaceful.",
+        },
+      ],
+    },
+    {
+      title: "C. Describing Objects",
+      body: [
+        "Descriptive words help identify objects and explain their characteristics.",
+      ],
+      table: {
+        leftHeading: "Waray",
+        rightHeading: "English",
+        rows: [
+          {
+            left: "Bag-o ini nga libro.",
+            right: "This is a new book.",
+          },
+          {
+            left: "Mabug-at ini nga bag.",
+            right: "This bag is heavy.",
+          },
+          {
+            left: "Magaan ini nga kahon.",
+            right: "This box is light.",
+          },
+          {
+            left: "Guba an lingkoran.",
+            right: "The chair is broken.",
+          },
+          {
+            left: "Mahal ini nga relo.",
+            right: "This watch is expensive.",
+          },
+          {
+            left: "Barato ini nga lapis.",
+            right: "This pencil is inexpensive.",
+          },
+        ],
+      },
+    },
+    {
+      title: "C. Describing Objects",
+      body: [
+        "When describing an object, you can mention its size, color, condition, or usefulness.",
+      ],
+    },
+    {
+      title: "D. Making Comparisons",
+      body: [
+        "Comparisons allow learners to explain similarities and differences.",
+        "The word mas can be used to express a greater degree of a characteristic.",
+      ],
+      table: {
+        leftHeading: "Waray",
+        rightHeading: "English",
+        rows: [
+          {
+            left: "Mas dako ini.",
+            right: "This is bigger.",
+          },
+          {
+            left: "Mas gutiay ito.",
+            right: "That is smaller.",
+          },
+          {
+            left: "Mas mahal ini nga bag.",
+            right: "This bag is more expensive.",
+          },
+          {
+            left: "Mas halapad ini nga dalan.",
+            right: "This road is wider.",
+          },
+          {
+            left: "Mas hirani an eskwelahan.",
+            right: "The school is nearer.",
+          },
+        ],
+      },
+    },
+    {
+      title: "D. Making Comparisons",
+      body: [
+        "To express similarity, you may use pariho.",
+      ],
+      examples: [
+        {
+          text: "Pariho hira.",
+          meaning: "They are alike.",
+        },
+        {
+          text: "Pariho an ira kolor.",
+          meaning: "Their colors are the same.",
+        },
+      ],
+    },
+    {
+      title: "D. Making Comparisons",
+      body: [
+        "To express difference, you may use iba or magkaiba.",
+      ],
+      examples: [
+        {
+          text: "Iba an kolor hini.",
+          meaning: "This has a different color.",
+        },
+        {
+          text: "Magkaiba an duha nga butang.",
+          meaning: "The two objects are different.",
+        },
+      ],
+    },
+    {
+      title: "E. Asking for Descriptions",
+      body: [
+        "You can ask questions to obtain more information about a person, place, or object.",
+      ],
+      table: {
+        leftHeading: "Waray",
+        rightHeading: "English",
+        rows: [
+          {
+            left: "Ano an hitsura niya?",
+            right: "What does he/she look like?",
+          },
+          {
+            left: "Ano an hitsura hini?",
+            right: "What does this look like?",
+          },
+          {
+            left: "Ano an hitsura han iyo balay?",
+            right: "What does your house look like?",
+          },
+          {
+            left: "Ano nga klase nga lugar ini?",
+            right: "What kind of place is this?",
+          },
+          {
+            left: "Dako ba an balay?",
+            right: "Is the house big?",
+          },
+          {
+            left: "Mahal ba ini?",
+            right: "Is this expensive?",
+          },
+          {
+            left: "Hain an mas barato?",
+            right: "Which one is less expensive?",
+          },
+        ],
+      },
+    },
+    {
+      title: "B. Personality and Character",
+      body: [
+        "Some personality words may have different shades of meaning depending on context and community usage.",
+      ],
+    },
+    {
+      title: "USEFUL PHRASES AND SENTENCES",
+      body: [
+        "The following expressions can help learners describe people, places, and objects.",
+      ],
+    },
+  ],
+  inferredFields: [
+    "usage",
+    "example",
+    "pattern",
+    "fill-in",
+    "arrange",
+    "speaking phrase",
+    "target pitch and mood",
+    "respelling",
+    "example situation",
+    "unit",
+    "pronunciation tip",
+    "badge description",
+    "completion requirement",
   ],
 };
