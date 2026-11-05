@@ -2003,6 +2003,46 @@ export const warayPracticeLevels: PracticeLevel[] = [
     // Structured lesson: its content is in data/lessons/, with no practice game.
     phrases: [],
   },
+  {
+    id: 21,
+    lessonId: "waray_21",
+    title: "Expressing Opinions and Feelings",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 22,
+    lessonId: "waray_22",
+    title: "Giving Explanations and Reasons",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 23,
+    lessonId: "waray_23",
+    title: "Agreeing and Disagreeing",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 24,
+    lessonId: "waray_24",
+    title: "Advanced Sentence Construction",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
+  {
+    id: 25,
+    lessonId: "waray_25",
+    title: "Verb Forms and Tenses",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
+  },
 ];
 
 export const practiceLevels: PracticeLevel[] = [

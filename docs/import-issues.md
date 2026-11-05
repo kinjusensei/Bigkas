@@ -11,6 +11,8 @@ These are candidates from reading and from comparing similar words. They are sti
 | Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
 | Waray 14 | Vocabulary | "Kinahanglan" has "Ki-nang-ha-lan" (same in Waray 22, 23). Waray 13 writes "kee-nahng-LAHN". |
 | Waray 14 | Vocabulary | "Nagtatrabaho hira." has "Nag-tra-tra-ba-ho hi-ra". The word has "ta", not "tra", in the second syllable. |
+| Waray 21 | Vocabulary | "Kinahanglanon" has "ki-nang-ha-non" (same in Waray 22). Waray 13 writes "kee-nahng-LAHN-on". |
+| Waray 21 | Vocabulary | "Nahahadlok" has "na-hahad-lok" (same in Waray 28). The syllables look joined: "na-ha-had-lok". |
 | Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
 | Waray 6 | Vocabulary | "Tuba han lubi / Tubig han lubi" has one pronunciation, "TU-big han LU-bi", for the second form only. |
 | Waray 17 | Vocabulary | "Baroto han pagkaon / puwesto han pagkaon (descriptive)" has one pronunciation, "Pu-wes-to han pag-ka-on", for the second form only. |
@@ -891,6 +893,70 @@ Meaning of each heading:
 
 - The PDF does not state a level on this lesson; "Intermediate" comes from its lesson number.
 
+### Waray 21: Expressing Opinions and Feelings (PDF pages 965–980)
+
+**Missing answer key**
+
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Identify the Feeling (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities = 45 XP.
+
+### Waray 22: Giving Explanations and Reasons (PDF pages 981–1000)
+
+**Missing answer key**
+
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities = 45 XP.
+
+### Waray 23: Agreeing and Disagreeing (PDF pages 1001–1020)
+
+**Missing answer key**
+
+- Activity 2: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Complete the Sentences + Guided Conversation + Practice Activities = 45 XP.
+
+### Waray 24: Advanced Sentence Construction (PDF pages 1021–1041)
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Combine the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Expand the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Paragraph Construction" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Combine the Sentences + Expand the Sentences + Paragraph Construction = 45 XP.
+
+### Waray 25: Verb Forms and Tenses (PDF pages 1042–1066)
+
+**Missing answer key**
+
+- Activity 3: Complete the Sentences (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- "Vocabulary Matching" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Identify the Time Reference" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Complete the Sentences" (10 XP) has no screen in this lesson, so its XP is earned with conversation.
+- "Describe Your Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Vocabulary Matching + Identify the Time Reference + Complete the Sentences + Describe Your Activities = 45 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -937,3 +1003,8 @@ Meaning of each heading:
 | Waray 18: Shopping and Buying | Intermediate | 52 | 27 | 31 | 0 | 22 | 10 | 0 | 60 |
 | Waray 19: Talking About Daily Activities | Intermediate | 62 | 18 | 25 | 5 | 25 | 10 | 0 | 60 |
 | Waray 20: Describing People, Places, and Things | Intermediate | 69 | 18 | 24 | 0 | 24 | 10 | 0 | 60 |
+| Waray 21: Expressing Opinions and Feelings | Advanced | 53 | 32 | 21 | 0 | 30 | 10 | 0 | 60 |
+| Waray 22: Giving Explanations and Reasons | Advanced | 41 | 21 | 23 | 0 | 30 | 10 | 0 | 60 |
+| Waray 23: Agreeing and Disagreeing | Advanced | 38 | 17 | 22 | 0 | 29 | 10 | 0 | 60 |
+| Waray 24: Advanced Sentence Construction | Advanced | 42 | 20 | 23 | 0 | 30 | 10 | 0 | 60 |
+| Waray 25: Verb Forms and Tenses | Advanced | 47 | 21 | 20 | 0 | 30 | 10 | 0 | 60 |
