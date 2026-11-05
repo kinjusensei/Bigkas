@@ -61,6 +61,7 @@ const greetings: LessonGreeting[] = [
       { speaker: "A", text: "Paalam! Magkita tayo bukas." },
       { speaker: "B", text: "Sige! Ingat Ka!" },
     ],
+    audioUrl: require("../../assets/audio/Tagalog/paalay.aac"),
   },
 ];
 
@@ -108,6 +109,7 @@ const vocabulary: LessonVocabularyItem[] = [
     meaning: "Goodbye",
     pronunciation: "pa-a-lam",
     ...fromGreeting("Paalam"),
+    audioUrl: require("../../assets/audio/Tagalog/paalay.aac"),
   },
   // Examples for Salamat, Ako, Ikaw and Mabuti come from elsewhere in
   // Lesson 1: Activity 4 (Salamat), the self-introduction table (Ako) and

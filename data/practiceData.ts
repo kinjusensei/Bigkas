@@ -52,6 +52,7 @@ const tagalogPracticeLevels: PracticeLevel[] = [
         id: 3,
         text: "Paalam",
         example: "Good bye",
+        audioUrl: require("../assets/audio/Tagalog/paalay.aac"),
         howToUse: "Paalam na mama papasok na po ako ng school",
         howToUseTranslation: "Goodbye, Mom. I am going to school now.",
         expectedExpression: "sad",
