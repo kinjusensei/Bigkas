@@ -1,0 +1,7377 @@
+[
+  {
+    "lessonId": "waray_1",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Good morning",
+    "options": [
+      "Salamat",
+      "Kumusta ka?",
+      "Maupay nga aga",
+      "Oo",
+      "Babay"
+    ],
+    "draftAnswer": "Maupay nga aga",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Maupay nga aga = Good morning",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Thank you",
+    "options": [
+      "Salamat",
+      "Kumusta ka?",
+      "Maupay nga aga",
+      "Oo",
+      "Babay"
+    ],
+    "draftAnswer": "Salamat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Salamat. = Thank you.",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "How are you?",
+    "options": [
+      "Salamat",
+      "Kumusta ka?",
+      "Maupay nga aga",
+      "Oo",
+      "Babay"
+    ],
+    "draftAnswer": "Kumusta ka?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Kumusta ka? = How are you?",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Yes",
+    "options": [
+      "Salamat",
+      "Kumusta ka?",
+      "Maupay nga aga",
+      "Oo",
+      "Babay"
+    ],
+    "draftAnswer": "Oo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Oo = Yes",
+      "where": "B. Common Responses and Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Goodbye",
+    "options": [
+      "Salamat",
+      "Kumusta ka?",
+      "Maupay nga aga",
+      "Oo",
+      "Babay"
+    ],
+    "draftAnswer": "Babay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Babay. = Goodbye.",
+      "where": "B. Common Responses and Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "How do you say \"Good evening\" in Waray?",
+    "options": [
+      "A. Maupay nga aga",
+      "B. Maupay nga gab-i",
+      "C. Salamat",
+      "D. Kumusta ka"
+    ],
+    "draftAnswer": "B. Maupay nga gab-i",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Maupay nga gab-i = Good evening",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What does \"Ano an imo ngaran?\" mean?",
+    "options": [
+      "A. Where are you from?",
+      "B. How are you?",
+      "C. What is your name?",
+      "D. How old are you?"
+    ],
+    "draftAnswer": "C. What is your name?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Ano an imo ngaran? = What is your name?",
+      "where": "B. Asking Questions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "Which Waray word means \"Thank you\"?",
+    "options": [
+      "A. Diri",
+      "B. Salamat",
+      "C. Ako",
+      "D. Diin"
+    ],
+    "draftAnswer": "B. Salamat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Salamat. = Thank you.",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "How do you say \"I am from Samar\"?",
+    "options": [
+      "A. Taga Samar ako.",
+      "B. Ano an imo ngaran?",
+      "C. Maupay man.",
+      "D. Kumusta ka?"
+    ],
+    "draftAnswer": "A. Taga Samar ako.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Taga Samar ako. = I am from Samar.",
+      "where": "A. Introducing Yourself"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "Which pronoun means \"we, including the person being addressed\"?",
+    "options": [
+      "A. Kami",
+      "B. Hira",
+      "C. Kita",
+      "D. Hiya"
+    ],
+    "draftAnswer": "C. Kita",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Ano an _____ ngaran?",
+    "options": [
+      "Akon",
+      "Imo",
+      "Oo",
+      "Salamat",
+      "Diin"
+    ],
+    "draftAnswer": "Imo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Ano an imo ngaran?",
+      "where": "B. Asking Questions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "An _____ ngaran hi Maria.",
+    "options": [
+      "Akon",
+      "Imo",
+      "Oo",
+      "Salamat",
+      "Diin"
+    ],
+    "draftAnswer": "Akon",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Taga _____ ka?",
+    "options": [
+      "Akon",
+      "Imo",
+      "Oo",
+      "Salamat",
+      "Diin"
+    ],
+    "draftAnswer": "Diin",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Taga diin ka?",
+      "where": "B. Asking Questions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "_____, maupay man ako.",
+    "options": [
+      "Akon",
+      "Imo",
+      "Oo",
+      "Salamat",
+      "Diin"
+    ],
+    "draftAnswer": "Oo",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Damo nga _____.",
+    "options": [
+      "Akon",
+      "Imo",
+      "Oo",
+      "Salamat",
+      "Diin"
+    ],
+    "draftAnswer": "Salamat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Damo nga salamat.",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Sentence Arrangement",
+    "type": "arrange",
+    "prompt": "Samar / ako / Taga",
+    "options": [
+      "Samar",
+      "ako",
+      "Taga"
+    ],
+    "draftAnswer": "Taga Samar ako.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Taga Samar ako.",
+      "where": "A. Introducing Yourself"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Sentence Arrangement",
+    "type": "arrange",
+    "prompt": "ngaran / imo / Ano / an",
+    "options": [
+      "ngaran",
+      "imo",
+      "Ano",
+      "an"
+    ],
+    "draftAnswer": "Ano an imo ngaran?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Ano an imo ngaran?",
+      "where": "B. Asking Questions"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Sentence Arrangement",
+    "type": "arrange",
+    "prompt": "hi / akon / Maria / ngaran / An",
+    "options": [
+      "hi",
+      "akon",
+      "Maria",
+      "ngaran",
+      "An"
+    ],
+    "draftAnswer": "An akon ngaran hi Maria.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Sentence Arrangement",
+    "type": "arrange",
+    "prompt": "ka / Kumusta",
+    "options": [
+      "ka",
+      "Kumusta"
+    ],
+    "draftAnswer": "Kumusta ka?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Kumusta ka?",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_1",
+    "activity": "Sentence Arrangement",
+    "type": "arrange",
+    "prompt": "aga / Maupay / nga",
+    "options": [
+      "aga",
+      "Maupay",
+      "nga"
+    ],
+    "draftAnswer": "Maupay nga aga",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Maupay nga aga",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Yes",
+    "options": [
+      "Waray sapayan",
+      "Diri",
+      "Salamat",
+      "Oo",
+      "Diri ako maaram"
+    ],
+    "draftAnswer": "Oo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Oo = Yes",
+      "where": "A. Basic Responses"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Thank you",
+    "options": [
+      "Waray sapayan",
+      "Diri",
+      "Salamat",
+      "Oo",
+      "Diri ako maaram"
+    ],
+    "draftAnswer": "Salamat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Salamat = Thank you",
+      "where": "B. Expressions of Politeness"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "No",
+    "options": [
+      "Waray sapayan",
+      "Diri",
+      "Salamat",
+      "Oo",
+      "Diri ako maaram"
+    ],
+    "draftAnswer": "Diri",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Diri = No",
+      "where": "A. Basic Responses"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "You're welcome",
+    "options": [
+      "Waray sapayan",
+      "Diri",
+      "Salamat",
+      "Oo",
+      "Diri ako maaram"
+    ],
+    "draftAnswer": "Waray sapayan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Waray sapayan = You're welcome",
+      "where": "B. Expressions of Politeness"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "I don't know",
+    "options": [
+      "Waray sapayan",
+      "Diri",
+      "Salamat",
+      "Oo",
+      "Diri ako maaram"
+    ],
+    "draftAnswer": "Diri ako maaram",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Diri ako maaram. = I don't know.",
+      "where": "C. Expressions for Understanding"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "How do you say \"I don't understand\" in Waray?",
+    "options": [
+      "A. Nasasabtan ko.",
+      "B. Diri ko nasasabtan.",
+      "C. Maaram ako.",
+      "D. Salamat."
+    ],
+    "draftAnswer": "B. Diri ko nasasabtan.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Diri ko nasasabtan. = I don't understand.",
+      "where": "C. Expressions for Understanding"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What does \"Alayon, hinay-hinay la pagyakan\" mean?",
+    "options": [
+      "A. Please speak slowly.",
+      "B. Please come here.",
+      "C. Thank you very much.",
+      "D. I don't know."
+    ],
+    "draftAnswer": "A. Please speak slowly.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Alayon, hinay-hinay la pagyakan. = Please speak slowly.",
+      "where": "C. Asking for Clarification"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "Which expression means \"I agree\"?",
+    "options": [
+      "A. Diri ako maaram.",
+      "B. Nauyon ako.",
+      "C. Waray sapayan.",
+      "D. Hulat anay."
+    ],
+    "draftAnswer": "B. Nauyon ako.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Nauyon ako. = I agree.",
+      "where": "A. Basic Responses"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What does \"Hulat anay\" mean?",
+    "options": [
+      "A. Let's go.",
+      "B. Come here.",
+      "C. Wait a moment.",
+      "D. I understand."
+    ],
+    "draftAnswer": "C. Wait a moment.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Hulat anay. = Wait a moment.",
+      "where": "E. Everyday Responses"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "Which expression means \"Can you help me?\"",
+    "options": [
+      "A. Pwede mo ba ako buligan?",
+      "B. Ano an imo ngaran?",
+      "C. Taga diin ka?",
+      "D. Kumusta ka?"
+    ],
+    "draftAnswer": "A. Pwede mo ba ako buligan?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Pwede mo ba ako buligan? = Can you help me?",
+      "where": "D. Asking for Help"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "_____, nauyon ako.",
+    "options": [
+      "Oo",
+      "Diri",
+      "Salamat",
+      "Hulat",
+      "Maaram"
+    ],
+    "draftAnswer": "Oo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "_____ ako nauyon.",
+    "options": [
+      "Oo",
+      "Diri",
+      "Salamat",
+      "Hulat",
+      "Maaram"
+    ],
+    "draftAnswer": "Diri",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Diri ako nauyon.",
+      "where": "A. Agreeing and Disagreeing"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Damo nga _____!",
+    "options": [
+      "Oo",
+      "Diri",
+      "Salamat",
+      "Hulat",
+      "Maaram"
+    ],
+    "draftAnswer": "Salamat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Damo nga salamat",
+      "where": "B. Expressions of Politeness"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "_____ anay, alayon.",
+    "options": [
+      "Oo",
+      "Diri",
+      "Salamat",
+      "Hulat",
+      "Maaram"
+    ],
+    "draftAnswer": "Hulat",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Hulat anay, alayon · Hu-lat a-nay, a-la-yon",
+      "where": "A. Common Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "_____ ako hini nga pulong.",
+    "options": [
+      "Oo",
+      "Diri",
+      "Salamat",
+      "Hulat",
+      "Maaram"
+    ],
+    "draftAnswer": "Maaram",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone gives you a glass of water. What should you say?",
+    "options": [
+      "A. Diri ako maaram.",
+      "B. Damo nga salamat.",
+      "C. Hulat anay.",
+      "D. Ano an imo ngaran?"
+    ],
+    "draftAnswer": "B. Damo nga salamat.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone says something you cannot understand. What should you say?",
+    "options": [
+      "A. Diri ko nasasabtan.",
+      "B. Oo, maupay.",
+      "C. Waray sapayan.",
+      "D. Kadto didto."
+    ],
+    "draftAnswer": "A. Diri ko nasasabtan.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone asks if you agree with their statement, and you agree. What should you say?",
+    "options": [
+      "A. Diri ako nauyon.",
+      "B. Oo, nauyon ako.",
+      "C. Diri ako maaram.",
+      "D. Pasayloa ako."
+    ],
+    "draftAnswer": "B. Oo, nauyon ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You need someone to wait for a moment. What should you say?",
+    "options": [
+      "A. Hulat anay.",
+      "B. Salamat.",
+      "C. Babay.",
+      "D. Maupay nga aga."
+    ],
+    "draftAnswer": "A. Hulat anay.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_2",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone helps you carry something. What should you say?",
+    "options": [
+      "A. Diri ko kaya.",
+      "B. Damo nga salamat.",
+      "C. Diri ako maaram.",
+      "D. Taga Samar ako."
+    ],
+    "draftAnswer": "B. Damo nga salamat.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Number Matching",
+    "type": "match",
+    "prompt": "Three",
+    "options": [
+      "Lima",
+      "Siyam",
+      "Tulo",
+      "Pito",
+      "Napulo"
+    ],
+    "draftAnswer": "Tulo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Tulo = Three",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Number Matching",
+    "type": "match",
+    "prompt": "Five",
+    "options": [
+      "Lima",
+      "Siyam",
+      "Tulo",
+      "Pito",
+      "Napulo"
+    ],
+    "draftAnswer": "Lima",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Lima = Five",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Number Matching",
+    "type": "match",
+    "prompt": "Seven",
+    "options": [
+      "Lima",
+      "Siyam",
+      "Tulo",
+      "Pito",
+      "Napulo"
+    ],
+    "draftAnswer": "Pito",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Pito = Seven",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Number Matching",
+    "type": "match",
+    "prompt": "Nine",
+    "options": [
+      "Lima",
+      "Siyam",
+      "Tulo",
+      "Pito",
+      "Napulo"
+    ],
+    "draftAnswer": "Siyam",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Siyam = Nine",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Number Matching",
+    "type": "match",
+    "prompt": "Ten",
+    "options": [
+      "Lima",
+      "Siyam",
+      "Tulo",
+      "Pito",
+      "Napulo"
+    ],
+    "draftAnswer": "Napulo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Napulo = Ten",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What is the Waray word for \"Two\"?",
+    "options": [
+      "A. Usa",
+      "B. Duha",
+      "C. Tulo",
+      "D. Upat"
+    ],
+    "draftAnswer": "B. Duha",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Duha = Two",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What does \"Unom\" mean?",
+    "options": [
+      "A. Four",
+      "B. Five",
+      "C. Six",
+      "D. Seven"
+    ],
+    "draftAnswer": "C. Six",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Unom = Six",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "Which Waray word means \"Eight\"?",
+    "options": [
+      "A. Walo",
+      "B. Siyam",
+      "C. Pito",
+      "D. Lima"
+    ],
+    "draftAnswer": "A. Walo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Walo = Eight",
+      "where": "A. Numbers from One to Ten"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What is the Waray form of \"Fifteen\" in the number list?",
+    "options": [
+      "A. Trese",
+      "B. Katorse",
+      "C. Kinse",
+      "D. Dose"
+    ],
+    "draftAnswer": "C. Kinse",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Kinse = Fifteen",
+      "where": "B. Numbers from Eleven to Twenty"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Multiple Choice",
+    "type": "choice",
+    "prompt": "What does \"Baynte\" mean?",
+    "options": [
+      "A. Ten",
+      "B. Fifteen",
+      "C. Twenty",
+      "D. Thirty"
+    ],
+    "draftAnswer": "C. Twenty",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 3,
+      "text": "Baynte = Twenty",
+      "where": "B. Numbers from Eleven to Twenty"
+    }
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "One is usa. Two is _____.",
+    "options": [
+      "Duha",
+      "Lima",
+      "Napulo",
+      "Siyam",
+      "Pito"
+    ],
+    "draftAnswer": "Duha",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Five is _____.",
+    "options": [
+      "Duha",
+      "Lima",
+      "Napulo",
+      "Siyam",
+      "Pito"
+    ],
+    "draftAnswer": "Lima",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Ten is _____.",
+    "options": [
+      "Duha",
+      "Lima",
+      "Napulo",
+      "Siyam",
+      "Pito"
+    ],
+    "draftAnswer": "Napulo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Nine is _____.",
+    "options": [
+      "Duha",
+      "Lima",
+      "Napulo",
+      "Siyam",
+      "Pito"
+    ],
+    "draftAnswer": "Siyam",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_3",
+    "activity": "Fill in the Blanks",
+    "type": "fill",
+    "prompt": "Seven is _____.",
+    "options": [
+      "Duha",
+      "Lima",
+      "Napulo",
+      "Siyam",
+      "Pito"
+    ],
+    "draftAnswer": "Pito",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Match the Days",
+    "type": "match",
+    "prompt": "Monday",
+    "options": [
+      "Domingo",
+      "Biyernes",
+      "Miyerkoles",
+      "Sabado",
+      "Lunes"
+    ],
+    "draftAnswer": "Lunes",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Lunes = Monday",
+      "where": "A. Days of the Week"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Match the Days",
+    "type": "match",
+    "prompt": "Wednesday",
+    "options": [
+      "Domingo",
+      "Biyernes",
+      "Miyerkoles",
+      "Sabado",
+      "Lunes"
+    ],
+    "draftAnswer": "Miyerkoles",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Miyerkoles = Wednesday",
+      "where": "A. Days of the Week"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Match the Days",
+    "type": "match",
+    "prompt": "Friday",
+    "options": [
+      "Domingo",
+      "Biyernes",
+      "Miyerkoles",
+      "Sabado",
+      "Lunes"
+    ],
+    "draftAnswer": "Biyernes",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Biyernes = Friday",
+      "where": "A. Days of the Week"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Match the Days",
+    "type": "match",
+    "prompt": "Sunday",
+    "options": [
+      "Domingo",
+      "Biyernes",
+      "Miyerkoles",
+      "Sabado",
+      "Lunes"
+    ],
+    "draftAnswer": "Domingo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Domingo = Sunday",
+      "where": "A. Days of the Week"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Match the Days",
+    "type": "match",
+    "prompt": "Saturday",
+    "options": [
+      "Domingo",
+      "Biyernes",
+      "Miyerkoles",
+      "Sabado",
+      "Lunes"
+    ],
+    "draftAnswer": "Sabado",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Sabado = Saturday",
+      "where": "A. Days of the Week"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Identify the Month",
+    "type": "choice",
+    "prompt": "February",
+    "options": [
+      "A. Pebrero",
+      "B. Agosto",
+      "C. Abril"
+    ],
+    "draftAnswer": "A. Pebrero",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Pebrero = February",
+      "where": "B. Months of the Year"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Identify the Month",
+    "type": "choice",
+    "prompt": "June",
+    "options": [
+      "A. Marso",
+      "B. Hunyo",
+      "C. Enero"
+    ],
+    "draftAnswer": "B. Hunyo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Hunyo = June",
+      "where": "B. Months of the Year"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Identify the Month",
+    "type": "choice",
+    "prompt": "December",
+    "options": [
+      "A. Mayo",
+      "B. Setyembre",
+      "C. Disyembre"
+    ],
+    "draftAnswer": "C. Disyembre",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Disyembre = December",
+      "where": "B. Months of the Year"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Complete the Sentence",
+    "type": "choice",
+    "prompt": "______ yana. (Today)",
+    "options": [
+      "A. Yana",
+      "B. Buwas",
+      "C. Kahapon"
+    ],
+    "draftAnswer": "A. Yana",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Yana = Today",
+      "where": "C. Common Calendar Expressions",
+      "viaHint": true
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Complete the Sentence",
+    "type": "choice",
+    "prompt": "Makadto ako ______. (I will go tomorrow.)",
+    "options": [
+      "A. kahapon",
+      "B. buwas",
+      "C. Domingo"
+    ],
+    "draftAnswer": "B. buwas",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Makadto ako buwas.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_4",
+    "activity": "Complete the Sentence",
+    "type": "choice",
+    "prompt": "Pira na an ______? (What time is it?)",
+    "options": [
+      "A. adlaw",
+      "B. bulan",
+      "C. oras"
+    ],
+    "draftAnswer": "C. oras",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Pira na an oras?",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Match the Family Members",
+    "type": "match",
+    "prompt": "Father",
+    "options": [
+      "Nanay",
+      "Manghod",
+      "Lola",
+      "Tatay",
+      "Bugto nga lalaki"
+    ],
+    "draftAnswer": "Tatay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Tatay = Father",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Match the Family Members",
+    "type": "match",
+    "prompt": "Mother",
+    "options": [
+      "Nanay",
+      "Manghod",
+      "Lola",
+      "Tatay",
+      "Bugto nga lalaki"
+    ],
+    "draftAnswer": "Nanay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Nanay = Mother",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Match the Family Members",
+    "type": "match",
+    "prompt": "Brother",
+    "options": [
+      "Nanay",
+      "Manghod",
+      "Lola",
+      "Tatay",
+      "Bugto nga lalaki"
+    ],
+    "draftAnswer": "Bugto nga lalaki",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Bugto nga lalaki = Brother",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Match the Family Members",
+    "type": "match",
+    "prompt": "Grandmother",
+    "options": [
+      "Nanay",
+      "Manghod",
+      "Lola",
+      "Tatay",
+      "Bugto nga lalaki"
+    ],
+    "draftAnswer": "Lola",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Lola = Grandmother",
+      "where": "B. Extended Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Match the Family Members",
+    "type": "match",
+    "prompt": "Younger sibling",
+    "options": [
+      "Nanay",
+      "Manghod",
+      "Lola",
+      "Tatay",
+      "Bugto nga lalaki"
+    ],
+    "draftAnswer": "Manghod",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Manghod = Younger sibling",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Choose the Correct Answer",
+    "type": "choice",
+    "prompt": "What is the Waray word for family?",
+    "options": [
+      "A. Balay",
+      "B. Pamilya",
+      "C. Bugto"
+    ],
+    "draftAnswer": "B. Pamilya",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Pamilya = Family",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Choose the Correct Answer",
+    "type": "choice",
+    "prompt": "What does magurang mean?",
+    "options": [
+      "A. Older sibling",
+      "B. Younger sibling",
+      "C. Grandfather"
+    ],
+    "draftAnswer": "A. Older sibling",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Magurang = Older sibling",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Choose the Correct Answer",
+    "type": "choice",
+    "prompt": "What is the Waray word for grandmother?",
+    "options": [
+      "A. Tiya",
+      "B. Lola",
+      "C. Nanay"
+    ],
+    "draftAnswer": "B. Lola",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Lola = Grandmother",
+      "where": "B. Extended Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Choose the Correct Answer",
+    "type": "choice",
+    "prompt": "What does akon mean?",
+    "options": [
+      "A. Your",
+      "B. Their",
+      "C. My"
+    ],
+    "draftAnswer": "C. My",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "My = Akon",
+      "where": "E. Important Grammar: My and Your"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Amo ini an ______ tatay.",
+    "options": [
+      "A. akon",
+      "B. imo",
+      "C. ira"
+    ],
+    "draftAnswer": "A. akon",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Amo ini an akon tatay.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "May duha ako nga ______.",
+    "options": [
+      "A. bulan",
+      "B. bugto",
+      "C. adlaw"
+    ],
+    "draftAnswer": "B. bugto",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "May duha ako nga bugto.",
+      "where": "C. Talking About Your Siblings"
+    }
+  },
+  {
+    "lessonId": "waray_5",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Hinigugma ko an akon ______.",
+    "options": [
+      "A. pamilya",
+      "B. oras",
+      "C. semana"
+    ],
+    "draftAnswer": "A. pamilya",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Hinigugma ko an akon pamilya.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Match the Food",
+    "type": "match",
+    "prompt": "Rice (cooked)",
+    "options": [
+      "Tubig",
+      "Saging",
+      "Manok",
+      "Kan-on",
+      "Isda"
+    ],
+    "draftAnswer": "Kan-on",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Kan-on = Rice (cooked)",
+      "where": "A. Common Foods"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Match the Food",
+    "type": "match",
+    "prompt": "Fish",
+    "options": [
+      "Tubig",
+      "Saging",
+      "Manok",
+      "Kan-on",
+      "Isda"
+    ],
+    "draftAnswer": "Isda",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Isda = Fish",
+      "where": "A. Common Foods"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Match the Food",
+    "type": "match",
+    "prompt": "Chicken",
+    "options": [
+      "Tubig",
+      "Saging",
+      "Manok",
+      "Kan-on",
+      "Isda"
+    ],
+    "draftAnswer": "Manok",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Manok = Chicken",
+      "where": "A. Common Foods"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Match the Food",
+    "type": "match",
+    "prompt": "Banana",
+    "options": [
+      "Tubig",
+      "Saging",
+      "Manok",
+      "Kan-on",
+      "Isda"
+    ],
+    "draftAnswer": "Saging",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Saging = Banana",
+      "where": "B. Fruits"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Match the Food",
+    "type": "match",
+    "prompt": "Water",
+    "options": [
+      "Tubig",
+      "Saging",
+      "Manok",
+      "Kan-on",
+      "Isda"
+    ],
+    "draftAnswer": "Tubig",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Tubig = Water",
+      "where": "D. Drinks"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Identify the Correct Translation",
+    "type": "choice",
+    "prompt": "What is the Waray word for mango?",
+    "options": [
+      "A. Mangga",
+      "B. Nangka",
+      "C. Lubi"
+    ],
+    "draftAnswer": "A. Mangga",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Mangga = Mango",
+      "where": "B. Fruits"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Identify the Correct Translation",
+    "type": "choice",
+    "prompt": "What is the Waray word for egg?",
+    "options": [
+      "A. Asin",
+      "B. Itlog",
+      "C. Lana"
+    ],
+    "draftAnswer": "B. Itlog",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Itlog = Egg",
+      "where": "A. Common Foods"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Identify the Correct Translation",
+    "type": "choice",
+    "prompt": "What is the Waray word for milk?",
+    "options": [
+      "A. Kape",
+      "B. Tsaa",
+      "C. Gatas"
+    ],
+    "draftAnswer": "C. Gatas",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Gatas = Milk",
+      "where": "D. Drinks"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Identify the Correct Translation",
+    "type": "choice",
+    "prompt": "What does busog mean?",
+    "options": [
+      "A. Hungry",
+      "B. Full",
+      "C. Thirsty"
+    ],
+    "draftAnswer": "B. Full",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Busog = Full (after eating)",
+      "where": "E. Meals and Eating Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "______ ako. (I am hungry.)",
+    "options": [
+      "A. Gutom",
+      "B. Uhaw",
+      "C. Busog"
+    ],
+    "draftAnswer": "A. Gutom",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Karuyag ko hin ______. (I want water.)",
+    "options": [
+      "A. tubig",
+      "B. mangga",
+      "C. manok"
+    ],
+    "draftAnswer": "A. tubig",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_6",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Lami an ______. (The food is delicious.)",
+    "options": [
+      "A. oras",
+      "B. pagkaon",
+      "C. adlaw"
+    ],
+    "draftAnswer": "B. pagkaon",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Lami an pagkaon.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Match the Colors",
+    "type": "match",
+    "prompt": "Red",
+    "options": [
+      "Puti",
+      "Berde",
+      "Itom",
+      "Pula",
+      "Asul"
+    ],
+    "draftAnswer": "Pula",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Pula = Red",
+      "where": "A. Colors"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Match the Colors",
+    "type": "match",
+    "prompt": "Blue",
+    "options": [
+      "Puti",
+      "Berde",
+      "Itom",
+      "Pula",
+      "Asul"
+    ],
+    "draftAnswer": "Asul",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Asul = Blue",
+      "where": "A. Colors"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Match the Colors",
+    "type": "match",
+    "prompt": "Green",
+    "options": [
+      "Puti",
+      "Berde",
+      "Itom",
+      "Pula",
+      "Asul"
+    ],
+    "draftAnswer": "Berde",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Berde = Green",
+      "where": "A. Colors"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Match the Colors",
+    "type": "match",
+    "prompt": "Black",
+    "options": [
+      "Puti",
+      "Berde",
+      "Itom",
+      "Pula",
+      "Asul"
+    ],
+    "draftAnswer": "Itom",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Itom = Black",
+      "where": "A. Colors"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Match the Colors",
+    "type": "match",
+    "prompt": "White",
+    "options": [
+      "Puti",
+      "Berde",
+      "Itom",
+      "Pula",
+      "Asul"
+    ],
+    "draftAnswer": "Puti",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Puti = White",
+      "where": "A. Colors"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Identify the Shape",
+    "type": "choice",
+    "prompt": "Circle",
+    "options": [
+      "A. Sirkulo",
+      "B. Kuwadrado",
+      "C. Trayanggulo"
+    ],
+    "draftAnswer": "A. Sirkulo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Sirkulo = Circle",
+      "where": "B. Basic Shapes"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Identify the Shape",
+    "type": "choice",
+    "prompt": "Square",
+    "options": [
+      "A. Ovalo",
+      "B. Kuwadrado",
+      "C. Rektanggulo"
+    ],
+    "draftAnswer": "B. Kuwadrado",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Kuwadrado = Square",
+      "where": "B. Basic Shapes"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Identify the Shape",
+    "type": "choice",
+    "prompt": "Triangle",
+    "options": [
+      "A. Sirkulo",
+      "B. Ovalo",
+      "C. Trayanggulo"
+    ],
+    "draftAnswer": "C. Trayanggulo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Trayanggulo = Triangle",
+      "where": "B. Basic Shapes"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Identify the Shape",
+    "type": "choice",
+    "prompt": "Rectangle",
+    "options": [
+      "A. Rektanggulo",
+      "B. Bitoon",
+      "C. Kasingkasing"
+    ],
+    "draftAnswer": "A. Rektanggulo",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Rektanggulo = Rectangle",
+      "where": "B. Basic Shapes"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "______ an bag. (The bag is black.)",
+    "options": [
+      "A. Itom",
+      "B. Puti",
+      "C. Pula"
+    ],
+    "draftAnswer": "A. Itom",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Itom an bag.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "______ an libro. (The book is small.)",
+    "options": [
+      "A. Dako",
+      "B. Gutiay",
+      "C. Bag-o"
+    ],
+    "draftAnswer": "B. Gutiay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Gutiay an libro.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_7",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "______ ini? (What shape is this?)",
+    "options": [
+      "A. Ano nga porma",
+      "B. Pira na",
+      "C. Ano nga adlaw"
+    ],
+    "draftAnswer": "A. Ano nga porma",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 7,
+      "text": "Ano nga porma ini?",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Match the Animals",
+    "type": "match",
+    "prompt": "Dog",
+    "options": [
+      "Kanding",
+      "Aso",
+      "Tamsi",
+      "Baka",
+      "Kuring"
+    ],
+    "draftAnswer": "Aso",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Aso = Dog",
+      "where": "A. Common Animals"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Match the Animals",
+    "type": "match",
+    "prompt": "Cat",
+    "options": [
+      "Kanding",
+      "Aso",
+      "Tamsi",
+      "Baka",
+      "Kuring"
+    ],
+    "draftAnswer": "Kuring",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Kuring = Cat",
+      "where": "A. Common Animals"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Match the Animals",
+    "type": "match",
+    "prompt": "Bird",
+    "options": [
+      "Kanding",
+      "Aso",
+      "Tamsi",
+      "Baka",
+      "Kuring"
+    ],
+    "draftAnswer": "Tamsi",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Tamsi = Bird",
+      "where": "A. Common Animals"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Match the Animals",
+    "type": "match",
+    "prompt": "Cow",
+    "options": [
+      "Kanding",
+      "Aso",
+      "Tamsi",
+      "Baka",
+      "Kuring"
+    ],
+    "draftAnswer": "Baka",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Baka = Cow",
+      "where": "A. Common Animals"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Match the Animals",
+    "type": "match",
+    "prompt": "Goat",
+    "options": [
+      "Kanding",
+      "Aso",
+      "Tamsi",
+      "Baka",
+      "Kuring"
+    ],
+    "draftAnswer": "Kanding",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Kanding = Goat",
+      "where": "A. Common Animals"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Identify the Nature Vocabulary",
+    "type": "choice",
+    "prompt": "Tree",
+    "options": [
+      "A. Kahoy",
+      "B. Bulak",
+      "C. Dahon"
+    ],
+    "draftAnswer": "A. Kahoy",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Kahoy = Tree",
+      "where": "C. Plants and Flowers"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Identify the Nature Vocabulary",
+    "type": "choice",
+    "prompt": "Rain",
+    "options": [
+      "A. Hangin",
+      "B. Ulan",
+      "C. Dagat"
+    ],
+    "draftAnswer": "B. Ulan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Ulan = Rain",
+      "where": "D. Elements of Nature"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Identify the Nature Vocabulary",
+    "type": "choice",
+    "prompt": "Mountain",
+    "options": [
+      "A. Salog",
+      "B. Langit",
+      "C. Bukid"
+    ],
+    "draftAnswer": "C. Bukid",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Bukid = Mountain",
+      "where": "D. Elements of Nature"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Identify the Nature Vocabulary",
+    "type": "choice",
+    "prompt": "Flower",
+    "options": [
+      "A. Bulak",
+      "B. Liso",
+      "C. Gamut"
+    ],
+    "draftAnswer": "A. Bulak",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Bulak = Flower",
+      "where": "C. Plants and Flowers"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Dako an ______. (The dog is big.)",
+    "options": [
+      "A. aso",
+      "B. ulan",
+      "C. bulak"
+    ],
+    "draftAnswer": "A. aso",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Dako an aso.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Berde an ______. (The leaf is green.)",
+    "options": [
+      "A. dagat",
+      "B. dahon",
+      "C. bato"
+    ],
+    "draftAnswer": "B. dahon",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 8,
+      "text": "Berde an dahon.",
+      "where": "C. Identifying Plants and Flowers"
+    }
+  },
+  {
+    "lessonId": "waray_8",
+    "activity": "Complete the Sentences",
+    "type": "choice",
+    "prompt": "Nag-uuran. (It is ______.)",
+    "options": [
+      "A. windy",
+      "B. raining",
+      "C. sunny"
+    ],
+    "draftAnswer": "B. raining",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Match the Question Words",
+    "type": "match",
+    "prompt": "Ano",
+    "options": [
+      "When",
+      "How many / How much",
+      "What",
+      "Who",
+      "Where"
+    ],
+    "draftAnswer": "What",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "Ano = What",
+      "where": "A. Common Question Words"
+    }
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Match the Question Words",
+    "type": "match",
+    "prompt": "Hin-o",
+    "options": [
+      "When",
+      "How many / How much",
+      "What",
+      "Who",
+      "Where"
+    ],
+    "draftAnswer": "Who",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "Hin-o = Who",
+      "where": "A. Common Question Words"
+    }
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Match the Question Words",
+    "type": "match",
+    "prompt": "Diin",
+    "options": [
+      "When",
+      "How many / How much",
+      "What",
+      "Who",
+      "Where"
+    ],
+    "draftAnswer": "Where",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "Diin = Where",
+      "where": "A. Common Question Words"
+    }
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Match the Question Words",
+    "type": "match",
+    "prompt": "San-o",
+    "options": [
+      "When",
+      "How many / How much",
+      "What",
+      "Who",
+      "Where"
+    ],
+    "draftAnswer": "When",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "San-o = When",
+      "where": "A. Common Question Words"
+    }
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Match the Question Words",
+    "type": "match",
+    "prompt": "Pira",
+    "options": [
+      "When",
+      "How many / How much",
+      "What",
+      "Who",
+      "Where"
+    ],
+    "draftAnswer": "How many / How much",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "Pira = How many / How much",
+      "where": "A. Common Question Words"
+    }
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Complete the Questions",
+    "type": "closed",
+    "prompt": "______ an imo ngaran?",
+    "options": [
+      "Ano",
+      "Hin-o",
+      "Diin",
+      "San-o",
+      "Pira"
+    ],
+    "draftAnswer": "Ano",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Complete the Questions",
+    "type": "closed",
+    "prompt": "______ ka?",
+    "options": [
+      "Ano",
+      "Hin-o",
+      "Diin",
+      "San-o",
+      "Pira"
+    ],
+    "draftAnswer": "Hin-o",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Complete the Questions",
+    "type": "closed",
+    "prompt": "Taga ______ ka?",
+    "options": [
+      "Ano",
+      "Hin-o",
+      "Diin",
+      "San-o",
+      "Pira"
+    ],
+    "draftAnswer": "Diin",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Complete the Questions",
+    "type": "closed",
+    "prompt": "______ ka makadto?",
+    "options": [
+      "Ano",
+      "Hin-o",
+      "Diin",
+      "San-o",
+      "Pira"
+    ],
+    "draftAnswer": "San-o",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_9",
+    "activity": "Complete the Questions",
+    "type": "closed",
+    "prompt": "______ ini?",
+    "options": [
+      "Ano",
+      "Hin-o",
+      "Diin",
+      "San-o",
+      "Pira"
+    ],
+    "draftAnswer": "Pira",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Sangkay",
+    "options": [
+      "Mother",
+      "Classmate",
+      "Friend",
+      "Brother or sister",
+      "Father"
+    ],
+    "draftAnswer": "Friend",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 10,
+      "text": "Sangkay = Friend",
+      "where": "A. People and Relationships"
+    }
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Nanay",
+    "options": [
+      "Mother",
+      "Classmate",
+      "Friend",
+      "Brother or sister",
+      "Father"
+    ],
+    "draftAnswer": "Mother",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 10,
+      "text": "Nanay = Mother",
+      "where": "A. People and Relationships"
+    }
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Bugto",
+    "options": [
+      "Mother",
+      "Classmate",
+      "Friend",
+      "Brother or sister",
+      "Father"
+    ],
+    "draftAnswer": "Brother or sister",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Klasmet",
+    "options": [
+      "Mother",
+      "Classmate",
+      "Friend",
+      "Brother or sister",
+      "Father"
+    ],
+    "draftAnswer": "Classmate",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 10,
+      "text": "Klasmet = Classmate",
+      "where": "A. People and Relationships"
+    }
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Tatay",
+    "options": [
+      "Mother",
+      "Classmate",
+      "Friend",
+      "Brother or sister",
+      "Father"
+    ],
+    "draftAnswer": "Father",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 10,
+      "text": "Tatay = Father",
+      "where": "A. People and Relationships"
+    }
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ ko ini. (This is my friend.)",
+    "options": [
+      "Sangkay",
+      "Nanay",
+      "hiya",
+      "ngaran",
+      "Kilala"
+    ],
+    "draftAnswer": "Sangkay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ ko ini. (This is my mother.)",
+    "options": [
+      "Sangkay",
+      "Nanay",
+      "hiya",
+      "ngaran",
+      "Kilala"
+    ],
+    "draftAnswer": "Nanay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "Buotan ______. (He or she is kind.)",
+    "options": [
+      "Sangkay",
+      "Nanay",
+      "hiya",
+      "ngaran",
+      "Kilala"
+    ],
+    "draftAnswer": "hiya",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "Ano an iya ______? (What is his or her name?)",
+    "options": [
+      "Sangkay",
+      "Nanay",
+      "hiya",
+      "ngaran",
+      "Kilala"
+    ],
+    "draftAnswer": "ngaran",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_10",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ mo ba hiya? (Do you know him or her?)",
+    "options": [
+      "Sangkay",
+      "Nanay",
+      "hiya",
+      "ngaran",
+      "Kilala"
+    ],
+    "draftAnswer": "Kilala",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Match the Expressions",
+    "type": "match",
+    "prompt": "Usahay",
+    "options": [
+      "Take care",
+      "Sometimes",
+      "Let's eat",
+      "Wait a moment",
+      "Not yet"
+    ],
+    "draftAnswer": "Sometimes",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Usahay = Sometimes",
+      "where": "B. Time and Frequency Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Match the Expressions",
+    "type": "match",
+    "prompt": "Pag-amping",
+    "options": [
+      "Take care",
+      "Sometimes",
+      "Let's eat",
+      "Wait a moment",
+      "Not yet"
+    ],
+    "draftAnswer": "Take care",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Pag-amping = Take care",
+      "where": "C. Conversation Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Match the Expressions",
+    "type": "match",
+    "prompt": "Hulat anay",
+    "options": [
+      "Take care",
+      "Sometimes",
+      "Let's eat",
+      "Wait a moment",
+      "Not yet"
+    ],
+    "draftAnswer": "Wait a moment",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Hulat anay = Wait a moment",
+      "where": "C. Conversation Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Match the Expressions",
+    "type": "match",
+    "prompt": "Mangaon na kita",
+    "options": [
+      "Take care",
+      "Sometimes",
+      "Let's eat",
+      "Wait a moment",
+      "Not yet"
+    ],
+    "draftAnswer": "Let's eat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Mangaon na kita = Let's eat",
+      "where": "C. Conversation Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Kumusta an imo ______? (How was your day?)",
+    "options": [
+      "adlaw",
+      "Nag-aadal",
+      "Mangaon",
+      "Waray",
+      "Hulat"
+    ],
+    "draftAnswer": "adlaw",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Kumusta an imo adlaw?",
+      "where": "C. Conversation Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ ako kada adlaw. (I study every day.)",
+    "options": [
+      "adlaw",
+      "Nag-aadal",
+      "Mangaon",
+      "Waray",
+      "Hulat"
+    ],
+    "draftAnswer": "Nag-aadal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ kita. (Let's eat.)",
+    "options": [
+      "adlaw",
+      "Nag-aadal",
+      "Mangaon",
+      "Waray",
+      "Hulat"
+    ],
+    "draftAnswer": "Mangaon",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ pa. (Not yet.)",
+    "options": [
+      "adlaw",
+      "Nag-aadal",
+      "Mangaon",
+      "Waray",
+      "Hulat"
+    ],
+    "draftAnswer": "Waray",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_11",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ anay. (Wait a moment.)",
+    "options": [
+      "adlaw",
+      "Nag-aadal",
+      "Mangaon",
+      "Waray",
+      "Hulat"
+    ],
+    "draftAnswer": "Hulat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Hulat anay",
+      "where": "C. Conversation Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Match the Location Words",
+    "type": "match",
+    "prompt": "Hirani",
+    "options": [
+      "Behind",
+      "Right",
+      "Near",
+      "Far",
+      "Left"
+    ],
+    "draftAnswer": "Near",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Hirani = Near",
+      "where": "B. Location and Position Words"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Match the Location Words",
+    "type": "match",
+    "prompt": "Hirayo",
+    "options": [
+      "Behind",
+      "Right",
+      "Near",
+      "Far",
+      "Left"
+    ],
+    "draftAnswer": "Far",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Hirayo = Far",
+      "where": "B. Location and Position Words"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Match the Location Words",
+    "type": "match",
+    "prompt": "Luyo",
+    "options": [
+      "Behind",
+      "Right",
+      "Near",
+      "Far",
+      "Left"
+    ],
+    "draftAnswer": "Behind",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Luyo = Behind",
+      "where": "B. Location and Position Words"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Match the Location Words",
+    "type": "match",
+    "prompt": "Tuo",
+    "options": [
+      "Behind",
+      "Right",
+      "Near",
+      "Far",
+      "Left"
+    ],
+    "draftAnswer": "Right",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Tuo = Right",
+      "where": "B. Location and Position Words"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Match the Location Words",
+    "type": "match",
+    "prompt": "Wala",
+    "options": [
+      "Behind",
+      "Right",
+      "Near",
+      "Far",
+      "Left"
+    ],
+    "draftAnswer": "Left",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Wala = Left",
+      "where": "B. Location and Position Words"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Complete the Directions",
+    "type": "closed",
+    "prompt": "______ la. (Go straight.)",
+    "options": [
+      "Diretso",
+      "tuo",
+      "wala",
+      "luyo",
+      "Hirayo"
+    ],
+    "draftAnswer": "Diretso",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Complete the Directions",
+    "type": "closed",
+    "prompt": "Liko ha ______. (Turn right.)",
+    "options": [
+      "Diretso",
+      "tuo",
+      "wala",
+      "luyo",
+      "Hirayo"
+    ],
+    "draftAnswer": "tuo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Complete the Directions",
+    "type": "closed",
+    "prompt": "Liko ha ______. (Turn left.)",
+    "options": [
+      "Diretso",
+      "tuo",
+      "wala",
+      "luyo",
+      "Hirayo"
+    ],
+    "draftAnswer": "wala",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Complete the Directions",
+    "type": "closed",
+    "prompt": "Aada an tindahan ha ______ han balay. (The store is behind the house.)",
+    "options": [
+      "Diretso",
+      "tuo",
+      "wala",
+      "luyo",
+      "Hirayo"
+    ],
+    "draftAnswer": "luyo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Complete the Directions",
+    "type": "closed",
+    "prompt": "______ ba ito tikang dinhi? (Is it far from here?)",
+    "options": [
+      "Diretso",
+      "tuo",
+      "wala",
+      "luyo",
+      "Hirayo"
+    ],
+    "draftAnswer": "Hirayo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Follow the Directions",
+    "type": "choice",
+    "prompt": "Diretso la.",
+    "options": [
+      "A. Turn left.",
+      "B. Go straight.",
+      "C. Stop.",
+      "D. Turn right."
+    ],
+    "draftAnswer": "B. Go straight.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Follow the Directions",
+    "type": "choice",
+    "prompt": "Liko ha tuo.",
+    "options": [
+      "A. Turn right.",
+      "B. Turn left.",
+      "C. Go straight.",
+      "D. Go back."
+    ],
+    "draftAnswer": "A. Turn right.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Liko ha tuo. = Turn right.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Follow the Directions",
+    "type": "choice",
+    "prompt": "Liko ha wala.",
+    "options": [
+      "A. Stop.",
+      "B. Turn right.",
+      "C. Turn left.",
+      "D. Cross the road."
+    ],
+    "draftAnswer": "C. Turn left.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Liko ha wala. = Turn left.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Follow the Directions",
+    "type": "choice",
+    "prompt": "Aada ha luyo han balay.",
+    "options": [
+      "A. In front of the house.",
+      "B. Beside the house.",
+      "C. Behind the house.",
+      "D. Inside the house."
+    ],
+    "draftAnswer": "C. Behind the house.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_12",
+    "activity": "Follow the Directions",
+    "type": "choice",
+    "prompt": "Hirani la ito.",
+    "options": [
+      "A. It is far.",
+      "B. It is nearby.",
+      "C. It is behind.",
+      "D. It is outside."
+    ],
+    "draftAnswer": "B. It is nearby.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Pakiana",
+    "options": [
+      "Meaning",
+      "Question",
+      "Price",
+      "Answer",
+      "Explanation"
+    ],
+    "draftAnswer": "Question",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Pakiana = Question",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Baton",
+    "options": [
+      "Meaning",
+      "Question",
+      "Price",
+      "Answer",
+      "Explanation"
+    ],
+    "draftAnswer": "Answer",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Baton = Answer",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Kahulogan",
+    "options": [
+      "Meaning",
+      "Question",
+      "Price",
+      "Answer",
+      "Explanation"
+    ],
+    "draftAnswer": "Meaning",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Kahulogan = Meaning",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Presyo",
+    "options": [
+      "Meaning",
+      "Question",
+      "Price",
+      "Answer",
+      "Explanation"
+    ],
+    "draftAnswer": "Price",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Presyo = Price",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Match the Vocabulary",
+    "type": "match",
+    "prompt": "Pagsaysay",
+    "options": [
+      "Meaning",
+      "Question",
+      "Price",
+      "Answer",
+      "Explanation"
+    ],
+    "draftAnswer": "Explanation",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Pagsaysay = Explanation",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Complete the Expressions",
+    "type": "fill",
+    "prompt": "May ______ ako. (I have a question.)",
+    "options": [
+      "pakiana",
+      "kahulogan",
+      "tagan",
+      "nasasabtan",
+      "pagsaysay"
+    ],
+    "draftAnswer": "pakiana",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "May pakiana ako.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Complete the Expressions",
+    "type": "fill",
+    "prompt": "Ano an ______ hini? (What is the meaning of this?)",
+    "options": [
+      "pakiana",
+      "kahulogan",
+      "tagan",
+      "nasasabtan",
+      "pagsaysay"
+    ],
+    "draftAnswer": "kahulogan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Ano an kahulogan hini?",
+      "where": "B. Question and Clarification Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Complete the Expressions",
+    "type": "fill",
+    "prompt": "Mahimo mo ba ako ______ hin impormasyon? (Can you give me information?)",
+    "options": [
+      "pakiana",
+      "kahulogan",
+      "tagan",
+      "nasasabtan",
+      "pagsaysay"
+    ],
+    "draftAnswer": "tagan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Mahimo mo ba ako tagan hin impormasyon?",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Complete the Expressions",
+    "type": "fill",
+    "prompt": "Diri ko ______. (I don't understand.)",
+    "options": [
+      "pakiana",
+      "kahulogan",
+      "tagan",
+      "nasasabtan",
+      "pagsaysay"
+    ],
+    "draftAnswer": "nasasabtan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Diri ko nasasabtan",
+      "where": "B. Question and Clarification Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Complete the Expressions",
+    "type": "fill",
+    "prompt": "Salamat ha imo ______. (Thank you for your explanation.)",
+    "options": [
+      "pakiana",
+      "kahulogan",
+      "tagan",
+      "nasasabtan",
+      "pagsaysay"
+    ],
+    "draftAnswer": "pagsaysay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Salamat ha imo pagsaysay.",
+      "where": "Conversation C: Asking About an Event"
+    }
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone asks you, \"San-o an programa?\"",
+    "options": [
+      "A. Buwas ha alas-nuwebe han aga.",
+      "B. Hirani la ito.",
+      "C. Sangkay ko hiya.",
+      "D. Diri ako maaram magluto."
+    ],
+    "draftAnswer": "A. Buwas ha alas-nuwebe han aga.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You do not understand what someone said. What should you say?",
+    "options": [
+      "A. Mangaon na kita.",
+      "B. Diri ko nasasabtan.",
+      "C. Pag-amping.",
+      "D. Taga Samar ako."
+    ],
+    "draftAnswer": "B. Diri ko nasasabtan.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You want someone to explain an unfamiliar instruction.",
+    "options": [
+      "A. Mahimo mo ba ini igsaysay?",
+      "B. Pira na an imo edad?",
+      "C. Hain an merkado?",
+      "D. Kumusta ka?"
+    ],
+    "draftAnswer": "A. Mahimo mo ba ini igsaysay?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone gives you useful information. What should you say?",
+    "options": [
+      "A. Salamat ha impormasyon.",
+      "B. Liko ha tuo.",
+      "C. Waray pa.",
+      "D. Hulat anay."
+    ],
+    "draftAnswer": "A. Salamat ha impormasyon.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_13",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You want to ask how much something costs.",
+    "options": [
+      "A. Hin-o ini?",
+      "B. Pira an bayad?",
+      "C. San-o ito?",
+      "D. Diin ka naukoy?"
+    ],
+    "draftAnswer": "B. Pira an bayad?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Match the Verbs",
+    "type": "match",
+    "prompt": "Read",
+    "options": [
+      "Magluto",
+      "Magbasa",
+      "Maturog",
+      "Magsurat",
+      "Mag-adal"
+    ],
+    "draftAnswer": "Magbasa",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 14,
+      "text": "Magbasa = Read",
+      "where": "A. Everyday Actions"
+    }
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Match the Verbs",
+    "type": "match",
+    "prompt": "Cook",
+    "options": [
+      "Magluto",
+      "Magbasa",
+      "Maturog",
+      "Magsurat",
+      "Mag-adal"
+    ],
+    "draftAnswer": "Magluto",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 14,
+      "text": "Magluto = Cook",
+      "where": "A. Everyday Actions"
+    }
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Match the Verbs",
+    "type": "match",
+    "prompt": "Write",
+    "options": [
+      "Magluto",
+      "Magbasa",
+      "Maturog",
+      "Magsurat",
+      "Mag-adal"
+    ],
+    "draftAnswer": "Magsurat",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 14,
+      "text": "Magsurat = Write",
+      "where": "A. Everyday Actions"
+    }
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Match the Verbs",
+    "type": "match",
+    "prompt": "Sleep",
+    "options": [
+      "Magluto",
+      "Magbasa",
+      "Maturog",
+      "Magsurat",
+      "Mag-adal"
+    ],
+    "draftAnswer": "Maturog",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 14,
+      "text": "Maturog = Sleep",
+      "where": "A. Everyday Actions"
+    }
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Match the Verbs",
+    "type": "match",
+    "prompt": "Study",
+    "options": [
+      "Magluto",
+      "Magbasa",
+      "Maturog",
+      "Magsurat",
+      "Mag-adal"
+    ],
+    "draftAnswer": "Mag-adal",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 14,
+      "text": "Mag-adal = Study",
+      "where": "A. Everyday Actions"
+    }
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagbabasa _____ . (I)",
+    "options": [],
+    "draftAnswer": "ako",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagluluto _____ . (He/She)",
+    "options": [],
+    "draftAnswer": "hiya",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagtatrabaho _____ . (They)",
+    "options": [],
+    "draftAnswer": "hira",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nag-aadal _____ . (You, singular)",
+    "options": [],
+    "draftAnswer": "ka",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nag-uuyag _____ . (We, including the listener)",
+    "options": [],
+    "draftAnswer": "kita",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "I",
+    "options": [],
+    "draftAnswer": "Ako",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "They",
+    "options": [],
+    "draftAnswer": "Hira",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "We, including the listener",
+    "options": [],
+    "draftAnswer": "Kita",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "You, plural",
+    "options": [],
+    "draftAnswer": "Kamo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "He/She",
+    "options": [],
+    "draftAnswer": "Hiya",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_14",
+    "activity": "Pronoun Identification",
+    "type": "closed",
+    "prompt": "We, excluding the listener",
+    "options": [],
+    "draftAnswer": "Kami",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_15",
+    "activity": "Arrange the Words",
+    "type": "arrange",
+    "prompt": "ako / Nagbabasa / hin libro",
+    "options": [
+      "ako",
+      "Nagbabasa",
+      "hin libro"
+    ],
+    "draftAnswer": "Nagbabasa ako hin libro.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 15,
+      "text": "Nagbabasa ako hin libro.",
+      "where": "Conversation A: Talking About School"
+    }
+  },
+  {
+    "lessonId": "waray_15",
+    "activity": "Arrange the Words",
+    "type": "arrange",
+    "prompt": "hiya / nagluluto / Diri",
+    "options": [
+      "hiya",
+      "nagluluto",
+      "Diri"
+    ],
+    "draftAnswer": "Diri hiya nagluluto.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 15,
+      "text": "Diri hiya nagluluto.",
+      "where": "B. Negative Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_15",
+    "activity": "Arrange the Words",
+    "type": "arrange",
+    "prompt": "an imo libro / Hain",
+    "options": [
+      "an imo libro",
+      "Hain"
+    ],
+    "draftAnswer": "Hain an imo libro?",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 15,
+      "text": "Hain an imo libro?",
+      "where": "C. Sample Questions and Answers"
+    }
+  },
+  {
+    "lessonId": "waray_15",
+    "activity": "Arrange the Words",
+    "type": "arrange",
+    "prompt": "ha eskwelahan / Nag-aadal / kami",
+    "options": [
+      "ha eskwelahan",
+      "Nag-aadal",
+      "kami"
+    ],
+    "draftAnswer": "Nag-aadal kami ha eskwelahan.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_15",
+    "activity": "Arrange the Words",
+    "type": "arrange",
+    "prompt": "buwas / Makadto / hira",
+    "options": [
+      "buwas",
+      "Makadto",
+      "hira"
+    ],
+    "draftAnswer": "Makadto hira buwas.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Identify the Connecting Word",
+    "type": "closed",
+    "prompt": "Nagbabasa ako ngan nagsusurat.",
+    "options": [],
+    "draftAnswer": "ngan (And)",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Identify the Connecting Word",
+    "type": "closed",
+    "prompt": "Karuyag ko kumadto, pero waray ako panahon.",
+    "options": [],
+    "draftAnswer": "pero (But)",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Identify the Connecting Word",
+    "type": "closed",
+    "prompt": "Nag-aadal hiya kay may eksam hira.",
+    "options": [],
+    "draftAnswer": "kay (Because)",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Identify the Connecting Word",
+    "type": "closed",
+    "prompt": "Kon umuran, magpapabilin kami ha balay.",
+    "options": [],
+    "draftAnswer": "Kon (If)",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Identify the Connecting Word",
+    "type": "closed",
+    "prompt": "Bisan kon kapoy ako, magpapadayon ako.",
+    "options": [],
+    "draftAnswer": "Bisan kon (Although / Even though)",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagluluto ako _____ gutom kami.",
+    "options": [],
+    "draftAnswer": "kay",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Karuyag ko kumadto, _____ uran yana.",
+    "options": [],
+    "draftAnswer": "pero",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "_____ may panahon ako, mabisita ako ha imo.",
+    "options": [],
+    "draftAnswer": "Kon",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagbabasa hiya _____ nagsusurat.",
+    "options": [],
+    "draftAnswer": "ngan",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_16",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "_____ kapoy hiya, nagtatrabaho hiya gihapon.",
+    "options": [],
+    "draftAnswer": "Bisan kon",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Cooked rice",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Kan-on",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Kan-on = Cooked rice",
+      "where": "B. Common Food Items"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Fish",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Isda",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Isda = Fish",
+      "where": "B. Common Food Items"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Water",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Tubig",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Tubig = Water",
+      "where": "C. Drinks and Desserts"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Restaurant",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Restawran",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Restawran = Restaurant",
+      "where": "A. Places and People"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Menu",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Menu",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Menu = Menu",
+      "where": "A. Places and People"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Chicken",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Manok",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Manok = Chicken",
+      "where": "B. Common Food Items"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Bill",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Bayranan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Bayranan = Bill",
+      "where": "A. Places and People"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Bread",
+    "options": [
+      "Tubig",
+      "Menu",
+      "Isda",
+      "Kan-on",
+      "Bayranan",
+      "Restawran",
+      "Tinapay",
+      "Manok"
+    ],
+    "draftAnswer": "Tinapay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 17,
+      "text": "Tinapay = Bread",
+      "where": "B. Common Food Items"
+    }
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Complete the Order",
+    "type": "fill",
+    "prompt": "Karuyag ko hin ______. (water)",
+    "options": [],
+    "draftAnswer": "tubig",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Complete the Order",
+    "type": "fill",
+    "prompt": "May ______ ba kamo? (fish)",
+    "options": [],
+    "draftAnswer": "isda",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Complete the Order",
+    "type": "fill",
+    "prompt": "Pira an usa nga ______? (serving)",
+    "options": [],
+    "draftAnswer": "serving",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Complete the Order",
+    "type": "fill",
+    "prompt": "______ la ito. (That is all.)",
+    "options": [],
+    "draftAnswer": "Amo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_17",
+    "activity": "Complete the Order",
+    "type": "fill",
+    "prompt": "Mahimo ba ako mangaro han ______? (bill)",
+    "options": [],
+    "draftAnswer": "bayranan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Merkado",
+    "options": [
+      "Change",
+      "Expensive",
+      "Market",
+      "Inexpensive",
+      "Price"
+    ],
+    "draftAnswer": "Market",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 18,
+      "text": "Merkado = Market",
+      "where": "A. Shopping and Store Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Sukli",
+    "options": [
+      "Change",
+      "Expensive",
+      "Market",
+      "Inexpensive",
+      "Price"
+    ],
+    "draftAnswer": "Change",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 18,
+      "text": "Sukli = Change (money)",
+      "where": "A. Shopping and Store Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Barato",
+    "options": [
+      "Change",
+      "Expensive",
+      "Market",
+      "Inexpensive",
+      "Price"
+    ],
+    "draftAnswer": "Inexpensive",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 18,
+      "text": "Barato = Cheap / Inexpensive",
+      "where": "C. Price, Quantity, and Product Descriptions"
+    }
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mahal",
+    "options": [
+      "Change",
+      "Expensive",
+      "Market",
+      "Inexpensive",
+      "Price"
+    ],
+    "draftAnswer": "Expensive",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 18,
+      "text": "Mahal = Expensive",
+      "where": "C. Price, Quantity, and Product Descriptions"
+    }
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Presyo",
+    "options": [
+      "Change",
+      "Expensive",
+      "Market",
+      "Inexpensive",
+      "Price"
+    ],
+    "draftAnswer": "Price",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 18,
+      "text": "Presyo = Price",
+      "where": "A. Shopping and Store Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Complete the Shopping Expressions",
+    "type": "closed",
+    "prompt": "______ ini? (How much is this?)",
+    "options": [
+      "pira",
+      "karuyag",
+      "mahal",
+      "barato",
+      "paliton"
+    ],
+    "draftAnswer": "pira",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Complete the Shopping Expressions",
+    "type": "closed",
+    "prompt": "______ ko ini. (I want this.)",
+    "options": [
+      "pira",
+      "karuyag",
+      "mahal",
+      "barato",
+      "paliton"
+    ],
+    "draftAnswer": "karuyag",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Complete the Shopping Expressions",
+    "type": "closed",
+    "prompt": "______ ini. (This is expensive.)",
+    "options": [
+      "pira",
+      "karuyag",
+      "mahal",
+      "barato",
+      "paliton"
+    ],
+    "draftAnswer": "mahal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Complete the Shopping Expressions",
+    "type": "closed",
+    "prompt": "______ ini. (This is inexpensive.)",
+    "options": [
+      "pira",
+      "karuyag",
+      "mahal",
+      "barato",
+      "paliton"
+    ],
+    "draftAnswer": "barato",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_18",
+    "activity": "Complete the Shopping Expressions",
+    "type": "closed",
+    "prompt": "Karuyag ko ______ ini. (I want to buy this.)",
+    "options": [
+      "pira",
+      "karuyag",
+      "mahal",
+      "barato",
+      "paliton"
+    ],
+    "draftAnswer": "paliton",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mata",
+    "options": [
+      "To cook",
+      "To wake up",
+      "To study",
+      "To rest",
+      "To walk"
+    ],
+    "draftAnswer": "To wake up",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Magluto",
+    "options": [
+      "To cook",
+      "To wake up",
+      "To study",
+      "To rest",
+      "To walk"
+    ],
+    "draftAnswer": "To cook",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Magluto = To cook",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Pahuway",
+    "options": [
+      "To cook",
+      "To wake up",
+      "To study",
+      "To rest",
+      "To walk"
+    ],
+    "draftAnswer": "To rest",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mag-adal",
+    "options": [
+      "To cook",
+      "To wake up",
+      "To study",
+      "To rest",
+      "To walk"
+    ],
+    "draftAnswer": "To study",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Mag-adal = To study",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Maglakat",
+    "options": [
+      "To cook",
+      "To wake up",
+      "To study",
+      "To rest",
+      "To walk"
+    ],
+    "draftAnswer": "To walk",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Maglakat = To walk",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nag-aadal ako ha ______.",
+    "options": [
+      "aga",
+      "gab-i",
+      "usahay",
+      "pirme",
+      "buwas"
+    ],
+    "draftAnswer": "aga",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 19,
+      "text": "Nag-aadal ako ha aga.",
+      "where": "B. Talking About Time"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Natuturog ako ha ______.",
+    "options": [
+      "aga",
+      "gab-i",
+      "usahay",
+      "pirme",
+      "buwas"
+    ],
+    "draftAnswer": "gab-i",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 19,
+      "text": "Natuturog ako ha gab-i.",
+      "where": "USEFUL PHRASES AND SENTENCES"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ ako nagbabasa hin libro, pero diri kada adlaw.",
+    "options": [
+      "aga",
+      "gab-i",
+      "usahay",
+      "pirme",
+      "buwas"
+    ],
+    "draftAnswer": "usahay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ ako nabulig ha akon pamilya.",
+    "options": [
+      "aga",
+      "gab-i",
+      "usahay",
+      "pirme",
+      "buwas"
+    ],
+    "draftAnswer": "pirme",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 19,
+      "text": "Pirme ako nabulig ha akon pamilya.",
+      "where": "USEFUL PHRASES AND SENTENCES"
+    }
+  },
+  {
+    "lessonId": "waray_19",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Magtatrabaho ako ______.",
+    "options": [
+      "aga",
+      "gab-i",
+      "usahay",
+      "pirme",
+      "buwas"
+    ],
+    "draftAnswer": "buwas",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 19,
+      "text": "Magtatrabaho ako buwas.",
+      "where": "B. Talking About Time"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Buotan",
+    "options": [
+      "Expensive",
+      "Kind",
+      "Beautiful",
+      "Wide",
+      "Heavy"
+    ],
+    "draftAnswer": "Kind",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Buotan = Kind",
+      "where": "B. Personality and Character"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Matahom",
+    "options": [
+      "Expensive",
+      "Kind",
+      "Beautiful",
+      "Wide",
+      "Heavy"
+    ],
+    "draftAnswer": "Beautiful",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Matahom = Beautiful / Handsome",
+      "where": "A. Physical Appearance"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mahal",
+    "options": [
+      "Expensive",
+      "Kind",
+      "Beautiful",
+      "Wide",
+      "Heavy"
+    ],
+    "draftAnswer": "Expensive",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Mahal = Expensive",
+      "where": "D. Describing Objects"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mabug-at",
+    "options": [
+      "Expensive",
+      "Kind",
+      "Beautiful",
+      "Wide",
+      "Heavy"
+    ],
+    "draftAnswer": "Heavy",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Mabug-at = Heavy",
+      "where": "D. Describing Objects"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Halapad",
+    "options": [
+      "Expensive",
+      "Kind",
+      "Beautiful",
+      "Wide",
+      "Heavy"
+    ],
+    "draftAnswer": "Wide",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Halapad = Wide",
+      "where": "C. Describing Places"
+    }
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ hiya. (He/She is kind.)",
+    "options": [
+      "buotan",
+      "dako",
+      "matahom",
+      "mahal",
+      "limpyo"
+    ],
+    "draftAnswer": "buotan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ an balay. (The house is big.)",
+    "options": [
+      "buotan",
+      "dako",
+      "matahom",
+      "mahal",
+      "limpyo"
+    ],
+    "draftAnswer": "dako",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ an lugar. (The place is beautiful.)",
+    "options": [
+      "buotan",
+      "dako",
+      "matahom",
+      "mahal",
+      "limpyo"
+    ],
+    "draftAnswer": "matahom",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ ini nga bag. (This bag is expensive.)",
+    "options": [
+      "buotan",
+      "dako",
+      "matahom",
+      "mahal",
+      "limpyo"
+    ],
+    "draftAnswer": "mahal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_20",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "______ an eskwelahan. (The school is clean.)",
+    "options": [
+      "buotan",
+      "dako",
+      "matahom",
+      "mahal",
+      "limpyo"
+    ],
+    "draftAnswer": "limpyo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Nalilipay",
+    "options": [
+      "I agree",
+      "Worried",
+      "Happy",
+      "Sad",
+      "Because"
+    ],
+    "draftAnswer": "Happy",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Nasusubo",
+    "options": [
+      "I agree",
+      "Worried",
+      "Happy",
+      "Sad",
+      "Because"
+    ],
+    "draftAnswer": "Sad",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Nasusubo = Sad",
+      "where": "B. Feelings and Emotions"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Nabababaraka",
+    "options": [
+      "I agree",
+      "Worried",
+      "Happy",
+      "Sad",
+      "Because"
+    ],
+    "draftAnswer": "Worried",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Nabababaraka = Worried",
+      "where": "B. Feelings and Emotions"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Nauyon ako",
+    "options": [
+      "I agree",
+      "Worried",
+      "Happy",
+      "Sad",
+      "Because"
+    ],
+    "draftAnswer": "I agree",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Nauyon ako = I agree",
+      "where": "A. Expressions for Giving Opinions"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Tungod kay",
+    "options": [
+      "I agree",
+      "Worried",
+      "Happy",
+      "Sad",
+      "Because"
+    ],
+    "draftAnswer": "Because",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Kay / Tungod kay = Because",
+      "where": "C. Reasons and Explanations"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______, importante an pag-adal.",
+    "options": [
+      "Nauyon ako",
+      "Nalilipay ako",
+      "Tungod kay",
+      "Diri ako nauyon",
+      "Para ha akon"
+    ],
+    "draftAnswer": "Para ha akon",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Para ha akon, importante an pag-adal hin Waray tungod kay bahin ini han aton kultura.",
+      "where": "D. Explaining the Reasons Behind Your Opinions"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ ha imo opinyon.",
+    "options": [
+      "Nauyon ako",
+      "Nalilipay ako",
+      "Tungod kay",
+      "Diri ako nauyon",
+      "Para ha akon"
+    ],
+    "draftAnswer": "Nauyon ako",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 21,
+      "text": "Nauyon ako ha imo opinyon.",
+      "where": "C. Agreeing and Disagreeing"
+    }
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ nga may bag-o ako nga nahibabaroan.",
+    "options": [
+      "Nauyon ako",
+      "Nalilipay ako",
+      "Tungod kay",
+      "Diri ako nauyon",
+      "Para ha akon"
+    ],
+    "draftAnswer": "Nalilipay ako",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ importante ini.",
+    "options": [
+      "Nauyon ako",
+      "Nalilipay ako",
+      "Tungod kay",
+      "Diri ako nauyon",
+      "Para ha akon"
+    ],
+    "draftAnswer": "Tungod kay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______ hito nga ideya.",
+    "options": [
+      "Nauyon ako",
+      "Nalilipay ako",
+      "Tungod kay",
+      "Diri ako nauyon",
+      "Para ha akon"
+    ],
+    "draftAnswer": "Diri ako nauyon",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Identify the Feeling",
+    "type": "choice",
+    "prompt": "You received good news from your family.",
+    "options": [
+      "A. Nasusubo ako.",
+      "B. Nalilipay ako.",
+      "C. Nasisina ako."
+    ],
+    "draftAnswer": "B. Nalilipay ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Identify the Feeling",
+    "type": "choice",
+    "prompt": "You lost something important.",
+    "options": [
+      "A. Nasusubo ako.",
+      "B. Eksitado ako.",
+      "C. Nalilipay ako."
+    ],
+    "draftAnswer": "A. Nasusubo ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Identify the Feeling",
+    "type": "choice",
+    "prompt": "You are worried about an upcoming examination.",
+    "options": [
+      "A. Nabababaraka ako.",
+      "B. Malipayon ako.",
+      "C. Nauyon ako."
+    ],
+    "draftAnswer": "A. Nabababaraka ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Identify the Feeling",
+    "type": "choice",
+    "prompt": "You are afraid of a dangerous situation.",
+    "options": [
+      "A. Nahahadlok ako.",
+      "B. Nalilipay ako.",
+      "C. Nasisina ako."
+    ],
+    "draftAnswer": "A. Nahahadlok ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_21",
+    "activity": "Identify the Feeling",
+    "type": "choice",
+    "prompt": "You are angry because someone damaged your belongings.",
+    "options": [
+      "A. Nasusubo ako.",
+      "B. Nasisina ako.",
+      "C. Mapasalamaton ako."
+    ],
+    "draftAnswer": "B. Nasisina ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Hinungdan",
+    "options": [
+      "Example",
+      "Reason / Cause",
+      "Therefore / So",
+      "Explanation",
+      "Purpose"
+    ],
+    "draftAnswer": "Reason / Cause",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Hinungdan = Cause",
+      "where": "A. Expressions for Giving Reasons"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Salit",
+    "options": [
+      "Example",
+      "Reason / Cause",
+      "Therefore / So",
+      "Explanation",
+      "Purpose"
+    ],
+    "draftAnswer": "Therefore / So",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Salit = Therefore",
+      "where": "B. Expressions for Showing Results"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Pananglitan",
+    "options": [
+      "Example",
+      "Reason / Cause",
+      "Therefore / So",
+      "Explanation",
+      "Purpose"
+    ],
+    "draftAnswer": "Example",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 13,
+      "text": "Pananglitan = Example",
+      "where": "A. Information and Details"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Pagsaysay",
+    "options": [
+      "Example",
+      "Reason / Cause",
+      "Therefore / So",
+      "Explanation",
+      "Purpose"
+    ],
+    "draftAnswer": "Explanation",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Pagsaysay = Explanation",
+      "where": "A. Expressions for Giving Reasons"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Katuyoan",
+    "options": [
+      "Example",
+      "Reason / Cause",
+      "Therefore / So",
+      "Explanation",
+      "Purpose"
+    ],
+    "draftAnswer": "Purpose",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Katuyoan = Purpose",
+      "where": "A. Expressions for Giving Reasons"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nagpahuway ako ______ kapoy ako.",
+    "options": [
+      "kay",
+      "salit",
+      "pananglitan",
+      "tungod kay",
+      "siyahan"
+    ],
+    "draftAnswer": "kay",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 16,
+      "text": "Nagpahuway ako kay kapoy ako.",
+      "where": "A. Using Kay"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Nag-uran, ______ nabasa an akon bado.",
+    "options": [
+      "kay",
+      "salit",
+      "pananglitan",
+      "tungod kay",
+      "siyahan"
+    ],
+    "draftAnswer": "salit",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Nag-uran, salit nabasa an akon bado.",
+      "where": "B. Explaining Results and Consequences"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______, kinahanglan naton mag-andam.",
+    "options": [
+      "kay",
+      "salit",
+      "pananglitan",
+      "tungod kay",
+      "siyahan"
+    ],
+    "draftAnswer": "siyahan",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Siyahan, kinahanglan naton mag-andam. Sunod, kinahanglan naton magpraktis. Ha kataposan, mahimo na naton ipakita an aton nahibaroan.",
+      "where": "D. Organizing Explanations"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "______, mahimo kita magbasa hin libro.",
+    "options": [
+      "kay",
+      "salit",
+      "pananglitan",
+      "tungod kay",
+      "siyahan"
+    ],
+    "draftAnswer": "pananglitan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Importante ini ______ nakakabulig ini ha aton.",
+    "options": [
+      "kay",
+      "salit",
+      "pananglitan",
+      "tungod kay",
+      "siyahan"
+    ],
+    "draftAnswer": "tungod kay",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 22,
+      "text": "Answer: Importante ini tungod kay nakakabulig ini ha aton pakigkomunikar ngan ha pagpreserbar han aton yinaknan.",
+      "where": "E. Responding to Requests for Explanations"
+    }
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Identify the Cause and Effect",
+    "type": "closed",
+    "prompt": "Nag-uran, salit waray kami makagawas.",
+    "options": [],
+    "draftAnswer": "Cause: Nag-uran. Effect: waray kami makagawas.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Identify the Cause and Effect",
+    "type": "closed",
+    "prompt": "Waray hiya magkaon, salit ginugutom hiya.",
+    "options": [],
+    "draftAnswer": "Cause: Waray hiya magkaon. Effect: ginugutom hiya.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Identify the Cause and Effect",
+    "type": "closed",
+    "prompt": "Nag-aram hiya hin maupay, salit nakapasar hiya ha eksam.",
+    "options": [],
+    "draftAnswer": "Cause: Nag-aram hiya hin maupay. Effect: nakapasar hiya ha eksam.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Identify the Cause and Effect",
+    "type": "closed",
+    "prompt": "Waray koryente, salit diri kami nakakagamit han kompyuter.",
+    "options": [],
+    "draftAnswer": "Cause: Waray koryente. Effect: diri kami nakakagamit han kompyuter.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_22",
+    "activity": "Identify the Cause and Effect",
+    "type": "closed",
+    "prompt": "Nagpraktis hira kada adlaw, salit nag-uswag an ira abilidad.",
+    "options": [],
+    "draftAnswer": "Cause: Nagpraktis hira kada adlaw. Effect: nag-uswag an ira abilidad.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Nauyon ako",
+    "options": [
+      "I have a different opinion",
+      "I agree",
+      "I disagree",
+      "You are right",
+      "Opinion"
+    ],
+    "draftAnswer": "I agree",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 23,
+      "text": "Nauyon ako = I agree",
+      "where": "A. Expressions of Agreement"
+    }
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Diri ako nauyon",
+    "options": [
+      "I have a different opinion",
+      "I agree",
+      "I disagree",
+      "You are right",
+      "Opinion"
+    ],
+    "draftAnswer": "I disagree",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 23,
+      "text": "Diri ako nauyon = I disagree",
+      "where": "B. Expressions of Disagreement"
+    }
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Iba an akon panhunahuna",
+    "options": [
+      "I have a different opinion",
+      "I agree",
+      "I disagree",
+      "You are right",
+      "Opinion"
+    ],
+    "draftAnswer": "I have a different opinion",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 23,
+      "text": "Iba an akon panhunahuna = I have a different opinion",
+      "where": "B. Expressions of Disagreement"
+    }
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Husto ka",
+    "options": [
+      "I have a different opinion",
+      "I agree",
+      "I disagree",
+      "You are right",
+      "Opinion"
+    ],
+    "draftAnswer": "You are right",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 23,
+      "text": "Husto ka = You are right",
+      "where": "A. Expressions of Agreement"
+    }
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Opinyon",
+    "options": [
+      "I have a different opinion",
+      "I agree",
+      "I disagree",
+      "You are right",
+      "Opinion"
+    ],
+    "draftAnswer": "Opinion",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 23,
+      "text": "Opinyon = Opinion",
+      "where": "D. Words Used in Discussions"
+    }
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "__________, importante an pag-aram hin mga yinaknan.",
+    "options": [
+      "Nauyon ako",
+      "Diri ako nauyon",
+      "kay",
+      "Para ha akon",
+      "Pananglitan"
+    ],
+    "draftAnswer": "Para ha akon",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "__________ ha imo kay husto an imo ginsiring.",
+    "options": [
+      "Nauyon ako",
+      "Diri ako nauyon",
+      "kay",
+      "Para ha akon",
+      "Pananglitan"
+    ],
+    "draftAnswer": "Nauyon ako",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "__________ hito nga ideya kay may iba pa nga solusyon.",
+    "options": [
+      "Nauyon ako",
+      "Diri ako nauyon",
+      "kay",
+      "Para ha akon",
+      "Pananglitan"
+    ],
+    "draftAnswer": "Diri ako nauyon",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "Importante an pagpraktis __________ nakakabulig ito ha pagpauswag han aton abilidad.",
+    "options": [
+      "Nauyon ako",
+      "Diri ako nauyon",
+      "kay",
+      "Para ha akon",
+      "Pananglitan"
+    ],
+    "draftAnswer": "kay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Complete the Sentences",
+    "type": "fill",
+    "prompt": "__________, mahimo kita magbasa hin mga libro kada adlaw.",
+    "options": [
+      "Nauyon ako",
+      "Diri ako nauyon",
+      "kay",
+      "Para ha akon",
+      "Pananglitan"
+    ],
+    "draftAnswer": "Pananglitan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Nauyon ako ha imo.",
+    "options": [],
+    "draftAnswer": "Agreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Diri ako nauyon hito.",
+    "options": [],
+    "draftAnswer": "Disagreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Husto ka.",
+    "options": [],
+    "draftAnswer": "Agreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Iba an akon panhunahuna.",
+    "options": [],
+    "draftAnswer": "Disagreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Tinuod ito.",
+    "options": [],
+    "draftAnswer": "Agreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Diri ako bug-os nga nauyon.",
+    "options": [],
+    "draftAnswer": "Disagreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Amo gud ito an akon panhunahuna.",
+    "options": [],
+    "draftAnswer": "Agreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_23",
+    "activity": "Identify the Response",
+    "type": "closed",
+    "prompt": "Nasasabtan ko, pero iba an akon pagtan-aw hito.",
+    "options": [],
+    "draftAnswer": "Disagreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_24",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Ngan",
+    "options": [
+      "If",
+      "While",
+      "And",
+      "But",
+      "Even if"
+    ],
+    "draftAnswer": "And",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 24,
+      "text": "Ngan = And",
+      "where": "A. Connecting Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_24",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Pero",
+    "options": [
+      "If",
+      "While",
+      "And",
+      "But",
+      "Even if"
+    ],
+    "draftAnswer": "But",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 24,
+      "text": "Pero = But",
+      "where": "A. Connecting Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_24",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Kon",
+    "options": [
+      "If",
+      "While",
+      "And",
+      "But",
+      "Even if"
+    ],
+    "draftAnswer": "If",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 24,
+      "text": "Kon = If",
+      "where": "A. Connecting Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_24",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Samtang",
+    "options": [
+      "If",
+      "While",
+      "And",
+      "But",
+      "Even if"
+    ],
+    "draftAnswer": "While",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 24,
+      "text": "Samtang = While",
+      "where": "B. Expressions for Adding Details"
+    }
+  },
+  {
+    "lessonId": "waray_24",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Bisan kon",
+    "options": [
+      "If",
+      "While",
+      "And",
+      "But",
+      "Even if"
+    ],
+    "draftAnswer": "Even if",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 24,
+      "text": "Bisan kon = Even if",
+      "where": "A. Connecting Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Magbasa",
+    "options": [
+      "To cook",
+      "To clean",
+      "To read",
+      "To write",
+      "To study"
+    ],
+    "draftAnswer": "To read",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Magbasa = To read",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Magsurat",
+    "options": [
+      "To cook",
+      "To clean",
+      "To read",
+      "To write",
+      "To study"
+    ],
+    "draftAnswer": "To write",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Magsurat = To write",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Magluto",
+    "options": [
+      "To cook",
+      "To clean",
+      "To read",
+      "To write",
+      "To study"
+    ],
+    "draftAnswer": "To cook",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Magluto = To cook",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Maglimpyo",
+    "options": [
+      "To cook",
+      "To clean",
+      "To read",
+      "To write",
+      "To study"
+    ],
+    "draftAnswer": "To clean",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Maglimpyo = To clean",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Mag-adal",
+    "options": [
+      "To cook",
+      "To clean",
+      "To read",
+      "To write",
+      "To study"
+    ],
+    "draftAnswer": "To study",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 25,
+      "text": "Mag-adal = To study",
+      "where": "A. Common Action Verbs"
+    }
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Nagbabasa ako hin libro yana.",
+    "options": [],
+    "draftAnswer": "O",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Nagluto hi Nanay kagab-i.",
+    "options": [],
+    "draftAnswer": "C",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Magbabasa ako buwas.",
+    "options": [],
+    "draftAnswer": "F",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Nag-aram kami kahapon.",
+    "options": [],
+    "draftAnswer": "C",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Magsusurat hiya hin surat.",
+    "options": [],
+    "draftAnswer": "F",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Naglilimpyo hira han balay yana.",
+    "options": [],
+    "draftAnswer": "O",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Nagbasa hiya hin libro.",
+    "options": [],
+    "draftAnswer": "C",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Identify the Time Reference",
+    "type": "closed",
+    "prompt": "Magluluto kami yana nga gab-i.",
+    "options": [],
+    "draftAnswer": "F",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "__________ ako hin libro yana. (Nagbabasa / Nagbasa / Magbabasa)",
+    "options": [
+      "Nagbabasa",
+      "Nagbasa",
+      "Magbabasa"
+    ],
+    "draftAnswer": "Nagbabasa",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "__________ hi Nanay kagab-i. (Nagluluto / Nagluto / Magluluto)",
+    "options": [
+      "Nagluluto",
+      "Nagluto",
+      "Magluluto"
+    ],
+    "draftAnswer": "Nagluto",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "__________ kami buwas. (Nag-aadal / Nag-aram / Mag-aadal)",
+    "options": [
+      "Nag-aadal",
+      "Nag-aram",
+      "Mag-aadal"
+    ],
+    "draftAnswer": "Mag-aadal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "__________ hiya hin surat yana. (Nagsusurat / Nagsurat / Magsusurat)",
+    "options": [
+      "Nagsusurat",
+      "Nagsurat",
+      "Magsusurat"
+    ],
+    "draftAnswer": "Nagsusurat",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_25",
+    "activity": "Complete the Sentences",
+    "type": "closed",
+    "prompt": "__________ hira han balay kahapon. (Naglilimpyo / Naglimpyo / Maglilimpyo)",
+    "options": [
+      "Naglilimpyo",
+      "Naglimpyo",
+      "Maglilimpyo"
+    ],
+    "draftAnswer": "Naglimpyo",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Identify the Meaning",
+    "type": "choice",
+    "prompt": "Maupay an buot niya.",
+    "options": [
+      "A. He/She is kind-hearted.",
+      "B. He/She is physically tall.",
+      "C. He/She is hungry."
+    ],
+    "draftAnswer": "A. He/She is kind-hearted.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Identify the Meaning",
+    "type": "choice",
+    "prompt": "Marig-on an iya buot.",
+    "options": [
+      "A. He/She is strong-willed.",
+      "B. He/She is sleepy.",
+      "C. He/She is confused."
+    ],
+    "draftAnswer": "A. He/She is strong-willed.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Identify the Meaning",
+    "type": "choice",
+    "prompt": "Ayaw kawad-i hin paglaom.",
+    "options": [
+      "A. Do not lose hope.",
+      "B. Do not leave the house.",
+      "C. Do not forget your name."
+    ],
+    "draftAnswer": "A. Do not lose hope.",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 26,
+      "text": "Ayaw kawad-i hin paglaom. = Do not lose hope.",
+      "where": "Conversation B: Encouraging a Classmate"
+    }
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Identify the Meaning",
+    "type": "choice",
+    "prompt": "Mapailubon hiya.",
+    "options": [
+      "A. He/She is patient.",
+      "B. He/She is careless.",
+      "C. He/She is angry."
+    ],
+    "draftAnswer": "A. He/She is patient.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Identify the Meaning",
+    "type": "choice",
+    "prompt": "Kinahanglan hunahunaon hin maupay.",
+    "options": [
+      "A. It needs to be considered carefully.",
+      "B. It needs to be forgotten.",
+      "C. It needs to be thrown away."
+    ],
+    "draftAnswer": "A. It needs to be considered carefully.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Literal or Figurative?",
+    "type": "closed",
+    "prompt": "Dako an balay.",
+    "options": [],
+    "draftAnswer": "Literal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Literal or Figurative?",
+    "type": "closed",
+    "prompt": "Maupay an buot ni Maria.",
+    "options": [],
+    "draftAnswer": "Figurative/descriptive",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Literal or Figurative?",
+    "type": "closed",
+    "prompt": "Itom an iya bag.",
+    "options": [],
+    "draftAnswer": "Literal",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Literal or Figurative?",
+    "type": "closed",
+    "prompt": "Marig-on an iya buot.",
+    "options": [],
+    "draftAnswer": "Figurative/descriptive",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Literal or Figurative?",
+    "type": "closed",
+    "prompt": "Mapailubon hiya.",
+    "options": [],
+    "draftAnswer": "Figurative/descriptive",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "A: Nasusubo ako kay napakyas ako ha akon proyekto. B: __________________________",
+    "options": [
+      "Maupay an buot niya.",
+      "Ayaw kawad-i hin paglaom.",
+      "Mapailubon hiya.",
+      "Hunahunaa anay hin maupay.",
+      "Salamat ha imo pagdasig."
+    ],
+    "draftAnswer": "Ayaw kawad-i hin paglaom.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "A: Ano an imo masisiring kan Ana? B: __________________________ kay pirme hiya nabulig ha iba.",
+    "options": [
+      "Maupay an buot niya.",
+      "Ayaw kawad-i hin paglaom.",
+      "Mapailubon hiya.",
+      "Hunahunaa anay hin maupay.",
+      "Salamat ha imo pagdasig."
+    ],
+    "draftAnswer": "Maupay an buot niya.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "A: Diri ako sigurado kon ano an akon pipilion. B: __________________________",
+    "options": [
+      "Maupay an buot niya.",
+      "Ayaw kawad-i hin paglaom.",
+      "Mapailubon hiya.",
+      "Hunahunaa anay hin maupay.",
+      "Salamat ha imo pagdasig."
+    ],
+    "draftAnswer": "Hunahunaa anay hin maupay.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "A: Diri hiya nasisina bisan maiha an paghuwat. B: __________________________",
+    "options": [
+      "Maupay an buot niya.",
+      "Ayaw kawad-i hin paglaom.",
+      "Mapailubon hiya.",
+      "Hunahunaa anay hin maupay.",
+      "Salamat ha imo pagdasig."
+    ],
+    "draftAnswer": "Mapailubon hiya.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_26",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "A: Ayaw pag-undang. Makakaya mo ito. B: __________________________",
+    "options": [
+      "Maupay an buot niya.",
+      "Ayaw kawad-i hin paglaom.",
+      "Mapailubon hiya.",
+      "Hunahunaa anay hin maupay.",
+      "Salamat ha imo pagdasig."
+    ],
+    "draftAnswer": "Salamat ha imo pagdasig.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Eskwelahan",
+    "options": [
+      "Assignment",
+      "School",
+      "Task",
+      "Question",
+      "Schedule"
+    ],
+    "draftAnswer": "School",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Eskwelahan = School",
+      "where": "A. School Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Buruhaton",
+    "options": [
+      "Assignment",
+      "School",
+      "Task",
+      "Question",
+      "Schedule"
+    ],
+    "draftAnswer": "Task",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Buruhaton = Task",
+      "where": "B. Workplace Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Pakiana",
+    "options": [
+      "Assignment",
+      "School",
+      "Task",
+      "Question",
+      "Schedule"
+    ],
+    "draftAnswer": "Question",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Pakiana = Question",
+      "where": "A. School Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Asaynment",
+    "options": [
+      "Assignment",
+      "School",
+      "Task",
+      "Question",
+      "Schedule"
+    ],
+    "draftAnswer": "Assignment",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Asaynment = Assignment",
+      "where": "A. School Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Vocabulary Matching",
+    "type": "match",
+    "prompt": "Iskedyul",
+    "options": [
+      "Assignment",
+      "School",
+      "Task",
+      "Question",
+      "Schedule"
+    ],
+    "draftAnswer": "Schedule",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Iskedyul = Schedule",
+      "where": "A. School Vocabulary"
+    }
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Choose the Appropriate Expression",
+    "type": "choice",
+    "prompt": "You want to ask your teacher about an assignment.",
+    "options": [
+      "A. Pwede ba ako magpakiana?",
+      "B. Dako an balay.",
+      "C. Gutom ako."
+    ],
+    "draftAnswer": "A. Pwede ba ako magpakiana?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Choose the Appropriate Expression",
+    "type": "choice",
+    "prompt": "You need assistance with a workplace task.",
+    "options": [
+      "A. Kinahanglan ko hin bulig hini nga buruhaton.",
+      "B. Ano an imo ngaran?",
+      "C. Lami an pagkaon."
+    ],
+    "draftAnswer": "A. Kinahanglan ko hin bulig hini nga buruhaton.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Choose the Appropriate Expression",
+    "type": "choice",
+    "prompt": "You want to tell your colleague that your report is finished.",
+    "options": [
+      "A. Natapos ko na an akon report.",
+      "B. Waray ako maaram.",
+      "C. Taga diin ka?"
+    ],
+    "draftAnswer": "A. Natapos ko na an akon report.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Choose the Appropriate Expression",
+    "type": "choice",
+    "prompt": "You need more time to finish your assignment.",
+    "options": [
+      "A. Kinahanglan ko pa hin dugang nga panahon.",
+      "B. Maupay nga gab-i.",
+      "C. Hain an eskwelahan?"
+    ],
+    "draftAnswer": "A. Kinahanglan ko pa hin dugang nga panahon.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Choose the Appropriate Expression",
+    "type": "choice",
+    "prompt": "You want someone to explain an instruction again.",
+    "options": [
+      "A. Mahimo mo ba utrahon an instruksyon?",
+      "B. Pira na an imo edad?",
+      "C. Ano an imo karuyag kaunon?"
+    ],
+    "draftAnswer": "A. Mahimo mo ba utrahon an instruksyon?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "Student: Maestra, __________________________ mahitungod han amon proyekto?",
+    "options": [
+      "Salamat ha imo bulig.",
+      "Pwede ba ako magpakiana?",
+      "Natapos ko na an akon trabaho.",
+      "Kinahanglan ko pa hin panahon.",
+      "Mahimo mo ba ini igsaysay?"
+    ],
+    "draftAnswer": "Pwede ba ako magpakiana?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "Student: Diri ko nasasabtan ini nga instruksyon. __________________________",
+    "options": [
+      "Salamat ha imo bulig.",
+      "Pwede ba ako magpakiana?",
+      "Natapos ko na an akon trabaho.",
+      "Kinahanglan ko pa hin panahon.",
+      "Mahimo mo ba ini igsaysay?"
+    ],
+    "draftAnswer": "Mahimo mo ba ini igsaysay?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "Employee: Waray ko pa mahuman an report. __________________________",
+    "options": [
+      "Salamat ha imo bulig.",
+      "Pwede ba ako magpakiana?",
+      "Natapos ko na an akon trabaho.",
+      "Kinahanglan ko pa hin panahon.",
+      "Mahimo mo ba ini igsaysay?"
+    ],
+    "draftAnswer": "Kinahanglan ko pa hin panahon.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "Employee: __________________________ ngan andam na ako magpasa.",
+    "options": [
+      "Salamat ha imo bulig.",
+      "Pwede ba ako magpakiana?",
+      "Natapos ko na an akon trabaho.",
+      "Kinahanglan ko pa hin panahon.",
+      "Mahimo mo ba ini igsaysay?"
+    ],
+    "draftAnswer": "Natapos ko na an akon trabaho.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_27",
+    "activity": "Complete the Conversation",
+    "type": "fill",
+    "prompt": "Employee: __________________________",
+    "options": [
+      "Salamat ha imo bulig.",
+      "Pwede ba ako magpakiana?",
+      "Natapos ko na an akon trabaho.",
+      "Kinahanglan ko pa hin panahon.",
+      "Mahimo mo ba ini igsaysay?"
+    ],
+    "draftAnswer": "Salamat ha imo bulig.",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Arrange the Events",
+    "type": "order",
+    "prompt": "_____ Inuli kami katapos han programa.",
+    "options": [],
+    "draftAnswer": "4",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Arrange the Events",
+    "type": "order",
+    "prompt": "_____ Nag-andam kami han amon mga gamit.",
+    "options": [],
+    "draftAnswer": "1",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Arrange the Events",
+    "type": "order",
+    "prompt": "_____ Nagkatirok kami ha eskwelahan.",
+    "options": [],
+    "draftAnswer": "2",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Arrange the Events",
+    "type": "order",
+    "prompt": "_____ Nagpresentar kami han amon proyekto.",
+    "options": [],
+    "draftAnswer": "3",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Identify the Correct Connector",
+    "type": "fill",
+    "prompt": "Nagbasa hiya ______ nagsurat hin nota.",
+    "options": [
+      "ngan",
+      "pero",
+      "kay",
+      "samtang",
+      "katapos"
+    ],
+    "draftAnswer": "ngan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Identify the Correct Connector",
+    "type": "fill",
+    "prompt": "Karuyag ko umupod, ______ waray ako panahon.",
+    "options": [
+      "ngan",
+      "pero",
+      "kay",
+      "samtang",
+      "katapos"
+    ],
+    "draftAnswer": "pero",
+    "inferred": true,
+    "basis": "lesson",
+    "evidence": {
+      "lesson": 28,
+      "text": "But · Karuyag ko umupod, pero waray ako panahon.",
+      "where": "D. Connecting Events and Ideas"
+    }
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Identify the Correct Connector",
+    "type": "fill",
+    "prompt": "Nalipay ako ______ nakita ko an akon pamilya.",
+    "options": [
+      "ngan",
+      "pero",
+      "kay",
+      "samtang",
+      "katapos"
+    ],
+    "draftAnswer": "kay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Identify the Correct Connector",
+    "type": "fill",
+    "prompt": "______ nagluluto hi Nanay, nag-aandam ako han lamesa.",
+    "options": [
+      "ngan",
+      "pero",
+      "kay",
+      "samtang",
+      "katapos"
+    ],
+    "draftAnswer": "samtang",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Identify the Correct Connector",
+    "type": "fill",
+    "prompt": "______ han klase, kinadto kami ha librarya.",
+    "options": [
+      "ngan",
+      "pero",
+      "kay",
+      "samtang",
+      "katapos"
+    ],
+    "draftAnswer": "katapos",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Complete the Narrative",
+    "type": "fill",
+    "prompt": "__________, kinadto kami han akon mga sangkay ha parke.",
+    "options": [
+      "Ha kataposan",
+      "Usa ka adlaw",
+      "Katapos hito",
+      "Tigda",
+      "Nalipay kami"
+    ],
+    "draftAnswer": "Usa ka adlaw",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Complete the Narrative",
+    "type": "fill",
+    "prompt": "__________, nag-uyag kami ngan nag-istorya.",
+    "options": [
+      "Ha kataposan",
+      "Usa ka adlaw",
+      "Katapos hito",
+      "Tigda",
+      "Nalipay kami"
+    ],
+    "draftAnswer": "Katapos hito",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Complete the Narrative",
+    "type": "fill",
+    "prompt": "__________ nga nag-uran, salit kinadto kami ha usa nga tindahan.",
+    "options": [
+      "Ha kataposan",
+      "Usa ka adlaw",
+      "Katapos hito",
+      "Tigda",
+      "Nalipay kami"
+    ],
+    "draftAnswer": "Tigda",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Complete the Narrative",
+    "type": "fill",
+    "prompt": "__________, inuli kami han nahunong na an uran.",
+    "options": [
+      "Ha kataposan",
+      "Usa ka adlaw",
+      "Katapos hito",
+      "Tigda",
+      "Nalipay kami"
+    ],
+    "draftAnswer": "Ha kataposan",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_28",
+    "activity": "Complete the Narrative",
+    "type": "fill",
+    "prompt": "__________ kay nagkaada kami hin panahon nga mag-upod.",
+    "options": [
+      "Ha kataposan",
+      "Usa ka adlaw",
+      "Katapos hito",
+      "Tigda",
+      "Nalipay kami"
+    ],
+    "draftAnswer": "Nalipay kami",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone asks, \"Hain an terminal?\"",
+    "options": [
+      "A. Aada ito hirani ha merkado.",
+      "B. Lami an pagkaon.",
+      "C. Malipayon ako.",
+      "D. Pira an imo edad?"
+    ],
+    "draftAnswer": "A. Aada ito hirani ha merkado.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You need help because someone is injured.",
+    "options": [
+      "A. Kinahanglan namon hin bulig. May usa nga nasamaran.",
+      "B. Karuyag ko kumaon.",
+      "C. Maupay nga gab-i.",
+      "D. Hain an eskwelahan?"
+    ],
+    "draftAnswer": "A. Kinahanglan namon hin bulig. May usa nga nasamaran.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "Someone invites you to a community activity.",
+    "options": [
+      "A. Sige, maupod ako.",
+      "B. Diri ako maaram han imo ngaran.",
+      "C. Pira ini?",
+      "D. Waray ako pagkaon."
+    ],
+    "draftAnswer": "A. Sige, maupod ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You want to ask how much transportation costs.",
+    "options": [
+      "A. Pira an plete?",
+      "B. Hain an imo balay?",
+      "C. Ano an imo trabaho?",
+      "D. San-o an imo birthday?"
+    ],
+    "draftAnswer": "A. Pira an plete?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Choose the Appropriate Response",
+    "type": "choice",
+    "prompt": "You want someone to repeat what they said.",
+    "options": [
+      "A. Mahimo mo ba utrahon?",
+      "B. Nalilipay ako.",
+      "C. Salamat ha pagkaon.",
+      "D. Taga diin ka?"
+    ],
+    "draftAnswer": "A. Mahimo mo ba utrahon?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Complete the Dialogue",
+    "type": "fill",
+    "prompt": "A: Maupay nga kulop! Bag-o ka ba dinhi? B: Oo, bag-o pa la ako dinhi. __________________________",
+    "options": [
+      "Hain an pinakahirani nga ospital?",
+      "Sige, maupod ako.",
+      "Pira an plete?",
+      "Kinahanglan ko hin bulig.",
+      "Nalilipay ako nga makilala ka."
+    ],
+    "draftAnswer": "Nalilipay ako nga makilala ka.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Complete the Dialogue",
+    "type": "fill",
+    "prompt": "A: Karuyag mo ba umupod ha amon ha programa? B: __________________________",
+    "options": [
+      "Hain an pinakahirani nga ospital?",
+      "Sige, maupod ako.",
+      "Pira an plete?",
+      "Kinahanglan ko hin bulig.",
+      "Nalilipay ako nga makilala ka."
+    ],
+    "draftAnswer": "Sige, maupod ako.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Complete the Dialogue",
+    "type": "fill",
+    "prompt": "A: Paonan-o ka makadto ha bungto? B: Sakay ako hin traysikol. __________________________",
+    "options": [
+      "Hain an pinakahirani nga ospital?",
+      "Sige, maupod ako.",
+      "Pira an plete?",
+      "Kinahanglan ko hin bulig.",
+      "Nalilipay ako nga makilala ka."
+    ],
+    "draftAnswer": "Pira an plete?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Complete the Dialogue",
+    "type": "fill",
+    "prompt": "A: Ano an nahitabo? B: Nawara an akon pitaka. __________________________",
+    "options": [
+      "Hain an pinakahirani nga ospital?",
+      "Sige, maupod ako.",
+      "Pira an plete?",
+      "Kinahanglan ko hin bulig.",
+      "Nalilipay ako nga makilala ka."
+    ],
+    "draftAnswer": "Kinahanglan ko hin bulig.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_29",
+    "activity": "Complete the Dialogue",
+    "type": "fill",
+    "prompt": "A: May usa nga nasamaran. Diin kami makakadto? B: __________________________",
+    "options": [
+      "Hain an pinakahirani nga ospital?",
+      "Sige, maupod ako.",
+      "Pira an plete?",
+      "Kinahanglan ko hin bulig.",
+      "Nalilipay ako nga makilala ka."
+    ],
+    "draftAnswer": "Hain an pinakahirani nga ospital?",
+    "inferred": true,
+    "basis": "weak",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does salamat mean?",
+    "options": [
+      "A. Thank you",
+      "B. Goodbye",
+      "C. Welcome",
+      "D. Sorry"
+    ],
+    "draftAnswer": "A. Thank you",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Salamat. = Thank you.",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does bugto mean?",
+    "options": [
+      "A. Parent",
+      "B. Sibling",
+      "C. Grandparent",
+      "D. Cousin"
+    ],
+    "draftAnswer": "B. Sibling",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 5,
+      "text": "Bugto = Sibling",
+      "where": "A. Immediate Family Members"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does kan-on mean?",
+    "options": [
+      "A. Uncooked rice",
+      "B. Cooked rice",
+      "C. Bread",
+      "D. Fish"
+    ],
+    "draftAnswer": "B. Cooked rice",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Kan-on = Cooked rice",
+      "where": "A. Naming Common Foods"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does pira mean?",
+    "options": [
+      "A. Where",
+      "B. When",
+      "C. How many or how much",
+      "D. Who"
+    ],
+    "draftAnswer": "C. How many or how much",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does eskwelahan mean?",
+    "options": [
+      "A. Hospital",
+      "B. School",
+      "C. Market",
+      "D. Office"
+    ],
+    "draftAnswer": "B. School",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 9,
+      "text": "Eskwelahan = School",
+      "where": "B. Common Words Used in Questions"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does pahuway mean?",
+    "options": [
+      "A. Rest",
+      "B. Work",
+      "C. Study",
+      "D. Travel"
+    ],
+    "draftAnswer": "A. Rest",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Pahuway = Rest",
+      "where": "A. Everyday Activities"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does maupay an buot describe?",
+    "options": [
+      "A. A kind-hearted person",
+      "B. A physically tall person",
+      "C. A hungry person",
+      "D. A wealthy person"
+    ],
+    "draftAnswer": "A. A kind-hearted person",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does buruhaton mean?",
+    "options": [
+      "A. Task or responsibility",
+      "B. Celebration",
+      "C. Family",
+      "D. Destination"
+    ],
+    "draftAnswer": "A. Task or responsibility",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does kahapon mean?",
+    "options": [
+      "A. Tomorrow",
+      "B. Yesterday",
+      "C. Today",
+      "D. Later"
+    ],
+    "draftAnswer": "B. Yesterday",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 4,
+      "text": "Kahapon = Yesterday",
+      "where": "C. Common Calendar Expressions"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part A – Vocabulary Assessment",
+    "type": "choice",
+    "prompt": "What does matinabangon mean?",
+    "options": [
+      "A. Helpful",
+      "B. Lazy",
+      "C. Angry",
+      "D. Sleepy"
+    ],
+    "draftAnswer": "A. Helpful",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 20,
+      "text": "Matinabangon = Helpful",
+      "where": "B. Personality and Character"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Kumusta ka?",
+    "options": [
+      "A. How are you?",
+      "B. What is your name?",
+      "C. Where are you going?",
+      "D. How old are you?"
+    ],
+    "draftAnswer": "A. How are you?",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Kumusta ka? = How are you?",
+      "where": "A. Common Greetings"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Diri ako maaram.",
+    "options": [
+      "A. I understand.",
+      "B. I do not know.",
+      "C. I am happy.",
+      "D. I am hungry."
+    ],
+    "draftAnswer": "B. I do not know.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Hain an eskwelahan?",
+    "options": [
+      "A. Where is the school?",
+      "B. Who is the teacher?",
+      "C. When is the class?",
+      "D. What is the lesson?"
+    ],
+    "draftAnswer": "A. Where is the school?",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 12,
+      "text": "Hain an eskwelahan? = Where is the school?",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Karuyag ko kumaon.",
+    "options": [
+      "A. I want to eat.",
+      "B. I want to sleep.",
+      "C. I want to study.",
+      "D. I want to leave."
+    ],
+    "draftAnswer": "A. I want to eat.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 6,
+      "text": "Karuyag ko kumaon. = I want to eat.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Nauyon ako.",
+    "options": [
+      "A. I disagree.",
+      "B. I agree.",
+      "C. I am confused.",
+      "D. I am tired."
+    ],
+    "draftAnswer": "B. I agree.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Nauyon ako. = I agree.",
+      "where": "A. Basic Responses"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Ayaw kawad-i hin paglaom.",
+    "options": [
+      "A. Do not lose hope.",
+      "B. Do not forget your belongings.",
+      "C. Do not go outside.",
+      "D. Do not be late."
+    ],
+    "draftAnswer": "A. Do not lose hope.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 26,
+      "text": "Ayaw kawad-i hin paglaom. = Do not lose hope.",
+      "where": "Conversation B: Encouraging a Classmate"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Pwede mo ba ako buligan?",
+    "options": [
+      "A. Can you help me?",
+      "B. Can you hear me?",
+      "C. Can you see this?",
+      "D. Can you teach me?"
+    ],
+    "draftAnswer": "A. Can you help me?",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 2,
+      "text": "Pwede mo ba ako buligan? = Can you help me?",
+      "where": "D. Asking for Help"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Nalilipay ako nga makilala ka.",
+    "options": [
+      "A. I am happy to meet you.",
+      "B. I am going to meet you.",
+      "C. I do not know you.",
+      "D. I want to leave."
+    ],
+    "draftAnswer": "A. I am happy to meet you.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 1,
+      "text": "Nalilipay ako nga makilala ka. = I am happy to meet you.",
+      "where": "A. Introducing Yourself"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Pira an plete?",
+    "options": [
+      "A. How much is the fare?",
+      "B. Where is the vehicle?",
+      "C. Who is the driver?",
+      "D. When will we arrive?"
+    ],
+    "draftAnswer": "A. How much is the fare?",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 29,
+      "text": "Pira an plete? = How much is the fare?",
+      "where": "A. Asking for Directions and Travel Information"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part B – Useful Expressions Assessment",
+    "type": "choice",
+    "prompt": "Natapos ko na an akon trabaho.",
+    "options": [
+      "A. I have finished my work.",
+      "B. I have not started my work.",
+      "C. I need more work.",
+      "D. I am looking for work."
+    ],
+    "draftAnswer": "A. I have finished my work.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 27,
+      "text": "Natapos ko na an akon trabaho. = I have finished my work.",
+      "where": "C. Discussing Workplace Responsibilities"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which is the correct Waray expression for \"I am studying\"?",
+    "options": [
+      "A. Nag-aadal ako.",
+      "B. Nag-aadal hiya.",
+      "C. Nagluto ako.",
+      "D. Nagturog ako."
+    ],
+    "draftAnswer": "A. Nag-aadal ako.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 11,
+      "text": "Nag-aadal ako. = I am studying.",
+      "where": "Useful Phrases and Sentences"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which pronoun means \"we\" when including the person being addressed?",
+    "options": [
+      "A. Kami",
+      "B. Kita",
+      "C. Hira",
+      "D. Hiya"
+    ],
+    "draftAnswer": "B. Kita",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which sentence means \"The house is big\"?",
+    "options": [
+      "A. Dako an balay.",
+      "B. Matahom an balay.",
+      "C. Hain an balay?",
+      "D. Bag-o an balay."
+    ],
+    "draftAnswer": "A. Dako an balay.",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 15,
+      "text": "Dako an balay. = The house is big.",
+      "where": "B. Description + Subject"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which expression introduces a reason?",
+    "options": [
+      "A. Kay",
+      "B. Pero",
+      "C. O",
+      "D. Ngan"
+    ],
+    "draftAnswer": "A. Kay",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which sentence expresses disagreement?",
+    "options": [
+      "A. Nauyon ako.",
+      "B. Diri ako nauyon.",
+      "C. Husto ito.",
+      "D. Tinuod ito."
+    ],
+    "draftAnswer": "B. Diri ako nauyon.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which question asks about the number or quantity of something?",
+    "options": [
+      "A. Hin-o?",
+      "B. Diin?",
+      "C. Pira?",
+      "D. San-o?"
+    ],
+    "draftAnswer": "C. Pira?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which sentence means \"I will study tomorrow\"?",
+    "options": [
+      "A. Mag-aadal ako buwas.",
+      "B. Nag-aadal ako yana.",
+      "C. Nag-aram ako kahapon.",
+      "D. Nagluluto ako yana."
+    ],
+    "draftAnswer": "A. Mag-aadal ako buwas.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which connector means \"but\"?",
+    "options": [
+      "A. Ngan",
+      "B. Pero",
+      "C. Kay",
+      "D. Kon"
+    ],
+    "draftAnswer": "B. Pero",
+    "inferred": true,
+    "basis": "other-lesson",
+    "evidence": {
+      "lesson": 15,
+      "text": "Pero = But",
+      "where": "A. Common Connecting Words"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which sentence means \"While my mother is cooking, I am preparing the table\"?",
+    "options": [
+      "A. Samtang nagluluto hi Nanay, nag-aandam ako han lamesa.",
+      "B. Nagluto hi Nanay kahapon.",
+      "C. Dako an lamesa.",
+      "D. Hain an akon Nanay?"
+    ],
+    "draftAnswer": "A. Samtang nagluluto hi Nanay, nag-aandam ako han lamesa.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part C – Grammar and Sentence Construction",
+    "type": "choice",
+    "prompt": "Which expression asks someone to repeat what they said?",
+    "options": [
+      "A. Mahimo mo ba utrahon?",
+      "B. Pira an imo edad?",
+      "C. Hain an merkado?",
+      "D. Ano an imo ngaran?"
+    ],
+    "draftAnswer": "A. Mahimo mo ba utrahon?",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part D – Reading Comprehension",
+    "type": "choice",
+    "prompt": "Where did Ana go?",
+    "options": [
+      "A. Market",
+      "B. School",
+      "C. Hospital",
+      "D. Park"
+    ],
+    "draftAnswer": "B. School",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": {
+      "lesson": 30,
+      "text": "The reading passage in this part",
+      "where": "Part D"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part D – Reading Comprehension",
+    "type": "choice",
+    "prompt": "Why did Ana go to school early?",
+    "options": [
+      "A. She had an important project presentation.",
+      "B. She wanted to buy food.",
+      "C. She wanted to visit a friend.",
+      "D. She had forgotten her bag."
+    ],
+    "draftAnswer": "A. She had an important project presentation.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": {
+      "lesson": 30,
+      "text": "The reading passage in this part",
+      "where": "Part D"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part D – Reading Comprehension",
+    "type": "choice",
+    "prompt": "What did Ana help prepare?",
+    "options": [
+      "A. Food and drinks",
+      "B. Documents and presentation materials",
+      "C. Clothes and books",
+      "D. Decorations for a celebration"
+    ],
+    "draftAnswer": "B. Documents and presentation materials",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": {
+      "lesson": 30,
+      "text": "The reading passage in this part",
+      "where": "Part D"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part D – Reading Comprehension",
+    "type": "choice",
+    "prompt": "How did Ana feel at the beginning?",
+    "options": [
+      "A. Angry",
+      "B. Nervous",
+      "C. Sleepy",
+      "D. Bored"
+    ],
+    "draftAnswer": "B. Nervous",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": {
+      "lesson": 30,
+      "text": "The reading passage in this part",
+      "where": "Part D"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part D – Reading Comprehension",
+    "type": "choice",
+    "prompt": "What happened at the end?",
+    "options": [
+      "A. They cancelled the presentation.",
+      "B. They went home without presenting.",
+      "C. They successfully completed the presentation.",
+      "D. They forgot their materials."
+    ],
+    "draftAnswer": "C. They successfully completed the presentation.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": {
+      "lesson": 30,
+      "text": "The reading passage in this part",
+      "where": "Part D"
+    }
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part E – Conversational Understanding",
+    "type": "choice",
+    "prompt": "Situation A: Asking for Directions A: Pasayloa ako. Hain an ospital? B: Aada ito hirani ha merkado. What does B's response mean?",
+    "options": [
+      "A. It is near the market.",
+      "B. It is inside the school.",
+      "C. It is far from the town.",
+      "D. It is beside the beach."
+    ],
+    "draftAnswer": "A. It is near the market.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part E – Conversational Understanding",
+    "type": "choice",
+    "prompt": "Situation B: Requesting Assistance A: Diri ko nasasabtan ini nga instruksyon. B: Mahimo ko ini igsaysay ha imo. What does B offer to do?",
+    "options": [
+      "A. Explain the instruction.",
+      "B. Leave the room.",
+      "C. Submit the assignment.",
+      "D. Buy something."
+    ],
+    "draftAnswer": "A. Explain the instruction.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part E – Conversational Understanding",
+    "type": "choice",
+    "prompt": "Situation C: Expressing an Opinion A: Para ha akon, importante an pag-aram hin mga linggwahe. B: Nauyon ako ha imo. What does B communicate?",
+    "options": [
+      "A. Agreement",
+      "B. Disagreement",
+      "C. Confusion",
+      "D. Surprise"
+    ],
+    "draftAnswer": "A. Agreement",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part E – Conversational Understanding",
+    "type": "choice",
+    "prompt": "Situation D: Workplace Conversation A: Natapos mo na ba an report? B: Gintatrabaho ko pa ito. What does B mean?",
+    "options": [
+      "A. The report is already finished.",
+      "B. The report is still being worked on.",
+      "C. The report has been lost.",
+      "D. The report has been submitted."
+    ],
+    "draftAnswer": "B. The report is still being worked on.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  },
+  {
+    "lessonId": "waray_30",
+    "activity": "Lesson Assessment – Part E – Conversational Understanding",
+    "type": "choice",
+    "prompt": "Situation E: Social Invitation A: Karuyag mo ba umupod ha amon? B: Oo, maupod ako. What does B mean?",
+    "options": [
+      "A. Yes, I will come along.",
+      "B. No, I am busy.",
+      "C. I do not understand.",
+      "D. I want to go home."
+    ],
+    "draftAnswer": "A. Yes, I will come along.",
+    "inferred": true,
+    "basis": "reading",
+    "evidence": null
+  }
+]

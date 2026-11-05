@@ -5,6 +5,7 @@ From `Lesson Plan.pdf`. Nothing listed here was changed or guessed: the Tagalog 
 ## Start here: the biggest gaps
 
 - **Most practice activities have no answer key.** Only Tagalog 11–15 have keys for their practice activities. Tagalog 16–29 and all Waray lessons have keys for the assessment only, so their matching, choice, fill-in and arrange activities are saved in `extraActivities` with no answers. Learners do not see them yet.
+- **Draft Waray keys are ready for review** in `docs/waray-draft-answer-keys.md`. They are inferred, not from the PDF, and are not in the app yet.
 - **Waray 30 has no answer key at all.** Its 40 assessment questions are saved but not scored, so learners see only the overview of this lesson and cannot earn its XP. It needs a key from you.
 - **Waray 14–17 assessments are open questions** with written answers, so they are saved but not scored. These lessons have no scored assessment and can be finished without one.
 - **Typed-answer, open-ended and role-play activities have no screens yet**, in any lesson. They are saved in `extraActivities` for a later task.
