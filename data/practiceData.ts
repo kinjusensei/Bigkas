@@ -1827,191 +1827,46 @@ export const warayPracticeLevels: PracticeLevel[] = [
   {
     id: 1,
     lessonId: "waray_1",
-    title: "Basic Greetings and Politeness",
-    subtitle: "Learn how to greet people in Waray.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "Maupay na umaga",
-        example: "Good Morning",
-        howToUse: "Maupay nga aga, Mana Teresita",
-        howToUseTranslation: "Good Morning Ms. Teresita",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "How are you?",
-        howToUse: "",
-        howToUseTranslation: "How are you Father",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Good bye",
-        howToUse: "",
-        howToUseTranslation: "Goodbye, Mom. I am going to school now.",
-        expectedExpression: "sad",
-        expectedTone: "low",
-      },
-    ],
+    title: "Basic Greetings and Self-Introduction",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 2,
     lessonId: "waray_2",
-    title: "Family and Relatives",
-    subtitle: "Say who you are and where you're from.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Mother",
-        howToUse: "",
-        howToUseTranslation: "She is my mother",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Father",
-        howToUse: "",
-        howToUseTranslation: "He is my Father",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Siblings",
-        howToUse: "",
-        howToUseTranslation: "This is my Sibling",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Common Expressions and Responses",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 3,
     lessonId: "waray_3",
     title: "Numbers and Counting",
-    subtitle: "Simple words to count numbers.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Five",
-        howToUse: "",
-        howToUseTranslation: "I have five fingers",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Ten",
-        howToUse: "",
-        howToUseTranslation: "I have ten books",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten",
-        howToUse: "",
-        howToUseTranslation: "I have one chicken and three birds",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 4,
     lessonId: "waray_4",
-    title: "Simple Questions and Pronouns",
-    subtitle: "Ask simple questions and talk about yourself.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "What",
-        howToUse: "",
-        howToUseTranslation: "What is your name?",
-        expectedExpression: "neutral",
-        expectedTone: "high",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Where",
-        howToUse: "",
-        howToUseTranslation: "Where are you going?",
-        expectedExpression: "neutral",
-        expectedTone: "high",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "I / Me",
-        howToUse: "",
-        howToUseTranslation: "I am Maria.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Days, Months, and Time",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {
     id: 5,
     lessonId: "waray_5",
-    title: "Common Foods and Dining",
-    subtitle: "Name common foods and ask for things at the table.",
-    requiredCorrect: 3,
-
-    phrases: [
-      {
-        id: 1,
-        text: "",
-        example: "Rice (cooked)",
-        howToUse: "",
-        howToUseTranslation: "I ate rice.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 2,
-        text: "",
-        example: "Fish",
-        howToUse: "",
-        howToUseTranslation: "The fish is delicious.",
-        expectedExpression: "happy",
-        expectedTone: "medium",
-      },
-      {
-        id: 3,
-        text: "",
-        example: "Water",
-        howToUse: "",
-        howToUseTranslation: "May I have some water, please?",
-        expectedExpression: "neutral",
-        expectedTone: "medium",
-      },
-    ],
+    title: "Family Members and Relationships",
+    requiredCorrect: 0,
+    // Structured lesson: its content is in data/lessons/, with no practice game.
+    phrases: [],
   },
 
   {

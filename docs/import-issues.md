@@ -9,6 +9,7 @@ These are candidates from reading and from comparing similar words. They are sti
 | Lesson | Where | What looks wrong |
 |---|---|---|
 | Tagalog 15 | Vocabulary | "Parirala" has the pronunciation "pa-ra-i-la". Probably "pa-ri-ra-la". |
+| Waray 5 | Vocabulary | "Mga anak" has "ma-NGA A-nak" (same in Waray 8, 14): "mga" is respelled with an added vowel. |
 | Tagalog 25 | Activity: Identify the Verb | Ten items contain the literal text "&lt;underline>" and "&lt;/underline>" (for example "&lt;underline>Nag-aral&lt;/underline> si Ana kagabi."). It looks like formatting that was typed out. |
 
 ## 2. Text the PDF itself marks as needing review
@@ -19,6 +20,8 @@ These notes are written for the authors, but they are in the lesson intros and w
 - **Tagalog 17** (`pronunciationTip`): These are simplified pronunciation guides for practice. Audio recordings reviewed by Filipino speakers should be used in the final application.
 - **Tagalog 18** (`pronunciationTip`): These are simplified pronunciation guides for learners. Final audio recordings should be reviewed by a Filipino language speaker.
 - **Tagalog 19** (`pronunciationTip`): These are simplified pronunciation guides. They should be supplemented with audio recordings reviewed by Filipino language speakers.
+- **Waray 3** (`intro`): Number systems and everyday number usage can vary among Waray-speaking communities. The larger-number forms above are candidate teaching forms and should be checked by a Western Samar language evaluator, especially before teaching compound numbers as fixed patterns.
+- **Waray 5** (`intro`): Note: Some family terms have alternative forms depending on the speaker, context, and locality. The words above are introductory vocabulary candidates for evaluator review.
 
 ## 3. Tagalog Lessons 1–10 were kept, not re-imported
 
@@ -555,6 +558,92 @@ Meaning of each heading:
 
 - Vocabulary text without a table, kept as a note: C. Grammar Review / Learners should remember the following concepts: / • Personal pronouns and possessive forms. / • Common verbs and their aspects. / • Sentenc
 
+### Waray 1: Basic Greetings and Self-Introduction (PDF pages 632–649)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Multiple Choice (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Sentence Arrangement (arrange the words): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 5: Self-Introduction Practice (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Useful Phrases Practice = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+**Activity**
+
+- Text before the first activity was not imported: "Complete the following activities to check your understanding of the lesson."
+
+### Waray 2: Common Expressions and Responses (PDF pages 650–674)
+
+**Missing answer key**
+
+- Activity 1: Vocabulary Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Multiple Choice (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 4: Choose the Appropriate Response (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Useful Phrases Practice = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+**Activity**
+
+- Text before the first activity was not imported: "Complete the following exercises to strengthen your understanding of common Wara"
+
+### Waray 3: Numbers and Counting (PDF pages 675–699)
+
+**Missing answer key**
+
+- Activity 1: Number Matching (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Multiple Choice (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Fill in the Blanks (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Number Vocabulary Practice + Useful Phrases Practice = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+**Activity**
+
+- Text before the first activity was not imported: "Complete the following exercises to strengthen your understanding of Waray numbe"
+
+### Waray 4: Days, Months, and Time (PDF pages 700–714)
+
+**Missing answer key**
+
+- Activity 1: Match the Days (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Identify the Month (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentence (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 5: Arrange Your Schedule (fill in the blanks): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Phrase Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
+### Waray 5: Family Members and Relationships (PDF pages 715–728)
+
+**Missing answer key**
+
+- Activity 1: Match the Family Members (matching): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 2: Choose the Correct Answer (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+- Activity 3: Complete the Sentences (multiple choice): the PDF has no answer key, so it was saved without answers and has no screen yet.
+
+**XP moved**
+
+- XP rows merged under vocabulary: Vocabulary Practice + Phrase Recognition = 20 XP.
+- "Practice Activities" (15 XP) has no screen in this lesson, so its XP is earned with conversation.
+- XP rows merged under conversation: Guided Conversation + Practice Activities = 25 XP.
+
 ## 5. Lessons and counts
 
 "Saved without a screen" counts items in `extraActivities`, which learners do not see yet.
@@ -581,3 +670,8 @@ Meaning of each heading:
 | Tagalog 28: Storytelling and Narration | Advanced | 75 | 0 | 21 | 0 | 33 | 15 | 0 | 80 |
 | Tagalog 29: Situational Dialogues and Role-Playing | Advanced | 40 | 0 | 46 | 0 | 31 | 15 | 0 | 80 |
 | Tagalog 30: Comprehensive Language Assessment | Advanced | 24 | 0 | 0 | 0 | 0 | 48 | 12 | 100 |
+| Waray 1: Basic Greetings and Self-Introduction | Beginner | 35 | 16 | 27 | 0 | 25 | 10 | 0 | 60 |
+| Waray 2: Common Expressions and Responses | Beginner | 36 | 32 | 28 | 0 | 25 | 10 | 0 | 60 |
+| Waray 3: Numbers and Counting | Beginner | 41 | 21 | 27 | 0 | 34 | 10 | 0 | 60 |
+| Waray 4: Days, Months, and Time | Beginner | 44 | 12 | 12 | 0 | 20 | 10 | 0 | 60 |
+| Waray 5: Family Members and Relationships | Beginner | 33 | 12 | 15 | 0 | 22 | 10 | 0 | 60 |
