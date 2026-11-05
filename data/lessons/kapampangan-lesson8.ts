@@ -191,7 +191,7 @@ const expressionGroups: LessonExpressionGroup[] = [
       ["Mababa", "Low / Short", "ma-ba-ba"],
       ["Maganda", "Beautiful", "ma-gan-da"],
       ["Mabanglu", "Fragrant", "ma-bang-lu"],
-      ["Mayap", "Kind / Good", "ma-yap", require("../../assets/audio/kapampangan/Mayap.m4a")],
+      ["Mayap", "Kind / Good", "ma-yap"],
       ["Mapanganib", "Dangerous", "ma-pa-nga-nib"],
       ["Maamu", "Gentle / Tame", "ma-a-mu"],
       ["Maragasang", "Noisy", "ma-ra-ga-sang"],

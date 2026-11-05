@@ -223,7 +223,7 @@ const speaking: LessonSpeaking = {
       audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a"),
     },
     { id: "2", text: "Kumusta ka?", meaning: "How are you?" },
-    { id: "3", text: "Aku si Maria.", meaning: "I am Maria." },
+    { id: "3", text: "Aku i Maria.", meaning: "I am Maria." },
     { id: "4", text: "Taga Pampanga ku.", meaning: "I am from Pampanga." },
     {
       id: "5",
@@ -286,8 +286,8 @@ export const kapampanganLesson1: StructuredLesson = {
   patterns: [
     {
       label: "Pattern 1: Introducing Your Name",
-      pattern: "Aku si + Name.",
-      examples: ["Aku si Maria.", "Aku si Juan.", "Aku si Carlos."],
+      pattern: "Aku i + Name.",
+      examples: ["Aku i Maria.", "Aku i Juan.", "Aku i Carlos."],
     },
     {
       label: "Pattern 2: Asking Someone's Name",
@@ -323,7 +323,7 @@ export const kapampanganLesson1: StructuredLesson = {
       { speaker: "Ana", text: "Mayap a abak!", audioUrl: require("../../assets/audio/kapampangan/Mayap a abak.m4a") },
       { speaker: "Mark", text: "Mayap a abak din!" },
       { speaker: "Ana", text: "Aku i Ana. Nanu ya ing lagyu mu?" },
-      { speaker: "Mark", text: "Aku si Mark. Masaya ku akilala daka." },
+      { speaker: "Mark", text: "Aku i Mark. Masaya ku akilala daka." },
       {
         speaker: "Ana",
         text: "Masaya ku din a makilala daka! Taga nokarin ka?",
@@ -365,7 +365,7 @@ export const kapampanganLesson1: StructuredLesson = {
     items: [
       {
         id: "1",
-        sentence: "____________! Aku si Maria.",
+        sentence: "____________! Aku i Maria.",
         hint: "Good morning",
         answer: "Mayap a abak",
       },
@@ -377,7 +377,7 @@ export const kapampanganLesson1: StructuredLesson = {
       },
       {
         id: "3",
-        sentence: "___________ si Juan.",
+        sentence: "___________ i Juan.",
         hint: "I am",
         answer: "Aku",
       },
@@ -405,9 +405,9 @@ export const kapampanganLesson1: StructuredLesson = {
     items: [
       {
         id: "1",
-        words: ["si", "Aku", "Pedro"],
-        answer: ["Aku", "si", "Pedro"],
-        display: "Aku si Pedro.",
+        words: ["i", "Aku", "Pedro"],
+        answer: ["Aku", "i", "Pedro"],
+        display: "Aku i Pedro.",
       },
       {
         id: "2",
@@ -469,7 +469,7 @@ export const kapampanganLesson1: StructuredLesson = {
         id: 3,
         prompt: "Which sentence correctly introduces your name?",
         options: [
-          { key: "A", text: "Aku si Maria." },
+          { key: "A", text: "Aku i Maria." },
           { key: "B", text: "Kumusta si Maria?" },
           { key: "C", text: "Paalam si Maria." },
           { key: "D", text: "Salamat si Maria." },
@@ -528,7 +528,7 @@ export const kapampanganLesson1: StructuredLesson = {
         "Complete the following self-introduction using your own information.",
       items: [
         "Mayap a aldo!",
-        "Aku si _______.",
+        "Aku i _______.",
         "Taga _______ ku.",
         "_________ a banua na ku.",
         "Masaya ku a makilala kayu!",

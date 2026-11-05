@@ -117,7 +117,7 @@ const expressionGroups: LessonExpressionGroup[] = [
       ["Sumagut", "To answer", "su-ma-gut"],
       ["Magtanung", "To ask", "mag-ta-nung"],
       ["Impormasyun", "Information", "im-por-ma-syun"],
-      ["Lagyu", "Name", "lag-yu", require("../../assets/audio/kapampangan/Lagyu.m4a")],
+      ["Lagyu", "Name", "lag-yu"],
       ["Edad", "Age", "e-dad"],
       ["Tiranan", "Address / Residence", "ti-ra-nan"],
       ["Lugar", "Place", "lu-gar"],
@@ -132,7 +132,7 @@ const expressionGroups: LessonExpressionGroup[] = [
   {
     title: "C. Common Question and Answer Expressions",
     items: words([
-      ["Wa", "Yes", "wa", require("../../assets/audio/kapampangan/Wa.m4a")],
+      ["Wa", "Yes", "wa"],
       ["Ali / Alaut", "No / Not", "a-li"],
       ["Siguru", "Maybe", "si-gu-ru"],
       ["Ali ku asabi", "I do not know", "a-li ku a-sa-bi"],

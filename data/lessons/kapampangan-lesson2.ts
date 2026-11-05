@@ -61,7 +61,7 @@ const expressionGroups: LessonExpressionGroup[] = [
   {
     title: "A. Expressions of Gratitude",
     items: [
-      { term: "Salamat.", meaning: "Thank you.", audioUrl: require("../../assets/audio/kapampangan/Salamat.m4a") },
+      { term: "Salamat.", meaning: "Thank you." },
       { term: "Dakal a salamat.", meaning: "Thank you very much." },
       { term: "Alang nanuman.", meaning: "You're welcome." },
       { term: "Salamat king saup mu.", meaning: "Thank you for your help." },
@@ -81,7 +81,7 @@ const expressionGroups: LessonExpressionGroup[] = [
   {
     title: "B. Expressions of Apology",
     items: [
-      { term: "Pasensya na.", meaning: "I'm sorry.", audioUrl: require("../../assets/audio/kapampangan/Pasensya na.m4a") },
+      { term: "Pasensya na.", meaning: "I'm sorry." },
       { term: "Patawad.", meaning: "My apologies." },
       { term: "Patawaran mu ku.", meaning: "Forgive me." },
       { term: "E ku misadya.", meaning: "I didn't mean to." },
@@ -101,8 +101,8 @@ const expressionGroups: LessonExpressionGroup[] = [
   {
     title: "C. Expressions of Agreement and Disagreement",
     items: [
-      { term: "Wa.", meaning: "Yes.", audioUrl: require("../../assets/audio/kapampangan/Wa.m4a") },
-      { term: "Ali.", meaning: "No.", audioUrl: require("../../assets/audio/kapampangan/Ali.m4a") },
+      { term: "Wa.", meaning: "Yes." },
+      { term: "Alì.", meaning: "No." },
       { term: "Sige.", meaning: "Okay / Sure." },
       { term: "Tutu ka.", meaning: "You're right." },
       { term: "Mayasa ku.", meaning: "I agree." },
@@ -145,7 +145,7 @@ const expressionGroups: LessonExpressionGroup[] = [
       ],
       [
         { speaker: "A", text: "Mapalyari mu ba kung saupan?" },
-        { speaker: "B", text: "Wa naman!", audioUrl: require("../../assets/audio/kapampangan/Wa naman.m4a") },
+        { speaker: "B", text: "Wa naman!" },
       ],
     ],
   },
@@ -481,7 +481,7 @@ export const kapampanganLesson2: StructuredLesson = {
         id: 2,
         prompt: 'What is the respectful way of saying "Yes" in Kapampangan?',
         options: [
-          { key: "A", text: "Ali" },
+          { key: "A", text: "Alì" },
           { key: "B", text: "Sige" },
           { key: "C", text: "Wa pu" },
           { key: "D", text: "Siguru" },

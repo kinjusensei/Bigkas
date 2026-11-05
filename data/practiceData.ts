@@ -759,7 +759,7 @@ const kapampanganPdfPracticePhrases: Record<number, PracticePhrase[]> = {
     ),
   ],
   4: [
-    kapampanganPdfPhrase(1, "Nanu", "Nanu ya ing lagyu mu?"),
+    kapampanganPdfPhrase(1, "Nanu", "Nanu ya ing lagyu mu’"),
     kapampanganPdfPhrase(2, "Ninu", "Ninu ya ing kayabe mu"),
     kapampanganPdfPhrase(3, "Nokarin", "Nokarin ka munta"),
   ],
@@ -1206,7 +1206,6 @@ export const kapampanganPracticeLevels: PracticeLevel[] = [
         id: 3,
         text: "Aku",
         example: "I / Me",
-        audioUrl: require("../assets/audio/kapampangan/Aku.m4a"),
         howToUse: "Aku i Maria.",
         howToUseTranslation: "I am Maria.",
         expectedExpression: "happy",

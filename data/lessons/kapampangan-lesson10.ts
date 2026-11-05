@@ -131,7 +131,7 @@ const expressionGroups: LessonExpressionGroup[] = [
   {
     title: "B. Personal Information",
     items: words([
-      ["Lagyu", "Name", "lag-yu", require("../../assets/audio/kapampangan/Lagyu.m4a")],
+      ["Lagyu", "Name", "lag-yu"],
       ["Edad / Banua", "Age", "e-dad"],
       ["Tiranan", "Residence / Address", "ti-ra-nan"],
       ["Hanapbuhay", "Occupation / Livelihood", "ha-nap-bu-hay"],
