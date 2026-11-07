@@ -1,153 +1,66 @@
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {
-  Stack,
-  useGlobalSearchParams,
-  usePathname,
-  useRouter,
-  useSegments,
-} from "expo-router";
-import { useEffect, useState } from "react";
+import { Stack, usePathname, useRouter } from "expo-router";
+import { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { supabase } from "../services/supabase";
 
-const LAST_ROUTE_KEY = "@bigkas_last_route";
+// Older versions saved the last screen here to reopen it on launch.
+const OLD_LAST_ROUTE_KEY = "@bigkas_last_route";
 
-const RESTORABLE_ROUTES = [
-  "/dashboard",
-  "/leaderboard",
-  "/user-profile",
-  "/lessons",
-  "/story",
-  "/tutorial",
-  "/lesson",
-  "/lesson/practice",
-  "/lesson/result",
-  "/game-history",
-  "/profile",
-  "/lesson-history",
+// Screens a cold start is allowed to stay on (the sign-in flow). Any other
+// screen sends a signed-in user to the Dashboard.
+const SIGNED_OUT_ROUTES = [
+  "/",
+  "/login",
+  "/create-account",
+  "/forgot-password",
+  "/otp-verify",
+  "/reset-password",
+  "/intro-slides",
+  "/privacy",
 ];
 
-function isRestorableRoute(route: string) {
-  const pathname = route.split("?")[0];
-  return RESTORABLE_ROUTES.some(
-    (restorable) =>
-      pathname === restorable || pathname.startsWith(`${restorable}/`),
-  );
-}
-
-function RoutePersistence() {
+// Runs once when the app starts fresh, e.g. after it was swiped away from the
+// recent apps. Signed in: open the Dashboard (it sends new users on to the
+// tutorial). Signed out: open the start screen. The last screen is never
+// reopened, so a learner doesn't land back in the middle of a lesson.
+function StartupRoute() {
   const pathname = usePathname();
   const router = useRouter();
-  const params = useGlobalSearchParams();
-  const segments = useSegments();
-
-  // The saved route keeps its query params (e.g. the Story reader's
-  // ?dialect=kapampangan); without them a restored screen falls back to
-  // defaults. Params that are part of the path ([chapterId]) are skipped.
-  const pathParamNames = new Set(
-    (segments as string[])
-      .filter((segment) => segment.startsWith("[") && segment.endsWith("]"))
-      .map((segment) => segment.replace(/^\[\.{0,3}|\]$/g, "")),
-  );
-  const query = Object.entries(params)
-    .filter(([key, value]) => !pathParamNames.has(key) && value !== undefined)
-    .map(
-      ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`,
-    )
-    .join("&");
-  const currentRoute = query ? `${pathname}?${query}` : pathname;
-
-  const [restored, setRestored] = useState(false);
-  const [pendingRestoreTarget, setPendingRestoreTarget] = useState<
-    string | null
-  >(null);
 
   useEffect(() => {
     let cancelled = false;
 
-    async function restoreLastRoute() {
-      try {
-        const lastRoute = await AsyncStorage.getItem(LAST_ROUTE_KEY);
+    async function routeOnLaunch() {
+      AsyncStorage.removeItem(OLD_LAST_ROUTE_KEY).catch(() => {});
 
+      try {
         const {
           data: { session },
           error,
         } = await supabase.auth.getSession();
-
-        if (error) {
-          throw error;
-        }
-
+        if (error) throw error;
         if (cancelled) return;
 
-        if (!session) {
-          await AsyncStorage.removeItem(LAST_ROUTE_KEY);
-
-          if (!cancelled) {
-            if (pathname !== "/") {
-              router.replace("/" as any);
-            }
-            setRestored(true);
-          }
-          return;
-        }
-
-        if (lastRoute && isRestorableRoute(lastRoute)) {
-          if (lastRoute !== pathname) {
-            setPendingRestoreTarget(lastRoute);
-            router.replace(lastRoute as any);
-          }
-        } else {
-          if (lastRoute) {
-            await AsyncStorage.removeItem(LAST_ROUTE_KEY);
-          }
-
-          if (!cancelled) {
-            setPendingRestoreTarget("/dashboard");
-            if (pathname !== "/dashboard") {
-              router.replace("/dashboard" as any);
-            }
-          }
-        }
-
-        if (!cancelled) {
-          setRestored(true);
+        if (session) {
+          if (pathname !== "/dashboard") router.replace("/dashboard" as any);
+        } else if (!SIGNED_OUT_ROUTES.includes(pathname)) {
+          router.replace("/" as any);
         }
       } catch (error) {
-        console.error("Failed to restore last route:", error);
-        if (!cancelled) {
-          setRestored(true);
-        }
+        console.error("Failed to check the session on launch:", error);
       }
     }
 
-    restoreLastRoute();
+    routeOnLaunch();
 
     return () => {
       cancelled = true;
     };
+    // Only on launch: later navigation is left alone.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (!restored || !isRestorableRoute(pathname)) {
-      return;
-    }
-
-    if (pendingRestoreTarget !== null) {
-      if (pathname !== pendingRestoreTarget.split("?")[0]) {
-        return;
-      }
-
-      setPendingRestoreTarget(null);
-      return;
-    }
-
-    AsyncStorage.setItem(LAST_ROUTE_KEY, currentRoute).catch((error) => {
-      console.error("Failed to save last route:", error);
-    });
-  }, [pathname, currentRoute, restored, pendingRestoreTarget]);
 
   return null;
 }
@@ -158,7 +71,7 @@ export default function RootLayout() {
     // work inside this root view.
     <GestureHandlerRootView style={{ flex: 1 }}>
       <FaceDetectionProvider>
-        <RoutePersistence />
+        <StartupRoute />
 
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
