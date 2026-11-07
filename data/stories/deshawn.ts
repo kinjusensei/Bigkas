@@ -4,7 +4,7 @@ import type { SharedChapter, StoryDialect } from "../storyData";
 //
 // TITLE: working title. Rename the story here only; the list, chapters
 // screen and reader all read it through storyData's sharedStories.
-export const DESHAWN_STORY_TITLE = "Story for Deshawn";
+export const DESHAWN_STORY_TITLE = "Basic Story";
 
 export const DESHAWN_STORY_ID = "deshawn";
 
