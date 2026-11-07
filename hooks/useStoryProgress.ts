@@ -10,7 +10,7 @@ import { practiceLevels } from "../data/practiceData";
 import { getAllLessonCompletions } from "../services/lessonCompletionService";
 import { CompletionRecord, isRecordComplete } from "../utils/lessonCompletion";
 import {
-  canOpenStory,
+  canOpenStoryInLevel,
   isStoryLevelOpen as isStoryLevelOpenByRule,
 } from "../utils/storyLevels";
 import {
@@ -197,9 +197,9 @@ export function useStoryProgress(chapters: StoryChapter[] = []) {
   const isTierOpen = (language: TierLanguage, tierIndex: number): boolean =>
     REVIEW_MODE || isTierUnlocked(language, tierIndex, isLessonComplete);
 
-  // Story levels use the Lessons result above (utils/storyLevels.ts).
+  // Story levels use the Lessons result above (utils/storyLevels.ts). Review
+  // mode opens them through isTierOpen, so LOCKED_STORY_LEVELS still applies.
   const isStoryLevelOpen = (language: TierLanguage, tierIndex: number) =>
-    REVIEW_MODE ||
     isStoryLevelOpenByRule(language, tierIndex, (tier) =>
       isTierOpen(language, tier),
     );
@@ -209,7 +209,9 @@ export function useStoryProgress(chapters: StoryChapter[] = []) {
     story: { tierIndex: number; chapters: StoryChapter[] },
     language: TierLanguage,
   ): boolean =>
-    canOpenStory(
+    canOpenStoryInLevel(
+      language,
+      story.tierIndex,
       isStoryLevelOpen(language, story.tierIndex),
       story.chapters.some((chapter) => !!practiceProgress[chapter.lessonId]),
     );

@@ -10,9 +10,12 @@ import {
 } from "./lessonTiers.ts";
 import {
   canOpenStory,
+  canOpenStoryInLevel,
   highestOpenLevel,
   isStoryComingSoon,
+  isStoryLevelLocked,
   isStoryLevelOpen,
+  LOCKED_STORY_LEVELS,
   STORY_TIER_INDEX,
   storyLevelContent,
   storyTierIndex,
@@ -88,8 +91,8 @@ describe("which levels are open", () => {
     ]);
   });
 
-  test("Waray has no locks while its lessons have no content", () => {
-    assert.deepEqual(openLevels("waray", []), [true, true, true]);
+  test("Waray Easy and Intermediate have no locks, Hard is switched off", () => {
+    assert.deepEqual(openLevels("waray", []), [true, true, false]);
   });
 });
 
@@ -118,13 +121,8 @@ describe("a story with no Waray text yet", () => {
     assert.equal(storyLevelContent(1, 0), "stories");
   });
 
-  test("Waray Hard is open with the Intermediate story unread", () => {
-    assert.equal(openLevels("waray", [])[2], true);
-  });
-
-  test("the Story page can still open on Waray Hard", () => {
-    const states = openLevels("waray", []).map((unlocked) => ({ unlocked }));
-    assert.equal(highestOpenLevel(states), 2);
+  test("without the switch, Waray Hard doesn't wait on the Intermediate story", () => {
+    assert.equal(isStoryLevelOpen("waray", 2, () => false, []), true);
   });
 
   // For when Waray leaves LANGUAGES_WITHOUT_LESSON_PATH: the lesson rule it
@@ -149,6 +147,62 @@ describe("a story with no Waray text yet", () => {
       /story_lesson_passed_by\(new\.user_id, v_language \|\| '_' \|\| n\)/,
     );
     assert.equal(sql.match(/story_lesson_passed_by\(new\./g)?.length, 1);
+  });
+});
+
+describe("the locked story levels switch", () => {
+  const everythingPassed = () => true;
+
+  test("only Waray Hard is switched off", () => {
+    assert.deepEqual(LOCKED_STORY_LEVELS, [{ language: "waray", tierIndex: 2 }]);
+  });
+
+  test("it stays closed even with every lesson level open", () => {
+    // The same result review mode gives in a development build.
+    assert.equal(isStoryLevelOpen("waray", 2, everythingPassed), false);
+  });
+
+  test("review mode can't get around it", () => {
+    const hook = readFileSync("hooks/useStoryProgress.ts", "utf8");
+    assert.doesNotMatch(hook, /REVIEW_MODE \|\|\s+isStoryLevelOpenByRule/);
+    assert.match(hook, /canOpenStoryInLevel\(/);
+  });
+
+  test("a learner who already started it can't open it", () => {
+    assert.equal(canOpenStoryInLevel("waray", 2, false, true), false);
+    assert.equal(canOpenStoryInLevel("waray", 2, true, true), false);
+  });
+
+  test("a learner who started another locked level keeps it", () => {
+    assert.equal(canOpenStoryInLevel("tagalog", 2, false, true), true);
+  });
+
+  test("Waray Easy and Intermediate stories still open", () => {
+    assert.equal(canOpenStoryInLevel("waray", 0, true, false), true);
+    assert.equal(canOpenStoryInLevel("waray", 1, true, false), true);
+  });
+
+  test("Tagalog and Kapampangan stories aren't affected", () => {
+    for (const language of ["tagalog", "kapampangan"] as const) {
+      for (const tier of [0, 1, 2]) {
+        assert.equal(isStoryLevelLocked(language, tier), false);
+      }
+      assert.equal(isStoryLevelOpen(language, 2, everythingPassed), true);
+    }
+  });
+
+  test("Waray Hard lessons aren't affected", () => {
+    assert.equal(isTierUnlocked("waray", 2, everythingPassed), true);
+  });
+
+  test("the Story page opens on the highest level still open", () => {
+    const states = openLevels("waray", []).map((unlocked) => ({ unlocked }));
+    assert.equal(highestOpenLevel(states), 1);
+  });
+
+  test("removing the line opens the level again", () => {
+    assert.equal(isStoryLevelOpen("waray", 2, everythingPassed, []), true);
+    assert.equal(canOpenStoryInLevel("waray", 2, true, false, []), true);
   });
 });
 

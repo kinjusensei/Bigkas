@@ -27,7 +27,11 @@ import {
 import { useActiveDialect } from "../hooks/useActiveDialect";
 import { getStoryProgress, useStoryProgress } from "../hooks/useStoryProgress";
 import { tierLessonIds, TIERS } from "../utils/lessonTiers";
-import { highestOpenLevel, storyLevelContent } from "../utils/storyLevels";
+import {
+  highestOpenLevel,
+  isStoryLevelLocked,
+  storyLevelContent,
+} from "../utils/storyLevels";
 import StoryHeader, { STORY_COLORS } from "./components/Story/StoryHeader";
 
 // STORY FLOW: Story list (this screen) → Chapters
@@ -354,6 +358,17 @@ export default function StoryScreen() {
                     size="large"
                     color={C.primary}
                   />
+                ) : isStoryLevelLocked(selectedDialect, selectedLevel) ? (
+                  <View style={styles.emptyBox}>
+                    <Ionicons name="lock-closed" size={28} color={C.primary} />
+                    <Text style={styles.emptyTitle} accessibilityRole="header">
+                      {dialectLabel} {TIERS[selectedLevel].name} story is coming soon
+                    </Text>
+                    <Text style={styles.comingSoonText}>
+                      It&apos;s locked for now while we get it ready. Any progress
+                      you&apos;ve saved in it is kept.
+                    </Text>
+                  </View>
                 ) : levelLocked ? (
                   <LockedLevelPanel
                     levelName={TIERS[selectedLevel].name}
