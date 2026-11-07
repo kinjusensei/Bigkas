@@ -1,15 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createClient } from "@supabase/supabase-js";
-import * as Linking from "expo-linking";
 import { AppState, Platform } from "react-native";
 
 const SUPABASE_URL = "https://oxqanjedmcjwlevvbjnc.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_SzK1UUsO9raG5UPLTOyO_w_IbMveRao";
-
-// Where confirmation emails send the user back to (app/auth-callback.tsx).
-// bigkas://auth-callback in an installed build. Must be allowed in Supabase ->
-// Authentication -> URL Configuration -> Redirect URLs.
-export const AUTH_REDIRECT_URL = Linking.createURL("auth-callback");
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {

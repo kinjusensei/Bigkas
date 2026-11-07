@@ -13,7 +13,7 @@ import {
     View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AUTH_REDIRECT_URL, supabase } from '../services/supabase';
+import { supabase } from '../services/supabase';
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -23,9 +23,6 @@ export default function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [needsConfirmation, setNeedsConfirmation] = useState(false);
-  const [resendMessage, setResendMessage] = useState('');
-  const [resending, setResending] = useState(false);
 
   async function handleLogin() {
     if (!email.trim()) { setError('Please enter your email.'); return; }
@@ -33,8 +30,6 @@ export default function LoginScreen() {
 
     setLoading(true);
     setError('');
-    setNeedsConfirmation(false);
-    setResendMessage('');
 
     const { error: loginError } = await supabase.auth.signInWithPassword({
       email: email.trim(),
@@ -42,8 +37,12 @@ export default function LoginScreen() {
     });
 
     if (loginError) {
+      if (loginError.code === 'email_not_confirmed') {
+        await openSignupCode();
+        return;
+      }
+
       setError(loginError.message);
-      setNeedsConfirmation(loginError.code === 'email_not_confirmed');
       setLoading(false);
       return;
     }
@@ -52,22 +51,28 @@ export default function LoginScreen() {
     router.replace('/dashboard' as any);
   }
 
-  async function handleResendConfirmation() {
-    setResending(true);
-    setResendMessage('');
+  // Sends a new code, then opens the code screen. If sending fails (for example
+  // one was requested seconds ago) an earlier code may still work, so the screen
+  // still opens and shows why.
+  async function openSignupCode() {
+    const normalizedEmail = email.trim().toLowerCase();
 
     const { error: resendError } = await supabase.auth.resend({
       type: 'signup',
-      email: email.trim(),
-      options: { emailRedirectTo: AUTH_REDIRECT_URL },
+      email: normalizedEmail,
     });
 
-    setResendMessage(
-      resendError
-        ? resendError.message
-        : 'Confirmation email sent. Open it on this phone and tap the link.',
-    );
-    setResending(false);
+    setLoading(false);
+    router.push({
+      pathname: '/otp-verify' as any,
+      params: {
+        email: normalizedEmail,
+        mode: 'signup',
+        ...(resendError
+          ? { notice: `We couldn't send a new code: ${resendError.message}` }
+          : {}),
+      },
+    });
   }
 
   return (
@@ -146,22 +151,6 @@ export default function LoginScreen() {
               </View>
             )}
 
-            {needsConfirmation && (
-              <Pressable
-                style={styles.forgotBtn}
-                onPress={handleResendConfirmation}
-                disabled={resending}
-              >
-                <Text style={styles.forgotText}>
-                  {resending ? 'Sending...' : 'Send a new confirmation email'}
-                </Text>
-              </Pressable>
-            )}
-
-            {resendMessage !== '' && (
-              <Text style={styles.resendMessage}>{resendMessage}</Text>
-            )}
-
             <Pressable
               style={styles.submitBtn}
               onPress={handleLogin}
@@ -220,7 +209,6 @@ const styles = StyleSheet.create({
   errorText: { color: '#DC2626', fontSize: 15, fontWeight: '500' },
   submitBtn: { backgroundColor: '#410FA3', paddingVertical: 16, borderRadius: 16, alignItems: 'center', marginTop: 8 },
   submitBtnText: { color: '#FFFFFF', fontSize: 18, fontWeight: '700' },
-  resendMessage: { fontSize: 15, color: '#374151', textAlign: 'center' },
   forgotBtn: { alignItems: 'center', paddingVertical: 12 },
   forgotText: { fontSize: 15, color: '#410FA3', fontWeight: '600' },
   registerLink: { alignItems: 'center', paddingVertical: 4 },

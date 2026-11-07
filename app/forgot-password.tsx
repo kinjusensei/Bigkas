@@ -10,6 +10,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { OTP_LENGTH } from "../constant/auth";
 import { supabase } from "../services/supabase";
 
 export default function ForgotPasswordScreen() {
@@ -40,7 +41,7 @@ export default function ForgotPasswordScreen() {
     setLoading(false);
     router.push({
       pathname: "/otp-verify" as any,
-      params: { email: email.trim() },
+      params: { email: email.trim(), mode: "recovery" },
     });
   }
 
@@ -65,8 +66,8 @@ export default function ForgotPasswordScreen() {
         <View style={styles.header}>
           <Text style={styles.heading}>Forgot password?</Text>
           <Text style={styles.subheading}>
-            No worries! Enter your email and we will send you a 6 digit reset
-            code.
+            No worries! Enter your email and we will send you a {OTP_LENGTH}{" "}
+            digit reset code.
           </Text>
         </View>
 

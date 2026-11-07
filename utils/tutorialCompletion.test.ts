@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, test } from "node:test";
 
-import { saveTutorialCompleted } from "./tutorialCompletion.ts";
+import { ensureProfileRow, saveTutorialCompleted } from "./tutorialCompletion.ts";
 
 type Row = Record<string, unknown>;
 type FakeOptions = {
@@ -67,6 +67,33 @@ const user = {
     age_confirmed: true,
   },
 };
+
+describe("ensureProfileRow", () => {
+  test("creates the row, with the sign-up details, when it is missing", async () => {
+    const { client, rows } = fakeClient({});
+    await ensureProfileRow(client, user);
+    assert.deepEqual(rows[0], {
+      id: user.id,
+      email: user.email,
+      display_name: "Learner",
+      privacy_accepted_at: "2026-11-06T00:00:00.000Z",
+      privacy_version: "1",
+      age_confirmed: true,
+    });
+  });
+
+  test("leaves an existing row alone", async () => {
+    const existing = { id: user.id, tutorial_completed: true, xp: 50 };
+    const { client, rows } = fakeClient({ rows: [{ ...existing }] });
+    await ensureProfileRow(client, user);
+    assert.deepEqual(rows, [existing]);
+  });
+
+  test("throws when RLS blocks creating the row", async () => {
+    const { client } = fakeClient({ canInsert: false });
+    await assert.rejects(ensureProfileRow(client, user), { code: "42501" });
+  });
+});
 
 describe("saveTutorialCompleted", () => {
   test("marks an existing profile row as completed", async () => {

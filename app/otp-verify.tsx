@@ -9,17 +9,32 @@ import {
     View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { supabase } from '../services/supabase';
+import { OTP_LENGTH } from '../constant/auth';
+import { retryOnJwtIssuedAtFuture, supabase } from '../services/supabase';
+import { ensureProfileRow } from '../utils/tutorialCompletion';
+
+const RESEND_SECONDS = 60;
+
+function emptyCode() {
+  return Array<string>(OTP_LENGTH).fill('');
+}
 
 export default function OtpVerifyScreen() {
   const router = useRouter();
-  const { email } = useLocalSearchParams<{ email: string }>();
+  const params = useLocalSearchParams<{
+    email: string;
+    mode?: string;
+    notice?: string;
+  }>();
+  const email = params.email;
+  const mode = params.mode === 'signup' ? 'signup' : 'recovery';
 
-  const [code, setCode] = useState(['', '', '', '', '', '', '', '']);
+  const [code, setCode] = useState(emptyCode);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [timer, setTimer] = useState(60);
+  const [error, setError] = useState(params.notice ?? '');
+  const [timer, setTimer] = useState(RESEND_SECONDS);
   const [canResend, setCanResend] = useState(false);
+  const [resendRound, setResendRound] = useState(0);
 
   const inputs = useRef<(TextInput | null)[]>([]);
 
@@ -35,14 +50,14 @@ export default function OtpVerifyScreen() {
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [resendRound]);
 
   function handleCodeChange(text: string, index: number) {
     const newCode = [...code];
     newCode[index] = text;
     setCode(newCode);
 
-    if (text && index < 7) {
+    if (text && index < OTP_LENGTH - 1) {
       inputs.current[index + 1]?.focus();
     }
   }
@@ -56,23 +71,41 @@ export default function OtpVerifyScreen() {
   async function handleVerify() {
     const fullCode = code.join('');
 
-    if (fullCode.length < 8) {
-      setError('Please enter the full 8 digit code.');
+    if (fullCode.length < OTP_LENGTH) {
+      setError(`Please enter the full ${OTP_LENGTH} digit code.`);
       return;
     }
 
     setLoading(true);
     setError('');
 
-    const { error: verifyError } = await supabase.auth.verifyOtp({
+    const { data, error: verifyError } = await supabase.auth.verifyOtp({
       email: email,
       token: fullCode,
-      type: 'email',
+      type: mode,
     });
 
     if (verifyError) {
       setError('Invalid or expired code. Please try again.');
       setLoading(false);
+      return;
+    }
+
+    if (mode === 'signup') {
+      const user = data.user;
+      if (user) {
+        // The account is confirmed either way, so a failure here doesn't stop
+        // the user. Finishing the tutorial creates the row again and shows any
+        // error that still remains.
+        try {
+          await retryOnJwtIssuedAtFuture(() => ensureProfileRow(supabase, user));
+        } catch (profileError) {
+          console.warn('Unable to create the profile yet:', profileError);
+        }
+      }
+
+      setLoading(false);
+      router.replace('/tutorial' as any);
       return;
     }
 
@@ -82,23 +115,20 @@ export default function OtpVerifyScreen() {
 
   async function handleResend() {
     setCanResend(false);
-    setTimer(60);
+    setTimer(RESEND_SECONDS);
+    setResendRound((round) => round + 1);
     setError('');
-    setCode(['', '', '', '', '', '', '', '']);
+    setCode(emptyCode());
     inputs.current[0]?.focus();
 
-    await supabase.auth.resetPasswordForEmail(email);
+    const { error: resendError } =
+      mode === 'signup'
+        ? await supabase.auth.resend({ type: 'signup', email })
+        : await supabase.auth.resetPasswordForEmail(email);
 
-    const interval = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          setCanResend(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    if (resendError) {
+      setError(resendError.message);
+    }
   }
 
   return (
@@ -119,12 +149,14 @@ export default function OtpVerifyScreen() {
         <View style={styles.header}>
           <Text style={styles.heading}>Check your email</Text>
           <Text style={styles.subheading}>
-            We sent an 8 digit code to:
+            {mode === 'signup'
+              ? `To confirm your account, enter the ${OTP_LENGTH} digit code we sent to:`
+              : `We sent a ${OTP_LENGTH} digit code to:`}
           </Text>
           <Text style={styles.emailText}>{email}</Text>
         </View>
 
-        {/* OTP boxes - 8 boxes */}
+        {/* OTP boxes */}
         <View style={styles.codeRow}>
           {code.map((digit, index) => (
             <TextInput
@@ -240,7 +272,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   codeBox: {
-    width: 38,
+    flex: 1,
+    maxWidth: 38,
     height: 50,
     borderWidth: 1.5,
     borderColor: '#E5E7EB',

@@ -18,7 +18,7 @@ import {
   resetPrivacyConsent,
   usePrivacyConsent,
 } from "../services/privacyConsent";
-import { AUTH_REDIRECT_URL, supabase } from "../services/supabase";
+import { supabase } from "../services/supabase";
 
 export default function CreateAccountScreen() {
   const router = useRouter();
@@ -97,7 +97,6 @@ export default function CreateAccountScreen() {
         email: normalizedEmail,
         password,
         options: {
-          emailRedirectTo: AUTH_REDIRECT_URL,
           data: {
             display_name: displayName.trim(),
             privacy_accepted_at: consentAt,
@@ -132,11 +131,20 @@ export default function CreateAccountScreen() {
 
     if (data.session) {
       router.replace("/dashboard" as any);
-    } else {
-      setError(
-        "Account created! Open the confirmation email on this phone and tap the link. If you open it on another device, come back and log in afterwards.",
-      );
+      return;
     }
+
+    // Supabase answers this way for an email that is already confirmed, and
+    // sends no code, so the code screen would wait forever.
+    if (data.user.identities?.length === 0) {
+      setError("An account with this email already exists. Please log in.");
+      return;
+    }
+
+    router.push({
+      pathname: "/otp-verify" as any,
+      params: { email: normalizedEmail, mode: "signup" },
+    });
   }
 
   return (

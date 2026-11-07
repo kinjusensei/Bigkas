@@ -1,6 +1,5 @@
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as Linking from "expo-linking";
 import {
   Stack,
   useGlobalSearchParams,
@@ -69,17 +68,6 @@ function RoutePersistence() {
     let cancelled = false;
 
     async function restoreLastRoute() {
-      // A confirmation link started the app. Leave it on its screen, which signs
-      // the user in and moves on by itself. On Android the router resolves the
-      // launch link after this first render, so check the link itself too.
-      if (
-        pathname === "/auth-callback" ||
-        Linking.getLinkingURL()?.includes("://auth-callback")
-      ) {
-        setRestored(true);
-        return;
-      }
-
       try {
         const lastRoute = await AsyncStorage.getItem(LAST_ROUTE_KEY);
 
@@ -183,7 +171,7 @@ export default function RootLayout() {
             name="forgot-password"
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="auth-callback" options={{ headerShown: false }} />
+          <Stack.Screen name="otp-verify" options={{ headerShown: false }} />
           <Stack.Screen name="dashboard" options={{ headerShown: false }} />
           <Stack.Screen name="leaderboard" options={{ headerShown: false }} />
           <Stack.Screen name="intro-slides" options={{ headerShown: false }} />

@@ -22,6 +22,28 @@ function profileRowFor(user: TutorialUser) {
   };
 }
 
+// Creates the user's profile row if it doesn't exist. An existing row, and
+// whatever progress it holds, is left alone.
+export async function ensureProfileRow(
+  client: SupabaseClient,
+  user: TutorialUser,
+): Promise<void> {
+  const { data: existing, error: readError } = await client
+    .from("profiles")
+    .select("id")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (readError) throw readError;
+  if (existing) return;
+
+  const { error: insertError } = await client
+    .from("profiles")
+    .insert(profileRowFor(user));
+
+  if (insertError) throw insertError;
+}
+
 // Saves tutorial completion and returns only once the saved value has been read
 // back. Throws otherwise, because an update that matches no rows is not an
 // error to Supabase: a missing profile row or an RLS block both look like
