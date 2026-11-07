@@ -58,6 +58,7 @@ import {
   calculateStars,
   calculateXP,
 } from "../../utils/practiceUtils";
+import { useCameraPermission } from "react-native-vision-camera";
 import PracticeCamera from "../components/Practice/PracticeCamera";
 
 // =========================================================
@@ -188,6 +189,9 @@ function PretestScreen() {
 
   // Expression
   const [expressionMatched, setExpressionMatched] = useState(false);
+  // Set when the camera fails during a scored face question.
+  const [cameraUnavailable, setCameraUnavailable] = useState(false);
+  const { hasPermission: hasCameraPermission } = useCameraPermission();
 
   const currentQuestion = questions[currentIndex];
 
@@ -369,6 +373,7 @@ function PretestScreen() {
     setSpeakHeard(null);
     speakMatchedRef.current = false;
     setExpressionMatched(false);
+    setCameraUnavailable(false);
 
     if (currentIndex + 1 >= questions.length) {
       setFinished(true);
@@ -427,6 +432,25 @@ function PretestScreen() {
     currentQuestion,
     micUnavailable,
     creditCurrentQuestion,
+  ]);
+
+  // Scored face questions can always be skipped. Skipping gives no point,
+  // unless the camera can't be used: then, like the mic, no point is lost.
+  const handleSkipExpression = useCallback(() => {
+    if (
+      currentQuestion?.type === "expression" &&
+      !currentQuestion.countsAsCompleted &&
+      (cameraUnavailable || !hasCameraPermission)
+    ) {
+      creditCurrentQuestion();
+    }
+    goToNextQuestion();
+  }, [
+    currentQuestion,
+    cameraUnavailable,
+    hasCameraPermission,
+    creditCurrentQuestion,
+    goToNextQuestion,
   ]);
 
   const handleContinueFromSpeak = useCallback(() => {
@@ -1151,6 +1175,7 @@ function PretestScreen() {
                   expectedExpression={currentQuestion.expectedExpression}
                   phraseId={currentQuestion.id}
                   onExpressionConfirmed={handleExpressionConfirmed}
+                  onUnavailable={() => setCameraUnavailable(true)}
                 />
               </FaceDetectionProvider>
             </Animated.View>
@@ -1162,8 +1187,20 @@ function PretestScreen() {
                   : "Try it, or tap Continue. The camera is optional."
                 : expressionMatched
                   ? "Correct!"
-                  : "Show the expression above"}
+                  : cameraUnavailable || !hasCameraPermission
+                    ? "The camera isn't available. You can skip this one."
+                    : "Show the expression above, or tap Skip."}
             </Text>
+
+            {!expressionMatched && !currentQuestion.countsAsCompleted && (
+              <TouchableOpacity
+                style={styles.primaryButton}
+                onPress={handleSkipExpression}
+                activeOpacity={0.85}
+              >
+                <Text style={styles.primaryButtonText}>Skip</Text>
+              </TouchableOpacity>
+            )}
 
             {(expressionMatched || currentQuestion.countsAsCompleted) && (
               <TouchableOpacity
