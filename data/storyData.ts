@@ -2,7 +2,7 @@
 // STORY CONTENT — "Whispers" (31 chapters)
 // =========================================================
 import { TIERS } from "../utils/lessonTiers";
-import { storyTierIndex } from "../utils/storyLevels";
+import { isStoryComingSoon, storyTierIndex } from "../utils/storyLevels";
 import { tagalogTermsByChapter } from "./Whispers_Tagalo_Terms_Chapters_2-31";
 import {
   DESHAWN_STORY_ID,
@@ -15,6 +15,7 @@ import {
   OLD_HOUSE_STORY_ID,
   OLD_HOUSE_STORY_TITLE,
   OLD_HOUSE_TAGALOG_TITLE,
+  OLD_HOUSE_WARAY_TITLE,
   oldHouseChapters,
 } from "./stories/oldHouse";
 import { kapampanganVocabularyByChapter } from "./story-practice/kapampangan";
@@ -2699,7 +2700,8 @@ type SharedStory = {
   id: string;
   title: string;
   byDialectTitle?: Partial<Record<StoryDialect, string>>;
-  // Dialects that list this story. Omitted = all of them.
+  // Dialects that list this story. Omitted = all of them. The others show it
+  // as coming soon until its text exists (getComingSoonStories).
   dialects?: StoryDialect[];
   chapterIds: number[];
 };
@@ -2721,6 +2723,7 @@ const sharedStories: SharedStory[] = [
     byDialectTitle: {
       tagalog: OLD_HOUSE_TAGALOG_TITLE,
       kapampangan: OLD_HOUSE_KAPAMPANGAN_TITLE,
+      waray: OLD_HOUSE_WARAY_TITLE,
     },
     dialects: OLD_HOUSE_DIALECTS,
     chapterIds: oldHouseChapters.map((chapter) => chapter.id),
@@ -2740,6 +2743,20 @@ export function getStoriesForDialect(dialect: StoryDialect): Story[] {
       chapters: story.chapterIds
         .map((id) => chapters.find((chapter) => chapter.id === id))
         .filter((chapter): chapter is StoryChapter => chapter !== undefined),
+    }));
+}
+
+// Stories with no text in this dialect yet. They aren't in getStoriesForDialect,
+// so nothing can open them or wait on them.
+export function getComingSoonStories(
+  dialect: StoryDialect,
+): { id: string; title: string; tierIndex: number }[] {
+  return sharedStories
+    .filter((story) => isStoryComingSoon(story.dialects, dialect))
+    .map((story) => ({
+      id: story.id,
+      title: story.title,
+      tierIndex: storyTierIndex(story.id),
     }));
 }
 

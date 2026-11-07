@@ -15,11 +15,14 @@ import {
   kapampanganSentences,
   tagalogSentences,
 } from "../stories/oldHouseText.ts";
+import { OLD_HOUSE_WARAY } from "../stories/oldHouseWaray.ts";
 import {
   buildOldHouseQuestions,
+  OLD_HOUSE_DIALECTS,
   OLD_HOUSE_REQUIRED_CORRECT,
   oldHousePractice,
   oldHouseStoryPracticeChapters,
+  type OldHouseDialect,
 } from "./oldHouse.ts";
 
 // Run with: npm test
@@ -27,7 +30,11 @@ import {
 const LANGUAGES = [
   { key: "tagalog", text: tagalogSentences },
   { key: "kapampangan", text: kapampanganSentences },
-] as const;
+  // Every check below covers Waray too, once its text is imported.
+  ...(OLD_HOUSE_WARAY
+    ? [{ key: "waray", text: OLD_HOUSE_WARAY.sentences }]
+    : []),
+] as { key: OldHouseDialect; text: string[][] }[];
 
 const EXPECTED_LABELS = [
   "🃏 Match Cards",
@@ -48,13 +55,19 @@ describe("Old House story text", () => {
     englishSentences.forEach((english, chapter) => {
       assert.equal(tagalogSentences[chapter].length, english.length);
       assert.equal(kapampanganSentences[chapter].length, english.length);
+      if (OLD_HOUSE_WARAY) {
+        assert.equal(OLD_HOUSE_WARAY.sentences[chapter].length, english.length);
+      }
     });
   });
 });
 
 describe("Old House practice", () => {
   test("one entry per chapter and per language", () => {
-    assert.equal(oldHouseStoryPracticeChapters.length, 48);
+    assert.equal(
+      oldHouseStoryPracticeChapters.length,
+      24 * OLD_HOUSE_DIALECTS.length,
+    );
     for (const entry of oldHouseStoryPracticeChapters) {
       assert.equal(
         entry.lessonId,
@@ -127,7 +140,7 @@ describe("Old House practice", () => {
   test("no word repeats within a chapter", () => {
     for (const practice of oldHousePractice) {
       assert.equal(practice.words.length, 9);
-      for (const key of ["tagalog", "kapampangan", "english"] as const) {
+      for (const key of [...LANGUAGES.map((l) => l.key), "english" as const]) {
         const words = practice.words.map((word) => word[key].toLowerCase());
         assert.equal(
           new Set(words).size,

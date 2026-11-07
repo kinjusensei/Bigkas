@@ -1,3 +1,4 @@
+import { OLD_HOUSE_WARAY } from "../stories/oldHouseWaray.ts";
 import type { StoryDialect } from "../storyData";
 import type { ExpectedPracticeExpression } from "../../types/practice";
 import type { StoryPracticeChapter, StoryPracticeQuestion } from "./types";
@@ -7,7 +8,7 @@ import type { StoryPracticeChapter, StoryPracticeQuestion } from "./types";
 //   Q1-4  Match Cards   Q5  Speak It    Q6  Translate    Q7  Fill It In
 //   Q8    Translate     Q9  Fill It In  Q10 Show It
 //
-// Each chapter has one list of 9 words, in question order. Both languages
+// Each chapter has one list of 9 words, in question order. All languages
 // share the English meaning, accepted answers and distractors; only the
 // target word differs. `sentence` is the index of the aligned sentence in
 // the chapter (data/stories/oldHouseText.ts) that the word and its meaning
@@ -16,17 +17,26 @@ import type { StoryPracticeChapter, StoryPracticeQuestion } from "./types";
 // To change an accepted answer, edit acceptedAnswers below. Matching ignores
 // case, spaces and punctuation.
 //
-// No value imports: the tests run this file directly with node.
+// Waray has no text yet. It comes from data/stories/oldHouseWaray.ts, written
+// by scripts/import-old-house-waray.mjs (format: docs/old-house-waray-format.md).
+// Importing it lists the story in Waray: nothing here needs editing.
+//
+// Value imports need the .ts extension: the tests run this file directly with
+// node.
 
-export const OLD_HOUSE_DIALECTS: StoryDialect[] = ["tagalog", "kapampangan"];
+export const OLD_HOUSE_DIALECTS: StoryDialect[] = OLD_HOUSE_WARAY
+  ? ["tagalog", "kapampangan", "waray"]
+  : ["tagalog", "kapampangan"];
 
-export type OldHouseDialect = "tagalog" | "kapampangan";
+export type OldHouseDialect = "tagalog" | "kapampangan" | "waray";
 
 export type OldHouseWord = {
   sentence: number;
   english: string;
   tagalog: string;
   kapampangan: string;
+  // Empty until the Waray text is imported.
+  waray: string;
   acceptedAnswers: string[];
   distractors: string[];
 };
@@ -40,7 +50,11 @@ export type OldHouseChapterPractice = {
   };
 };
 
-export const oldHousePractice: OldHouseChapterPractice[] = [
+type WrittenPractice = Omit<OldHouseChapterPractice, "words"> & {
+  words: Omit<OldHouseWord, "waray">[];
+};
+
+const writtenPractice: WrittenPractice[] = [
   {
     chapter: 1,
     showIt: {
@@ -1986,6 +2000,16 @@ export const oldHousePractice: OldHouseChapterPractice[] = [
     ],
   },
 ];
+
+export const oldHousePractice: OldHouseChapterPractice[] = writtenPractice.map(
+  (practice, chapter) => ({
+    ...practice,
+    words: practice.words.map((word, index) => ({
+      ...word,
+      waray: OLD_HOUSE_WARAY?.words[chapter][index] ?? "",
+    })),
+  }),
+);
 
 const capitalize = (value: string) =>
   value.charAt(0).toUpperCase() + value.slice(1);

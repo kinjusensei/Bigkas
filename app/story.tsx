@@ -18,11 +18,16 @@ import LevelSelector, {
   LevelCardState,
 } from "../components/lessons/LevelSelector";
 import LockedLevelPanel from "../components/lessons/LockedLevelPanel";
-import { getStoriesForDialect, Story, StoryDialect } from "../data/storyData";
+import {
+  getComingSoonStories,
+  getStoriesForDialect,
+  Story,
+  StoryDialect,
+} from "../data/storyData";
 import { useActiveDialect } from "../hooks/useActiveDialect";
 import { getStoryProgress, useStoryProgress } from "../hooks/useStoryProgress";
 import { tierLessonIds, TIERS } from "../utils/lessonTiers";
-import { highestOpenLevel } from "../utils/storyLevels";
+import { highestOpenLevel, storyLevelContent } from "../utils/storyLevels";
 import StoryHeader, { STORY_COLORS } from "./components/Story/StoryHeader";
 
 // STORY FLOW: Story list (this screen) → Chapters
@@ -92,6 +97,10 @@ export default function StoryScreen() {
     () => getStoriesForDialect(selectedDialect),
     [selectedDialect],
   );
+  const comingSoonStories = useMemo(
+    () => getComingSoonStories(selectedDialect),
+    [selectedDialect],
+  );
   const {
     loading: progressLoading,
     isLessonComplete,
@@ -105,6 +114,10 @@ export default function StoryScreen() {
   const levelStates: LevelCardState[] = TIERS.map((_, index) => {
     const inLevel = stories.filter((story) => story.tierIndex === index);
     const chapters = inLevel.flatMap((story) => story.chapters);
+    const content = storyLevelContent(
+      inLevel.length,
+      comingSoonStories.filter((story) => story.tierIndex === index).length,
+    );
     const unlocked =
       !loading &&
       (isStoryLevelOpen(selectedDialect, index) ||
@@ -116,7 +129,12 @@ export default function StoryScreen() {
         : chapters.filter((chapter) => isLessonComplete(chapter.lessonId))
             .length,
       total: chapters.length,
-      status: inLevel.length === 0 ? "No stories" : undefined,
+      status:
+        content === "coming-soon"
+          ? "Coming soon"
+          : content === "empty"
+            ? "No stories"
+            : undefined,
     };
   });
   const selectedLevel =
@@ -134,6 +152,9 @@ export default function StoryScreen() {
             story.tierIndex === selectedLevel &&
             isStoryOpen(story, selectedDialect),
         );
+  const levelComingSoon = comingSoonStories.filter(
+    (story) => story.tierIndex === selectedLevel,
+  );
   const dialectLabel =
     DIALECTS.find((item) => item.key === selectedDialect)?.label ?? "Tagalog";
 
@@ -344,6 +365,18 @@ export default function StoryScreen() {
                     ).map(isLessonComplete)}
                     onGoToPrevious={handleGoToPreviousLessons}
                   />
+                ) : levelComingSoon.length > 0 ? (
+                  <View style={styles.emptyBox}>
+                    <Ionicons name="time-outline" size={28} color={C.primary} />
+                    <Text style={styles.emptyTitle} accessibilityRole="header">
+                      {dialectLabel} version coming soon
+                    </Text>
+                    <Text style={styles.comingSoonText}>
+                      {levelComingSoon.map((story) => story.title).join(", ")}{" "}
+                      is still being translated into {dialectLabel}. You don&apos;t
+                      need it to move on to the next level.
+                    </Text>
+                  </View>
                 ) : (
                   <View style={styles.emptyBox}>
                     <Ionicons name="book-outline" size={28} color={C.primary} />

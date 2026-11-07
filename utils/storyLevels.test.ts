@@ -11,10 +11,14 @@ import {
 import {
   canOpenStory,
   highestOpenLevel,
+  isStoryComingSoon,
   isStoryLevelOpen,
   STORY_TIER_INDEX,
+  storyLevelContent,
   storyTierIndex,
 } from "./storyLevels.ts";
+import { OLD_HOUSE_WARAY } from "../data/stories/oldHouseWaray.ts";
+import { OLD_HOUSE_DIALECTS } from "../data/story-practice/oldHouse.ts";
 
 const levelName = (storyId: string) => TIERS[storyTierIndex(storyId)].name;
 
@@ -86,6 +90,65 @@ describe("which levels are open", () => {
 
   test("Waray has no locks while its lessons have no content", () => {
     assert.deepEqual(openLevels("waray", []), [true, true, true]);
+  });
+});
+
+describe("a story with no Waray text yet", () => {
+  const easy = (language: TierLanguage) => tierLessonIds(language, 0);
+  const intermediate = (language: TierLanguage) => tierLessonIds(language, 1);
+
+  test("Old House is listed in Waray only once its text is imported", () => {
+    assert.equal(OLD_HOUSE_DIALECTS.includes("waray"), OLD_HOUSE_WARAY !== null);
+    assert.equal(
+      isStoryComingSoon(OLD_HOUSE_DIALECTS, "waray"),
+      OLD_HOUSE_WARAY === null,
+    );
+    assert.equal(isStoryComingSoon(OLD_HOUSE_DIALECTS, "tagalog"), false);
+    assert.equal(isStoryComingSoon(OLD_HOUSE_DIALECTS, "kapampangan"), false);
+  });
+
+  test("a story without a language list is never coming soon", () => {
+    assert.equal(isStoryComingSoon(undefined, "waray"), false);
+  });
+
+  test("the level shows coming soon, not an empty list", () => {
+    assert.equal(storyLevelContent(0, 1), "coming-soon");
+    assert.equal(storyLevelContent(0, 0), "empty");
+    assert.equal(storyLevelContent(1, 1), "stories");
+    assert.equal(storyLevelContent(1, 0), "stories");
+  });
+
+  test("Waray Hard is open with the Intermediate story unread", () => {
+    assert.equal(openLevels("waray", [])[2], true);
+  });
+
+  test("the Story page can still open on Waray Hard", () => {
+    const states = openLevels("waray", []).map((unlocked) => ({ unlocked }));
+    assert.equal(highestOpenLevel(states), 2);
+  });
+
+  // For when Waray leaves LANGUAGES_WITHOUT_LESSON_PATH: the lesson rule it
+  // moves to asks only about lessons, so no story can hold Hard back.
+  test("the level rule asks about lessons, never story chapters", () => {
+    const asked: string[] = [];
+    const passed = [...easy("waray"), ...intermediate("waray")];
+    const open = isTierUnlocked("waray", 2, (lessonId) => {
+      asked.push(lessonId);
+      return passed.includes(lessonId);
+    });
+    assert.equal(open, true);
+    assert.ok(asked.length > 0);
+    for (const lessonId of asked) assert.match(lessonId, /^waray_\d+$/);
+  });
+
+  test("the server rule matches: Waray isn't gated, Hard checks lessons only", () => {
+    const sql = readFileSync("sql/story_levels.sql", "utf8");
+    assert.match(sql, /if v_tier = 0 or v_language = 'waray' then\s+return new;/);
+    assert.match(
+      sql,
+      /story_lesson_passed_by\(new\.user_id, v_language \|\| '_' \|\| n\)/,
+    );
+    assert.equal(sql.match(/story_lesson_passed_by\(new\./g)?.length, 1);
   });
 });
 
