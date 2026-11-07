@@ -1,7 +1,8 @@
 import type { StoryPracticeChapter, StoryPracticeQuestion } from "./types";
 
 // Source: app/Tagalog questionare.pdf. Draft equivalents are preserved exactly.
-// Chapters 3–6 remain unavailable because their PDF entries omit meanings/draft equivalents.
+// Chapters 3–6: the PDF has no draft equivalents for them, so they use the English
+// meanings its items give (see the note above each one).
 // FER items are observational because the PDF does not provide expected labels.
 
 const chapter01Questions: StoryPracticeQuestion[] = [
@@ -129,6 +130,274 @@ const chapter02Questions: StoryPracticeQuestion[] = [
     type: "expression",
     prompt:
       'Show the facial expression associated with "padlock". The detected expression is recorded for review.',
+  },
+];
+
+// Chapter 3: the PDF gives each word's English meaning but no Tagalog draft
+// equivalent, so the cards and fill-ins ask for the English meaning.
+const chapter03Questions: StoryPracticeQuestion[] = [
+  {
+    id: 1,
+    type: "card_match",
+    word: "reputasyon",
+    correctMeaning: "reputation",
+    options: ["reputation", "contempt", "charity", "volunteer"],
+  },
+  {
+    id: 2,
+    type: "card_match",
+    word: "paghamak",
+    correctMeaning: "contempt",
+    options: ["reputation", "contempt", "charity", "volunteer"],
+  },
+  {
+    id: 3,
+    type: "card_match",
+    word: "kawanggawa",
+    correctMeaning: "charity",
+    options: ["reputation", "contempt", "charity", "volunteer"],
+  },
+  {
+    id: 4,
+    type: "card_match",
+    word: "boluntaryo",
+    correctMeaning: "volunteer",
+    options: ["reputation", "contempt", "charity", "volunteer"],
+  },
+  { id: 5, type: "speak", word: "reputasyon", micOptional: true },
+  {
+    id: 6,
+    type: "multiple_choice",
+    word: 'What does "paghamak" mean?',
+    correctMeaning: "contempt",
+    options: ["contempt", "charity", "volunteer", "reputation"],
+  },
+  {
+    id: 7,
+    type: "fill_blank",
+    meaning: 'The English meaning of "kawanggawa"',
+    correctWord: "charity",
+  },
+  {
+    id: 8,
+    type: "multiple_choice",
+    word: 'Which Tagalog word means "volunteer"?',
+    correctMeaning: "boluntaryo",
+    options: ["reputasyon", "paghamak", "boluntaryo", "kawanggawa"],
+  },
+  {
+    id: 9,
+    type: "fill_blank",
+    meaning: 'The English meaning of "reputasyon"',
+    correctWord: "reputation",
+  },
+  {
+    id: 10,
+    type: "expression",
+    prompt:
+      'Show the facial expression associated with "paghamak". The detected expression is recorded for review.',
+    countsAsCompleted: true,
+  },
+];
+
+// Chapter 4: the PDF gives each word's English meaning but no Tagalog draft
+// equivalent, so the cards and fill-ins ask for the English meaning.
+const chapter04Questions: StoryPracticeQuestion[] = [
+  {
+    id: 1,
+    type: "card_match",
+    word: "bulong",
+    correctMeaning: "whisper",
+    options: ["whisper", "debt", "fear", "kitchen"],
+  },
+  {
+    id: 2,
+    type: "card_match",
+    word: "utang",
+    correctMeaning: "debt",
+    options: ["whisper", "debt", "fear", "kitchen"],
+  },
+  {
+    id: 3,
+    type: "card_match",
+    word: "takot",
+    correctMeaning: "fear",
+    options: ["whisper", "debt", "fear", "kitchen"],
+  },
+  {
+    id: 4,
+    type: "card_match",
+    word: "kusina",
+    correctMeaning: "kitchen",
+    options: ["whisper", "debt", "fear", "kitchen"],
+  },
+  { id: 5, type: "speak", word: "bulong", micOptional: true },
+  {
+    id: 6,
+    type: "multiple_choice",
+    word: 'What does "utang" mean?',
+    correctMeaning: "debt",
+    options: ["debt", "fear", "kitchen", "whisper"],
+  },
+  {
+    id: 7,
+    type: "fill_blank",
+    meaning: 'The English meaning of "takot"',
+    correctWord: "fear",
+  },
+  {
+    id: 8,
+    type: "multiple_choice",
+    word: 'Which Tagalog word means "kitchen"?',
+    correctMeaning: "kusina",
+    options: ["bulong", "utang", "kusina", "takot"],
+  },
+  {
+    id: 9,
+    type: "fill_blank",
+    meaning: 'The English meaning of "bulong"',
+    correctWord: "whisper",
+  },
+  {
+    id: 10,
+    type: "expression",
+    prompt:
+      'Show the facial expression associated with "utang". The detected expression is recorded for review.',
+    countsAsCompleted: true,
+  },
+];
+
+// Chapter 5: the PDF gives each word's English meaning but no Tagalog draft
+// equivalent, so the cards and fill-ins ask for the English meaning.
+const chapter05Questions: StoryPracticeQuestion[] = [
+  {
+    id: 1,
+    type: "card_match",
+    word: "talaarawan",
+    correctMeaning: "journal",
+    options: ["journal", "handwriting", "evidence", "mirror"],
+  },
+  {
+    id: 2,
+    type: "card_match",
+    word: "sulatan-kamay",
+    correctMeaning: "handwriting",
+    options: ["journal", "handwriting", "evidence", "mirror"],
+  },
+  {
+    id: 3,
+    type: "card_match",
+    word: "ebidensya",
+    correctMeaning: "evidence",
+    options: ["journal", "handwriting", "evidence", "mirror"],
+  },
+  {
+    id: 4,
+    type: "card_match",
+    word: "salamin",
+    correctMeaning: "mirror",
+    options: ["journal", "handwriting", "evidence", "mirror"],
+  },
+  { id: 5, type: "speak", word: "talaarawan", micOptional: true },
+  {
+    id: 6,
+    type: "multiple_choice",
+    word: 'What does "sulatan-kamay" mean?',
+    correctMeaning: "handwriting",
+    options: ["handwriting", "evidence", "mirror", "journal"],
+  },
+  {
+    id: 7,
+    type: "fill_blank",
+    meaning: 'The English meaning of "ebidensya"',
+    correctWord: "evidence",
+  },
+  {
+    id: 8,
+    type: "multiple_choice",
+    word: 'Which Tagalog word means "mirror"?',
+    correctMeaning: "salamin",
+    options: ["talaarawan", "sulatan-kamay", "salamin", "ebidensya"],
+  },
+  {
+    id: 9,
+    type: "fill_blank",
+    meaning: 'The English meaning of "talaarawan"',
+    correctWord: "journal",
+  },
+  {
+    id: 10,
+    type: "expression",
+    prompt:
+      'Show the facial expression associated with "sulatan-kamay". The detected expression is recorded for review.',
+    countsAsCompleted: true,
+  },
+];
+
+// Chapter 6: the PDF gives each word's English meaning but no Tagalog draft
+// equivalent, so the cards and fill-ins ask for the English meaning.
+const chapter06Questions: StoryPracticeQuestion[] = [
+  {
+    id: 1,
+    type: "card_match",
+    word: "hapunan",
+    correctMeaning: "dinner",
+    options: ["dinner", "guest", "wine", "confusion"],
+  },
+  {
+    id: 2,
+    type: "card_match",
+    word: "panauhin",
+    correctMeaning: "guest",
+    options: ["dinner", "guest", "wine", "confusion"],
+  },
+  {
+    id: 3,
+    type: "card_match",
+    word: "alak",
+    correctMeaning: "wine",
+    options: ["dinner", "guest", "wine", "confusion"],
+  },
+  {
+    id: 4,
+    type: "card_match",
+    word: "kalituhan",
+    correctMeaning: "confusion",
+    options: ["dinner", "guest", "wine", "confusion"],
+  },
+  { id: 5, type: "speak", word: "hapunan", micOptional: true },
+  {
+    id: 6,
+    type: "multiple_choice",
+    word: 'What does "panauhin" mean?',
+    correctMeaning: "guest",
+    options: ["guest", "wine", "confusion", "dinner"],
+  },
+  {
+    id: 7,
+    type: "fill_blank",
+    meaning: 'The English meaning of "alak"',
+    correctWord: "wine",
+  },
+  {
+    id: 8,
+    type: "multiple_choice",
+    word: 'Which Tagalog word means "confusion"?',
+    correctMeaning: "kalituhan",
+    options: ["hapunan", "panauhin", "kalituhan", "alak"],
+  },
+  {
+    id: 9,
+    type: "fill_blank",
+    meaning: 'The English meaning of "hapunan"',
+    correctWord: "dinner",
+  },
+  {
+    id: 10,
+    type: "expression",
+    prompt:
+      'Show the facial expression associated with "panauhin". The detected expression is recorded for review.',
+    countsAsCompleted: true,
   },
 ];
 
@@ -1749,25 +2018,25 @@ export const tagalogStoryPracticeChapters: StoryPracticeChapter[] = [
     dialect: "tagalog",
     chapter: 3,
     lessonId: "story_tagalog_3",
-    // TODO: the PDF does not provide enough source data for this chapter.
+    questions: chapter03Questions,
   },
   {
     dialect: "tagalog",
     chapter: 4,
     lessonId: "story_tagalog_4",
-    // TODO: the PDF does not provide enough source data for this chapter.
+    questions: chapter04Questions,
   },
   {
     dialect: "tagalog",
     chapter: 5,
     lessonId: "story_tagalog_5",
-    // TODO: the PDF does not provide enough source data for this chapter.
+    questions: chapter05Questions,
   },
   {
     dialect: "tagalog",
     chapter: 6,
     lessonId: "story_tagalog_6",
-    // TODO: the PDF does not provide enough source data for this chapter.
+    questions: chapter06Questions,
   },
   {
     dialect: "tagalog",
