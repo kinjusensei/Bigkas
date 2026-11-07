@@ -17,9 +17,9 @@ import type { StoryPracticeChapter, StoryPracticeQuestion } from "./types";
 // To change an accepted answer, edit acceptedAnswers below. Matching ignores
 // case, spaces and punctuation.
 //
-// Waray has no text yet. It comes from data/stories/oldHouseWaray.ts, written
-// by scripts/import-old-house-waray.mjs (format: docs/old-house-waray-format.md).
-// Importing it lists the story in Waray: nothing here needs editing.
+// Waray comes from data/stories/oldHouseWaray.ts, written by
+// scripts/import-old-house-waray.mjs (format: docs/old-house-waray-format.md).
+// Its words are a draft for a speaker to check: docs/old-house-waray-review.md.
 //
 // Value imports need the .ts extension: the tests run this file directly with
 // node.
@@ -35,7 +35,7 @@ export type OldHouseWord = {
   english: string;
   tagalog: string;
   kapampangan: string;
-  // Empty until the Waray text is imported.
+  // Empty if the Waray text is removed.
   waray: string;
   acceptedAnswers: string[];
   distractors: string[];

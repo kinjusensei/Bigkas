@@ -70,11 +70,16 @@ export function decodeFile(buffer) {
     buffer[0] === 0xff && buffer[1] === 0xfe
       ? buffer.toString("utf16le")
       : buffer.toString("utf8");
-  return text.replace(/^﻿/, "");
+  return text.replace(/^\uFEFF/, "");
 }
 
 const clean = (value) =>
-  value.replace(/ /g, " ").replace(/\s+/g, " ").trim().normalize("NFC");
+  value
+    .replace(/[\u200B\uFEFF]/g, "")
+    .replace(/\u00A0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .normalize("NFC");
 
 const ENTRY = /^(W?)(\d+)\.(\d+) WAR:(.*)$/;
 const IGNORED = /^(#|===|---|TITLE EN:|CHAPTER EN:|W?\d+\.\d+ EN:)/;
@@ -184,7 +189,7 @@ export function checkFilledFile(parsed, source = defaultSource) {
     const seen = new Set();
     const highlights = findPracticeHighlights(
       chapterText,
-      chapterWords.map((word) => word || "￿"),
+      chapterWords.map((word) => word || "\uFFFF"),
     );
     practice.words.forEach((word, index) => {
       const value = chapterWords[index];

@@ -1,8 +1,10 @@
-# Waray translation of "The Secret Behind the Old House": what's needed
+# Waray translation of "The Secret Behind the Old House": the file format
 
-Send the speaker **`docs/old-house-waray-template.txt`**. Every English sentence
-and practice word is already in it, numbered. They fill in the blank `WAR:`
-lines and send it back as plain text (`.txt`, UTF-8).
+The translation is imported: `docs/old-house-waray-filled.txt` holds it, and
+`docs/old-house-waray-review.md` lists what a speaker should check. This guide is
+for correcting that file, or for filling in a new copy of
+**`docs/old-house-waray-template.txt`**, where every English sentence and practice
+word is already numbered and only the `WAR:` lines are blank.
 
 Total: 2 header lines, 391 sentences in 24 chapters, and 216 practice words
 (9 per chapter).
@@ -42,9 +44,6 @@ W1.1 WAR: <the Waray word, spelled exactly as in sentence 1.6>
 5. **No word twice in a chapter.** Each of a chapter's 9 words must be different.
 6. **Keep names as they are:** Mia, Ethan, Lily, Mrs. Clara, Robert.
 
-Please also tell us the speaker's name, so we can record that a person checked
-it. The Deshawn Waray text is still an unreviewed draft, so this matters.
-
 ## What the app does with each part
 
 | Part | Used for |
@@ -59,9 +58,8 @@ and Kapampangan, so the speaker doesn't need to write any questions.
 
 ## A PDF won't work as it is
 
-The English, Tagalog and Kapampangan PDFs are paragraphs, and the importer needs
-sentences lined up by number. `docs/The Secret behind the old house - waray.pdf`
-can't be used at all: **its text is the English story, word for word.**
+The story PDFs are paragraphs, and the importer needs sentences lined up by
+number, so a new PDF has to be split into the template first.
 
 ## Importing it
 
@@ -87,6 +85,5 @@ npm test
 npx tsc --noEmit
 ```
 
-`--write` only changes `data/stories/oldHouseWaray.ts`. That file lists the story
-in Waray and removes the coming-soon state, with no other edits. It reaches
-phones through a new EAS `preview` build.
+`--write` only changes `data/stories/oldHouseWaray.ts`. It reaches phones through a
+new EAS `preview` build.

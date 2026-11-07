@@ -5,6 +5,7 @@ import path from "node:path";
 import { describe, test } from "node:test";
 
 import { englishSentences } from "../data/stories/oldHouseText.ts";
+import { OLD_HOUSE_WARAY } from "../data/stories/oldHouseWaray.ts";
 import { oldHousePractice } from "../data/story-practice/oldHouse.ts";
 import {
   checkFilledFile,
@@ -64,6 +65,20 @@ describe("Waray template", () => {
     const errors = errorsFor(renderTemplate());
     assert.ok(errors.includes("TITLE WAR is blank"));
     assert.ok(errors.includes("1.1: blank"));
+  });
+});
+
+describe("the imported Waray text", () => {
+  const parsed = parseFilledFile(
+    fs.readFileSync("docs/old-house-waray-filled.txt", "utf8"),
+  );
+
+  test("the filled file passes every check", () => {
+    assert.deepEqual(checkFilledFile(parsed).errors, []);
+  });
+
+  test("the app has what the filled file says", () => {
+    assert.deepEqual(OLD_HOUSE_WARAY, checkFilledFile(parsed).text);
   });
 });
 
@@ -150,12 +165,12 @@ describe("Waray import", () => {
   });
 
   test("reads Notepad's UTF-16 and UTF-8 with a byte order mark", () => {
-    assert.equal(decodeFile(Buffer.from("﻿ñ", "utf16le")), "ñ");
-    assert.equal(decodeFile(Buffer.from("﻿ñ", "utf8")), "ñ");
+    assert.equal(decodeFile(Buffer.from("\uFEFFñ", "utf16le")), "ñ");
+    assert.equal(decodeFile(Buffer.from("\uFEFFñ", "utf8")), "ñ");
   });
 
-  test("tidies stray spaces and no-break spaces", () => {
-    const parsed = parseFilledFile("1.1 WAR:   Fake  text  ");
+  test("tidies stray spaces, no-break and zero-width spaces", () => {
+    const parsed = parseFilledFile("1.1 WAR:   Fake\u00A0 te\u200Bxt  ");
     assert.equal(parsed.sentences.get("1.1"), "Fake text");
   });
 });

@@ -1,0 +1,1342 @@
+# The Secret Behind the Old House: Waray translation
+# Write only after WAR: on each line. Keep each sentence on one line.
+# Instructions: docs/old-house-waray-format.md
+
+TITLE EN: The Secret Behind the Old House
+TITLE WAR: An Sekreto ha Luyo han Daan nga Balay
+CHAPTER EN: Chapter
+CHAPTER WAR: Kapitulo
+
+=== CHAPTER 1 ===
+
+1.1 EN: Mia and her family moved to a small town during the summer.
+1.1 WAR: Bumalhin hi Mia ngan an iya pamilya ha usa nga gutiay nga bungto han panahon han mahuraw.
+1.2 EN: Her father had found a new job there.
+1.2 WAR: Nakabiling hin bag-o nga trabaho an iya tatay didto.
+1.3 EN: Her mother was happy because the town was peaceful.
+1.3 WAR: Nalipay an iya nanay kay malinawon an bungto.
+1.4 EN: However, Mia did not feel the same way.
+1.4 WAR: Pero diri sugad hito an inaabat ni Mia.
+1.5 EN: She missed her old friends and her previous school.
+1.5 WAR: Nahidlaw hiya ha iya mga kasangkayan ngan ha iya anay eskelahan.
+1.6 EN: Their new house was big, but some parts were old.
+1.6 WAR: Daku an ira bag-o nga balay, pero may-ada mga bahin ito nga daan na.
+1.7 EN: Mia spent most of her time unpacking her things.
+1.7 WAR: Kadam-an han iya oras gin-gamit ni Mia ha pag-impake ngan pagbutang han iya mga gamit ha husto nga lugar.
+1.8 EN: While looking through her bedroom window, she noticed an old house across the street.
+1.8 WAR: Samtang nagkikita hiya ha gawas tikang ha bintana han iya kwarto, may nakita hiya nga daan nga balay ha tabok han kalsada.
+1.9 EN: The house had broken windows and a rusty gate.
+1.9 WAR: Guba an mga bintana hito ngan ginbabaga nga trangkahan.
+1.10 EN: Tall plants covered most of its front yard.
+1.10 WAR: Natabonan hin higtaas nga mga tanom an haros bug-os nga atubangan han balay.
+1.11 EN: Nobody seemed to live there.
+1.11 WAR: Baga hin waray na ukoy didto.
+1.12 EN: Mia wondered why the house had been abandoned.
+1.12 WAR: Naghunahuna hi Mia kon kay ano nga ginbayaan na la ito nga balay.
+1.13 EN: She asked her mother about it during dinner.
+1.13 WAR: Nagpakiana hiya ha iya nanay mahitungod hito samtang nangangaon hira hin pangiklop.
+1.14 EN: Her mother said she did not know anything about the place.
+1.14 WAR: Nasiring an iya nanay nga waray hiya nahihibaroan mahitungod hito nga lugar.
+1.15 EN: That night, Mia kept thinking about the strange house.
+1.15 WAR: Hito nga gab-i, padayon nga nahunahuna ni Mia an urusahon nga balay.
+1.16 EN: She felt that there was something unusual about it.
+1.16 WAR: May-ada hiya inaabat nga baga hin may-ada diri ordinaryo nga nahitatabo didto.
+
+--- CHAPTER 1 WORDS ---
+W1.1 EN: house (in sentence 1.6)
+W1.1 WAR: balay
+W1.2 EN: town (in sentence 1.1)
+W1.2 WAR: bungto
+W1.3 EN: job (in sentence 1.2)
+W1.3 WAR: trabaho
+W1.4 EN: rusty (in sentence 1.9)
+W1.4 WAR: ginbabaga
+W1.5 EN: plants (in sentence 1.10)
+W1.5 WAR: tanom
+W1.6 EN: mother (in sentence 1.3)
+W1.6 WAR: nanay
+W1.7 EN: window (in sentence 1.9)
+W1.7 WAR: bintana
+W1.8 EN: place (in sentence 1.14)
+W1.8 WAR: lugar
+W1.9 EN: street (in sentence 1.8)
+W1.9 WAR: kalsada
+
+=== CHAPTER 2 ===
+
+2.1 EN: The next morning, Mia went outside to get some fresh air.
+2.1 WAR: Han pagkabuwas nga aga, ginawas hi Mia basi makagginhawa hin presko nga hangin.
+2.2 EN: She saw an old woman watering plants beside her house.
+2.2 WAR: May nakita-an hiya nga lagas nga babaye nga nagsasaribo han mga tanom ha sapit han iya balay.
+2.3 EN: The woman smiled and greeted her warmly.
+2.3 WAR: Nahiyon an babaye ngan malipayon nga nangumusta ha iya.
+2.4 EN: Mia introduced herself and explained that her family had just moved into the neighborhood.
+2.4 WAR: Nagpakilala hi Mia ngan iginsumat nga bag-o pa la nga binalhin an iya pamilya ha ira lugar.
+2.5 EN: The woman introduced herself as Mrs. Clara.
+2.5 WAR: Nagpakilala liwat an babaye nga hi Mrs. Clara an iya ngaran.
+2.6 EN: They talked about the town and its friendly people.
+2.6 WAR: Nag-istorya hira mahitungod han bungto ngan han mag-upay nga mga tawo nga naukoy didto.
+2.7 EN: After a while, Mia pointed toward the old house across the street.
+2.7 WAR: Paglabay hin pipira ka minuto, gintudlok ni Mia an daan nga balay ha tabok han kalsada.
+2.8 EN: She asked Mrs. Clara if anyone lived there.
+2.8 WAR: Nagpakiana hiya kan Mrs. Clara kon may-ada pa ba naukoy didto.
+2.9 EN: The old woman suddenly stopped smiling.
+2.9 WAR: Tigda, nawara an hiyom han lagas nga babaye.
+2.10 EN: She looked at the house with a worried expression.
+2.10 WAR: Ginkita niya an balay nga may-ada kabaraka ha iya nawong.
+2.11 EN: She told Mia to stay away from the place.
+2.11 WAR: Ginsidngan niya hi Mia nga diri gud hiya maghirani hito nga lugar.
+2.12 EN: Mia asked why the house was dangerous.
+2.12 WAR: Nagpakiana hi Mia kon kay ano nga peligroso an balay.
+2.13 EN: Mrs. Clara only shook her head.
+2.13 WAR: Pero nag-uyog la han iya ulo hi Mrs. Clara.
+2.14 EN: Before returning inside, she gave Mia one last warning.
+2.14 WAR: Antes bumalik ha sulod han iya balay, may usa pa hiya nga pahimangno kan Mia.
+2.15 EN: She said that some secrets were better left alone.
+2.15 WAR: Nagsiring hiya nga may-ada mga sekreto nga mas maupay nga diri na la usisahon.
+2.16 EN: Mia watched her leave and became even more curious.
+2.16 WAR: Ginkita ni Mia an lagas nga babaye samtang nagtitikang hiya paggikan, mas nagtikadako lugod an iya pagka-interes.
+
+--- CHAPTER 2 WORDS ---
+W2.1 EN: woman (in sentence 2.2)
+W2.1 WAR: babaye
+W2.2 EN: secrets (in sentence 2.15)
+W2.2 WAR: sekreto
+W2.3 EN: neighborhood (in sentence 2.4)
+W2.3 WAR: lugar
+W2.4 EN: dangerous (in sentence 2.12)
+W2.4 WAR: peligroso
+W2.5 EN: warning (in sentence 2.14)
+W2.5 WAR: pahimangno
+W2.6 EN: smiling (in sentence 2.9)
+W2.6 WAR: hiyom
+W2.7 EN: inside (in sentence 2.14)
+W2.7 WAR: sulod
+W2.8 EN: town (in sentence 2.6)
+W2.8 WAR: bungto
+W2.9 EN: house (in sentence 2.12)
+W2.9 WAR: balay
+
+=== CHAPTER 3 ===
+
+3.1 EN: Mia's first day at her new school finally arrived.
+3.1 WAR: Inabot na ha kataposan an siyahan nga adlaw ni Mia ha iya bag-o nga eskwelahan.
+3.2 EN: She felt nervous because she did not know anyone.
+3.2 WAR: Nakulba hiya kay waray pa hiya kilala nga bisan hin-o didto.
+3.3 EN: Her teacher introduced her to the class and asked her to sit beside a boy named Ethan.
+3.3 WAR: Iginpakilala hiya han iya maestra ha bug-os nga klase ngan ginsidngan nga lumingkod ha sapit hin usa nga bata nga lalaki nga an ngaran Ethan.
+3.4 EN: Ethan was friendly and helped her find the correct classroom.
+3.4 WAR: Maupay makig-upod hi Ethan ngan ginbuligan niya hi Mia nga mabilngan an husto nga classrom.
+3.5 EN: During lunch, they talked about their hobbies and favorite subjects.
+3.5 WAR: Han oras na han paningudto, nag-istorya hira mahitungod han ira mga hilig ngan paborito nga mga asignatura.
+3.6 EN: Mia eventually mentioned the old house near her home.
+3.6 WAR: Ha urhi, nahisumat ni Mia an daan nga balay nga hirani ha ira urukyan.
+3.7 EN: Ethan immediately became interested in what she was saying.
+3.7 WAR: Nagin interesado dayon hi Ethan ha iya ginsiring.
+3.8 EN: He explained that a girl named Lily had disappeared twenty years ago.
+3.8 WAR: Iginsumat niya nga may-ada usa nga daragita nga an ngaran Lily nga nawara hin baynte na katuig.
+3.9 EN: Lily had lived in that same house with her family.
+3.9 WAR: Didto mismo hito nga balay naukoy hi Lily upod an iya pamilya.
+3.10 EN: Nobody knew exactly what had happened to her.
+3.10 WAR: Waray bisan hin-o nga maaram kon ano gud an nahitabo ha iya.
+3.11 EN: Some people believed that she had run away.
+3.11 WAR: May mga tawo nga natood nga lumayas hiya.
+3.12 EN: Others thought that she had been kidnapped.
+3.12 WAR: An iba naman naghuhunahuna nga may nagkidnao ha iya.
+3.13 EN: Ethan said the town still remembered the strange case.
+3.13 WAR: Siring ni Ethan, nahinumdom pa gihapon han mga tawo ha bungto an urusahon nga nahitabo.
+3.14 EN: Mia remembered Mrs. Clara's warning from the previous day.
+3.14 WAR: Nahinumdoman ni Mia an pahimangno ni Mrs. Clara ha naglabay nga adlaw.
+3.15 EN: She wondered if the old woman knew Lily personally.
+3.15 WAR: Naghunahuna hiya kon kilala ba han lagas nga babaye hi Lily hadto.
+3.16 EN: By the end of lunch, Mia wanted to discover the truth.
+3.16 WAR: Pag-abot han kataposan han paningudto, karuyag na gud ni Mia mahibaroan an kamatuoran.
+
+--- CHAPTER 3 WORDS ---
+W3.1 EN: school (in sentence 3.1)
+W3.1 WAR: eskwelahan
+W3.2 EN: teacher (in sentence 3.3)
+W3.2 WAR: maestra
+W3.3 EN: classroom (in sentence 3.4)
+W3.3 WAR: classrom
+W3.4 EN: case (in sentence 3.13)
+W3.4 WAR: nahitabo
+W3.5 EN: truth (in sentence 3.16)
+W3.5 WAR: kamatuoran
+W3.6 EN: nervous (in sentence 3.2)
+W3.6 WAR: nakulba
+W3.7 EN: family (in sentence 3.9)
+W3.7 WAR: pamilya
+W3.8 EN: subjects (in sentence 3.5)
+W3.8 WAR: asignatura
+W3.9 EN: years (in sentence 3.8)
+W3.9 WAR: katuig
+
+=== CHAPTER 4 ===
+
+4.1 EN: After school, Mia asked Ethan where he had learned about Lily.
+4.1 WAR: Katapos han klase, nagpakiana hi Mia kan Ethan kon diin niya nahibaroan an mahitungod kan Lily.
+4.2 EN: Ethan explained that his grandfather often told him stories about the town.
+4.2 WAR: Iginsaysay ni Ethan nga agsob mag-istorya ha iya an iya apoy hin mga istorya mahitungod han ira bungto.
+4.3 EN: His grandfather had known Lily when they were younger.
+4.3 WAR: Kilala han iya apoy hi Lily han bata pa hira.
+4.4 EN: According to him, Lily was a quiet girl who loved reading books.
+4.4 WAR: Sumala ha iya, hilumon nga bata hi Lily ngan naruruyag gud hiya magbasa hin mga libro.
+4.5 EN: She rarely talked about her family.
+4.5 WAR: Talagsa la hiya mag-istorya mahitungod han iya pamilya.
+4.6 EN: One day, she suddenly disappeared without saying goodbye to anyone.
+4.6 WAR: Usa ka adlaw, tigda na la nga nawara hiya nga waray man la manamilit ha bisan hin-o.
+4.7 EN: Her family moved away shortly after the incident.
+4.7 WAR: Waray pag-iha katapos hito nga panhitabo, binaya liwat ha bungto an iya pamilya.
+4.8 EN: The police searched the neighborhood but found very little evidence.
+4.8 WAR: Gin-usisa han kapulisan an bug-os nga lugar, pero gutiay la an ira nakit-an nga ebidensya.
+4.9 EN: Mia thought the story sounded suspicious.
+4.9 WAR: Para kan Mia, baga hin may-ada diri husto ha istorya.
+4.10 EN: She asked Ethan if he wanted to investigate the old house.
+4.10 WAR: Nagpakiana hiya kan Ethan kon karuyag ba niya nga usisahon nira an daan nga balay.
+4.11 EN: Ethan smiled because he enjoyed solving mysteries.
+4.11 WAR: Nahiyom hi Ethan kay naruruyag hiya magsulbad hin mga misteryo.
+4.12 EN: However, he reminded her that entering an abandoned building could be dangerous.
+4.12 WAR: Pero ginpahinumdom niya hi Mia nga peligroso an pagsulod ha usa nga balay nga maiha na nga ginbayaan.
+4.13 EN: Mia agreed that they should be careful.
+4.13 WAR: Inuyon hi Mia nga kinahanglan hira mag-ikmat.
+4.14 EN: They decided to visit the house the following afternoon.
+4.14 WAR: Nagdesisyon hira nga bisitahon an balay ha pagkasunod nga kulop.
+4.15 EN: Before going home, they exchanged phone numbers.
+4.15 WAR: Antes umuli, nagbayloay hira han ira mga numero han telepono.
+4.16 EN: Mia felt happy because she had finally made a friend.
+4.16 WAR: Malipayon hi Mia kay ha kataposan, may-ada na hiya bag-o nga sangkay.
+
+--- CHAPTER 4 WORDS ---
+W4.1 EN: grandfather (in sentence 4.2)
+W4.1 WAR: apoy
+W4.2 EN: books (in sentence 4.4)
+W4.2 WAR: libro
+W4.3 EN: police (in sentence 4.8)
+W4.3 WAR: kapulisan
+W4.4 EN: evidence (in sentence 4.8)
+W4.4 WAR: ebidensya
+W4.5 EN: mysteries (in sentence 4.11)
+W4.5 WAR: misteryo
+W4.6 EN: story (in sentence 4.9)
+W4.6 WAR: istorya
+W4.7 EN: phone (in sentence 4.15)
+W4.7 WAR: telepono
+W4.8 EN: careful (in sentence 4.13)
+W4.8 WAR: mag-ikmat
+W4.9 EN: friend (in sentence 4.16)
+W4.9 WAR: sangkay
+
+=== CHAPTER 5 ===
+
+5.1 EN: The following afternoon, Mia and Ethan met outside the old house.
+5.1 WAR: Han pagkasunod nga kulop, nagkita hira Mia ngan Ethan ha gawas han daan nga balay.
+5.2 EN: The sky was cloudy, and the wind moved the dry leaves across the road.
+5.2 WAR: Madulom an kalangitan ngan ginpapalid han hangin an mga uga nga dahon ha kalsada.
+5.3 EN: They stood near the rusty gate and looked at the building.
+5.3 WAR: Tinindog hira hirani ha kinakalawang nga ganghaan samtang ginkikita an balay.
+5.4 EN: Ethan tried pushing the gate, but it made a loud creaking sound.
+5.4 WAR: Gintestingan ni Ethan pag-abri han ganghaan, pero naggawas ito hin makusog nga tunog tungod han kalagas han mga parte hito.
+5.5 EN: Mia looked around to make sure nobody was watching them.
+5.5 WAR: Nagtan-aw hi Mia ha palibot basi masiguro nga waray tawo nga nagkikita ha ira.
+5.6 EN: They slowly walked through the overgrown garden.
+5.6 WAR: Hinay-hinay hira nga sinulod ha tanaman nga natabonan na hin magkalain-lain nga tanom.
+5.7 EN: The front door was slightly open, which surprised them.
+5.7 WAR: Nabigla hira han nakita nira nga gutiay la nga abrido an purtahan ha atubangan han balay.
+5.8 EN: Ethan pushed it gently with his hand.
+5.8 WAR: Hinay nga iginduso ito ni Ethan gamit an iya kamot.
+5.9 EN: The door opened, revealing a dark hallway.
+5.9 WAR: Naabri an purtahan ngan nagpakita an madulom nga pasilyo ha sulod.
+5.10 EN: They used their phone flashlights to see inside.
+5.10 WAR: Gin-gamit nira an suga han ira mga telepono basi makita an sulod han balay.
+5.11 EN: Dust covered the furniture and the wooden floor.
+5.11 WAR: Natabonan hin tapotapo an mga gamit ngan an salog nga kahoy.
+5.12 EN: Old family pictures hung crookedly on the walls.
+5.12 WAR: An mga daan nga litrato han pamilya nakasabit nga nakiling ha mga bungbong.
+5.13 EN: Mia noticed a broken clock near the staircase.
+5.13 WAR: May nakita hi Mia nga guba nga orasan hirani ha hagdan.
+5.14 EN: Suddenly, they heard a loud noise from the second floor.
+5.14 WAR: Kadam-an la, nakabati hira hin makusog nga aringasa tikang ha ikaduha nga andana.
+5.15 EN: Mia grabbed Ethan's arm and whispered that someone was upstairs.
+5.15 WAR: Ginkaptan ni Mia an butkon ni Ethan ngan hinay nga nagsiring nga may-ada tawo ha igbaw.
+5.16 EN: Ethan looked toward the staircase, wondering who else could be inside.
+5.16 WAR: Gintan-aw ni Ethan an hagdan, samtang naghuhunahuna kon hin-o pa an posible nga aada ha sulod han balay.
+
+--- CHAPTER 5 WORDS ---
+W5.1 EN: wind (in sentence 5.2)
+W5.1 WAR: hangin
+W5.2 EN: leaves (in sentence 5.2)
+W5.2 WAR: dahon
+W5.3 EN: garden (in sentence 5.6)
+W5.3 WAR: tanaman
+W5.4 EN: dust (in sentence 5.11)
+W5.4 WAR: tapotapo
+W5.5 EN: sky (in sentence 5.2)
+W5.5 WAR: kalangitan
+W5.6 EN: hallway (in sentence 5.9)
+W5.6 WAR: pasilyo
+W5.7 EN: door (in sentence 5.9)
+W5.7 WAR: purtahan
+W5.8 EN: staircase (in sentence 5.13)
+W5.8 WAR: hagdan
+W5.9 EN: hand (in sentence 5.8)
+W5.9 WAR: kamot
+
+=== CHAPTER 6 ===
+
+6.1 EN: Mia and Ethan stood silently near the bottom of the stairs.
+6.1 WAR: Waray magkiwa hira Mia ngan Ethan samtang natindog hirani ha ubos han hagdan.
+6.2 EN: They listened carefully, hoping to hear another sound.
+6.2 WAR: Namati hira hin maopay, kay naglalaom hira nga makabati utro hin tunog.
+6.3 EN: A few seconds later, they heard footsteps moving across the upper floor.
+6.3 WAR: Paglabay hin pipira ka segundo, nakabati hira hin mga pitad nga baga hin may naglalakat ha igbaw nga andana.
+6.4 EN: Ethan called out to ask if anyone was there.
+6.4 WAR: Nagtawag hi Ethan basi magpakiana kon may-ada ba tawo didto.
+6.5 EN: Nobody answered his question.
+6.5 WAR: Pero waray bisan hin-o nga bumaton.
+6.6 EN: Mia suggested that they leave before anything bad happened.
+6.6 WAR: Nagsiring hi Mia nga mas maupay kon bumaya na la hira antes may mahitabo nga maraot.
+6.7 EN: Ethan agreed, but he wanted to check the nearby hallway first.
+6.7 WAR: Inuyon hi Ethan, pero karuyag pa niya usisahon anay an pasilyo nga hirani ha ira.
+6.8 EN: They slowly climbed the stairs together.
+6.8 WAR: Magkaupod hira nga hinay-hinay nga sinaka ha hagdan.
+6.9 EN: Every step made the old wood creak beneath their feet.
+6.9 WAR: Ha kada pitad nira, nag-iingay an daan nga kahoy ha ilarom han ira mga tiil.
+6.10 EN: At the end of the hallway, they noticed a door moving slightly.
+6.10 WAR: Ha kataposan han pasilyo, may nakita hira nga purtahan nga hinay-hinay nga nagkikiwa.
+6.11 EN: Ethan pushed it open while Mia stood behind him.
+6.11 WAR: Ginduso ni Ethan an purtahan samtang natindog hi Mia ha iya luyo.
+6.12 EN: Inside was a small bedroom filled with dusty furniture.
+6.12 WAR: Ha sulod hito, may gutiay nga kwarto nga puno hin mga gamit nga natabonan hin tapotapo.
+6.13 EN: An old teddy bear rested on top of a wooden chair.
+6.13 WAR: May daan nga dulaan nga oso nga nakabutang ha bawbaw hin lingkoran nga kahoy.
+6.14 EN: Mia noticed that the window was open.
+6.14 WAR: Nakita ni Mia nga abrido an bintana.
+6.15 EN: She realized the wind might have caused the strange sounds.
+6.15 WAR: Nahunahuna niya nga bangin an hangin la an hinungdan han mga katingad-an nga tunog nga ira nabatian.
+6.16 EN: However, she still felt that somebody had recently visited the room.
+6.16 WAR: Pero may-ada la gihapon hiya inaabat nga baga hin may-ada tawo nga bag-o pa la nga kinadto ha kwarto.
+6.17 EN: Before leaving, Ethan noticed a photograph under the bed.
+6.17 WAR: Antes hira bumaya, may nakita hi Ethan nga litrato ha ilarom han katre.
+
+--- CHAPTER 6 WORDS ---
+W6.1 EN: chair (in sentence 6.13)
+W6.1 WAR: lingkoran
+W6.2 EN: window (in sentence 6.14)
+W6.2 WAR: bintana
+W6.3 EN: wind (in sentence 6.15)
+W6.3 WAR: hangin
+W6.4 EN: photograph (in sentence 6.17)
+W6.4 WAR: litrato
+W6.5 EN: wood (in sentence 6.9)
+W6.5 WAR: kahoy
+W6.6 EN: feet (in sentence 6.9)
+W6.6 WAR: tiil
+W6.7 EN: room (in sentence 6.16)
+W6.7 WAR: kwarto
+W6.8 EN: bed (in sentence 6.17)
+W6.8 WAR: katre
+W6.9 EN: furniture (in sentence 6.12)
+W6.9 WAR: gamit
+
+=== CHAPTER 7 ===
+
+7.1 EN: Ethan picked up the photograph and wiped away the dust.
+7.1 WAR: Ginkuha ni Ethan an litrato ngan ginpahiran an tapotapo nga nakatapot dida hito.
+7.2 EN: It showed a young girl standing beside a woman in front of the house.
+7.2 WAR: Makikita dida an usa nga daragita nga natindog ha sapit hin usa nga babaye ha atubangan han balay.
+7.3 EN: The girl had long hair and a small smile.
+7.3 WAR: Hitaas an buhok han daragita ngan may gutiay nga hiyom ha iya nawong.
+7.4 EN: Mia guessed that the girl was Lily.
+7.4 WAR: Naghunahuna hi Mia nga bangin hi Lily ito.
+7.5 EN: They turned the photograph over and found a name written on the back.
+7.5 WAR: Gintalikod nira an litrato ngan may nakita hira nga ngaran nga nakasurat ha luyo hito.
+7.6 EN: The name was Lily, followed by the date of the picture.
+7.6 WAR: An ngaran amo an Lily, upod an petsa kon san-o ginkuha an litrato.
+7.7 EN: Mia wondered who the woman beside her could be.
+7.7 WAR: Naghunahuna hi Mia kon hin-o daw an babaye nga aada ha sapit ni Lily.
+7.8 EN: She carefully placed the photograph inside her bag.
+7.8 WAR: Maikmat nga iginbutang niya an litrato ha sulod han iya bag.
+7.9 EN: Ethan continued searching the bedroom for other clues.
+7.9 WAR: Nagpadayon hi Ethan ha pagpamiling hin iba pa nga mga tigaman ha kwarto.
+7.10 EN: He found several books stacked inside a broken cabinet.
+7.10 WAR: May nakita hiya nga pipira nga libro nga gintipigan ha sulod hin guba nga aparador.
+7.11 EN: Most of them were children's stories and old schoolbooks.
+7.11 WAR: Kadak-an hito mga istorya para ha kabataan ngan mga daan nga libro ha eskwelahan.
+7.12 EN: Mia noticed a small drawer beneath the desk.
+7.12 WAR: May nakita liwat hi Mia nga gutiay nga drawer ha ilarom han lamesa.
+7.13 EN: The drawer was locked, but the wood around it was damaged.
+7.13 WAR: May kandado ito, pero guba na an kahoy ha palibot hito.
+7.14 EN: Ethan carefully pulled it open without breaking anything.
+7.14 WAR: Maikmat nga ginhuy-an ni Ethan an drawer tubtob nga naabri niya ito nga waray makaguba hin bisan ano.
+7.15 EN: Inside, they found an old notebook with a faded cover.
+7.15 WAR: Ha sulod, may nakita hira nga daan nga notebook nga malubad na an kolor han hapin.
+7.16 EN: Mia opened it and discovered a strange message on one of its pages.
+7.16 WAR: Gin-abrihan ito ni Mia ngan may nadiskobrehan nga katingad-an nga mensahe ha usa han mga pahina.
+7.17 EN: The message said, "The truth is buried where the roses grow."
+7.17 WAR: Nakasurat didto: "An kamatuoran nakalubong ha lugar diin nagtutubo an mga rosas."
+
+--- CHAPTER 7 WORDS ---
+W7.1 EN: hair (in sentence 7.3)
+W7.1 WAR: buhok
+W7.2 EN: name (in sentence 7.6)
+W7.2 WAR: ngaran
+W7.3 EN: cabinet (in sentence 7.10)
+W7.3 WAR: aparador
+W7.4 EN: notebook (in sentence 7.15)
+W7.4 WAR: notebook
+W7.5 EN: roses (in sentence 7.17)
+W7.5 WAR: rosas
+W7.6 EN: message (in sentence 7.16)
+W7.6 WAR: mensahe
+W7.7 EN: books (in sentence 7.10)
+W7.7 WAR: libro
+W7.8 EN: date (in sentence 7.6)
+W7.8 WAR: petsa
+W7.9 EN: cover (in sentence 7.15)
+W7.9 WAR: hapin
+
+=== CHAPTER 8 ===
+
+8.1 EN: Mia read the message several times to understand its meaning.
+8.1 WAR: Pipira ka beses nga ginbasa ni Mia an mensahe basi masabtan an karuyag sidngon hito.
+8.2 EN: Ethan believed it was a clue left by Lily.
+8.2 WAR: Para kan Ethan, bangin usa ito nga tigaman nga ginbilin ni Lily.
+8.3 EN: They wondered why someone would hide the truth beneath roses.
+8.3 WAR: Naghunahuna hira kon kay ano nga may-ada magtatago han kamatuoran ha ilarom han mga rosas.
+8.4 EN: Mia remembered seeing rosebushes in the front garden.
+8.4 WAR: Nahinumdoman ni Mia nga may nakita hiya nga mga tanom nga rosas ha atubangan nga tanaman.
+8.5 EN: She suggested that they search the garden before going home.
+8.5 WAR: Nagsuhestyon hiya nga usisahon nira an tanaman antes umuli.
+8.6 EN: Ethan agreed and followed her downstairs.
+8.6 WAR: Inuyon hi Ethan ngan sinunod ha iya paglugsong.
+8.7 EN: They walked outside and examined the plants near the front steps.
+8.7 WAR: Nagawas hira ha balay ngan gin-usisa an mga tanom hirani ha mga hagdanan ha atubangan.
+8.8 EN: Most of the garden was covered in weeds and dry leaves.
+8.8 WAR: Kadak-an han tanaman natabonan na hin mga banwa ngan uga nga mga dahon.
+8.9 EN: However, several rosebushes still had small flowers.
+8.9 WAR: Pero may pipira pa nga tanom nga rosas nga may-ada gutiay nga mga bukad.
+8.10 EN: Mia carefully searched around the roots of each plant.
+8.10 WAR: Maikmat nga gin-usisa ni Mia an palibot han mga gamot han tagsa nga tanom.
+8.11 EN: Ethan checked the stones surrounding the garden path.
+8.11 WAR: Ginkita naman ni Ethan an mga bato ha palibot han agianan ha tanaman.
+8.12 EN: After several minutes, he noticed a flat stone beneath a large rosebush.
+8.12 WAR: Paglabay hin pipira ka minuto, may nakita hiya nga patag nga bato ha ilarom han usa nga daku nga tanom nga rosas.
+8.13 EN: He moved the weeds and saw something metallic underneath it.
+8.13 WAR: Ginkuha niya an mga banwa nga nakapalibot hito ngan may nakita hiya nga metal nga butang ha ilarom.
+8.14 EN: Together, they lifted the stone from the ground.
+8.14 WAR: Magkaupod nira nga gin-alsa an bato tikang ha tuna.
+8.15 EN: A small metal box was hidden inside a shallow hole.
+8.15 WAR: May gutiay nga kahon nga hinimo ha metal nga nakatago ha sulod hin mabaw nga buho.
+8.16 EN: Mia tried opening it, but the lid would not move.
+8.16 WAR: Gintestingan ni Mia pag-abri hito, pero diri gud maabrihan an takop.
+8.17 EN: They decided to take it home and find a way to unlock it.
+8.17 WAR: Nagdesisyon hira nga dad-on anay ito ha ira balay ngan mamiling hin paagi basi maablihan an kandado.
+
+--- CHAPTER 8 WORDS ---
+W8.1 EN: stone (in sentence 8.14)
+W8.1 WAR: bato
+W8.2 EN: roots (in sentence 8.10)
+W8.2 WAR: gamot
+W8.3 EN: flowers (in sentence 8.9)
+W8.3 WAR: bukad
+W8.4 EN: weeds (in sentence 8.8)
+W8.4 WAR: banwa
+W8.5 EN: garden (in sentence 8.5)
+W8.5 WAR: tanaman
+W8.6 EN: ground (in sentence 8.14)
+W8.6 WAR: tuna
+W8.7 EN: lid (in sentence 8.16)
+W8.7 WAR: takop
+W8.8 EN: hole (in sentence 8.15)
+W8.8 WAR: buho
+W8.9 EN: clue (in sentence 8.2)
+W8.9 WAR: tigaman
+
+=== CHAPTER 9 ===
+
+9.1 EN: Mia brought the metal box to her bedroom after returning home.
+9.1 WAR: Gindara ni Mia an kahon nga metal ngadto ha iya kwarto pag-uli niya ha balay.
+9.2 EN: She placed it on her desk and examined its rusty surface.
+9.2 WAR: Iginbutang niya ito ha bawbaw han iya lamesa ngan gin-usisa an kinakalawang nga gawas hito.
+9.3 EN: Ethan visited later that afternoon to help her open it.
+9.3 WAR: Binisita hi Ethan ha iya hito nga kulop basi buligan hiya pag-abri han kahon.
+9.4 EN: They tried turning the box upside down, but nothing happened.
+9.4 WAR: Gintestingan nira nga baliktaron an kahon, pero waray nahitabo.
+9.5 EN: Ethan checked the sides and discovered a small keyhole.
+9.5 WAR: Gin-usisa ni Ethan an mga ligid hito ngan may nadiskobrehan hiya nga gutiay nga buho para ha yawi.
+9.6 EN: Mia remembered the old music box they had seen inside Lily's bedroom.
+9.6 WAR: Nahinumdoman ni Mia an daan nga kahon nga de-musika nga ira nakita ha sulod han kwarto ni Lily.
+9.7 EN: She wondered if its key could fit the metal box.
+9.7 WAR: Naghunahuna hiya kon angay ba an yawi hito para ha kahon nga metal.
+9.8 EN: The next day, they returned to the old house after school.
+9.8 WAR: Han pagkasunod nga adlaw, binalik hira ha daan nga balay katapos han klase.
+9.9 EN: They searched the bedroom again, looking carefully through the furniture.
+9.9 WAR: Gin-usisa nira utro an kwarto ngan maikmat nga gin-usisa an mga gamit didto.
+9.10 EN: Ethan opened the music box on top of the desk.
+9.10 WAR: Gin-abrihan ni Ethan an kahon nga de-musika nga nakabutang ha bawbaw han lamesa.
+9.11 EN: A small golden key was hidden inside it.
+9.11 WAR: May gutiay nga bulawanon nga yawi nga nakatago ha sulod hito.
+9.12 EN: Mia took the key and hurried back to the metal box.
+9.12 WAR: Ginkuha ni Mia an yawi ngan nagdali-dali hiya pabalik ha kahon nga metal.
+9.13 EN: She inserted it into the keyhole and turned it slowly.
+9.13 WAR: Iginsulod niya an yawi ha buho ngan hinay-hinay nga gintuyok ito.
+9.14 EN: A clicking sound came from the lock.
+9.14 WAR: Nakabati hira hin tunog tikang ha kandado.
+9.15 EN: The box finally opened, revealing several old letters and a folded map.
+9.15 WAR: Ha kataposan, naabri na an kahon. Ha sulod hito, may pipira nga daan nga surat ngan usa nga mapa nga nakatuping.
+9.16 EN: Mia felt excited because they had found another important clue.
+9.16 WAR: Nalipay hinduro hi Mia kay may-ada na liwat hira nakit-an nga importante nga tigaman.
+9.17 EN: She wondered what secrets the letters would reveal.
+9.17 WAR: Naghunahuna hiya kon ano nga mga sekreto an maipapahayag han mga surat.
+
+--- CHAPTER 9 WORDS ---
+W9.1 EN: key (in sentence 9.7)
+W9.1 WAR: yawi
+W9.2 EN: letters (in sentence 9.15)
+W9.2 WAR: surat
+W9.3 EN: map (in sentence 9.15)
+W9.3 WAR: mapa
+W9.4 EN: secrets (in sentence 9.17)
+W9.4 WAR: sekreto
+W9.5 EN: box (in sentence 9.4)
+W9.5 WAR: kahon
+W9.6 EN: rusty (in sentence 9.2)
+W9.6 WAR: kinakalawang
+W9.7 EN: furniture (in sentence 9.9)
+W9.7 WAR: gamit
+W9.8 EN: golden (in sentence 9.11)
+W9.8 WAR: bulawanon
+W9.9 EN: clue (in sentence 9.16)
+W9.9 WAR: tigaman
+
+=== CHAPTER 10 ===
+
+10.1 EN: Mia spread the letters across her desk and began reading them.
+10.1 WAR: Iginlatag ni Mia an mga surat ha bawbaw han iya lamesa ngan nagtikang pagbasa hito.
+10.2 EN: The first letter was written in neat handwriting.
+10.2 WAR: An siyahan nga surat iginsurat ha maopay ngan matin-aw nga pagkasurat.
+10.3 EN: It mentioned a family argument that happened many years ago.
+10.3 WAR: Mahitungod ito hin away han pamilya nga nahitabo damu na nga katuigan an naglabay.
+10.4 EN: Another letter described someone hiding important documents inside the house.
+10.4 WAR: Ha usa pa nga surat, iginsaysay an mahitungod hin usa nga tawo nga nagtago hin importante nga mga dokumento ha sulod han balay.
+10.5 EN: The writer seemed afraid that the documents would be discovered.
+10.5 WAR: Baga hin nahahadlok an nagsurat nga bangin madiskobrehan an mga dokumento.
+10.6 EN: Mia thought Lily might have written the letters herself.
+10.6 WAR: Naghunahuna hi Mia nga bangin hi Lily mismo an nagsurat hito nga mga surat.
+10.7 EN: Ethan noticed that the dates were close to the time of her disappearance.
+10.7 WAR: Nakita ni Ethan nga hirani an mga petsa han mga surat ha panahon nga nawara hi Lily.
+10.8 EN: They carefully arranged the letters according to their dates.
+10.8 WAR: Maikmat nga ginhan-ay nira an mga surat sumala han petsa han tagsa hito.
+10.9 EN: One letter mentioned a secret room beneath the staircase.
+10.9 WAR: May usa nga surat nga naghisgot hin tinago nga kwarto ha ilarom han hagdan.
+10.10 EN: Mia remembered the staircase they had climbed during their first visit.
+10.10 WAR: Nahinumdoman ni Mia an hagdan nga ira ginsak-an han siyahan nga pagbisita nira ha balay.
+10.11 EN: She wondered if there was a hidden entrance beneath it.
+10.11 WAR: Naghunahuna hiya kon may-ada ba tinago nga aragian ha ilarom hito.
+10.12 EN: Ethan suggested that they return to the house and investigate.
+10.12 WAR: Nagsuhestyon hi Ethan nga bumalik hira ha balay basi usisahon ito.
+10.13 EN: Mia agreed, but she wanted to tell someone where they were going.
+10.13 WAR: Inuyon hi Mia, pero karuyag niya nga may-ada usa nga tawo nga maaram kon diin hira makadto.
+10.14 EN: They informed Mrs. Clara that they would visit the house again.
+10.14 WAR: Ginsumatan nira hi Mrs. Clara nga mabalik hira ha balay.
+10.15 EN: The old woman looked worried but did not stop them.
+10.15 WAR: Nakita ha nawong han lagas nga babaye an iya kabaraka, pero waray niya hira pugngi.
+10.16 EN: Mia placed the letters and map inside her backpack.
+10.16 WAR: Iginbutang ni Mia an mga surat ngan an mapa ha sulod han iya backpack.
+10.17 EN: The next morning, they prepared to search for the secret room.
+10.17 WAR: Han pagkasunod nga aga, nag-andam na hira basi pamilngon an tinago nga kwarto.
+
+--- CHAPTER 10 WORDS ---
+W10.1 EN: documents (in sentence 10.4)
+W10.1 WAR: dokumento
+W10.2 EN: room (in sentence 10.9)
+W10.2 WAR: kwarto
+W10.3 EN: dates (in sentence 10.7)
+W10.3 WAR: petsa
+W10.4 EN: staircase (in sentence 10.10)
+W10.4 WAR: hagdan
+W10.5 EN: house (in sentence 10.12)
+W10.5 WAR: balay
+W10.6 EN: afraid (in sentence 10.5)
+W10.6 WAR: nahahadlok
+W10.7 EN: letters (in sentence 10.1)
+W10.7 WAR: surat
+W10.8 EN: map (in sentence 10.16)
+W10.8 WAR: mapa
+W10.9 EN: secret (in sentence 10.9)
+W10.9 WAR: tinago
+
+=== CHAPTER 11 ===
+
+11.1 EN: Mia and Ethan arrived at the old house early that afternoon.
+11.1 WAR: Inabot hira Mia ngan Ethan ha daan nga balay han sayo nga kulop.
+11.2 EN: They entered through the front door and walked toward the staircase.
+11.2 WAR: Sinulod hira ha purtahan ha atubangan ngan kinadto ha hagdanan.
+11.3 EN: Ethan checked the wooden walls for unusual marks.
+11.3 WAR: Gin-usisa ni Ethan an mga bungbong nga kahoy basi mabilngan kon may-ada diri ordinaryo nga mga marka dida hito.
+11.4 EN: Mia searched behind the furniture near the bottom steps.
+11.4 WAR: Gin-usisa naman ni Mia an luyo han mga gamit hirani ha ubos nga mga pitad han hagdan.
+11.5 EN: They discovered a small wooden panel that looked different from the others.
+11.5 WAR: May nadiskobrehan hira nga gutiay nga panel nga kahoy nga iba an hitsura kon itanding ha iba pa nga mga panel.
+11.6 EN: Ethan pressed it gently, and the panel moved inward.
+11.6 WAR: Hinay nga ginpirit ni Ethan an panel ngan tigda ito nga sinulod ha sulod han bungbong.
+11.7 EN: Behind it was a narrow door covered in dust.
+11.7 WAR: Ha luyo hito, may-ada haligot nga purtahan nga natabonan hin tapotapo.
+11.8 EN: Mia tried turning the handle, but it was stuck.
+11.8 WAR: Gintestingan ni Mia nga tuyokon an gunitanan han purtahan, pero nadig-on ito ngan diri maabrihan.
+11.9 EN: Ethan pushed against the door until it slowly opened.
+11.9 WAR: Ginduso ni Ethan an purtahan tubtob nga hinay-hinay ito nga naabri.
+11.10 EN: A narrow staircase led down into a dark space.
+11.10 WAR: May haligot nga hagdanan nga tipakadto ha usa nga madulom nga lugar.
+11.11 EN: They could barely see anything beyond the first few steps.
+11.11 WAR: Haros waray hira nakikita labot la han siyahan nga mga pitad.
+11.12 EN: Mia turned on her flashlight and began walking carefully.
+11.12 WAR: Ginsindihan ni Mia an suga han iya telepono ngan nagtikang paglugsong hin maikmat.
+11.13 EN: Ethan followed while holding the old map.
+11.13 WAR: Sinunod hi Ethan samtang ginkakaptan an daan nga mapa.
+11.14 EN: At the bottom, they found a small room filled with boxes.
+11.14 WAR: Pag-abot nira ha ubos, may nakita hira nga gutiay nga kwarto nga puno hin mga kahon.
+11.15 EN: A wooden table stood in the middle of the room.
+11.15 WAR: May lamesa nga kahoy ha butnga han kwarto.
+11.16 EN: On the table was an envelope with Lily's name written across it.
+11.16 WAR: Ha bawbaw hito, may-ada sobre nga nakasurat an ngaran nga Lily.
+11.17 EN: Mia opened the envelope and began reading the letter inside.
+11.17 WAR: Gin-abrihan ni Mia an sobre ngan nagtikang pagbasa han surat nga aada ha sulod.
+
+--- CHAPTER 11 WORDS ---
+W11.1 EN: table (in sentence 11.15)
+W11.1 WAR: lamesa
+W11.2 EN: envelope (in sentence 11.16)
+W11.2 WAR: sobre
+W11.3 EN: narrow (in sentence 11.7)
+W11.3 WAR: haligot
+W11.4 EN: handle (in sentence 11.8)
+W11.4 WAR: gunitanan
+W11.5 EN: dust (in sentence 11.7)
+W11.5 WAR: tapotapo
+W11.6 EN: walls (in sentence 11.3)
+W11.6 WAR: bungbong
+W11.7 EN: door (in sentence 11.7)
+W11.7 WAR: purtahan
+W11.8 EN: boxes (in sentence 11.14)
+W11.8 WAR: kahon
+W11.9 EN: marks (in sentence 11.3)
+W11.9 WAR: marka
+
+=== CHAPTER 12 ===
+
+12.1 EN: The letter explained that Lily had discovered a terrible secret about her father.
+12.1 WAR: Iginsaysay ha surat nga nadiskobrehan ni Lily an usa nga makangingirhat nga sekreto mahitungod han iya tatay.
+12.2 EN: He had hidden documents that proved he was stealing money from other families.
+12.2 WAR: Nagtago an iya tatay hin mga dokumento nga nagpapamatuod nga nangangawat hiya hin kwarta tikang ha iba nga mga pamilya.
+12.3 EN: Lily wanted to report what she had found to the police.
+12.3 WAR: Karuyag ni Lily nga isumat ha kapulisan an iya nadiskobrehan.
+12.4 EN: However, she was afraid her father would become angry.
+12.4 WAR: Pero nahadlok hiya nga bangin masina an iya tatay.
+12.5 EN: She wrote that she had already made plans to leave the house.
+12.5 WAR: Iginsurat niya nga nakaplano na hiya pagbayaan an ira balay.
+12.6 EN: Mia felt sad while reading the letter.
+12.6 WAR: Nasubo hi Mia samtang ginbabasa an surat.
+12.7 EN: She could not imagine being afraid of someone in her own family.
+12.7 WAR: Diri niya mahuhunahuna kon paonan-o an usa nga tawo mahahadlok ha iya mismo nga kapamilya.
+12.8 EN: Ethan checked the boxes for more documents.
+12.8 WAR: Gin-usisa ni Ethan an mga kahon basi mamiling hin iba pa nga mga dokumento.
+12.9 EN: Inside one box, he found several papers covered with signatures.
+12.9 WAR: Ha sulod han usa nga kahon, may nakita hiya nga pipira nga papel nga may mga pirma.
+12.10 EN: Some papers contained names and amounts of money.
+12.10 WAR: May mga ngaran ngan kantidad han kwarta nga nakasurat ha iba nga mga papel.
+12.11 EN: Other documents appeared to be copies of financial records.
+12.11 WAR: An iba naman baga hin mga kopya han mga rekord han kwarta.
+12.12 EN: Mia realized that the missing documents were connected to something serious.
+12.12 WAR: Nasantop ni Mia nga may kalabotan ha usa nga seryoso nga butang an mga dokumento nga nawara.
+12.13 EN: She placed the papers back inside the box to keep them safe.
+12.13 WAR: Iginbalik niya an mga papel ha sulod han kahon basi matipigan hin maopay.
+12.14 EN: Suddenly, they heard a noise coming from upstairs.
+12.14 WAR: Kadam-an la, nakabati hira hin tunog nga tikang ha igbaw nga andana.
+12.15 EN: Ethan quickly turned off his flashlight.
+12.15 WAR: Dali-dali nga ginparong ni Ethan an suga han iya telepono.
+12.16 EN: They stood quietly and listened for footsteps.
+12.16 WAR: Waray hira magkiwa ngan namati la kon may mga pitad nga ira mababatian.
+12.17 EN: Someone was moving around inside the house.
+12.17 WAR: May-ada tawo nga nagkikiwa-kikiwa ha sulod han balay.
+12.18 EN: Mia wondered if the person had followed them.
+12.18 WAR: Naghunahuna hi Mia kon ginsundan ba hira han tawo nga aada ha igbaw.
+
+--- CHAPTER 12 WORDS ---
+W12.1 EN: father (in sentence 12.1)
+W12.1 WAR: tatay
+W12.2 EN: money (in sentence 12.2)
+W12.2 WAR: kwarta
+W12.3 EN: signatures (in sentence 12.9)
+W12.3 WAR: pirma
+W12.4 EN: box (in sentence 12.13)
+W12.4 WAR: kahon
+W12.5 EN: police (in sentence 12.3)
+W12.5 WAR: kapulisan
+W12.6 EN: sad (in sentence 12.6)
+W12.6 WAR: nasubo
+W12.7 EN: papers (in sentence 12.10)
+W12.7 WAR: papel
+W12.8 EN: noise (in sentence 12.14)
+W12.8 WAR: tunog
+W12.9 EN: letter (in sentence 12.6)
+W12.9 WAR: surat
+
+=== CHAPTER 13 ===
+
+13.1 EN: The footsteps above them continued for several seconds.
+13.1 WAR: Nagpadayon hin pipira ka segundo an tunog han mga pitad ha igbaw nira.
+13.2 EN: Mia and Ethan remained hidden inside the secret room.
+13.2 WAR: Nagpabilin hira Mia ngan Ethan nga nakatago ha sulod han tinago nga kwarto.
+13.3 EN: They heard a door open and close somewhere upstairs.
+13.3 WAR: Nakabati hira hin purtahan nga naabri ngan ginsadhan ha usa nga bahin han balay ha igbaw.
+13.4 EN: After a while, the house became quiet again.
+13.4 WAR: Paglabay hin pipira ka panahon, nagin hilum na utro an balay.
+13.5 EN: Ethan carefully climbed the stairs to check the hallway.
+13.5 WAR: Maikmat nga sinaka hi Ethan ha hagdanan basi usisahon an pasilyo.
+13.6 EN: Mia followed him while holding the envelope.
+13.6 WAR: Sinunod hi Mia samtang ginkakaptan an sobre.
+13.7 EN: They looked through the windows but could not see anyone outside.
+13.7 WAR: Ginkita nira an gawas tikang ha mga bintana, pero waray hira nakita nga bisan hin-o.
+13.8 EN: Ethan suggested that they leave immediately.
+13.8 WAR: Nagsuhestyon hi Ethan nga bumaya na dayon hira.
+13.9 EN: Mia agreed because she did not want to take any unnecessary risks.
+13.9 WAR: Inuyon hi Mia kay diri niya karuyag nga ibutang nira an ira kalugaringon ha peligro nga waray man kinahanglan.
+13.10 EN: Before leaving, she took pictures of the documents with her phone.
+13.10 WAR: Antes bumaya, ginkuhaan niya hin mga litrato an mga dokumento gamit an iya telepono.
+13.11 EN: She hoped the photographs would help them understand the case.
+13.11 WAR: Naglalaom hiya nga makakabulig an mga litrato basi masabtan nira hin maopay an nahitabo.
+13.12 EN: On their way out, Mia noticed fresh footprints near the front door.
+13.12 WAR: Han tipagawas na hira, may nakita hi Mia nga bag-o nga mga marka han mga tiil hirani ha purtahan ha atubangan.
+13.13 EN: The footprints were larger than hers and Ethan's.
+13.13 WAR: Mas dagku an mga marka kay han ira mga tiil ni Ethan.
+13.14 EN: They seemed to lead toward the street.
+13.14 WAR: Baga hin tipakadto ito ha kalsada.
+13.15 EN: Mia told Ethan that someone had visited the house recently.
+13.15 WAR: Ginsidngan ni Mia hi Ethan nga may-ada tawo nga bag-o pa la nga kinadto ha balay.
+13.16 EN: Ethan became worried because they were not the only people searching for Lily's secrets.
+13.16 WAR: Nabaraka hi Ethan kay diri la hira an namimiling han mga sekreto ni Lily.
+13.17 EN: They hurried home and decided to tell Mrs. Clara what they had discovered.
+13.17 WAR: Nagdali-dali hira pag-uli ngan nagdesisyon nga isumat kan Mrs. Clara an ira mga nadiskobrehan.
+
+--- CHAPTER 13 WORDS ---
+W13.1 EN: windows (in sentence 13.7)
+W13.1 WAR: bintana
+W13.2 EN: envelope (in sentence 13.6)
+W13.2 WAR: sobre
+W13.3 EN: documents (in sentence 13.10)
+W13.3 WAR: dokumento
+W13.4 EN: risks (in sentence 13.9)
+W13.4 WAR: peligro
+W13.5 EN: photographs (in sentence 13.11)
+W13.5 WAR: litrato
+W13.6 EN: hallway (in sentence 13.5)
+W13.6 WAR: pasilyo
+W13.7 EN: street (in sentence 13.14)
+W13.7 WAR: kalsada
+W13.8 EN: worried (in sentence 13.16)
+W13.8 WAR: nabaraka
+W13.9 EN: phone (in sentence 13.10)
+W13.9 WAR: telepono
+
+=== CHAPTER 14 ===
+
+14.1 EN: Mia and Ethan returned to the neighborhood before sunset.
+14.1 WAR: Bumalik hira Mia ngan Ethan ha ira lugar antes lumubog an adlaw.
+14.2 EN: They were about to cross the street when a man approached them.
+14.2 WAR: Tipagtabok na unta hira ha kalsada han may usa nga lalaki nga dinaop ha ira.
+14.3 EN: He looked serious and seemed angry about something.
+14.3 WAR: Seryoso an iya hitsura ngan baga hin nasisina hiya mahitungod hin usa nga butang.
+14.4 EN: The man asked why they had entered the old house.
+14.4 WAR: Nagpakiana an lalaki kon kay ano nga sinulod hira ha daan nga balay.
+14.5 EN: Mia tried explaining that they were researching Lily's disappearance.
+14.5 WAR: Gintestingan ni Mia nga isaysay nga gin-uusisa nira an pagkawala ni Lily.
+14.6 EN: When he heard Lily's name, his expression suddenly changed.
+14.6 WAR: Han mabatian han lalaki an ngaran nga Lily, tigda nga nagbag-o an hitsura han iya nawong.
+14.7 EN: He told them to stop investigating the case.
+14.7 WAR: Ginsidngan niya hira nga umundang na ha pag-usisa han kaso.
+14.8 EN: Ethan asked why he cared about their investigation.
+14.8 WAR: Nagpakiana hi Ethan kon kay ano nga interesado gud hiya ha ira gin-uusisa.
+14.9 EN: The man refused to answer and demanded that they return anything they had found.
+14.9 WAR: Pero waray bumaton an lalaki ngan lugod ginpinirit niya hira nga ibalik an bisan ano nga ira nabilngan.
+14.10 EN: Mia realized that he knew something about the hidden documents.
+14.10 WAR: Nasantop ni Mia nga may-ada nahibabaroan an lalaki mahitungod han mga dokumento nga ira nadiskobrehan.
+14.11 EN: She told him they had not taken anything important.
+14.11 WAR: Ginsidngan niya an lalaki nga waray hira ginkuha nga bisan ano nga importante.
+14.12 EN: The man stared at them for a moment before walking away.
+14.12 WAR: Gintutokan la hira han lalaki hin madaliay antes hiya lumakat.
+14.13 EN: Ethan watched him disappear around the corner.
+14.13 WAR: Ginkita ni Ethan an lalaki tubtob nga nawara ito ha kanto.
+14.14 EN: Mia felt nervous because the man's behavior seemed suspicious.
+14.14 WAR: Kinulba hi Mia kay baga hin may-ada diri maopay ha paggawi han lalaki.
+14.15 EN: They decided to visit Mrs. Clara immediately.
+14.15 WAR: Nagdesisyon hira nga kadto dayon kan Mrs. Clara.
+14.16 EN: They hoped the old woman could explain who the stranger was.
+14.16 WAR: Naglalaom hira nga maipapahayag han lagas nga babaye kon hin-o adto nga estranghero.
+
+--- CHAPTER 14 WORDS ---
+W14.1 EN: man (in sentence 14.2)
+W14.1 WAR: lalaki
+W14.2 EN: neighborhood (in sentence 14.1)
+W14.2 WAR: lugar
+W14.3 EN: case (in sentence 14.7)
+W14.3 WAR: kaso
+W14.4 EN: angry (in sentence 14.3)
+W14.4 WAR: nasisina
+W14.5 EN: name (in sentence 14.6)
+W14.5 WAR: ngaran
+W14.6 EN: corner (in sentence 14.13)
+W14.6 WAR: kanto
+W14.7 EN: documents (in sentence 14.10)
+W14.7 WAR: dokumento
+W14.8 EN: serious (in sentence 14.3)
+W14.8 WAR: seryoso
+W14.9 EN: woman (in sentence 14.16)
+W14.9 WAR: babaye
+
+=== CHAPTER 15 ===
+
+15.1 EN: Mrs. Clara welcomed Mia and Ethan into her living room.
+15.1 WAR: Ginpasulod ni Mrs. Clara hira Mia ngan Ethan ha iya sala.
+15.2 EN: She noticed their worried expressions and asked what had happened.
+15.2 WAR: Nakita niya nga nababaraka hira, salit nagpakiana hiya kon ano an nahitabo.
+15.3 EN: Mia told her about the man who had threatened them.
+15.3 WAR: Iginsumat ni Mia an mahitungod han lalaki nga nagpahimangno ha ira.
+15.4 EN: She also showed Clara the photographs of the hidden documents.
+15.4 WAR: Iginpakita liwat niya kan Clara an mga litrato han mga dokumento nga ira nabilngan ha tinago nga kwarto.
+15.5 EN: The old woman stared at the pictures for a long time.
+15.5 WAR: Maiha nga ginkita han lagas nga babaye an mga litrato.
+15.6 EN: Finally, she sat down and covered her face with her hands.
+15.6 WAR: Ha kataposan, liningkod hiya ngan gintabonan an iya nawong han iya mga kamot.
+15.7 EN: She explained that she had been Lily's teacher many years ago.
+15.7 WAR: Iginsaysay niya nga maestra hiya ni Lily damu na nga katuigan an naglabay.
+15.8 EN: Lily had often stayed after class to talk with her.
+15.8 WAR: Agsob magpabilin hi Lily ha eskwelahan katapos han klase basi makig-istorya ha iya.
+15.9 EN: The girl once admitted that she was afraid of her father.
+15.9 WAR: Usa ka beses, iginsumat han daragita nga nahahadlok hiya ha iya tatay.
+15.10 EN: Clara had wanted to help her but did not know what to do.
+15.10 WAR: Karuyag unta ni Clara nga buligan hiya, pero waray hiya mahibaro kon ano an sadang buhaton.
+15.11 EN: She regretted not taking Lily's fears more seriously.
+15.11 WAR: Nanghinayangan hiya kay waray niya tagi hin igo nga atensyon an mga kahadlok ni Lily.
+15.12 EN: Mia asked if Clara knew the man who had threatened them.
+15.12 WAR: Nagpakiana hi Mia kon kilala ba ni Clara an lalaki nga nagpahimangno ha ira.
+15.13 EN: Clara nodded and said his name was Robert.
+15.13 WAR: Inuyon hi Clara ngan nagsiring nga Robert an ngaran hito.
+15.14 EN: He was Lily's older brother and had lived in the old house before the family moved away.
+15.14 WAR: Magurang nga bugto hiya ni Lily ngan naukoy hadto ha daan nga balay antes bumalhin an ira pamilya.
+15.15 EN: Clara believed Robert knew more about Lily's disappearance than he had admitted.
+15.15 WAR: Para kan Clara, mas damu pa an nahibabaroan ni Robert mahitungod han pagkawala ni Lily kay han iya iginsumat.
+15.16 EN: She warned the children to be careful if they continued investigating.
+15.16 WAR: Ginpahimangnoan niya an duha nga kabataan nga mag-ikmat kon magpapadayon pa hira ha ira pag-usisa.
+
+--- CHAPTER 15 WORDS ---
+W15.1 EN: teacher (in sentence 15.7)
+W15.1 WAR: maestra
+W15.2 EN: hands (in sentence 15.6)
+W15.2 WAR: kamot
+W15.3 EN: photographs (in sentence 15.4)
+W15.3 WAR: litrato
+W15.4 EN: class (in sentence 15.8)
+W15.4 WAR: klase
+W15.5 EN: house (in sentence 15.14)
+W15.5 WAR: balay
+W15.6 EN: children (in sentence 15.16)
+W15.6 WAR: kabataan
+W15.7 EN: documents (in sentence 15.4)
+W15.7 WAR: dokumento
+W15.8 EN: living room (in sentence 15.1)
+W15.8 WAR: sala
+W15.9 EN: name (in sentence 15.13)
+W15.9 WAR: ngaran
+
+=== CHAPTER 16 ===
+
+16.1 EN: The next day, Mia and Ethan met at the local library.
+16.1 WAR: Han pagkasunod nga adlaw, nagkita hira Mia ngan Ethan ha librarya han ira bungto.
+16.2 EN: They wanted to learn more about Lily's family and the old house.
+16.2 WAR: Karuyag nira nga mahibaro hin dugang pa mahitungod han pamilya ni Lily ngan han daan nga balay.
+16.3 EN: Ethan spread the map across a large table.
+16.3 WAR: Iginlatag ni Ethan an mapa ha bawbaw han usa nga daku nga lamesa.
+16.4 EN: Mia noticed a small drawing near the edge of the paper.
+16.4 WAR: May nakita hi Mia nga gutiay nga drowing hirani ha ligid han papel.
+16.5 EN: It showed a building beside a forest.
+16.5 WAR: Makikita dida an usa nga bilding ha sapit han kagurangan.
+16.6 EN: A narrow path connected the building to the old house.
+16.6 WAR: May-ada haligot nga agianan nga nagdurugtong han bilding ngadto ha daan nga balay.
+16.7 EN: Mrs. Clara had told them that Lily loved visiting quiet places.
+16.7 WAR: Nagsumat hadto hi Mrs. Clara ha ira nga naruruyag hi Lily magkadto ha mga lugar nga hilum ngan malinawon.
+16.8 EN: Mia wondered if the building had been one of her hiding spots.
+16.8 WAR: Naghunahuna hi Mia kon bangin usa ito han mga lugar nga gintatagoan ni Lily.
+16.9 EN: They searched old town records and found a photograph of the same building.
+16.9 WAR: Gin-usisa nira an mga daan nga rekord han bungto ngan may nakita hira nga litrato han amo mismo nga bilding.
+16.10 EN: It had once been used as a storage place by a nearby farm.
+16.10 WAR: Hadto, ginagamit ito sugad nga bodega han usa nga hirani nga umahan.
+16.11 EN: The building had been abandoned for many years.
+16.11 WAR: Damu na nga katuigan nga ginbayaan an bilding.
+16.12 EN: Ethan believed Lily might have gone there after leaving home.
+16.12 WAR: Para kan Ethan, posible nga kinadto didto hi Lily katapos niya bumaya ha ira balay.
+16.13 EN: Mia agreed that it was worth investigating.
+16.13 WAR: Inuyon hi Mia nga angay nira usisahon ito.
+16.14 EN: They decided to visit the place the following morning.
+16.14 WAR: Nagdesisyon hira nga bisitahon an lugar ha pagkasunod nga aga.
+16.15 EN: Before leaving the library, they copied the map onto a sheet of paper.
+16.15 WAR: Antes bumaya ha librarya, naghimo hira hin kopya han mapa ha usa nga papel.
+16.16 EN: Mia felt nervous but hoped the next clue would bring them closer to the truth.
+16.16 WAR: Kinulba hi Mia, pero naglalaom hiya nga magtutugway hira ngadto ha kamatuoran han sunod nga tigaman nga ira makikita.
+
+--- CHAPTER 16 WORDS ---
+W16.1 EN: library (in sentence 16.1)
+W16.1 WAR: librarya
+W16.2 EN: paper (in sentence 16.4)
+W16.2 WAR: papel
+W16.3 EN: records (in sentence 16.9)
+W16.3 WAR: rekord
+W16.4 EN: forest (in sentence 16.5)
+W16.4 WAR: kagurangan
+W16.5 EN: table (in sentence 16.3)
+W16.5 WAR: lamesa
+W16.6 EN: edge (in sentence 16.4)
+W16.6 WAR: ligid
+W16.7 EN: map (in sentence 16.3)
+W16.7 WAR: mapa
+W16.8 EN: narrow (in sentence 16.6)
+W16.8 WAR: haligot
+W16.9 EN: morning (in sentence 16.14)
+W16.9 WAR: aga
+
+=== CHAPTER 17 ===
+
+17.1 EN: Mia and Ethan followed the map into the forest the next morning.
+17.1 WAR: Ginsunod nira Mia ngan Ethan an mapa pakadto ha sulod han kagurangan han pagkasunod nga aga.
+17.2 EN: The path was narrow and covered with fallen leaves.
+17.2 WAR: Haligot an agianan ngan natabonan hin mga dahon nga nahulog tikang ha mga kahoy.
+17.3 EN: Birds flew between the trees while the wind moved the branches.
+17.3 WAR: May mga tamsi nga nalupad ha butnga han mga kahoy samtang ginpapalid han hangin an mga sanga hito.
+17.4 EN: After walking for several minutes, they saw an old building.
+17.4 WAR: Katapos maglakat hin pipira ka minuto, may nakita hira nga daan nga bilding.
+17.5 EN: Its walls were covered with vines, and several windows were broken.
+17.5 WAR: Natabonan hin mga tanom nga baging an mga bungbong hito, ngan may pipira nga bintana nga guba.
+17.6 EN: Ethan pushed the front door, which opened with a loud creak.
+17.6 WAR: Ginduso ni Ethan an purtahan ha atubangan, ngan naabri ito nga may makusog nga tunog.
+17.7 EN: They stepped inside and looked around carefully.
+17.7 WAR: Sinulod hira ngan maikmat nga nagkita-kita ha palibot.
+17.8 EN: Dust covered the floor and the few pieces of furniture left behind.
+17.8 WAR: Natabonan hin tapotapo an salog ngan an pipira na la nga gamit nga nahibilin didto.
+17.9 EN: Mia noticed an old blanket lying beside a wooden chair.
+17.9 WAR: May nakita hi Mia nga daan nga habol ha sapit hin usa nga lingkoran nga kahoy.
+17.10 EN: There were also several empty food cans near the wall.
+17.10 WAR: May pipira liwat nga waray sulod nga lata han pagkaon hirani ha bungbong.
+17.11 EN: Ethan wondered if someone had stayed there for a long time.
+17.11 WAR: Naghunahuna hi Ethan kon may-ada ba tawo nga maiha nga nagpuyo didto.
+17.12 EN: He then noticed writing on the wall behind a broken shelf.
+17.12 WAR: Kadam-an la, may nakita hiya nga mga pulong nga nakasurat ha bungbong ha luyo han usa nga guba nga estante.
+17.13 EN: The message said, "I am safe, but I cannot come home."
+17.13 WAR: Amo ini an nakasurat: "Luwas ako, pero diri pa ako puydi umuli."
+17.14 EN: Mia took a picture of the writing with her phone.
+17.14 WAR: Ginkuhaan ni Mia hin litrato an nakasurat ha bungbong gamit an iya telepono.
+17.15 EN: She felt hopeful because Lily might have survived after leaving the house.
+17.15 WAR: Nagkaada hiya paglaom kay posible nga buhi pa hi Lily katapos niya bumaya ha balay.
+17.16 EN: They searched the building for more clues before heading home.
+17.16 WAR: Nagpadayon hira ha pagpamiling hin iba pa nga mga tigaman ha bilding antes hira umuli.
+
+--- CHAPTER 17 WORDS ---
+W17.1 EN: blanket (in sentence 17.9)
+W17.1 WAR: habol
+W17.2 EN: windows (in sentence 17.5)
+W17.2 WAR: bintana
+W17.3 EN: shelf (in sentence 17.12)
+W17.3 WAR: estante
+W17.4 EN: branches (in sentence 17.3)
+W17.4 WAR: sanga
+W17.5 EN: wind (in sentence 17.3)
+W17.5 WAR: hangin
+W17.6 EN: cans (in sentence 17.10)
+W17.6 WAR: lata
+W17.7 EN: food (in sentence 17.10)
+W17.7 WAR: pagkaon
+W17.8 EN: chair (in sentence 17.9)
+W17.8 WAR: lingkoran
+W17.9 EN: floor (in sentence 17.8)
+W17.9 WAR: salog
+
+=== CHAPTER 18 ===
+
+18.1 EN: While searching the abandoned building, Mia noticed a wooden board that looked loose.
+18.1 WAR: Samtang gin-uusisa nira an ginbayaan nga bilding, may nakita hi Mia nga tabla nga kahoy nga baga hin luag ngan diri na nakapirmi hin maopay.
+18.2 EN: She knelt down and tried moving it with her fingers.
+18.2 WAR: Lumuluhod hiya ngan gintestingan nga kiwaon ito gamit an iya mga tudlo.
+18.3 EN: The board came away from the wall without much effort.
+18.3 WAR: Waray magkinahanglan hin daku nga kusog basi matanggal an tabla tikang ha bungbong.
+18.4 EN: Behind it was a small space containing an old diary.
+18.4 WAR: Ha luyo hito, may gutiay nga espasyo nga may sulod nga daan nga diary.
+18.5 EN: Mia carefully removed the diary and wiped away the dust.
+18.5 WAR: Maikmat nga ginkuha ni Mia an diary ngan ginpahiran an tapotapo nga nakatabon hito.
+18.6 EN: The first few pages contained stories about Lily's childhood.
+18.6 WAR: Ha siyahan nga mga pahina, may mga istorya mahitungod han pagkabata ni Lily.
+18.7 EN: She wrote about her favorite books, her school, and her dreams.
+18.7 WAR: Iginsurat niya didto an mahitungod han iya mga paborito nga libro, han iya eskwelahan, ngan han iya mga inop ha kinabuhi.
+18.8 EN: Later entries described her growing fear of her father.
+18.8 WAR: Ha mas urhi nga mga sinurat, iginsaysay niya an iya nagtitikadaku nga kahadlok ha iya tatay.
+18.9 EN: Lily explained that she had found the hidden financial documents.
+18.9 WAR: Iginsaysay ni Lily nga nadiskobrehan niya an mga tinago nga dokumento mahitungod han kwarta.
+18.10 EN: She wanted to tell the authorities but feared what her father might do.
+18.10 WAR: Karuyag niya nga isumat ito ha mga may awtoridad, pero nahahadlok hiya ha posible nga buhaton han iya tatay.
+18.11 EN: The last few pages were written in a hurry.
+18.11 WAR: An ultimo nga mga pahina baga hin ginsurat ha madagmit nga paagi.
+18.12 EN: Lily said that a kind neighbor had helped her escape.
+18.12 WAR: Iginsurat ni Lily nga may buotan nga amyaw nga binulig ha iya pagpalagiw.
+18.13 EN: She planned to travel to another town and start a new life.
+18.13 WAR: Nagplano hiya nga kumadto ha iba nga bungto ngan magtikang hin bag-o nga kinabuhi.
+18.14 EN: Unfortunately, she never wrote the name of the town.
+18.14 WAR: Makasurubo la kay waray niya igsurat an ngaran han bungto nga iya kakadtuan.
+18.15 EN: Mia closed the diary and looked at Ethan.
+18.15 WAR: Ginsadhan ni Mia an diary ngan ginkita hi Ethan.
+18.16 EN: They now had evidence that Lily had escaped, but they still did not know where she had gone.
+18.16 WAR: May-ada na hira ebidensya nga nakapalagiw hi Lily, pero diri pa gihapon hira maaram kon diin hiya kinadto.
+
+--- CHAPTER 18 WORDS ---
+W18.1 EN: diary (in sentence 18.4)
+W18.1 WAR: diary
+W18.2 EN: fingers (in sentence 18.2)
+W18.2 WAR: tudlo
+W18.3 EN: board (in sentence 18.1)
+W18.3 WAR: tabla
+W18.4 EN: pages (in sentence 18.6)
+W18.4 WAR: pahina
+W18.5 EN: neighbor (in sentence 18.12)
+W18.5 WAR: amyaw
+W18.6 EN: town (in sentence 18.13)
+W18.6 WAR: bungto
+W18.7 EN: stories (in sentence 18.6)
+W18.7 WAR: istorya
+W18.8 EN: evidence (in sentence 18.16)
+W18.8 WAR: ebidensya
+W18.9 EN: name (in sentence 18.14)
+W18.9 WAR: ngaran
+
+=== CHAPTER 19 ===
+
+19.1 EN: Mia and Ethan left the abandoned building with the diary safely inside Mia's backpack.
+19.1 WAR: Binaya hira Mia ngan Ethan ha ginbayaan nga bilding samtang nakatago hin maopay an diary ha sulod han backpack ni Mia.
+19.2 EN: They followed the forest path toward the main road.
+19.2 WAR: Ginsunod nira an agianan ha kagurangan tipakadto ha kalsada.
+19.3 EN: As they reached the trees near the entrance, someone stepped out in front of them.
+19.3 WAR: Han hirani na hira ha mga kahoy ha may entrada han kagurangan, may-ada tigda nga tinindog ha atubangan nira.
+19.4 EN: It was Robert, the man who had threatened them before.
+19.4 WAR: Hi Robert adto, an lalaki nga nagpahimangno ha ira hadto.
+19.5 EN: He demanded that they give him the diary.
+19.5 WAR: Ginpinirit niya hira nga ihatag ha iya an diary.
+19.6 EN: Mia asked why he wanted something that belonged to his sister.
+19.6 WAR: Nagpakiana hi Mia kon kay ano nga karuyag niya kuhaon an usa nga butang nga kanan iya bugto.
+19.7 EN: Robert became angry and said they had no right to investigate his family.
+19.7 WAR: Nasina hi Robert ngan nagsiring nga waray hira katungod nga usisahon an mga butang mahitungod han iya pamilya.
+19.8 EN: Ethan told him that the diary could help solve a missing person's case.
+19.8 WAR: Ginsidngan hiya ni Ethan nga makakabulig an diary ha pagsulbad han kaso han nawawara nga tawo.
+19.9 EN: Robert moved closer and tried grabbing Mia's backpack.
+19.9 WAR: Dinaop hi Robert ha ira ngan gintestingan nga agawon an backpack ni Mia.
+19.10 EN: She quickly stepped away and shouted for help.
+19.10 WAR: Dali-dali nga binulag hi Mia ngan nagsinggit basi mangaro hin bulig.
+19.11 EN: Ethan stood between them while Mia ran toward the road.
+19.11 WAR: Tinindog hi Ethan ha butnga nira samtang pinalagiw hi Mia tipakadto ha kalsada.
+19.12 EN: Robert followed for a few steps but stopped when a passing car slowed down.
+19.12 WAR: Ginsundan hiya ni Robert hin pipira ka pitad, pero inundang hiya han may naglabay nga awto nga nagpahinay han pagdalagan.
+19.13 EN: Mia and Ethan hurried toward a nearby shop.
+19.13 WAR: Dali-dali nga kinadto hira Mia ngan Ethan ha usa nga hirani nga tindahan.
+19.14 EN: They asked the shopkeeper to call the police.
+19.14 WAR: Nangaro hira hin bulig ha tindero ngan ginhangyo hiya nga tawagan an kapulisan.
+19.15 EN: Robert disappeared before the officers arrived.
+19.15 WAR: Nawara hi Robert antes pa umabot an mga pulis.
+19.16 EN: Mia was frightened, but she knew they could no longer keep the evidence to themselves.
+19.16 WAR: Nahadlok hi Mia, pero maaram hiya nga diri na nira puydi tipigan la ha ira kalugaringon an mga ebidensya.
+
+--- CHAPTER 19 WORDS ---
+W19.1 EN: road (in sentence 19.2)
+W19.1 WAR: kalsada
+W19.2 EN: shop (in sentence 19.13)
+W19.2 WAR: tindahan
+W19.3 EN: shopkeeper (in sentence 19.14)
+W19.3 WAR: tindero
+W19.4 EN: right (in sentence 19.7)
+W19.4 WAR: katungod
+W19.5 EN: evidence (in sentence 19.16)
+W19.5 WAR: ebidensya
+W19.6 EN: car (in sentence 19.12)
+W19.6 WAR: awto
+W19.7 EN: diary (in sentence 19.5)
+W19.7 WAR: diary
+W19.8 EN: sister (in sentence 19.6)
+W19.8 WAR: bugto
+W19.9 EN: help (in sentence 19.10)
+W19.9 WAR: bulig
+
+=== CHAPTER 20 ===
+
+20.1 EN: Mrs. Clara arrived at the shop after receiving Mia's phone call.
+20.1 WAR: Inabot hi Mrs. Clara ha tindahan katapos niya mabatian an tawag ni Mia ha telepono.
+20.2 EN: She comforted the children and listened to everything they had experienced.
+20.2 WAR: Ginkomportable niya an duha nga kabataan ngan namati ha ngatanan nga ira naeksperyensyahan.
+20.3 EN: Mia showed her the diary and explained Robert's actions.
+20.3 WAR: Iginpakita ni Mia ha iya an diary ngan iginsaysay an mga ginbuhat ni Robert.
+20.4 EN: Clara confirmed that Robert was Lily's older brother.
+20.4 WAR: Ginkumpirma ni Clara nga magurang nga bugto ni Lily hi Robert.
+20.5 EN: She also revealed that their father had once been accused of stealing money.
+20.5 WAR: May usa pa hiya nga iginsumat: hadto, gin-akusaran liwat an tatay nira nga nangangawat hin kwarta.
+20.6 EN: However, the case had ended because there was not enough evidence.
+20.6 WAR: Pero natapos an kaso tungod kay kulang an ebidensya kontra ha iya.
+20.7 EN: The hidden documents might explain what had happened.
+20.7 WAR: Bangin makabulig an mga tinago nga dokumento basi masabtan kon ano gud an nahitabo.
+20.8 EN: Ethan believed Robert wanted to destroy the evidence to protect his family.
+20.8 WAR: Para kan Ethan, karuyag ni Robert nga bungkagon an mga ebidensya basi protektaran an iya pamilya.
+20.9 EN: Mia wondered if Robert had helped Lily escape many years ago.
+20.9 WAR: Naghunahuna hi Mia kon posible ba nga hi Robert mismo an binulig kan Lily nga makapalagiw damu na nga katuigan an naglabay.
+20.10 EN: Mrs. Clara said she did not know the full story.
+20.10 WAR: Nagsiring hi Mrs. Clara nga diri niya maaram an bug-os nga istorya.
+20.11 EN: They agreed that the police needed to examine the diary and documents.
+20.11 WAR: Nagkauyon hira nga kinahanglan usisahon han kapulisan an diary ngan an mga dokumento.
+20.12 EN: Clara also promised to tell the officers everything she remembered about Lily.
+20.12 WAR: Nagsaad liwat hi Clara nga igsusumat niya ha mga pulis an ngatanan nga iya nahinunumdoman mahitungod kan Lily.
+20.13 EN: Mia felt relieved that they no longer had to face the mystery alone.
+20.13 WAR: Nagin mas mahayahay an inaabat ni Mia kay diri na hira kinahanglan mag-atubang ha misteryo nga hira la.
+20.14 EN: For the first time, she believed the truth might finally come out.
+20.14 WAR: Ha siyahan nga higayon, tinoo hiya nga posible na gud nga mahibaroan an kamatuoran.
+
+--- CHAPTER 20 WORDS ---
+W20.1 EN: shop (in sentence 20.1)
+W20.1 WAR: tindahan
+W20.2 EN: children (in sentence 20.2)
+W20.2 WAR: kabataan
+W20.3 EN: story (in sentence 20.10)
+W20.3 WAR: istorya
+W20.4 EN: mystery (in sentence 20.13)
+W20.4 WAR: misteryo
+W20.5 EN: money (in sentence 20.5)
+W20.5 WAR: kwarta
+W20.6 EN: enough (in sentence 20.6)
+W20.6 WAR: kulang
+W20.7 EN: truth (in sentence 20.14)
+W20.7 WAR: kamatuoran
+W20.8 EN: police (in sentence 20.11)
+W20.8 WAR: kapulisan
+W20.9 EN: phone (in sentence 20.1)
+W20.9 WAR: telepono
+
+=== CHAPTER 21 ===
+
+21.1 EN: The following morning, Mia, Ethan, and Mrs. Clara visited the police station.
+21.1 WAR: Han pagkasunod nga aga, kinadto hira Mia, Ethan, ngan Mrs. Clara ha estasyon han kapulisan.
+21.2 EN: They brought copies of the letters, photographs, and financial documents.
+21.2 WAR: Gindara nira an mga kopya han mga surat, litrato, ngan mga dokumento mahitungod han kwarta.
+21.3 EN: Mia explained how they had discovered the hidden room beneath the staircase.
+21.3 WAR: Iginsaysay ni Mia kon paonan-o nira nadiskobrehan an tinago nga kwarto ha ilarom han hagdan.
+21.4 EN: Ethan described the abandoned building and showed the officers the map.
+21.4 WAR: Iginsaysay naman ni Ethan an mahitungod han ginbayaan nga bilding ngan iginpakita ha mga pulis an mapa.
+21.5 EN: Mrs. Clara shared what she remembered about Lily's family.
+21.5 WAR: Iginsumat ni Mrs. Clara an ngatanan nga iya nahinunumdoman mahitungod han pamilya ni Lily.
+21.6 EN: The police listened carefully and began recording their statements.
+21.6 WAR: Maikmat nga namati an mga pulis ngan nagtikang pagrekord han ira mga pahayag.
+21.7 EN: An officer explained that the evidence would need to be checked.
+21.7 WAR: Iginsaysay han usa nga pulis nga kinahanglan pa anay usisahon hin maopay an mga ebidensya.
+21.8 EN: The police also reopened the investigation into Lily's disappearance.
+21.8 WAR: Gin-abrihan liwat utro han kapulisan an imbestigasyon mahitungod han pagkawala ni Lily.
+21.9 EN: Later that day, officers visited the old house.
+21.9 WAR: Hito mismo nga adlaw, kinadto an mga pulis ha daan nga balay.
+21.10 EN: They searched the secret room and collected the remaining documents.
+21.10 WAR: Gin-usisa nira an tinago nga kwarto ngan gintirok an nahibilin nga mga dokumento.
+21.11 EN: They also questioned Robert about his actions.
+21.11 WAR: Ginpakianhan liwat nira hi Robert mahitungod han iya mga ginbuhat.
+21.12 EN: Robert denied knowing anything about Lily's escape.
+21.12 WAR: Waray umuyon hi Robert nga may nahibabaroan hiya mahitungod han pagpalagiw ni Lily.
+21.13 EN: However, the officers discovered more papers hidden inside his car.
+21.13 WAR: Pero may nadiskobrehan an mga pulis nga dugang nga mga papel nga nakatago ha sulod han iya awto.
+21.14 EN: The documents matched some of the records found in the old house.
+21.14 WAR: Magkatugma an mga dokumento ha pipira nga mga rekord nga ira nabilngan ha daan nga balay.
+21.15 EN: Mia and Ethan hoped this would help the police discover the full truth.
+21.15 WAR: Naglalaom hira Mia ngan Ethan nga makakabulig ini ha mga pulis basi mahibaroan an bug-os nga kamatuoran.
+21.16 EN: They returned home feeling tired but relieved.
+21.16 WAR: Umuli hira nga kapoy pero may-ada na kahayahay ha ira inaabat.
+
+--- CHAPTER 21 WORDS ---
+W21.1 EN: station (in sentence 21.1)
+W21.1 WAR: estasyon
+W21.2 EN: letters (in sentence 21.2)
+W21.2 WAR: surat
+W21.3 EN: car (in sentence 21.13)
+W21.3 WAR: awto
+W21.4 EN: investigation (in sentence 21.8)
+W21.4 WAR: imbestigasyon
+W21.5 EN: room (in sentence 21.3)
+W21.5 WAR: kwarto
+W21.6 EN: officer (in sentence 21.7)
+W21.6 WAR: pulis
+W21.7 EN: photographs (in sentence 21.2)
+W21.7 WAR: litrato
+W21.8 EN: staircase (in sentence 21.3)
+W21.8 WAR: hagdan
+W21.9 EN: papers (in sentence 21.13)
+W21.9 WAR: papel
+
+=== CHAPTER 22 ===
+
+22.1 EN: A week passed after Mia and Ethan visited the police station.
+22.1 WAR: Usa ka semana an naglabay tikang han pagkadto nira Mia ngan Ethan ha estasyon han kapulisan.
+22.2 EN: The investigation continued, but they had not heard any news about Lily.
+22.2 WAR: Nagpapadayon an imbestigasyon, pero waray pa hira nakakakarawat hin bisan ano nga balita mahitungod kan Lily.
+22.3 EN: Mia sometimes wondered if they would ever discover where she had gone.
+22.3 WAR: Usahay, nahuhunahuna ni Mia kon mahibabaroan pa ba nira kon diin hiya kinadto.
+22.4 EN: One afternoon, Mrs. Clara called Mia and asked her to visit.
+22.4 WAR: Usa ka kulop, gintawagan hi Mia ni Mrs. Clara ngan ginhangyo nga bisitahon hiya.
+22.5 EN: When Mia arrived, she found Clara holding a small envelope.
+22.5 WAR: Pag-abot ni Mia, nakita niya hi Clara nga may ginkakaptan nga gutiay nga sobre.
+22.6 EN: The letter had arrived from another town.
+22.6 WAR: May surat nga umabot tikang ha iba nga bungto.
+22.7 EN: The sender's name was Lily.
+22.7 WAR: An ngaran han nagpadara hito amo an Lily.
+22.8 EN: Clara began crying as she explained what the letter meant.
+22.8 WAR: Nagtikang pagtangis hi Clara samtang iginsasaysay niya kan Mia kon ano an kahulogan han surat.
+22.9 EN: Lily had learned about the reopened investigation through a local news report.
+22.9 WAR: Nahibaroan ni Lily an mahitungod han utro nga pag-abri han imbestigasyon pinaagi hin usa nga report ha lokal nga balita.
+22.10 EN: She had been living under a different name for many years.
+22.10 WAR: Damu na nga katuigan nga nag-uukoy hiya gamit an iba nga ngaran.
+22.11 EN: She was now ready to explain what had happened.
+22.11 WAR: Yana, andam na hiya nga isumat an nahitabo ha iya.
+22.12 EN: Lily wrote that she had escaped because she feared her father.
+22.12 WAR: Iginsurat ni Lily nga pinalagiw hiya kay nahahadlok hiya ha iya tatay.
+22.13 EN: A kind neighbor had helped her travel to another town.
+22.13 WAR: May buotan nga amyaw nga binulig ha iya pagbiya ngadto ha iba nga bungto.
+22.14 EN: She had stayed away because she wanted to feel safe and build a new life.
+22.14 WAR: Nagpabilin hiya nga hirayo ha ira pamilya kay karuyag niya umabat nga talwas hiya ngan magtukod hin bag-o nga kinabuhi.
+22.15 EN: Mia felt happy knowing Lily was alive.
+22.15 WAR: Nalipay hi Mia han nahibaroan niya nga buhi pa hi Lily.
+22.16 EN: Clara promised to contact the police so Lily could share her story.
+22.16 WAR: Nagsaad hi Clara nga makikig-ugnayan hiya ha kapulisan basi maipahayag ni Lily an iya istorya.
+
+--- CHAPTER 22 WORDS ---
+W22.1 EN: week (in sentence 22.1)
+W22.1 WAR: semana
+W22.2 EN: envelope (in sentence 22.5)
+W22.2 WAR: sobre
+W22.3 EN: neighbor (in sentence 22.13)
+W22.3 WAR: amyaw
+W22.4 EN: life (in sentence 22.14)
+W22.4 WAR: kinabuhi
+W22.5 EN: letter (in sentence 22.6)
+W22.5 WAR: surat
+W22.6 EN: story (in sentence 22.16)
+W22.6 WAR: istorya
+W22.7 EN: afternoon (in sentence 22.4)
+W22.7 WAR: kulop
+W22.8 EN: town (in sentence 22.6)
+W22.8 WAR: bungto
+W22.9 EN: name (in sentence 22.10)
+W22.9 WAR: ngaran
+
+=== CHAPTER 23 ===
+
+23.1 EN: Several weeks later, Lily returned to town to help with the investigation.
+23.1 WAR: Paglabay hin pipira ka semana, binalik hi Lily ha ira bungto basi buligan an imbestigasyon.
+23.2 EN: She arrived at Mrs. Clara's house on a quiet afternoon.
+23.2 WAR: Inabot hiya ha balay ni Mrs. Clara usa ka malinawon nga kulop.
+23.3 EN: Clara immediately hugged her and cried with happiness.
+23.3 WAR: Dida pa la pagkita ni Clara ha iya, ginhakos dayon niya hi Lily ngan nagtangis tungod han kalipay.
+23.4 EN: Lily looked older than the girl in the photograph, but her smile was familiar.
+23.4 WAR: Mas lagas na an hitsura ni Lily kon itanding ha daragita ha litrato, pero kilala pa gihapon an iya hiyom.
+23.5 EN: Mia and Ethan arrived shortly afterward.
+23.5 WAR: Waray pag-iha, inabot liwat hira Mia ngan Ethan.
+23.6 EN: Lily thanked them for finding her diary and protecting the evidence.
+23.6 WAR: Nagpasalamat hi Lily ha ira tungod kay nabilngan nira an iya diary ngan gintipigan hin maopay an mga ebidensya.
+23.7 EN: She explained that leaving home had been the hardest decision of her life.
+23.7 WAR: Iginsaysay niya nga an pagbiya ha ira balay amo an pinakamakuri nga desisyon nga iya ginhimo ha iya kinabuhi.
+23.8 EN: At the time, she felt she had no other choice.
+23.8 WAR: Hadto nga panahon, inabat niya nga waray na hiya iba nga mapipilian.
+23.9 EN: She had been afraid that nobody would believe her story.
+23.9 WAR: Nahadlok hiya nga bangin waray bisan hin-o nga tumoo ha iya istorya.
+23.10 EN: Living in another town gave her time to recover and become independent.
+23.10 WAR: An pag-ukoy ha iba nga bungto naghatag ha iya hin panahon basi makarekober tikang ha iya mga naeksperyensyahan ngan mahibaro pagin independente.
+23.11 EN: Now, she wanted to help the police finish the investigation.
+23.11 WAR: Yana, karuyag na niya nga buligan an kapulisan basi matapos an imbestigasyon.
+23.12 EN: Mia asked if Lily was afraid to return to the old house.
+23.12 WAR: Nagpakiana hi Mia kon nahahadlok pa ba hi Lily nga bumalik ha daan nga balay.
+23.13 EN: Lily admitted that she still had painful memories of the place.
+23.13 WAR: Inamin hi Lily nga may-ada pa gihapon hiya masakit nga mga hinumdoman mahitungod hito nga lugar.
+23.14 EN: However, she wanted to face her past instead of running away forever.
+23.14 WAR: Pero karuyag na niya atubangon an iya naglabay nga kinabuhi imbes nga padayon la nga pinalagiw.
+23.15 EN: Ethan told her that she was brave for coming back.
+23.15 WAR: Ginsidngan hiya ni Ethan nga maisog hiya kay nagdesisyon hiya nga bumalik.
+23.16 EN: Lily smiled and said she was finally ready to begin again.
+23.16 WAR: Nahiyom hi Lily ngan nagsiring nga andam na hiya nga magtikang utro.
+
+--- CHAPTER 23 WORDS ---
+W23.1 EN: photograph (in sentence 23.4)
+W23.1 WAR: litrato
+W23.2 EN: smile (in sentence 23.4)
+W23.2 WAR: hiyom
+W23.3 EN: diary (in sentence 23.6)
+W23.3 WAR: diary
+W23.4 EN: brave (in sentence 23.15)
+W23.4 WAR: maisog
+W23.5 EN: afternoon (in sentence 23.2)
+W23.5 WAR: kulop
+W23.6 EN: afraid (in sentence 23.9)
+W23.6 WAR: nahadlok
+W23.7 EN: evidence (in sentence 23.6)
+W23.7 WAR: ebidensya
+W23.8 EN: past (in sentence 23.14)
+W23.8 WAR: naglabay
+W23.9 EN: life (in sentence 23.7)
+W23.9 WAR: kinabuhi
+
+=== CHAPTER 24 ===
+
+24.1 EN: Months passed, and the investigation finally reached an important stage.
+24.1 WAR: Paglabay hin pipira ka bulan, inabot na ha importante nga bahin an imbestigasyon.
+24.2 EN: The police confirmed that the hidden documents were connected to the financial crimes.
+24.2 WAR: Ginkumpirma han kapulisan nga may kalabotan an mga tinago nga dokumento ha mga krimen nga may kalabotan ha kwarta.
+24.3 EN: Robert was held responsible for his own actions, while the authorities continued reviewing the family's records.
+24.3 WAR: Ginpapanagot hi Robert ha iya mismo nga mga ginbuhat, samtang nagpapadayon an mga may awtoridad ha pag-usisa han mga rekord han pamilya.
+24.4 EN: Lily decided to stay in town for a while.
+24.4 WAR: Nagdesisyon hi Lily nga magpabilin anay ha bungto ha pipira pa nga panahon.
+24.5 EN: She wanted to help the community and reconnect with people from her childhood.
+24.5 WAR: Karuyag niya nga makabulig ha komunidad ngan makigkita utro ha mga tawo nga iya kakilala han bata pa hiya.
+24.6 EN: With the town's support, the old house was cleaned and repaired.
+24.6 WAR: Pinaagi han bulig han mga tawo ha bungto, ginkarigo ngan gin-ayad an daan nga balay.
+24.7 EN: Lily agreed to turn it into a small public library.
+24.7 WAR: Inuyon hi Lily nga himoon ito nga gutiay nga librarya nga puydi bisitahon han publiko.
+24.8 EN: Volunteers painted the walls and replaced the broken windows.
+24.8 WAR: Ginpinintaran han mga boluntaryo an mga bungbong ngan ginliwanan an mga guba nga bintana.
+24.9 EN: Mia and Ethan helped arrange the books on the shelves.
+24.9 WAR: Binulig hira Mia ngan Ethan ha paghan-ay han mga libro ha mga estante.
+24.10 EN: Mrs. Clara donated several books that she had collected over the years.
+24.10 WAR: Nagdonar liwat hi Mrs. Clara hin pipira nga libro nga iya natitirok ha sulod hin damu na nga katuigan.
+24.11 EN: Children began visiting the library after school.
+24.11 WAR: Nagtikang pagbisita ha librarya an mga kabataan katapos han ira mga klase.
+24.12 EN: The house that once frightened Mia became a place full of laughter and learning.
+24.12 WAR: An balay nga hadto nakakahadlok para kan Mia, yana usa na nga lugar nga puno hin katawa ngan pag-aram.
+24.13 EN: Lily was happy to see children enjoying the rooms where she had once felt lonely.
+24.13 WAR: Nalipay hi Lily nga makita an mga kabataan nga nalilipay ha mga kwarto diin hadto inabat niya an kamingaw.
+24.14 EN: Mia realized that the house had not always been a place of sadness.
+24.14 WAR: Nasantop ni Mia nga diri man ngay-an pirme lugar hin kasubo an daan nga balay.
+24.15 EN: She learned that knowing the truth could help people heal.
+24.15 WAR: Nahibaro hiya nga an paghibaro han kamatuoran makakabulig ha mga tawo nga makarekober tikang ha ira mga kasakit.
+24.16 EN: From that day on, she understood that even the darkest secrets could lead to a new beginning.
+24.16 WAR: Tikang hadto nga adlaw, nasabtan niya nga bisan an pinakamadulom nga mga sekreto mahimo magtugway ngadto ha usa nga bag-o nga pagtikang.
+
+--- CHAPTER 24 WORDS ---
+W24.1 EN: library (in sentence 24.7)
+W24.1 WAR: librarya
+W24.2 EN: shelves (in sentence 24.9)
+W24.2 WAR: estante
+W24.3 EN: windows (in sentence 24.8)
+W24.3 WAR: bintana
+W24.4 EN: walls (in sentence 24.8)
+W24.4 WAR: bungbong
+W24.5 EN: rooms (in sentence 24.13)
+W24.5 WAR: kwarto
+W24.6 EN: community (in sentence 24.5)
+W24.6 WAR: komunidad
+W24.7 EN: books (in sentence 24.10)
+W24.7 WAR: libro
+W24.8 EN: sadness (in sentence 24.14)
+W24.8 WAR: kasubo
+W24.9 EN: truth (in sentence 24.15)
+W24.9 WAR: kamatuoran
