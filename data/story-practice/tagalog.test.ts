@@ -31,8 +31,13 @@ describe("Tagalog Whispers practice", () => {
     }
   });
 
-  test("chapters 3–6 keep the mic and camera optional", () => {
-    for (const chapter of tagalogStoryPracticeChapters.slice(2, 6)) {
+  test("rebuilt chapters keep the mic and camera optional", () => {
+    const rebuilt = [3, 4, 5, 6, 8, 10, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+    const chapters = tagalogStoryPracticeChapters.filter((c) =>
+      rebuilt.includes(c.chapter),
+    );
+    assert.equal(chapters.length, rebuilt.length);
+    for (const chapter of chapters) {
       const [speak, showIt] = [chapter.questions?.[4], chapter.questions?.[9]];
       assert.ok(speak?.type === "speak" && speak.micOptional === true);
       assert.ok(showIt?.type === "expression" && showIt.countsAsCompleted === true);
