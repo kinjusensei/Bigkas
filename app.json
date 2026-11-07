@@ -17,7 +17,8 @@
       "package": "com.otheseussorganization.bigkas",
       "predictiveBackGestureEnabled": false,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/bigkas-icon-foreground.png",
+        "monochromeImage": "./assets/images/bigkas-icon-monochrome.png",
         "backgroundColor": "#410FA3"
       }
     },
