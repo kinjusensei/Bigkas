@@ -1824,6 +1824,96 @@ export const kapampanganPracticeLevels: PracticeLevel[] = [
       },
     ],
   },
+  {
+    id: 21,
+    lessonId: "kapampangan_21",
+    title: "Expressing Opinions and Feelings",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 22,
+    lessonId: "kapampangan_22",
+    title: "Giving Explanations and Reasons",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 23,
+    lessonId: "kapampangan_23",
+    title: "Agreeing and Disagreeing",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 24,
+    lessonId: "kapampangan_24",
+    title: "Advanced Sentence Construction",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 25,
+    lessonId: "kapampangan_25",
+    title: "Verb Forms and Tenses",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 26,
+    lessonId: "kapampangan_26",
+    title: "Idiomatic Expressions and Common Sayings",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 27,
+    lessonId: "kapampangan_27",
+    title: "Workplace and School Conversations",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 28,
+    lessonId: "kapampangan_28",
+    title: "Storytelling and Narration",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 29,
+    lessonId: "kapampangan_29",
+    title: "Situational Dialogues and Role-Playing",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
+  {
+    id: 30,
+    lessonId: "kapampangan_30",
+    title: "Comprehensive Language Assessment",
+    requiredCorrect: 0,
+    // Structured lesson (draft for review): its content is in data/lessons/,
+    // with no practice game.
+    phrases: [],
+  },
 ];
 
 export const warayPracticeLevels: PracticeLevel[] = [

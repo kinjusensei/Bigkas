@@ -303,6 +303,9 @@ export interface StructuredLesson {
   // from an answer key in the lesson plan. Learners don't see this; the
   // drafts are listed in docs/waray-draft-answer-keys.md.
   answerKeysInferred?: boolean;
+  // True for a generated draft (Kapampangan Lessons 21–30) that a native
+  // speaker hasn't reviewed yet. Learners don't see this.
+  draftForReview?: boolean;
   // Waray: which fields were inferred from the lesson's own content because the
   // plan has no source for them. Learners don't see this; every value is listed
   // in docs/waray-inferred-keys.md.
