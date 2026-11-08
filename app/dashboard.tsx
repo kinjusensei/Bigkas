@@ -26,7 +26,7 @@ import { practiceLevels } from "../data/practiceData";
 import { useLevelUnlockCelebration } from "../hooks/useLevelUnlockCelebration";
 import { useSeenBadges } from "../hooks/useSeenBadges";
 import { useStoryProgress } from "../hooks/useStoryProgress";
-import { updateDailyStreak } from "../services/streak";
+import { getDailyStreak } from "../services/streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "../services/supabase";
 import { LessonDialect, StructuredLesson } from "../types/structuredLesson";
 import { resolveAvatarSource } from "../utils/avatars";
@@ -145,6 +145,14 @@ function Avatar({
   );
 }
 
+// The signed-in learner's name and photo, kept for this app session so
+// coming back to Home shows it straight away while it refreshes.
+let knownProfile: {
+  userId: string;
+  displayName: string;
+  avatarUrl: string | null;
+} | null = null;
+
 export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -258,6 +266,10 @@ export default function HomeScreen() {
       .maybeSingle();
     setTotalXp(profile?.xp ?? 0);
 
+    // Day streak: read only. It goes up when a lesson or story is finished
+    // (services/streak.ts), not when the app is opened.
+    setCurrentStreak(await getDailyStreak(userId));
+
     // Wins in a row (+1 per win, 0 after a loss).
     const { data: winningStreak, error: winningStreakError } = await supabase
       .from("winning_streaks")
@@ -318,12 +330,13 @@ export default function HomeScreen() {
   const closeMenu = useCallback(() => setMenuVisible(false), []);
 
   async function loadUser() {
-    setLoading(true);
     setLoadError(null);
 
+    // Read from the phone, not the server: no wait before Home shows.
     const {
-      data: { user },
-    } = await supabase.auth.getUser();
+      data: { session },
+    } = await supabase.auth.getSession();
+    const user = session?.user;
 
     if (!user) {
       router.replace("/" as any);
@@ -331,10 +344,16 @@ export default function HomeScreen() {
     }
 
     setUserId(user.id);
-    const streak = await updateDailyStreak(user.id);
 
-    if (streak) {
-      setCurrentStreak(streak.current_streak);
+    // Seen this session (so the tutorial is done): show it now and refresh
+    // below without the loading screen.
+    const known = knownProfile?.userId === user.id ? knownProfile : null;
+    if (known) {
+      setDisplayName(known.displayName);
+      setPhotoUri(known.avatarUrl);
+      setLoading(false);
+    } else {
+      setLoading(true);
     }
 
     // A failed read must not look like an unfinished tutorial, or the user is
@@ -355,6 +374,8 @@ export default function HomeScreen() {
         return data;
       });
     } catch (error) {
+      // Already showing this session's profile: keep it rather than an error.
+      if (known) return;
       setLoadError(String((error as { message?: unknown })?.message ?? error));
       setLoading(false);
       return;
@@ -364,10 +385,16 @@ export default function HomeScreen() {
     setPhotoUri(profile?.avatar_url ?? null);
 
     if (!profile?.tutorial_completed) {
+      knownProfile = null;
       router.replace("/tutorial");
       return;
     }
 
+    knownProfile = {
+      userId: user.id,
+      displayName: profile?.display_name ?? "Learner",
+      avatarUrl: profile?.avatar_url ?? null,
+    };
     setLoading(false);
   }
 
@@ -934,7 +961,10 @@ export default function HomeScreen() {
         visible={pickerVisible}
         currentAvatarUrl={photoUri}
         onClose={() => setPickerVisible(false)}
-        onChange={(newUrl) => setPhotoUri(newUrl)}
+        onChange={(newUrl) => {
+          setPhotoUri(newUrl);
+          if (knownProfile) knownProfile = { ...knownProfile, avatarUrl: newUrl };
+        }}
       />
     </SafeAreaView>
   );

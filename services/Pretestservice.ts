@@ -5,6 +5,7 @@
 // to match whatever practiceService.ts uses at the top of that file.
 // =========================================================
 import { REVIEW_MODE } from "../constant/devFlags";
+import { invalidateProgress } from "./progressCache";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
 
 export type PretestResult = {
@@ -53,6 +54,9 @@ export async function savePretestResult(
   if (error) {
     throw error;
   }
+
+  // Screens reload progress instead of showing what they had before this.
+  invalidateProgress();
 }
 
 /**

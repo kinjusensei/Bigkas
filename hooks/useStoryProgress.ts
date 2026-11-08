@@ -26,6 +26,11 @@ import {
 import { StoryChapter } from "../data/storyData";
 import { getAllLessonProgress } from "../services/practiceService";
 import {
+  getCachedProgress,
+  progressVersion,
+  setCachedProgress,
+} from "../services/progressCache";
+import {
   getAllPretestProgress,
   PretestResult,
 } from "../services/Pretestservice";
@@ -48,6 +53,43 @@ type PracticeProgressMap = Record<
 >;
 
 type PretestProgressMap = Record<string, PretestResult>;
+
+type ProgressSnapshot = {
+  practice: PracticeProgressMap;
+  pretest: PretestProgressMap;
+  completions: Record<string, CompletionRecord>;
+};
+
+// One download shared by every screen and gate that asks at the same time.
+let inFlight: Promise<ProgressSnapshot> | null = null;
+
+function loadProgressSnapshot(): Promise<ProgressSnapshot> {
+  if (inFlight) return inFlight;
+  const startedAt = progressVersion();
+  inFlight = (async () => {
+    // Waited for with the rest, so nothing reads a lesson as locked
+    // before its completion has arrived. Never throws (returns {}).
+    const completionsPromise = getAllLessonCompletions();
+    try {
+      const [practice, pretest, completions] = await Promise.all([
+        getAllLessonProgress(),
+        getAllPretestProgress(),
+        completionsPromise,
+      ]);
+      const snapshot = { practice, pretest, completions };
+      setCachedProgress(snapshot, startedAt);
+      return snapshot;
+    } catch (error) {
+      console.error("Failed to load lesson/pretest progress:", error);
+      // Fail safe: nothing counts as complete until this succeeds. Not
+      // kept, so the next screen tries again.
+      return { practice: {}, pretest: {}, completions: await completionsPromise };
+    }
+  })().finally(() => {
+    inFlight = null;
+  });
+  return inFlight;
+}
 
 const getPracticeLevel = (lessonId: string) => {
   const levels = lessonId.startsWith("story_")
@@ -77,51 +119,46 @@ export function getStoryProgress(
 // on first render the caller may not have a list yet; with [] every
 // chapter past the first just reads as locked until it arrives.
 export function useStoryProgress(chapters: StoryChapter[] = []) {
+  // Starts from the progress already loaded by another screen, if any, so
+  // switching screens doesn't show a loading spinner each time.
+  const initial = getCachedProgress<ProgressSnapshot>();
   const [practiceProgress, setPracticeProgress] = useState<PracticeProgressMap>(
-    {},
+    initial?.practice ?? {},
   );
   const [pretestProgress, setPretestProgress] = useState<PretestProgressMap>(
-    {},
+    initial?.pretest ?? {},
   );
   // Structured lessons (sql/lesson_completions.sql). Loaded separately and
   // fail-soft, so a missing table doesn't break other progress.
   const [completions, setCompletions] = useState<
     Record<string, CompletionRecord>
-  >({});
-  const [loading, setLoading] = useState(true);
+  >(initial?.completions ?? {});
+  const [loading, setLoading] = useState(!initial);
 
   useFocusEffect(
     useCallback(() => {
       let cancelled = false;
 
+      const show = (snapshot: ProgressSnapshot) => {
+        setPracticeProgress(snapshot.practice);
+        setPretestProgress(snapshot.pretest);
+        setCompletions(snapshot.completions);
+      };
+
       async function loadProgress() {
-        setLoading(true);
-        // Waited for with the rest, so nothing reads a lesson as locked
-        // before its completion has arrived. Never throws (returns {}).
-        const completionsPromise = getAllLessonCompletions();
-        try {
-          const [practiceMap, pretestMap, completionMap] = await Promise.all([
-            getAllLessonProgress(),
-            getAllPretestProgress(),
-            completionsPromise,
-          ]);
-          if (!cancelled) {
-            setPracticeProgress(practiceMap);
-            setPretestProgress(pretestMap);
-            setCompletions(completionMap);
-          }
-        } catch (error) {
-          console.error("Failed to load lesson/pretest progress:", error);
-          // Fail safe: nothing counts as complete until this succeeds.
-          if (!cancelled) {
-            setPracticeProgress({});
-            setPretestProgress({});
-            setCompletions(await completionsPromise);
-          }
-        } finally {
-          if (!cancelled) {
-            setLoading(false);
-          }
+        // Already loaded (and nothing saved since): show it now and refresh
+        // quietly. Otherwise wait, so nothing shows as locked by mistake.
+        const cached = getCachedProgress<ProgressSnapshot>();
+        if (cached) {
+          show(cached);
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
+        const fresh = await loadProgressSnapshot();
+        if (!cancelled) {
+          show(fresh);
+          setLoading(false);
         }
       }
 

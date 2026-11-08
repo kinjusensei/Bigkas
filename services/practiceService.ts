@@ -5,6 +5,8 @@ import {
   XP_PER_LEVEL,
 } from "../constant/gameConstants";
 import { scoreWithStreakBonus } from "../utils/lessonCompletion";
+import { invalidateProgress } from "./progressCache";
+import { recordDailyActivity } from "./streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
 
 export interface SavePracticeResult {
@@ -289,6 +291,12 @@ export async function savePracticeResultWithXp(
   if (historyError) {
     throw historyError;
   }
+
+  // Screens reload progress instead of showing what they had before this.
+  invalidateProgress();
+
+  // A finished lesson practice or story chapter counts for the day streak.
+  await recordDailyActivity(user.id);
 
   return { newXp, xpEarned: xpToAdd };
 }

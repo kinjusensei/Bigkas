@@ -1,5 +1,6 @@
 import { structuredLessonsById } from "../data/lessons/structuredLessons";
 import { practiceLevels } from "../data/practiceData";
+import { streakToShow } from "../utils/dailyStreak";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
 
 // Read-only data for the Profile and Lesson history screens. Nothing here
@@ -142,10 +143,10 @@ export async function getProfileStats(): Promise<ProfileStats | null> {
       .select("display_name, avatar_url, xp")
       .eq("id", userId)
       .maybeSingle(),
-    // Read only — the dashboard updates the daily streak on open.
+    // Read only — finishing a lesson or story updates it (services/streak.ts).
     supabase
       .from("daily_streaks")
-      .select("current_streak")
+      .select("current_streak, longest_streak, last_activity")
       .eq("user_id", userId)
       .maybeSingle(),
     supabase
@@ -164,7 +165,7 @@ export async function getProfileStats(): Promise<ProfileStats | null> {
     displayName: profile.data?.display_name ?? "Learner",
     avatarUrl: profile.data?.avatar_url ?? null,
     totalXp: profile.data?.xp ?? 0,
-    dailyStreak: daily.data?.current_streak ?? 0,
+    dailyStreak: streakToShow(daily.data ?? null, new Date()),
     winStreak: wins.data?.current_streak ?? 0,
   };
 }

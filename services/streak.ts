@@ -1,5 +1,15 @@
 import { REVIEW_MODE } from "../constant/devFlags";
+import {
+  DailyStreakRow,
+  nextDailyStreak,
+  streakToShow,
+} from "../utils/dailyStreak";
 import { supabase } from "./supabase";
+
+// Day streak (daily_streaks). Rules: utils/dailyStreak.ts.
+// - getDailyStreak: read only, for the Dashboard and Profile.
+// - recordDailyActivity: called when a lesson or story is finished
+//   (services/practiceService.ts, services/lessonCompletionService.ts).
 
 export type DailyStreak = {
   current_streak: number;
@@ -7,136 +17,65 @@ export type DailyStreak = {
   last_activity: string | null;
 };
 
-function getLocalDateString(date: Date): string {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
+async function fetchRow(userId: string): Promise<DailyStreakRow | null> {
+  const { data, error } = await supabase
+    .from("daily_streaks")
+    .select("current_streak, longest_streak, last_activity")
+    .eq("user_id", userId)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
 }
 
-function getYesterdayDateString(date: Date): string {
-  const yesterday = new Date(date);
-
-  yesterday.setDate(yesterday.getDate() - 1);
-
-  return getLocalDateString(yesterday);
+// The streak to show now: 0 once a whole day was missed.
+export async function getDailyStreak(userId: string): Promise<number> {
+  try {
+    return streakToShow(await fetchRow(userId), new Date());
+  } catch (error: any) {
+    console.log("🔥 Streak fetch error:", error?.message ?? error);
+    return 0;
+  }
 }
 
-export async function updateDailyStreak(
+// Counts today for the streak. Safe to call after every lesson or story:
+// only the first one each day changes it. Never throws, so a streak
+// problem can't block saving a result.
+export async function recordDailyActivity(
   userId: string,
 ): Promise<DailyStreak | null> {
+  // Review mode saves nothing (constant/devFlags.ts).
+  if (REVIEW_MODE) return null;
+
   try {
-    const { data: existingStreak, error: fetchError } = await supabase
-      .from("daily_streaks")
-      .select("current_streak, longest_streak, last_activity")
-      .eq("user_id", userId)
-      .maybeSingle();
-
-    if (fetchError) {
-      console.log("🔥 Streak fetch error:", fetchError.message);
-      return null;
-    }
-
-    // Review mode shows the saved streak without changing it
-    // (constant/devFlags.ts).
-    if (REVIEW_MODE) return existingStreak ?? null;
-
+    const existing = await fetchRow(userId);
     const now = new Date();
-    const today = getLocalDateString(now);
-    const yesterday = getYesterdayDateString(now);
+    const next = nextDailyStreak(existing, now);
 
-    // First login / no streak record yet.
-    if (!existingStreak) {
-      const newStreak = {
-        current_streak: 1,
-        longest_streak: 1,
-        last_activity: now.toISOString(),
-        user_id: userId,
-      };
-
-      const { data, error } = await supabase
-        .from("daily_streaks")
-        .insert(newStreak)
-        .select("current_streak, longest_streak, last_activity")
-        .single();
-
-      if (error) {
-        console.log("🔥 Streak insert error:", error.message);
-        return null;
-      }
-
-      return data;
-    }
-
-    const lastActivity = existingStreak.last_activity;
-
-    if (!lastActivity) {
-      const { data, error } = await supabase
-        .from("daily_streaks")
-        .update({
-          current_streak: 1,
-          longest_streak: Math.max(existingStreak.longest_streak ?? 0, 1),
-          last_activity: now.toISOString(),
-        })
-        .eq("user_id", userId)
-        .select("current_streak, longest_streak, last_activity")
-        .single();
-
-      if (error) {
-        console.log("🔥 Streak reset error:", error.message);
-        return null;
-      }
-
-      return data;
-    }
-
-    const lastActivityDate = getLocalDateString(new Date(lastActivity));
-
-    // Already logged in today.
-    if (lastActivityDate === today) {
+    if (!next.changed && existing) {
       return {
-        current_streak: existingStreak.current_streak ?? 1,
-        longest_streak: existingStreak.longest_streak ?? 1,
-        last_activity: existingStreak.last_activity,
+        current_streak: next.current,
+        longest_streak: next.longest,
+        last_activity: existing.last_activity,
       };
     }
 
-    let newCurrentStreak: number;
+    const values = {
+      current_streak: next.current,
+      longest_streak: next.longest,
+      last_activity: now.toISOString(),
+    };
 
-    // Logged in yesterday → continue streak.
-    if (lastActivityDate === yesterday) {
-      newCurrentStreak = (existingStreak.current_streak ?? 0) + 1;
-    } else {
-      // Missed at least one day → restart.
-      newCurrentStreak = 1;
-    }
+    const query = existing
+      ? supabase.from("daily_streaks").update(values).eq("user_id", userId)
+      : supabase.from("daily_streaks").insert({ ...values, user_id: userId });
 
-    const newLongestStreak = Math.max(
-      existingStreak.longest_streak ?? 0,
-      newCurrentStreak,
-    );
-
-    const { data, error } = await supabase
-      .from("daily_streaks")
-      .update({
-        current_streak: newCurrentStreak,
-        longest_streak: newLongestStreak,
-        last_activity: now.toISOString(),
-      })
-      .eq("user_id", userId)
+    const { data, error } = await query
       .select("current_streak, longest_streak, last_activity")
       .single();
-
-    if (error) {
-      console.log("🔥 Streak update error:", error.message);
-      return null;
-    }
-
+    if (error) throw error;
     return data;
   } catch (error: any) {
-    console.log("🔥 Streak error:", error?.message ?? error);
-
+    console.log("🔥 Streak update error:", error?.message ?? error);
     return null;
   }
 }

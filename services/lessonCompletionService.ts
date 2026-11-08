@@ -9,6 +9,8 @@ import {
   scoreWithStreakBonus,
   StreakState,
 } from "../utils/lessonCompletion";
+import { invalidateProgress } from "./progressCache";
+import { recordDailyActivity } from "./streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
 
 // Saves a structured lesson's result (sql/lesson_completions.sql): best
@@ -266,6 +268,13 @@ async function doSave(
     if (streakError) throw streakError;
     countedStreaks.set(streakId, newStreak.current);
   }
+
+  // Screens reload progress instead of showing what they had before this.
+  if (!REVIEW_MODE) invalidateProgress();
+
+  // A finished lesson counts for the day streak, passed or not. Giving up
+  // doesn't.
+  if (!input.surrendered) await recordDailyActivity(userId);
 
   return {
     xpAdded: result.xpToAdd,
