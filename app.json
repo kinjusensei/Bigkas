@@ -3,7 +3,7 @@
     "name": "Bigkas",
     "slug": "bigkas",
     "scheme": "bigkas",
-    "version": "1.0.0",
+    "version": "1.0.10",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "automatic",
