@@ -110,6 +110,7 @@ export default function StoryScreen() {
     isLessonComplete,
     isStoryLevelOpen,
     isStoryOpen,
+    isTierOpen,
   } = useStoryProgress();
 
   const loading = dialectLoading || progressLoading;
@@ -156,6 +157,16 @@ export default function StoryScreen() {
             story.tierIndex === selectedLevel &&
             isStoryOpen(story, selectedDialect),
         );
+  // A level switched off in LOCKED_STORY_LEVELS still shows the lessons
+  // left to unlock it; "coming soon" only shows once those are done.
+  const levelSwitchedOff = isStoryLevelLocked(selectedDialect, selectedLevel);
+  const levelEarned =
+    selectedLevel === 0 || isTierOpen(selectedDialect, selectedLevel);
+  const showSwitchedOff = !loading && levelSwitchedOff && levelEarned;
+  const showLockedPanel =
+    !loading &&
+    selectedLevel > 0 &&
+    (levelLocked || (levelSwitchedOff && !levelEarned));
   const levelComingSoon = comingSoonStories.filter(
     (story) => story.tierIndex === selectedLevel,
   );
@@ -358,7 +369,7 @@ export default function StoryScreen() {
                     size="large"
                     color={C.primary}
                   />
-                ) : isStoryLevelLocked(selectedDialect, selectedLevel) ? (
+                ) : showSwitchedOff ? (
                   <View style={styles.emptyBox}>
                     <Ionicons name="lock-closed" size={28} color={C.primary} />
                     <Text style={styles.emptyTitle} accessibilityRole="header">
@@ -369,7 +380,7 @@ export default function StoryScreen() {
                       you&apos;ve saved in it is kept.
                     </Text>
                   </View>
-                ) : levelLocked ? (
+                ) : showLockedPanel ? (
                   <LockedLevelPanel
                     levelName={TIERS[selectedLevel].name}
                     title={`${TIERS[selectedLevel].name} stories are locked`}

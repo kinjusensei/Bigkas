@@ -6,7 +6,6 @@
 -- - Deshawn (Easy) is always open.
 -- - Old House (Intermediate) needs all 10 Easy lessons passed.
 -- - Whispers (Hard) needs all 10 Intermediate lessons passed.
--- - Waray has no locks while its lessons have no content.
 -- - A learner with a saved attempt in that story and language keeps it.
 --
 -- Story text ships inside the app, so reading can't be blocked here. What is
@@ -59,7 +58,7 @@ begin
   v_story    := v_match[2]; -- null = Whispers
   v_tier := case v_story when 'deshawn' then 0 when 'oldhouse' then 1 else 2 end;
 
-  if v_tier = 0 or v_language = 'waray' then
+  if v_tier = 0 then
     return new;
   end if;
 

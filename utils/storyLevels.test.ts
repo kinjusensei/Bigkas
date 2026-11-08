@@ -57,7 +57,7 @@ describe("which levels are open", () => {
   const easy = (language: TierLanguage) => tierLessonIds(language, 0);
   const intermediate = (language: TierLanguage) => tierLessonIds(language, 1);
 
-  for (const language of ["tagalog", "kapampangan"] as const) {
+  for (const language of ["tagalog", "kapampangan", "waray"] as const) {
     test(`${language}: Easy incomplete opens Easy only`, () => {
       assert.deepEqual(openLevels(language, []), [true, false, false]);
       assert.deepEqual(openLevels(language, easy(language).slice(0, 9)), [
@@ -75,6 +75,8 @@ describe("which levels are open", () => {
       ]);
     });
 
+    // Waray Hard is switched off; see "the locked story levels switch".
+    if (language === "waray") continue;
     test(`${language}: Easy and Intermediate complete opens Hard`, () => {
       assert.deepEqual(
         openLevels(language, [...easy(language), ...intermediate(language)]),
@@ -91,8 +93,11 @@ describe("which levels are open", () => {
     ]);
   });
 
-  test("Waray Easy and Intermediate have no locks, Hard is switched off", () => {
-    assert.deepEqual(openLevels("waray", []), [true, true, false]);
+  test("Waray Hard stays switched off even with every lesson passed", () => {
+    assert.deepEqual(
+      openLevels("waray", [...easy("waray"), ...intermediate("waray")]),
+      [true, true, false],
+    );
   });
 });
 
@@ -121,12 +126,12 @@ describe("a story with no Waray text yet", () => {
     assert.equal(storyLevelContent(1, 0), "stories");
   });
 
-  test("without the switch, Waray Hard doesn't wait on the Intermediate story", () => {
-    assert.equal(isStoryLevelOpen("waray", 2, () => false, []), true);
+  test("without the switch, Waray Hard opens from lessons alone", () => {
+    assert.equal(isStoryLevelOpen("waray", 2, () => true, []), true);
+    assert.equal(isStoryLevelOpen("waray", 2, () => false, []), false);
   });
 
-  // For when Waray leaves LANGUAGES_WITHOUT_LESSON_PATH: the lesson rule it
-  // moves to asks only about lessons, so no story can hold Hard back.
+  // The lesson rule asks only about lessons, so no story can hold Hard back.
   test("the level rule asks about lessons, never story chapters", () => {
     const asked: string[] = [];
     const passed = [...easy("waray"), ...intermediate("waray")];
@@ -139,9 +144,10 @@ describe("a story with no Waray text yet", () => {
     for (const lessonId of asked) assert.match(lessonId, /^waray_\d+$/);
   });
 
-  test("the server rule matches: Waray isn't gated, Hard checks lessons only", () => {
+  test("the server rule matches: Waray is gated too, Hard checks lessons only", () => {
     const sql = readFileSync("sql/story_levels.sql", "utf8");
-    assert.match(sql, /if v_tier = 0 or v_language = 'waray' then\s+return new;/);
+    assert.match(sql, /if v_tier = 0 then\s+return new;/);
+    assert.doesNotMatch(sql, /v_language = 'waray'/);
     assert.match(
       sql,
       /story_lesson_passed_by\(new\.user_id, v_language \|\| '_' \|\| n\)/,
@@ -196,7 +202,8 @@ describe("the locked story levels switch", () => {
   });
 
   test("the Story page opens on the highest level still open", () => {
-    const states = openLevels("waray", []).map((unlocked) => ({ unlocked }));
+    const passed = [...tierLessonIds("waray", 0), ...tierLessonIds("waray", 1)];
+    const states = openLevels("waray", passed).map((unlocked) => ({ unlocked }));
     assert.equal(highestOpenLevel(states), 1);
   });
 

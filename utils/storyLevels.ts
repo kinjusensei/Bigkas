@@ -22,9 +22,9 @@ export const STORY_TIER_INDEX: Record<string, number> = {
   whispers: 2,
 };
 
-// Waray lessons 2-20 have no content yet, so its levels can't be earned.
-// Remove Waray here once they do, and its stories lock like the others.
-export const LANGUAGES_WITHOUT_LESSON_PATH: readonly TierLanguage[] = ["waray"];
+// Languages whose lessons have no content yet, so their levels can't be
+// earned. Waray left this list once its Lessons 1-30 were added.
+export const LANGUAGES_WITHOUT_LESSON_PATH: readonly TierLanguage[] = [];
 
 export type LockedStoryLevel = { language: TierLanguage; tierIndex: number };
 
