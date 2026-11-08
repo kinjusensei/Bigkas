@@ -392,7 +392,6 @@ function PracticeScreen() {
 
     if (
       !transcript ||
-      !isFinal ||
       state.status !== "RUNNING" ||
       attemptFrozenRef.current ||
       stoppingVoiceRef.current ||
@@ -403,17 +402,23 @@ function PracticeScreen() {
       return;
     }
 
-    console.log("🎤 SPEECH RESULT:", transcript);
-
     const voiceStageStates = alignFullPhrase(
       transcript,
       wordStates.map((w) => w.text),
     );
+    const allCorrect = voiceStageStates.every((w) => w.status === "correct");
+
+    // Android can keep a result "not final" for as long as the mic is on,
+    // so a full match counts as soon as it's heard; only a miss waits for
+    // the final result.
+    if (!isFinal && !allCorrect) {
+      return;
+    }
+
+    console.log("🎤 SPEECH RESULT:", transcript);
+
     setWordStates(voiceStageStates);
-    finishStage(
-      "voice",
-      voiceStageStates.every((w) => w.status === "correct"),
-    );
+    finishStage("voice", allCorrect);
     return;
 
   });

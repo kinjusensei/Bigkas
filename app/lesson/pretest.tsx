@@ -533,10 +533,12 @@ function PretestScreen() {
         return;
       }
 
+      // Story practice listens once per tap: not continuous, so the phone
+      // ends after the learner stops talking and sends its final result.
       ExpoSpeechRecognitionModule.start({
         lang: "fil-PH",
         interimResults: true,
-        continuous: true,
+        continuous: !isStoryPractice,
       });
 
       recognitionActiveRef.current = true;
@@ -547,7 +549,7 @@ function PretestScreen() {
       console.error("🎤 Pretest speech start failed:", error);
       markMicUnavailable();
     }
-  }, [markMicUnavailable]);
+  }, [isStoryPractice, markMicUnavailable]);
 
   useSpeechRecognitionEvent("result", (event) => {
     if (
@@ -558,26 +560,43 @@ function PretestScreen() {
       return;
     }
 
-    const transcript = event.results[0]?.transcript?.trim() ?? "";
+    // The phone's best guess first, then its other guesses.
+    const transcripts = (event.results ?? [])
+      .map((result) => result?.transcript?.trim() ?? "")
+      .filter(Boolean);
+    const transcript = transcripts[0] ?? "";
     const isFinal = (event as any).isFinal ?? true;
 
     if (transcript && isStoryPractice) {
       setSpeakHeard(transcript);
     }
 
-    if (!transcript || !isFinal) {
+    if (!transcript) {
       return;
     }
 
-    const spokenWords = transcript.trim().split(/\s+/).map(normalizeWord);
-    const spoken = normalizeWord(transcript);
-    const spokenLastWord = spokenWords[spokenWords.length - 1] ?? "";
     const expected = normalizeWord(currentQuestion.word);
     const expectedIsSingleWord = currentQuestion.word.trim().split(/\s+/).length === 1;
+    const matchesWord = (text: string) => {
+      const spokenWords = text.split(/\s+/).map(normalizeWord);
+      const spokenLastWord = spokenWords[spokenWords.length - 1] ?? "";
+      return (
+        normalizeWord(text) === expected ||
+        (expectedIsSingleWord && spokenLastWord === expected)
+      );
+    };
+    const matchedTranscript = transcripts.find(matchesWord);
 
-    setSpeakHeard(transcript);
+    // Android can keep a result "not final" for as long as the mic is on,
+    // which left the screen on Listening with the right word shown. A match
+    // counts as soon as it's heard; only a miss waits for the final result.
+    if (!matchedTranscript && !isFinal) {
+      return;
+    }
 
-    if (spoken === expected || (expectedIsSingleWord && spokenLastWord === expected)) {
+    setSpeakHeard(matchedTranscript ?? transcript);
+
+    if (matchedTranscript) {
       speakMatchedRef.current = true;
       setSpeakMatched(true);
       creditCurrentQuestion();
@@ -903,7 +922,8 @@ function PretestScreen() {
                 setSpeakHeard(null);
                 void handleStartListening();
               }}
-              onStop={() => ExpoSpeechRecognitionModule.abort()}
+              // stop() (not abort) so what was said is still checked.
+              onStop={() => ExpoSpeechRecognitionModule.stop()}
               onContinue={handleContinueFromSpeak}
               onSkip={handleSkip}
             />
