@@ -14,7 +14,14 @@ import {
 // Run with: npm test
 
 describe("FER model helpers", () => {
-  test("the model classes are the self-report labels, in folder order", () => {
+  test("the model classes are self-report labels, in folder (alphabetical) order", () => {
+    const labels = FER_SELF_REPORT_OPTIONS.map((option) => option.label);
+    for (const label of FER_MODEL_CLASSES) assert.ok(labels.includes(label), label);
+    assert.deepEqual([...FER_MODEL_CLASSES], [...FER_MODEL_CLASSES].sort());
+    assert.equal(new Set(FER_MODEL_CLASSES).size, FER_MODEL_CLASSES.length);
+  });
+
+  test("the model has all four self-report labels", () => {
     const labels = FER_SELF_REPORT_OPTIONS.map((option) => option.label);
     assert.deepEqual([...FER_MODEL_CLASSES], [...labels].sort());
   });
@@ -23,8 +30,8 @@ describe("FER model helpers", () => {
     const result = interpretScores([0.1, 0.7, 0.1, 0.1]);
     assert.equal(result?.emotion, "engaged");
     assert.equal(result?.confidence, 0.7);
-    assert.equal(interpretScores([0.3, 0.3, 0.2, 0.2]), null);
-    assert.equal(interpretScores([0.1, 0.7, 0.1, 0.05, 0.05]), null);
+    assert.equal(interpretScores([0.3, 0.3, 0.2, 0.2]), null); // below 0.6
+    assert.equal(interpretScores([0.2, 0.8]), null); // 2 scores, 4 classes
   });
 
   test("confirms only after three agreeing predictions in a row", () => {

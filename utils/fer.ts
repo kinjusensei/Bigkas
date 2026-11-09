@@ -17,9 +17,15 @@ export const FER_SELF_REPORT_OPTIONS: {
   { label: "frustrated", emoji: "😤", text: "Difficult" },
 ];
 
-// MediaPipe Model Maker numbers classes in alphabetical folder order. Check
-// fer_model_output/model_metadata.json → "classes" after training; if it
-// differs, change this list to match it.
+// The classes the trained model outputs, in its order. MediaPipe Model Maker
+// numbers them by folder name, alphabetically, and skips empty folders.
+//
+// First model: all four labels (941 photos: engaged 301, neutral 301,
+// frustrated 188, confused 151).
+//
+// Always check fer_model_output/model_metadata.json → "classes" after
+// training and make this list match it exactly, or every prediction is
+// ignored (interpretScores needs one score per class).
 export const FER_MODEL_CLASSES: readonly FERLabel[] = [
   "confused",
   "engaged",

@@ -4,8 +4,14 @@ train_fer_model.py
 Trains a MobileNetV2-based facial expression classifier using
 MediaPipe Model Maker, then exports it as a .tflite file for Bigkas.
 
-SETUP (run once):
-  pip install mediapipe-model-maker tensorflow pillow
+SETUP (run once) — Linux or Google Colab only; Model Maker can't be
+installed on Windows (tensorflow-text has no Windows build) and needs
+Python 3.9–3.11. In Colab (Python 3.13), make a Python 3.11 environment:
+  !pip install -q uv
+  !uv venv -q -p 3.11 /content/mm
+  !uv pip install -q --python /content/mm/bin/python \
+      mediapipe-model-maker "mediapipe==0.10.14" "setuptools<81" "numpy<2" pillow
+  !MPLBACKEND=Agg /content/mm/bin/python train_fer_model.py
 
 FOLDER STRUCTURE expected:
   fer_training_data/
@@ -117,11 +123,15 @@ def train(processed_dir: str, output_dir: str):
         export_dir=output_dir,
     )
 
+    # Model Maker 0.2+: the model and settings go in ImageClassifierOptions.
+    options = image_classifier.ImageClassifierOptions(
+        supported_model=spec,
+        hparams=hparams,
+    )
     model = image_classifier.ImageClassifier.create(
         train_data=train_data,
-        model_spec=spec,
         validation_data=test_data,
-        hparams=hparams,
+        options=options,
     )
 
     print('\n📊 Evaluating...')

@@ -16,7 +16,7 @@
  * -------------------------------------------------------------------
  */
 import { Directory, File, Paths } from "expo-file-system";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   Alert,
   ScrollView,
@@ -30,6 +30,7 @@ import { zip } from "react-native-zip-archive";
 
 import { countByLabel, type FERFrameMeta, type FERLabel, uriToPath } from "../../utils/fer";
 import { readAllFrameMeta } from "./ferStorage";
+import { useFocusEffect } from "expo-router";
 
 const EMOTION_COLORS: Record<FERLabel, string> = {
   engaged: "#4CAF50",
@@ -55,9 +56,13 @@ export function FERDataExporter() {
     }
   }, []);
 
-  useEffect(() => {
-    loadFrames();
-  }, [loadFrames]);
+  // Re-read on every visit: coming back from "Collect Photos Now" must show
+  // the new photos (and enable Export), not the list from the first visit.
+  useFocusEffect(
+    useCallback(() => {
+      loadFrames();
+    }, [loadFrames]),
+  );
 
   async function exportForTraining() {
     setBusy(true);
