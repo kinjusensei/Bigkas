@@ -39,6 +39,29 @@ export const FER_DIFFICULTY_LABELS: readonly FERLabel[] = [
   "frustrated",
 ];
 
+// What the camera read, for display: a trained-model state (engaged, ...)
+// or, when the model can't run, the older ML Kit expression (happy, ...).
+export type FERReading = FERLabel | string;
+
+const READING_TEXT: Record<FERLabel, string> = {
+  engaged: "engaged",
+  neutral: "neutral",
+  confused: "a little confused",
+  frustrated: "frustrated",
+};
+
+export function describeReading(reading: FERReading): string {
+  return READING_TEXT[reading as FERLabel] ?? reading;
+}
+
+// Readings that mean the learner may need help (both FERs).
+export function readingNeedsHelp(reading: FERReading | null | undefined): boolean {
+  return (
+    !!reading &&
+    ["confused", "frustrated", "sad", "angry"].includes(reading)
+  );
+}
+
 export const FER_INPUT_SIZE = 224;
 export const FER_CONFIDENCE_THRESHOLD = 0.6;
 export const FER_CONFIRMATION_COUNT = 3;

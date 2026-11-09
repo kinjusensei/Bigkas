@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
 import { useCameraPermission, usePhotoOutput } from "react-native-vision-camera";
 
@@ -8,10 +8,10 @@ import PracticeCamera from "../../../app/components/Practice/PracticeCamera";
 import { FER_DATA_COLLECTION_ENABLED, FER_MODEL_ENABLED } from "../../../constant/fer";
 import { useFERInference } from "../../../services/FERInferenceService";
 import { FERDataCollector } from "../../fer/FERDataCollector";
+import { describeReading, FERReading, readingNeedsHelp } from "../../../utils/fer";
 import {
   ExpectedPracticeExpression,
   ExpectedTone,
-  PracticeExpression,
 } from "../../../types/practice";
 import { LessonSpeakingPhrase } from "../../../types/structuredLesson";
 import { LESSON_COLORS, lessonStyles, MIN_TOUCH } from "../lessonStyles";
@@ -37,8 +37,10 @@ type Props = {
   onMicEnabledChange: (value: boolean) => void;
   cameraHints: boolean;
   onCameraHintsChange: (value: boolean) => void;
-  expression: PracticeExpression | null;
-  onExpression: (expression: PracticeExpression) => void;
+  // The trained FER model's state, or the older ML Kit expression when the
+  // model can't run. Never scored.
+  expression: FERReading | null;
+  onExpression: (expression: FERReading) => void;
   // Changes per take so the camera starts a fresh expression reading.
   takeKey: number;
   // Names the FER training photos (components/fer).
@@ -245,14 +247,14 @@ function SwitchRow({
 function ExpressionChip({
   expression,
 }: {
-  expression: PracticeExpression | null;
+  expression: FERReading | null;
 }) {
   return (
     <View style={styles.expressionChip}>
       <Ionicons name="happy-outline" size={14} color={LESSON_COLORS.textSecondary} />
       <Text style={styles.expressionChipText}>
         {expression && expression !== "unknown"
-          ? `Expression: ${expression}`
+          ? `Looks ${describeReading(expression)}`
           : "Reading expression…"}
       </Text>
       <View style={styles.notScored}>
@@ -289,12 +291,19 @@ function RecordingView({
     () => (ferOn ? [photoOutput] : undefined),
     [ferOn, photoOutput],
   );
-  const [needsHelp, setNeedsHelp] = useState(false);
   const fer = useFERInference({
     enabled: cameraOn && FER_MODEL_ENABLED,
     photoOutput,
-    onDifficultyDetected: () => setNeedsHelp(true),
   });
+  // The trained model replaces the ML Kit expression; ML Kit is the fallback
+  // when the model is off or failed to load on this phone.
+  const useModel = FER_MODEL_ENABLED && !fer.loadError;
+  const modelReading = fer.currentEmotion?.emotion;
+  useEffect(() => {
+    if (useModel && modelReading) onExpression(modelReading);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [useModel, modelReading, fer.currentEmotion?.timestamp]);
+  const needsHelp = readingNeedsHelp(expression);
 
   return (
     <>
@@ -307,7 +316,9 @@ function RecordingView({
           >
             <PracticeCamera
               phraseId={takeKey}
-              onExpressionConfirmed={(result) => onExpression(result.expression)}
+              onExpressionConfirmed={(result) => {
+                if (!useModel) onExpression(result.expression);
+              }}
               extraOutputs={extraOutputs}
             />
           </FaceDetectionProvider>
@@ -480,8 +491,9 @@ function FeedbackView({
             </View>
           </View>
           <Text style={[lessonStyles.body, styles.gapTop]}>
-            The camera read your expression as {expression}. This is just a
-            practice insight — it doesn&apos;t show how well you understand.
+            You looked {describeReading(expression)} while speaking. This is
+            just a practice insight — it doesn&apos;t show how well you
+            understand.
           </Text>
         </View>
       ) : null}

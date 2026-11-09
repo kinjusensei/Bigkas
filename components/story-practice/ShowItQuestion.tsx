@@ -1,10 +1,17 @@
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { useCameraDevice, useCameraPermission } from "react-native-vision-camera";
+import {
+  useCameraDevice,
+  useCameraPermission,
+  usePhotoOutput,
+} from "react-native-vision-camera";
 
 import PracticeCamera from "../../app/components/Practice/PracticeCamera";
+import { FER_MODEL_ENABLED } from "../../constant/fer";
+import { useFERInference } from "../../services/FERInferenceService";
+import { describeReading } from "../../utils/fer";
 import type {
   ExpectedPracticeExpression,
   PracticeExpression,
@@ -26,6 +33,9 @@ type Props = {
 };
 
 // Show It. The camera is optional and what it sees is never scored or saved.
+// It reads the learner with the trained FER model (engaged, neutral,
+// confused, frustrated); the older ML Kit expression is the fallback when the
+// model is off or can't load on this phone.
 export default function ShowItQuestion({
   label,
   prompt,
@@ -60,6 +70,20 @@ export default function ShowItQuestion({
 
   const canUseCamera = hasPermission && !!device && !failed;
   const showCamera = canUseCamera && cameraOn;
+
+  const photoOutput = usePhotoOutput({ qualityPrioritization: "speed" });
+  const extraOutputs = useMemo(
+    () => (FER_MODEL_ENABLED ? [photoOutput] : undefined),
+    [photoOutput],
+  );
+  const fer = useFERInference({
+    enabled: showCamera && FER_MODEL_ENABLED,
+    photoOutput,
+  });
+  const useModel = FER_MODEL_ENABLED && !fer.loadError;
+  const reading = useModel
+    ? fer.currentEmotion?.emotion ?? "unknown"
+    : detected;
 
   return (
     <>
@@ -115,22 +139,26 @@ export default function ShowItQuestion({
                 <PracticeCamera
                   expectedExpression={expectedExpression}
                   phraseId={questionId}
-                  onExpressionConfirmed={onExpressionConfirmed}
+                  onExpressionConfirmed={(result) => {
+                    // Only the fallback reports ML Kit results.
+                    if (!useModel) onExpressionConfirmed(result);
+                  }}
                   onUnavailable={() => setFailed(true)}
                   onExpressionChange={setDetected}
+                  extraOutputs={extraOutputs}
                   hideOverlays
                   height={210}
                 />
               </FaceDetectionProvider>
 
-              {detected !== "unknown" ? (
+              {reading !== "unknown" ? (
                 <View
                   pointerEvents="none"
                   style={styles.detected}
                   accessibilityLiveRegion="polite"
                 >
                   <Text style={styles.detectedText}>
-                    Looks {detected} · Not scored
+                    Looks {describeReading(reading)} · Not scored
                   </Text>
                 </View>
               ) : null}

@@ -4,7 +4,7 @@ import { BackHandler, StyleSheet, Text, View } from "react-native";
 
 import { requiredActivitiesFor } from "../../data/lessons/structuredLessons";
 import { practiceLevels } from "../../data/practiceData";
-import { PracticeExpression } from "../../types/practice";
+import type { FERReading } from "../../utils/fer";
 import { useStoryProgress } from "../../hooks/useLessonProgress";
 import { REVIEW_MODE } from "../../constant/devFlags";
 import {
@@ -279,7 +279,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
   const [speakingPhase, setSpeakingPhase] = useState<SpeakingPhase>("setup");
   const [micEnabled, setMicEnabled] = useState(true);
   const [speakingExpression, setSpeakingExpression] =
-    useState<PracticeExpression | null>(null);
+    useState<FERReading | null>(null);
   const [takeKey, setTakeKey] = useState(0);
   // Phrases recorded at least once; all of them earns the speaking XP.
   const [spokenIds, setSpokenIds] = useState<Set<string>>(() => new Set());

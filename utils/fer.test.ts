@@ -3,11 +3,13 @@ import { describe, test } from "node:test";
 
 import {
   countByLabel,
+  describeReading,
   FER_MODEL_CLASSES,
   FER_SELF_REPORT_OPTIONS,
   interpretScores,
   pixelsToFloatRgb,
   pushConfirmation,
+  readingNeedsHelp,
   uriToPath,
 } from "./fer.ts";
 
@@ -52,6 +54,14 @@ describe("FER model helpers", () => {
     close(pixelsToFloatRgb(new Uint8Array([51, 0, 255, 255]), 1, 1, "BGRA"), [1, 0, 0.2]);
     assert.equal(pixelsToFloatRgb(new Uint8Array(3), 1, 1, "RGB").length, 3);
     assert.throws(() => pixelsToFloatRgb(new Uint8Array(4), 2, 2, "RGBA"));
+  });
+
+  test("describes readings from either FER and knows when to offer help", () => {
+    assert.equal(describeReading("confused"), "a little confused");
+    assert.equal(describeReading("engaged"), "engaged");
+    assert.equal(describeReading("happy"), "happy"); // ML Kit fallback
+    for (const r of ["confused", "frustrated", "sad", "angry"]) assert.ok(readingNeedsHelp(r), r);
+    for (const r of ["engaged", "neutral", "happy", "unknown", null]) assert.ok(!readingNeedsHelp(r), String(r));
   });
 
   test("counts frames per label and turns file URIs into paths", () => {
