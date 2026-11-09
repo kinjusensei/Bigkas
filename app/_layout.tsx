@@ -124,6 +124,7 @@ export default function RootLayout() {
             name="fer-data"
             options={{ headerShown: true, title: "FER data (dev)" }}
           />
+          <Stack.Screen name="fer-collect" options={{ headerShown: false }} />
           <Stack.Screen
             name="report-thread/[id]"
             options={{ headerShown: false }}
