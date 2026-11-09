@@ -21,6 +21,7 @@ import {
   LessonHistoryEmpty,
   LessonHistoryRow,
 } from "../components/profile/LessonHistoryRow";
+import { FERAdminButton } from "../components/fer/FERAdminButton";
 import { bigkas, MIN_TAP } from "../constant/bigkasTheme";
 import { structuredLessonsById } from "../data/lessons/structuredLessons";
 import { practiceLevels } from "../data/practiceData";
@@ -496,6 +497,8 @@ export default function ProfileScreen() {
           <Ionicons name="log-out-outline" size={20} color={DANGER} />
           <Text style={styles.logoutText}>Log out</Text>
         </Pressable>
+        {/* Dev builds only: opens the FER training data screen. */}
+        <FERAdminButton />
       </ScrollView>
 
       {/* BADGE DETAILS */}
