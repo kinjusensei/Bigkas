@@ -9,6 +9,7 @@ import {
   scoreWithStreakBonus,
   StreakState,
 } from "../utils/lessonCompletion";
+import { noteStudiedDialect } from "./learnerProfile";
 import { invalidateProgress } from "./progressCache";
 import { recordDailyActivity } from "./streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
@@ -274,7 +275,12 @@ async function doSave(
 
   // A finished lesson counts for the day streak, passed or not. Giving up
   // doesn't.
-  if (!input.surrendered) await recordDailyActivity(userId);
+  if (!input.surrendered) {
+    await Promise.all([
+      recordDailyActivity(userId),
+      REVIEW_MODE ? null : noteStudiedDialect(userId, input.lessonId),
+    ]);
+  }
 
   return {
     xpAdded: result.xpToAdd,

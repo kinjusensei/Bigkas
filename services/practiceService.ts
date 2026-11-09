@@ -5,6 +5,7 @@ import {
   XP_PER_LEVEL,
 } from "../constant/gameConstants";
 import { scoreWithStreakBonus } from "../utils/lessonCompletion";
+import { noteStudiedDialect } from "./learnerProfile";
 import { invalidateProgress } from "./progressCache";
 import { recordDailyActivity } from "./streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "./supabase";
@@ -295,8 +296,12 @@ export async function savePracticeResultWithXp(
   // Screens reload progress instead of showing what they had before this.
   invalidateProgress();
 
-  // A finished lesson practice or story chapter counts for the day streak.
-  await recordDailyActivity(user.id);
+  // A finished lesson practice or story chapter counts for the day streak,
+  // and marks its language as one the learner studies.
+  await Promise.all([
+    recordDailyActivity(user.id),
+    noteStudiedDialect(user.id, result.lessonId),
+  ]);
 
   return { newXp, xpEarned: xpToAdd };
 }

@@ -26,6 +26,7 @@ import { practiceLevels } from "../data/practiceData";
 import { useLevelUnlockCelebration } from "../hooks/useLevelUnlockCelebration";
 import { useSeenBadges } from "../hooks/useSeenBadges";
 import { useStoryProgress } from "../hooks/useStoryProgress";
+import { saveActiveDialect, toLearnerDialect } from "../services/learnerProfile";
 import { getDailyStreak } from "../services/streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "../services/supabase";
 import { LessonDialect, StructuredLesson } from "../types/structuredLesson";
@@ -225,6 +226,20 @@ export default function HomeScreen() {
   ]);
 
   const currentDialect = dialects[selectedDialect];
+
+  // Remember the language card the learner settles on (profiles.active_dialect),
+  // so Story opens in it and the admin sees it. Not on first load.
+  const firstDialectRender = useRef(true);
+  useEffect(() => {
+    if (firstDialectRender.current) {
+      firstDialectRender.current = false;
+      return;
+    }
+    const dialect = toLearnerDialect(dialects[selectedDialect]?.name);
+    if (!dialect) return;
+    const timer = setTimeout(() => void saveActiveDialect(dialect), 800);
+    return () => clearTimeout(timer);
+  }, [dialects, selectedDialect]);
 
   // Pronunciation for the hero card's first phrase (TTS for Tagalog;
   // Kapampangan and Waray show "Audio coming soon").
