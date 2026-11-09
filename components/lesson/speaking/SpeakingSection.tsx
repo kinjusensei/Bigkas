@@ -1,10 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
 import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
-import { useCameraPermission } from "react-native-vision-camera";
+import { useCameraPermission, usePhotoOutput } from "react-native-vision-camera";
 
 import PracticeCamera from "../../../app/components/Practice/PracticeCamera";
+import { FER_DATA_COLLECTION_ENABLED, FER_MODEL_ENABLED } from "../../../constant/fer";
+import { useFERInference } from "../../../services/FERInferenceService";
+import { FERDataCollector } from "../../fer/FERDataCollector";
 import {
   ExpectedPracticeExpression,
   ExpectedTone,
@@ -38,6 +41,8 @@ type Props = {
   onExpression: (expression: PracticeExpression) => void;
   // Changes per take so the camera starts a fresh expression reading.
   takeKey: number;
+  // Names the FER training photos (components/fer).
+  lessonId?: string;
 };
 
 const TONE_LABELS: Record<ExpectedTone, string> = {
@@ -267,10 +272,29 @@ function RecordingView({
   expression,
   onExpression,
   takeKey,
+  lessonId,
 }: Props) {
   const { hasPermission } = useCameraPermission();
   const cameraOn = cameraHints && hasPermission;
   const words = matchWords(phrase.text, session.transcript);
+
+  // Trained FER (components/fer, services/FERInferenceService.ts): both take
+  // photos from this camera's extra photo output, never a second camera.
+  // Collection is dev-only and asks first; the model is off until trained.
+  // Neither affects feedback or scores.
+  const photoOutput = usePhotoOutput({ qualityPrioritization: "speed" });
+  const ferOn = FER_DATA_COLLECTION_ENABLED || FER_MODEL_ENABLED;
+  // Same array between renders, so the camera isn't reconfigured each time.
+  const extraOutputs = useMemo(
+    () => (ferOn ? [photoOutput] : undefined),
+    [ferOn, photoOutput],
+  );
+  const [needsHelp, setNeedsHelp] = useState(false);
+  useFERInference({
+    enabled: cameraOn && FER_MODEL_ENABLED,
+    photoOutput,
+    onDifficultyDetected: () => setNeedsHelp(true),
+  });
 
   return (
     <>
@@ -284,6 +308,7 @@ function RecordingView({
             <PracticeCamera
               phraseId={takeKey}
               onExpressionConfirmed={(result) => onExpression(result.expression)}
+              extraOutputs={extraOutputs}
             />
           </FaceDetectionProvider>
           <View style={styles.faceGuide} pointerEvents="none" />
@@ -294,6 +319,17 @@ function RecordingView({
           <View style={styles.gapTop}>
             <ExpressionChip expression={expression} />
           </View>
+          {needsHelp ? (
+            <Text style={styles.ferHelp}>
+              Take your time. You can listen to the phrase again before you try.
+            </Text>
+          ) : null}
+          <FERDataCollector
+            sessionId={`${lessonId ?? "lesson"}_phrase${phrase.id}`}
+            active={cameraOn}
+            photoOutput={photoOutput}
+            dataCollectionMode={FER_DATA_COLLECTION_ENABLED}
+          />
         </View>
       ) : null}
 
@@ -593,6 +629,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   onDeviceText: { color: "#FFFFFF", fontSize: 11, fontWeight: "700" },
+  ferHelp: { marginTop: 8, fontSize: 13, color: LESSON_COLORS.textSecondary },
   expressionChip: {
     flexDirection: "row",
     alignItems: "center",

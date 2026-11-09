@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {
+  type CameraOutput,
   useCameraDevice,
   useCameraPermission,
 } from "react-native-vision-camera";
@@ -280,6 +281,8 @@ type PracticeCameraProps = {
   hideOverlays?: boolean;
   height?: number;
   onExpressionChange?: (expression: PracticeExpression) => void;
+  // More outputs on the same camera (the FER photo output in Speaking).
+  extraOutputs?: CameraOutput[];
 };
 
 type DetectionState = {
@@ -295,6 +298,7 @@ export default function PracticeCamera({
   hideOverlays = false,
   height,
   onExpressionChange,
+  extraOutputs,
 }: PracticeCameraProps) {
   const device = useCameraDevice("front");
   const { hasPermission, requestPermission } = useCameraPermission();
@@ -468,6 +472,7 @@ export default function PracticeCamera({
           runClassifications
           runContours
           outputResolution="preview"
+          outputs={extraOutputs}
           onFacesDetected={handleFacesDetected}
           onError={handleDetectionError}
           onStarted={() => {

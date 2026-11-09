@@ -1237,6 +1237,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
 
       {step === "speaking" && speakingPhrase ? (
         <SpeakingSection
+          lessonId={lesson.lessonId}
           phase={speakingPhase}
           phrase={speakingPhrase}
           index={speakingIndex}

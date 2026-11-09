@@ -119,6 +119,11 @@ export default function RootLayout() {
           />
           <Stack.Screen name="notifications" options={{ headerShown: false }} />
           <Stack.Screen name="privacy" options={{ headerShown: false }} />
+          {/* Dev-only (app/fer-data.tsx redirects in release builds). */}
+          <Stack.Screen
+            name="fer-data"
+            options={{ headerShown: true, title: "FER data (dev)" }}
+          />
           <Stack.Screen
             name="report-thread/[id]"
             options={{ headerShown: false }}
