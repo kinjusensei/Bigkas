@@ -96,6 +96,13 @@ export function useFERInference({
 }: UseFEROptions) {
   const [currentEmotion, setCurrentEmotion] = useState<EmotionResult | null>(null);
   const [modelReady, setModelReady] = useState(false);
+  // For testing in development builds: the model's latest guess (even when
+  // not confident enough to count) and why it couldn't load.
+  const [latestGuess, setLatestGuess] = useState<{
+    emotion: FERLabel;
+    confidence: number;
+  } | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const modelRef = useRef<TensorflowModel | null>(null);
   const recentRef = useRef<FERLabel[]>([]);
   const callbacksRef = useRef({ onEmotionConfirmed, onDifficultyDetected });
@@ -111,13 +118,18 @@ export function useFERInference({
         modelRef.current = model;
         setModelReady(true);
       })
-      .catch((error) => console.warn("[FER] Model load failed:", error));
+      .catch((error) => {
+        console.warn("[FER] Model load failed:", error);
+        if (!cancelled) setLoadError(String(error?.message ?? error));
+      });
     return () => {
       cancelled = true;
     };
   }, [enabled]);
 
   const handleScores = useCallback((scores: number[]) => {
+    const guess = interpretScores(scores, FER_MODEL_CLASSES, 0);
+    setLatestGuess(guess ? { emotion: guess.emotion, confidence: guess.confidence } : null);
     const prediction = interpretScores(scores, FER_MODEL_CLASSES);
     if (!prediction) return;
     const { recent, confirmed } = pushConfirmation(recentRef.current, prediction.emotion);
@@ -152,5 +164,10 @@ export function useFERInference({
     return () => clearInterval(timer);
   }, [enabled, modelReady, photoOutput, handleScores]);
 
-  return { currentEmotion, modelReady: enabled && modelReady };
+  return {
+    currentEmotion,
+    modelReady: enabled && modelReady,
+    latestGuess,
+    loadError,
+  };
 }

@@ -290,7 +290,7 @@ function RecordingView({
     [ferOn, photoOutput],
   );
   const [needsHelp, setNeedsHelp] = useState(false);
-  useFERInference({
+  const fer = useFERInference({
     enabled: cameraOn && FER_MODEL_ENABLED,
     photoOutput,
     onDifficultyDetected: () => setNeedsHelp(true),
@@ -319,6 +319,19 @@ function RecordingView({
           <View style={styles.gapTop}>
             <ExpressionChip expression={expression} />
           </View>
+          {__DEV__ && FER_MODEL_ENABLED ? (
+            // Development builds only: shows the model working, for testing.
+            <Text style={styles.ferDebug}>
+              {fer.loadError
+                ? `FER model (dev): failed to load — ${fer.loadError}`
+                : !fer.modelReady
+                  ? "FER model (dev): loading…"
+                  : fer.latestGuess
+                    ? `FER model (dev): ${fer.latestGuess.emotion} ${Math.round(fer.latestGuess.confidence * 100)}%` +
+                      (fer.currentEmotion ? ` · confirmed: ${fer.currentEmotion.emotion}` : "")
+                    : "FER model (dev): waiting for a face…"}
+            </Text>
+          ) : null}
           {needsHelp ? (
             <Text style={styles.ferHelp}>
               Take your time. You can listen to the phrase again before you try.
@@ -630,6 +643,17 @@ const styles = StyleSheet.create({
   },
   onDeviceText: { color: "#FFFFFF", fontSize: 11, fontWeight: "700" },
   ferHelp: { marginTop: 8, fontSize: 13, color: LESSON_COLORS.textSecondary },
+  ferDebug: {
+    marginTop: 8,
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+    backgroundColor: "#111827",
+    color: "#F9FAFB",
+    fontSize: 12,
+    fontWeight: "600",
+  },
   expressionChip: {
     flexDirection: "row",
     alignItems: "center",
