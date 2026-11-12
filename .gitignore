@@ -41,3 +41,24 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Python servers (LibreFace + Sapin-sapin speech): environments, model
+# weights, caches and temporary uploads. Recreate the environments with pip.
+__pycache__/
+*.pyc
+libreface_env/
+speech_env/
+weights_libreface/
+tmp/
+tmp_uploads/
+utils/_uploads/
+
+# Has the real server access key: never commit
+start_libreface.bat
+
+# Private data: training face photos (consent) and voice recordings
+scripts/fer_training/fer_training_data/
+*.wav
+
+# Scratch output
+result.csv
