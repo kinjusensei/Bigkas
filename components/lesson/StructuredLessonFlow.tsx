@@ -5,6 +5,7 @@ import { BackHandler, StyleSheet, Text, View } from "react-native";
 import { requiredActivitiesFor } from "../../data/lessons/structuredLessons";
 import { practiceLevels } from "../../data/practiceData";
 import type { FERReading } from "../../utils/fer";
+import { retryRulesForLessonNumber } from "../../utils/lessonTiers";
 import { useStoryProgress } from "../../hooks/useLessonProgress";
 import { REVIEW_MODE } from "../../constant/devFlags";
 import {
@@ -51,6 +52,7 @@ import SelfIntroSection from "./SelfIntroSection";
 import SpeakingSection, { SpeakingPhase } from "./speaking/SpeakingSection";
 import SurrenderDialog from "./SurrenderDialog";
 import SurrenderedSection, { SurrenderScore } from "./SurrenderedSection";
+import { useCameraHintsPreference } from "../../services/cameraPreference";
 import { useSpeakingSession } from "./speaking/useSpeakingSession";
 import { buildRespellingMap, normalizeWord } from "./speaking/wordMatch";
 import { useLessonAudio } from "./useLessonAudio";
@@ -263,7 +265,9 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
   );
   const [choiceDone, setChoiceDone] = useState(false);
   const [mood, setMood] = useState<LessonMood | null>(null);
-  const [cameraHints, setCameraHints] = useState(false);
+  // Remembered: once on, camera hints stay on in every lesson and story
+  // until the learner turns them off.
+  const [cameraHints, setCameraHints] = useCameraHintsPreference();
   const [matchState, setMatchState] = useState<MatchState>(() =>
     initialMatchState(lesson.matchActivity),
   );
@@ -274,7 +278,10 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     useState<ArrangeState>(initialArrangeState);
   const [fillDone, setFillDone] = useState(false);
   const [arrangeDone, setArrangeDone] = useState(false);
-  const speaking = useSpeakingSession();
+  // Intermediate/Hard: a wrong sentence can't be retried, so the sentence
+  // exercises are finished without their XP.
+  const [sentenceMistake, setSentenceMistake] = useState(false);
+  const speaking = useSpeakingSession(lesson.dialect);
   const [speakingIndex, setSpeakingIndex] = useState(0);
   const [speakingPhase, setSpeakingPhase] = useState<SpeakingPhase>("setup");
   const [micEnabled, setMicEnabled] = useState(true);
@@ -306,6 +313,10 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
   }>({ status: "idle" });
 
   const step = steps[stepIndex] ?? "overview";
+  // Easy: Try again inside the lesson, replay a failed assessment.
+  // Intermediate: no Try again inside the lesson, replay a failed assessment.
+  // Hard: no Try again; a failed assessment restarts the whole lesson.
+  const retryRules = retryRulesForLessonNumber(lesson.lessonNumber);
 
   // XP already given on an earlier visit plus what this run earned.
   const savedRecord = getCompletion(lesson.lessonId);
@@ -359,6 +370,24 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     setVocabIndex(0);
     setConversationIndex(0);
     goToStep(0);
+  };
+
+  // Hard, after a failed assessment: back to the very first part with every
+  // activity reset, so the learner reviews everything before playing again.
+  const restartLesson = () => {
+    setChoiceState(initialAssessmentState);
+    setChoiceDone(false);
+    setMatchState(initialMatchState(lesson.matchActivity));
+    setFillState(initialFillBlanksState);
+    setArrangeState(initialArrangeState);
+    setFillDone(false);
+    setArrangeDone(false);
+    setSentenceMistake(false);
+    setSpeakingIndex(0);
+    setSpeakingExpression(null);
+    setAssessmentAttempt((count) => count + 1);
+    setAssessmentState(initialAssessmentState);
+    reviewLesson();
   };
 
   const assessmentScore = assessment
@@ -675,7 +704,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     if (exercise === "choice") setChoiceDone(true);
     if (exercise === "fill") setFillDone(true);
     if (exercise === "arrange") setArrangeDone(true);
-    if (done.choice && done.fill && done.arrange) earn("sentences");
+    if (done.choice && done.fill && done.arrange) earn("sentences", !sentenceMistake);
   };
   const finishFillBlanks = () => finishSentenceExercise("fill");
   const finishArrange = () => finishSentenceExercise("arrange");
@@ -698,7 +727,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     audio.stop();
     setSpeakingExpression(null);
     setTakeKey((key) => key + 1);
-    const started = await speaking.start();
+    const started = await speaking.start(speakingPhrase.text);
     if (started) {
       setSpeakingPhase("recording");
       setSpokenIds((current) => new Set(current).add(speakingPhrase.id));
@@ -854,9 +883,20 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
       if (matchActivity) {
         const correct =
           matchState.checked && isMatchCorrect(matchActivity, matchState);
+        const lockedWrong =
+          !retryRules.inLessonRetry && matchState.checked && !correct;
         primary = correct
           ? { label: "Next →", onPress: goNextStep }
-          : {
+          : lockedWrong
+            ? {
+                // No retry in this level: done, without its XP.
+                label: "Next →",
+                onPress: () => {
+                  earn("match", false);
+                  goNextStep();
+                },
+              }
+            : {
               label: "Check answers",
               disabled: !isMatchComplete(matchActivity, matchState),
               onPress: () => {
@@ -869,7 +909,10 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     case "fillBlanks":
       if (fillInBlanks) {
         const isLast = fillState.index >= fillInBlanks.items.length - 1;
-        if (fillState.status === "correct") {
+        if (
+          fillState.status === "correct" ||
+          (fillState.status === "wrong" && !retryRules.inLessonRetry)
+        ) {
           primary = isLast
             ? {
                 label: "Next →",
@@ -897,13 +940,11 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           primary = {
             label: "Check",
             disabled: !fillState.selected,
-            onPress: () =>
-              setFillState({
-                ...fillState,
-                status: isFillBlankCorrect(fillInBlanks, fillState)
-                  ? "correct"
-                  : "wrong",
-              }),
+            onPress: () => {
+              const right = isFillBlankCorrect(fillInBlanks, fillState);
+              if (!right && !retryRules.inLessonRetry) setSentenceMistake(true);
+              setFillState({ ...fillState, status: right ? "correct" : "wrong" });
+            },
           };
         }
       }
@@ -911,7 +952,10 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
     case "arrange":
       if (arrangeWords) {
         const isLast = arrangeState.index >= arrangeWords.items.length - 1;
-        if (arrangeState.status === "correct") {
+        if (
+          arrangeState.status === "correct" ||
+          (arrangeState.status === "wrong" && !retryRules.inLessonRetry)
+        ) {
           primary = isLast
             ? {
                 label: "Next →",
@@ -939,13 +983,14 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           primary = {
             label: "Check",
             disabled: !isArrangeComplete(arrangeWords, arrangeState),
-            onPress: () =>
+            onPress: () => {
+              const right = isArrangeCorrect(arrangeWords, arrangeState);
+              if (!right && !retryRules.inLessonRetry) setSentenceMistake(true);
               setArrangeState({
                 ...arrangeState,
-                status: isArrangeCorrect(arrangeWords, arrangeState)
-                  ? "correct"
-                  : "wrong",
-              }),
+                status: right ? "correct" : "wrong",
+              });
+            },
           };
         }
       }
@@ -966,7 +1011,12 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
               disabled: saving,
               onPress: finishAssessment,
             };
+          } else if (retryRules.onFailure === "restart-lesson") {
+            // Hard: no replay; start the lesson again from the beginning.
+            previous = undefined;
+            primary = { label: "Restart lesson", onPress: restartLesson };
           } else {
+            // Easy and Intermediate: replay the assessment right away.
             previous = { label: "Review", onPress: reviewLesson };
             primary = {
               label: "Try again",
@@ -1031,10 +1081,10 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           onPress: speaking.stop,
         };
       } else {
-        previous = {
-          label: "Try again",
-          onPress: () => void startRecording(),
-        };
+        // Recording the phrase again is Easy only.
+        previous = retryRules.inLessonRetry
+          ? { label: "Try again", onPress: () => void startRecording() }
+          : undefined;
         primary = { label: "Continue →", onPress: nextSpeakingPhrase };
       }
       break;
@@ -1201,6 +1251,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           activity={matchActivity}
           state={matchState}
           onChange={setMatchState}
+          retry={retryRules.inLessonRetry}
         />
       ) : null}
 
@@ -1211,6 +1262,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           onSelect={(word) =>
             setFillState({ ...fillState, selected: word, status: "idle" })
           }
+          retry={retryRules.inLessonRetry}
         />
       ) : null}
 
@@ -1219,6 +1271,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
           activity={arrangeWords}
           state={arrangeState}
           onChange={setArrangeState}
+          retry={retryRules.inLessonRetry}
         />
       ) : null}
 
@@ -1230,6 +1283,7 @@ export default function StructuredLessonFlow({ lesson, onExit }: Props) {
             onSelect={(key) =>
               setAssessmentState({ ...assessmentState, selected: key })
             }
+            onFailure={retryRules.onFailure}
           />
           {saveError ? <Text style={styles.error}>{saveError}</Text> : null}
         </>

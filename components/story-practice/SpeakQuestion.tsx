@@ -21,6 +21,8 @@ type Props = {
   word: string;
   dialect: string;
   listening: boolean;
+  // Waiting for the speech server's second opinion on a miss.
+  checking?: boolean;
   heard: string | null;
   matched: boolean;
   micUnavailable: boolean;
@@ -42,6 +44,7 @@ export default function SpeakQuestion({
   word,
   dialect,
   listening,
+  checking = false,
   heard,
   matched,
   micUnavailable,
@@ -144,7 +147,7 @@ export default function SpeakQuestion({
               ) : null}
               <Pressable
                 onPress={listening ? onStop : startListening}
-                disabled={matched}
+                disabled={matched || checking}
                 style={[styles.mic, matched && styles.micDone]}
                 accessibilityRole="button"
                 accessibilityLabel={
@@ -154,7 +157,7 @@ export default function SpeakQuestion({
                       ? "Speak again"
                       : "Tap to speak"
                 }
-                accessibilityState={{ disabled: matched }}
+                accessibilityState={{ disabled: matched || checking }}
               >
                 <Ionicons
                   name={matched ? "checkmark" : "mic-outline"}
@@ -164,19 +167,23 @@ export default function SpeakQuestion({
               </Pressable>
             </View>
 
-            {listening || !hasResult ? (
+            {listening || checking || !hasResult ? (
               <Text style={styles.status} accessibilityLiveRegion="polite">
-                {listening ? "Listening..." : "Tap to speak"}
+                {listening
+                  ? "Listening..."
+                  : checking
+                    ? "Checking your pronunciation..."
+                    : "Tap to speak"}
               </Text>
             ) : null}
 
-            {heard !== null ? (
+            {heard !== null && !checking ? (
               <Text style={styles.heard} accessibilityLiveRegion="polite">
                 We heard: <Text style={styles.heardText}>{heard}</Text>
               </Text>
             ) : null}
 
-            {heard !== null && !matched && !listening ? (
+            {heard !== null && !matched && !listening && !checking ? (
               <Pressable
                 onPress={startListening}
                 style={styles.link}
@@ -197,10 +204,10 @@ export default function SpeakQuestion({
       ) : (
         <PracticeBottomBar
           label="Continue"
-          disabled={!hasResult || listening}
+          disabled={!hasResult || listening || checking}
           success={matched}
           onPress={onContinue}
-          textLabel={attempted && !hasResult ? "Skip" : undefined}
+          textLabel={attempted && !hasResult && !checking ? "Skip" : undefined}
           onTextPress={onSkip}
           textAccessibilityLabel="Skip this word"
         />

@@ -104,3 +104,33 @@ export function currentTierIndex(
   }
   return tier;
 }
+
+// Retry rules per level.
+// - In the lesson: the "Try again" buttons (and fixing a wrong answer) are
+//   Easy only. In Intermediate and Hard a wrong answer shows the right one
+//   and the learner moves on.
+// - Results screen after a failed assessment or practice game: Easy and
+//   Intermediate can replay it straight away; Hard goes back to the first
+//   part of the lesson ("Restart lesson") to review everything first.
+export type RetryRules = {
+  inLessonRetry: boolean;
+  onFailure: "replay" | "restart-lesson";
+};
+
+export function retryRulesForTier(tierIndex: number): RetryRules {
+  return {
+    inLessonRetry: tierIndex <= 0,
+    onFailure: tierIndex >= 2 ? "restart-lesson" : "replay",
+  };
+}
+
+// By lesson number (1–10 Easy, 11–20 Intermediate, 21–30 Hard).
+export function retryRulesForLessonNumber(lessonNumber: number): RetryRules {
+  return retryRulesForTier(tierIndexForNumber(lessonNumber));
+}
+
+// By lesson id ("waray_23"); ids that aren't board lessons use Easy's rules.
+export function retryRulesForLessonId(lessonId: string | null | undefined): RetryRules {
+  const parsed = lessonId ? parseLessonId(lessonId) : null;
+  return retryRulesForTier(parsed ? tierIndexForNumber(parsed.number) : 0);
+}

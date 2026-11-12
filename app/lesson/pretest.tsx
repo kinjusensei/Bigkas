@@ -33,6 +33,7 @@ import { FLOW } from "../../components/story-practice/practiceTheme";
 import ShowItQuestion from "../../components/story-practice/ShowItQuestion";
 import StoryPracticeResult from "../../components/story-practice/StoryPracticeResult";
 import SpeakQuestion from "../../components/story-practice/SpeakQuestion";
+import StoryCameraBar from "../../components/story-practice/StoryCameraBar";
 import { pretestByLessonId, PretestQuestion } from "../../data/pretestData";
 import { findStoryForLesson } from "../../data/storyData";
 import {
@@ -52,6 +53,7 @@ import { PracticeExpressionResult } from "../../types/practice";
 import { useLogLessonStart } from "../../hooks/useLogLessonStart";
 import { savePretestResult } from "../../services/Pretestservice";
 import { savePracticeResultWithXp } from "../../services/practiceService";
+import { secondOpinion, toDialect } from "../../utils/speech";
 import {
   calculateAccuracy,
   calculateBadge,
@@ -186,6 +188,13 @@ function PretestScreen() {
   const speakMatchedRef = useRef(false);
   const recognitionActiveRef = useRef(false);
   const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Sapin-sapin second opinion (story practice): the phone saves each
+  // recording; if its recognizer misses the word, the recording is checked
+  // by the Bigkas speech server. Bumping the token cancels a check in flight.
+  const [speakChecking, setSpeakChecking] = useState(false);
+  const recordingUriRef = useRef<string | null>(null);
+  const sessionEndedRef = useRef(false);
+  const checkTokenRef = useRef(0);
 
   // Expression
   const [expressionMatched, setExpressionMatched] = useState(false);
@@ -372,6 +381,9 @@ function PretestScreen() {
     setSpeakMatched(false);
     setSpeakHeard(null);
     speakMatchedRef.current = false;
+    checkTokenRef.current += 1;
+    setSpeakChecking(false);
+    recordingUriRef.current = null;
     setExpressionMatched(false);
     setCameraUnavailable(false);
 
@@ -535,10 +547,17 @@ function PretestScreen() {
 
       // Story practice listens once per tap: not continuous, so the phone
       // ends after the learner stops talking and sends its final result.
+      checkTokenRef.current += 1;
+      setSpeakChecking(false);
+      recordingUriRef.current = null;
+      sessionEndedRef.current = false;
       ExpoSpeechRecognitionModule.start({
         lang: "fil-PH",
         interimResults: true,
         continuous: !isStoryPractice,
+        // Keep the recording so Sapin-sapin can check a miss (Android 13+;
+        // older phones give no file and just skip the second opinion).
+        ...(isStoryPractice ? { recordingOptions: { persist: true } } : {}),
       });
 
       recognitionActiveRef.current = true;
@@ -603,8 +622,52 @@ function PretestScreen() {
       ExpoSpeechRecognitionModule.abort();
     } else if (isStoryPractice) {
       // Show what was heard; the learner chooses Try again or Continue.
-      ExpoSpeechRecognitionModule.abort();
+      // stop(), not abort(), so the recording is saved for Sapin-sapin.
+      ExpoSpeechRecognitionModule.stop();
     }
+  });
+
+  // Ask Sapin-sapin once the session has ended and its recording is saved
+  // (the two events can come in either order). Only for a miss.
+  const runSecondOpinion = useCallback(() => {
+    const uri = recordingUriRef.current;
+    const language = toDialect(dialectKey);
+    if (
+      !isStoryPractice ||
+      !uri ||
+      !language ||
+      !currentQuestion ||
+      currentQuestion.type !== "speak" ||
+      speakMatchedRef.current ||
+      micUnavailableRef.current
+    ) {
+      return;
+    }
+    recordingUriRef.current = null; // one check per recording
+    const token = ++checkTokenRef.current;
+    setSpeakChecking(true);
+
+    void secondOpinion(uri, language, currentQuestion.word).then((result) => {
+      if (token !== checkTokenRef.current) return; // retried or moved on
+      setSpeakChecking(false);
+      // Server offline: keep the phone's result.
+      if (!result || speakMatchedRef.current) return;
+      if (result.matched) {
+        speakMatchedRef.current = true;
+        setSpeakMatched(true);
+        setSpeakHeard(result.transcript);
+        creditCurrentQuestion();
+      } else if (result.transcript) {
+        // Show the phone's guess if it had one, otherwise Sapin-sapin's.
+        setSpeakHeard((heard) => heard ?? result.transcript);
+      }
+    });
+  }, [isStoryPractice, dialectKey, currentQuestion, creditCurrentQuestion]);
+
+  useSpeechRecognitionEvent("audioend", (event) => {
+    if (!isStoryPractice) return;
+    recordingUriRef.current = event.uri ?? null;
+    if (sessionEndedRef.current) runSecondOpinion();
   });
 
   useSpeechRecognitionEvent("error", (event) => {
@@ -622,7 +685,11 @@ function PretestScreen() {
     setSpeakListening(false);
 
     // The lesson flow listens once per tap.
-    if (isStoryPractice) return;
+    if (isStoryPractice) {
+      sessionEndedRef.current = true;
+      runSecondOpinion();
+      return;
+    }
 
     if (
       !currentQuestion ||
@@ -863,6 +930,9 @@ function PretestScreen() {
           barWidth={progressWidth}
         />
 
+        {/* Camera hints for the whole practice (Show It uses its own camera). */}
+        {currentQuestion.type !== "expression" ? <StoryCameraBar /> : null}
+
         <KeyboardAvoidingView
           style={styles.flowBody}
           behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -914,6 +984,7 @@ function PretestScreen() {
               word={currentQuestion.word}
               dialect={dialectKey}
               listening={speakListening}
+              checking={speakChecking}
               heard={speakHeard}
               matched={speakMatched}
               micUnavailable={micUnavailable}

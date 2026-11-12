@@ -1,14 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
-import { FaceDetectionProvider } from "@infinitered/react-native-mlkit-face-detection";
-import { useEffect, useMemo, useState } from "react";
-import { StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
-import { useCameraPermission, usePhotoOutput } from "react-native-vision-camera";
+import { useState } from "react";
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { useCameraPermission } from "react-native-vision-camera";
 
-import PracticeCamera from "../../../app/components/Practice/PracticeCamera";
-import { FER_DATA_COLLECTION_ENABLED, FER_MODEL_ENABLED } from "../../../constant/fer";
-import { useFERInference } from "../../../services/FERInferenceService";
-import { FERDataCollector } from "../../fer/FERDataCollector";
-import { describeReading, FERReading, readingNeedsHelp } from "../../../utils/fer";
+import { describeReading, FERReading } from "../../../utils/fer";
 import {
   ExpectedPracticeExpression,
   ExpectedTone,
@@ -18,6 +20,7 @@ import { LESSON_COLORS, lessonStyles, MIN_TOUCH } from "../lessonStyles";
 import { LessonAudio } from "../useLessonAudio";
 import PitchGraph from "./PitchGraph";
 import { comparePitch, guideContour, TONE_BANDS } from "./pitch";
+import SessionCamera from "./SessionCamera";
 import { useSpeakingSession } from "./useSpeakingSession";
 import { matchWords, normalizeWord, syllabify } from "./wordMatch";
 
@@ -56,10 +59,38 @@ const TONE_LABELS: Record<ExpectedTone, string> = {
 // Speaking practice: setup → recording → feedback for one phrase. The
 // flow owns the session and the bottom bar. Expression is a practice
 // insight only; voice and pitch are feedback, never a score.
+//
+// Camera hints stay on for the whole activity once turned on (and are
+// remembered for other lessons and stories) until the learner turns them
+// off: one camera, mounted above every phase so it never restarts between
+// setup, recording and feedback. Expressions come from LibreFace, or the
+// phone's FER while the server is offline (SessionCamera).
 export default function SpeakingSection(props: Props) {
-  if (props.phase === "recording") return <RecordingView {...props} />;
-  if (props.phase === "feedback") return <FeedbackView {...props} />;
-  return <SetupView {...props} />;
+  const { hasPermission } = useCameraPermission();
+  const cameraOn = props.cameraHints && hasPermission;
+  const view =
+    props.phase === "recording" ? (
+      <RecordingView {...props} />
+    ) : props.phase === "feedback" ? (
+      <FeedbackView {...props} />
+    ) : (
+      <SetupView {...props} />
+    );
+  return (
+    <>
+      {cameraOn ? (
+        <SessionCamera
+          compact={props.phase !== "recording"}
+          takeKey={props.takeKey}
+          sessionId={`${props.lessonId ?? "lesson"}_phrase${props.phrase.id}`}
+          expression={props.expression}
+          onExpression={props.onExpression}
+          onTurnOff={() => props.onCameraHintsChange(false)}
+        />
+      ) : null}
+      {view}
+    </>
+  );
 }
 
 function PhraseHeader({
@@ -133,13 +164,21 @@ function SetupView({
           <View style={styles.chipRow}>
             {targetTone ? (
               <View style={styles.chip}>
-                <Ionicons name="pulse-outline" size={14} color={LESSON_COLORS.purple} />
+                <Ionicons
+                  name="pulse-outline"
+                  size={14}
+                  color={LESSON_COLORS.purple}
+                />
                 <Text style={styles.chipText}>{TONE_LABELS[targetTone]}</Text>
               </View>
             ) : null}
             {targetExpression ? (
               <View style={styles.chip}>
-                <Ionicons name="happy-outline" size={14} color={LESSON_COLORS.purple} />
+                <Ionicons
+                  name="happy-outline"
+                  size={14}
+                  color={LESSON_COLORS.purple}
+                />
                 <Text style={styles.chipText}>Mood: {targetExpression}</Text>
               </View>
             ) : null}
@@ -151,7 +190,10 @@ function SetupView({
         <TouchableOpacity
           style={styles.listenButton}
           onPress={() =>
-            audio.play(modelKey, { text: phrase.text, audioUrl: phrase.audioUrl })
+            audio.play(modelKey, {
+              text: phrase.text,
+              audioUrl: phrase.audioUrl,
+            })
           }
           accessibilityRole="button"
           accessibilityLabel="Listen to the model"
@@ -164,7 +206,9 @@ function SetupView({
           <Text style={styles.listenText}>Listen to the model</Text>
         </TouchableOpacity>
         {audio.notice ? (
-          <Text style={[lessonStyles.notice, styles.gapTop]}>{audio.notice}</Text>
+          <Text style={[lessonStyles.notice, styles.gapTop]}>
+            {audio.notice}
+          </Text>
         ) : null}
         <View style={styles.gapTop}>
           <PitchGraph
@@ -187,22 +231,32 @@ function SetupView({
         <SwitchRow
           icon="camera-outline"
           title="Camera hints"
-          body="Optional. Shows your expression as a practice insight. Never scored."
+          body="Optional. LibreFace reads your expression as a practice insight. Stays on until you turn it off. Never scored."
           value={cameraOn}
           onChange={handleCameraToggle}
         />
         {cameraNotice ? (
-          <Text style={[lessonStyles.notice, styles.gapTop]}>{cameraNotice}</Text>
+          <Text style={[lessonStyles.notice, styles.gapTop]}>
+            {cameraNotice}
+          </Text>
         ) : null}
       </View>
 
       <View style={styles.privacy}>
-        <Ionicons name="lock-closed-outline" size={16} color={LESSON_COLORS.textSecondary} />
+        <Ionicons
+          name="lock-closed-outline"
+          size={16}
+          color={LESSON_COLORS.textSecondary}
+        />
         <Text style={styles.privacyText}>
-          Camera images stay on this phone and are never saved. Your
-          recording is kept only so you can hear yourself, and is deleted
-          when you leave this activity. Speech recognition uses your phone&apos;s
-          speech service. Feedback here never changes your score.
+          With camera hints on, a camera frame is sent about once a second to
+          the Bigkas server (LibreFace) over HTTPS and deleted right after; if
+          the server can&apos;t be reached, your phone reads it instead. Speech
+          recognition uses your phone&apos;s speech service; if it misses a
+          word, your recording is checked by Sapin-sapin AI on the Bigkas server
+          and then deleted. Your recording is kept on the phone only so you can
+          hear yourself, until you leave this activity. Nothing here changes
+          your score.
         </Text>
       </View>
 
@@ -244,26 +298,6 @@ function SwitchRow({
   );
 }
 
-function ExpressionChip({
-  expression,
-}: {
-  expression: FERReading | null;
-}) {
-  return (
-    <View style={styles.expressionChip}>
-      <Ionicons name="happy-outline" size={14} color={LESSON_COLORS.textSecondary} />
-      <Text style={styles.expressionChipText}>
-        {expression && expression !== "unknown"
-          ? `Looks ${describeReading(expression)}`
-          : "Reading expression…"}
-      </Text>
-      <View style={styles.notScored}>
-        <Text style={styles.notScoredText}>Not scored</Text>
-      </View>
-    </View>
-  );
-}
-
 function RecordingView({
   phrase,
   index,
@@ -271,100 +305,35 @@ function RecordingView({
   targetTone,
   session,
   cameraHints,
-  expression,
-  onExpression,
-  takeKey,
-  lessonId,
 }: Props) {
   const { hasPermission } = useCameraPermission();
   const cameraOn = cameraHints && hasPermission;
   const words = matchWords(phrase.text, session.transcript);
-
-  // Trained FER (components/fer, services/FERInferenceService.ts): both take
-  // photos from this camera's extra photo output, never a second camera.
-  // Collection is dev-only and asks first; the model is off until trained.
-  // Neither affects feedback or scores.
-  const photoOutput = usePhotoOutput({ qualityPrioritization: "speed" });
-  const ferOn = FER_DATA_COLLECTION_ENABLED || FER_MODEL_ENABLED;
-  // Same array between renders, so the camera isn't reconfigured each time.
-  const extraOutputs = useMemo(
-    () => (ferOn ? [photoOutput] : undefined),
-    [ferOn, photoOutput],
-  );
-  const fer = useFERInference({
-    enabled: cameraOn && FER_MODEL_ENABLED,
-    photoOutput,
-  });
-  // The trained model replaces the ML Kit expression; ML Kit is the fallback
-  // when the model is off or failed to load on this phone.
-  const useModel = FER_MODEL_ENABLED && !fer.loadError;
-  const modelReading = fer.currentEmotion?.emotion;
-  useEffect(() => {
-    if (useModel && modelReading) onExpression(modelReading);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [useModel, modelReading, fer.currentEmotion?.timestamp]);
-  const needsHelp = readingNeedsHelp(expression);
+  // The phone missed words and Sapin-sapin AI is checking the recording.
+  const sapinChecking =
+    session.status === "processing" && !!session.sapinChecking;
+  const heardCount = words.filter((word) => word.status === "matched").length;
+  const languageName = session.sapinChecking
+    ? session.sapinChecking[0].toUpperCase() + session.sapinChecking.slice(1)
+    : "";
 
   return (
     <>
       <PhraseHeader phrase={phrase} index={index} total={total} />
 
-      {cameraOn ? (
-        <View>
-          <FaceDetectionProvider
-            options={{ performanceMode: "fast", classificationMode: true }}
-          >
-            <PracticeCamera
-              phraseId={takeKey}
-              onExpressionConfirmed={(result) => {
-                if (!useModel) onExpression(result.expression);
-              }}
-              extraOutputs={extraOutputs}
-            />
-          </FaceDetectionProvider>
-          <View style={styles.faceGuide} pointerEvents="none" />
-          <View style={styles.onDeviceLabel} pointerEvents="none">
-            <Ionicons name="phone-portrait-outline" size={12} color="#FFFFFF" />
-            <Text style={styles.onDeviceText}>Stays on this phone</Text>
-          </View>
-          <View style={styles.gapTop}>
-            <ExpressionChip expression={expression} />
-          </View>
-          {__DEV__ && FER_MODEL_ENABLED ? (
-            // Development builds only: shows the model working, for testing.
-            <Text style={styles.ferDebug}>
-              {fer.loadError
-                ? `FER model (dev): failed to load — ${fer.loadError}`
-                : !fer.modelReady
-                  ? "FER model (dev): loading…"
-                  : fer.latestGuess
-                    ? `FER model (dev): ${fer.latestGuess.emotion} ${Math.round(fer.latestGuess.confidence * 100)}%` +
-                      (fer.currentEmotion ? ` · confirmed: ${fer.currentEmotion.emotion}` : "")
-                    : "FER model (dev): waiting for a face…"}
-            </Text>
-          ) : null}
-          {needsHelp ? (
-            <Text style={styles.ferHelp}>
-              Take your time. You can listen to the phrase again before you try.
-            </Text>
-          ) : null}
-          <FERDataCollector
-            sessionId={`${lessonId ?? "lesson"}_phrase${phrase.id}`}
-            active={cameraOn}
-            photoOutput={photoOutput}
-            dataCollectionMode={FER_DATA_COLLECTION_ENABLED}
-          />
-        </View>
-      ) : null}
-
       <View style={[styles.phraseCard, !cameraOn && styles.phraseCardLarge]}>
-        <Text style={styles.statusLabel}>
-          {session.status === "starting"
-            ? "Starting microphone…"
-            : session.status === "processing"
-              ? "Checking your recording…"
-              : "Listening — say the phrase"}
-        </Text>
+        <View style={styles.statusRow} accessibilityLiveRegion="polite">
+          {sapinChecking ? (
+            <ActivityIndicator size="small" color={LESSON_COLORS.purple} />
+          ) : null}
+          <Text style={styles.statusLabel}>
+            {session.status === "starting"
+              ? "Starting microphone…"
+              : session.status === "processing"
+                ? "Checking your recording…"
+                : "Listening — say the phrase"}
+          </Text>
+        </View>
         <View style={styles.wordRow}>
           {words.map((word, wordIndex) => (
             <Text
@@ -373,6 +342,9 @@ function RecordingView({
                 styles.liveWord,
                 !cameraOn && styles.liveWordLarge,
                 word.status !== "missed" && styles.liveWordHeard,
+                sapinChecking &&
+                  word.status === "missed" &&
+                  styles.liveWordMissed,
               ]}
             >
               {word.word}
@@ -380,28 +352,79 @@ function RecordingView({
           ))}
         </View>
         {session.transcript ? (
-          <Text style={styles.heard}>Heard: “{session.transcript}”</Text>
+          <Text style={styles.heard}>
+            {sapinChecking ? "The phone heard" : "Heard:"} “{session.transcript}
+            ”
+          </Text>
         ) : null}
       </View>
 
-      <View style={lessonStyles.card}>
-        <Text style={styles.cardLabel}>Voice level</Text>
-        <View style={styles.levelTrack}>
-          <View
-            style={[styles.levelFill, { width: `${Math.round(session.volume * 100)}%` }]}
-          />
-        </View>
-      </View>
+      {sapinChecking ? (
+        <>
+          <View style={styles.steps}>
+            <View style={[styles.stepRow, styles.stepDivider]}>
+              <View style={[styles.stepIcon, styles.stepIconMissed]}>
+                <Ionicons name="alert" size={18} color="#7A4A00" />
+              </View>
+              <View style={styles.stepText}>
+                <Text style={styles.stepTitle}>1 · Phone (Google, fil-PH)</Text>
+                <Text style={styles.stepBody}>
+                  Heard {heardCount} of {words.length} words. Asking for a
+                  second opinion.
+                </Text>
+              </View>
+            </View>
+            <View style={styles.stepRow}>
+              <View style={[styles.stepIcon, styles.stepIconChecking]}>
+                <ActivityIndicator size="small" color={LESSON_COLORS.purple} />
+              </View>
+              <View style={styles.stepText}>
+                <Text style={styles.stepTitle}>2 · Sapin-sapin AI</Text>
+                <Text style={styles.stepBody}>
+                  Listening to the same recording with the {languageName} model…
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.offlineNote}>
+            <Ionicons
+              name="shield-checkmark-outline"
+              size={18}
+              color={LESSON_COLORS.purple}
+            />
+            <Text style={styles.offlineNoteText}>
+              No connection? The phone&apos;s result is used and the lesson
+              carries on.
+            </Text>
+          </View>
+        </>
+      ) : null}
 
-      <View style={lessonStyles.card}>
-        <Text style={styles.cardLabel}>Pitch</Text>
-        <PitchGraph
-          guide={guideContour(phrase.text, targetTone)}
-          band={targetTone ? TONE_BANDS[targetTone] : undefined}
-          height={cameraOn ? 90 : 130}
-          placeholder="Your pitch line appears when you stop."
-        />
-      </View>
+      {!sapinChecking ? (
+        <>
+          <View style={lessonStyles.card}>
+            <Text style={styles.cardLabel}>Voice level</Text>
+            <View style={styles.levelTrack}>
+              <View
+                style={[
+                  styles.levelFill,
+                  { width: `${Math.round(session.volume * 100)}%` },
+                ]}
+              />
+            </View>
+          </View>
+
+          <View style={lessonStyles.card}>
+            <Text style={styles.cardLabel}>Pitch</Text>
+            <PitchGraph
+              guide={guideContour(phrase.text, targetTone)}
+              band={targetTone ? TONE_BANDS[targetTone] : undefined}
+              height={cameraOn ? 90 : 130}
+              placeholder="Your pitch line appears when you stop."
+            />
+          </View>
+        </>
+      ) : null}
     </>
   );
 }
@@ -430,6 +453,9 @@ function FeedbackView({
 
       <View style={lessonStyles.card}>
         <Text style={lessonStyles.cardTitle}>Your words</Text>
+        {heardAnything && session.heardBy === "sapin-sapin" ? (
+          <Text style={styles.syllableTip}>Checked with Sapin-sapin AI</Text>
+        ) : null}
         {heardAnything ? (
           <View style={styles.wordList}>
             {words.map((word, wordIndex) => {
@@ -437,14 +463,27 @@ function FeedbackView({
               const syllables =
                 respellings[normalizeWord(word.word)] ?? syllabify(word.word);
               return (
-                <View key={`${word.word}-${wordIndex}`} style={styles.wordFeedback}>
-                  <View style={[styles.wordPill, good ? styles.pillGood : styles.pillWork]}>
+                <View
+                  key={`${word.word}-${wordIndex}`}
+                  style={styles.wordFeedback}
+                >
+                  <View
+                    style={[
+                      styles.wordPill,
+                      good ? styles.pillGood : styles.pillWork,
+                    ]}
+                  >
                     <Ionicons
                       name={good ? "checkmark" : "refresh"}
                       size={14}
                       color={good ? LESSON_COLORS.green : "#B45309"}
                     />
-                    <Text style={[styles.wordPillText, !good && styles.wordPillWorkText]}>
+                    <Text
+                      style={[
+                        styles.wordPillText,
+                        !good && styles.wordPillWorkText,
+                      ]}
+                    >
                       {word.word}
                     </Text>
                   </View>
@@ -502,12 +541,17 @@ function FeedbackView({
         <TouchableOpacity
           style={styles.playButton}
           onPress={() =>
-            audio.play(modelKey, { text: phrase.text, audioUrl: phrase.audioUrl })
+            audio.play(modelKey, {
+              text: phrase.text,
+              audioUrl: phrase.audioUrl,
+            })
           }
           accessibilityRole="button"
         >
           <Ionicons
-            name={audio.playingKey === modelKey ? "stop" : "volume-high-outline"}
+            name={
+              audio.playingKey === modelKey ? "stop" : "volume-high-outline"
+            }
             size={18}
             color={LESSON_COLORS.purple}
           />
@@ -714,6 +758,60 @@ const styles = StyleSheet.create({
   },
   liveWordLarge: { fontSize: 30 },
   liveWordHeard: { color: LESSON_COLORS.green },
+  liveWordMissed: {
+    color: "#7A4A00",
+    backgroundColor: "#FFF1D0",
+    borderRadius: 8,
+    paddingHorizontal: 6,
+    overflow: "hidden",
+  },
+  statusRow: { flexDirection: "row", alignItems: "center", gap: 8 },
+  steps: {
+    paddingVertical: 4,
+    paddingHorizontal: 16,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#E4E2F3",
+    backgroundColor: "#FFFFFF",
+  },
+  stepRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 12,
+  },
+  stepDivider: { borderBottomWidth: 1, borderBottomColor: "#ECEAF7" },
+  stepIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  stepIconMissed: { backgroundColor: "#FFF1D0" },
+  stepIconChecking: { backgroundColor: LESSON_COLORS.lavender },
+  stepText: { flex: 1, minWidth: 0 },
+  stepTitle: { fontSize: 14, fontWeight: "800", color: LESSON_COLORS.text },
+  stepBody: {
+    fontSize: 13,
+    lineHeight: 18,
+    color: LESSON_COLORS.textSecondary,
+  },
+  offlineNote: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 10,
+    padding: 12,
+    borderRadius: 14,
+    backgroundColor: LESSON_COLORS.lavender,
+  },
+  offlineNoteText: {
+    flex: 1,
+    fontSize: 13,
+    lineHeight: 18,
+    fontWeight: "600",
+    color: LESSON_COLORS.purple,
+  },
   heard: {
     marginTop: 10,
     color: LESSON_COLORS.textSecondary,

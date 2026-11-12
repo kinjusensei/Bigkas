@@ -9,7 +9,9 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "test": "node --test utils/tutorialCompletion.test.ts utils/dailyStreak.test.ts utils/lessonCompletion.test.ts utils/lessonTiers.test.ts utils/storyLevels.test.ts utils/storyPractice.test.ts data/story-practice/oldHouse.test.ts data/story-practice/deshawn.test.ts data/story-practice/tagalog.test.ts data/story-practice/kapampangan-waray.test.ts scripts/import-old-house-waray.test.mjs scripts/import-kapampangan-lessons-21-30.test.mjs utils/fer.test.ts"
+    "test": "node --test utils/tutorialCompletion.test.ts utils/dailyStreak.test.ts utils/smartMatch.test.ts utils/speech.test.ts utils/speechApi.test.ts services/libreFaceApi.test.ts utils/cameraErrors.test.ts utils/lessonCompletion.test.ts utils/lessonTiers.test.ts utils/storyLevels.test.ts utils/storyPractice.test.ts data/story-practice/oldHouse.test.ts data/story-practice/deshawn.test.ts data/story-practice/tagalog.test.ts data/story-practice/kapampangan-waray.test.ts scripts/import-old-house-waray.test.mjs scripts/import-kapampangan-lessons-21-30.test.mjs utils/fer.test.ts",
+    "test:server": "libreface_env\\Scripts\\python -m unittest discover tests -v",
+    "check:server": "libreface_env\\Scripts\\python scripts\\check_server.py"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -24,6 +26,7 @@
     "expo": "~54.0.36",
     "expo-audio": "~1.1.1",
     "expo-av": "~16.0.8",
+    "expo-build-properties": "~1.0.10",
     "expo-camera": "~17.0.10",
     "expo-constants": "~18.0.13",
     "expo-dev-client": "~6.0.21",

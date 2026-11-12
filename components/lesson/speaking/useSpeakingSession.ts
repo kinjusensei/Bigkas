@@ -4,7 +4,9 @@ import {
 } from "expo-speech-recognition";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+import { secondOpinion, toDialect } from "../../../utils/speech";
 import { analyzeRecording, deleteRecording, PitchAnalysis } from "./pitch";
+import { matchWords } from "./wordMatch";
 
 // One recording take for the speaking activity: speech recognition (words,
 // live) with the audio saved to a file on the phone (Android 13+), the
@@ -21,13 +23,31 @@ export type SpeakingStatus =
 
 const MAX_RECORDING_MS = 15000;
 
-export function useSpeakingSession() {
+// How many target words a transcript gets right.
+const countMatched = (target: string, heard: string) =>
+  matchWords(target, heard).filter((word) => word.status === "matched").length;
+
+// Who supplied the words shown: the phone's recognizer, or Sapin-sapin AI
+// (the Bigkas speech server) when it heard more of the phrase.
+export type HeardBy = "phone" | "sapin-sapin";
+
+// language: the lesson's dialect, for the Sapin-sapin second opinion.
+export function useSpeakingSession(language?: string) {
   const [status, setStatus] = useState<SpeakingStatus>("idle");
   const [transcript, setTranscript] = useState("");
   const [volume, setVolume] = useState(0); // 0..1
   const [audioUri, setAudioUri] = useState<string | null>(null);
   const [pitch, setPitch] = useState<PitchAnalysis | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const [heardBy, setHeardBy] = useState<HeardBy>("phone");
+  // The language Sapin-sapin is checking in, while it checks (else null).
+  const [sapinChecking, setSapinChecking] = useState<string | null>(null);
+
+  const languageRef = useRef(language);
+  languageRef.current = language;
+  const targetRef = useRef(""); // the phrase for this take
+  const latestTextRef = useRef(""); // what the phone shows as heard
+  const takeRef = useRef(0); // bumps on reset, so a late reply is ignored
 
   const activeRef = useRef(false);
   const finalTextRef = useRef("");
@@ -56,6 +76,7 @@ export function useSpeakingSession() {
       await new Promise((resolve) => setTimeout(resolve, 400));
     }
     const uri = uriRef.current;
+    const take = takeRef.current;
     let analysis: PitchAnalysis | null = null;
     if (uri) {
       try {
@@ -64,7 +85,27 @@ export function useSpeakingSession() {
         console.warn("Pitch analysis failed:", error);
       }
     }
-    if (!mountedRef.current) return;
+
+    // The phone missed some words: ask Sapin-sapin about the same recording
+    // and keep its words if it heard more of the phrase. Offline → skipped.
+    const dialect = toDialect(languageRef.current);
+    const target = targetRef.current;
+    const phoneText = latestTextRef.current;
+    const targetWords = target.split(/\s+/).filter(Boolean).length;
+    if (uri && dialect && target && countMatched(target, phoneText) < targetWords) {
+      setSapinChecking(dialect);
+      const result = await secondOpinion(uri, dialect, target);
+      if (!mountedRef.current || take !== takeRef.current) return;
+      setSapinChecking(null);
+      if (
+        result?.transcript &&
+        countMatched(target, result.transcript) > countMatched(target, phoneText)
+      ) {
+        setTranscript(result.transcript);
+        setHeardBy("sapin-sapin");
+      }
+    }
+    if (!mountedRef.current || take !== takeRef.current) return;
     setAudioUri(uri);
     setPitch(analysis);
     setStatus("done");
@@ -79,9 +120,11 @@ export function useSpeakingSession() {
     const text = event.results[0]?.transcript?.trim() ?? "";
     if (event.isFinal) {
       finalTextRef.current = `${finalTextRef.current} ${text}`.trim();
+      latestTextRef.current = finalTextRef.current;
       setTranscript(finalTextRef.current);
     } else {
-      setTranscript(`${finalTextRef.current} ${text}`.trim());
+      latestTextRef.current = `${finalTextRef.current} ${text}`.trim();
+      setTranscript(latestTextRef.current);
     }
   });
 
@@ -124,8 +167,12 @@ export function useSpeakingSession() {
       } catch {}
     }
     clearTimer();
+    takeRef.current += 1;
     finishingRef.current = false;
     finalTextRef.current = "";
+    latestTextRef.current = "";
+    setHeardBy("phone");
+    setSapinChecking(null);
     uriRef.current = null;
     setTranscript("");
     setVolume(0);
@@ -142,13 +189,15 @@ export function useSpeakingSession() {
   }, []);
 
   // Asks for the microphone only now, when the learner taps Start.
-  const start = useCallback(async (): Promise<boolean> => {
+  // target: the phrase the learner should say (for the second opinion).
+  const start = useCallback(async (target = ""): Promise<boolean> => {
     // A new take replaces the previous one.
     if (uriRef.current) {
       filesRef.current.delete(uriRef.current);
       void deleteRecording(uriRef.current);
     }
     reset();
+    targetRef.current = target;
     try {
       if (!ExpoSpeechRecognitionModule.isRecognitionAvailable()) {
         setNotice(
@@ -225,6 +274,8 @@ export function useSpeakingSession() {
     audioUri,
     pitch,
     notice,
+    heardBy,
+    sapinChecking,
     start,
     stop,
     reset,

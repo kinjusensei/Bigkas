@@ -7,6 +7,8 @@ import {
   isTierUnlocked,
   parseLessonId,
   tierLessonIds,
+  retryRulesForLessonId,
+  retryRulesForLessonNumber,
 } from "./lessonTiers.ts";
 
 // Run with: npm test
@@ -79,5 +81,37 @@ describe("lesson tiers", () => {
 
   test("tierLessonIds lists the 10 lessons of a level", () => {
     assert.deepEqual(tierLessonIds("waray", 1), range("waray", 11, 20));
+  });
+});
+
+describe("retry rules", () => {
+  const easy = { inLessonRetry: true, onFailure: "replay" };
+  const intermediate = { inLessonRetry: false, onFailure: "replay" };
+  const hard = { inLessonRetry: false, onFailure: "restart-lesson" };
+
+  test("Easy (1–10): Try again in the lesson, replay after a failure", () => {
+    assert.deepEqual(retryRulesForLessonNumber(1), easy);
+    assert.deepEqual(retryRulesForLessonNumber(10), easy);
+  });
+
+  test("Intermediate (11–20): no Try again in the lesson, replay after a failure", () => {
+    assert.deepEqual(retryRulesForLessonNumber(11), intermediate);
+    assert.deepEqual(retryRulesForLessonNumber(20), intermediate);
+  });
+
+  test("Hard (21–30): no Try again, restart the lesson after a failure", () => {
+    assert.deepEqual(retryRulesForLessonNumber(21), hard);
+    assert.deepEqual(retryRulesForLessonNumber(30), hard);
+  });
+
+  test("by lesson id, in every language", () => {
+    assert.deepEqual(retryRulesForLessonId("tagalog_3"), easy);
+    assert.deepEqual(retryRulesForLessonId("kapampangan_15"), intermediate);
+    assert.deepEqual(retryRulesForLessonId("waray_23"), hard);
+  });
+
+  test("unknown ids use Easy's rules", () => {
+    assert.deepEqual(retryRulesForLessonId("story_1"), easy);
+    assert.deepEqual(retryRulesForLessonId(undefined), easy);
   });
 });

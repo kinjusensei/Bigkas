@@ -9,6 +9,7 @@ import {
   interpretScores,
   pixelsToFloatRgb,
   pushConfirmation,
+  libreFaceToReading,
   readingNeedsHelp,
   uriToPath,
 } from "./fer.ts";
@@ -71,5 +72,32 @@ describe("FER model helpers", () => {
     ]);
     assert.deepEqual(counts, { engaged: 1, unlabeled: 1 });
     assert.equal(uriToPath("file:///data/my%20app/x.jpg"), "/data/my app/x.jpg");
+  });
+});
+
+describe("libreFaceToReading", () => {
+  test("maps LibreFace's eight expressions to learner-friendly words", () => {
+    assert.equal(libreFaceToReading("Neutral"), "neutral");
+    assert.equal(libreFaceToReading("Happiness"), "happy");
+    assert.equal(libreFaceToReading("Sadness"), "sad");
+    assert.equal(libreFaceToReading("Surprise"), "surprised");
+    assert.equal(libreFaceToReading("Fear"), "worried");
+    assert.equal(libreFaceToReading("Disgust"), "frustrated");
+    assert.equal(libreFaceToReading("Anger"), "frustrated");
+    assert.equal(libreFaceToReading("Contempt"), "frustrated");
+  });
+
+  test("is case- and space-tolerant, and rejects anything else", () => {
+    assert.equal(libreFaceToReading("  happiness "), "happy");
+    assert.equal(libreFaceToReading(""), null);
+    assert.equal(libreFaceToReading("sleepy"), null);
+    assert.equal(libreFaceToReading(null), null);
+    assert.equal(libreFaceToReading(3), null);
+  });
+
+  test("the help readings include LibreFace's worried and sad", () => {
+    assert.ok(readingNeedsHelp(libreFaceToReading("Fear")));
+    assert.ok(readingNeedsHelp(libreFaceToReading("Sadness")));
+    assert.ok(!readingNeedsHelp(libreFaceToReading("Happiness")));
   });
 });

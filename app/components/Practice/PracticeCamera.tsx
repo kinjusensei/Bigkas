@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import {
   type CameraOutput,
   useCameraDevice,
@@ -7,6 +7,10 @@ import {
 } from "react-native-vision-camera";
 import type { Face } from "react-native-vision-camera-face-detector";
 import { Camera } from "react-native-vision-camera-face-detector";
+
+import CameraUnavailableNotice from "../../../components/camera/CameraUnavailableNotice";
+import { useCameraActive } from "../../../hooks/useCameraActive";
+import { type CameraProblem, classifyCameraError } from "../../../utils/cameraErrors";
 import {
   ExpectedPracticeExpression,
   PracticeExpression,
@@ -276,7 +280,13 @@ type PracticeCameraProps = {
   expectedExpression?: ExpectedPracticeExpression;
   phraseId: number;
   onExpressionConfirmed: (result: PracticeExpressionResult) => void;
+  // The camera can't run (blocked, busy, no permission, no device). Screens
+  // use it to carry on without the camera; it never blocks learning.
   onUnavailable?: () => void;
+  // The camera started (again, e.g. after Retry).
+  onReady?: () => void;
+  // Adds "Continue without camera" to the fallback card.
+  onContinueWithoutCamera?: () => void;
   // For screens that show their own status (Story practice's Show It).
   hideOverlays?: boolean;
   height?: number;
@@ -295,6 +305,8 @@ export default function PracticeCamera({
   phraseId,
   onExpressionConfirmed,
   onUnavailable,
+  onReady,
+  onContinueWithoutCamera,
   hideOverlays = false,
   height,
   onExpressionChange,
@@ -308,7 +320,24 @@ export default function PracticeCamera({
     faceDetected: false,
     expressionStatus: "unknown",
   });
-  const [detectionError, setDetectionError] = useState<Error | undefined>();
+  // Why the camera can't run, or null while it's fine.
+  const [problem, setProblem] = useState<CameraProblem | null>(null);
+  // Changing it remounts <Camera>, which retries the camera session.
+  const [retryKey, setRetryKey] = useState(0);
+  const retry = useCallback(() => {
+    setProblem(null);
+    setCameraReady(false);
+    setRetryKey((key) => key + 1);
+  }, []);
+  // Pause off-screen / in the background; retry on return (e.g. from
+  // Settings after turning Camera access back on).
+  const cameraActive = useCameraActive(() => {
+    setProblem((current) => {
+      if (current) setRetryKey((key) => key + 1);
+      return null;
+    });
+  });
+  const [permissionAsked, setPermissionAsked] = useState(false);
 
   const expressionSamplesRef = useRef<PracticeExpression[]>([]);
   const expressionConfirmedRef = useRef(false);
@@ -389,11 +418,13 @@ export default function PracticeCamera({
     [expectedExpression, onExpressionConfirmed],
   );
 
+  // Every camera error lands here instead of VisionCamera's default
+  // console.error (the red error screen in development builds).
   const handleDetectionError = useCallback(
     (cameraError: Error) => {
       if (!isActiveRef.current) return;
-
-      setDetectionError(cameraError);
+      console.warn("📷 Camera unavailable:", cameraError?.message ?? cameraError);
+      setProblem(classifyCameraError(cameraError));
       onUnavailable?.();
     },
     [onUnavailable],
@@ -418,11 +449,49 @@ export default function PracticeCamera({
     }));
   }, [phraseId]);
 
+  // Ask once; if the answer is no, the screen carries on without a camera.
   useEffect(() => {
-    if (!hasPermission) {
-      requestPermission();
+    if (hasPermission || permissionAsked) return;
+    setPermissionAsked(true);
+    requestPermission()
+      .then((granted) => {
+        if (!granted && isActiveRef.current) onUnavailable?.();
+      })
+      .catch(() => {
+        if (isActiveRef.current) onUnavailable?.();
+      });
+  }, [hasPermission, permissionAsked, requestPermission, onUnavailable]);
+
+  // No front camera on this phone.
+  useEffect(() => {
+    if (hasPermission && device === undefined && cameraReady === false) {
+      const timer = setTimeout(() => {
+        if (isActiveRef.current && !device) {
+          setProblem("no-device");
+          onUnavailable?.();
+        }
+      }, 3000);
+      return () => clearTimeout(timer);
     }
-  }, [hasPermission, requestPermission]);
+  }, [hasPermission, device, cameraReady, onUnavailable]);
+
+  const notice = (kind: CameraProblem) => (
+    <View style={[styles.container, height !== undefined && { minHeight: height }]}>
+      <CameraUnavailableNotice
+        problem={kind}
+        onRetry={() => {
+          if (kind === "permission") {
+            requestPermission().then((granted) => granted && retry()).catch(() => {});
+          } else {
+            retry();
+          }
+        }}
+        onContinue={onContinueWithoutCamera}
+      />
+    </View>
+  );
+
+  if (problem) return notice(problem);
 
   if (!hasPermission && !device) {
     return (
@@ -433,16 +502,12 @@ export default function PracticeCamera({
   }
 
   if (!hasPermission) {
+    // Asked already and still no: explain, with Settings (Android stops
+    // showing the system prompt after the learner declines twice).
+    if (permissionAsked) return notice("permission");
     return (
       <View style={styles.messageContainer}>
-        <Text style={styles.icon}>📷</Text>
-        <Text style={styles.title}>Camera Permission</Text>
-        <Text style={styles.message}>
-          Camera access is needed to detect your face during practice.
-        </Text>
-        <TouchableOpacity style={styles.button} onPress={requestPermission}>
-          <Text style={styles.buttonText}>Allow Camera</Text>
-        </TouchableOpacity>
+        <Text style={styles.messageText}>Checking camera permission...</Text>
       </View>
     );
   }
@@ -464,9 +529,10 @@ export default function PracticeCamera({
         ]}
       >
         <Camera
+          key={retryKey}
           style={styles.camera}
           device={device}
-          isActive={true}
+          isActive={cameraActive}
           cameraFacing="front"
           performanceMode="fast"
           runClassifications
@@ -478,6 +544,7 @@ export default function PracticeCamera({
           onStarted={() => {
             console.log("📷 Camera ready");
             setCameraReady(true);
+            onReady?.();
           }}
         />
 
@@ -519,12 +586,6 @@ export default function PracticeCamera({
           </View>
         )}
 
-        {!hideOverlays && detectionError && (
-          <View style={styles.errorBox}>
-            <Text style={styles.errorText}>Face detection error</Text>
-            <Text style={styles.errorDetails}>{String(detectionError)}</Text>
-          </View>
-        )}
       </View>
     </View>
   );

@@ -17,6 +17,7 @@ import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+
 import { useLessonAudio } from "../components/lesson/useLessonAudio";
 import ProfileMenu, { MenuAnchor } from "../components/ProfileMenu";
 import { bigkas, MIN_TAP } from "../constant/bigkasTheme";
@@ -26,7 +27,10 @@ import { practiceLevels } from "../data/practiceData";
 import { useLevelUnlockCelebration } from "../hooks/useLevelUnlockCelebration";
 import { useSeenBadges } from "../hooks/useSeenBadges";
 import { useStoryProgress } from "../hooks/useStoryProgress";
-import { saveActiveDialect, toLearnerDialect } from "../services/learnerProfile";
+import {
+  saveActiveDialect,
+  toLearnerDialect,
+} from "../services/learnerProfile";
 import { getDailyStreak } from "../services/streak";
 import { retryOnJwtIssuedAtFuture, supabase } from "../services/supabase";
 import { LessonDialect, StructuredLesson } from "../types/structuredLesson";
@@ -978,7 +982,8 @@ export default function HomeScreen() {
         onClose={() => setPickerVisible(false)}
         onChange={(newUrl) => {
           setPhotoUri(newUrl);
-          if (knownProfile) knownProfile = { ...knownProfile, avatarUrl: newUrl };
+          if (knownProfile)
+            knownProfile = { ...knownProfile, avatarUrl: newUrl };
         }}
       />
     </SafeAreaView>

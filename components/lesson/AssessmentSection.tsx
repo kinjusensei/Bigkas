@@ -48,6 +48,9 @@ type Props = {
   // Practice activity (e.g. "Choose the Appropriate Response"): no pass
   // mark is shown.
   practice?: boolean;
+  // After a failed attempt: replay straight away (Easy, Intermediate) or
+  // restart the lesson from the beginning first (Hard).
+  onFailure?: "replay" | "restart-lesson";
 };
 
 // Splits 'Which expression means "Good morning"?' so the quoted part can
@@ -64,6 +67,7 @@ export default function AssessmentSection({
   state,
   onSelect,
   practice = false,
+  onFailure = "replay",
 }: Props) {
   const total = assessment.questions.length;
 
@@ -108,7 +112,9 @@ export default function AssessmentSection({
         <Text style={[lessonStyles.body, styles.center]}>
           {score.passed
             ? "You passed the assessment!"
-            : `You need at least ${assessment.passPercent}% to pass. Review the lesson and try again.`}
+            : onFailure === "restart-lesson"
+              ? `You need at least ${assessment.passPercent}% to pass. In Hard lessons you restart from the beginning and review everything before trying again.`
+              : `You need at least ${assessment.passPercent}% to pass. Review the lesson and try again.`}
         </Text>
       </View>
     );

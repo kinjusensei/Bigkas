@@ -7,11 +7,9 @@
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "automatic",
-
     "ios": {
       "supportsTablet": false
     },
-
     "android": {
       "permissions": ["android.permission.RECORD_AUDIO"],
       "package": "com.otheseussorganization.bigkas",
@@ -22,10 +20,19 @@
         "backgroundColor": "#410FA3"
       }
     },
-
     "plugins": [
+      [
+        "expo-build-properties",
+        { "android": { "usesCleartextTraffic": true } }
+      ],
       "expo-router",
       "expo-speech-recognition",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Bigkas uses the microphone for optional speaking practice."
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -40,20 +47,18 @@
         {
           "microphonePermission": "Allow Bigkas to access your microphone to check pronunciation and tone."
         }
-      ]
+      ],
+      "expo-build-properties"
     ],
-
     "experiments": {
       "typedRoutes": true
     },
-
     "extra": {
       "router": {},
       "eas": {
         "projectId": "3abfa83d-6bca-48d1-8a49-bea26c4e8976"
       }
     },
-
     "owner": "otheseuss-organization"
   }
 }

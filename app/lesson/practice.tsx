@@ -21,6 +21,7 @@ import { practiceLevels } from "../../data/practiceData";
 import { findStoryForLesson } from "../../data/storyData";
 import { useLogLessonStart } from "../../hooks/useLogLessonStart";
 import { usePractice } from "../../hooks/usePractice";
+import { secondOpinion, toDialect } from "../../utils/speech";
 import {
   savePracticeResult,
   type SavePracticeResult,
@@ -210,12 +211,22 @@ function PracticeScreen() {
   const [savingResult, setSavingResult] = useState(false);
   const [attemptFrozen, setAttemptFrozen] = useState(false);
 
+  // Sapin-sapin second opinion: each take is saved (Android 13+); when the
+  // phone misses the phrase, the recording goes to the Bigkas speech server
+  // before the stage counts as a miss. Bumping the token cancels a check.
+  const speechLanguage = toDialect(lessonId?.split("_")[0]);
+  const [voiceChecking, setVoiceChecking] = useState(false);
+  const checkingVoiceRef = useRef(false);
+  const awaitingRecordingRef = useRef(false);
+  const voiceTokenRef = useRef(0);
+
   const handleStartSpeechRecognition = useCallback(async () => {
     if (
       stageRef.current !== "voice" ||
       recognitionActiveRef.current ||
       recognitionStartingRef.current ||
-      attemptFrozenRef.current
+      attemptFrozenRef.current ||
+      checkingVoiceRef.current
     ) {
       return;
     }
@@ -236,6 +247,8 @@ function PracticeScreen() {
         lang: "fil-PH",
         interimResults: true,
         continuous: true,
+        // Saved so Sapin-sapin can check a miss (older phones: no file).
+        ...(speechLanguage ? { recordingOptions: { persist: true } } : {}),
       });
 
       recognitionActiveRef.current = true;
@@ -248,7 +261,7 @@ function PracticeScreen() {
       recognitionStartingRef.current = false;
       console.error("🎤 Failed to start speech recognition:", error);
     }
-  }, []);
+  }, [speechLanguage]);
 
   const finishStage = useCallback(
     (finishedStage: PracticeStage, passed: boolean) => {
@@ -418,9 +431,66 @@ function PracticeScreen() {
     console.log("🎤 SPEECH RESULT:", transcript);
 
     setWordStates(voiceStageStates);
+    if (!allCorrect && speechLanguage) {
+      // Stop gracefully so the recording is saved, then ask Sapin-sapin
+      // (in "audioend") before counting the miss.
+      stoppingVoiceRef.current = true;
+      recognitionActiveRef.current = false;
+      checkingVoiceRef.current = true;
+      awaitingRecordingRef.current = true;
+      setVoiceChecking(true);
+      if (stageTimeoutRef.current) {
+        clearTimeout(stageTimeoutRef.current);
+        stageTimeoutRef.current = null;
+      }
+      ExpoSpeechRecognitionModule.stop();
+      // No recording (older phone): count the miss as before.
+      const token = voiceTokenRef.current;
+      setTimeout(() => {
+        if (awaitingRecordingRef.current && token === voiceTokenRef.current) {
+          endVoiceCheck(false);
+        }
+      }, 1500);
+      return;
+    }
     finishStage("voice", allCorrect);
     return;
 
+  });
+
+  // Ends a Sapin-sapin check: pass the stage, or count the miss (which
+  // restarts listening for another try).
+  const finishStageRef = useRef(finishStage);
+  finishStageRef.current = finishStage;
+  const endVoiceCheck = (passed: boolean) => {
+    voiceTokenRef.current += 1;
+    awaitingRecordingRef.current = false;
+    checkingVoiceRef.current = false;
+    setVoiceChecking(false);
+    if (stageRef.current !== "voice") return;
+    if (passed) {
+      setWordStates((states) =>
+        states.map((w) => ({ text: w.text, status: "correct" as const })),
+      );
+    }
+    finishStageRef.current("voice", passed);
+  };
+
+  useSpeechRecognitionEvent("audioend", (event) => {
+    if (!awaitingRecordingRef.current) return;
+    awaitingRecordingRef.current = false;
+    const uri = event.uri;
+    if (!uri || !speechLanguage || !currentPhrase) {
+      endVoiceCheck(false);
+      return;
+    }
+    const token = voiceTokenRef.current;
+    const phraseText = currentPhrase.text;
+    void secondOpinion(uri, speechLanguage, phraseText).then((result) => {
+      if (token !== voiceTokenRef.current) return; // moved on
+      if (result) console.log("🎤 SAPIN-SAPIN:", result.transcript, result.matched);
+      endVoiceCheck(!!result?.matched);
+    });
   });
 
   useSpeechRecognitionEvent("error", (event) => {
@@ -463,6 +533,11 @@ function PracticeScreen() {
     stageResolvedRef.current = false;
     stoppingVoiceRef.current = false;
     completedPhraseRef.current = null;
+    // A new phrase cancels any Sapin-sapin check still running.
+    voiceTokenRef.current += 1;
+    awaitingRecordingRef.current = false;
+    checkingVoiceRef.current = false;
+    setVoiceChecking(false);
 
     setStage("voice");
     setStageResults(EMPTY_STAGE_RESULTS);
@@ -922,10 +997,14 @@ function PracticeScreen() {
             ))}
           </View>
 
-          {displayWords.some((w) => w.status === "wrong") && (
-            <Text style={styles.retryHint}>
-              Say the highlighted word(s) again
-            </Text>
+          {voiceChecking ? (
+            <Text style={styles.retryHint}>Checking with Sapin-sapin AI…</Text>
+          ) : (
+            displayWords.some((w) => w.status === "wrong") && (
+              <Text style={styles.retryHint}>
+                Say the highlighted word(s) again
+              </Text>
+            )
           )}
 
           {/* Tone / vowel-length step — only appears once every word is
@@ -987,7 +1066,10 @@ function PracticeScreen() {
                 }
                 phraseId={currentPhrase.id}
                 onExpressionConfirmed={handleExpressionConfirmed}
-                onUnavailable={() => finishStage("expression", false)}
+                // No usable camera: skip the expression step instead of
+                // failing it forever, so the learner can keep practising.
+                onUnavailable={() => finishStage("expression", true)}
+                onContinueWithoutCamera={() => finishStage("expression", true)}
               />
             )}
           </FaceDetectionProvider>}

@@ -32,7 +32,10 @@ import {
   readAllFrameMeta,
   writeFrameMeta,
 } from "../components/fer/ferStorage";
+import CameraUnavailableNotice from "../components/camera/CameraUnavailableNotice";
 import { FER_COLLECT_INTERVAL_MS, FER_MODEL_ENABLED } from "../constant/fer";
+import { useCameraActive } from "../hooks/useCameraActive";
+import { type CameraProblem, classifyCameraError } from "../utils/cameraErrors";
 import { useFERInference } from "../services/FERInferenceService";
 import { captureFaceImage } from "../services/ferCapture";
 import {
@@ -69,10 +72,26 @@ export default function FERCollectScreen() {
   const [autoMode, setAutoMode] = useState(false);
   const capturingRef = useRef(false);
 
+  // Camera errors (privacy switch off, device policy, busy) show a card
+  // instead of the red error screen. Retry remounts the camera.
+  const [problem, setProblem] = useState<CameraProblem | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
+  const retry = useCallback(() => {
+    setProblem(null);
+    setRetryKey((key) => key + 1);
+  }, []);
+  const cameraActive = useCameraActive(() => {
+    // Back from Settings: try again automatically.
+    setProblem((current) => {
+      if (current) setRetryKey((key) => key + 1);
+      return null;
+    });
+  });
+
   // Live test of the trained model on this camera (dev screen only).
   // Paused while auto-capture runs, so the two don't compete for photos.
   const fer = useFERInference({
-    enabled: __DEV__ && FER_MODEL_ENABLED && !autoMode,
+    enabled: __DEV__ && FER_MODEL_ENABLED && !autoMode && cameraActive && !problem,
     photoOutput,
   });
 
@@ -118,15 +137,28 @@ export default function FERCollectScreen() {
 
   // Auto-capture every FER_COLLECT_INTERVAL_MS (2 s).
   useEffect(() => {
-    if (!autoMode) return;
+    if (!autoMode || problem || !cameraActive) return;
     const timer = setInterval(
       () => captureOne(selectedLabel),
       FER_COLLECT_INTERVAL_MS,
     );
     return () => clearInterval(timer);
-  }, [autoMode, selectedLabel, captureOne]);
+  }, [autoMode, selectedLabel, captureOne, problem, cameraActive]);
 
   if (!__DEV__) return <Redirect href="/" />;
+
+  if (problem) {
+    return (
+      <SafeAreaView style={styles.center}>
+        <CameraUnavailableNotice
+          problem={problem}
+          onRetry={retry}
+          onContinue={() => router.back()}
+          dark
+        />
+      </SafeAreaView>
+    );
+  }
 
   if (!hasPermission || !device) {
     return (
@@ -147,15 +179,31 @@ export default function FERCollectScreen() {
     <SafeAreaView style={styles.root}>
       {/* Camera preview */}
       <Camera
+        key={retryKey}
         style={styles.camera}
         device={device}
-        isActive={true}
+        isActive={cameraActive}
         outputs={[photoOutput]}
+        onError={(error) => {
+          console.warn("📷 Camera unavailable:", error?.message ?? error);
+          setAutoMode(false);
+          setProblem(classifyCameraError(error));
+        }}
       />
 
       {/* Trained model's live guess */}
       {FER_MODEL_ENABLED ? (
         <View style={styles.modelBar}>
+          {fer.latestGuess && !autoMode ? (
+            <Text style={styles.modelDetail}>
+              {(["confused", "engaged", "frustrated", "neutral"] as const)
+                .map((label) => `${label} ${Math.round((fer.latestGuess?.allScores?.[label] ?? 0) * 100)}%`)
+                .join("  ·  ")}
+              {fer.latestGuess.input?.avgRgb
+                ? `\ninput ${fer.latestGuess.input.width}×${fer.latestGuess.input.height} ${fer.latestGuess.input.pixelFormat} · ${fer.latestGuess.input.bytes} bytes · avg RGB ${fer.latestGuess.input.avgRgb.join(",")}`
+                : ""}
+            </Text>
+          ) : null}
           <Text style={styles.modelText}>
             {autoMode
               ? "🧪 Model test paused while Auto is on"
@@ -259,6 +307,7 @@ const styles = StyleSheet.create({
   },
   modelBar: { backgroundColor: "#0B3D2E", paddingVertical: 10, paddingHorizontal: 12 },
   modelText: { color: "#D1FAE5", fontSize: 15, fontWeight: "700", textAlign: "center" },
+  modelDetail: { color: "#A7F3D0", fontSize: 11, textAlign: "center", marginBottom: 4 },
   countsRow: {
     flexDirection: "row",
     justifyContent: "space-around",

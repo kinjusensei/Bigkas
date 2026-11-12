@@ -35,11 +35,19 @@ type Props = {
   activity: LessonMatchActivity;
   state: MatchState;
   onChange: (state: MatchState) => void;
+  // Easy only: wrong rows can be cleared and matched again. Otherwise a
+  // checked activity locks and shows the right answers.
+  retry?: boolean;
 };
 
 // Step 6 — tap a Tagalog row, then an answer chip. Used chips are
 // disabled; tapping a matched row clears it so it can be redone.
-export default function MatchSection({ activity, state, onChange }: Props) {
+export default function MatchSection({
+  activity,
+  state,
+  onChange,
+  retry = true,
+}: Props) {
   // Answers listed alphabetically so the order doesn't give away pairs.
   const answers = useMemo(
     () => activity.pairs.map((pair) => pair.answer).sort(),
@@ -47,6 +55,9 @@ export default function MatchSection({ activity, state, onChange }: Props) {
   );
   const used = new Set(Object.values(state.matches));
   const allCorrect = state.checked && isMatchCorrect(activity, state);
+  // Checked with mistakes and no retry in this level: read-only.
+  const lockedWrong = !retry && state.checked && !allCorrect;
+  const done = allCorrect || lockedWrong;
   const matchedCount = Object.keys(state.matches).length;
 
   const nextUnmatched = (matches: Record<string, string>, after?: string) => {
@@ -61,7 +72,7 @@ export default function MatchSection({ activity, state, onChange }: Props) {
   };
 
   const handleRowPress = (pairId: string) => {
-    if (allCorrect) return;
+    if (done) return;
     if (state.matches[pairId]) {
       const matches = { ...state.matches };
       delete matches[pairId];
@@ -72,7 +83,7 @@ export default function MatchSection({ activity, state, onChange }: Props) {
   };
 
   const handleAnswerPress = (answer: string) => {
-    if (allCorrect || used.has(answer)) return;
+    if (done || used.has(answer)) return;
     const targetId = state.selectedId ?? nextUnmatched(state.matches);
     if (!targetId) return;
     const matches = { ...state.matches, [targetId]: answer };
@@ -109,11 +120,18 @@ export default function MatchSection({ activity, state, onChange }: Props) {
                 selected && styles.rowSelected,
               ]}
               onPress={() => handleRowPress(pair.id)}
+              disabled={done}
               accessibilityRole="button"
-              accessibilityState={{ selected }}
+              accessibilityState={{ selected, disabled: done }}
               accessibilityLabel={
                 answer
-                  ? `${pair.term} matched with ${answer}${wrong ? ", incorrect" : ""}. Tap to clear.`
+                  ? `${pair.term} matched with ${answer}${
+                      wrong
+                        ? lockedWrong
+                          ? `, incorrect. The answer is ${pair.answer}.`
+                          : ", incorrect"
+                        : ""
+                    }${done ? "" : ". Tap to clear."}`
                   : `${pair.term}, not matched`
               }
             >
@@ -130,6 +148,9 @@ export default function MatchSection({ activity, state, onChange }: Props) {
                   >
                     {answer}
                   </Text>
+                  {wrong && lockedWrong ? (
+                    <Text style={styles.answerTagText}> → {pair.answer}</Text>
+                  ) : null}
                 </View>
               ) : (
                 <Text style={styles.placeholder}>
@@ -145,7 +166,7 @@ export default function MatchSection({ activity, state, onChange }: Props) {
         <Text style={lessonStyles.label}>ANSWERS</Text>
         <View style={styles.chipRow}>
           {answers.map((answer) => {
-            const disabled = used.has(answer) || allCorrect;
+            const disabled = used.has(answer) || done;
             return (
               <TouchableOpacity
                 key={answer}
@@ -176,7 +197,9 @@ export default function MatchSection({ activity, state, onChange }: Props) {
           <Text style={styles.feedbackText}>
             {allCorrect
               ? "All matched correctly!"
-              : "Some matches are wrong. Tap a red row to clear it and try again."}
+              : retry
+                ? "Some matches are wrong. Tap a red row to clear it and try again."
+                : "Some matches were wrong. The right answer is shown after each arrow."}
           </Text>
         </View>
       ) : (

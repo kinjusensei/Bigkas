@@ -20,6 +20,7 @@ import { saveLeaderboardBonus } from "../../services/practiceService";
 import { supabase } from "../../services/supabase";
 import { updateWinningStreak } from "../../services/winningStreak";
 import { streakBonusPercent } from "../../utils/lessonCompletion";
+import { retryRulesForLessonId } from "../../utils/lessonTiers";
 
 export default function ResultScreen() {
   const router = useRouter();
@@ -160,6 +161,33 @@ export default function ResultScreen() {
 
   const performance = getPerformance(accuracyValue);
 
+  // After a lost game: Easy and Intermediate replay it right away; Hard
+  // sends the learner back to the start of the lesson to review first
+  // (utils/lessonTiers.ts retry rules).
+  const practiceLessonId = typeof lessonId === "string" ? lessonId : undefined;
+  const restartInstead =
+    won === "false" &&
+    !!practiceLessonId &&
+    retryRulesForLessonId(practiceLessonId).onFailure === "restart-lesson";
+  const replayPractice = () =>
+    router.replace(
+      practiceLessonId
+        ? ({
+            pathname: "/lesson/practice",
+            params: {
+              lessonId: practiceLessonId,
+              // Opened from a structured lesson: keep the camera optional.
+              ...(selfRatingLessonId ? { cameraHints: "on" } : {}),
+            },
+          } as any)
+        : "/lesson/practice",
+    );
+  const restartLesson = () =>
+    router.replace({
+      pathname: "/lesson/[lessonId]",
+      params: { lessonId: practiceLessonId },
+    } as any);
+
   return (
     <ScrollView
       contentContainerStyle={styles.container}
@@ -264,14 +292,33 @@ export default function ResultScreen() {
       ) : null}
 
       {/* Action Buttons */}
-      <TouchableOpacity
-        style={styles.primaryButton}
-        onPress={() => router.replace("/lesson/practice")}
-      >
-        <MaterialCommunityIcons name="refresh" size={22} color="white" />
+      {restartInstead ? (
+        <>
+          <Text style={styles.restartNote}>
+            Hard lesson: start again from the beginning and review everything
+            before you play again.
+          </Text>
+          <TouchableOpacity
+            style={styles.primaryButton}
+            onPress={restartLesson}
+            accessibilityRole="button"
+          >
+            <MaterialCommunityIcons name="restart" size={22} color="white" />
 
-        <Text style={styles.primaryButtonText}>Practice Again</Text>
-      </TouchableOpacity>
+            <Text style={styles.primaryButtonText}>Restart Lesson</Text>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <TouchableOpacity
+          style={styles.primaryButton}
+          onPress={replayPractice}
+          accessibilityRole="button"
+        >
+          <MaterialCommunityIcons name="refresh" size={22} color="white" />
+
+          <Text style={styles.primaryButtonText}>Practice Again</Text>
+        </TouchableOpacity>
+      )}
 
       <TouchableOpacity
         style={styles.secondaryButton}
@@ -415,6 +462,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 
+  restartNote: {
+    width: "100%",
+    marginBottom: 12,
+    color: "#4B5563",
+    fontSize: 14,
+    lineHeight: 20,
+    textAlign: "center",
+  },
   secondaryButton: {
     width: "100%",
     height: 58,

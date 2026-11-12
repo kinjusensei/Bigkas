@@ -37,6 +37,9 @@ type Props = {
   activity: LessonFillBlanks;
   state: FillBlanksState;
   onSelect: (word: string) => void;
+  // Easy lets a wrong answer be changed and checked again; Intermediate and
+  // Hard lock it and show the right answer (utils/lessonTiers.ts).
+  retry?: boolean;
 };
 
 // Activity 2 — one sentence at a time; tap a chip to fill the blank, then
@@ -45,6 +48,7 @@ export default function FillBlanksSection({
   activity,
   state,
   onSelect,
+  retry = true,
 }: Props) {
   const item = activity.items[state.index];
   // Word bank sorted so the order doesn't match the sentences (numbers in
@@ -76,7 +80,8 @@ export default function FillBlanksSection({
   const match = item.sentence.match(/^(.*?)_{2,}(.*)$/);
   const before = match ? match[1] : item.sentence;
   const after = match ? match[2] : "";
-  const locked = state.status === "correct";
+  const locked =
+    state.status === "correct" || (!retry && state.status === "wrong");
 
   return (
     <>
@@ -139,7 +144,14 @@ export default function FillBlanksSection({
         </View>
       </View>
 
-      <ExerciseFeedback status={state.status} />
+      <ExerciseFeedback
+        status={state.status}
+        wrongText={
+          retry
+            ? undefined
+            : `Not quite. The answer is “${item.answer}”.`
+        }
+      />
     </>
   );
 }
@@ -147,13 +159,14 @@ export default function FillBlanksSection({
 export function ExerciseFeedback({
   status,
   correctText = "Correct!",
-  wrongText = "Not quite. Try again.",
+  wrongText: wrongTextProp,
 }: {
   status: ExerciseStatus;
   correctText?: string;
   wrongText?: string;
 }) {
   if (status === "idle") return null;
+  const wrongText = wrongTextProp ?? "Not quite. Try again.";
   const correct = status === "correct";
   return (
     <View

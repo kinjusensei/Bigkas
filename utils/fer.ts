@@ -54,12 +54,35 @@ export function describeReading(reading: FERReading): string {
   return READING_TEXT[reading as FERLabel] ?? reading;
 }
 
-// Readings that mean the learner may need help (both FERs).
+// Readings that mean the learner may need help (every FER: LibreFace, the
+// trained model and ML Kit).
 export function readingNeedsHelp(reading: FERReading | null | undefined): boolean {
   return (
     !!reading &&
-    ["confused", "frustrated", "sad", "angry"].includes(reading)
+    ["confused", "frustrated", "sad", "angry", "worried"].includes(reading)
   );
+}
+
+// LibreFace (the Bigkas server, libreface_server.py) names one of eight basic
+// expressions. Shown to learners as a plain word; anger, disgust and
+// contempt all read as "frustrated", fear as "worried".
+const LIBREFACE_READINGS: [prefix: string, reading: FERReading][] = [
+  ["neutral", "neutral"],
+  ["happ", "happy"],
+  ["sad", "sad"],
+  ["surpris", "surprised"],
+  ["fear", "worried"],
+  ["disgust", "frustrated"],
+  ["anger", "frustrated"],
+  ["angry", "frustrated"],
+  ["contempt", "frustrated"],
+];
+
+export function libreFaceToReading(raw: unknown): FERReading | null {
+  if (typeof raw !== "string") return null;
+  const key = raw.trim().toLowerCase();
+  if (!key) return null;
+  return LIBREFACE_READINGS.find(([prefix]) => key.startsWith(prefix))?.[1] ?? null;
 }
 
 export const FER_INPUT_SIZE = 224;

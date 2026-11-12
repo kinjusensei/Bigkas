@@ -54,13 +54,47 @@ export function loadFERModel(): Promise<TensorflowModel> {
   return modelPromise;
 }
 
+// What the model was last given, for the dev test readouts.
+export type FERInputInfo = {
+  pixelFormat: string;
+  width: number;
+  height: number;
+  bytes: number;
+  avgRgb: [number, number, number]; // 0–255
+};
+let lastInputInfo: FERInputInfo | null = null;
+export const getLastFERInputInfo = () => lastInputInfo;
+
 // Runs the model on one square face image and returns its class scores.
 export async function classifyFaceImage(
   model: TensorflowModel,
   image: FERImage,
 ): Promise<number[]> {
   const raw = await image.toRawPixelDataAsync();
+  if (!raw?.buffer) throw new Error("The camera photo had no pixel data");
   const pixels = new Uint8Array(raw.buffer);
+  if (__DEV__) {
+    try {
+    const rgb = pixelsToFloatRgb(pixels, raw.width, raw.height, String(raw.pixelFormat));
+    const sum = [0, 0, 0];
+    for (let i = 0; i < rgb.length; i += 3) {
+      sum[0] += rgb[i];
+      sum[1] += rgb[i + 1];
+      sum[2] += rgb[i + 2];
+    }
+    const n = rgb.length / 3 || 1;
+    lastInputInfo = {
+      pixelFormat: String(raw.pixelFormat),
+      width: raw.width,
+      height: raw.height,
+      bytes: pixels.length,
+      avgRgb: [0, 1, 2].map((c) => Math.round((sum[c] / n) * 255)) as [number, number, number],
+    };
+    } catch (error) {
+      lastInputInfo = null;
+      console.warn("[FER] Couldn't read the test info:", error);
+    }
+  }
   const input = model.inputs[0];
   let buffer: ArrayBuffer;
   if (input?.dataType === "uint8") {
@@ -101,6 +135,8 @@ export function useFERInference({
   const [latestGuess, setLatestGuess] = useState<{
     emotion: FERLabel;
     confidence: number;
+    allScores: Record<FERLabel, number>;
+    input: FERInputInfo | null;
   } | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const modelRef = useRef<TensorflowModel | null>(null);
@@ -129,7 +165,16 @@ export function useFERInference({
 
   const handleScores = useCallback((scores: number[]) => {
     const guess = interpretScores(scores, FER_MODEL_CLASSES, 0);
-    setLatestGuess(guess ? { emotion: guess.emotion, confidence: guess.confidence } : null);
+    setLatestGuess(
+      guess
+        ? {
+            emotion: guess.emotion,
+            confidence: guess.confidence,
+            allScores: guess.allScores,
+            input: lastInputInfo,
+          }
+        : null,
+    );
     const prediction = interpretScores(scores, FER_MODEL_CLASSES);
     if (!prediction) return;
     const { recent, confirmed } = pushConfirmation(recentRef.current, prediction.emotion);

@@ -62,3 +62,6 @@ scripts/fer_training/fer_training_data/
 
 # Scratch output
 result.csv
+
+assets/test_photos/
+sample_disfa.png

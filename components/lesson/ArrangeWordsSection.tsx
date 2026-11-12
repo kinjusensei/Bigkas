@@ -50,6 +50,8 @@ type Props = {
   activity: LessonArrangeWords;
   state: ArrangeState;
   onChange: (state: ArrangeState) => void;
+  // Easy only: a wrong order can be fixed and checked again.
+  retry?: boolean;
 };
 
 // Activity 3 — tap tiles in order to build the sentence; tap a placed
@@ -58,11 +60,13 @@ export default function ArrangeWordsSection({
   activity,
   state,
   onChange,
+  retry = true,
 }: Props) {
   const item = activity.items[state.index];
   if (!item) return null;
 
-  const locked = state.status === "correct";
+  const locked =
+    state.status === "correct" || (!retry && state.status === "wrong");
   const placedWords = state.placed.map((wordIndex) => item.words[wordIndex]);
 
   const place = (wordIndex: number) => {
@@ -151,7 +155,11 @@ export default function ArrangeWordsSection({
 
       <ExerciseFeedback
         status={state.status}
-        wrongText="Not quite. Tap a placed word to remove it and try again."
+        wrongText={
+          retry
+            ? "Not quite. Tap a placed word to remove it and try again."
+            : `Not quite. The correct order is “${item.answer.join(" ")}”.`
+        }
       />
     </>
   );

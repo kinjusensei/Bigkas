@@ -9,8 +9,8 @@ import {
 } from "react-native-vision-camera";
 
 import PracticeCamera from "../../app/components/Practice/PracticeCamera";
-import { FER_MODEL_ENABLED } from "../../constant/fer";
-import { useFERInference } from "../../services/FERInferenceService";
+import { setCameraHintsPreference } from "../../services/cameraPreference";
+import { sourceLabel, useExpressionReader } from "../../services/expressionReader";
 import { describeReading } from "../../utils/fer";
 import type {
   ExpectedPracticeExpression,
@@ -33,9 +33,8 @@ type Props = {
 };
 
 // Show It. The camera is optional and what it sees is never scored or saved.
-// It reads the learner with the trained FER model (engaged, neutral,
-// confused, frustrated); the older ML Kit expression is the fallback when the
-// model is off or can't load on this phone.
+// It reads the learner with LibreFace on the Bigkas server; while that's
+// offline, the trained on-phone model, then ML Kit if the model can't load.
 export default function ShowItQuestion({
   label,
   prompt,
@@ -48,7 +47,8 @@ export default function ShowItQuestion({
   const device = useCameraDevice("front");
   const { hasPermission, requestPermission } = useCameraPermission();
   const [cameraOn, setCameraOn] = useState(true);
-  const [failed, setFailed] = useState(false);
+  // The camera is blocked or busy right now (PracticeCamera shows why).
+  const [cameraBlocked, setCameraBlocked] = useState(false);
   const [checking, setChecking] = useState(!hasPermission);
   const [detected, setDetected] = useState<PracticeExpression>("unknown");
 
@@ -68,22 +68,17 @@ export default function ShowItQuestion({
     };
   }, [hasPermission, requestPermission]);
 
-  const canUseCamera = hasPermission && !!device && !failed;
+  const canUseCamera = hasPermission && !!device;
   const showCamera = canUseCamera && cameraOn;
 
   const photoOutput = usePhotoOutput({ qualityPrioritization: "speed" });
-  const extraOutputs = useMemo(
-    () => (FER_MODEL_ENABLED ? [photoOutput] : undefined),
-    [photoOutput],
-  );
-  const fer = useFERInference({
-    enabled: showCamera && FER_MODEL_ENABLED,
+  const extraOutputs = useMemo(() => [photoOutput], [photoOutput]);
+  const reader = useExpressionReader({
+    enabled: showCamera && !cameraBlocked,
     photoOutput,
   });
-  const useModel = FER_MODEL_ENABLED && !fer.loadError;
-  const reading = useModel
-    ? fer.currentEmotion?.emotion ?? "unknown"
-    : detected;
+  const useModel = reader.source !== "mlkit";
+  const reading = useModel ? (reader.reading ?? "unknown") : detected;
 
   return (
     <>
@@ -106,13 +101,14 @@ export default function ShowItQuestion({
             <View style={styles.hintRow}>
               <View style={styles.pill}>
                 <Text style={styles.pillText} numberOfLines={1}>
-                  Camera hints on · stays on this phone
+                  {sourceLabel(reader.source)}
                 </Text>
               </View>
               <Pressable
                 onPress={() => {
                   setCameraOn(false);
                   setDetected("unknown");
+                  setCameraHintsPreference(false);
                 }}
                 style={styles.link}
                 accessibilityRole="button"
@@ -143,7 +139,12 @@ export default function ShowItQuestion({
                     // Only the fallback reports ML Kit results.
                     if (!useModel) onExpressionConfirmed(result);
                   }}
-                  onUnavailable={() => setFailed(true)}
+                  onUnavailable={() => setCameraBlocked(true)}
+                  onReady={() => setCameraBlocked(false)}
+                  onContinueWithoutCamera={() => {
+                    setCameraOn(false);
+                    setDetected("unknown");
+                  }}
                   onExpressionChange={setDetected}
                   extraOutputs={extraOutputs}
                   hideOverlays
@@ -172,7 +173,10 @@ export default function ShowItQuestion({
             </Text>
             {canUseCamera ? (
               <Pressable
-                onPress={() => setCameraOn(true)}
+                onPress={() => {
+                  setCameraOn(true);
+                  setCameraHintsPreference(true);
+                }}
                 style={styles.link}
                 accessibilityRole="button"
                 accessibilityLabel="Turn on camera"
@@ -184,7 +188,8 @@ export default function ShowItQuestion({
         )}
 
         <Text style={styles.privacy}>
-          Your expression never changes your score. No photos or video are saved.
+          Your expression never changes your score. Camera frames go to the
+          Bigkas server (LibreFace) over HTTPS and are deleted right after.
         </Text>
       </ScrollView>
 
